@@ -1,0 +1,20 @@
+<section class="container-outer search">
+	<section class="container">
+		<div class="container-title">Search Authority</div>
+	</section>
+	<div class="container container-padded-bottom">
+		<div class="container">
+			<search-box [search]="search" [filters]="search_filters" [quick_filters]="search_filters" (onChange)="refresh()"></search-box>
+		</div>
+	</div>
+	<div class="container container-padded-bottom">
+		<div class="container">
+			<filter-box [search]="search" [filters]="check_filters" (onChange)="refresh()"></filter-box>
+		</div>
+	</div>
+</section>
+<section class="container-outer container-padded-top-lite">
+	<section class="container">
+		<authority-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="title" (searchChange)="searchChange($event);"></authority-table>
+	</section>
+</section>

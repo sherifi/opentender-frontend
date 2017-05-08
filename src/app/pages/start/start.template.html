@@ -1,0 +1,14 @@
+<section class="slab-top" *ngIf="ip_country">
+	<div class="container-outer">
+		<div class="container-left-12 container-padded slab-info u-centered slab-border-light">
+			It looks like you are browsing from {{ip_country.name}}.<br/>
+			We invite you to visit <a href="/{{ip_country.id}}">OpenTender {{ip_country.name}}</a>.
+		</div>
+	</div>
+</section>
+<section class="slab-alpha container-padded">
+	<div class="container-outer">
+		<h3 class="start-heading">Please choose a country portal or explore <a href="/eu">all available data</a></h3>
+		<start-map></start-map>
+	</div>
+</section>

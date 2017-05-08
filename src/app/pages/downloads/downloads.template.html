@@ -1,0 +1,40 @@
+<section class="container-outer downloads">
+
+	<section class="container">
+		<div class="container-title">Downloads</div>
+	</section>
+	<section class="container">
+		<h2 class="h3" id="opentender">Downloads</h2>
+		<p>Here you find all the tender data of this portal.<br/>The file format is gzip compressed <a href="http://ndjson.org/">Newline Delimited JSON</a>.
+			The structure of entries is documented <a [routerLink]="['/documentation/dataformat']">here</a>.</p>
+
+		<p>[<i class="icon-hammer"></i> CSV download is under construction]</p>
+
+	</section>
+	<section class="container container-current-download" *ngIf="current">
+		<p>
+			Current Portal:<br/>
+			<a href="/files/{{current.filename}}" download><i class="icon-cloud-download"></i> {{current.name}}</a> - {{current.count}} Entries - {{current.size | formatFileSize}}
+		</p>
+	</section>
+	<section class="container">
+		<table class="tables">
+			<thead>
+			<tr>
+				<th>Country</th>
+				<th>Entries</th>
+				<th>File Size</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let download of downloads">
+				<td><a href="/files/{{download.filename}}" download><i class="icon-cloud-download"></i> {{download.name}}</a></td>
+				<td class="right">{{download.count}} Entries</td>
+				<td class="right">{{download.size | formatFileSize}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+
+</section>
+

@@ -1,0 +1,62 @@
+<section class="container-outer explore" *ngIf="loading">
+	<section class="container">
+		<section class="container">
+			<div class="container-title">Explore Sectors</div>
+		</section>
+		<section class="container">
+			<div *ngIf="error">Error: {{error}}</div>
+			<div *ngIf="!error">Loading...</div>
+		</section>
+	</section>
+</section>
+
+<section class="container-outer explore" *ngIf="!loading">
+	<section class="container">
+		<section class="container">
+			<div class="container-title">Explore Sectors</div>
+		</section>
+		<section class="container">
+			<div class="container slab-beta-light container-padded-large">
+				<div class="container">
+					<div class="container-left-12" *ngIf="charts.cpvs_code_main.visible">
+						<div class="title">Structure by Tender Count</div>
+						<ngx-charts-tree-map
+								class="chart-container"
+								[chart]="charts.cpvs_code_main.chart"
+								[data]="charts.cpvs_code_main.data"
+								(select)="charts.cpvs_code_main.select($event)"
+								(legendLabelClick)="charts.cpvs_code_main.onLegendLabelClick($event)">
+						</ngx-charts-tree-map>
+					</div>
+				</div>
+				<br>
+				<div class="container">
+					<div class="container-left-12" *ngIf="charts.cpvs_code_main_volume.visible">
+						<div class="title">Volume by Sector in €</div>
+						<ngx-charts-tree-map
+								class="chart-container"
+								[chart]="charts.cpvs_code_main_volume.chart"
+								[data]="charts.cpvs_code_main_volume.data"
+								(select)="charts.cpvs_code_main_volume.select($event)"
+								(legendLabelClick)="charts.cpvs_code_main_volume.onLegendLabelClick($event)">
+						</ngx-charts-tree-map>
+					</div>
+				</div>
+			</div>
+			<table class="tables">
+				<tr>
+					<th>Sector Profile</th>
+					<th>CPV</th>
+					<th>Name</th>
+					<th>Tender Count</th>
+				</tr>
+				<tr *ngFor="let sector of sectors">
+					<td><a routerLink="/sector/{{sector.id}}"><i class="icon-hammer icon-large"></i></a></td>
+					<td>{{sector.id}}</td>
+					<td>{{sector.name}}</td>
+					<td>{{sector.value}}</td>
+				</tr>
+			</table>
+		</section>
+	</section>
+</section>

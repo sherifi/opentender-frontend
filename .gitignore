@@ -1,0 +1,9 @@
+dist
+/node_modules
+/typings
+npm-debug.log
+.idea
+*.map
+config.js
+.sass-cache
+webpack.records.json

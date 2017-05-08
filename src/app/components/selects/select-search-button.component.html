@@ -1,0 +1,9 @@
+<app-dialog [title]="'Add Search Fields'" [(visible)]="showDialog">
+	<select-filters mode="add" [filters_all]="filters_all" [filters_active]="filters_active" (selectChange)="onSelectFilters($event)"></select-filters>
+</app-dialog>
+<div class="dropdown-choose" (click)="showDialog = !showDialog">
+	<div class="dropdown-container">
+		<p class="dropdown-description">Search</p>
+		<p class="dropdown-button">Click to Select</p>
+	</div>
+</div>

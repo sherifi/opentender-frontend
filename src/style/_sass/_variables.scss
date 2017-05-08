@@ -1,0 +1,123 @@
+// Logos
+$eiti-logo-width: 280px;
+
+// Typography
+$weight-light: 300;
+$weight-book: 400;
+$weight-bold: 700;
+
+
+$logo-font: 'League Gothic';
+$base-font-family: "LatoWeb", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$base-font-weight: 400;
+$base-font-size: 1rem;
+$base-font-multiplier: 1;
+$base-line-height: 1.375rem;
+
+$z-roof: 9000;
+$z-mid: 500;
+$z-negative: -1;
+
+// Colors
+//
+// Markup:
+// <p class="icon-map" style="color: #ffffff;">$white</p>
+// <p class="icon-map" style="color: #040404;">$black</p>
+// <p class="icon-map" style="color: #157bac;">$blue</p>
+// <p class="icon-map" style="color: #096fa0;">$blue-contrast</p>
+// <p class="icon-map" style="color: #e6f9ff;">$light-blue</p>
+// <p class="icon-map" style="color: #f2fcff;">$pale-blue</p>
+// <p class="icon-map" style="color: #c6e9ff;">$mid-blue</p>
+// <p class="icon-map" style="color: #4b9bbf;">$dark-blue</p>
+// <p class="icon-map" style="color: #f7f7f7;">$light-gray</p>
+// <p class="icon-map" style="color: #ebebeb;">$mid-gray</p>
+// <p class="icon-map" style="color: #4a4a4a;">$dark-gray</p>
+// <p class="icon-map" style="color: #303030;">$light-black</p>
+//
+// Styleguide colors
+
+// v3
+$white: #ffffff;
+$black: #040404;
+$green: #96bc7f;
+$blue: #157bac;
+$blue-contrast: #096fa0;
+$light-green: #d2e2cb;
+$blue-alt: darken($blue, 5%); //for contrast, darker
+$light-blue: #e3f8ff;
+$light-yellow: #feffe7;
+$pale-blue: #f0fcff;
+$mid-blue: #c9eeff;
+$mid-blue-opaque: rgba(198, 233, 255, 0.93);
+$dark-blue: #4b9bbf;
+$light-gray: #f7f7f7;
+$light-gray-light: #fafafa; //for contrast, lighter
+$light-gray-dark: #f2f2f2; // for contrast, darker
+$mid-gray: #ebebeb;
+$neutral-gray: #ccc;
+$dark-gray: #4a4a4a;
+$light-black: #303030;
+$silver: silver;
+
+// As hex codes */
+
+$color-primary-0: #c9e9e7;	// Main Primary color */
+$color-primary-1: #000000;
+$color-primary-2: #F3FAFA;
+$color-primary-3: #578E8C;
+$color-primary-4: #19514F;
+
+// As RGBa codes */
+
+$rgba-primary-0: rgba(179,211,209,1);	// Main Primary color */
+$rgba-primary-1: rgba(  0,  0,  0,1);
+$rgba-primary-2: rgba(243,250,250,1);
+$rgba-primary-3: rgba( 87,142,140,1);
+$rgba-primary-4: rgba( 25, 81, 79,1);
+$rgba-primary-5: rgb(246, 246, 246);
+
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $mid-blue;
+
+// Padding
+$base-padding: 1.25em; //20px
+$base-padding-lite: $base-padding / 3;
+$base-padding-large: 1.875em; //30px
+$base-padding-extra: 3.125em; //50px
+$base-padding-jumbo: 3.8em;
+
+// Link Colors
+$base-link-color: #13648d;
+$base-link-hover-color: darken($base-link-color, 5%);
+
+// Buttons
+$primary-button-bg-color: $rgba-primary-5;
+$primary-hover-button-bg-color: darken($blue,3%);
+$primary-button-color: $white;
+$primary-hover-button-color: $white;
+$secondary-button-bg-color: $white;
+$secondary-hover-button-bg-color: $white;
+$secondary-button-color: $dark-gray;
+$secondary-hover-button-color: $dark-gray;
+$secondary-button-border-color: $mid-gray;
+$tertiary-button-bg-color: $mid-gray;
+
+// Radius
+$base-border-radius: 5px;
+$small-border-radius: 3px;
+
+// Border
+$base-border-color: $silver;//$light-black;
+$thin-border-size: 1px;
+$regular-border-size: 3px;
+$thick-border-size: 8px;
+$base-border-size: $regular-border-size;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-radius: $base-border-radius;
+$form-box-shadow-focus: 0 0 0 2px $form-border-color-hover;

@@ -1,0 +1,93 @@
+home-tabs {
+
+	.tabs-nav {
+
+		@include heading(para-sm);
+		margin-bottom: 3px;
+		text-align: right;
+
+		@include respond-to(tiny-down) {
+			line-height: 0.75rem;
+			font-size: 0.95rem;
+			margin-bottom: 9px;
+			text-align: center;
+		}
+
+		a {
+			border: 1px solid transparent;
+			color: $black;
+			margin-right: $base-padding-lite;
+			padding: $base-padding-lite;
+			text-decoration: none;
+
+			&:hover {
+				background-color: $white;
+				border: 1px solid $neutral-gray;
+				border-bottom: 1px solid $white;
+				font-weight: $weight-light;
+			}
+
+			&.active, &:focus {
+				background-color: $white;
+				border: 1px solid $neutral-gray;
+				border-bottom: 1px solid $white;
+				font-weight: $weight-bold;
+			}
+		}
+	}
+
+	.tab-panel {
+		border-top: 1px solid $neutral-gray;
+		padding-top: $base-padding-large;
+		text-align: center;
+		min-height: 430px;
+
+		.icon-stack {
+			font-size: 2em;
+		}
+		.tab-button {
+			margin-top: $base-padding-lite;
+			padding: ($base-padding * 0.7) $base-padding;
+		}
+	}
+}
+
+.home-heading {
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: $base-padding;
+	@include respond-to(medium-up) {
+		margin-bottom: 0;
+	}
+}
+
+.home-subheading {
+	@include heading(para-md);
+	font-weight: $weight-light;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.portal-link {
+	min-width: 100%;
+	max-width: 100%;
+  display: inline-block;
+	font-size: 0.9em;
+	padding-left: 8px;
+	padding-right: 8px;
+  border-bottom: 1px solid #f9f9f9;
+	@include respond-to(small-up) {
+		min-width: 50%;
+		max-width: 50%;
+	}
+	&.active {
+		font-weight: bold;
+	}
+
+	> span:last-of-type {
+		font-size: 0.8em;
+		float: right;
+	}
+}

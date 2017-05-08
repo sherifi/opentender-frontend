@@ -1,0 +1,9 @@
+<app-dialog [title]="'Select Filter'" [(visible)]="showDialog">
+	<select-filters mode="check" [filters_all]="filters_all" [filters_active]="filters_active" (selectChange)="onSelectFilters($event)"></select-filters>
+</app-dialog>
+<div class="dropdown-choose" (click)="showDialog = !showDialog">
+	<div class="dropdown-container">
+		<p class="dropdown-description">Filter</p>
+		<p class="dropdown-button">Click to Select</p>
+	</div>
+</div>

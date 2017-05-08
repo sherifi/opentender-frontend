@@ -1,0 +1,37 @@
+<div class="header-left">
+	<div class="header-logo">
+
+		<a class="header-image_link" href="/start" *ngIf="isRootPage">
+			<span class="header-image_wrapper">
+				<img class="header-image" alt="OpenTender" src="/assets/img/ot-logo.svg"/>
+			</span>
+			<span class="header-image_desc">OpenTender<br/>{{country.name}}</span>
+		</a>
+		<a class="header-image_link" [routerLink]="['/start']" *ngIf="!isRootPage">
+			<span class="header-image_wrapper">
+				<img class="header-image" alt="OpenTender" src="/assets/img/ot-logo.svg"/>
+			</span>
+			<span class="header-image_desc">OpenTender<br/>{{country.name}}</span>
+		</a>
+
+	</div>
+</div>
+<nav class="header-nav header-right" *ngIf="router.url !== '/start'">
+	<ul class="header-nav_top">
+		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/imprint']">Legal</a></li>
+		<span class="header-nav_item_link_spacer"> | </span>
+		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/downloads']">Downloads</a></li>
+		<span class="header-nav_item_link_spacer"> | </span>
+		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/about']">About</a></li>
+	</ul>
+	<ul class="header-nav_bottom">
+		<li class="header-nav_item"><a [class.active]="router.url === '/'" [routerLink]="['/']">Home</a></li>
+		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/explore']">Explore</a></li>
+		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/search/tender']">Search</a></li>
+		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/documentation']">Documentation</a></li>
+	</ul>
+</nav>
+<nav class="header-nav header-right slab-top" *ngIf="router.url == '/start'">
+	<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
+	<p>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
+</nav>

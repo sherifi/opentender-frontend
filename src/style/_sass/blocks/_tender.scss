@@ -1,0 +1,108 @@
+
+.tender {
+  h4 {
+    font-size: 0.8em;
+    border-bottom: 1px solid $neutral-gray;
+    margin-bottom: 6px;
+    line-height: 1em;
+    padding-bottom: 2px;
+  }
+
+  .container-padded-large {
+
+    .container-left-4, .container-left-6, .container-left-8 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      > h4:first-child {
+        margin-top: 0;
+      }
+      div:first-child {
+        > h4 {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .grid {
+      h4 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .tender-body-line {
+    display: inline-block;
+  }
+
+  .info-foi {
+    font-size: 0.8em;
+    background-color: #e9e7a9;
+    border-radius: 4px;
+    padding: 3px 8px;
+    border: 1px solid #e9e7a9;
+  }
+
+
+  .card {
+    border: 1px solid $neutral-gray;
+  }
+
+  pre {
+    font-size: 0.8em;
+    line-height: 1em;
+    background-color: $light-gray;
+  }
+
+  .publication, .funding, .tabset-content {
+    padding-left: 10px;
+    border-left: 1px solid $neutral-gray;
+  }
+
+  .inline-info {
+    text-align: right;
+    h4 {
+      padding: 0;
+      margin: 0;
+      margin-top: 4px !important;
+      float: left;
+      border: none;
+    }
+  }
+
+  .lot {
+    margin-top: 14px;
+    div {
+      padding-bottom: 0;
+    }
+    h4 {
+      margin-top: 0;
+    }
+  }
+  .lot:first-of-type {
+    margin-top: 0;
+  }
+
+  .bid {
+    //border: 1px solid $neutral-gray;
+  }
+
+  .tabset-content {
+    padding-top: 10px;
+  }
+
+  tab > :first-child {
+    margin-top: 0;
+  }
+
+  tender-price {
+    span:first-of-type {
+      font-size: 0.8em;
+    }
+  }
+
+  .margined-text {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+}

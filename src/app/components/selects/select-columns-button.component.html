@@ -1,0 +1,9 @@
+<app-dialog [title]="'Select Column'" [(visible)]="showDialog">
+	<select-columns [columns_all]="columns_all" [columns_active]="columns_active" (selectChange)="onSelectColumns($event)"></select-columns>
+</app-dialog>
+<div class="dropdown-choose pull-right" (click)="showDialog = !showDialog">
+	<div class="dropdown-container">
+		<p class="dropdown-description">Columns</p>
+		<p class="dropdown-button">Click to Select</p>
+	</div>
+</div>

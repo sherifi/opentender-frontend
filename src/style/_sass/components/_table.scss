@@ -1,0 +1,123 @@
+
+.tables {
+	$table-border-color: $base-border-color;
+	$table-border: 1px solid $table-border-color;
+	$table-background: #fff;
+	$table-active-background: #fefff3;
+	$table-stripe-background: darken($table-background, 2%);
+	$table-hover-background: darken($table-background, 5%);
+	$table-stripe-background-hover: darken($table-stripe-background, 5%);
+	width: 100%;
+	background-color: $table-background;
+	th {
+		font-weight: bold;
+		vertical-align: middle;
+
+		&.right {
+			text-align: right;
+		}
+	}
+
+	tbody {
+
+		tr {
+			td {
+				padding: 12px 8px;
+				a {
+					text-decoration: none;
+				}
+				a:hover {
+					text-decoration: underline;
+				}
+				&.right {
+					text-align: right;
+				}
+				i.icon-large {
+					font-size: 1.5em;
+				}
+				i {
+					margin-right: 3px;
+				}
+			}
+			//td:hover {
+			//	background-color: $table-hover-background;
+			//}
+		}
+
+		tr:nth-child(even) {
+			background-color: $table-stripe-background;
+			//td:hover {
+			//	background-color: $table-stripe-background-hover;
+			//}
+		}
+
+		tr.active {
+			background-color: $table-active-background;
+		}
+
+	}
+}
+
+.tables-condense {
+
+	tbody {
+		tr {
+			td {
+				padding: 6px 8px;
+			}
+		}
+	}
+}
+
+.table-striped {
+	$table-border-color: $base-border-color;
+	$table-border: 1px solid $table-border-color;
+	$table-background: #fff;
+	$table-active-background: #fefff3;
+	$table-stripe-background: darken($table-background, 2%);
+	$table-hover-background: darken($table-background, 5%);
+	$table-stripe-background-hover: darken($table-stripe-background, 5%);
+	width: 100%;
+	background-color: $table-background;
+	th {
+		font-weight: bold;
+	}
+
+	tbody {
+
+		tr {
+			td {
+				padding: 12px 8px;
+				a {
+					text-decoration: none;
+				}
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+			&:hover {
+				background-color: $table-hover-background;
+			}
+		}
+
+		tr:nth-child(even) {
+			background-color: $table-stripe-background;
+			&:hover {
+				background-color: $table-stripe-background-hover;
+			}
+		}
+
+		tr.active {
+			background-color: $table-active-background;
+			&:hover {
+				background-color: $table-active-background;
+			}
+		}
+
+	}
+}
+
+.table-title {
+	margin-top: 0;
+	display: inline-block;
+}

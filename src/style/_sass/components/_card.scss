@@ -1,0 +1,113 @@
+.card {
+	@include span-columns(12);
+
+	background-color: $white;
+	border-radius: 10px;
+	height: auto;
+	margin-bottom: $base-padding;
+	position: relative;
+
+	@include respond-to(small-to-large) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+
+	@include respond-to(medium-up) {
+		height: 310px;
+	}
+
+	@include respond-to(large-up) {
+		@include span-columns(4);
+		@include omega(3n);
+	}
+}
+
+.card-image-placeholder {
+	display: block;
+	height: 90px;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 10px;
+	i {
+		font-size: 60px;
+		color: white;
+
+	}
+}
+
+.card-image-placeholder-1, .card-image-placeholder-5, .card-image-placeholder-9 {
+	background-color: #166496;
+	i {
+		color: lighten(#166496, 10%);
+	}
+}
+
+.card-image-placeholder-3, .card-image-placeholder-4, .card-image-placeholder-8 {
+	background-color: #b1d9f4;
+	i {
+		color: lighten(#b1d9f4, 10%);
+	}
+}
+
+.card-image-placeholder-2, .card-image-placeholder-6, .card-image-placeholder-7 {
+	background-color: #80aa6a;
+	i {
+		color: lighten(#80aa6a, 10%);
+	}
+}
+
+img.card-image, .card-image-placeholder {
+	border-bottom: 4px solid $light-gray;
+	border-radius: 10px 10px 0 0;
+	width: 100%;
+
+	&:hover,
+	&:focus {
+		border-bottom: 4px solid $blue;
+	}
+}
+
+.card-image_link {
+	border: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		border: none;
+	}
+}
+
+.card-content {
+	padding: $base-padding;
+	padding-top: 0;
+	p {
+		@include heading(para-md);
+		color: $dark-gray;
+		line-height: 1.6;
+	}
+
+	.card-content-subhead {
+		color: $dark-gray;
+		font-weight: $weight-light;
+		margin-bottom: ($base-padding-lite / 2);
+	}
+
+	@include respond-to(medium-up) {
+		p {
+			@include heading(para-sm);
+		}
+	}
+}
+
+.card-title {
+	@include heading(para-md);
+	color: $blue;
+	font-weight: $weight-bold;
+	line-height: 1.3;
+	margin-bottom: $base-padding-lite;
+}
+
+.card-link {
+	bottom: $base-padding;
+	position: absolute;
+}

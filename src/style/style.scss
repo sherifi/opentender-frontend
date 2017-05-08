@@ -1,0 +1,9 @@
+// include reset
+@import '_sass/reset';
+// include Bourbon & Neat
+@import '_sass/lib/bourbon/bourbon';
+@import '_sass/lib/neat/neat';
+// include site specific base styles
+@import '_sass/base';
+
+@import '../app/thirdparty/ngx-charts-universal/ngx-charts.scss';

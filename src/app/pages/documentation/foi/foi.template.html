@@ -1,0 +1,28 @@
+<section class="container-outer documentation">
+	<section class="container">
+		<div class="container-title">Freedom of Information Portals</div>
+	</section>
+	<section class="container">
+		<table class="tables tables-condense">
+			<thead>
+				<tr>
+					<th>Country</th>
+					<th>FOI Portal</th>
+					<th>Portal System</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let portal of portals">
+				<td>{{portal.name}}</td>
+				<td>
+					<span *ngIf="!portal.foi">Unknown</span>
+					<a *ngIf="portal.foi" href="{{portal.foi.url}}">{{portal.foi.name}}</a>
+				</td>
+				<td>
+					<span *ngIf="portal.foi">{{portal.foi.format}}</span>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+</section>

@@ -1,0 +1,62 @@
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from '../../services/api.service';
+import {PortalsService, Portal} from '../../services/portals.service';
+import {CountryService} from '../../services/country.service';
+import {PlatformService} from '../../services/platform.service';
+
+@Component({
+	moduleId: __filename,
+	selector: 'tender',
+	templateUrl: 'tender.template.html'
+})
+export class TenderPage implements OnInit, OnDestroy {
+	public tender: Definitions.Tender;
+	public tender_raw: string;
+	private sub: any;
+	public portal: Portal;
+	public state = {
+		lots: {$open: true},
+		buyer: {$open: true},
+		info: {$open: true},
+		desc: {$open: true},
+		additionals: {$open: false},
+		documents: {$open: false},
+		publications: {$open: false},
+		raw: {$open: false},
+		discussion: {$open: false},
+	};
+
+	constructor(private route: ActivatedRoute, private api: ApiService, private portals: PortalsService, private country: CountryService, private platform: PlatformService) {
+		if (!this.platform.isBrowser) {
+			this.state.additionals.$open = true;
+			this.state.documents.$open = true;
+			this.state.publications.$open = true;
+			this.state.raw.$open = true;
+			this.state.discussion.$open = true;
+		}
+		this.portal = portals.get().filter(portal => portal.id === country.get().id)[0];
+	}
+
+	ngOnInit(): void {
+		this.sub = this.route.params.subscribe(params => {
+			let id = params['id'];
+			this.api.getTender(id).subscribe(
+				(result) => this.display(result.data),
+				error => console.error(error),
+				() => {
+					// console.log('getTender complete');
+				});
+		});
+	}
+
+	ngOnDestroy() {
+		this.sub.unsubscribe();
+	}
+
+	display(tender: Definitions.Tender): void {
+		this.tender = tender;
+		this.tender_raw = JSON.stringify(tender, null, '\t');
+	}
+
+}

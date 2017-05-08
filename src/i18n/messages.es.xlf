@@ -1,0 +1,73 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
+        <source>
+          Making Public Tenders More Transparent
+        </source>
+        <target>
+          Hacer licitaciones públicas más transparentes
+        </target>
+        <note priority="1" from="description">
+          The portal slogan
+        </note>
+        <note priority="1" from="meaning">
+          Banner Slogan Main Page
+        </note>
+      </trans-unit>
+      <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
+        <source>
+          Not sure where to go? Start here …
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="4b0370964423459ac18670fe6fd03d611d3895e8" datatype="html">
+        <source>
+          Learn what is this about
+          <x id="START_TAG_SPAN" ctype="x-span">
+          </x>
+          <x id="CLOSE_TAG_SPAN" ctype="x-span">
+          </x>
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="ca7250a22d99c18f87ff541d7ff814e2f2855394" datatype="html">
+        <source>
+          This lists shows how much data per field is available.
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="32a904abdc4745a632d092d39b944991ada0ba9d" datatype="html">
+        <source>
+          Show fields with 100% missing data
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="87b5a4b1c81f74c0937d7ee1f9714d6fe67270ec" datatype="html">
+        <source>
+          Field Name
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="b7da3e3505cc80f9bf3cffc8444c53e8a9ec70a5" datatype="html">
+        <source>
+          Available
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+      <trans-unit id="da5d7e263a3c6dc585d04844074afaa7229b88a0" datatype="html">
+        <source>
+          Missing
+        </source>
+        <target>
+        </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

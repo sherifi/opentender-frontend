@@ -1,0 +1,33 @@
+.entity {
+
+  .entity-title {
+    margin-bottom: 13px;
+    font-size: 0.8em;
+    border-bottom: 2px solid $neutral-gray;
+  }
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: $weight-bold;
+  }
+
+  .similars {
+    margin-bottom: 20px;
+    .similar {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 0.9em;
+      span:last-of-type {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+	.description-extract {
+		font-size: 0.9em;
+		margin-bottom: 10px;
+	}
+
+
+}

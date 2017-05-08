@@ -1,0 +1,130 @@
+// mixin definition ; sets LTR and RTL within the same style call
+// @see https://css-tricks.com/almanac/properties/d/direction/
+
+@mixin rtl($prop, $ltr-value, $rtl-value) {
+  #{$prop}: $ltr-value;
+  [dir=rtl] & {
+    #{$prop}: $rtl-value;
+  }
+}
+
+@mixin rtl-prop($ltr-prop, $rtl-prop, $value, $reset-value) {
+  #{$ltr-prop}: $value;
+  [dir=rtl] & {
+    #{$ltr-prop}: $reset-value;
+    #{$rtl-prop}: $value;
+  }
+}
+
+$input-container-padding: 2px !default;
+
+$input-label-default-offset: -22px !default;
+$input-label-default-scale: 0.75 !default;
+$input-label-float-offset: 22px !default;
+$input-label-float-scale: 1.2 !default;
+$input-label-float-width: $input-container-padding + 16px !default;
+
+$input-placeholder-offset: $input-label-default-offset !default;
+
+$input-border-width-default: 1px !default;
+$input-border-width-focused: 2px !default;
+$input-line-height: 26px !default;
+$input-padding-top: 2px !default;
+
+$input-error-font-size: 12px !default;
+$input-error-height: 24px !default;
+$input-error-line-height: $input-error-font-size + 2px !default;
+$error-padding-top: ($input-error-height - $input-error-line-height) / 2 !default;
+
+$icon-offset: 36px !default;
+
+$icon-top-offset: ($icon-offset - $input-padding-top - $input-border-width-focused) / 4 !default;
+
+$icon-float-focused-top: -8px !default;
+
+$input-resize-handle-height: 10px !default;
+
+$swift-ease-out-duration: 0.4s !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function !default;
+$baseline-grid: 8px !default;
+
+.labeled-input-container {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 2px;
+  vertical-align: middle;
+  margin: 8px 0 0;
+
+  label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    order: 1;
+    color: $base-font-color;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+    @include rtl(padding-left, $input-container-padding + 1px, 0);
+    @include rtl(padding-right, 0, $input-container-padding + 1px);
+    z-index: 1;
+    transform: translate3d(0, $input-label-default-offset + 8, 0) scale($input-label-default-scale);
+    transition: transform $swift-ease-out-duration $swift-ease-out-timing-function;
+
+    // The max-width is necessary, because in some browsers, using this together with
+    // a calc might cause it to overflow the parent. See #7403
+    max-width: 100%;
+
+    position: absolute;
+    @include rtl(transform-origin, left top, right top);
+
+    .mini-progress {
+      margin-left: 4px;
+      margin-top: 7px;
+    }
+  }
+
+  &.empty {
+    label {
+      transform: translate3d(0, $input-label-float-offset + 4, 0) scale($input-label-float-scale);
+      bottom: 100%;
+      @include rtl(left, 0, auto);
+      @include rtl(right, auto, 0);
+      color: rgba(0, 0, 0, 0.48);
+    }
+  }
+
+  input {
+    order: 2;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background: none;
+    padding-top: $input-padding-top;
+    padding-bottom: $input-border-width-focused - $input-border-width-default;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-width: 0 0 $input-border-width-default 0;
+    line-height: $input-line-height;
+    height: $input-line-height + ($input-padding-top * 2);
+    -ms-flex-preferred-size: $input-line-height; //IE fix
+    border-radius: 0;
+    border-style: solid; // Firefox fix
+    font-size: 100%;
+    // Fix number inputs in Firefox to be full-width
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-width: 0 0 $input-border-width-focused 0;
+    }
+    &:invalid {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

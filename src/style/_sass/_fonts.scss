@@ -1,0 +1,73 @@
+// include the CSS files with relative @font-face declarations
+@import url(fonts/lato2/lato2.css);
+@import url(fonts/icomoon/style.css);
+@import url(fonts/leaguegothic/stylesheet.css);
+
+small, .smaller {
+	font-size: 0.8em;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.red {
+	color: red;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.icon-pull-down {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0.2em;
+}
+
+.icon-padded:before {
+	padding-right: 0.41667em;
+}
+
+// Stacked Icons
+// -------------------------
+
+.icon-stack {
+	position: relative;
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	vertical-align: middle;
+}
+
+.icon-stack-1x, .icon-stack-2x {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.icon-stack-1x {
+	line-height: inherit;
+}
+
+.icon-stack-2x {
+	font-size: 2em;
+}
+
+@keyframes anim-rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.icon-rotate {
+	display: inline-block;
+	font-size: 0.9em;
+	animation: anim-rotate 2500ms infinite linear;
+	transition: opacity 0.6s ease 0s;
+}

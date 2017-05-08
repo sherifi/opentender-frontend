@@ -1,0 +1,44 @@
+<section class="slab-delta slab-top">
+	<div class="container-outer">
+		<div class="container-left-10 hero">
+			<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
+			<p>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
+			<p>Welcome to the portal for {{country}}!</p>
+		</div>
+		<div class="container-right-2">
+		</div>
+	</div>
+</section>
+
+<section class="slab-alpha container-padded">
+	<div class="container-outer">
+		<h5 class="home-subheading">[Placeholder: Dynamic Graphs]</h5>
+	</div>
+</section>
+
+<section class="slab-beta-dark container-padded">
+	<div class="container-outer">
+		<div class="container-left-3">
+			<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h4>
+		</div>
+		<div class="container-left-9">
+			<article class="card" *ngFor="let card of cards; let i = index;">
+				<a [routerLink]="[card.url]" class="card-image_link">
+					<div class="card-image-placeholder card-image-placeholder-{{i+1}}">
+						<i [class]="card.icon"></i>
+					</div>
+				</a>
+				<div class="card-content">
+					<p class="card-content-subhead">{{card.subtitle}}</p>
+					<a [routerLink]="[card.url]"><h3 class="card-title">{{card.title}}</h3></a>
+					<p>{{card.text}}</p>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section class="slab-alpha container-padded u-centered u-padding-small_screen home-bottom-links">
+	<h3 i18n>Not sure where to go? Start&nbsp;here&nbsp;…</h3>
+	<h3><a [routerLink]="['/documentation']" i18n>Learn what is this about <span class="icon-chevron-thin-right icon-pull-down icon-padded"></span></a></h3>
+</section>

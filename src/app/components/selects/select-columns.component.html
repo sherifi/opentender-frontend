@@ -1,0 +1,9 @@
+<div *ngFor="let group of groups" class="select-columns-group">
+	<div class="select-columns-group-title">{{group.name}}</div>
+	<div *ngFor="let info of group.columns" class="select-columns-item">
+		<label class="checkbox">
+			<input type="checkbox" [(ngModel)]="info.active" (ngModelChange)="update(info.column, $event)">
+			{{info.column.name}}
+		</label>
+	</div>
+</div>

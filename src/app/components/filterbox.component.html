@@ -1,0 +1,42 @@
+<div class="filter-buttons">
+	<select-filters-button [filters_all]="filters" [filters_active]="active_filters" (selectChange)="onSelectFilters($event)"></select-filters-button>
+</div>
+<div class="filter-box">
+	<div class="filter" *ngFor="let filter of search.filters; let i = index;" [ngClass]="getFilterClass(i)">
+		<div *ngIf="filter.active" [ngSwitch]="filter.def.type">
+			<div class="title">{{filter.def.name}} <span class="filter-close" (click)="closeFilter(filter)"><i class="icon-cross"></i></span></div>
+			<div class="text" *ngSwitchCase="'text'">
+				<!--<div class="input-icon-wrap">-->
+				<!--<input type="text" [(ngModel)]="filter.value" (keyup)="refreshDelay($event.target.value)">-->
+				<!--<span *ngIf="filter.value && filter.value.length>0" class="input-icon" (click)="clearFilter(filter)"><i class="icon-cross"></i></span>-->
+				<!--</div>-->
+				<div class="filter-checks">
+					<div *ngFor="let a of filter.buckets">
+						<label class="checkbox">
+							<input type="checkbox" [(ngModel)]="filter.enabled[a.key]" (ngModelChange)="refresh(a.key)">
+							<div class="checkbox-columns">
+								<span class="checkbox-column">
+									<span class="value" title="{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}">{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}</span>
+									<span class="count">{{a.doc_count}}</span>
+								</span>
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="select" *ngSwitchCase="'select'">
+				<div *ngFor="let a of filter.buckets">
+					<label class="checkbox">
+						<input type="checkbox" [(ngModel)]="filter.enabled[a.key]" (ngModelChange)="refresh(a.key)">
+						<div class="checkbox-columns">
+								<span class="checkbox-column">
+									<span class="value" title="{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}">{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}</span>
+									<span class="count">{{a.doc_count}}</span>
+								</span>
+						</div>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

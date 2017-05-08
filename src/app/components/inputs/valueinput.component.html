@@ -1,0 +1,13 @@
+<div class="value-container labeled-input-container" [ngClass]="{empty:isEmpty(),focused:focused}">
+	<label> {{placeholder}} </label>
+	<div class="value-input-wrapper">
+		<div class="value-mode-button button button-secondary" (click)="toggleMode()">{{mode}}</div>
+		<div class="value-input">
+			<input type="text"
+				   [value]="value" (input)="onChange($event)" (blur)="onBlur()" (focus)="onFocus()" (keydown)="onKeyDown($event)"
+				   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+				   class="form-control">
+		</div>
+	</div>
+</div>
+<span class="valueinput-state" *ngIf="invalidNumber">Invalid Number</span>
