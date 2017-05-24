@@ -1,4 +1,4 @@
-ng2-slider {
+slider {
   display: block;
 
   .slider-container {
@@ -66,16 +66,21 @@ ng2-slider {
   }
 
   .slider-ticks {
-    height: 20px;
-    overflow: hidden;
+    height: 40px;
+    overflow: visible;
     display: block;
     white-space: nowrap;
-    border: 1px solid red;
+    font-size: 0.7em;
+    margin-top: -38px;
+    padding-left: 2px;
+    margin-bottom: 8px;
   }
   .slider-tick {
     display: inline-block;
-    border-left: 1px solid black;
-    height: 20px;
+    border-left: 1px solid #ccc;
+    height: 38px;
+    padding-top: 16px;
+    padding-left: 2px;
   }
 
 }

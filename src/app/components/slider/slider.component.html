@@ -1,0 +1,13 @@
+<div class="slider-container">
+	<div class="slider-ribbon-container">
+		<div class="range-ribbon">
+			<div class="range-ribbon-fill" [ngStyle]="{left: position.range1+'px',width: (position.range2-position.range1)+'px'}"></div>
+		</div>
+		<span class="slider-handle" tabindex="0" sliderhandle [left]="position.range1" [min]="position.range1min" [max]="position.range1max" (onChanged)="slider1Change($event)"></span>
+		<span class="slider-handle" tabindex="0" sliderhandle [left]="position.range2" [min]="position.range2min" [max]="position.range2max" (onChanged)="slider2Change($event)"></span>
+	</div>
+	<div class="slider-ticks">
+		<div *ngFor="let tick of ticks" class="slider-tick" [ngStyle]="{width:tick.width+'px'}">{{tick.value}}</div>
+	</div>
+	<!--<div>Start: {{startValue}} End: {{endValue}}</div>-->
+</div>
