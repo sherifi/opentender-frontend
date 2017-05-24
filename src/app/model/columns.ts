@@ -489,7 +489,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			id: 'documentsDeadline',
 			ascend: false
 		},
-		format: tender => [{content: tender.documentsDeadline}]
+		format: tender => [{content: Utils.formatDatetime(tender.documentsDeadline)}]
 	},
 	{
 		name: 'Creation Date',
@@ -499,7 +499,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			id: 'created',
 			ascend: false
 		},
-		format: tender => [{content: tender.created}]
+		format: tender => [{content: Utils.formatDatetime(tender.created)}]
 	},
 	{
 		name: 'Modification Date',

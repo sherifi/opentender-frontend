@@ -4,6 +4,7 @@ import {NgxChartsModule} from './thirdparty/ngx-charts-universal/ngx-charts.modu
 import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {FormsModule} from '@angular/forms';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
+import {SliderModule} from './components/slider/silder.module';
 
 import {routing, appRoutingProviders}  from './app.routes';
 import {App} from './app.component';
@@ -61,6 +62,7 @@ import {SelectColumnsButtonComponent} from './components/selects/select-columns-
 import {SelectColumnsComponent} from './components/selects/select-columns.component';
 import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
+import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
 import {StartMapComponent} from './pages/start/start-map.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
@@ -79,7 +81,6 @@ import * as Portals from 'portals.json';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {Title} from '@angular/platform-browser';
 import {PlatformService} from './services/platform.service';
-import {SliderModule} from './components/slider/silder.module';
 
 @NgModule({
 	declarations: [
@@ -101,6 +102,7 @@ import {SliderModule} from './components/slider/silder.module';
 		SelectSearchesButtonComponent,
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
+		SelectRangeFilterComponent,
 		StartMapComponent,
 		TableComponent,
 		TenderBodyAddressComponent,

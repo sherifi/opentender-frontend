@@ -28,6 +28,7 @@ export interface Filter {
 	def: FilterDef;
 	aggregation_id?: string; // auto build field->id (xyz.xzy -> xyz_xyz as made be elastic aggregation result)
 	value?: string; // the actual user search value
+	values?: Array<any>; // the actual user search values, eg. range [year_start,year_end]
 	enabled?: {}; // the additional filter strings based on user choosen aggregation
 	buckets?: any; // the result of aggregation
 	active?: boolean;
@@ -130,6 +131,9 @@ export class Search {
 				}
 				if (f.value && f.value.length > 0) {
 					list.push(f.value);
+				}
+				if (f.values) {
+					list = list.concat(f.values);
 				}
 				if (list.length > 0) {
 					cmd.filters.push({field: f.def.field, value: list, type: f.def.type});

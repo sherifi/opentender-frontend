@@ -32,12 +32,12 @@ export class SliderComponent implements OnChanges {
 	private border = 18;
 
 	private position = {
-		range1: 50,
+		range1: 0,
 		range1min: 0,
-		range1max: 300,
-		range2: 300,
-		range2min: 50,
-		range2max: 600
+		range1max: 0,
+		range2: 0,
+		range2min: 0,
+		range2max: 100
 	};
 
 	constructor(private el: ElementRef, private platform: PlatformService) {
@@ -59,6 +59,7 @@ export class SliderComponent implements OnChanges {
 	}
 
 	public ngOnChanges(changes: SimpleChanges): void {
+		this.resize();
 		this.calculateTicks();
 	}
 
@@ -93,7 +94,7 @@ export class SliderComponent implements OnChanges {
 	}
 
 	changed() {
-		this.onSliderChangeEvent.emit({startValue: this.startValue, endValue: this.endValue});
+		this.onSliderChangeEvent.emit({startValue: parseInt(this.startValue, 10), endValue: parseInt(this.endValue, 10)});
 	}
 
 	slider1Change(event: IEventSlideAble) {

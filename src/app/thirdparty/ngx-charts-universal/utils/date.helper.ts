@@ -1,5 +1,9 @@
 import * as moment from 'moment';
 
+export function yearOf(v: any): number {
+	return moment(v).year();
+}
+
 export function toDate(v: any): Date {
 	return moment(v).toDate();
 }

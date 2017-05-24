@@ -148,6 +148,12 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Tender Prices',
 		field: 'lots.bids.price.netAmount',
 		type: 'value'
+	},
+	{
+		name: 'Award Decision Year',
+		group: 'Tender Dates',
+		field: 'lots.awardDecisionDate',
+		type: 'range',
 	}
 ];
 

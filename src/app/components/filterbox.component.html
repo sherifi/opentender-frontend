@@ -37,6 +37,9 @@
 					</label>
 				</div>
 			</div>
+			<div class="range" *ngSwitchCase="'range'">
+				<select-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-range-filter>
+			</div>
 		</div>
 	</div>
 </div>

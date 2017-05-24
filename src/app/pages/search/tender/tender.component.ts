@@ -14,10 +14,10 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	search = new Search('tender');
 	search_cmd: SearchCommand;
 	quick_search_filters: Array<FilterDef> = [];
-	search_filters = TenderFilterDefs.filter(f => f.type !== 'select');
+	search_filters = TenderFilterDefs.filter(f => f.type !== 'select' && f.type !== 'range');
 	check_filters = TenderFilterDefs.filter(f => f.type !== 'value');
 	columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders.name', 'finalPrice'];
-	filterIds = ['procedureType', 'supplyType', 'indicators.type'];
+	filterIds = ['procedureType', 'supplyType', 'indicators.type', 'lots.awardDecisionDate'];
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
 	quicksearchIds = ['title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
 
