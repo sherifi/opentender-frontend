@@ -79,6 +79,7 @@ import * as Portals from 'portals.json';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {Title} from '@angular/platform-browser';
 import {PlatformService} from './services/platform.service';
+import {SliderModule} from './components/slider/silder.module';
 
 @NgModule({
 	declarations: [
@@ -158,6 +159,7 @@ import {PlatformService} from './services/platform.service';
 		FormsModule,
 		DropdownModule,
 		NgxChartsModule,
+		SliderModule,
 		TypeaheadModule
 	],
 	providers: []

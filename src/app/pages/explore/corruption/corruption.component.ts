@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../../model/search';
 import {ApiService} from '../../../services/api.service';
-import {IVizData} from '../../../app.interfaces';
+import {IStats} from '../../../app.interfaces';
 import {Consts} from '../../../model/consts';
 import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/chart.interface';
 
@@ -13,7 +13,7 @@ import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/cha
 export class ExploreCorruptionPage {
 	public error: string;
 	public search_cmd: SearchCommand;
-	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders', 'indicators'];
+	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders', 'indicators', 'lots.awardDecisionDate'];
 	vis: {
 		sum_prices: Array<any>,
 		buyers: Array<any>,
@@ -95,25 +95,24 @@ export class ExploreCorruptionPage {
 		}
 	};
 
+	private startYear: number = 0;
+	private endYear: number = 0;
+
+	private selectedStartYear: number = 0;
+	private selectedEndYear: number = 0;
+
 	constructor(private api: ApiService) {
 	}
 
 	ngOnInit(): void {
-		this.api.getViz(['corruption_indicators']).subscribe(
-			(result) => this.display(result.data),
-			(error) => {
-				this.error = error._body;
-				// console.error(error);
-			},
-			() => {
-				// console.log('corruption_indicators complete');
-			});
+		this.visualize();
+		this.search();
 	}
 
 	ngOnDestroy() {
 	}
 
-	display(stats: IVizData): void {
+	display(stats: IStats): void {
 		let vis = {
 			sum_prices: [],
 			buyers: [],
@@ -123,7 +122,7 @@ export class ExploreCorruptionPage {
 			bids_total: 0,
 			bids_awarded: 0
 		};
-		let data = stats.corruption_indicators;
+		let data = stats; // .corruption_indicators;
 		if (!data) {
 			this.vis = vis;
 			return;
@@ -165,17 +164,58 @@ export class ExploreCorruptionPage {
 			vis.tenders_total = data.counts.tenders;
 		}
 		this.vis = vis;
+
+		if (this.startYear === 0) {
+			if (data.lots_in_years) {
+				Object.keys(data.lots_in_years).forEach((key) => {
+					this.startYear = this.startYear == 0 ? parseInt(key, 10) : Math.min(parseInt(key, 10), this.startYear);
+					this.endYear = this.endYear == 0 ? parseInt(key, 10) : Math.max(parseInt(key, 10), this.endYear);
+				});
+			}
+		}
+	}
+
+	onSliderChange(event) {
+		this.selectedStartYear = event.startValue;
+		this.selectedEndYear = event.endValue;
+		this.visualize();
 		this.search();
 	}
 
-	search() {
+	visualize() {
+		let filters = this.buildFilters();
+		this.api.getIndicatorStats({filters: filters}).subscribe(
+			(result) => this.display(result.data),
+			(error) => {
+				this.error = error._body;
+				// console.error(error);
+			},
+			() => {
+				// console.log('corruption_indicators complete');
+			});
+	}
+
+	buildFilters() {
 		let filter: SearchCommandFilter = {
 			field: 'indicators.type',
 			type: 'match',
 			value: ['CORRUPTION_SINGLE_BID'],
 		};
+		let filters = [filter];
+		if (this.selectedStartYear > 0 && this.selectedEndYear > 0) {
+			let yearFilter: SearchCommandFilter = {
+				field: 'lots.awardDecisionDate',
+				type: 'range',
+				value: [this.selectedStartYear, this.selectedEndYear + 1],
+			};
+			filters.push(yearFilter);
+		}
+		return filters;
+	}
+
+	search() {
 		let search_cmd = new SearchCommand();
-		search_cmd.filters = [filter];
+		search_cmd.filters = this.buildFilters();
 		this.search_cmd = search_cmd;
 	};
 

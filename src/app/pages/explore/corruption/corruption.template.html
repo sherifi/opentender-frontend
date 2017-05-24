@@ -14,6 +14,15 @@
 	<section class="container container-margin">
 		<h2>Corruption Risk Indicators</h2>
 
+		<slider
+				[min]="startYear"
+				[max]="endYear"
+				[startValue]="startYear"
+				[endValue]="endYear"
+				stepValue="1"
+				(onSliderChange)="onSliderChange($event)">
+		</slider>
+
 		<div class="container slab-beta-light container-padded-large">
 			<div class="container">
 				<div class="container-left-6" *ngIf="charts.lots_in_years.visible">

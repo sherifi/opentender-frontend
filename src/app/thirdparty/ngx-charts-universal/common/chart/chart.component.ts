@@ -50,8 +50,8 @@ export class ChartComponent implements OnChanges {
 	@Input() chart: IChartBaseSettings;
 	@Input() legendOptions: ILegendOptions;
 	@Input() activeEntries: any[];
-	@Output() legendLabelClick: EventEmitter<any> = new EventEmitter();
-	@Output() legendLabelActivate: EventEmitter<any> = new EventEmitter();
+		@Output() legendLabelClick: EventEmitter<any> = new EventEmitter();
+		@Output() legendLabelActivate: EventEmitter<any> = new EventEmitter();
 	@Output() legendLabelDeactivate: EventEmitter<any> = new EventEmitter();
 
 	chartWidth: number;

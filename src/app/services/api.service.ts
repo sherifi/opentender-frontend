@@ -96,6 +96,10 @@ export interface ISearchTenderApiResult {
 	data: ISearchTenderData;
 }
 
+export interface IStatApiResult {
+	data: IStats;
+}
+
 export interface IVizApiResult {
 	data: IVizData;
 }
@@ -188,8 +192,12 @@ export class ApiService {
 		return this.http.post(this.actionCountryUrl + 'tender/search', JSON.stringify(params), {headers: this.headers}).map(res => <ISearchTenderApiResult>res.json());
 	}
 
+	getIndicatorStats(params: any): Observable<IStatApiResult> {
+		return this.http.post(this.actionCountryUrl + 'indicators/stats/', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
+	}
+
 	getViz(ids: Array<string>): Observable<IVizApiResult> {
-		return this.http.get(this.actionCountryUrl + 'viz/ids/' + ids.join(',')).map(res => <IApiResult>res.json());
+		return this.http.get(this.actionCountryUrl + 'viz/ids/' + ids.join(',')).map(res => <IVizApiResult>res.json());
 	}
 
 	autocomplete(entity: string, field: string, search: string): Observable<IVizApiResult> {
