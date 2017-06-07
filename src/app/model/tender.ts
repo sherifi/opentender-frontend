@@ -320,7 +320,7 @@ declare namespace Definitions {
 		/**
 		 * Type of indicator
 		 */
-		type?: 'CORRUPTION_SINGLE_BID';
+		type?: 'CORRUPTION_SINGLE_BID' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT';
 		metaData?: {
 		/**
 		 * Array of lotTitles
@@ -454,6 +454,10 @@ declare namespace Definitions {
 		 */
 		currency?: string;
 		/**
+		 * ISO 4217 of used currency
+		 */
+		currencyNational?: string;
+		/**
 		 * VAT percentage (0 if no VAT is paid)
 		 */
 		vat?: number;
@@ -461,6 +465,14 @@ declare namespace Definitions {
 		 * Price without VAT
 		 */
 		netAmount?: number;
+		/**
+		 * Price in national currency without VAT
+		 */
+		netAmountNational?: number;
+		/**
+		 * Price in EUR without VAT
+		 */
+		netAmountEur?: number;
 		/**
 		 * Price including VAT
 		 */
@@ -746,7 +758,7 @@ declare namespace Definitions {
 		/**
 		 * Body to whom tenders/requests to participate must be sent
 		 */
-		bidsRecipient?: Body;
+		bidsRecipient?: Buyer;
 		/**
 		 * The exact address of the tender performance
 		 */
