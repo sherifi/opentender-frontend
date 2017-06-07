@@ -52,7 +52,7 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 	{
 		name: 'Name',
 		id: 'body.name',
-		format: authority => [{content: authority.body.name}]
+		format: authority => [{content: authority.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
@@ -84,7 +84,7 @@ export const CompanyColumns: Array<CompanyColumn> = [
 	{
 		name: 'Name',
 		id: 'body.name',
-		format: company => [{content: company.body.name}]
+		format: company => [{content: company.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
@@ -118,7 +118,17 @@ const FormatUtils = {
 			return [];
 		}
 		let result = [];
-		['netAmount', 'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
+		['netAmountEur'].forEach(key => {
+			if (price.hasOwnProperty(key)) {
+				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(price[key])});
+			}
+		});
+		['netAmountNational'].forEach(key => {
+			if (price.hasOwnProperty(key)) {
+				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currencyNational) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
+				}
+		});
+		['netAmount',  'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
 			if (price.hasOwnProperty(key)) {
 				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currency) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
 			}
@@ -163,7 +173,7 @@ export const TenderColumns: Array<TenderColumn> = [
 						}
 						result.push({content: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
 					}
-					result.push({icon: ICON.company, content: c.bidder.name, link: c.link});
+					result.push({icon: ICON.company, content: c.bidder.name || '[Name not available]', link: c.link});
 				}
 			);
 			return result;
@@ -218,7 +228,7 @@ export const TenderColumns: Array<TenderColumn> = [
 				return [];
 			}
 			return tender.buyers.map((buyer: Buyer) => {
-				return {icon: ICON.authority, content: buyer.name, link: '/authority/' + buyer.groupId};
+				return {icon: ICON.authority, content: buyer.name || '[Name not available]', link: '/authority/' + buyer.groupId};
 			});
 		}
 	},
@@ -357,7 +367,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
-		name: 'Title',
+		name: 'Tender Title',
 		id: 'title',
 		group: 'Tender',
 		sortBy: {
@@ -367,7 +377,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		format: tender => [{content: tender.title}]
 	},
 	{
-		name: 'Title English',
+		name: 'Tender Title English',
 		id: 'titleEnglish',
 		group: 'Tender',
 		sortBy: {
@@ -377,7 +387,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		format: tender => [{content: tender.titleEnglish}]
 	},
 	{
-		name: 'Description',
+		name: 'Tender Description',
 		id: 'description',
 		group: 'Tender',
 		sortBy: {

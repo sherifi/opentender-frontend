@@ -81,6 +81,7 @@ import * as Portals from 'portals.json';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {Title} from '@angular/platform-browser';
 import {PlatformService} from './services/platform.service';
+import {NameGuardPipe} from './directives/name-guard.pipe';
 
 @NgModule({
 	declarations: [
@@ -117,6 +118,7 @@ import {PlatformService} from './services/platform.service';
 		ExpandCountryPipe,
 		ExpandUnderlinedPipe,
 		ExtractDomainPipe,
+		NameGuardPipe,
 		FormatCurrencyPipe,
 		FormatCurrencyValuePipe,
 		FormatDatePipe,

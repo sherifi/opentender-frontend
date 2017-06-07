@@ -18,7 +18,7 @@
 			<div class="title">Similar Authorities</div>
 			<div class="similar" *ngFor="let sim of similar">
 				<a [routerLink]="['/authority/'+sim.body.groupId]" title="Click to jump to the authority profile"><i class="icon-library"></i> </a>
-				<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name}}</span></a>
+				<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
 			</div>
 		</div>
 		<div class="debug_groupids clickable" style="font-size: 0.8em">

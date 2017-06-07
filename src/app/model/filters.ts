@@ -75,7 +75,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.capitalize
 	},
 	{
-		name: 'Title',
+		name: 'Tender Title',
 		group: 'Tender',
 		field: 'title',
 		type: 'text',
@@ -84,7 +84,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.capitalize
 	},
 	{
-		name: 'Title English',
+		name: 'Teneder Title English',
 		group: 'Tender',
 		field: 'titleEnglish',
 		type: 'text',

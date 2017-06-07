@@ -9,7 +9,7 @@
 <section class="container-outer company entity" *ngIf="company">
 	<section class="container">
 		<div class="entity-title"><i class="icon-office"></i> Company</div>
-		<h1>{{company.name}}</h1>
+		<h1>{{company.name | nameGuard}}</h1>
 		<tender-body-address [address]="company.address"></tender-body-address>
 	</section>
 
@@ -18,7 +18,7 @@
 			<div class="title">Similar Companies</div>
 			<div class="similar" *ngFor="let sim of similar">
 				<a [routerLink]="['/company/'+sim.body.groupId]" title="Click to jump to the company profile"><i class="icon-office"></i> </a>
-				<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name}}</span></a>
+				<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
 			</div>
 		</div>
 		<div class="debug_groupids clickable" style="font-size: 0.8em">

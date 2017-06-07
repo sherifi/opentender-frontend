@@ -4,6 +4,7 @@ import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import {FilterDef} from '../model/filters';
+import {PlatformService} from '../services/platform.service';
 
 @Component({
 	moduleId: __filename,
@@ -22,7 +23,7 @@ export class FilterBoxComponent implements OnChanges {
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();
 
-	constructor() {
+	constructor(private platform: PlatformService) {
 		this.searchChangeEmitter = <any>this.searchUpdated.asObservable()
 			.debounceTime(400)
 			.distinctUntilChanged(); // accept only relevant chars
@@ -33,12 +34,13 @@ export class FilterBoxComponent implements OnChanges {
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.active_filters = this.search.getActiveFilterDefs();
+		this.refresh(true);
 	}
 
 	onSelectFilters(data) {
 		this.search.toggleFilter(data.value.filter);
 		this.active_filters = this.search.getActiveFilterDefs();
-		this.refresh();
+		this.refresh(true);
 	}
 
 	getFilterClass(index) {
@@ -60,19 +62,28 @@ export class FilterBoxComponent implements OnChanges {
 
 	closeFilter(filter) {
 		this.search.toggleFilter(filter.def);
-		this.onChange.next('');
+		this.active_filters = this.search.getActiveFilterDefs();
+		this.refresh(true);
 	}
 
 	clearFilter(filter) {
 		filter.value = '';
-		this.onChange.next('');
+		this.refresh();
 	}
 
 	refreshDelay(value) {
 		this.searchUpdated.next(value);
 	}
 
-	refresh() {
+	refresh(resize?: boolean) {
 		this.onChange.next('');
+		if (resize && this.platform.isBrowser) {
+			setTimeout(() => {
+				console.log('trigger resizes');
+				let evt = window.document.createEvent('UIEvents');
+				evt.initUIEvent('resize', true, false, window, 0);
+				window.dispatchEvent(evt);
+			}, 0);
+		}
 	}
 }

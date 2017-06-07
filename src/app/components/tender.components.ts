@@ -38,8 +38,8 @@ export class TenderBodyAddressComponent {
 	selector: 'tender-body',
 	template: `
 <div *ngIf="body">
-	<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name}}</a><span *ngIf="!link">{{body.name}}</span><br/>
-	<tender-body-address [address]="body.address"></tender-body-address>
+	<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name | nameGuard}}</a><span *ngIf="!link">{{body.name | nameGuard}}</span><br/>
+	<tender-body-address *ngIf="body.address" [address]="body.address"></tender-body-address>
 </div>
 `
 })
@@ -56,7 +56,7 @@ export class TenderBodyComponent {
 	moduleId: __filename,
 	selector: 'tender-body-line',
 	template: `<span *ngIf="body">
-	<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name}}</a><span *ngIf="!link">{{body.name}}</span><span *ngIf="body.address.city | defined">, {{body.address.city}}</span>
+	<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name | nameGuard}}</a><span *ngIf="!link">{{body.name}}</span><span *ngIf="body.address && body.address.city | defined">, {{body.address.city}}</span>
 </span>`
 })
 export class TenderBodyLineComponent {
@@ -73,6 +73,8 @@ export class TenderBodyLineComponent {
 	selector: 'tender-price',
 	template: `<span *ngIf="price">
 	<div *ngIf="price.netAmount | defined"><span>(netAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.netAmount | formatCurrencyValue}}</div>
+	<div *ngIf="price.netAmountEur | defined"><span>(netAmountEur)</span> <span>€</span> {{price.netAmountEur | formatCurrencyValue}}</div>
+	<div *ngIf="price.netAmountNational | defined"><span>(netAmountNational)</span> <span>{{price.currencyNational | formatCurrency}}</span> {{price.netAmountNational | formatCurrencyValue}}</div>
 	<div *ngIf="price.amountWithVat | defined"><span>(amountWithVat)</span> <span>{{price.currency | formatCurrency}}</span> {{price.amountWithVat | formatCurrencyValue}}</div>
 	<div *ngIf="price.minNetAmount | defined"><span>(minNetAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.minNetAmount | formatCurrencyValue}}</div>
 	<div *ngIf="price.maxNetAmount | defined"><span>(maxNetAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.maxNetAmount | formatCurrencyValue}}</div>
