@@ -1,0 +1,20 @@
+/* Regular */
+@font-face {
+	font-family: 'SpaceMono';
+	src: url('SpaceMono-Regular-webfont.eot');
+	src: url('SpaceMono-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('SpaceMono-Regular-webfont.woff') format('woff'),
+	url('SpaceMono-Regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SpaceMono';
+	src: url('SpaceMono-Bold-webfont.eot');
+	src: url('SpaceMono-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('SpaceMono-Bold-webfont.woff') format('woff'),
+	url('SpaceMono-Bold-webfont.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

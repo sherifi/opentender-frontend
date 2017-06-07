@@ -27,19 +27,24 @@ header,
 
 .header-image_desc {
   font-family: $logo-font;
-  font-weight: 100;
+  //font-weight: 100;
   text-space: 4px;
-  font-size: 32px;
-  line-height: 30px;
-  color: #2b2b2b;
-  margin-top: 20px;
+  //line-height: 30px;
   white-space: nowrap;
   text-transform: uppercase;
+  color: darken(#0d47a1,2);
+  margin-top: -28px;
+  margin-left: 58px;
+  display: block;
+  position: absolute;
+  letter-spacing: 2px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .header-image_wrapper {
   display: inline-block;
-  width: 56px;
+  width: 200px;
   margin-right: 8px;
   float: left;
   height: 100%;
@@ -47,10 +52,8 @@ header,
 
 .header-image {
   margin-top: 0px;
-  max-width: 56px;
-  max-height: 56px;
   vertical-align: top;
-  width: 56px;
+  width: 200px;
   height: auto;
   display: inline-block;
 }
