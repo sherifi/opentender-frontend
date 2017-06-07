@@ -7,7 +7,7 @@ $weight-book: 400;
 $weight-bold: 700;
 
 
-$logo-font: 'SpaceMono';
+$logo-font: 'spacemono';
 
 $base-font-family: "LatoWeb", 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -42,7 +42,7 @@ $z-negative: -1;
 $white: #ffffff;
 $black: #040404;
 $green: #96bc7f;
-$blue: #157bac;
+$blue: #0d47a1;
 $blue-contrast: #096fa0;
 $light-green: #d2e2cb;
 $blue-alt: darken($blue, 5%); //for contrast, darker
@@ -91,7 +91,7 @@ $base-padding-extra: 3.125em; //50px
 $base-padding-jumbo: 3.8em;
 
 // Link Colors
-$base-link-color: #13648d;
+$base-link-color: #0d47a1;
 $base-link-hover-color: darken($base-link-color, 5%);
 
 // Buttons

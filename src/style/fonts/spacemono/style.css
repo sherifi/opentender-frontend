@@ -1,20 +1,43 @@
-/* Regular */
 @font-face {
-	font-family: 'SpaceMono';
-	src: url('SpaceMono-Regular-webfont.eot');
-	src: url('SpaceMono-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-	url('SpaceMono-Regular-webfont.woff') format('woff'),
-	url('SpaceMono-Regular-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'spacemono';
+    src: url('spacemono-bold-webfont.eot');
+    src: url('spacemono-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('spacemono-bold-webfont.woff2') format('woff2'),
+         url('spacemono-bold-webfont.woff') format('woff'),
+         url('spacemono-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'SpaceMono';
-	src: url('SpaceMono-Bold-webfont.eot');
-	src: url('SpaceMono-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-	url('SpaceMono-Bold-webfont.woff') format('woff'),
-	url('SpaceMono-Bold-webfont.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
+    font-family: 'spacemono';
+    src: url('spacemono-bolditalic-webfont.eot');
+    src: url('spacemono-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('spacemono-bolditalic-webfont.woff2') format('woff2'),
+         url('spacemono-bolditalic-webfont.woff') format('woff'),
+         url('spacemono-bolditalic-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'spacemono';
+    src: url('spacemono-regular-webfont.eot');
+    src: url('spacemono-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('spacemono-regular-webfont.woff2') format('woff2'),
+         url('spacemono-regular-webfont.woff') format('woff'),
+         url('spacemono-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'spacemono';
+    src: url('spacemono-italic-webfont.eot');
+    src: url('spacemono-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('spacemono-italic-webfont.woff2') format('woff2'),
+         url('spacemono-italic-webfont.woff') format('woff'),
+         url('spacemono-italic-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
