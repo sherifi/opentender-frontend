@@ -82,5 +82,8 @@ slider {
     padding-top: 16px;
     padding-left: 2px;
   }
+  .slider-tick:last-of-type {
+    display: inline;
+  }
 
 }
