@@ -191,7 +191,6 @@ let registerPages = country => {
 	// Routes with html5pushstate
 	// TODO: get that from app.routes.ts
 	app.use(country_path + '/explore*', checkCache, ngApp);
-	app.use(country_path + '/about*', checkCache, ngApp);
 	app.use(country_path + '/imprint*', checkCache, ngApp);
 	app.use(country_path + '/search*', checkCache, ngApp);
 	app.use(country_path + '/downloads*', checkCache, ngApp);
