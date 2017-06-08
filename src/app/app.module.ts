@@ -20,7 +20,7 @@ import {FormatFileSizePipe} from './directives/format-filesize.pipe';
 import {KeyValuesPipe} from './directives/key-values.pipe';
 import {TruncatePipe} from './directives/truncate.pipe';
 
-import {AboutPage} from './pages/about/about.component';
+import {AboutPage} from './pages/documentation/about/about.component';
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
 import {DocumentationFOIPage} from './pages/documentation/foi/foi.component';

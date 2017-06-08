@@ -1,7 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {AboutPage} from './pages/about/about.component';
+import {AboutPage} from './pages/documentation/about/about.component';
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
 import {DocumentationDataformatPage} from './pages/documentation/data/dataformat.component';
@@ -23,7 +23,7 @@ import {ImprintPage} from './pages/imprint/imprint.component';
 import {SearchAuthorityPage} from './pages/search/authority/authority.component';
 import {SearchCompanyPage} from './pages/search/company/company.component';
 import {SearchPage} from './pages/search/search.component';
-import {SearchSectorPage} from './pages/search/sector/sector.component';
+// import {SearchSectorPage} from './pages/search/sector/sector.component';
 import {SearchTenderPage} from './pages/search/tender/tender.component';
 import {SectorPage} from './pages/sector/sector.component';
 import {StartPage} from './pages/start/start.component';
@@ -54,8 +54,7 @@ export const routes: Routes = [
 			{path: '', redirectTo: 'tender', pathMatch: 'full'},
 			{path: 'tender', component: SearchTenderPage, data: {title: 'Search Tender'}},
 			{path: 'company', component: SearchCompanyPage, data: {title: 'Search Company'}},
-			{path: 'authority', component: SearchAuthorityPage, data: {title: 'Search Authority'}},
-			{path: 'sector', component: SearchSectorPage, data: {title: 'Search Sector'}}
+			{path: 'authority', component: SearchAuthorityPage, data: {title: 'Search Authority'}}
 		]
 	},
 
@@ -72,14 +71,13 @@ export const routes: Routes = [
 			{path: 'how-opentender-works', component: DocumentationHowPage, data: {title: 'How Opentender works'}},
 			{path: 'methodology', component: DocumentationMethodologyPage, data: {title: 'Methodology'}},
 			{path: 'dataformat', component: DocumentationDataformatPage, data: {title: 'Raw Data Format'}},
+			{path: 'about', component: AboutPage, data: {title: 'About'}},
 			{path: 'foi', component: DocumentationFOIPage, data: {title: 'FOI Overview'}},
 			{path: 'quality', component: DocumentationQualityPage, data: {title: 'Data Quality'}}
 		]
 	},
-
 	{path: 'downloads', component: DownloadsPage, data: {title: 'Downloads'}},
 	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
-	{path: 'about', component: AboutPage, data: {title: 'About'}},
 	{path: '**', redirectTo: 'start'}
 ];
 

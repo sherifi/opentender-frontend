@@ -15,4 +15,13 @@ export class HeaderComponent {
 		this.country = countryService.get();
 		this.isRootPage = this.country.id === null;
 	}
+
+	public isActive(section: string, routerurl: string) {
+		return (routerurl || '').indexOf(section) >= 0;
+	}
+
+	public isActiveHome(routerurl: string) {
+		return (routerurl === '/')
+	}
+
 }

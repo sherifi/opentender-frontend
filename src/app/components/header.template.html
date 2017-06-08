@@ -17,18 +17,22 @@
 	</div>
 </div>
 <nav class="header-nav header-right" *ngIf="router.url !== '/start'">
-	<ul class="header-nav_top">
-		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/imprint']">Legal</a></li>
-		<span class="header-nav_item_link_spacer"> | </span>
-		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/downloads']">Downloads</a></li>
-		<span class="header-nav_item_link_spacer"> | </span>
-		<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/about']">About</a></li>
+	<!--<ul class="header-nav_top">-->
+		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/imprint']">Legal</a></li>-->
+		<!--<span class="header-nav_item_link_spacer"> | </span>-->
+		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/downloads']">Downloads</a></li>-->
+		<!--<span class="header-nav_item_link_spacer"> | </span>-->
+		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/about']">About</a></li>-->
+	<!--</ul>-->
+	<!--<ul class="header-nav_bottom">-->
+	<ul class="header-nav_middle">
+		<li class="header-nav_item"><a [class.active]="isActiveHome(router.url)" [routerLink]="['/']">Home</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('explore', router.url)" [routerLink]="['/explore']">Explore</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)"  [routerLink]="['/search/tender']">Search</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)"  [routerLink]="['/downloads']">Download</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('documentation', router.url)"  [routerLink]="['/documentation']">Documentation</a></li>
 	</ul>
 	<ul class="header-nav_bottom">
-		<li class="header-nav_item"><a [class.active]="router.url === '/'" [routerLink]="['/']">Home</a></li>
-		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/explore']">Explore</a></li>
-		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/search/tender']">Search</a></li>
-		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/documentation']">Documentation</a></li>
 	</ul>
 </nav>
 <nav class="header-nav header-right slab-top" *ngIf="router.url == '/start'">
