@@ -94,7 +94,7 @@ app.use('/api*', (req, res) => {
 		method = 'del';
 	}
 	try {
-		req.pipe(request[method](Config.client.backendUrl + req.baseUrl)).pipe(res);
+		req.pipe(request[method](Config.server.backendUrl + req.baseUrl)).pipe(res);
 	} catch (err) {
 		console.log('api redirect err', err);
 		res.sendStatus(500);

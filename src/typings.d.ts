@@ -95,6 +95,7 @@ interface ServerConfig {
 	data: {
 		path: string;
 	};
+	backendUrl: string;
 }
 
 interface ClientConfig {
