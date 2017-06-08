@@ -11,7 +11,9 @@ const replacements = {
 	'portals.json': () => portals,
 	'config.js': () => config,
 	'config.browser.js': () => config.client,
-	'config.node.js': () => config.client
+	'config.node.js': () => {
+		return {version: config.client.version, backendUrl: config.server.backendUrl}
+	}
 };
 
 // config for client & server app

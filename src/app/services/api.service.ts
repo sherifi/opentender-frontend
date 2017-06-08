@@ -112,32 +112,36 @@ export interface IApiResult {
 @Injectable()
 export class ApiService {
 
+	private absUrl = '';
 	private actionUrl = '';
 	private actionCountryUrl = '';
 	private headers: Headers;
 
 	constructor(private http: Http, private config: ConfigService, private countryService: CountryService) {
+		this.absUrl = config.absUrl;
+		// console.log('using absolute url', this.absUrl);
+		// console.log('using backendUrl', config.get('backendUrl'));
 		this.actionUrl = config.get('backendUrl') + '/api/';
-		this.actionCountryUrl = config.get('backendUrl') + '/api/' + (countryService.get().id || 'eu' ) + '/';
+		this.actionCountryUrl = this.actionUrl + (countryService.get().id || 'eu' ) + '/';
 		this.headers = new Headers();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');
 	}
 
 	getDownloads(): Observable<IApiResult> {
-		return this.http.get(this.config.absUrl + '/files/downloads.json').map(res => <IApiResult>res.json());
+		return this.http.get(this.absUrl + '/files/downloads.json').map(res => <IApiResult>res.json());
 	}
 
 	getPortalMapData(): Observable<IApiResult> {
-		return this.http.get(this.config.absUrl + '/assets/data/portal-map.svg.json').map(res => <IApiResult>res.json());
+		return this.http.get(this.absUrl + '/assets/data/portal-map.svg.json').map(res => <IApiResult>res.json());
+	}
+
+	getSchema(): Observable<ISchemaApiResult> {
+		return this.http.get(this.absUrl + '/assets/schema.json').map(res => <ISchemaApiResult>res.json());
 	}
 
 	getPortalsStats(): Observable<IPortalsStatsApiResult> {
 		return this.http.get(this.actionUrl + 'portals/countries-stats').map(res => <IPortalsStatsApiResult>res.json());
-	}
-
-	getSchema(): Observable<ISchemaApiResult> {
-		return this.http.get(this.config.absUrl + '/assets/schema.json').map(res => <ISchemaApiResult>res.json());
 	}
 
 	getUsage(): Observable<IUsageApiResult> {
