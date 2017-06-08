@@ -17,7 +17,7 @@ export class HomePage {
 		{icon: 'icon-flag', url: '/explore/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
 		{icon: 'icon-checkmark', url: '/explore/transparency-indicators', title: 'Transparency Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
 		{icon: 'icon-library', url: '/explore/administrative-quality', title: 'Administrative quality', subtitle: 'Indicators', text: Consts.IPSUM},
-		{icon: 'icon-books', url: '/about', title: 'About', subtitle: 'Find out about this site', text: Consts.IPSUM},
+		{icon: 'icon-books', url: '/documentation/about', title: 'About', subtitle: 'Find out about this site', text: Consts.IPSUM},
 		{icon: 'icon-office', url: '/documentation/how-opentender-works', title: 'How to use this site', subtitle: 'Documentation', text: Consts.IPSUM},
 		{icon: 'icon-office', url: '/documentation/methodology', title: 'Methodology', subtitle: 'Documentation', text: Consts.IPSUM},
 	];
