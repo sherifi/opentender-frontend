@@ -56,7 +56,7 @@
 					</div>
 				</div>
 				<div class="container-left-6">
-					<div class="title">Total Contract Value (finalPrice.netAmount)</div>
+					<div class="title">Total Contract Value <i class="icon-info" ngx-tooltip [tooltipTitle]="'Net amount of the tender final price is used to calculate the sum'"></i></div>
 					<div *ngFor="let val of vis.sum_prices">
 						<span>{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>
 					</div>

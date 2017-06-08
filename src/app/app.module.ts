@@ -82,6 +82,8 @@ import {SelectSearchesButtonComponent} from './components/selects/select-search-
 import {Title} from '@angular/platform-browser';
 import {PlatformService} from './services/platform.service';
 import {NameGuardPipe} from './directives/name-guard.pipe';
+import {EncodeURIComponentPipe} from './directives/encode-uri.pipe';
+import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 
 @NgModule({
 	declarations: [
@@ -118,6 +120,7 @@ import {NameGuardPipe} from './directives/name-guard.pipe';
 		ExpandCountryPipe,
 		ExpandUnderlinedPipe,
 		ExtractDomainPipe,
+		EncodeURIComponentPipe,
 		NameGuardPipe,
 		FormatCurrencyPipe,
 		FormatCurrencyValuePipe,
@@ -163,6 +166,7 @@ import {NameGuardPipe} from './directives/name-guard.pipe';
 		FormsModule,
 		DropdownModule,
 		NgxChartsModule,
+		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule
 	],

@@ -21,15 +21,10 @@ export const Utils = {
 		return value;
 	},
 	formatCurrencyValue: (value: number, fractionSize: number = 2): string => {
-		if (value === undefined) return '';
-		const PADDING = '000000';
-		const DECIMAL_SEPARATOR = ',';
-		const THOUSANDS_SEPARATOR = '.';
-		let [integer, fraction = ''] = (value || '').toString().split('.');
-		fraction = fractionSize > 0 ? DECIMAL_SEPARATOR + (fraction + PADDING).substring(0, fractionSize) : '';
-		integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, THOUSANDS_SEPARATOR);
-		if (integer.length === 0) integer = '0';
-		return integer + fraction;
+		if (value === undefined) {
+			return '';
+		}
+		return value.toLocaleString();
 	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {

@@ -9,6 +9,7 @@ import {StateService} from '../../services/state.service';
 import {IChartBar, IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ICompany, IAuthority, IStats} from '../../app.interfaces';
 import {Consts} from '../../model/consts';
+import {CountryService, Country} from '../../services/country.service';
 
 @Component({
 	moduleId: __filename,
@@ -17,6 +18,7 @@ import {Consts} from '../../model/consts';
 })
 export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;
+	public country: Country;
 	public error: string;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'lots.bids.bidders.name', 'finalPrice'];
@@ -103,7 +105,9 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		bids_awarded: 0
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
+				private state: StateService, private countryService: CountryService) {
+		this.country = countryService.get();
 	}
 
 	ngOnInit(): void {

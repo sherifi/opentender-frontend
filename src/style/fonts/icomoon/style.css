@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?d6zn0n');
-  src:  url('fonts/icomoon.eot?d6zn0n#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?d6zn0n') format('truetype'),
-    url('fonts/icomoon.woff?d6zn0n') format('woff'),
-    url('fonts/icomoon.svg?d6zn0n#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?8l8xw6');
+  src:  url('fonts/icomoon.eot?8l8xw6#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8l8xw6') format('truetype'),
+    url('fonts/icomoon.woff?8l8xw6') format('woff'),
+    url('fonts/icomoon.svg?8l8xw6#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -153,6 +153,9 @@
 .icon-question:before {
   content: "\e925";
 }
+.icon-info:before {
+  content: "\e934";
+}
 .icon-cross:before {
   content: "\e91a";
 }
@@ -168,6 +171,9 @@
 .icon-circle-down:before {
   content: "\e915";
 }
+.icon-new-tab:before {
+  content: "\e933";
+}
 .icon-mail2:before {
   content: "\e927";
 }
@@ -177,4 +183,3 @@
 .icon-twitter:before {
   content: "\e92c";
 }
-

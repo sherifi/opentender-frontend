@@ -9,6 +9,17 @@
 <section class="container-outer authority entity" *ngIf="authority">
 	<section class="container">
 		<div class="entity-title"><i class="icon-library"></i> Authority</div>
+		<div class="info-links">
+			<div class="info-link-box">
+				Read more about tender legislation<br>
+				<a target="_blank" href="http://europam.eu/?module=legislation&country={{ country.name }}"><i class="icon-new-tab"></i> EUROPAM</a>
+			</div>
+			<div class="info-link-box">
+				Search this authority at<br>
+				<a target="_blank" href="http://openinterests.eu/entities?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
+				<a target="_blank" href="http://farmsubsidy.openspending.org/search/?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
+			</div>
+		</div>
 		<h1>{{authority.name}}</h1>
 		<tender-body-address [address]="authority.address"></tender-body-address>
 	</section>
@@ -74,7 +85,7 @@
 					</div>
 				</div>
 				<div class="container-left-6">
-					<div class="title">Total Contract Value awarded (finalPrice.netAmount)</div>
+					<div class="title">Total Contract Value <i class="icon-info" ngx-tooltip [tooltipTitle]="'Net amount of the tender final price is used to calculate the sum'"></i></div>
 					<div *ngFor="let val of vis.sum_prices">
 						<span>{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>
 					</div>

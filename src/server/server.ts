@@ -203,7 +203,6 @@ let registerPages = country => {
 	app.use(country_path + '/location*', checkCache, ngApp);
 	app.use(country_path + '/start*', checkCache, ngApp);
 	app.use(country_path + '/', checkCache, (req, res) => {
-		console.log(`f ${req.originalUrl} ${country_path}`);
 		if ([country_path, country_path + '/', country_path + '/index.html'].indexOf(req.originalUrl) < 0) {
 			return errorResponse(req, res);
 		} else {
