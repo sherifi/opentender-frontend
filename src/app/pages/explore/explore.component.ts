@@ -11,7 +11,7 @@ export class ExplorePage {
 	public isRootPage = false;
 	public cards = [
 		{icon: 'icon-hammer', url: '/explore/sectors', title: 'Sectors', subtitle: 'Explore Structure of Tenders', text: Consts.IPSUM},
-		{icon: 'icon-flag', url: '/explore/corruption-indicators', title: 'Corruption', subtitle: 'Explore Corruption Risk Indicators', text: Consts.IPSUM},
+		{icon: 'icon-flag', url: '/explore/corruption-indicators', title: 'Corruption Risk', subtitle: 'Explore Corruption Risk Indicators', text: Consts.IPSUM},
 		{icon: 'icon-checkmark', url: '/explore/transparency-indicators', title: 'Transparency', subtitle: 'Explore Transparency Indicators', text: Consts.IPSUM},
 		{icon: 'icon-briefcase', url: '/explore/rankings', title: 'Rankings', subtitle: 'Explore Top/Bottom Performers', text: Consts.IPSUM},
 		{icon: 'icon-library', url: '/explore/administrative-quality', title: 'Quality', subtitle: 'Explore Administrative Quality', text: Consts.IPSUM},
