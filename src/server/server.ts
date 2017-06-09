@@ -89,12 +89,10 @@ app.use('/files', express.static(path.join(DATA, '/downloads'), {index: false}))
 app.use('/files', errorResponse);
 
 app.use('/api*', (req, res) => {
-	let method = req.method.toLowerCase();
-	if (method == 'delete') {
-		method = 'del';
-	}
 	try {
-		req.pipe(request[method](Config.server.backendUrl + req.baseUrl)).pipe(res);
+		let reply = request(Config.server.backendUrl + req.baseUrl);
+		req.pipe(reply);
+		reply.pipe(res);
 	} catch (err) {
 		console.log('api redirect err', err);
 		res.sendStatus(500);
