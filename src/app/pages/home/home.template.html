@@ -12,7 +12,16 @@
 
 <section class="slab-alpha container-padded">
 	<div class="container-outer">
-		<h5 class="home-subheading">[Placeholder: Dynamic Graphs]</h5>
+		<div *ngIf="charts.lots_in_years.visible">
+			<div class="title">Available Tender Lots per Year</div>
+			<ngx-charts-bar-vertical
+					class="chart-container"
+					[chart]="charts.lots_in_years.chart"
+					[data]="charts.lots_in_years.data"
+					(select)="charts.lots_in_years.select($event)"
+					(legendLabelClick)="charts.lots_in_years.onLegendLabelClick($event)">
+			</ngx-charts-bar-vertical>
+		</div>
 	</div>
 </section>
 

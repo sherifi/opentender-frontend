@@ -87,6 +87,11 @@ export interface ISearchCompanyData {
 }
 
 export interface IVizData {
+	tender_lots_per_year?: {
+		lots_in_years: {
+			[year: string]: number;
+		};
+	};
 	sectors_count?: Array<ISector>;
 	sectors_volume?: Array<any>;
 	sectors_stats?: Array<{sector: ISector; stats: IStats}>;
