@@ -59,7 +59,8 @@ export class XAxisComponent implements OnChanges {
 	xOrient: string = 'bottom';
 	tickArguments: any;
 	transform: any;
-	labelOffset: number = 80;
+	labelOffset: number = 60;
+	labelHeight: number = 28;
 	fill: string = 'none';
 	stroke: string = 'stroke';
 	tickStroke: string = '#ccc';
@@ -80,8 +81,9 @@ export class XAxisComponent implements OnChanges {
 	}
 
 	emitTicksHeight({height}): void {
-		let newLabelOffset = height + 25 + 5;
+		let newLabelOffset = height + this.labelHeight;
 		if (newLabelOffset !== this.labelOffset) {
+			this.labelOffset = newLabelOffset;
 			setTimeout(() => {
 				this.dimensionsChanged.emit({height: height});
 			}, 0);
