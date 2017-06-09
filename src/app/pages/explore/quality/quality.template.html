@@ -1,10 +1,108 @@
-<section class="container-outer explore">
+<section class="container-outer authority entity" *ngIf="loading">
 	<section class="container">
-		<div class="container-title">Explore Administrative Quality</div>
+		<div class="entity-title">Explore Administrative Quality Indicators</div>
+		<div *ngIf="error">Error: {{error}}</div>
+		<div *ngIf="!error">Loading...</div>
 	</section>
+</section>
+
+<section class="container-outer authority entity" *ngIf="!loading">
 	<section class="container">
-		<div class="construction">
-			[<i class="icon-hammer"></i> This Section is under construction]
+		<div class="entity-title">Explore Administrative Quality Indicators</div>
+	</section>
+
+	<section class="container container-margin">
+		<h2>Administrative Quality Indicators</h2>
+
+		<slider
+				[min]="startYear"
+				[max]="endYear"
+				[startValue]="startYear"
+				[endValue]="endYear"
+				stepValue="1"
+				(onSliderChange)="onSliderChange($event)">
+		</slider>
+
+		<div class="container slab-beta-light container-padded-large">
+			<div class="container">
+				<div class="container-left-6" *ngIf="charts.lots_in_years.visible">
+					<div class="title">Nr. of Contracts Lots with Administrative Quality Indicators per Year</div>
+					<ngx-charts-bar-vertical
+							class="chart-container"
+							[chart]="charts.lots_in_years.chart"
+							[data]="charts.lots_in_years.data"
+							(select)="charts.lots_in_years.select($event)"
+							(legendLabelClick)="charts.lots_in_years.onLegendLabelClick($event)">
+					</ngx-charts-bar-vertical>
+				</div>
+				<div class="container-left-6" *ngIf="charts.cpvs_codes && charts.cpvs_codes.visible">
+					<div class="title">Structure of Administrative Quality Indicators (Main CPV)</div>
+					<ngx-charts-pie-chart
+							class="chart-container"
+							[chart]="charts.cpvs_codes.chart"
+							[data]="charts.cpvs_codes.data"
+							(legendLabelClick)="charts.cpvs_codes.onLegendLabelClick($event)"
+							(select)="charts.cpvs_codes.select($event)">
+					</ngx-charts-pie-chart>
+				</div>
+			</div>
+			<!--<div class="container">-->
+			<!--<div class="container-left-6">-->
+			<!--<div class="title">Total Number of Contracts with Administrative Quality Indicators</div>-->
+			<!--<div class="stats">-->
+			<!--<ul>-->
+			<!--<li><span>Tenders</span><span>{{vis.tenders_total}}</span></li>-->
+			<!--<li><span>Lots</span><span>{{vis.lots_total}}</span></li>-->
+			<!--<li><span>Bids</span><span>{{vis.bids_total}}</span></li>-->
+			<!--<li><span>Bids awarded</span><span>{{vis.bids_awarded}}</span></li>-->
+			<!--</ul>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="container-left-6">-->
+			<!--<div class="title">Total Contract Value awarded (finalPrice.netAmount)</div>-->
+			<!--<div *ngFor="let val of vis.sum_prices">-->
+			<!--<span>{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
 		</div>
+	</section>
+	<section class="container container-margin">
+		<div class="container">
+			<div class="container-left-6">
+				<h2>Authorities</h2>
+				<table class="tables">
+					<tr>
+						<th>Number of Flags</th>
+						<th>Authority</th>
+					</tr>
+					<tr *ngFor="let val of vis.suppliers">
+						<td>{{val.value}}</td>
+						<td>
+							<tender-body-line [body]="val.body" [link]="'/company/'+val.body.groupId"></tender-body-line>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="container-left-6">
+				<h2>Companies</h2>
+				<table class="tables">
+					<tr>
+						<th>Number of Flags</th>
+						<th>Company</th>
+					</tr>
+					<tr *ngFor="let val of vis.buyers">
+						<td>{{val.value}}</td>
+						<td>
+							<tender-body-line [body]="val.body" [link]="'/authority/'+val.body.groupId"></tender-body-line>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<section class="container">
+		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
 	</section>
 </section>
