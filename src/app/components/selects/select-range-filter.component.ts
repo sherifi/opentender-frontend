@@ -23,7 +23,6 @@ export class SelectRangeFilterComponent implements OnChanges {
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		if (this.minYear === 0 && this.buckets) {
-			console.log('yeay buckets', this.buckets);
 			this.buckets.forEach(bucket => {
 				let year = yearOf(bucket.key);
 				this.minYear = this.minYear === 0 ? year : Math.min(year, this.minYear);
