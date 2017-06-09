@@ -84,6 +84,7 @@ import {PlatformService} from './services/platform.service';
 import {NameGuardPipe} from './directives/name-guard.pipe';
 import {EncodeURIComponentPipe} from './directives/encode-uri.pipe';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
+import {EuropamLinkPipe} from './directives/europam-url.pipe';
 
 @NgModule({
 	declarations: [
@@ -117,6 +118,7 @@ import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tool
 		ValueInputComponent,
 
 		DefinedPipe,
+		EuropamLinkPipe,
 		ExpandCountryPipe,
 		ExpandUnderlinedPipe,
 		ExtractDomainPipe,
