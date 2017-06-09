@@ -1,7 +1,17 @@
 @import "./common/tooltip/tooltip.component.scss";
 
+ngx-charts-chart {
+  > div {
+    border: 1px solid #ececec;
+    display: block;
+    padding-top: 8px;
+    display: block;
+    position: relative;
+  }
+}
+
 .ngx-charts {
-  float: left;
+  //float: left;
 
   .circle,
   .bar,
