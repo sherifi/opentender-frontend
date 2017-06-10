@@ -86,6 +86,7 @@ import {EncodeURIComponentPipe} from './directives/encode-uri.pipe';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 import {EuropamLinkPipe} from './directives/europam-url.pipe';
 import {TestPage} from './pages/test/test.component';
+import {FOISearchLinkPipe} from './directives/foi-search-url.pipe';
 
 @NgModule({
 	declarations: [
@@ -132,6 +133,7 @@ import {TestPage} from './pages/test/test.component';
 		FormatFileSizePipe,
 		KeyValuesPipe,
 		TruncatePipe,
+		FOISearchLinkPipe,
 
 		AboutPage,
 		AuthorityPage,
