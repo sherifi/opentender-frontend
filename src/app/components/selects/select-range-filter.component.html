@@ -5,6 +5,7 @@
 		[endValue]="endYear"
 		stepValue="1"
 		defaultWidth="200"
+		compact="true"
 		(onSliderChange)="onSliderChange($event, filter)">
 </slider>
 <div class="select-range-values" *ngIf="startYear>0">{{startYear}} - {{endYear}}</div>

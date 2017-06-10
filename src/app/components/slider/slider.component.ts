@@ -62,6 +62,7 @@ export class SliderComponent implements OnChanges {
 	}
 
 	@Input() snap: any = true;
+	@Input() compact: any = false;
 
 	@Input() defaultWidth: any = 100;
 
@@ -112,14 +113,17 @@ export class SliderComponent implements OnChanges {
 
 	calculateTicks() {
 		let valueSpan = this._max - this._min;
-		let mod = 1;
-		if (valueSpan > 10) {
-			mod = 10;
+		let mod = 0;
+		if (!this.compact) {
+			// TODO: better tick show/hide heuristic
+			mod = 1;
+			if (valueSpan > 10) {
+				mod = 10;
+			}
+			if (valueSpan > 100) {
+				mod = 100;
+			}
 		}
-		if (valueSpan > 100) {
-			mod = 100;
-		}
-
 		this.tickWidth = Math.max(this.position.range2max / valueSpan, 1);
 		this.ticks = [];
 		for (let i = 0; i <= valueSpan; i = i + this._stepValue) {

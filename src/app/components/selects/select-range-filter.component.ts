@@ -7,7 +7,7 @@ import {yearOf} from '../../thirdparty/ngx-charts-universal/utils/date.helper';
 	selector: 'select-range-filter',
 	templateUrl: 'select-range-filter.component.html'
 })
-export class SelectRangeFilterComponent implements OnChanges {
+export class SelectRangeFilterComponent {
 	@Input()
 	filter: Filter;
 
@@ -16,22 +16,11 @@ export class SelectRangeFilterComponent implements OnChanges {
 
 	@Output('onRangeChange') onRangeChange = new EventEmitter();
 
-	private minYear: number = 0;
-	private startYear: number = 0;
-	private maxYear: number = 0;
-	private endYear: number = 0;
-
-	public ngOnChanges(changes: SimpleChanges): void {
-		if (this.minYear === 0 && this.buckets) {
-			this.buckets.forEach(bucket => {
-				let year = yearOf(bucket.key);
-				this.minYear = this.minYear === 0 ? year : Math.min(year, this.minYear);
-				this.maxYear = this.maxYear === 0 ? year : Math.max(year, this.maxYear);
-				this.startYear = this.minYear;
-				this.endYear = this.maxYear;
-			});
-		}
-	}
+	// TODO: get the range from api
+	private minYear: number = 2009;
+	private startYear: number = 2009;
+	private maxYear: number = 2017;
+	private endYear: number = 2017;
 
 	onSliderChange(event) {
 		this.startYear = event.startValue;

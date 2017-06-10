@@ -82,10 +82,7 @@ export class HomePage implements OnInit {
 	private display(data: IVizData) {
 		this.charts.lots_in_years.data = [];
 		if (data.tender_lots_per_year && data.tender_lots_per_year.lots_in_years) {
-			this.charts.lots_in_years.data = Object.keys(data.tender_lots_per_year.lots_in_years).filter(key => {
-				let year = parseInt(key, 10);
-				return year > 2008 && year < 2018;
-			}).map((key) => {
+			this.charts.lots_in_years.data = Object.keys(data.tender_lots_per_year.lots_in_years).map((key) => {
 				return {name: key, value: data.tender_lots_per_year.lots_in_years[key]};
 			});
 		}
