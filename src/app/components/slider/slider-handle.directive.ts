@@ -1,15 +1,14 @@
-import {Directive, Input, Output, ElementRef, EventEmitter, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
+import {Directive, Input, Output, ElementRef, EventEmitter, OnChanges, SimpleChanges, Renderer2, HostListener} from '@angular/core';
 
 export interface IEventSlideAble {
 	value: number;
 }
+export interface IEventKeyDownAble {
+	step: number;
+}
 
 @Directive({
-	selector: '[sliderhandle]',
-	host: {
-		'(mousedown)': 'slideStart($event)',
-		'(touchstart)': 'slideStart($event)'
-	}
+	selector: '[sliderhandle]'
 })
 export class SliderHandleDirective implements OnChanges {
 
@@ -17,6 +16,7 @@ export class SliderHandleDirective implements OnChanges {
 	@Input() min = 0;
 	@Input() max = 0;
 	@Output() onChanged = new EventEmitter<IEventSlideAble>();
+	@Output() onKeyCommand = new EventEmitter<IEventKeyDownAble>();
 
 	pos: number;
 
@@ -40,14 +40,26 @@ export class SliderHandleDirective implements OnChanges {
 		this.setPos(this.left);
 	}
 
+	@HostListener('keypress', ['$event'])
+	public keyRibbon(event) {
+		if (event.keyCode === 39) {
+			event.preventDefault();
+			this.onKeyCommand.emit({step: 1});
+		} else if (event.keyCode === 37) {
+			event.preventDefault();
+			this.onKeyCommand.emit({step: -1});
+		}
+	}
+
+	@HostListener('mousedown', ['$event'])
+	@HostListener('touchstart', ['$event'])
 	slideStart(e) {
 		this.setDragging(true);
 		// Cross-browser mouse positioning http://www.jacklmoore.com/notes/mouse-position/
-		let target = this.el.nativeElement.parentNode,
-			style = target.currentStyle || window.getComputedStyle(target, null),
-			borderLeftWidth = parseInt(style['borderLeftWidth'], 10),
-			borderTopWidth = parseInt(style['borderTopWidth'], 10),
-			rect = target.getBoundingClientRect();
+		let target = this.el.nativeElement.parentNode;
+		let style = target.currentStyle || window.getComputedStyle(target, null);
+		let borderLeftWidth = parseInt(style['borderLeftWidth'], 10);
+		let rect = target.getBoundingClientRect();
 
 		// deny dragging and selecting
 		document.ondragstart = function() {

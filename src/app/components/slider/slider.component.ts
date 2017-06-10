@@ -5,7 +5,7 @@
 
 import {Component, Input, Output, ElementRef, EventEmitter, OnChanges, SimpleChanges, HostListener} from '@angular/core';
 import {PlatformService} from '../../services/platform.service';
-import {IEventSlideAble} from './slider-handle.directive';
+import {IEventSlideAble, IEventKeyDownAble} from './slider-handle.directive';
 
 @Component({
 	selector: 'slider',
@@ -14,22 +14,67 @@ import {IEventSlideAble} from './slider-handle.directive';
 
 export class SliderComponent implements OnChanges {
 
-	@Input() min: any = 0;
-	@Input() max: any = 10;
-	@Input() startValue: any = 0;
-	@Input() endValue: any = 10;
-	@Input() stepValue: any = 1;
+	@Input('startValue')
+	get startValue(): any {
+		return this._startValue;
+	}
+
+	set startValue(val) {
+		this._startValue = parseFloat(val);
+	}
+
+
+	@Input('endValue')
+	get endValue(): any {
+		return this._endValue;
+	}
+
+	set endValue(val) {
+		this._endValue = parseFloat(val);
+	}
+
+
+	@Input('stepValue')
+	get stepValue(): any {
+		return this._stepValue;
+	}
+
+	set stepValue(val) {
+		this._stepValue = parseFloat(val);
+	}
+
+	@Input('min')
+	get min(): any {
+		return this._min;
+	}
+
+	set min(val) {
+		this._min = parseFloat(val);
+	}
+
+	@Input('max')
+	get max(): any {
+		return this._max;
+	}
+
+	set max(val) {
+		this._max = parseFloat(val);
+	}
+
 	@Input() snap: any = true;
 
-	@Input() set value(value: string) {
-		this.startValue = parseFloat(value);
-	}
+	@Input() defaultWidth: any = 100;
 
 	@Output('onSliderChange') onSliderChangeEvent = new EventEmitter();
 
 	private ticks = [];
 	private tickWidth = 1;
 	private border = 18;
+	private _stepValue = 1;
+	private _min = 0;
+	private _max = 10;
+	private _startValue = 0;
+	private _endValue = 10;
 
 	private position = {
 		range1: 0,
@@ -51,6 +96,8 @@ export class SliderComponent implements OnChanges {
 		if (this.platform.isBrowser) {
 			let r = this.el.nativeElement.getBoundingClientRect();
 			this.position.range2max = r.right - r.left - (this.border * 2);
+		} else {
+			this.position.range2max = parseFloat(this.defaultWidth);
 		}
 		this.calculateTicks();
 	}
@@ -64,28 +111,40 @@ export class SliderComponent implements OnChanges {
 	}
 
 	calculateTicks() {
-		let min = parseFloat(this.min);
-		let max = parseFloat(this.max);
-		let step = parseFloat(this.stepValue);
-		let valueSpan = max - min;
+		let valueSpan = this._max - this._min;
+		let mod = 1;
+		if (valueSpan > 10) {
+			mod = 10;
+		}
+		if (valueSpan > 100) {
+			mod = 100;
+		}
+
 		this.tickWidth = Math.max(this.position.range2max / valueSpan, 1);
 		this.ticks = [];
-		for (let i = 0; i <= valueSpan; i = i + step) {
-			this.ticks.push({value: min + i, width: this.tickWidth});
+		for (let i = 0; i <= valueSpan; i = i + this._stepValue) {
+			this.ticks.push({value: this._min + i, width: this.tickWidth, show: i % mod === 0});
+		}
+		if (this.ticks.length > 0) {
+			this.ticks[0].show = true;
+			this.ticks[this.ticks.length - 1].show = true;
 		}
 		this.applyPositions();
 	}
 
 	applyPositions(): void {
-		this.position.range1 = this.tickWidth * (this.startValue - this.min);
+		this.position.range1 = this.tickWidth * (this._startValue - this._min);
 		this.position.range2min = this.position.range1;
-		this.position.range2 = this.tickWidth * (this.endValue - this.min);
+		this.position.range2 = this.tickWidth * (this._endValue - this._min);
 		this.position.range1max = this.position.range2;
 	}
 
 	valueFromPosition(x: number): number {
-		let min = parseFloat(this.min);
-		return (x / this.tickWidth) + min;
+		return (x / this.tickWidth) + this._min;
+	}
+
+	positionFromValue(val: number): number {
+		return (this.tickWidth * val) + this._min;
 	}
 
 	@HostListener('window:resize')
@@ -94,22 +153,78 @@ export class SliderComponent implements OnChanges {
 	}
 
 	changed() {
-		this.onSliderChangeEvent.emit({startValue: parseInt(this.startValue, 10), endValue: parseInt(this.endValue, 10)});
+		this.onSliderChangeEvent.emit({startValue: this._startValue, endValue: this._endValue});
+	}
+
+	ribbonClick(event) {
+		let value = this.valueFromPosition(event.value);
+		if (this.snap) {
+			value = Math.floor(value);
+		}
+		value = Math.min(value, this._max);
+		value = Math.max(value, this._min);
+		if (value > this._endValue) {
+			this._endValue = value;
+		} else if (value < this._startValue) {
+			this._startValue = value;
+		} else {
+			if (value - this._startValue > this._endValue - value) {
+				this._endValue = value;
+			} else {
+				this._startValue = value;
+			}
+		}
+		this.applyPositions();
+		this.changed();
+	}
+
+	slider1Step(event: IEventKeyDownAble) {
+		let value = this._startValue;
+		if (event.step < 0) {
+			value = value - this._stepValue;
+		} else if (event.step > 0) {
+			value = value + this._stepValue;
+		}
+		value = Math.min(value, this._max);
+		value = Math.max(value, this._min);
+		value = Math.min(value, this._endValue);
+		if (value !== this._startValue) {
+			this._startValue = value;
+			this.applyPositions();
+			this.changed();
+		}
+	}
+
+	slider2Step(event: IEventKeyDownAble) {
+		let value = this._endValue;
+		if (event.step < 0) {
+			value = value - this._stepValue;
+		} else if (event.step > 0) {
+			value = value + this._stepValue;
+		}
+		value = Math.min(value, this._max);
+		value = Math.max(value, this._min);
+		value = Math.max(value, this._startValue);
+		if (value !== this._endValue) {
+			this._endValue = value;
+			this.applyPositions();
+			this.changed();
+		}
 	}
 
 	slider1Change(event: IEventSlideAble) {
-		this.startValue = this.valueFromPosition(event.value);
+		this._startValue = this.valueFromPosition(event.value);
 		if (this.snap) {
-			this.startValue = Math.round(this.startValue);
+			this._startValue = Math.round(this._startValue);
 		}
 		this.applyPositions();
 		this.changed();
 	}
 
 	slider2Change(event: IEventSlideAble) {
-		this.endValue = this.valueFromPosition(event.value);
+		this._endValue = this.valueFromPosition(event.value);
 		if (this.snap) {
-			this.endValue = Math.round(this.endValue);
+			this._endValue = Math.round(this._endValue);
 		}
 		this.applyPositions();
 		this.changed();

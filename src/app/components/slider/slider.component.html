@@ -1,13 +1,12 @@
 <div class="slider-container">
 	<div class="slider-ribbon-container">
-		<div class="range-ribbon">
+		<div class="range-ribbon" sliderribbon (onChanged)="ribbonClick($event)">
 			<div class="range-ribbon-fill" [ngStyle]="{left: position.range1+'px',width: (position.range2-position.range1)+'px'}"></div>
 		</div>
-		<span class="slider-handle" tabindex="0" sliderhandle [left]="position.range1" [min]="position.range1min" [max]="position.range1max" (onChanged)="slider1Change($event)"></span>
-		<span *ngIf="!(position.range1==position.range2 && position.range1==position.range2max)" class="slider-handle" tabindex="0" sliderhandle [left]="position.range2" [min]="position.range2min" [max]="position.range2max" (onChanged)="slider2Change($event)"></span>
+		<span class="slider-handle" tabindex="0" sliderhandle [left]="position.range1" [min]="position.range1min" [max]="position.range1max" (onChanged)="slider1Change($event)" (onKeyCommand)="slider1Step($event)"></span>
+		<span *ngIf="!(position.range1==position.range2 && position.range1==position.range2max)" class="slider-handle" tabindex="1" sliderhandle [left]="position.range2" [min]="position.range2min" [max]="position.range2max" (onChanged)="slider2Change($event)" (onKeyCommand)="slider2Step($event)"></span>
 	</div>
 	<div class="slider-ticks">
-		<div *ngFor="let tick of ticks" class="slider-tick" [ngStyle]="{width:tick.width+'px'}">{{tick.value}}</div>
+		<div *ngFor="let tick of ticks" class="slider-tick" [ngStyle]="{width:tick.width+'px'}"><span *ngIf="tick.show">{{tick.value}}</span></div>
 	</div>
-	<!--<div>Start: {{startValue}} End: {{endValue}}</div>-->
 </div>

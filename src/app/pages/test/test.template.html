@@ -16,20 +16,33 @@
 					min="0"
 					max="100"
 					startValue="0"
-					[endValue]="chartwidth"
+					endValue="10"
 					stepValue="1"
-					(onSliderChange)="onSliderChange($event)">
+					defaultWidth="928"
+					(onSliderChange)="onTestSliderChange($event)">
 			</slider>
-			<div [style.width.px]="chartwidth*10" style="border: 1px solid red; display:block;">
-				<ngx-charts-pie-chart
-						class="chart-container"
-						[chart]="charts.cpvs_codes.chart"
-						[data]="charts.cpvs_codes.data"
-						(legendLabelClick)="charts.cpvs_codes.onLegendLabelClick($event)"
-						(select)="charts.cpvs_codes.select($event)">
-				</ngx-charts-pie-chart>
-			</div>
 		</div>
 	</section>
+	<!--<section class="container container-margin">-->
+	<!--<div class="container slab-beta-light container-padded-large">-->
+	<!--<slider-->
+	<!--min="0"-->
+	<!--max="100"-->
+	<!--startValue="0"-->
+	<!--[endValue]="chartwidth"-->
+	<!--stepValue="1"-->
+	<!--(onSliderChange)="onSliderChange($event)">-->
+	<!--</slider>-->
+	<!--<div [style.width.px]="chartwidth*10" style="border: 1px solid red; display:block;">-->
+	<!--<ngx-charts-pie-chart-->
+	<!--class="chart-container"-->
+	<!--[chart]="charts.cpvs_codes.chart"-->
+	<!--[data]="charts.cpvs_codes.data"-->
+	<!--(legendLabelClick)="charts.cpvs_codes.onLegendLabelClick($event)"-->
+	<!--(select)="charts.cpvs_codes.select($event)">-->
+	<!--</ngx-charts-pie-chart>-->
+	<!--</div>-->
+	<!--</div>-->
+	<!--</section>-->
 </div>
 

@@ -68,8 +68,12 @@ export class TestPage {
 		}
 	}
 
+	onTestSliderChange(event): void {
+		console.log('test slider', event);
+	}
+
 	onSliderChange(event): void {
-		this.chartwidth = event.endValue;
+		this.chartwidth = event._endValue;
 		this.triggerResize();
 	}
 }
