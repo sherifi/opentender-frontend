@@ -79,7 +79,7 @@ export class FilterBoxComponent implements OnChanges {
 		this.onChange.next('');
 		if (resize && this.platform.isBrowser) {
 			setTimeout(() => {
-				console.log('trigger resizes');
+				// console.log('trigger resizes');
 				let evt = window.document.createEvent('UIEvents');
 				evt.initUIEvent('resize', true, false, window, 0);
 				window.dispatchEvent(evt);

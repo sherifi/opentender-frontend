@@ -28,6 +28,7 @@ import {SearchTenderPage} from './pages/search/tender/tender.component';
 import {SectorPage} from './pages/sector/sector.component';
 import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
+import {TestPage} from './pages/test/test.component';
 
 
 export const routes: Routes = [
@@ -78,6 +79,7 @@ export const routes: Routes = [
 	},
 	{path: 'downloads', component: DownloadsPage, data: {title: 'Downloads'}},
 	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
+	{path: 'test', component: TestPage, data: {title: 'Test'}},
 	{path: '**', redirectTo: 'start'}
 ];
 

@@ -85,6 +85,7 @@ import {NameGuardPipe} from './directives/name-guard.pipe';
 import {EncodeURIComponentPipe} from './directives/encode-uri.pipe';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 import {EuropamLinkPipe} from './directives/europam-url.pipe';
+import {TestPage} from './pages/test/test.component';
 
 @NgModule({
 	declarations: [
@@ -159,6 +160,7 @@ import {EuropamLinkPipe} from './directives/europam-url.pipe';
 		SectorPage,
 		StartPage,
 		TenderPage,
+		TestPage,
 
 		PageScrollDirective,
 		SVGCountryGroupDirective
