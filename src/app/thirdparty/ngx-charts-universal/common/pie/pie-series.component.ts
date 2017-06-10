@@ -24,6 +24,7 @@ interface PieArc {
       <svg:g ngx-charts-pie-label
         *ngIf="labelVisible(arc)"
         [data]="arc"
+        [isLeft]="arc.isLeft"
         [radius]="outerRadius"
         [color]="arc.color"
         [label]="arc.label"
@@ -97,31 +98,40 @@ export class PieSeriesComponent implements OnChanges {
 			return d.value;
 		});
 
-		const minDistance = 11;
 		arcData.forEach((d, index) => {
+			d.isLeft = this.midAngle(d) < Math.PI;
 			d.pos = this.outerArc().centroid(d);
-			d.pos[0] = this.outerRadius * (this.midAngle(d) < Math.PI ? 1 : -1);
+			d.pos[0] = this.outerRadius * (d.isLeft ? 1 : -1);
 			d.color = this.colors.getColor(index);
 			d.label = formatLabel(d.data.name);
 		});
 
-		for (let i = 0; i < arcData.length - 1; i++) {
-			let a = arcData[i];
-			for (let j = i + 1; j < arcData.length; j++) {
-				let b = arcData[j];
-				// if they're on the same side
-				if (b.pos[0] * a.pos[0] > 0) {
-					// if they're overlapping
-					if (Math.abs(b.pos[1] - a.pos[1]) <= minDistance) {
-						// push the second one down
-						arcData[j].pos[1] = b.pos[1] + minDistance;
-						j--;
-					}
-				}
-			}
-		}
+		this.orderLabels(arcData);
+
 		this.arcs = arcData;
 	}
+
+	orderLabelsSide(arcs) {
+		arcs = arcs.sort((a, b) => {
+			return a.pos[1] - b.pos[1];
+		});
+		const minDistance = 20;
+		for (let i = 1; i < arcs.length; i++) {
+			let a = arcs[i - 1];
+			let b = arcs[i];
+			// if they're overlapping
+			if (b.pos[1] - a.pos[1] <= minDistance) {
+				// push it down
+				b.pos[1] = a.pos[1] + minDistance;
+			}
+		}
+	}
+
+	orderLabels(arcData) {
+		this.orderLabelsSide(arcData.filter(arc => arc.isLeft));
+		this.orderLabelsSide(arcData.filter(arc => !arc.isLeft));
+	}
+
 
 	midAngle(d): number {
 		return d.startAngle + (d.endAngle - d.startAngle) / 2;

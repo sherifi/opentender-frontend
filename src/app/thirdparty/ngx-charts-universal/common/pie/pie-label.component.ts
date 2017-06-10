@@ -11,17 +11,17 @@ import {PlatformService} from '../../../../services/platform.service';
       class="pie-label"
       [attr.transform]="transform"
       dy=".35em"
-      [style.textAnchor]="textAnchor()"
-      [style.shapeRendering]="'crispEdges'">
-      {{getLabel(label)}}
+      [style.text-anchor]="textAnc"
+      [style.shape-rendering]="'crispEdges'">
+      {{text}}
     </svg:text>
     <svg:path
       [attr.d]="line"
       [attr.stroke]="color"
       fill="none"
       class="line"
-      [style.strokeDasharray]="2000"
-      [style.strokeDashoffset]="0">
+      [style.stroke-dasharray]="2000"
+      [style.stroke-dashoffset]="0">
     </svg:path>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +34,7 @@ export class PieLabelComponent implements OnChanges {
 	@Input() color;
 	@Input() max;
 	@Input() value;
+	@Input() isLeft;
 	@Input() explodeSlices;
 
 	element: HTMLElement;
@@ -41,6 +42,8 @@ export class PieLabelComponent implements OnChanges {
 	labelXY: any;
 	transform: string;
 	line: string;
+	textAnc: string = 'end';
+	text: string;
 
 	constructor(element: ElementRef, private platform: PlatformService) {
 		this.element = element.nativeElement;
@@ -72,11 +75,13 @@ export class PieLabelComponent implements OnChanges {
 			.outerRadius(startRadius);
 
 		this.labelXY = outerArc.centroid(this.data);
-		this.labelXY[0] = this.radius * factor * (this.midAngle(this.data) < Math.PI ? 1 : -1);
+		this.labelXY[0] = this.radius * factor * (this.isLeft ? 1 : -1);
 		this.labelXY[1] = this.data.pos[1];
 
 		this.line = `M${innerArc.centroid(this.data)}L${outerArc.centroid(this.data)}L${this.labelXY}`;
 		this.transform = `translate(${this.labelXY})`;
+		this.textAnc = this.textAnchor();
+		this.text = this.getLabel(this.label);
 
 		if (this.platform.isBrowser) {
 			this.loadAnimation();
@@ -84,7 +89,7 @@ export class PieLabelComponent implements OnChanges {
 	}
 
 	textAnchor(): any {
-		return this.midAngle(this.data) < Math.PI ? 'start' : 'end';
+		return this.isLeft ? 'start' : 'end';
 	}
 
 	midAngle(d): number {

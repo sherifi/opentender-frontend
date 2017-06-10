@@ -17,7 +17,7 @@ import {ILegendOptions} from '../common/common.interface';
       <svg:g [attr.transform]="transform" class="pie-chart chart">
         <svg:g ngx-charts-pie-series
           [colors]="colors"
-          [showLabels]="chart.labels"
+          [showLabels]="showLabels"
           [series]="piedata"
           [activeEntries]="activeEntries"
           [innerRadius]="innerRadius"
@@ -45,6 +45,10 @@ export class PieChartComponent extends BasePieChartComponent {
 	outerRadius: number;
 	innerRadius: number;
 	legendOptions: any;
+	showLabels: boolean;
+
+	mintextwidth: number = 120;
+	minradius: number = 28;
 
 	update(): void {
 		super.update();
@@ -62,9 +66,11 @@ export class PieChartComponent extends BasePieChartComponent {
 			let yOffset = this.margin[0] + this.viewDim.height / 2;
 			this.transform = `translate(${xOffset}, ${yOffset})`;
 			this.outerRadius = Math.min(this.viewDim.width, this.viewDim.height);
-			if (this.chart.labels) {
-				// make room for labels
-				this.outerRadius /= 3;
+			this.showLabels = this.chart.labels && (this.viewDim.width - (this.mintextwidth * 2) > this.minradius);
+			if (this.showLabels) {
+				let radius_x = (this.viewDim.width - (this.mintextwidth * 2)) / 2;
+				let radius_y = (this.viewDim.height - 100) / 2;
+				this.outerRadius = (radius_x > radius_y) ? radius_y : radius_x;
 			} else {
 				this.outerRadius /= 2;
 			}

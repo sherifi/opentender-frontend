@@ -12,7 +12,7 @@ import d3 from '../../d3';
         <svg:g *ngFor="let tick of ticks.big"
             class="gauge-tick gauge-tick-large">
             <svg:text
-                [style.textAnchor]="tick.textAnchor"
+                [style.text-anchor]="tick.textAnchor"
                 [attr.transform]="tick.textTransform"
                 alignment-baseline="central">
                 {{tick.text}}

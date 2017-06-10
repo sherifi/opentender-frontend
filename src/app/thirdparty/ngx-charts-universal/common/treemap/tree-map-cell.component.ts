@@ -32,7 +32,7 @@ import {PlatformService} from '../../../../services/platform.service';
           [style.height]="height + 'px'"
           [style.width]="width + 'px'">
           <xhtml:span class="treemap-label">{{formatLabel(label)}}</xhtml:span>
-          <xhtml:span class="treemap-val" [style.fontSize]="fontSize" ngx-charts-count-up [countTo]="value" [formatCountUpNumber]="formatCellNumber">
+          <xhtml:span class="treemap-val" [style.font-size]="fontSize" ngx-charts-count-up [countTo]="value" [formatCountUpNumber]="formatCellNumber">
           </xhtml:span>
         </xhtml:p>
       </svg:foreignObject>

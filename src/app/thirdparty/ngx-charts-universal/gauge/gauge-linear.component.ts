@@ -57,7 +57,7 @@ import {IChartGaugeSettings, IChartData} from '../chart.interface';
           <svg:g [attr.transform]="valueTranslate">
             <svg:text #valueTextEl
               class="value"
-              [style.textAnchor]="'middle'"
+              [style.text-anchor]="'middle'"
               [attr.transform]="valueTextTransform"          
               alignment-baseline="after-edge">
               {{displayValue}}
@@ -67,7 +67,7 @@ import {IChartGaugeSettings, IChartData} from '../chart.interface';
           <svg:g [attr.transform]="unitsTranslate">
             <svg:text #unitsTextEl
               class="units"
-              [style.textAnchor]="'middle'"
+              [style.text-anchor]="'middle'"
               [attr.transform]="unitsTextTransform"          
               alignment-baseline="before-edge">
               {{chart.units}}

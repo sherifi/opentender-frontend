@@ -31,7 +31,7 @@ import {ColorHelper} from '../utils/color.helper';
           [startAngle]="startAngle">
         </svg:g>
         <svg:text #textEl
-            [style.textAnchor]="'middle'"
+            [style.text-anchor]="'middle'"
             [attr.transform]="textTransform"
             alignment-baseline="central">
           <tspan x="0" dy="0">{{displayValue}}</tspan>
