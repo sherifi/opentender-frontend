@@ -1,6 +1,5 @@
 <div class="header-left">
 	<div class="header-logo">
-
 		<a class="header-image_link" href="/start" *ngIf="isRootPage">
 			<span class="header-image_wrapper">
 				<img class="header-image" alt="OpenTender" src="/assets/img/ot-logo.svg"/>
@@ -13,29 +12,18 @@
 				<span class="header-image_desc">{{country.name}}</span>
 			</span>
 		</a>
-
 	</div>
 </div>
-<nav class="header-nav header-right" *ngIf="router.url !== '/start'">
-	<!--<ul class="header-nav_top">-->
-		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/imprint']">Legal</a></li>-->
-		<!--<span class="header-nav_item_link_spacer"> | </span>-->
-		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/downloads']">Downloads</a></li>-->
-		<!--<span class="header-nav_item_link_spacer"> | </span>-->
-		<!--<li class="header-nav_item_top"><a [routerLinkActive]="['active']" [routerLink]="['/documentation/about']">About</a></li>-->
-	<!--</ul>-->
-	<!--<ul class="header-nav_bottom">-->
-	<ul class="header-nav_middle">
+<nav class="header-right" *ngIf="router.url !== '/start'">
+	<ul class="header-nav">
 		<li class="header-nav_item"><a [class.active]="isActiveHome(router.url)" [routerLink]="['/']">Home</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('explore', router.url)" [routerLink]="['/explore']">Explore</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)"  [routerLink]="['/search/tender']">Search</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)"  [routerLink]="['/downloads']">Download</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('documentation', router.url)"  [routerLink]="['/documentation']">Documentation</a></li>
 	</ul>
-	<ul class="header-nav_bottom">
-	</ul>
 </nav>
-<nav class="header-nav header-right slab-top" *ngIf="router.url == '/start'">
+<nav class="header-right" *ngIf="router.url == '/start'">
 	<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
 	<p>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
 </nav>
