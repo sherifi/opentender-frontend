@@ -106,7 +106,6 @@ export class TreeMapCellComponent implements OnChanges {
 	}
 
 	onMeasureTextBox(event) {
-		console.log(event, this.width, this.height, this.label);
 		this.measuredHidden = event.height - this.height > 2;
 	}
 
