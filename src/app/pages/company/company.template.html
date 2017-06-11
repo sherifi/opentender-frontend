@@ -82,17 +82,17 @@
 					<div class="title">Total Number of Contracts</div>
 					<div class="stats">
 						<ul>
-							<li><span>Tenders</span><span>{{vis.tenders_total}}</span></li>
-							<li><span>Lots</span><span>{{vis.lots_total}}</span></li>
-							<li><span>Bids</span><span>{{vis.bids_total}}</span></li>
-							<li><span>Bids awarded</span><span>{{vis.bids_awarded}}</span></li>
+							<li><span>Tenders</span><span>{{vis.tenders_total | formatNumber}}</span></li>
+							<li><span>Lots</span><span>{{vis.lots_total| formatNumber}}</span></li>
+							<li><span>Bids</span><span>{{vis.bids_total| formatNumber}}</span></li>
+							<li><span>Bids awarded</span><span>{{vis.bids_awarded| formatNumber}}</span></li>
 						</ul>
 					</div>
 				</div>
 				<div class="container-left-6">
 					<div class="title">Total Contract Values awarded <i class="icon-info" ngx-tooltip [tooltipTitle]="'Net amount of final price of awarded bids is used to calculate the sum'"></i></div>
 					<div *ngFor="let val of vis.sum_prices">
-						<span>{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>
+						<span class="currency-prefix">{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>
 					</div>
 				</div>
 			</div>
@@ -109,7 +109,7 @@
 						<th>Buyer</th>
 					</tr>
 					<tr *ngFor="let val of vis.buyers">
-						<td>{{val.value}}</td>
+						<td>{{val.value | formatNumber}}</td>
 						<td>
 							<tender-body-line [body]="val.body" [link]="'/authority/'+val.body.groupId"></tender-body-line>
 						</td>

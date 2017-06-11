@@ -68,13 +68,26 @@ ngx-charts-chart {
 
   .tree-map {
 
-    p {
+    .treemap-box {
       display: table-cell;
       text-align: center;
       vertical-align: middle;
       line-height: 1em;
       margin: 0;
       padding: 0;
+      padding-left: 2px;
+      padding-right: 2px;
+
+      &.wordwrap {
+        /* Non standard for webkit */
+        word-break: break-word;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+      }
     }
 
     .treemap-label {

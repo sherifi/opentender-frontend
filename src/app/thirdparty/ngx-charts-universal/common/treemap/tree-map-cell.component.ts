@@ -1,13 +1,48 @@
-import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy, Directive} from '@angular/core';
 import d3 from '../../d3';
 import {invertColor} from '../../utils/color.helper';
 import {PlatformService} from '../../../../services/platform.service';
+
+
+@Directive({
+	selector: '[measure]'
+})
+
+export class MeasureDirective implements OnChanges {
+	@Input() measureTrigger: number;
+	@Output() measured = new EventEmitter();
+
+	constructor(private el: ElementRef, private platform: PlatformService) {
+
+	}
+
+	measure() {
+		if (!this.platform.isBrowser) {
+			return;
+		}
+		setTimeout(() => {
+			let height = this.el.nativeElement.offsetHeight;
+			let width = this.el.nativeElement.offsetWidth;
+			this.measured.emit({width: width, height: height});
+		}, 0);
+	}
+
+	ngAfterViewInit() {
+		this.measure();
+	}
+
+	public ngOnChanges(changes: SimpleChanges): void {
+		this.measure();
+	}
+}
+
 
 @Component({
 	selector: 'g[ngx-charts-tree-map-cell]',
 	template: `
     <svg:g>
       <svg:rect
+        class="cell"
         [attr.fill]="fill"
         [attr.width]="width"
         [attr.height]="height"
@@ -16,22 +51,23 @@ import {PlatformService} from '../../../../services/platform.service';
         [attr.y]="y"
         [attr.width]="width"
         [attr.height]="height"
-      class="cell"
         (click)="onClick()"
       />
       <svg:foreignObject
-        *ngIf="width >= 70 && height >= 70"
+        *ngIf="canShowText()"
         [attr.x]="x"
         [attr.y]="y"
         [attr.width]="width"
         [attr.height]="height"
         class="label"
         [style.pointer-events]="'none'">
-        <xhtml:p
+        <xhtml:p measure class="treemap-box" [measureTrigger]="measureTrigger" (measured)="onMeasureTextBox($event)"
           [style.color]="textColor"
-          [style.height]="height + 'px'"
-          [style.width]="width + 'px'">
-          <xhtml:span class="treemap-label">{{formatLabel(label)}}</xhtml:span>
+          [style.height.px]="height"
+          [style.width.px]="width"
+          [class.wordwrap]="wordwrap"
+          >
+		  <xhtml:span class="treemap-label">{{formatLabel(label)}}</xhtml:span>
           <xhtml:span class="treemap-val" [style.font-size]="fontSize" ngx-charts-count-up [countTo]="value" [formatCountUpNumber]="formatCellNumber">
           </xhtml:span>
         </xhtml:p>
@@ -40,6 +76,7 @@ import {PlatformService} from '../../../../services/platform.service';
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class TreeMapCellComponent implements OnChanges {
 
 	@Input() fill: string;
@@ -60,15 +97,29 @@ export class TreeMapCellComponent implements OnChanges {
 	textColor = '';
 	transform: string;
 	initialized = false;
+	measureTrigger = false;
+	measuredHidden = false;
+	wordwrap = true;
 
 	constructor(private elementRef: ElementRef, private platform: PlatformService) {
 		this.element = elementRef.nativeElement;
+	}
+
+	onMeasureTextBox(event) {
+		console.log(event, this.width, this.height, this.label);
+		this.measuredHidden = event.height - this.height > 2;
+	}
+
+	canShowText(): boolean {
+		return !this.measuredHidden && this.width >= 70 && this.height >= 70;
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.update();
 		this.numberFontSize();
 		this.textColor = this.getTextColor();
+		this.measuredHidden = false;
+		this.measureTrigger = !this.measureTrigger;
 	}
 
 	numberFontSize() {
@@ -85,7 +136,7 @@ export class TreeMapCellComponent implements OnChanges {
 	}
 
 	formatLabel(s: string): string {
-		return s.split('(')[0].split(':')[0]
+		return s.split('(')[0].split(':')[0];
 	}
 
 	update(): void {

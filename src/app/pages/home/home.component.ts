@@ -5,6 +5,7 @@ import {Consts} from '../../model/consts';
 import {ApiService} from '../../services/api.service';
 import {IVizData} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -40,14 +41,16 @@ export class HomePage implements OnInit {
 					show: true,
 					showLabel: true,
 					label: 'Years',
-					defaultHeight: 20
+					defaultHeight: 20,
+					tickFormatting: Utils.formatYear
 				},
 				yAxis: {
 					show: true,
 					showLabel: true,
 					label: 'Number of Tender Lots',
 					defaultWidth: 30,
-					minInterval: 1
+					minInterval: 1,
+					tickFormatting: Utils.formatValue
 				},
 				showGridLines: true,
 				gradient: false,

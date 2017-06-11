@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter, OnChanges, ElementRef, ViewChild, SimpleChanges, AfterViewInit, ChangeDetectionStrategy} from '@angular/core';
-import {trimLabel} from '../../utils/label.helper';
 import {isDate} from '../../utils/date.helper';
 import {reduceTicks} from './ticks.helper';
 import {PlatformService} from '../../../../services/platform.service';
@@ -16,7 +15,7 @@ import {PlatformService} from '../../../../services/platform.service';
           [attr.text-anchor]="textAnchor"
           [attr.transform]="textTransform"
           [style.font-size]="'12px'">
-          {{trimLabel(tickFormat(tick))}}
+          {{tickFormat(tick)}}
         </svg:text>
       </svg:g>
     </svg:g>
@@ -56,7 +55,6 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 	textAnchor: string = 'middle';
 	maxTicksLength: number = 0;
 	maxAllowedLength: number = 16;
-	trimLabel: any;
 	adjustedScale: any;
 	tickValues: any;
 	textTransform: any;
@@ -67,7 +65,6 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 	@ViewChild('ticksel') ticksElement: ElementRef;
 
 	constructor(private platform: PlatformService) {
-		this.trimLabel = trimLabel;
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

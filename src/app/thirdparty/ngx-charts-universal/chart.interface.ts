@@ -5,6 +5,7 @@ export interface IAxisSettings {
 	defaultHeight?: number;
 	defaultWidth?: number;
 	minInterval?: number;
+	tickFormatting?: (val: number|Date|string) => string;
 }
 
 export interface IColorSet {

@@ -34,3 +34,9 @@
     border-left: 1px solid transparentize($base-font-color, 0.8);
   }
 }
+
+.currency-prefix {
+  font-size: 0.8em;
+  min-width: 30px;
+  display: inline-block;
+}

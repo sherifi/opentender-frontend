@@ -24,7 +24,7 @@ export const Utils = {
 		if (value === undefined) {
 			return '';
 		}
-		return value.toLocaleString();
+		return Utils.formatValue(value); // .toLocaleString();
 	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {
@@ -50,6 +50,24 @@ export const Utils = {
 			return Consts.countries[value];
 		}
 		return value;
+	},
+	formatYear(value): string {
+		return value.toString();
+	},
+	formatValue(n: number) {
+		if (n >= 1e6) {
+			// http://bmanolov.free.fr/numbers_names.php
+			let units =
+				['Million', 'Billion', 'Trillion', 'Quadrillion', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
+					'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion', 'Quattuordecillion', 'Quindecillion',
+					'Sexdecillion', 'Septdecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion'];
+			let real_si = Math.round(Math.log(n) * Math.LOG10E);
+			let base_si = real_si - (real_si % 3);
+			let unit = units[Math.floor(base_si / 3) - 2];
+			let r = n / parseFloat('1e' + base_si);
+			let r_string = r.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1});
+			return r_string + ' ' + unit;
+		}
+		return n.toLocaleString();
 	}
-
 };

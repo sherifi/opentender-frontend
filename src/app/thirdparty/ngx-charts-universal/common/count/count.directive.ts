@@ -87,6 +87,10 @@ export class CountUpDirective implements OnDestroy {
 			this.value = this._formatNumber(this._countTo);
 			return;
 		}
+		if ((this._countTo >= 1e6)) {
+			this.value = this._formatNumber(this._countTo);
+			return;
+		}
 		cancelAnimationFrame(this.animationReq);
 
 		const callback = ({value, progress, finished}) => {

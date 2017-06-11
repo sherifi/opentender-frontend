@@ -5,6 +5,7 @@ import {IChartTreeMap} from '../../../thirdparty/ngx-charts-universal/chart.inte
 import {IVizData, ISector} from '../../../app.interfaces';
 import {Consts} from '../../../model/consts';
 import {Router} from '@angular/router';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -32,9 +33,7 @@ export class ExploreSectorsPage implements OnInit, OnDestroy {
 				colorScheme: {
 					'domain': Consts.colors.diverging
 				},
-				formatNumber: (n: number): string => {
-					return n.toFixed(0);
-				}
+				formatNumber: Utils.formatValue
 			},
 			select: (event) => {
 				this.router.navigate(['/sector/' + event.id]);
@@ -54,7 +53,7 @@ export class ExploreSectorsPage implements OnInit, OnDestroy {
 					'domain': Consts.colors.diverging
 				},
 				formatNumber: (n: number): string => {
-					return '€ ' + n.toFixed(0);
+					return '€ ' + Utils.formatValue(n);
 				}
 			},
 			select: (event) => {

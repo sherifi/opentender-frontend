@@ -3,6 +3,7 @@ import {StateService} from '../../../services/state.service';
 import {Search, SearchCommand} from '../../../model/search';
 import {TenderFilterDefs, FilterDef} from '../../../model/filters';
 import {ISearchTenderData} from '../../../app.interfaces';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -55,7 +56,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	}
 
 	searchChange(data: ISearchTenderData) {
-		this.title = 'Tenders: ' + data.hits.total;
+		this.title = 'Tenders: ' + data.hits.total.toLocaleString();
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

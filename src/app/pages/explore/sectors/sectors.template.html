@@ -54,7 +54,7 @@
 					<td><a routerLink="/sector/{{sector.id}}"><i class="icon-hammer icon-large"></i></a></td>
 					<td>{{sector.id}}</td>
 					<td>{{sector.name}}</td>
-					<td>{{sector.value}}</td>
+					<td>{{sector.value | formatNumber}}</td>
 				</tr>
 			</table>
 		</section>

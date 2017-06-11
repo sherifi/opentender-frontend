@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {IChartPie, IChartTreeMap} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Consts} from '../../model/consts';
 import {PlatformService} from '../../services/platform.service';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -10,11 +11,53 @@ import {PlatformService} from '../../services/platform.service';
 })
 export class TestPage {
 
-	chartwidth = 40;
+	chartwidth = 68;
 
 	private charts: {
+		cpvs_code_main: IChartTreeMap;
 		cpvs_codes: IChartPie;
 	} = {
+		cpvs_code_main: {
+			visible: true,
+			chart: {
+				schemeType: 'ordinal',
+				view: {
+					def: {width: 680, height: 400},
+					min: {height: 400},
+					max: {height: 400}
+				},
+				colorScheme: {
+					'domain': Consts.colors.diverging
+				},
+				formatNumber: (n: number): string => {
+					return Utils.formatValue(n);
+				}
+			},
+			select: (event) => {
+				// this.router.navigate(['/sector/' + event.id]);
+			},
+			data: [{'name': 'Construction work', 'value': 1e6, 'id': '45'}, {
+				'name': 'Architectural, construction, engineering and inspection services',
+				'value': 19143,
+				'id': '71'
+			}, {'name': 'Sewage, refuse, cleaning and environmental services', 'value': 13532, 'id': '90'}, {
+				'name': 'Transport equipment and auxiliary products to transportation',
+				'value': 13464,
+				'id': '34'
+			}, {'name': 'Business services: law, marketing, consulting, recruitment, printing and security', 'value': 6298, 'id': '79'}, {
+				'name': 'Medical equipments, pharmaceuticals and personal care products',
+				'value': 5690,
+				'id': '33'
+			}, {'name': 'Petroleum products, fuel, electricity and other sources of energy', 'value': 5130, 'id': '09'}, {
+				'name': 'IT services: consulting, software development, Internet and support',
+				'value': 5072,
+				'id': '72'
+			}, {'name': 'Office and computing machinery, equipment and supplies except furniture and software packages', 'value': 4939, 'id': '30'}, {
+				'name': 'Laboratory, optical and precision equipments (excl. glasses)',
+				'value': 4118,
+				'id': '38'
+			}]
+		},
 		cpvs_codes: {
 			visible: false,
 			chart: {
@@ -36,16 +79,15 @@ export class TestPage {
 			},
 			onLegendLabelClick: (event) => {
 			},
-			data: [{"name": "Medical equipments", "value": 119}, {"name": "Pharmaceutical products", "value": 181}, {"name": "Firefighting vehicles", "value": 320}, {
-				"name": "Fire engines",
-				"value": 273
-			}, {"name": "Laboratory, optical and precision equipments (excl. glasses)", "value": 151}, {"name": "Mass spectrometer", "value": 122}, {
-				"name": "Software package and information systems",
-				"value": 104
-			}, {"name": "Special-purpose road passenger-transport services", "value": 112}, {"name": "IT services: consulting, software development, Internet and support", "value": 295}, {"name": "Electricity", "value": 101}]
+			data: [{'name': 'Medical equipments', 'value': 119}, {'name': 'Pharmaceutical products', 'value': 181}, {'name': 'Firefighting vehicles', 'value': 320}, {
+				'name': 'Fire engines',
+				'value': 273
+			}, {'name': 'Laboratory, optical and precision equipments (excl. glasses)', 'value': 151}, {'name': 'Mass spectrometer', 'value': 122}, {
+				'name': 'Software package and information systems',
+				'value': 104
+			}, {'name': 'Special-purpose road passenger-transport services', 'value': 112}, {'name': 'IT services: consulting, software development, Internet and support', 'value': 295}, {'name': 'Electricity', 'value': 101}]
 		}
 	};
-
 
 	constructor(private platform: PlatformService) {
 	}
@@ -73,7 +115,7 @@ export class TestPage {
 	}
 
 	onSliderChange(event): void {
-		this.chartwidth = event._endValue;
+		this.chartwidth = event.endValue;
 		this.triggerResize();
 	}
 }

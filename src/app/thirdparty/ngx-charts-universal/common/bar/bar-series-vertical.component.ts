@@ -49,6 +49,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 	@Input() colors;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
+	@Input() formatSeriesNumber: (n: number) => string;
 
 	@Output() select = new EventEmitter();
 	@Output() activate = new EventEmitter();

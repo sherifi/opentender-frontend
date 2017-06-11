@@ -4,6 +4,7 @@ import {ApiService} from '../../../services/api.service';
 import {IStats} from '../../../app.interfaces';
 import {Consts} from '../../../model/consts';
 import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/chart.interface';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -49,14 +50,16 @@ export class ExploreAdministrativeQualityPage {
 					show: true,
 					showLabel: true,
 					label: 'Year',
-					defaultHeight: 20
+					defaultHeight: 20,
+					tickFormatting: Utils.formatYear
 				},
 				yAxis: {
 					show: true,
 					showLabel: true,
 					label: 'Number of Lots',
 					defaultWidth: 30,
-					minInterval: 1
+					minInterval: 1,
+					tickFormatting: Utils.formatValue
 				},
 				showGridLines: true,
 				gradient: false,

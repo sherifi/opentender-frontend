@@ -120,7 +120,6 @@
 
   .checkbox-columns {
     margin-left: 22px;
-
   }
 
   .checkbox-column {
@@ -141,6 +140,7 @@
     .count {
       font-size: 0.7em;
       color: lighten($dark-gray, 10%);
+      white-space: nowrap;
     }
   }
 

@@ -46,7 +46,8 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	}
 
 	searchChange(data: ISearchCompanyData) {
-		this.title = 'Results: ' + (data.hits.total == 1000 ? '> ' : '') + data.hits.total;
+		let total = data.hits && data.hits.total ? data.hits.total : 0;
+		this.title = 'Results: ' + (total == 1000 ? '> ' : '') + total.toLocaleString();
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

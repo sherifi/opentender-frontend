@@ -14,7 +14,7 @@ export class PortalsService {
 		this._portals = portals.active;
 		this._portals.sort((a, b) => {
 			if (a.id === 'eu') {
-				a.name = 'All available countries';
+				a.name = 'All available data';
 				return -1;
 			}
 			if (a.name < b.name) {

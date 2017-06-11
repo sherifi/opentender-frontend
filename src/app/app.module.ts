@@ -87,6 +87,7 @@ import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tool
 import {EuropamLinkPipe} from './directives/europam-url.pipe';
 import {TestPage} from './pages/test/test.component';
 import {FOISearchLinkPipe} from './directives/foi-search-url.pipe';
+import {FormatNumberPipe} from './directives/format-number';
 
 @NgModule({
 	declarations: [
@@ -134,6 +135,7 @@ import {FOISearchLinkPipe} from './directives/foi-search-url.pipe';
 		KeyValuesPipe,
 		TruncatePipe,
 		FOISearchLinkPipe,
+		FormatNumberPipe,
 
 		AboutPage,
 		AuthorityPage,

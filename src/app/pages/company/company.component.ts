@@ -10,6 +10,7 @@ import {IChartBar, IChartPie} from '../../thirdparty/ngx-charts-universal/chart.
 import {IAuthority, IStats, ICompany} from '../../app.interfaces';
 import {Consts} from '../../model/consts';
 import {CountryService, Country} from '../../services/country.service';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -43,14 +44,16 @@ export class CompanyPage implements OnInit, OnDestroy {
 					show: true,
 					showLabel: true,
 					label: 'Year',
-					defaultHeight: 20
+					defaultHeight: 20,
+					tickFormatting: Utils.formatYear
 				},
 				yAxis: {
 					show: true,
 					showLabel: true,
 					label: 'Number of Bids',
 					defaultWidth: 30,
-					minInterval: 1
+					minInterval: 1,
+					tickFormatting: Utils.formatValue
 				},
 				showGridLines: true,
 				gradient: false,

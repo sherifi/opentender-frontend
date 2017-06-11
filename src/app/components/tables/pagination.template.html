@@ -1,20 +1,15 @@
 <div class="row" *ngIf="pagination">
   <div class="col-12">
     <div class="page-btn page-prev" ng-class="{disabled:pagination.page <= 0}"><a (click)="prev()">Previous</a></div>
-    <!--<ul>-->
-    <!--<li ng-repeat="p in pagination.quick track by $index" ng-switch="p=='sep'">-->
-    <!--<div ng-switch-when="false" class="page-btn page-page" ng-class="{disabled:pagination.page == p}"><a href ng-click="page(p)" ng-bind="p+1"></a></div>-->
-    <!--<span ng-switch-when="true">...</span>-->
-    <!--</li>-->
-    <!--</ul>-->
     <div class="page-btn page-next" ng-class="{disabled:pagination.pageCount <= pagination.page}"><a (click)="next()">Next</a></div>
-
     <span class="page-label">Entries per Page</span>
     <span class="select">
 			<select [(ngModel)]="pagination.pageSize" (ngModelChange)="onPageSizeChange($event)">
 				<option *ngFor="let item of [10, 20, 50, 100]" [ngValue]="item">{{item}}</option>
 			</select>
 		</span>
+	  <div>
+		  Rows: {{pagination.total | formatNumber }} - Pages: {{pagination.pageCount | formatNumber }} - Page: {{pagination.page+1}}
+	  </div>
   </div>
-  Rows: {{pagination.total}} - Pages: {{pagination.pageCount}} - Page: {{pagination.page+1}}
 </div>
