@@ -1,4 +1,13 @@
 
+
+doc-table {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+
 .tables {
 	$table-border-color: $base-border-color;
 	$table-border: 1px solid $table-border-color;

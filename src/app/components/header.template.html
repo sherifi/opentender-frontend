@@ -23,7 +23,7 @@
 		<li class="header-nav_item"><a [class.active]="isActive('documentation', router.url)"  [routerLink]="['/documentation']">Documentation</a></li>
 	</ul>
 </nav>
-<nav class="header-right" *ngIf="router.url == '/start'">
-	<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
+<nav class="header-right header-hero container-outer" *ngIf="router.url == '/start'">
+	<h2 class="header-hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
 	<p>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
 </nav>
