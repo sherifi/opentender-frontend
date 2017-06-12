@@ -69,17 +69,20 @@ export class SliderHandleDirective implements OnChanges {
 			return false;
 		};
 
+		// iphone safari doesn't bind this properly
+		let caller = this;
+
 		function dragProcess(event) {
 			let offsetX = event.clientX - borderLeftWidth - rect.left;
-			offsetX = Math.max(offsetX, this.min);
-			offsetX = Math.min(offsetX, this.max);
-			this.setPos(offsetX);
+			offsetX = Math.max(offsetX, caller.min);
+			offsetX = Math.min(offsetX, caller.max);
+			caller.setPos(offsetX);
 		}
 
 		function dragProcessTouch(event) {
 			const touches = event.changedTouches;
 			for (let i = 0; i < touches.length; i++) {
-				if (touches[i].target == this.el.nativeElement) {
+				if (touches[i].target == caller.el.nativeElement) {
 					dragProcess(touches[i]);
 				}
 			}
@@ -90,8 +93,10 @@ export class SliderHandleDirective implements OnChanges {
 			document.ontouchmove = null;
 			document.onmouseup = null;
 			document.ontouchend = null;
-			this.setDragging(false);
-			this.onChanged.emit({value: this.pos});
+			setTimeout(() => {
+				caller.setDragging(false);
+				caller.onChanged.emit({value: caller.pos});
+			}, 0);
 		}
 
 		document.onmousemove = dragProcess.bind(this);
