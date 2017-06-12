@@ -79,7 +79,7 @@ app.set('views', VIEWS);
 app.set('view engine', 'html');
 
 app.use('/robots.txt', express.static(path.join(ROOT, '/robots.txt')));
-app.use('/favicon.ico', express.static(path.join(ROOT, '/img/favicon.ico')));
+app.use('/favicon.ico', express.static(path.join(ROOT, '/favicons/favicon.ico')));
 app.use('/assets/schema.json', express.static(path.join(DATA, '/schema.json')));
 app.use('/assets/js', express.static(DIST, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
