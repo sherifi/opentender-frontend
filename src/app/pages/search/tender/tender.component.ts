@@ -3,7 +3,6 @@ import {StateService} from '../../../services/state.service';
 import {Search, SearchCommand} from '../../../model/search';
 import {TenderFilterDefs, FilterDef} from '../../../model/filters';
 import {ISearchTenderData} from '../../../app.interfaces';
-import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -20,7 +19,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders.name', 'finalPrice'];
 	filterIds = ['procedureType', 'supplyType', 'indicators.type', 'lots.awardDecisionDate'];
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
-	quicksearchIds = ['title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
+	quicksearchIds = []; // 'title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
 
 	constructor(private state: StateService) {
 		this.search.build(this.check_filters.filter(def => {

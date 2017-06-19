@@ -20,22 +20,21 @@ import {FormatFileSizePipe} from './directives/format-filesize.pipe';
 import {KeyValuesPipe} from './directives/key-values.pipe';
 import {TruncatePipe} from './directives/truncate.pipe';
 
-import {AboutPage} from './pages/documentation/about/about.component';
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
-import {DocumentationFOIPage} from './pages/documentation/foi/foi.component';
-import {DocumentationHowPage} from './pages/documentation/how/how.component';
-import {DocumentationMethodologyPage} from './pages/documentation/methodology/methodology.component';
-import {DocumentationPage} from './pages/documentation/documentation.component';
-import {DocumentationQualityPage} from './pages/documentation/quality/quality.component';
+import {AboutPage} from './pages/about/about.component';
+import {AboutOpentenderPage} from './pages/about/opentender/opentender.component';
+import {AboutFOIPage} from './pages/about/foi/foi.component';
+import {AboutHowPage} from './pages/about/how/how.component';
+import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
-import {ExploreAdministrativeQualityPage} from './pages/explore/quality/quality.component';
-import {ExploreCorruptionPage} from './pages/explore/corruption/corruption.component';
-import {ExploreLatestPage} from './pages/explore/latest/latest.component';
-import {ExplorePage} from './pages/explore/explore.component';
-import {ExploreRankingsPage} from './pages/explore/rankings/rankings.component';
-import {ExploreSectorsPage} from './pages/explore/sectors/sectors.component';
-import {ExploreTransparencyPage} from './pages/explore/transparency/transparency.component';
+import {DashboardsAdministrativeQualityPage} from './pages/dashboards/quality/quality.component';
+import {DashboardsCorruptionPage} from './pages/dashboards/corruption/corruption.component';
+import {DashboardsLatestPage} from './pages/dashboards/latest/latest.component';
+import {DashboardsPage} from './pages/dashboards/dashboards.component';
+import {DashboardsRankingsPage} from './pages/dashboards/rankings/rankings.component';
+import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
+import {DashboardsTransparencyPage} from './pages/dashboards/transparency/transparency.component';
 import {HomePage} from './pages/home/home.component';
 import {ImprintPage} from './pages/imprint/imprint.component';
 import {SearchAuthorityPage} from './pages/search/authority/authority.component';
@@ -67,7 +66,7 @@ import {StartMapComponent} from './pages/start/start-map.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
-import {TreeViewComponent, DocumentationDataformatPage} from './pages/documentation/data/dataformat.component';
+import {TreeViewComponent, AboutDataformatPage} from './pages/about/data/dataformat.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
 
 import {ApiService} from './services/api.service';
@@ -137,23 +136,22 @@ import {FormatNumberPipe} from './directives/format-number';
 		FOISearchLinkPipe,
 		FormatNumberPipe,
 
-		AboutPage,
 		AuthorityPage,
 		CompanyPage,
-		DocumentationDataformatPage,
-		DocumentationFOIPage,
-		DocumentationHowPage,
-		DocumentationMethodologyPage,
-		DocumentationPage,
-		DocumentationQualityPage,
+		AboutPage,
+		AboutOpentenderPage,
+		AboutDataformatPage,
+		AboutFOIPage,
+		AboutHowPage,
+		AboutDataQualityPage,
 		DownloadsPage,
-		ExploreAdministrativeQualityPage,
-		ExploreCorruptionPage,
-		ExploreLatestPage,
-		ExplorePage,
-		ExploreRankingsPage,
-		ExploreSectorsPage,
-		ExploreTransparencyPage,
+		DashboardsAdministrativeQualityPage,
+		DashboardsCorruptionPage,
+		DashboardsLatestPage,
+		DashboardsPage,
+		DashboardsRankingsPage,
+		DashboardsMarketAnalysisPage,
+		DashboardsTransparencyPage,
 		HomePage,
 		ImprintPage,
 		SearchAuthorityPage,

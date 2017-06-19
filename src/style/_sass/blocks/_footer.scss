@@ -89,8 +89,9 @@ footer,
 	padding-bottom: $base-padding;
 
 	@include respond-to(medium-up) {
-		@include span-columns(2 of 8);
-		@include omega(4n);
+		@include span-columns(4);
+		//@include span-columns(3);
+		//@include omega(3n);
 		padding-bottom: 0;
 	}
 
@@ -151,7 +152,7 @@ footer,
 	@include span-columns(12);
 
 	@include respond-to(medium-up) {
-		@include span-columns(6 of 8);
+		@include span-columns(8);
 	}
 }
 
@@ -159,8 +160,8 @@ footer,
 	@include span-columns(12);
 
 	@include respond-to(medium-up) {
-		@include span-columns(2 of 8);
-		@include omega();
+		@include span-columns(4);
+		//@include omega();
 	}
 }
 

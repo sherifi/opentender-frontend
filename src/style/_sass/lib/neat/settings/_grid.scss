@@ -4,7 +4,7 @@
 
 $column: golden-ratio(1em, 3) !default;
 
-/// Sets the relative width of a single grid gutter. The unit used should be the same one used to define `$column`. To learn more about golden-ratio() see [Bourbon docs](http://bourbon.io/docs/#golden-ratio). Set with the `!global` flag.
+/// Sets the relative width of a single grid gutter. The unit used should be the same one used to define `$column`. To learn more opentender golden-ratio() see [Bourbon docs](http://bourbon.io/docs/#golden-ratio). Set with the `!global` flag.
 ///
 /// @type Number (Unit)
 
@@ -16,7 +16,7 @@ $gutter: golden-ratio(1em, 1) !default;
 
 $grid-columns: 12 !default;
 
-/// Sets the max-width property of the element that includes `outer-container()`. To learn more about `em()` see [Bourbon docs](http://bourbon.io/docs/#px-to-em). Set with the `!global` flag.
+/// Sets the max-width property of the element that includes `outer-container()`. To learn more opentender `em()` see [Bourbon docs](http://bourbon.io/docs/#px-to-em). Set with the `!global` flag.
 ///
 /// @type Number (Unit)
 ///

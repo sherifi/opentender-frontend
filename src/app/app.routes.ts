@@ -1,50 +1,48 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {AboutPage} from './pages/documentation/about/about.component';
+import {AboutOpentenderPage} from './pages/about/opentender/opentender.component';
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
-import {DocumentationDataformatPage} from './pages/documentation/data/dataformat.component';
-import {DocumentationFOIPage} from './pages/documentation/foi/foi.component';
-import {DocumentationHowPage} from './pages/documentation/how/how.component';
-import {DocumentationMethodologyPage} from './pages/documentation/methodology/methodology.component';
-import {DocumentationPage} from './pages/documentation/documentation.component';
-import {DocumentationQualityPage} from './pages/documentation/quality/quality.component';
+import {AboutDataformatPage} from './pages/about/data/dataformat.component';
+import {AboutFOIPage} from './pages/about/foi/foi.component';
+import {AboutHowPage} from './pages/about/how/how.component';
+import {AboutPage} from './pages/about/about.component';
+import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
-import {ExploreAdministrativeQualityPage} from './pages/explore/quality/quality.component';
-import {ExploreCorruptionPage} from './pages/explore/corruption/corruption.component';
-import {ExploreLatestPage} from './pages/explore/latest/latest.component';
-import {ExplorePage} from './pages/explore/explore.component';
-import {ExploreRankingsPage} from './pages/explore/rankings/rankings.component';
-import {ExploreSectorsPage} from './pages/explore/sectors/sectors.component';
-import {ExploreTransparencyPage} from './pages/explore/transparency/transparency.component';
+import {DashboardsAdministrativeQualityPage} from './pages/dashboards/quality/quality.component';
+import {DashboardsCorruptionPage} from './pages/dashboards/corruption/corruption.component';
+import {DashboardsLatestPage} from './pages/dashboards/latest/latest.component';
+import {DashboardsPage} from './pages/dashboards/dashboards.component';
+import {DashboardsRankingsPage} from './pages/dashboards/rankings/rankings.component';
+import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
+import {DashboardsTransparencyPage} from './pages/dashboards/transparency/transparency.component';
 import {HomePage} from './pages/home/home.component';
 import {ImprintPage} from './pages/imprint/imprint.component';
 import {SearchAuthorityPage} from './pages/search/authority/authority.component';
 import {SearchCompanyPage} from './pages/search/company/company.component';
 import {SearchPage} from './pages/search/search.component';
-// import {SearchSectorPage} from './pages/search/sector/sector.component';
 import {SearchTenderPage} from './pages/search/tender/tender.component';
 import {SectorPage} from './pages/sector/sector.component';
 import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
 
-
 export const routes: Routes = [
 	{path: '', component: HomePage},
 	{path: 'start', component: StartPage},
+
 	{
-		path: 'explore',
-		component: ExplorePage,
-		data: {title: 'Explore Data'},
+		path: 'dashboards',
+		component: DashboardsPage,
+		data: {title: 'Dashboards'},
 		children: [
-			{path: 'latest', component: ExploreLatestPage, data: {title: 'Explore Latest Tenders'}},
-			{path: 'rankings', component: ExploreRankingsPage, data: {title: 'Explore Rankings'}},
-			{path: 'transparency-indicators', component: ExploreTransparencyPage, data: {title: 'Explore Transparency Indicators'}},
-			{path: 'corruption-indicators', component: ExploreCorruptionPage, data: {title: 'Explore Corruption Risk Indicators'}},
-			{path: 'administrative-quality', component: ExploreAdministrativeQualityPage, data: {title: 'Explore Administrative Quality'}},
-			{path: 'sectors', component: ExploreSectorsPage, data: {title: 'Explore Sectors'}}
+			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis'}},
+			{path: 'latest', component: DashboardsLatestPage, data: {title: 'Latest Tenders'}},
+			{path: 'rankings', component: DashboardsRankingsPage, data: {title: 'Rankings'}},
+			{path: 'transparency-indicators', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators'}},
+			{path: 'corruption-indicators', component: DashboardsCorruptionPage, data: {title: 'Explore Corruption Risk Indicators'}},
+			{path: 'administrative-quality', component: DashboardsAdministrativeQualityPage, data: {title: 'Administrative Quality Indicators'}}
 		]
 	},
 	{
@@ -65,20 +63,20 @@ export const routes: Routes = [
 	{path: 'sector/:id', component: SectorPage},
 
 	{
-		path: 'documentation',
-		component: DocumentationPage,
-		data: {title: 'Documentation'},
+		path: 'about',
+		component: AboutPage,
+		data: {title: 'About'},
 		children: [
-			{path: 'how-opentender-works', component: DocumentationHowPage, data: {title: 'How Opentender works'}},
-			{path: 'methodology', component: DocumentationMethodologyPage, data: {title: 'Methodology'}},
-			{path: 'dataformat', component: DocumentationDataformatPage, data: {title: 'Raw Data Format'}},
-			{path: 'about', component: AboutPage, data: {title: 'About'}},
-			{path: 'foi', component: DocumentationFOIPage, data: {title: 'FOI Overview'}},
-			{path: 'quality', component: DocumentationQualityPage, data: {title: 'Data Quality'}}
+			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender'}},
+			{path: 'how-opentender-works', component: AboutHowPage, data: {title: 'How Opentender works'}},
+			{path: 'dataformat', component: AboutDataformatPage, data: {title: 'Raw Data Format'}},
+			{path: 'foi', component: AboutFOIPage, data: {title: 'FOI Overview'}},
+			{path: 'quality', component: AboutDataQualityPage, data: {title: 'Data Quality'}}
 		]
 	},
 	{path: 'downloads', component: DownloadsPage, data: {title: 'Downloads'}},
 	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
+
 	{path: 'test', component: TestPage, data: {title: 'Test'}},
 	{path: '**', redirectTo: 'start'}
 ];

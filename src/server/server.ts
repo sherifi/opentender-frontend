@@ -28,6 +28,7 @@ let languages = {
 
 import * as Portals from 'portals.json';
 import * as Config from 'config.js';
+import {routes} from '../app/app.routes';
 
 let useCache = !Config.server.disableCache;
 let addToCache = (req, data) => {
@@ -187,19 +188,12 @@ let registerPages = country => {
 	};
 
 	// Routes with html5pushstate
-	// TODO: get that from app.routes.ts
-	app.use(country_path + '/explore*', checkCache, ngApp);
-	app.use(country_path + '/imprint*', checkCache, ngApp);
-	app.use(country_path + '/search*', checkCache, ngApp);
-	app.use(country_path + '/downloads*', checkCache, ngApp);
-	app.use(country_path + '/documentation*', checkCache, ngApp);
-	app.use(country_path + '/tender*', checkCache, ngApp);
-	app.use(country_path + '/company*', checkCache, ngApp);
-	app.use(country_path + '/authority*', checkCache, ngApp);
-	app.use(country_path + '/sector*', checkCache, ngApp);
-	app.use(country_path + '/location*', checkCache, ngApp);
-	app.use(country_path + '/start*', checkCache, ngApp);
-	app.use(country_path + '/test*', checkCache, ngApp);
+	routes.forEach(route => {
+		let s = route.path.split('/')[0];
+		if (s && s !== '' && s !== '**') {
+			app.use(country_path + '/' + s + '*', checkCache, ngApp);
+		}
+	});
 	app.use(country_path + '/', checkCache, (req, res) => {
 		if ([country_path, country_path + '/', country_path + '/index.html'].indexOf(req.originalUrl) < 0) {
 			return errorResponse(req, res);
@@ -207,7 +201,6 @@ let registerPages = country => {
 			return ngApp(req, res);
 		}
 	});
-
 };
 
 Portals.active.forEach(portal => {

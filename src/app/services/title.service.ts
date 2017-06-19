@@ -5,7 +5,7 @@ import {Title} from '@angular/platform-browser';
 
 @Injectable()
 export class TitleService {
-	defaultName = 'OpenTender Portal';
+	defaultName = 'Opentender Portal';
 
 	constructor(private activatedRoute: ActivatedRoute, private country: CountryService, private router: Router, private titleService: Title) {
 		this.defaultName += ' ' + country.get().name;

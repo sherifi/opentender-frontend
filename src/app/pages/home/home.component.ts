@@ -15,15 +15,12 @@ import {Utils} from '../../model/utils';
 export class HomePage implements OnInit {
 	public country: string;
 	public cards = [
+		{icon: 'icon-briefcase', url: '/dashboards', title: 'Dashboards', subtitle: 'Data overview', text: Consts.IPSUM},
 		{icon: 'icon-search', url: '/search', title: 'Search', subtitle: 'Search and Find', text: Consts.IPSUM},
-		{icon: 'icon-briefcase', url: '/explore/rankings', title: 'Rankings', subtitle: 'Top/Bottom performers', text: Consts.IPSUM},
 		{icon: 'icon-database', url: '/downloads', title: 'Download', subtitle: 'Download data', text: Consts.IPSUM},
-		{icon: 'icon-flag', url: '/explore/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
-		{icon: 'icon-checkmark', url: '/explore/transparency-indicators', title: 'Transparency Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
-		{icon: 'icon-library', url: '/explore/administrative-quality', title: 'Administrative quality', subtitle: 'Indicators', text: Consts.IPSUM},
-		{icon: 'icon-books', url: '/documentation/about', title: 'About', subtitle: 'Find out about this site', text: Consts.IPSUM},
-		{icon: 'icon-office', url: '/documentation/how-opentender-works', title: 'How to use this site', subtitle: 'Documentation', text: Consts.IPSUM},
-		{icon: 'icon-office', url: '/documentation/methodology', title: 'Methodology', subtitle: 'Documentation', text: Consts.IPSUM},
+		{icon: 'icon-checkmark', url: '/dashboards/transparency-indicators', title: 'Transparency Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
+		{icon: 'icon-flag', url: '/dashboards/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
+		{icon: 'icon-library', url: '/dashboards/administrative-quality', title: 'Administrative quality', subtitle: 'Indicators', text: Consts.IPSUM}
 	];
 	private charts: {
 		lots_in_years: IChartBar;

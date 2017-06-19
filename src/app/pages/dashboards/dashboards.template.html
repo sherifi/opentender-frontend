@@ -1,0 +1,37 @@
+<div class="header-sub">
+	<ul class="header-nav_bottom">
+		<li class="header-nav_item" *ngFor="let card of cards"><a [routerLinkActive]="['active']" [routerLink]="[card.url]">{{card.title}}</a></li>
+	</ul>
+</div>
+
+<div *ngIf="isRootPage">
+	<section class="container-outer dashboards">
+		<section class="container">
+			<div class="container-title">Dashboards</div>
+		</section>
+	</section>
+
+	<section class="slab-beta-dark container-padded">
+		<div class="container-outer">
+			<div class="container-left-3">
+				<h4>In this Section you are invited to explore visualizations & lists of interest.</h4>
+			</div>
+			<div class="container-left-9">
+				<article class="card" *ngFor="let card of cards; let i = index;">
+					<a [routerLink]="[card.url]" class="card-image_link">
+						<div class="card-image-placeholder card-image-placeholder-{{i+1}}">
+							<i [class]="card.icon"></i>
+						</div>
+					</a>
+					<div class="card-content">
+						<p class="card-content-subhead">{{card.subtitle}}</p>
+						<a [routerLink]="[card.url]"><h3 class="card-title">{{card.title}}</h3></a>
+						<p>{{card.text}}</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>
+
+<router-outlet></router-outlet>

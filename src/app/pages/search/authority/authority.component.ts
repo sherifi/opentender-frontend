@@ -14,6 +14,7 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 	search = new Search('authority', AuthorityFilterDefs);
 	search_cmd: SearchCommand;
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
+	quick_filters = [];
 	check_filters = AuthorityFilterDefs;
 	search_filters = AuthorityFilterDefs.filter(f => f.type !== 'select');
 
