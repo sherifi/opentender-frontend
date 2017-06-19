@@ -103,14 +103,14 @@
 			<div class="container-left-6">
 				<table class="tables">
 					<tr>
-						<th>Awarded Bids</th>
 						<th>Supplier</th>
+						<th>Awarded Bids</th>
 					</tr>
 					<tr *ngFor="let val of vis.suppliers">
-						<td>{{val.value| formatNumber}}</td>
 						<td>
 							<tender-body-line [body]="val.body" [link]="'/company/'+val.body.groupId"></tender-body-line>
 						</td>
+						<td>{{val.value| formatNumber}}</td>
 					</tr>
 				</table>
 			</div>

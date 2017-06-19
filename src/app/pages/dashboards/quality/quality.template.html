@@ -71,32 +71,32 @@
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6">
+				<h2>Companies</h2>
+				<table class="tables">
+					<tr>
+						<th>Company</th>
+						<th>Number of Flags</th>
+					</tr>
+					<tr *ngFor="let val of vis.suppliers">
+						<td>
+							<tender-body-line [body]="val.body" [link]="'/company/'+val.body.groupId"></tender-body-line>
+						</td>
+						<td>{{val.value| formatNumber}}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="container-left-6">
 				<h2>Authorities</h2>
 				<table class="tables">
 					<tr>
 						<th>Number of Flags</th>
 						<th>Authority</th>
 					</tr>
-					<tr *ngFor="let val of vis.suppliers">
-						<td>{{val.value| formatNumber}}</td>
-						<td>
-							<tender-body-line [body]="val.body" [link]="'/company/'+val.body.groupId"></tender-body-line>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="container-left-6">
-				<h2>Companies</h2>
-				<table class="tables">
-					<tr>
-						<th>Number of Flags</th>
-						<th>Company</th>
-					</tr>
 					<tr *ngFor="let val of vis.buyers">
-						<td>{{val.value| formatNumber}}</td>
 						<td>
 							<tender-body-line [body]="val.body" [link]="'/authority/'+val.body.groupId"></tender-body-line>
 						</td>
+						<td>{{val.value| formatNumber}}</td>
 					</tr>
 				</table>
 			</div>
