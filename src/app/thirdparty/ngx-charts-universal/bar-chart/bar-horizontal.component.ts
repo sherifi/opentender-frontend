@@ -44,6 +44,7 @@ import {ILegendOptions, IDomain} from '../common/common.interface';
 			   [dims]="viewDim"
 			   [gradient]="chart.gradient"
 			   [activeEntries]="activeEntries"
+			   [valueFormatting]="chart.valueFormatting"
 			   (select)="onClick($event)"
 			   (activate)="onActivate($event)"
 			   (deactivate)="onDeactivate($event)"

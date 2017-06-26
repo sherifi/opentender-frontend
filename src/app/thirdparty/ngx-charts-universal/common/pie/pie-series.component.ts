@@ -20,45 +20,45 @@ interface PieArc {
 @Component({
 	selector: 'g[ngx-charts-pie-series]',
 	template: `
-    <svg:g *ngFor="let arc of arcs; trackBy:trackBy">
-      <svg:g ngx-charts-pie-label
-        *ngIf="labelVisible(arc)"
-        [data]="arc"
-        [isLeft]="arc.isLeft"
-        [radius]="outerRadius"
-        [color]="arc.color"
-        [label]="arc.label"
-        [max]="max"
-        [value]="arc.value"
-        [explodeSlices]="explodeSlices"
-        ngx-tooltip
-        [tooltipPlacement]="'top'"
-        [tooltipType]="'tooltip'"
-        [tooltipTitle]="tooltipText(arc)">
-      </svg:g>
-      <svg:g 
-        ngx-charts-pie-arc
-        [startAngle]="arc.startAngle"
-        [endAngle]="arc.endAngle"
-        [innerRadius]="innerRadius"
-        [outerRadius]="outerRadius"
-        [fill]="arc.color"
-        [value]="arc.data.value"
-        [gradient]="gradient" 
-        [data]="arc.data"
-        [max]="max"
-        [explodeSlices]="explodeSlices"
-        [isActive]="isActive(arc.data)"
-        (select)="onClick($event)"
-        (activate)="activate.emit($event)"
-        (deactivate)="deactivate.emit($event)"        
-        ngx-tooltip
-        [tooltipPlacement]="'top'"
-        [tooltipType]="'tooltip'"
-        [tooltipTitle]="tooltipText(arc)">
-      </svg:g>
-    </svg:g>
-  `,
+		<svg:g *ngFor="let arc of arcs; trackBy:trackBy">
+			<svg:g ngx-charts-pie-label
+				   *ngIf="labelVisible(arc)"
+				   [data]="arc"
+				   [isLeft]="arc.isLeft"
+				   [radius]="outerRadius"
+				   [color]="arc.color"
+				   [label]="arc.label"
+				   [max]="max"
+				   [value]="arc.value"
+				   [explodeSlices]="explodeSlices"
+				   ngx-tooltip
+				   [tooltipPlacement]="'top'"
+				   [tooltipType]="'tooltip'"
+				   [tooltipTitle]="tooltipText(arc)">
+			</svg:g>
+			<svg:g
+					ngx-charts-pie-arc
+					[startAngle]="arc.startAngle"
+					[endAngle]="arc.endAngle"
+					[innerRadius]="innerRadius"
+					[outerRadius]="outerRadius"
+					[fill]="arc.color"
+					[value]="arc.data.value"
+					[gradient]="gradient"
+					[data]="arc.data"
+					[max]="max"
+					[explodeSlices]="explodeSlices"
+					[isActive]="isActive(arc.data)"
+					(select)="onClick($event)"
+					(activate)="activate.emit($event)"
+					(deactivate)="deactivate.emit($event)"
+					ngx-tooltip
+					[tooltipPlacement]="'top'"
+					[tooltipType]="'tooltip'"
+					[tooltipTitle]="tooltipText(arc)">
+			</svg:g>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PieSeriesComponent implements OnChanges {
@@ -72,12 +72,14 @@ export class PieSeriesComponent implements OnChanges {
 	@Input() showLabels;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
+	@Input() valueFormatting: (value) => string;
 
 	@Output() select = new EventEmitter();
 	@Output() activate = new EventEmitter();
 	@Output() deactivate = new EventEmitter();
 
 	max: number;
+	total: number;
 	arcs: Array<PieArc>;
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -85,7 +87,7 @@ export class PieSeriesComponent implements OnChanges {
 	}
 
 	update(): void {
-		let pie = d3.pie<{value: number}>()
+		let pie = d3.pie<{ value: number }>()
 			.value((d) => d.value)
 			.sort(null);
 
@@ -94,7 +96,9 @@ export class PieSeriesComponent implements OnChanges {
 			return <any>d;
 		});
 
+		this.total = 0;
 		this.max = d3.max(arcData, (d) => {
+			this.total += d.value;
 			return d.value;
 		});
 
@@ -150,7 +154,14 @@ export class PieSeriesComponent implements OnChanges {
 	}
 
 	tooltipText(arc) {
-		return getTooltipLabeledText(arc.label, formatLabel(arc.data.value));
+		let text = '';
+		let percent = this.total > 0 ? arc.data.value / (this.total / 100) : 0;
+		if (this.valueFormatting) {
+			text = this.valueFormatting(percent);
+		} else {
+			text = formatLabel(Math.round(percent * 100) / 100) + '%';
+		}
+		return getTooltipLabeledText(arc.label, text);
 	}
 
 	trackBy(index, item): string {

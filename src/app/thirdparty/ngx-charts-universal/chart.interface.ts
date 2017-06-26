@@ -53,7 +53,7 @@ export interface IChartBaseSettings {
 	schemeType: string;
 	colorScheme: IColorSet;
 	customColors?: any;
-	formatNumber?: (n: number) => string;
+	valueFormatting?: (val: number|Date|string) => string;
 	legend?: IChartLegendSettings;
 }
 
@@ -90,6 +90,7 @@ export interface IChartXYAxisSettings extends IChartBaseSettings {
 	colorScheme: IColorSet;
 	customColors?: any;
 	legend?: IChartLegendSettings;
+	valueFormatting?: (val: number|Date|string) => string;
 
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
@@ -107,6 +108,7 @@ export interface IChartBarsSettings extends IChartXYAxisSettings {
 	yAxis: IAxisSettings;
 	showGridLines: boolean;
 	gradient: boolean;
+	valueFormatting?: (val: number|Date|string) => string;
 
 	chartType?: string; // standard | stacked | normalized
 }

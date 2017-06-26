@@ -44,7 +44,7 @@ import {ILegendOptions, IDomain} from '../common/common.interface';
 			   [series]="data"
 			   [dims]="viewDim"
 			   [gradient]="chart.gradient"
-			   [formatSeriesNumber]="chart.formatNumber"
+			   [valueFormatting]="chart.valueFormatting"
       		   [activeEntries]="activeEntries"
 			   (activate)="onActivate($event)"
 			   (deactivate)="onDeactivate($event)"

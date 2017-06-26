@@ -6,30 +6,30 @@ import {ILegendOptions} from '../common/common.interface';
 
 @Component({
 	selector: 'ngx-charts-pie-chart',
-	template: `
-    <ngx-charts-chart
-      [dim]="dim" [chart]="chart" [data]="data"  
-      [legendOptions]="legendOptions"
-      [activeEntries]="activeEntries"
-      (legendLabelActivate)="onActivate($event)"
-      (legendLabelDeactivate)="onDeactivate($event)"
-      (legendLabelClick)="onClick($event)">
-      <svg:g [attr.transform]="transform" class="pie-chart chart">
-        <svg:g ngx-charts-pie-series
-          [colors]="colors"
-          [showLabels]="showLabels"
-          [series]="piedata"
-          [activeEntries]="activeEntries"
-          [innerRadius]="innerRadius"
-          [outerRadius]="outerRadius"
-          [explodeSlices]="chart.explodeSlices"
-          [gradient]="chart.gradient"
-          (select)="onClick($event)"
-          (activate)="onActivate($event)"
-          (deactivate)="onDeactivate($event)"
-        />
-      </svg:g>
-    </ngx-charts-chart>
+	template: `<ngx-charts-chart
+		[dim]="dim" [chart]="chart" [data]="data"
+		[legendOptions]="legendOptions"
+		[activeEntries]="activeEntries"
+		(legendLabelActivate)="onActivate($event)"
+		(legendLabelDeactivate)="onDeactivate($event)"
+		(legendLabelClick)="onClick($event)">
+	<svg:g [attr.transform]="transform" class="pie-chart chart">
+		<svg:g ngx-charts-pie-series
+			   [colors]="colors"
+			   [showLabels]="showLabels"
+			   [series]="piedata"
+			   [activeEntries]="activeEntries"
+			   [innerRadius]="innerRadius"
+			   [outerRadius]="outerRadius"
+			   [explodeSlices]="chart.explodeSlices"
+			   [gradient]="chart.gradient"
+			   [valueFormatting]="chart.valueFormatting"
+			   (select)="onClick($event)"
+			   (activate)="onActivate($event)"
+			   (deactivate)="onDeactivate($event)"
+		/>
+	</svg:g>
+</ngx-charts-chart>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })

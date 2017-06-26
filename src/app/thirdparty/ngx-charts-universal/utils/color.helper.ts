@@ -27,7 +27,7 @@ export class ColorHelper {
 				.range(scheme.domain)
 				.domain(domain);
 
-		} else if (type === 'linear') {
+		} else { // if (type === 'linear') {
 			colorScale = d3.scaleLinear()
 				.domain(d3.range(0, 1, 1.0 / (scheme.domain.length - 1)))
 				.range(scheme.domain);

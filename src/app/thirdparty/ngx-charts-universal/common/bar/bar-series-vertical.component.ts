@@ -49,7 +49,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 	@Input() colors;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
-	@Input() formatSeriesNumber: (n: number) => string;
+	@Input() valueFormatting: (value) => string;
 
 	@Output() select = new EventEmitter();
 	@Output() activate = new EventEmitter();
@@ -147,7 +147,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				}
 			}
 
-			bar.tooltipText = getTooltipLabeledText(formattedLabel, value.toLocaleString());
+			bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
 
 			return bar;
 		});

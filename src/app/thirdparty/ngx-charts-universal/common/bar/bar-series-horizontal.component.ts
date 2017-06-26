@@ -5,29 +5,29 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 @Component({
 	selector: 'g[ngx-charts-series-horizontal]',
 	template: `
-    <svg:g ngx-charts-bar 
-      *ngFor="let bar of bars; trackBy:trackBy"
-      [@animationState]="'active'"
-      [width]="bar.width"
-      [height]="bar.height"
-      [x]="bar.x"
-      [y]="bar.y"
-      [fill]="bar.color"
-      [stops]="bar.gradientStops"
-      [data]="bar.data"
-      [orientation]="'horizontal'"
-      [roundEdges]="bar.roundEdges"
-      (select)="click($event)"
-      [gradient]="gradient"
-      [isActive]="isActive(bar.data)"
-      (activate)="activate.emit($event)"
-      (deactivate)="deactivate.emit($event)"
-      ngx-tooltip
-      [tooltipPlacement]="'top'"
-      [tooltipType]="'tooltip'"
-      [tooltipTitle]="bar.tooltipText">
-    </svg:g>
-  `,
+		<svg:g ngx-charts-bar
+			   *ngFor="let bar of bars; trackBy: trackBy"
+			   [@animationState]="'active'"
+			   [width]="bar.width"
+			   [height]="bar.height"
+			   [x]="bar.x"
+			   [y]="bar.y"
+			   [fill]="bar.color"
+			   [stops]="bar.gradientStops"
+			   [data]="bar.data"
+			   [orientation]="'horizontal'"
+			   [roundEdges]="bar.roundEdges"
+			   (select)="click($event)"
+			   [gradient]="gradient"
+			   [isActive]="isActive(bar.data)"
+			   (activate)="activate.emit($event)"
+			   (deactivate)="deactivate.emit($event)"
+			   ngx-tooltip
+			   [tooltipPlacement]="'top'"
+			   [tooltipType]="'tooltip'"
+			   [tooltipTitle]="bar.tooltipText">
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	animations: [
 		trigger('animationState', [
@@ -54,6 +54,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 	@Input() colors;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
+	@Input() valueFormatting: (value) => string;
 
 	@Output() select = new EventEmitter();
 	@Output() activate = new EventEmitter();
@@ -139,8 +140,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 				}
 			}
 
-			bar.tooltipText = getTooltipLabeledText(formattedLabel, value.toLocaleString());
-
+			bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
 			return bar;
 		});
 	}

@@ -15,7 +15,7 @@ import d3 from '../d3';
           [colors]="colors"
           [node]="node"
           [dims]="viewDim"
-          [formatSeriesNumber]="chart.formatNumber"
+          [formatSeriesNumber]="chart.valueFormatting"
           (select)="onClick($event)"
         />
       </svg:g>
