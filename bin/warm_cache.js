@@ -17,7 +17,15 @@ if (config.server.data.path[0] == '.') {
 	data_folder = path.resolve(__dirname, '..', config.server.data.path);
 }
 let portals = JSON.parse(fs.readFileSync(path.join(data_folder, 'portals.json')).toString()).active;
-let sites = ['/', '/search/tender', '/search/company', '/search/authority', '/dashboards/corruption-indicators', '/dashboards/administrative-quality'];
+let sites = ['/',
+	'/search/tender',
+	'/search/company',
+	'/search/authority',
+	'/dashboards/market-analysis',
+	'/dashboards/corruption-indicators',
+	'/dashboards/transparency-indicators',
+	'/dashboards/administrative-quality'
+];
 
 let warm_site = (site, cb) => {
 	async.forEachSeries(portals, (portal, next) => {
