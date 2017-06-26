@@ -20,7 +20,7 @@
 		<li class="header-nav_item"><a [class.active]="isActive('dashboards', router.url)" [routerLink]="['/dashboards']">Dashboards</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)"  [routerLink]="['/search/tender']">Search</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)"  [routerLink]="['/downloads']">Download</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('about', router.url)"  [routerLink]="['/about']">About</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('about', router.url)"  [routerLink]="['/about/about-opentender']">About</a></li>
 	</ul>
 </nav>
 <nav class="header-right header-hero container-outer" *ngIf="router.url == '/start'">
