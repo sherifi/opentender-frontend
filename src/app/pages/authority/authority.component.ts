@@ -55,6 +55,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 					minInterval: 1,
 					tickFormatting: Utils.formatValue
 				},
+				valueFormatting: Utils.formatPercent,
 				showGridLines: true,
 				gradient: false,
 				colorScheme: {

@@ -35,7 +35,9 @@ export class DashboardsAdministrativeQualityPage {
 
 	private charts: {
 		lots_in_years: IChartBar;
+		lots_pc_in_years: IChartBar;
 		cpvs_codes: IChartPie;
+		indicators: IChartPie;
 	} = {
 		lots_in_years: {
 			visible: false,
@@ -73,6 +75,43 @@ export class DashboardsAdministrativeQualityPage {
 			},
 			data: []
 		},
+		lots_pc_in_years: {
+			visible: false,
+			chart: {
+				schemeType: 'ordinal',
+				view: {
+					def: {width: 470, height: 320},
+					min: {height: 320},
+					max: {height: 320}
+				},
+				xAxis: {
+					show: true,
+					showLabel: true,
+					label: 'Year',
+					defaultHeight: 20,
+					tickFormatting: Utils.formatYear
+				},
+				yAxis: {
+					show: true,
+					showLabel: true,
+					label: 'Percent of Lots',
+					defaultWidth: 30,
+					minInterval: 5,
+					tickFormatting: Utils.formatPercentTrunc
+				},
+				valueFormatting: Utils.formatPercent,
+				showGridLines: true,
+				gradient: false,
+				colorScheme: {
+					domain: Consts.colors.single
+				}
+			},
+			select: (event) => {
+			},
+			onLegendLabelClick: (event) => {
+			},
+			data: []
+		},
 		cpvs_codes: {
 			visible: false,
 			chart: {
@@ -83,6 +122,31 @@ export class DashboardsAdministrativeQualityPage {
 					max: {height: 320}
 				},
 				labels: true,
+				valueFormatting: Utils.formatPercent,
+				explodeSlices: false,
+				doughnut: false,
+				gradient: false,
+				colorScheme: {
+					domain: Consts.colors.diverging
+				}
+			},
+			select: (event) => {
+			},
+			onLegendLabelClick: (event) => {
+			},
+			data: []
+		},
+		indicators: {
+			visible: false,
+			chart: {
+				schemeType: 'ordinal',
+				view: {
+					def: {width: 470, height: 320},
+					min: {height: 320},
+					max: {height: 320}
+				},
+				labels: true,
+				valueFormatting: Utils.formatPercent,
 				explodeSlices: false,
 				doughnut: false,
 				gradient: false,
@@ -125,7 +189,7 @@ export class DashboardsAdministrativeQualityPage {
 			bids_total: 0,
 			bids_awarded: 0
 		};
-		let data = stats; // .corruption_indicators;
+		let data = stats;
 		if (!data) {
 			this.vis = vis;
 			return;
@@ -139,13 +203,29 @@ export class DashboardsAdministrativeQualityPage {
 		}
 		this.charts.cpvs_codes.visible = this.charts.cpvs_codes.data.length > 0;
 
+		this.charts.indicators.data = [];
+		if (data.indicators) {
+			this.charts.indicators.data = Object.keys(data.indicators).map(key => {
+				return {name: Utils.expandUnderlined(key.split('_').slice(1).join('_')), value: data.indicators[key]};
+			});
+		}
+		this.charts.indicators.visible = this.charts.indicators.data.length > 0;
+
 		this.charts.lots_in_years.data = [];
 		if (data.lots_in_years) {
 			this.charts.lots_in_years.data = Object.keys(data.lots_in_years).map((key, index) => {
 				return {name: key, value: data.lots_in_years[key]};
 			});
 		}
-		this.charts.lots_in_years.visible = this.charts.lots_in_years.data.length > 0;
+		this.charts.lots_in_years.visible = false; // this.charts.lots_in_years.data.length > 0;
+
+		this.charts.lots_pc_in_years.data = [];
+		if (data.lots_in_years) {
+			this.charts.lots_pc_in_years.data = Object.keys(data.lots_pc_in_years).map((key, index) => {
+				return {name: key, value: data.lots_pc_in_years[key].percent};
+			});
+		}
+		this.charts.lots_pc_in_years.visible = this.charts.lots_in_years.data.length > 0;
 
 		if (data.sum_price) {
 			Object.keys(data.sum_price).forEach(key => {
@@ -201,11 +281,8 @@ export class DashboardsAdministrativeQualityPage {
 	buildFilters() {
 		let filter: SearchCommandFilter = {
 			field: 'indicators.type',
-			type: 'match',
-			value: ['ADMINISTRATIVE_CENTRALIZED_PROCUREMENT',
-				'ADMINISTRATIVE_ELECTRONIC_AUCTION',
-				'ADMINISTRATIVE_COVERED_BY_GPA',
-				'ADMINISTRATIVE_FRAMEWORK_AGREEMENT'],
+			type: 'text',
+			value: ['ADMINISTRATIVE']
 		};
 		let filters = [filter];
 		if (this.selectedStartYear > 0 && this.selectedEndYear > 0) {

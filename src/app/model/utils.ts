@@ -51,6 +51,13 @@ export const Utils = {
 		}
 		return value;
 	},
+	formatPercent(value): string {
+		value = Math.round(value * 100) / 100;
+		return value.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2}) + '%';
+	},
+	formatPercentTrunc(value): string {
+		return value.toFixed(0) + '%';
+	},
 	formatYear(value): string {
 		return value.toString();
 	},

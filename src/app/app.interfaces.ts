@@ -33,10 +33,20 @@ export interface ICompany {
 
 export interface IStats {
 	cpvs: {
-		[id: string]: {name: string; value: number};
+		[id: string]: { name: string; value: number };
 	};
 	lots_in_years: {
 		[year: string]: number;
+	};
+	indicators: {
+		[name: string]: number;
+	};
+	lots_pc_in_years: {
+		[year: string]: {
+			total: number;
+			value: number;
+			percent: number;
+		};
 	};
 	bids_in_years: {
 		[year: string]: number;
@@ -94,6 +104,6 @@ export interface IVizData {
 	};
 	sectors_count?: Array<ISector>;
 	sectors_volume?: Array<any>;
-	sectors_stats?: Array<{sector: ISector; stats: IStats}>;
+	sectors_stats?: Array<{ sector: ISector; stats: IStats }>;
 	corruption_indicators?: IStats;
 }

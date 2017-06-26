@@ -29,9 +29,7 @@ export class TestPage {
 				colorScheme: {
 					'domain': Consts.colors.diverging
 				},
-				formatNumber: (n: number): string => {
-					return Utils.formatValue(n);
-				}
+				valueFormatting:  Utils.formatValue
 			},
 			select: (event) => {
 				// this.router.navigate(['/sector/' + event.id]);
@@ -68,6 +66,7 @@ export class TestPage {
 					max: {height: 320}
 				},
 				labels: true,
+				valueFormatting: Utils.formatPercent,
 				explodeSlices: false,
 				doughnut: false,
 				gradient: false,

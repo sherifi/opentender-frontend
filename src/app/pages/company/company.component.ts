@@ -76,6 +76,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 					min: {height: 320},
 					max: {height: 320}
 				},
+				valueFormatting: Utils.formatPercent,
 				labels: true,
 				explodeSlices: false,
 				doughnut: false,

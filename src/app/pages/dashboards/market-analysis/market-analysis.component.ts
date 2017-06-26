@@ -32,7 +32,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 				colorScheme: {
 					'domain': Consts.colors.diverging
 				},
-				formatNumber: Utils.formatValue
+				valueFormatting: Utils.formatValue
 			},
 			select: (event) => {
 				this.router.navigate(['/sector/' + event.id]);
@@ -51,7 +51,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 				colorScheme: {
 					'domain': Consts.colors.diverging
 				},
-				formatNumber: (n: number): string => {
+				valueFormatting: (n: number): string => {
 					return '€ ' + Utils.formatValue(n);
 				}
 			},

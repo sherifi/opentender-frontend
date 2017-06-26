@@ -94,6 +94,7 @@ export class SectorPage implements OnInit, OnDestroy {
 				},
 				labels: true,
 				explodeSlices: false,
+				valueFormatting: Utils.formatPercent,
 				doughnut: false,
 				gradient: false,
 				colorScheme: {
