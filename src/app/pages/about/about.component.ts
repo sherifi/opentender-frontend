@@ -10,13 +10,18 @@ export class AboutPage implements OnInit {
 	public isRootPage = false;
 
 	constructor(private router: Router) {
+		this.checkIsAboutRootPage(this.router.url);
 	}
 
 	ngOnInit(): void {
 		this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {
-				this.isRootPage = e.url === '/about';
+				this.checkIsAboutRootPage(e.url);
 			}
 		});
+	}
+
+	checkIsAboutRootPage(url: string): void {
+		this.isRootPage = url === '/about';
 	}
 }
