@@ -26,6 +26,18 @@ export const Utils = {
 		}
 		return Utils.formatValue(value); // .toLocaleString();
 	},
+	formatIndicatorName(value: string): string {
+		if (value === 'CORRUPTION') {
+			return 'Corruption Risk Indicator';
+		}
+		if (value === 'ADMINISTRATIVE') {
+			return 'Administrative Quality Indicator';
+		}
+		if (value === 'TRANSPARENCY') {
+			return 'Transparency Indicator';
+		}
+		return value;
+	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {
 			return '';

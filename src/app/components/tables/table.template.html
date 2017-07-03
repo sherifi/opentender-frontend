@@ -11,7 +11,8 @@
 	<tr *ngFor="let row of table.rows">
 		<td *ngFor="let cell of row.cells">
 			<div *ngFor="let line of cell.lines">
-				<small *ngIf="line.prefix">{{line.prefix}}</small>
+				<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+				<span *ngIf="line.list">• </span>
 				<a *ngIf="line.link" routerLink="{{line.link}}"><i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a>
 				<span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
 			</div>

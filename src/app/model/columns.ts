@@ -24,6 +24,8 @@ export interface Column {
 export interface TableLine {
 	content: string;
 	link?: string;
+	prefix?: string;
+	list?: boolean;
 }
 export interface TableCell {
 	lines: Array<TableLine>;
@@ -126,9 +128,9 @@ const FormatUtils = {
 		['netAmountNational'].forEach(key => {
 			if (price.hasOwnProperty(key)) {
 				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currencyNational) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
-				}
+			}
 		});
-		['netAmount',  'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
+		['netAmount', 'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
 			if (price.hasOwnProperty(key)) {
 				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currency) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
 			}
@@ -258,12 +260,21 @@ export const TenderColumns: Array<TenderColumn> = [
 				return [];
 			}
 			let collect = {};
+
 			tender.indicators.forEach(indicator => {
-				collect[indicator.type] = (collect[indicator.type] || 0) + 1;
+				let group = indicator.type.split('_')[0];
+				let id = indicator.type.split('_').slice(1).join('_');
+				collect[group] = collect[group] || {};
+				collect[group][id] = (collect[group][id] || 0) + 1;
 			});
-			return Object.keys(collect).map(key => {
-				return {content: Utils.expandUnderlined(key)};
+			let result = [];
+			Object.keys(collect).forEach(key => {
+				result.push({prefix: Utils.formatIndicatorName(key)});
+				Object.keys(collect[key]).forEach(id => {
+					result.push({list: true, content: Utils.expandUnderlined(id)});
+				});
 			});
+			return result;
 		}
 	},
 	{
