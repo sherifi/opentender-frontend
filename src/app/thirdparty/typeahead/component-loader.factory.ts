@@ -1,7 +1,7 @@
 import {
-	Injectable, NgZone, ViewContainerRef, ComponentFactoryResolver, Injector, Renderer,
+	Injectable, NgZone, ViewContainerRef, ComponentFactoryResolver, Injector,
 	ElementRef, ComponentRef, ComponentFactory, Type, TemplateRef, EventEmitter,
-	Provider, ReflectiveInjector, ViewRef
+	Provider, ReflectiveInjector, ViewRef, Renderer2
 } from '@angular/core';
 
 
@@ -44,7 +44,7 @@ export class ComponentLoader<T> {
 	private _contentRef: ContentRef;
 	private _viewContainerRef: ViewContainerRef;
 	private _injector: Injector;
-	private _renderer: Renderer;
+	private _renderer: Renderer2;
 	private _ngZone: NgZone;
 	private _componentFactoryResolver: ComponentFactoryResolver;
 	private _posService: PositioningService;
@@ -85,10 +85,7 @@ export class ComponentLoader<T> {
 	 * @param _posService
 	 */
 	// tslint:disable-next-line
-	public constructor(_viewContainerRef: ViewContainerRef, _renderer: Renderer,
-					   _elementRef: ElementRef,
-					   _injector: Injector, _componentFactoryResolver: ComponentFactoryResolver,
-					   _ngZone: NgZone, _posService: PositioningService) {
+	public constructor(_viewContainerRef: ViewContainerRef, _renderer: Renderer2, _elementRef: ElementRef, _injector: Injector, _componentFactoryResolver: ComponentFactoryResolver, _ngZone: NgZone, _posService: PositioningService) {
 		this._ngZone = _ngZone;
 		this._injector = _injector;
 		this._renderer = _renderer;
@@ -121,7 +118,7 @@ export class ComponentLoader<T> {
 		return this;
 	}
 
-	public show(opts: {content?: string | TemplateRef<any>, [key: string]: any} = {}): ComponentRef<T> {
+	public show(opts: { content?: string | TemplateRef<any>, [key: string]: any } = {}): ComponentRef<T> {
 		this._subscribePositioning();
 
 		if (!this._componentRef) {
@@ -246,7 +243,7 @@ export class ComponentLoader<T> {
 			return new ContentRef([viewRef.rootNodes], viewRef);
 		}
 
-		return new ContentRef([[this._renderer.createText(null, `${content}`)]]);
+		return new ContentRef([[this._renderer.createText(`${content}`)]]);
 	}
 }
 
@@ -272,7 +269,7 @@ export class ComponentLoaderFactory {
 	 * @param _renderer
 	 * @returns {ComponentLoader}
 	 */
-	public createLoader<T>(_elementRef: ElementRef, _viewContainerRef: ViewContainerRef, _renderer: Renderer): ComponentLoader<T> {
+	public createLoader<T>(_elementRef: ElementRef, _viewContainerRef: ViewContainerRef, _renderer: Renderer2): ComponentLoader<T> {
 		return new ComponentLoader<T>(_viewContainerRef, _renderer, _elementRef,
 			this._injector, this._componentFactoryResolver, this._ngZone, this._posService);
 	}

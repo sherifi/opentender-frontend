@@ -1,52 +1,53 @@
-import {Component, Input, Output, EventEmitter, OnChanges, ViewChildren, SimpleChanges, Renderer, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, ViewChildren, SimpleChanges, ChangeDetectionStrategy, Renderer2} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
+import {PlatformService} from '../../../../services/platform.service';
 
 @Component({
 	selector: 'g[ngx-charts-area-tooltip]',
 	template: `
-    <svg:g
-      #tooltips
-      *ngFor="let tooltipArea of tooltipAreas; let i = index">
-      <svg:rect
-        class="tooltip-area"
-        [attr.x]="tooltipArea.x0"
-        y="0"
-        [attr.width]="tooltipArea.width"
-        [attr.height]="height"
-        style="fill: rgb(255, 0, 0); opacity: 0; cursor: 'auto';"
-        (mouseenter)="showTooltip(i)"
-        (mouseleave)="hideTooltip(i)"
-      />
-      <xhtml:ng-template #tooltipTemplate>
-        <xhtml:div class="area-tooltip-container">
-          <xhtml:div
-            *ngFor="let tooltipItem of tooltipArea.values"
-            class="tooltip-item">
+		<svg:g
+				#tooltips
+				*ngFor="let tooltipArea of tooltipAreas; let i = index">
+			<svg:rect
+					class="tooltip-area"
+					[attr.x]="tooltipArea.x0"
+					y="0"
+					[attr.width]="tooltipArea.width"
+					[attr.height]="height"
+					style="fill: rgb(255, 0, 0); opacity: 0; cursor: 'auto';"
+					(mouseenter)="showTooltip(i)"
+					(mouseleave)="hideTooltip(i)"
+			/>
+			<xhtml:ng-template #tooltipTemplate>
+				<xhtml:div class="area-tooltip-container">
+					<xhtml:div
+							*ngFor="let tooltipItem of tooltipArea.values"
+							class="tooltip-item">
             <span
-              class="tooltip-item-color"
-              [style.background-color]="tooltipItem.color">
+					class="tooltip-item-color"
+					[style.background-color]="tooltipItem.color">
             </span>
-            {{tooltipItem.series}}: {{tooltipItem.value.toLocaleString()}}
-          </xhtml:div>
-        </xhtml:div>
-      </xhtml:ng-template>
-      <svg:rect
-        class="tooltip-anchor"
-        [attr.x]="tooltipArea.tooltipAnchor"
-        y="0"
-        [attr.width]="1"
-        [attr.height]="height"
-        style="fill: rgb(255, 255, 255);"
-        [style.opacity]="anchorOpacity[i]"
-        [style.pointer-events]="'none'"
-        ngx-tooltip
-        [tooltipPlacement]="'right'"
-        [tooltipType]="'tooltip'"
-        [tooltipSpacing]="5"
-        [tooltipTemplate]="tooltipTemplate"
-      />
-    </svg:g>
-  `,
+						{{tooltipItem.series}}: {{tooltipItem.value.toLocaleString()}}
+					</xhtml:div>
+				</xhtml:div>
+			</xhtml:ng-template>
+			<svg:rect
+					class="tooltip-anchor"
+					[attr.x]="tooltipArea.tooltipAnchor"
+					y="0"
+					[attr.width]="1"
+					[attr.height]="height"
+					style="fill: rgb(255, 255, 255);"
+					[style.opacity]="anchorOpacity[i]"
+					[style.pointer-events]="'none'"
+					ngx-tooltip
+					[tooltipPlacement]="'right'"
+					[tooltipType]="'tooltip'"
+					[tooltipSpacing]="5"
+					[tooltipTemplate]="tooltipTemplate"
+			/>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreaTooltipComponent implements OnChanges {
@@ -65,7 +66,7 @@ export class AreaTooltipComponent implements OnChanges {
 
 	@ViewChildren('tooltips') tooltips;
 
-	constructor(private renderer: Renderer) {
+	constructor(private renderer: Renderer2, private platform: PlatformService) {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -169,7 +170,10 @@ export class AreaTooltipComponent implements OnChanges {
 	showTooltip(index): void {
 		let tooltipAnchor = this.tooltips.toArray()[index].nativeElement.children[1];
 		let event = new MouseEvent('mouseenter', {bubbles: false});
-		this.renderer.invokeElementMethod(tooltipAnchor, 'dispatchEvent', [event]);
+		if (this.platform.isBrowser) {
+			tooltipAnchor.dispatchEvent(event);
+			// this.renderer.invokeElementMethod(tooltipAnchor, 'dispatchEvent', [event]);
+		}
 		this.anchorOpacity[index] = 0.7;
 		this.hover.emit(this.tooltipAreas[index]);
 	}
@@ -177,7 +181,10 @@ export class AreaTooltipComponent implements OnChanges {
 	hideTooltip(index): void {
 		let tooltipAnchor = this.tooltips.toArray()[index].nativeElement.children[1];
 		let event = new MouseEvent('mouseleave', {bubbles: false});
-		this.renderer.invokeElementMethod(tooltipAnchor, 'dispatchEvent', [event]);
+		if (this.platform.isBrowser) {
+			tooltipAnchor.dispatchEvent(event);
+			// this.renderer.invokeElementMethod(tooltipAnchor, 'dispatchEvent', [event]);
+		}
 		this.anchorOpacity[index] = 0;
 	}
 

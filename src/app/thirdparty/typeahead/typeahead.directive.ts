@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer, TemplateRef, ViewContainerRef, OnDestroy} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, TemplateRef, ViewContainerRef, OnDestroy, Renderer2} from '@angular/core';
 import {FormControl, NgControl} from '@angular/forms';
 import {TypeaheadContainerComponent} from './typeahead-container.component';
 import {TypeaheadUtils} from './typeahead-utils';
@@ -83,7 +83,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
 	protected ngControl: NgControl;
 	protected viewContainerRef: ViewContainerRef;
 	protected element: ElementRef;
-	protected renderer: Renderer;
+	protected renderer: Renderer2;
 
 	private _typeahead: ComponentLoader<TypeaheadContainerComponent>;
 
@@ -176,7 +176,7 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
 		}
 	}
 
-	public constructor(control: NgControl, viewContainerRef: ViewContainerRef, element: ElementRef, renderer: Renderer, cis: ComponentLoaderFactory) {
+	public constructor(control: NgControl, viewContainerRef: ViewContainerRef, element: ElementRef, renderer: Renderer2, cis: ComponentLoaderFactory) {
 		this.element = element;
 		this.ngControl = control;
 		this.viewContainerRef = viewContainerRef;

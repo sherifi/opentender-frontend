@@ -4,6 +4,7 @@
 		"module": "es6",
 		"target": "es5",
 		"lib": ["es6", "es2016", "dom"],
+		"noStrictGenericChecks": true,
 		"sourceMap": true,
 		"sourceRoot": "src",
 		"experimentalDecorators": true,

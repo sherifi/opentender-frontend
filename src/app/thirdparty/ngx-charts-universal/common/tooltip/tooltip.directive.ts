@@ -1,4 +1,4 @@
-import {Directive, Input, Output, EventEmitter, HostListener, ViewContainerRef, ElementRef, Renderer, OnDestroy} from '@angular/core';
+import {Directive, Input, Output, EventEmitter, HostListener, ViewContainerRef, ElementRef, Renderer, OnDestroy, Renderer2} from '@angular/core';
 
 import {StyleTypes} from './style.type';
 import {AlignmentTypes} from './alignment.type';
@@ -48,7 +48,7 @@ export class TooltipDirective implements OnDestroy {
 
 	constructor(private tooltipService: TooltipService,
 				private viewContainerRef: ViewContainerRef,
-				private renderer: Renderer,
+				private renderer: Renderer2,
 				private element: ElementRef) {
 	}
 

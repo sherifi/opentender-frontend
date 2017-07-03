@@ -4,55 +4,55 @@ import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import d3 from '../d3';
 import {ColorHelper} from '../utils/color.helper';
-import {IChartFlowChartSettings, IChartData, IChartLink} from '../chart.interface';
+import {IChartFlowChartSettings, IChartData, IChartLink, IChartNode} from '../chart.interface';
 import {ILegendOptions} from '../common/common.interface';
 
 @Component({
 	selector: 'ngx-charts-force-directed-graph',
 	template: `
-    <ngx-charts-chart
-      [dim]="dim" [chart]="chart" [data]="data"
-      [legendOptions]="legendOptions"
-      (legendLabelClick)="onClick($event)"
-      (legendLabelActivate)="onActivate($event)"
-      (legendLabelDeactivate)="onDeactivate($event)">
-      <svg:g [attr.transform]="transform" class="force-directed-graph chart">
-        <svg:g class="links">
-          <svg:g *ngFor="let link of links; trackBy:trackLinkBy">
-            <ng-template *ngIf="linkTemplate"
-              [ngTemplateOutlet]="linkTemplate"
-              [ngOutletContext]="{ $implicit: link }">
-            </ng-template>
-            <svg:line *ngIf="!linkTemplate"
-              strokeWidth="1" class="edge"
-              [attr.x1]="link.source.x"
-              [attr.y1]="link.source.y"
-              [attr.x2]="link.target.x"
-              [attr.y2]="link.target.y"
-            />
-          </svg:g>
-        </svg:g>
-        <svg:g class="nodes">
-          <svg:g *ngFor="let node of nodes; trackBy:trackNodeBy"
-            [attr.transform]="'translate(' + node.x + ',' + node.y + ')'"
-            [attr.fill]="colors.getColor(groupResultsBy(node))"
-            [attr.stroke]="colors.getColor(groupResultsBy(node))"
-            (mousedown)="onDragStart(node, $event)"
-            (click)="onClick({name: node.value})"
-            ngx-tooltip
-            [tooltipPlacement]="'top'"
-            [tooltipType]="'tooltip'"
-            [tooltipTitle]="node.value">
-            <ng-template *ngIf="nodeTemplate"
-              [ngTemplateOutlet]="nodeTemplate"
-              [ngOutletContext]="{ $implicit: node }">
-            </ng-template>
-            <svg:circle *ngIf="!nodeTemplate" r="5" />
-          </svg:g>
-        </svg:g>
-      </svg:g>
-    </ngx-charts-chart>
-  `,
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				(legendLabelClick)="onClick($event)"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)">
+			<svg:g [attr.transform]="transform" class="force-directed-graph chart">
+				<svg:g class="links">
+					<svg:g *ngFor="let link of links; trackBy:trackLinkBy">
+						<ng-template *ngIf="linkTemplate"
+									 [ngTemplateOutlet]="linkTemplate"
+									 [ngOutletContext]="{ $implicit: link }">
+						</ng-template>
+						<svg:line *ngIf="!linkTemplate"
+								  strokeWidth="1" class="edge"
+								  [attr.x1]="link.source.x"
+								  [attr.y1]="link.source.y"
+								  [attr.x2]="link.target.x"
+								  [attr.y2]="link.target.y"
+						/>
+					</svg:g>
+				</svg:g>
+				<svg:g class="nodes">
+					<svg:g *ngFor="let node of nodes; trackBy:trackNodeBy"
+						   [attr.transform]="'translate(' + node.x + ',' + node.y + ')'"
+						   [attr.fill]="colors.getColor(groupResultsBy(node))"
+						   [attr.stroke]="colors.getColor(groupResultsBy(node))"
+						   (mousedown)="onDragStart(node, $event)"
+						   (click)="onClick({name: node.value})"
+						   ngx-tooltip
+						   [tooltipPlacement]="'top'"
+						   [tooltipType]="'tooltip'"
+						   [tooltipTitle]="node.value">
+						<ng-template *ngIf="nodeTemplate"
+									 [ngTemplateOutlet]="nodeTemplate"
+									 [ngOutletContext]="{ $implicit: node }">
+						</ng-template>
+						<svg:circle *ngIf="!nodeTemplate" r="5"/>
+					</svg:g>
+				</svg:g>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ForceDirectedGraphComponent extends BaseChartComponent {
@@ -69,7 +69,7 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 		.force('x', d3.forceX())
 		.force('y', d3.forceY());
 
-	@Input() forceLink = d3.forceLink<{value: string}, IChartLink>().id(node => node.value);
+	@Input() forceLink = d3.forceLink<IChartNode, IChartLink>().id(node => node.value.toString());
 	@Input() groupResultsBy: (node: any) => string = node => node.value;
 	@Input() legend: boolean;
 
@@ -80,7 +80,7 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 	colors: ColorHelper;
 	viewDim: ViewDimensions;
 	draggingNode: any;
-	draggingStart: {x: number, y: number};
+	draggingStart: { x: number, y: number };
 	margin = [0, 0, 0, 0];
 	seriesDomain: any;
 	transform: string;

@@ -9,6 +9,7 @@ import * as cookieParser from 'cookie-parser';
 import * as request from 'request';
 import * as cache from 'memory-cache';
 import * as geoip from 'geoip-ultralight';
+import * as helmet from 'helmet';
 
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from './express-engine/main';
@@ -75,6 +76,7 @@ let errorResponse = (req, res) => {
 	return res.status(404).type('txt').send('Not found ' + req.url);
 };
 
+app.use(helmet());
 app.engine('.html', ngExpressEngine({}));
 app.set('views', VIEWS);
 app.set('view engine', 'html');

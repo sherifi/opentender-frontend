@@ -1,4 +1,4 @@
-import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, Renderer, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
 import {ApiService} from '../services/api.service';
 
 @Directive({selector: 'g.country'})
@@ -6,7 +6,7 @@ export class SVGCountryGroupDirective {
 	@Input() id: string;
 	portal: any;
 
-	constructor(private el: ElementRef, public renderer: Renderer) {
+	constructor(private el: ElementRef, public renderer: Renderer2) {
 		renderer.listen(el.nativeElement, 'click', (event) => {
 			if (this.portal) {
 				window.location.href = '/' + (this.portal.id || '');
@@ -17,9 +17,9 @@ export class SVGCountryGroupDirective {
 	public setData(portal: any) {
 		this.portal = portal;
 		if (portal.current) {
-			this.renderer.setElementClass(this.el.nativeElement, 'current', true);
+			this.renderer.addClass(this.el.nativeElement, 'current');
 		} else if (portal.count > 0) {
-			this.renderer.setElementClass(this.el.nativeElement, 'active', true);
+			this.renderer.addClass(this.el.nativeElement, 'active');
 		}
 	}
 }

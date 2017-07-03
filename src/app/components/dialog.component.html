@@ -1,4 +1,4 @@
-<div [@dialog] *ngIf="visible" class="dialog">
+<div *ngIf="visible" class="dialog">
 	<h3>{{title}}</h3>
 	<button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
 	<div class="dialog-content"><ng-content></ng-content></div>

@@ -2,8 +2,9 @@ import {NgModule} from '@angular/core';
 import * as Config from 'config.node.js';
 import {App, AppModule} from '../app/app.module';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { ServerModule } from '@angular/platform-server';
+import {BrowserModule} from '@angular/platform-browser';
+import {ServerModule} from '@angular/platform-server';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 const MockWindow = {
 	isMock: true
@@ -13,6 +14,7 @@ const config = {
 	bootstrap: [App],
 	declarations: [],
 	imports: [
+		NoopAnimationsModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
 		ServerModule,
 		AppModule.forRoot()

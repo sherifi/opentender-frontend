@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import {Consts} from '../../model/consts';
 
@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 	selector: 'explore',
 	templateUrl: 'dashboards.template.html'
 })
-export class DashboardsPage {
+export class DashboardsPage implements OnInit {
 	public isRootPage = false;
 	public cards = [
 		{icon: 'icon-hammer', url: '/dashboards/market-analysis', title: 'Market Analysis', subtitle: 'Explore Structure of Tenders', text: Consts.IPSUM},
@@ -17,13 +17,18 @@ export class DashboardsPage {
 	];
 
 	constructor(private router: Router) {
+		this.checkIsDashboardRootPage(this.router.url);
 	}
 
 	ngOnInit(): void {
 		this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {
-				this.isRootPage = e.url === '/dashboards';
+				this.checkIsDashboardRootPage(e.url);
 			}
 		});
+	}
+
+	checkIsDashboardRootPage(url: string): void {
+		this.isRootPage = url === '/dashboards';
 	}
 }

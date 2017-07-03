@@ -246,14 +246,42 @@ const styleConfig = () => {
 		module: {
 			loaders: [
 				{
+					test: /\.css$/,
+					exclude: /node_modules/,
+					use: ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: [
+							{
+								loader: 'css-loader',
+								query: {
+									modules: false,
+									localIdentName: '[name]__[local]___[hash:base64:5]'
+								}
+							}
+							// ,
+							// 'postcss-loader'
+						]
+					}),
+				},
+				{
 					test: /\.scss$/,
+					exclude: /node_modules/,
 					use: ExtractTextPlugin
 						.extract({
 							fallback: 'style-loader',
 							use: [
-								{loader: 'css-loader', query: {modules: false, sourceMaps: true}},
+								{
+									loader: 'css-loader',
+									query: {
+										modules: false,
+										sourceMap: config.webpack.sourcemaps,
+										importLoaders: 2,
+										localIdentName: '[name]__[local]___[hash:base64:5]'
+									}
+								},
+								// {loader: 'css-loader', query: {modules: false, sourceMaps: true}},
 								// { loader: 'postcss-loader' },
-								{loader: 'sass-loader', query: {sourceMaps: true}}
+								{loader: 'sass-loader', query: {sourceMaps: config.webpack.sourcemaps}}
 							]
 						})
 				},

@@ -2,7 +2,7 @@
  * @copyright Valor Software
  * @copyright Angular ng-bootstrap team
  */
-import {Renderer} from '@angular/core';
+import {Renderer2} from '@angular/core';
 import {Trigger} from './trigger.class';
 
 const DEFAULT_ALIASES = {
@@ -38,8 +38,7 @@ export function parseTriggers(triggers: string, aliases: any = DEFAULT_ALIASES):
 	return parsedTriggers;
 }
 
-export function listenToTriggers(renderer: Renderer, target: any, triggers: string,
-								 showFn: Function, hideFn: Function, toggleFn: Function): Function {
+export function listenToTriggers(renderer: Renderer2, target: any, triggers: string, showFn: Function, hideFn: Function, toggleFn: Function): Function {
 	const parsedTriggers = parseTriggers(triggers);
 	const listeners: any[] = [];
 
@@ -49,13 +48,20 @@ export function listenToTriggers(renderer: Renderer, target: any, triggers: stri
 
 	parsedTriggers.forEach((trigger: Trigger) => {
 		if (trigger.open === trigger.close) {
-			listeners.push(renderer.listen(target, trigger.open, toggleFn));
+			listeners.push(renderer.listen(target, trigger.open, (event: any): void => {
+				toggleFn();
+			}));
 			return;
 		}
 
 		listeners.push(
-			renderer.listen(target, trigger.open, showFn),
-			renderer.listen(target, trigger.close, hideFn));
+			renderer.listen(target, trigger.open, (event: any): void => {
+				showFn();
+			}),
+			renderer.listen(target, trigger.close, (event: any): void => {
+				hideFn();
+			})
+		);
 	});
 
 	return () => {

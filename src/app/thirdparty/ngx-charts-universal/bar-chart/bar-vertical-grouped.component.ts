@@ -1,4 +1,5 @@
-import {Component, Input, Output, EventEmitter, trigger, style, transition, animate, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+// import {animate, style, transition, trigger} from '@angular/animations';
 import d3 from '../d3';
 import {IChartBarsSettings, IChartData} from '../chart.interface';
 import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
@@ -39,7 +40,6 @@ import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
 		</svg:g>
 		<svg:g ngx-charts-series-vertical
 			   *ngFor="let group of data; trackBy:trackBy"
-			   [@animationState]="'active'"
 			   [attr.transform]="groupTransform(group)"
 			   [activeEntries]="activeEntries"
 			   [xScale]="innerScale"
@@ -56,17 +56,17 @@ import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
 </ngx-charts-chart>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	animations: [
-		trigger('animationState', [
-			transition('* => void', [
-				style({
-					opacity: 1,
-					transform: '*',
-				}),
-				animate(500, style({opacity: 0, transform: 'scale(0)'}))
-			])
-		])
-	]
+	// animations: [
+	// 	trigger('animationState', [
+	// 		transition('* => void', [
+	// 			style({
+	// 				opacity: 1,
+	// 				transform: '*',
+	// 			}),
+	// 			animate(500, style({opacity: 0, transform: 'scale(0)'}))
+	// 		])
+	// 	])
+	// ]
 })
 export class BarVerticalGroupedComponent extends BaseBarGroupedComponent {
 	@Input() chart: IChartBarsSettings;

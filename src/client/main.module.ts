@@ -3,16 +3,16 @@ import {App, AppModule} from '../app/app.module';
 import * as Config from 'config.browser.js';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
 	bootstrap: [App],
 	declarations: [],
 	imports: [
-		BrowserAnimationsModule,
 		HttpModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
-		AppModule.forRoot()
+		AppModule.forRoot(),
+		// BrowserAnimationsModule,
 	],
 	providers: [
 		{provide: 'absurl', useValue: ''},

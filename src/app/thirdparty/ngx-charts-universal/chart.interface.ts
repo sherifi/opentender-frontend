@@ -1,3 +1,4 @@
+import {SimulationNodeDatum} from 'd3-force';
 export interface IAxisSettings {
 	show: boolean;
 	showLabel: boolean;
@@ -31,7 +32,7 @@ export interface IChartView {
 	max?: IChartDimension;
 }
 
-export interface IChartNode {
+export interface IChartNode extends SimulationNodeDatum {
 	id: string;
 	name: string;
 	value: number;

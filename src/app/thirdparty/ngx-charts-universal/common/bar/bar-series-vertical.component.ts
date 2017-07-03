@@ -1,12 +1,12 @@
-import {Component, Input, Output, EventEmitter, OnChanges, trigger, style, transition, animate, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
+// import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
 	selector: 'g[ngx-charts-series-vertical]',
 	template: `
     <svg:g ngx-charts-bar *ngFor="let bar of bars; trackBy: trackBy"
-      [@animationState]="'active'"
       [width]="bar.width"
       [height]="bar.height"
       [x]="bar.x"
@@ -28,17 +28,17 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
     </svg:g>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	animations: [
-		trigger('animationState', [
-			transition('* => void', [
-				style({
-					opacity: 1,
-					transform: '*',
-				}),
-				animate(500, style({opacity: 0, transform: 'scale(0)'}))
-			])
-		])
-	]
+	// animations: [
+	// 	trigger('animationState', [
+	// 		transition('* => void', [
+	// 			style({
+	// 				opacity: 1,
+	// 				transform: '*',
+	// 			}),
+	// 			animate(500, style({opacity: 0, transform: 'scale(0)'}))
+	// 		])
+	// 	])
+	// ]
 })
 export class BarSeriesVerticalComponent implements OnChanges {
 	@Input() dims;

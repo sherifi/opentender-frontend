@@ -1,10 +1,10 @@
-import {Component, Input, Output, EventEmitter, ElementRef, trigger, style, transition, animate, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ElementRef, ChangeDetectionStrategy} from '@angular/core';
+// import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
 	selector: 'g[ngx-charts-line]',
 	template: `
     <svg:path
-      [@animationState]="'active'"
       class="line"
       [attr.d]="path"
       fill="none"
@@ -13,19 +13,19 @@ import {Component, Input, Output, EventEmitter, ElementRef, trigger, style, tran
     />
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	animations: [
-		trigger('animationState', [
-			transition('void => *', [
-				style({
-					strokeDasharray: 2000,
-					strokeDashoffset: 2000
-				}),
-				animate(1000, style({
-					strokeDashoffset: 0
-				}))
-			])
-		])
-	]
+	// animations: [
+	// 	trigger('animationState', [
+	// 		transition('void => *', [
+	// 			style({
+	// 				strokeDasharray: 2000,
+	// 				strokeDashoffset: 2000
+	// 			}),
+	// 			animate(1000, style({
+	// 				strokeDashoffset: 0
+	// 			}))
+	// 		])
+	// 	])
+	// ]
 })
 export class LineComponent {
 
