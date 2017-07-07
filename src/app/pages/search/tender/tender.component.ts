@@ -17,16 +17,16 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	search_filters = TenderFilterDefs.filter(f => f.type !== 'select' && f.type !== 'range');
 	check_filters = TenderFilterDefs.filter(f => f.type !== 'value');
 	columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders.name', 'finalPrice'];
-	filterIds = ['procedureType', 'supplyType', 'indicators.type', 'lots.awardDecisionDate'];
+	filterIds = ['indicators.type_cri', 'indicators.type_aqi', 'indicators.type_ti', 'lots.awardDecisionDate'];
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
 	quicksearchIds = []; // 'title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
 
 	constructor(private state: StateService) {
 		this.search.build(this.check_filters.filter(def => {
-			return this.filterIds.indexOf(def.field) >= 0;
+			return this.filterIds.indexOf(def.id) >= 0;
 		}));
 		this.search_filters.filter(def => {
-			if (this.searchIds.indexOf(def.field) >= 0) {
+			if (this.searchIds.indexOf(def.id) >= 0) {
 				this.search.addSearch(def);
 			}
 		});

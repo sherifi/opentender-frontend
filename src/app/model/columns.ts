@@ -269,7 +269,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			});
 			let result = [];
 			Object.keys(collect).forEach(key => {
-				result.push({prefix: Utils.formatIndicatorName(key)});
+				result.push({prefix: Utils.formatIndicatorGroupName(key)});
 				Object.keys(collect[key]).forEach(id => {
 					result.push({list: true, content: Utils.expandUnderlined(id)});
 				});

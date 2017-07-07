@@ -26,7 +26,7 @@ export const Utils = {
 		}
 		return Utils.formatValue(value); // .toLocaleString();
 	},
-	formatIndicatorName(value: string): string {
+	formatIndicatorGroupName(value: string): string {
 		if (value === 'CORRUPTION') {
 			return 'Corruption Risk Indicator';
 		}
@@ -37,6 +37,12 @@ export const Utils = {
 			return 'Transparency Indicator';
 		}
 		return value;
+	},
+	formatIndicatorName(value: string): string {
+		if (value === undefined || value === null) {
+			return '';
+		}
+		return Utils.expandUnderlined(value.split('_').slice(1).join('_'));
 	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {

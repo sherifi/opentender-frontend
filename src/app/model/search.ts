@@ -90,6 +90,8 @@ export class Search {
 				let agg = aggregations[filter.aggregation_id];
 				if (agg) {
 					filter.buckets = agg.buckets;
+					if (filter.def.valuesFilter)
+						filter.buckets = filter.def.valuesFilter(agg.buckets);
 					agg.buckets.forEach(bucket => {
 						let i = missing.indexOf(bucket.key);
 						if (i >= 0) {
