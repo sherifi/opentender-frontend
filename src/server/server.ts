@@ -64,7 +64,7 @@ let checkCache = (req, res, cb) => {
 enableProdMode();
 
 const app = express();
-const DATA = path.join(path.resolve(__dirname, Config.server.data.path));
+const DATA = (Config.server.data.path[0] === '.') ? path.join(path.resolve(__dirname, '..', '..', Config.server.data.path)) : Config.server.data.path;
 const ROOT = path.join(path.resolve(__dirname, '../../assets'));
 const DIST = path.join(path.resolve(__dirname, '../../dist/client'));
 const DIST_STYLE = path.join(path.resolve(__dirname, '../../dist/style'));
@@ -83,9 +83,11 @@ app.set('view engine', 'html');
 
 app.use('/robots.txt', express.static(path.join(ROOT, '/robots.txt')));
 app.use('/favicon.ico', express.static(path.join(ROOT, '/favicons/favicon.ico')));
-app.use('/assets/schema.json', express.static(path.join(DATA, '/schema.json')));
 app.use('/assets/js', express.static(DIST, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
+app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
+app.use('/data/nuts1.geojson', express.static(path.join(DATA, '/nuts/nuts_rg_60M_2013_lvl_1.geojson')));
+app.use('/data', errorResponse);
 app.use('/assets', express.static(ROOT, {index: false}));
 app.use('/assets', errorResponse);
 app.use('/files', express.static(path.join(DATA, '/downloads'), {index: false}));

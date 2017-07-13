@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import * as Config from 'config.node.js';
-import {App, AppModule} from '../app/app.module';
+import {App, AppConfig} from '../app/app.config';
 
 import {BrowserModule} from '@angular/platform-browser';
 import {ServerModule} from '@angular/platform-server';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopLeafletModule} from './leaflet.mock.module';
 
 const MockWindow = {
 	isMock: true
@@ -12,14 +13,18 @@ const MockWindow = {
 
 const config = {
 	bootstrap: [App],
-	declarations: [],
+	declarations: [
+		...AppConfig.declarations
+	],
 	imports: [
 		NoopAnimationsModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
 		ServerModule,
-		AppModule.forRoot()
+		NoopLeafletModule.forRoot(),
+		...AppConfig.imports
 	],
 	providers: [
+		...AppConfig.providers,
 		{provide: 'config', useValue: Config},
 		{provide: 'isBrowser', useValue: false},
 		{provide: 'globals', useValue: {window: MockWindow, document: {isMock: true}}}

@@ -3,6 +3,8 @@ import {IChartPie, IChartTreeMap} from '../../thirdparty/ngx-charts-universal/ch
 import {Consts} from '../../model/consts';
 import {PlatformService} from '../../services/platform.service';
 import {Utils} from '../../model/utils';
+import {ApiService} from '../../services/api.service';
+import PathOptions = L.PathOptions;
 
 @Component({
 	moduleId: __filename,
@@ -29,7 +31,7 @@ export class TestPage {
 				colorScheme: {
 					'domain': Consts.colors.diverging
 				},
-				valueFormatting:  Utils.formatValue
+				valueFormatting: Utils.formatValue
 			},
 			select: (event) => {
 				// this.router.navigate(['/sector/' + event.id]);
@@ -88,7 +90,47 @@ export class TestPage {
 		}
 	};
 
-	constructor(private platform: PlatformService) {
+	private geolayer: any = {};
+	private leaflet_options = {};
+
+	constructor(private api: ApiService, private platform: PlatformService) {
+		this.loadMap();
+	}
+
+	loadMap() {
+		if (!this.platform.isBrowser) {
+			return;
+		}
+		this.geolayer =
+			L.geoJSON(null, {
+				style: (feature) => {
+					return {weight: 1, color: '#000', fillColor: '#ff7800', opacity: 0.5};
+				}
+			});
+		this.leaflet_options = {
+			layers: [
+				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'}),
+				this.geolayer
+			],
+			zoom: 3,
+			center: L.latLng({lat: 52.520645, lng: 13.409779})
+		};
+
+		this.api.getNutsMap().subscribe(
+			result => {
+				this.geolayer.addData(result);
+			},
+			error => {
+				console.error(error);
+			},
+			() => {
+				// console.log('nuts map complete');
+			});
+	}
+
+	onMapReady(map) {
+		// Do stuff with map
+
 	}
 
 	ngOnInit(): void {

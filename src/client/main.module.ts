@@ -1,20 +1,25 @@
 import {NgModule} from '@angular/core';
-import {App, AppModule} from '../app/app.module';
+import {App, AppConfig} from '../app/app.config';
 import * as Config from 'config.browser.js';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
-// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LeafletModule} from '@asymmetrik/angular2-leaflet';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
 	bootstrap: [App],
-	declarations: [],
+	declarations: [
+		...AppConfig.declarations
+	],
 	imports: [
 		HttpModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
-		AppModule.forRoot(),
-		// BrowserAnimationsModule,
+		BrowserAnimationsModule,
+		LeafletModule.forRoot(),
+		...AppConfig.imports
 	],
 	providers: [
+		...AppConfig.providers,
 		{provide: 'absurl', useValue: ''},
 		{provide: 'COUNTRY', useValue: null},
 		{provide: 'config', useValue: Config},

@@ -1,5 +1,3 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
-
 import {NgxChartsModule} from './thirdparty/ngx-charts-universal/ngx-charts.module';
 import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {FormsModule} from '@angular/forms';
@@ -88,7 +86,7 @@ import {TestPage} from './pages/test/test.component';
 import {FOISearchLinkPipe} from './directives/foi-search-url.pipe';
 import {FormatNumberPipe} from './directives/format-number';
 
-@NgModule({
+const AppConfig = {
 	declarations: [
 		App,
 
@@ -175,27 +173,20 @@ import {FormatNumberPipe} from './directives/format-number';
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule
+		// LeafletModule
 	],
-	providers: []
-})
-export class AppModule {
-	static forRoot(): ModuleWithProviders {
-		return {
-			ngModule: AppModule,
-			providers: [
-				{provide: 'portals', useValue: Portals},
-				appRoutingProviders,
-				TitleService,
-				PortalsService,
-				CountryService,
-				ConfigService,
-				StateService,
-				PlatformService,
-				Title,
-				ApiService
-			]
-		};
-	}
-}
+	providers: [
+		{provide: 'portals', useValue: Portals},
+		appRoutingProviders,
+		TitleService,
+		PortalsService,
+		CountryService,
+		ConfigService,
+		StateService,
+		PlatformService,
+		Title,
+		ApiService
+	]
+};
 
-export {App};
+export {App, AppConfig};

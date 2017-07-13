@@ -5,6 +5,10 @@
 </div>
 
 <div>
+	<div leaflet style="height: 300px;" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
+</div>
+
+<div *ngIf="false">
 	<section class="container-outer dashboards">
 		<section class="container">
 			<div class="container-title">Test</div>

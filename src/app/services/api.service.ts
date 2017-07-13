@@ -128,6 +128,10 @@ export class ApiService {
 		this.headers.append('Accept', 'application/json');
 	}
 
+	getNutsMap(): Observable<IApiResult> {
+		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiResult>res.json());
+	}
+
 	getDownloads(): Observable<IApiResult> {
 		return this.http.get(this.absUrl + '/files/downloads.json').map(res => <IApiResult>res.json());
 	}
