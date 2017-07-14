@@ -141,7 +141,7 @@ const FormatUtils = {
 
 export const TenderColumns: Array<TenderColumn> = [
 	{
-		name: 'Company',
+		name: 'Supplier',
 		id: 'lots.bids.bidders.name',
 		group: 'Company',
 		// sortBy: {
@@ -218,9 +218,9 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
-		name: 'Authority',
+		name: 'Buyer',
 		id: 'buyers.name',
-		group: 'Authority',
+		group: 'Buyer',
 		// sortBy: {
 		// 	id: 'buyers.name.raw',
 		// 	ascend: true
@@ -273,6 +273,63 @@ export const TenderColumns: Array<TenderColumn> = [
 				Object.keys(collect[key]).forEach(id => {
 					result.push({list: true, content: Utils.expandUnderlined(id)});
 				});
+			});
+			return result;
+		}
+	},
+	{
+		name: 'Corruption Risk Indicator',
+		id: 'indicators.cri',
+		group: 'Tender Indicators',
+		format: tender => {
+			if (!tender.indicators) {
+				return [];
+			}
+			let result = [];
+			tender.indicators.forEach(indicator => {
+				let group = indicator.type.split('_')[0];
+				let id = indicator.type.split('_').slice(1).join('_');
+				if (group === 'CORRUPTION') {
+					result.push({list: true, content: Utils.expandUnderlined(id)});
+				}
+			});
+			return result;
+		}
+	},
+	{
+		name: 'Transparency Indicator',
+		id: 'indicators.ti',
+		group: 'Tender Indicators',
+		format: tender => {
+			if (!tender.indicators) {
+				return [];
+			}
+			let result = [];
+			tender.indicators.forEach(indicator => {
+				let group = indicator.type.split('_')[0];
+				let id = indicator.type.split('_').slice(1).join('_');
+				if (group === 'TRANSPARENCY') {
+					result.push({list: true, content: Utils.expandUnderlined(id)});
+				}
+			});
+			return result;
+		}
+	},
+	{
+		name: 'Administrative Quality Indicator',
+		id: 'indicators.aqi',
+		group: 'Tender Indicators',
+		format: tender => {
+			if (!tender.indicators) {
+				return [];
+			}
+			let result = [];
+			tender.indicators.forEach(indicator => {
+				let group = indicator.type.split('_')[0];
+				let id = indicator.type.split('_').slice(1).join('_');
+				if (group === 'ADMINISTRATIVE') {
+					result.push({list: true, content: Utils.expandUnderlined(id)});
+				}
 			});
 			return result;
 		}
