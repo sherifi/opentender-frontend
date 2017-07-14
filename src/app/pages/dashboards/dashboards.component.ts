@@ -10,10 +10,10 @@ import {Consts} from '../../model/consts';
 export class DashboardsPage implements OnInit {
 	public isRootPage = false;
 	public cards = [
-		{icon: 'icon-hammer', url: '/dashboards/market-analysis', title: 'Market Analysis', subtitle: 'Explore Structure of Tenders', text: Consts.IPSUM},
-		{icon: 'icon-checkmark', url: '/dashboards/transparency-indicators', title: 'Transparency', subtitle: 'Explore Transparency Indicators', text: Consts.IPSUM},
 		{icon: 'icon-flag', url: '/dashboards/corruption-indicators', title: 'Corruption Risk', subtitle: 'Explore Corruption Risk Indicators', text: Consts.IPSUM},
-		{icon: 'icon-library', url: '/dashboards/administrative-quality', title: 'Administrative Quality', subtitle: 'Explore Administrative Quality', text: Consts.IPSUM}
+		{icon: 'icon-library', url: '/dashboards/administrative-quality', title: 'Administrative Quality', subtitle: 'Explore Administrative Quality', text: Consts.IPSUM},
+		{icon: 'icon-checkmark', url: '/dashboards/transparency-indicators', title: 'Transparency', subtitle: 'Explore Transparency Indicators', text: Consts.IPSUM},
+		{icon: 'icon-hammer', url: '/dashboards/market-analysis', title: 'Market Analysis', subtitle: 'Explore Structure of Tenders', text: Consts.IPSUM}
 	];
 
 	constructor(private router: Router) {
