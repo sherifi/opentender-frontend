@@ -410,7 +410,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		format: tender => FormatUtils.formatPrice(tender.documentsPrice)
 	},
 	{
-		name: 'Lot Bid Price',
+		name: 'Bid Price',
 		id: 'lots.bids.price',
 		group: 'Tender Prices',
 		format: tender => {
