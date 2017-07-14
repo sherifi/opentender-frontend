@@ -15,8 +15,8 @@ import {Utils} from '../../model/utils';
 export class HomePage implements OnInit {
 	public country: string;
 	public cards = [
-		{icon: 'icon-briefcase', url: '/dashboards', title: 'Dashboards', subtitle: 'Data overview', text: Consts.IPSUM},
 		{icon: 'icon-search', url: '/search', title: 'Search', subtitle: 'Search and Find', text: Consts.IPSUM},
+		{icon: 'icon-briefcase', url: '/dashboards/market-analysis', title: 'Market Analysis', subtitle: 'Data overview', text: Consts.IPSUM},
 		{icon: 'icon-database', url: '/downloads', title: 'Download', subtitle: 'Download data', text: Consts.IPSUM},
 		{icon: 'icon-checkmark', url: '/dashboards/transparency-indicators', title: 'Transparency Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
 		{icon: 'icon-flag', url: '/dashboards/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
