@@ -16,7 +16,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	quick_search_filters: Array<FilterDef> = [];
 	search_filters = TenderFilterDefs.filter(f => f.type !== 'select' && f.type !== 'range');
 	check_filters = TenderFilterDefs.filter(f => f.type !== 'value');
-	columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders.name', 'finalPrice'];
+	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'lots.bids.price'];
 	filterIds = ['indicators.type_cri', 'indicators.type_aqi', 'indicators.type_ti', 'lots.awardDecisionDate'];
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
 	quicksearchIds = []; // 'title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
