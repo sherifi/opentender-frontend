@@ -1,6 +1,6 @@
 <section class="container-outer authority entity" *ngIf="loading">
 	<section class="container">
-		<div class="entity-title">Transparency Indicators</div>
+		<div class="entity-title">Administrative Quality Indicators</div>
 		<div *ngIf="error">Error: {{error}}</div>
 		<div *ngIf="!error">Loading...</div>
 	</section>
@@ -8,13 +8,13 @@
 
 <section class="container-outer authority entity" *ngIf="!loading">
 	<section class="container">
-		<div class="entity-title">Transparency Indicators</div>
+		<div class="entity-title">Administrative Quality Indicators</div>
 	</section>
 
 	<section class="container container-margin">
-		<h2>Transparency Indicators</h2>
+		<h2>Administrative Quality Indicators</h2>
 
-		<slider *ngIf="startYear"
+		<slider
 				[min]="startYear"
 				[max]="endYear"
 				[startValue]="startYear"
@@ -28,7 +28,7 @@
 			<div class="container">
 				<div class="container-left-6">
 					<div *ngIf="charts.lots_pc_in_years.visible">
-						<div class="title">% of Contracts (Lots) with Transparency Indicators per Year</div>
+						<div class="title">% of Contracts (Lots) with Administrative Quality Indicators per Year</div>
 						<ngx-charts-bar-vertical
 								class="chart-container"
 								[chart]="charts.lots_pc_in_years.chart"
@@ -39,7 +39,7 @@
 					</div>
 					<br/>
 					<div *ngIf="charts.indicators.visible">
-						<div class="title">Structure of Transparency Indicators</div>
+						<div class="title">Structure of Administrative Quality Indicators</div>
 						<ngx-charts-pie-chart
 								class="chart-container"
 								[chart]="charts.indicators.chart"
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="container-left-6" *ngIf="charts.cpvs_codes_average.visible">
-					<div class="title">Average of Tenders with Transparency Indicators per Sector</div>
+					<div class="title">Average of Tenders with Administrative Quality Indicators per Sector</div>
 					<ngx-charts-bar-horizontal
 							class="chart-container"
 							[chart]="charts.cpvs_codes_average.chart"
@@ -62,7 +62,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6" *ngIf="vis.suppliers.length>0">
@@ -84,8 +83,8 @@
 				<h2>Authorities</h2>
 				<table class="tables">
 					<tr>
-						<th>Authority</th>
 						<th>Number of Flags</th>
+						<th>Authority</th>
 					</tr>
 					<tr *ngFor="let val of vis.buyers">
 						<td>

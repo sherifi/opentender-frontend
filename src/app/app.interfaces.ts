@@ -33,7 +33,7 @@ export interface ICompany {
 
 export interface IStats {
 	cpvs: {
-		[id: string]: { name: string; value: number };
+		[id: string]: { name: string; value: number; percent: number; total: number };
 	};
 	lots_in_years: {
 		[year: string]: number;

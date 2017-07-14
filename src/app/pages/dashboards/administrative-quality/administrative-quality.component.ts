@@ -9,12 +9,12 @@ import {Utils} from '../../../model/utils';
 @Component({
 	moduleId: __filename,
 	selector: 'administrative-quality',
-	templateUrl: 'quality.template.html'
+	templateUrl: 'administrative-quality.template.html'
 })
 export class DashboardsAdministrativeQualityPage {
 	public error: string;
 	public search_cmd: SearchCommand;
-	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders', 'indicators', 'lots.awardDecisionDate'];
+	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aqi'];
 	vis: {
 		sum_prices: Array<any>,
 		buyers: Array<any>,
@@ -33,40 +33,41 @@ export class DashboardsAdministrativeQualityPage {
 		bids_awarded: 0
 	};
 
+
 	private charts: {
-		lots_in_years: IChartBar;
+		cpvs_codes_average: IChartBar;
 		lots_pc_in_years: IChartBar;
-		cpvs_codes: IChartPie;
 		indicators: IChartPie;
 	} = {
-		lots_in_years: {
+		cpvs_codes_average: {
 			visible: false,
 			chart: {
 				schemeType: 'ordinal',
 				view: {
-					def: {width: 470, height: 320},
-					min: {height: 320},
-					max: {height: 320}
+					def: {width: 470, height: 716},
+					min: {height: 716},
+					max: {height: 716}
 				},
 				xAxis: {
 					show: true,
 					showLabel: true,
-					label: 'Year',
+					label: 'Average %',
 					defaultHeight: 20,
-					tickFormatting: Utils.formatYear
+					tickFormatting: Utils.formatTrunc
 				},
 				yAxis: {
 					show: true,
 					showLabel: true,
-					label: 'Number of Lots',
-					defaultWidth: 30,
-					minInterval: 1,
-					tickFormatting: Utils.formatValue
+					label: 'Sector (CPV Division)',
+					defaultWidth: 130,
+					maxLength: 20,
+					tickFormatting: Utils.formatCPVName
 				},
+				valueFormatting: Utils.formatPercent,
 				showGridLines: true,
 				gradient: false,
 				colorScheme: {
-					domain: Consts.colors.single
+					domain: Consts.colors.diverging
 				}
 			},
 			select: (event) => {
@@ -80,7 +81,7 @@ export class DashboardsAdministrativeQualityPage {
 			chart: {
 				schemeType: 'ordinal',
 				view: {
-					def: {width: 470, height: 320},
+					def: {width: 470, height: 330},
 					min: {height: 320},
 					max: {height: 320}
 				},
@@ -94,40 +95,16 @@ export class DashboardsAdministrativeQualityPage {
 				yAxis: {
 					show: true,
 					showLabel: true,
-					label: 'Percent of Lots',
+					label: '% of Contracts',
 					defaultWidth: 30,
 					minInterval: 5,
-					tickFormatting: Utils.formatPercentTrunc
+					tickFormatting: Utils.formatTrunc
 				},
 				valueFormatting: Utils.formatPercent,
 				showGridLines: true,
 				gradient: false,
 				colorScheme: {
 					domain: Consts.colors.single
-				}
-			},
-			select: (event) => {
-			},
-			onLegendLabelClick: (event) => {
-			},
-			data: []
-		},
-		cpvs_codes: {
-			visible: false,
-			chart: {
-				schemeType: 'ordinal',
-				view: {
-					def: {width: 470, height: 320},
-					min: {height: 320},
-					max: {height: 320}
-				},
-				labels: true,
-				valueFormatting: Utils.formatPercent,
-				explodeSlices: false,
-				doughnut: false,
-				gradient: false,
-				colorScheme: {
-					domain: Consts.colors.diverging
 				}
 			},
 			select: (event) => {
@@ -146,10 +123,10 @@ export class DashboardsAdministrativeQualityPage {
 					max: {height: 320}
 				},
 				labels: true,
-				valueFormatting: Utils.formatPercent,
 				explodeSlices: false,
 				doughnut: false,
 				gradient: false,
+				valueFormatting: Utils.formatPercent,
 				colorScheme: {
 					domain: Consts.colors.diverging
 				}
@@ -195,14 +172,6 @@ export class DashboardsAdministrativeQualityPage {
 			return;
 		}
 
-		this.charts.cpvs_codes.data = [];
-		if (data.cpvs) {
-			this.charts.cpvs_codes.data = Object.keys(data.cpvs).map(key => {
-				return {name: data.cpvs[key].name, value: data.cpvs[key].value};
-			});
-		}
-		this.charts.cpvs_codes.visible = this.charts.cpvs_codes.data.length > 0;
-
 		this.charts.indicators.data = [];
 		if (data.indicators) {
 			this.charts.indicators.data = Object.keys(data.indicators).map(key => {
@@ -211,21 +180,23 @@ export class DashboardsAdministrativeQualityPage {
 		}
 		this.charts.indicators.visible = this.charts.indicators.data.length > 0;
 
-		this.charts.lots_in_years.data = [];
-		if (data.lots_in_years) {
-			this.charts.lots_in_years.data = Object.keys(data.lots_in_years).map((key, index) => {
-				return {name: key, value: data.lots_in_years[key]};
+		this.charts.cpvs_codes_average.data = [];
+		if (data.cpvs) {
+			this.charts.cpvs_codes_average.data = Object.keys(data.cpvs).map(key => {
+				return {name: data.cpvs[key].name, value: data.cpvs[key].percent};
+			}).sort((a, b) => {
+				return a.value - b.value;
 			});
 		}
-		this.charts.lots_in_years.visible = false; // this.charts.lots_in_years.data.length > 0;
+		this.charts.cpvs_codes_average.visible = this.charts.cpvs_codes_average.data.length > 0;
 
 		this.charts.lots_pc_in_years.data = [];
 		if (data.lots_in_years) {
-			this.charts.lots_pc_in_years.data = Object.keys(data.lots_pc_in_years).map((key, index) => {
+			this.charts.lots_pc_in_years.data = Object.keys(data.lots_pc_in_years).map((key) => {
 				return {name: key, value: data.lots_pc_in_years[key].percent};
 			});
 		}
-		this.charts.lots_pc_in_years.visible = this.charts.lots_in_years.data.length > 0;
+		this.charts.lots_pc_in_years.visible = this.charts.lots_pc_in_years.data.length > 0;
 
 		if (data.sum_price) {
 			Object.keys(data.sum_price).forEach(key => {
@@ -274,7 +245,7 @@ export class DashboardsAdministrativeQualityPage {
 				// console.error(error);
 			},
 			() => {
-				// console.log('corruption_indicators complete');
+				// console.log('indicators complete');
 			});
 	}
 
@@ -282,7 +253,7 @@ export class DashboardsAdministrativeQualityPage {
 		let filter: SearchCommandFilter = {
 			field: 'indicators.type',
 			type: 'text',
-			value: ['ADMINISTRATIVE']
+			value: ['ADMINISTRATIVE'],
 		};
 		let filters = [filter];
 		if (this.selectedStartYear > 0 && this.selectedEndYear > 0) {
@@ -300,7 +271,7 @@ export class DashboardsAdministrativeQualityPage {
 		let search_cmd = new SearchCommand();
 		search_cmd.filters = this.buildFilters();
 		this.search_cmd = search_cmd;
-	};
+	}
 
 	searchChange(data) {
 	}
