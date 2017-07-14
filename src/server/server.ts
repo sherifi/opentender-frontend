@@ -86,7 +86,7 @@ app.use('/favicon.ico', express.static(path.join(ROOT, '/favicons/favicon.ico'))
 app.use('/assets/js', express.static(DIST, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
-app.use('/data/nuts1.geojson', express.static(path.join(DATA, '/nuts/nuts_rg_60M_2013_lvl_1.geojson')));
+app.use('/data/nuts1.geojson', express.static(path.join(DATA, '/nuts/nuts_rg_20M_2013_lvl_1.geojson')));
 app.use('/data', errorResponse);
 app.use('/assets', express.static(ROOT, {index: false}));
 app.use('/assets', errorResponse);

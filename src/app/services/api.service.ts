@@ -66,6 +66,12 @@ export interface IAuthorityApiStatsResult {
 	};
 }
 
+export interface INutsApiResult {
+	data: {
+		[nutscode: string]: number;
+	};
+}
+
 export interface IAuthoritySimilarApiResult {
 	data: {
 		similar: Array<IAuthority>;
@@ -108,6 +114,14 @@ export interface IApiResult {
 	data: any;
 }
 
+export interface IApiGeoJSONResult {
+	features: Array<{
+		properties: {
+			NUTS_ID: string;
+		}
+	}>;
+}
+
 
 @Injectable()
 export class ApiService {
@@ -128,8 +142,8 @@ export class ApiService {
 		this.headers.append('Accept', 'application/json');
 	}
 
-	getNutsMap(): Observable<IApiResult> {
-		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiResult>res.json());
+	getNutsMap(): Observable<IApiGeoJSONResult> {
+		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiGeoJSONResult>res.json());
 	}
 
 	getDownloads(): Observable<IApiResult> {
@@ -164,6 +178,10 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'company/id/' + id).map(res => <ICompanyApiResult>res.json());
 	}
 
+	getCompanyNuts(): Observable<INutsApiResult> {
+		return this.http.get(this.actionCountryUrl + 'company/nuts').map(res => <INutsApiResult>res.json());
+	}
+
 	getCompanyStats(ids: Array<string>): Observable<ICompanyStatsApiResult> {
 		return this.http.post(this.actionCountryUrl + 'company/stats', JSON.stringify({ids: ids}), {headers: this.headers}).map(res => <ICompanyStatsApiResult>res.json());
 	}
@@ -178,6 +196,10 @@ export class ApiService {
 
 	getAuthorityStats(ids: Array<string>): Observable<IAuthorityApiStatsResult> {
 		return this.http.post(this.actionCountryUrl + 'authority/stats', JSON.stringify({ids: ids}), {headers: this.headers}).map(res => <IAuthorityApiStatsResult>res.json());
+	}
+
+	getAuthorityNuts(): Observable<INutsApiResult> {
+		return this.http.get(this.actionCountryUrl + 'authority/nuts').map(res => <INutsApiResult>res.json());
 	}
 
 	getAuthoritySimilar(id: string): Observable<IAuthoritySimilarApiResult> {

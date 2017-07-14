@@ -4,7 +4,8 @@ import {Consts} from '../../model/consts';
 import {PlatformService} from '../../services/platform.service';
 import {Utils} from '../../model/utils';
 import {ApiService} from '../../services/api.service';
-import PathOptions = L.PathOptions;
+import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
+import * as d3 from 'd3';
 
 @Component({
 	moduleId: __filename,
@@ -90,6 +91,7 @@ export class TestPage {
 		}
 	};
 
+	private map: any;
 	private geolayer: any = {};
 	private leaflet_options = {};
 
@@ -104,21 +106,48 @@ export class TestPage {
 		this.geolayer =
 			L.geoJSON(null, {
 				style: (feature) => {
-					return {weight: 1, color: '#000', fillColor: '#ff7800', opacity: 0.5};
+					return {weight: 1, color: '#a4a4a4', fillColor: feature.properties['color'], opacity: 0.9, fillOpacity: 0.55};
 				}
 			});
 		this.leaflet_options = {
 			layers: [
-				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '...'}),
+				L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'}),
 				this.geolayer
 			],
 			zoom: 3,
 			center: L.latLng({lat: 52.520645, lng: 13.409779})
 		};
-
 		this.api.getNutsMap().subscribe(
 			result => {
-				this.geolayer.addData(result);
+				this.api.getAuthorityNuts().subscribe(
+					res => {
+						let nuts1 = {};
+						let max = 0;
+						Object.keys(res.data).forEach(key => {
+							let nuts1key = key.slice(0, 3);
+							nuts1[nuts1key] = (nuts1[nuts1key] || 0) + res.data[key];
+							max = Math.max(max, nuts1[nuts1key]);
+						});
+						let scale = d3.scaleLinear().domain([0, max]).range([0, 1]);
+						result.features = result.features.filter(feature => {
+							let value = nuts1[feature.properties.NUTS_ID];
+							if (value > 0) {
+								feature.properties['value'] = value;
+								feature.properties['color'] = d3chroma.interpolateBlues(scale(value));
+								return true;
+							}
+							return false;
+						});
+						this.geolayer.addData(result);
+						this.map.fitBounds(this.geolayer.getBounds());
+					},
+					err => {
+						console.error(err);
+					},
+					() => {
+						// console.log('nuts complete');
+					}
+				);
 			},
 			error => {
 				console.error(error);
@@ -129,8 +158,7 @@ export class TestPage {
 	}
 
 	onMapReady(map) {
-		// Do stuff with map
-
+		this.map = map;
 	}
 
 	ngOnInit(): void {
