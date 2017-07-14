@@ -60,41 +60,11 @@
 					</ngx-charts-bar-horizontal>
 				</div>
 			</div>
-
-			<!--<div class="container-left-6" *ngIf="charts.cpvs_codes && charts.cpvs_codes.visible">-->
-			<!--<div class="title">Sectors with Corruption Risk Indicators (Main CPV)</div>-->
-			<!--<ngx-charts-pie-chart-->
-			<!--class="chart-container"-->
-			<!--[chart]="charts.cpvs_codes.chart"-->
-			<!--[data]="charts.cpvs_codes.data"-->
-			<!--(legendLabelClick)="charts.cpvs_codes.onLegendLabelClick($event)"-->
-			<!--(select)="charts.cpvs_codes.select($event)">-->
-			<!--</ngx-charts-pie-chart>-->
-			<!--</div>-->		<!--<div class="container">-->
-			<!--<div class="container-left-6">-->
-			<!--<div class="title">Total Number of Contracts with Corruption Risk Indicators</div>-->
-			<!--<div class="stats">-->
-			<!--<ul>-->
-			<!--<li><span>Tenders</span><span>{{vis.tenders_total| formatNumber}}</span></li>-->
-			<!--<li><span>Lots</span><span>{{vis.lots_total| formatNumber}}</span></li>-->
-			<!--<li><span>Bids</span><span>{{vis.bids_total| formatNumber}}</span></li>-->
-			<!--<li><span>Bids awarded</span><span>{{vis.bids_awarded| formatNumber}}</span></li>-->
-			<!--</ul>-->
-			<!--</div>-->
-			<!--</div>-->
-			<!--<div class="container-left-6">-->
-			<!--<div class="title">Total Contract Value awarded (finalPrice.netAmount)</div>-->
-			<!--<div *ngFor="let val of vis.sum_prices">-->
-			<!--<span class="currency-prefix">{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>-->
-			<!--</div>-->
-			<!--</div>-->
-			<!--</div>-->
-		</div>
 	</section>
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6" *ngIf="vis.suppliers.length>0">
-				<h2>Companies</h2>
+				<h2>Supplier</h2>
 				<table class="tables">
 					<tr>
 						<th>Company</th>
@@ -109,7 +79,7 @@
 				</table>
 			</div>
 			<div class="container-left-6" *ngIf="vis.buyers.length>0">
-				<h2>Authorities</h2>
+				<h2>Buyer</h2>
 				<table class="tables">
 					<tr>
 						<th>Authority</th>
