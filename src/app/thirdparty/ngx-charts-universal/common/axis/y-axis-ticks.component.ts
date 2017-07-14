@@ -7,33 +7,33 @@ import {PlatformService} from '../../../../services/platform.service';
 @Component({
 	selector: 'g[ngx-charts-y-axis-ticks]',
 	template: `
-    <svg:g #ticksel>
-      <svg:g *ngFor="let tick of ticks" class="tick"
-        [attr.transform]="transform(tick)" >
-        <title>{{tickFormat(tick)}}</title>
-        <svg:text
-          stroke-width="0.01"
-          [attr.dy]="dy"
-          [attr.x]="x1"
-          [attr.y]="y1"
-          [attr.text-anchor]="textAnchor"
-          [style.font-size]="'12px'">
-          {{trimLabel(tickFormat(tick))}}
-        </svg:text>
-      </svg:g>
-    </svg:g>
-    <svg:g *ngFor="let tick of ticks"
-      [attr.transform]="transform(tick)">
-      <svg:g
-        *ngIf="showGridLines"
-        [attr.transform]="gridLineTransform()">
-        <svg:line
-          class="gridline-path gridline-path-horizontal"
-          x1="0"
-          [attr.x2]="gridLineWidth" />
-      </svg:g>
-    </svg:g>
-  `,
+		<svg:g #ticksel>
+			<svg:g *ngFor="let tick of ticks" class="tick"
+				   [attr.transform]="transform(tick)">
+				<title>{{tick}}</title>
+				<svg:text
+						stroke-width="0.01"
+						[attr.dy]="dy"
+						[attr.x]="x1"
+						[attr.y]="y1"
+						[attr.text-anchor]="textAnchor"
+						[style.font-size]="'12px'">
+					{{trimLabel(tickFormat(tick), trimLabelLength || 16)}}
+				</svg:text>
+			</svg:g>
+		</svg:g>
+		<svg:g *ngFor="let tick of ticks"
+			   [attr.transform]="transform(tick)">
+			<svg:g
+					*ngIf="showGridLines"
+					[attr.transform]="gridLineTransform()">
+				<svg:line
+						class="gridline-path gridline-path-horizontal"
+						x1="0"
+						[attr.x2]="gridLineWidth"/>
+			</svg:g>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class YAxisTicksComponent implements OnChanges, AfterViewInit {
@@ -49,6 +49,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	@Input() height;
 	@Input() defaultWidth: number;
 	@Input() minInterval: number;
+	@Input() trimLabelLength = 16;
 
 	@Output() dimensionsChanged = new EventEmitter();
 
@@ -121,8 +122,8 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 		}
 
 		this.adjustedScale = this.scale.bandwidth ? function(d) {
-				return this.scale(d) + this.scale.bandwidth() * 0.5;
-			} : this.scale;
+			return this.scale(d) + this.scale.bandwidth() * 0.5;
+		} : this.scale;
 
 		switch (this.orient) {
 			case "top":

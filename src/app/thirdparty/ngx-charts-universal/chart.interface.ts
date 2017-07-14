@@ -5,6 +5,7 @@ export interface IAxisSettings {
 	label: string;
 	defaultHeight?: number;
 	defaultWidth?: number;
+	maxLength?: number;
 	minInterval?: number;
 	tickFormatting?: (val: number|Date|string) => string;
 }

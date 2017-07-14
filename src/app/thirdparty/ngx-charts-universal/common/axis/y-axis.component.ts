@@ -26,6 +26,7 @@ import {YAxisTicksComponent} from './y-axis-ticks.component';
         [gridLineWidth]="width"
         [height]="dims.height"
         [defaultWidth]="defaultWidth"
+        [trimLabelLength]="trimLabelLength"
         [minInterval]="minInterval"
         (dimensionsChanged)="emitTicksWidth($event)"
       />
@@ -53,6 +54,7 @@ export class YAxisComponent implements OnChanges {
 	@Input() labelText;
 	@Input() minInterval;
 	@Input() yAxisTickInterval;
+	@Input() trimLabelLength: number;
 
 	@Output() dimensionsChanged = new EventEmitter();
 
