@@ -7,13 +7,13 @@
 </section>
 
 <section class="container-outer authority entity" *ngIf="!loading">
+
 	<section class="container">
 		<div class="entity-title">Corruption Risk Indicators</div>
 	</section>
 
 	<section class="container container-margin">
 		<h2>Corruption Risk Indicators</h2>
-
 		<slider
 				[min]="startYear"
 				[max]="endYear"
@@ -23,7 +23,6 @@
 				defaultWidth="934"
 				(onSliderChange)="onSliderChange($event)">
 		</slider>
-
 		<div class="container slab-beta-light container-padded-large">
 			<div class="container">
 				<div class="container-left-6">
@@ -60,7 +59,9 @@
 					</ngx-charts-bar-horizontal>
 				</div>
 			</div>
+		</div>
 	</section>
+
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6" *ngIf="vis.suppliers.length>0">
@@ -99,4 +100,5 @@
 	<section class="container">
 		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
 	</section>
+
 </section>
