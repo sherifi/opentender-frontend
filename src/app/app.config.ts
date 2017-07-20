@@ -85,6 +85,10 @@ import {EuropamLinkPipe} from './directives/europam-url.pipe';
 import {TestPage} from './pages/test/test.component';
 import {FOISearchLinkPipe} from './directives/foi-search-url.pipe';
 import {FormatNumberPipe} from './directives/format-number';
+import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
+import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
+import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
+import {DashboardsIndicatorComponent} from './pages/dashboards/indicator-dashboard.component';
 
 const AppConfig = {
 	declarations: [
@@ -116,6 +120,10 @@ const AppConfig = {
 		TenderTableComponent,
 		TreeViewComponent,
 		ValueInputComponent,
+		DashboardsIndicatorComponent,
+		GraphIndicatorHistogramComponent,
+		GraphIndicatorSectorsComponent,
+		GraphIndicatorStructureComponent,
 
 		DefinedPipe,
 		EuropamLinkPipe,

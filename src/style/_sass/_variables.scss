@@ -100,7 +100,7 @@ $primary-hover-button-bg-color: darken($blue,3%);
 $primary-button-color: $white;
 $primary-hover-button-color: $white;
 $secondary-button-bg-color: $white;
-$secondary-hover-button-bg-color: $white;
+$secondary-hover-button-bg-color: darken($white,3%);
 $secondary-button-color: $dark-gray;
 $secondary-hover-button-color: $dark-gray;
 $secondary-button-border-color: $mid-gray;

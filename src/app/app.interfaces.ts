@@ -31,23 +31,29 @@ export interface ICompany {
 	country?: string;
 }
 
-export interface IStats {
-	cpvs: {
-		[id: string]: { name: string; value: number; percent: number; total: number };
+export interface IStatsLotsInYears {
+	[year: string]: {
+		total: number;
+		value: number;
+		percent: number;
 	};
+}
+
+export interface IStatsCpvs {
+	[id: string]: { name: string; value: number; percent: number; total: number };
+}
+
+export interface IStatsIndicators {
+	[name: string]: number;
+}
+
+export interface IStats {
+	cpvs: IStatsCpvs;
 	lots_in_years: {
 		[year: string]: number;
 	};
-	indicators: {
-		[name: string]: number;
-	};
-	lots_pc_in_years: {
-		[year: string]: {
-			total: number;
-			value: number;
-			percent: number;
-		};
-	};
+	indicators: IStatsIndicators;
+	lots_pc_in_years: IStatsLotsInYears;
 	bids_in_years: {
 		[year: string]: number;
 	};
