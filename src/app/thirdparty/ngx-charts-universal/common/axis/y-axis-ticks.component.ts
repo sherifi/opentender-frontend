@@ -17,7 +17,7 @@ import {PlatformService} from '../../../../services/platform.service';
 						[attr.x]="x1"
 						[attr.y]="y1"
 						[attr.text-anchor]="textAnchor"
-						[style.font-size]="'12px'">
+						[style.font-size]="'11px'">
 					{{trimLabel(tickFormat(tick), trimLabelLength || 16)}}
 				</svg:text>
 			</svg:g>
@@ -56,7 +56,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	innerTickSize: any = 6;
 	tickPadding: any = 3;
 	tickSpacing: any;
-	verticalSpacing: number = 20;
+	verticalSpacing: number = 10;
 	textAnchor: any = 'middle';
 	dy: any;
 	x1: any;
@@ -126,41 +126,41 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 		} : this.scale;
 
 		switch (this.orient) {
-			case "top":
+			case 'top':
 				this.transform = function(tick) {
-					return "translate(" + this.adjustedScale(tick) + ",0)";
+					return 'translate(' + this.adjustedScale(tick) + ',0)';
 				};
-				this.textAnchor = "middle";
+				this.textAnchor = 'middle';
 				this.y2 = this.innerTickSize * sign;
 				this.y1 = this.tickSpacing * sign;
-				this.dy = sign < 0 ? "0em" : ".71em";
+				this.dy = sign < 0 ? '0em' : '.71em';
 				break;
-			case "bottom":
+			case 'bottom':
 				this.transform = function(tick) {
-					return "translate(" + this.adjustedScale(tick) + ",0)";
+					return 'translate(' + this.adjustedScale(tick) + ',0)';
 				};
-				this.textAnchor = "middle";
+				this.textAnchor = 'middle';
 				this.y2 = this.innerTickSize * sign;
 				this.y1 = this.tickSpacing * sign;
-				this.dy = sign < 0 ? "0em" : ".71em";
+				this.dy = sign < 0 ? '0em' : '.71em';
 				break;
-			case "left":
+			case 'left':
 				this.transform = function(tick) {
-					return "translate(0," + this.adjustedScale(tick) + ")";
+					return 'translate(5,' + this.adjustedScale(tick) + ')';
 				};
-				this.textAnchor = "end";
+				this.textAnchor = 'end';
 				this.x2 = this.innerTickSize * -sign;
 				this.x1 = this.tickSpacing * -sign;
-				this.dy = ".32em";
+				this.dy = '.32em';
 				break;
-			case "right":
+			case 'right':
 				this.transform = function(tick) {
-					return "translate(0," + this.adjustedScale(tick) + ")";
+					return 'translate(0,' + this.adjustedScale(tick) + ')';
 				};
-				this.textAnchor = "start";
+				this.textAnchor = 'start';
 				this.x2 = this.innerTickSize * -sign;
 				this.x1 = this.tickSpacing * -sign;
-				this.dy = ".32em";
+				this.dy = '.32em';
 				break;
 		}
 
@@ -193,10 +193,6 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	getMaxTicks(): number {
 		let tickHeight = 20;
 		return Math.floor(this.height / tickHeight);
-	}
-
-	tickTransform(tick): string {
-		return 'translate(' + this.adjustedScale(tick) + ',' + this.verticalSpacing + ')';
 	}
 
 	gridLineTransform(): string {

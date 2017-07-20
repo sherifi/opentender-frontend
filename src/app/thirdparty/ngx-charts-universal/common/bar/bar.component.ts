@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter, HostListener, ElementRef, Simple
 import {UrlId} from '../../utils/id.helper';
 import d3 from '../../d3';
 import {PlatformService} from '../../../../services/platform.service';
+import {roundedRect} from '../shapes/shapes.helper';
 
 @Component({
 	selector: 'g[ngx-charts-bar]',
@@ -113,41 +114,60 @@ export class BarComponent implements OnChanges {
 			}];
 	}
 
-	getStartingPath(): string {
-		let radius = this.getRadius();
+	getStartingPath() {
 		let path;
+
 		if (this.roundEdges) {
 			if (this.orientation === 'vertical') {
-				radius = Math.min(this.height, radius);
-				path = this.roundedRect(this.x, this.y + this.height, this.width, 0, radius, true, true, false, false);
+				path = roundedRect(this.x, this.y + this.height, this.width, 1, 0, this.edges);
 			} else if (this.orientation === 'horizontal') {
-				radius = Math.min(this.width, radius);
-				path = this.roundedRect(this.x, this.y, 0, this.height, radius, false, true, false, true);
+				path = roundedRect(this.x, this.y, 1, this.height, 0, this.edges);
 			}
 		} else {
 			if (this.orientation === 'vertical') {
-				path = this.roundedRect(this.x, this.y + this.height, this.width, 0, radius, false, false, false, false);
+				path = roundedRect(this.x, this.y + this.height, this.width, 1, 0, this.edges);
 			} else if (this.orientation === 'horizontal') {
-				path = this.roundedRect(this.x, this.y, 0, this.height, radius, false, false, false, false);
+				path = roundedRect(this.x, this.y, 1, this.height, 0, this.edges);
 			}
 		}
+
 		return path;
 	}
 
-	getPath(): string {
+	get edges() {
+		let edges = [false, false, false, false];
+		if (this.roundEdges) {
+			if (this.orientation === 'vertical') {
+				if (this.data.value > 0) {
+					edges =  [true, true, false, false];
+				} else {
+					edges =  [false, false, true, true];
+				}
+			} else if (this.orientation === 'horizontal') {
+				if (this.data.value > 0) {
+					edges =  [false, true, false, true];
+				} else {
+					edges =  [true, false, true, false];
+				}
+			}
+		}
+		return edges;
+	}
+
+	getPath() {
 		let radius = this.getRadius();
 		let path;
 
 		if (this.roundEdges) {
 			if (this.orientation === 'vertical') {
 				radius = Math.min(this.height, radius);
-				path = this.roundedRect(this.x, this.y, this.width, this.height, radius, true, true, false, false);
+				path = roundedRect(this.x, this.y, this.width, this.height, radius, this.edges);
 			} else if (this.orientation === 'horizontal') {
 				radius = Math.min(this.width, radius);
-				path = this.roundedRect(this.x, this.y, this.width, this.height, radius, false, true, false, true);
+				path = roundedRect(this.x, this.y, this.width, this.height, radius, this.edges);
 			}
 		} else {
-			path = this.roundedRect(this.x, this.y, this.width, this.height, radius, false, false, false, false);
+			path = roundedRect(this.x, this.y, this.width, this.height, radius, this.edges);
 		}
 
 		return path;
@@ -169,51 +189,6 @@ export class BarComponent implements OnChanges {
 		} else {
 			return 0.5;
 		}
-	}
-
-	roundedRect(x, y, w, h, r, tl, tr, bl, br) {
-		let retval;
-
-		retval = 'M' + (x + r) + ',' + y;
-		retval += 'h' + (w - 2 * r);
-
-		if (tr) {
-			retval += 'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + r;
-		} else {
-			retval += 'h' + r;
-			retval += 'v' + r;
-		}
-
-		retval += 'v' + (h - 2 * r);
-
-		if (br) {
-			retval += 'a' + r + ',' + r + ' 0 0 1 ' + -r + ',' + r;
-		} else {
-			retval += 'v' + r;
-			retval += 'h' + -r;
-		}
-
-		retval += 'h' + (2 * r - w);
-
-		if (bl) {
-			retval += 'a' + r + ',' + r + ' 0 0 1 ' + -r + ',' + -r;
-		} else {
-			retval += 'h' + -r;
-			retval += 'v' + -r;
-		}
-
-		retval += 'v' + (2 * r - h);
-
-		if (tl) {
-			retval += 'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + -r;
-		} else {
-			retval += 'v' + -r;
-			retval += 'h' + r;
-		}
-
-		retval += 'z';
-
-		return retval;
 	}
 
 	@HostListener('mouseenter')

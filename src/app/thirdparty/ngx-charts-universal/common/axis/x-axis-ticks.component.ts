@@ -14,7 +14,7 @@ import {PlatformService} from '../../../../services/platform.service';
           stroke-width="0.01"
           [attr.text-anchor]="textAnchor"
           [attr.transform]="textTransform"
-          [style.font-size]="'12px'">
+          [style.font-size]="'11px'">
           {{tickFormat(tick)}}
         </svg:text>
       </svg:g>
@@ -47,7 +47,7 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 
 	@Output() dimensionsChanged = new EventEmitter();
 
-	verticalSpacing: number = 20;
+	verticalSpacing: number = 10;
 	rotateLabels: boolean = false;
 	innerTickSize: number = 6;
 	outerTickSize: number = 6;
@@ -113,9 +113,10 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 		if (angle !== 0) {
 			this.textTransform = `rotate(${angle})`;
 			this.textAnchor = 'end';
-			this.verticalSpacing = 10;
+			this.verticalSpacing = 5;
 		} else {
 			this.textAnchor = 'middle';
+			this.verticalSpacing = 10;
 		}
 
 		setTimeout(() => this.updateDims());
