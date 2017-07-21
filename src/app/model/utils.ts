@@ -89,6 +89,9 @@ export const Utils = {
 		return value.toString();
 	},
 	formatValue(n: number) {
+		if (n === null || n === undefined) {
+			return '';
+		}
 		if (n >= 1e6) {
 			// http://bmanolov.free.fr/numbers_names.php
 			let units =

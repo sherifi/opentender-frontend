@@ -142,6 +142,24 @@ export class ApiService {
 		this.headers.append('Accept', 'application/json');
 	}
 
+
+	getIndicatorStats(params: any): Observable<IStatApiResult> {
+		return this.http.post(this.actionCountryUrl + 'indicators/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
+	}
+
+	getSectorStats(params: any): Observable<ISectorApiResult> {
+		return this.http.post(this.actionCountryUrl + 'sector/stats', JSON.stringify(params), {headers: this.headers}).map(res => <ISectorApiResult>res.json());
+	}
+
+	getCompanyStats(params: any): Observable<ICompanyStatsApiResult> {
+		return this.http.post(this.actionCountryUrl + 'company/stats', JSON.stringify(params), {headers: this.headers}).map(res => <ICompanyStatsApiResult>res.json());
+	}
+
+	getAuthorityStats(params: any): Observable<IAuthorityApiStatsResult> {
+		return this.http.post(this.actionCountryUrl + 'authority/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IAuthorityApiStatsResult>res.json());
+	}
+
+
 	getNutsMap(): Observable<IApiGeoJSONResult> {
 		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiGeoJSONResult>res.json());
 	}
@@ -182,20 +200,12 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'company/nuts').map(res => <INutsApiResult>res.json());
 	}
 
-	getCompanyStats(ids: Array<string>): Observable<ICompanyStatsApiResult> {
-		return this.http.post(this.actionCountryUrl + 'company/stats', JSON.stringify({ids: ids}), {headers: this.headers}).map(res => <ICompanyStatsApiResult>res.json());
-	}
-
 	getCompanySimilar(id: string): Observable<ICompanySimilarApiResult> {
 		return this.http.get(this.actionCountryUrl + 'company/similar/' + id).map(res => <ICompanySimilarApiResult>res.json());
 	}
 
 	getAuthority(id: string): Observable<IAuthorityApiResult> {
 		return this.http.get(this.actionCountryUrl + 'authority/id/' + id).map(res => <IAuthorityApiResult>res.json());
-	}
-
-	getAuthorityStats(ids: Array<string>): Observable<IAuthorityApiStatsResult> {
-		return this.http.post(this.actionCountryUrl + 'authority/stats', JSON.stringify({ids: ids}), {headers: this.headers}).map(res => <IAuthorityApiStatsResult>res.json());
 	}
 
 	getAuthorityNuts(): Observable<INutsApiResult> {
@@ -206,9 +216,6 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'authority/similar/' + id).map(res => <IAuthoritySimilarApiResult>res.json());
 	}
 
-	getSector(id: string): Observable<ISectorApiResult> {
-		return this.http.get(this.actionCountryUrl + 'sector/id/' + id).map(res => <ISectorApiResult>res.json());
-	}
 
 	searchAuthority(params: any): Observable<ISearchAuthorityApiResult> {
 		return this.http.post(this.actionCountryUrl + 'authority/search', JSON.stringify(params), {headers: this.headers}).map(res => <ISearchAuthorityApiResult>res.json());
@@ -220,10 +227,6 @@ export class ApiService {
 
 	searchTender(params: any): Observable<ISearchTenderApiResult> {
 		return this.http.post(this.actionCountryUrl + 'tender/search', JSON.stringify(params), {headers: this.headers}).map(res => <ISearchTenderApiResult>res.json());
-	}
-
-	getIndicatorStats(params: any): Observable<IStatApiResult> {
-		return this.http.post(this.actionCountryUrl + 'indicators/stats/', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
 	}
 
 	getViz(ids: Array<string>): Observable<IVizApiResult> {

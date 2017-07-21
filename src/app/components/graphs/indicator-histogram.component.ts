@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsLotsInYears} from '../../app.interfaces';
+import {IStatsPcLotsInYears} from '../../app.interfaces';
 
 @Component({
 	selector: 'graph[indicator-histogram]',
@@ -22,7 +22,7 @@ import {IStatsLotsInYears} from '../../app.interfaces';
 })
 export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
-	data: IStatsLotsInYears;
+	data: IStatsPcLotsInYears;
 	@Input()
 	indicator: string = 'Indicators';
 	// @Output()
@@ -121,7 +121,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			});
 		}
 		this.lots_pc_in_years.visible = this.lots_pc_in_years.data.length > 0;
-		this.lots_in_years.visible = this.lots_pc_in_years.data.length > 0;
+		this.lots_in_years.visible = this.lots_in_years.data.length > 0;
 	}
 
 }

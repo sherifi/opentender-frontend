@@ -89,6 +89,12 @@ import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-hi
 import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
 import {DashboardsIndicatorComponent} from './pages/dashboards/indicator-dashboard.component';
+import {GraphSectorsComponent} from './components/graphs/sectors.component';
+import {GraphCountsComponent} from './components/graphs/counts.component';
+import {GraphHistogramComponent} from './components/graphs/histogram.component';
+import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
+import {GraphAuthoritiesComponent} from './components/graphs/authorities.component';
+import {GraphCompaniesComponent} from './components/graphs/companies.component';
 
 const AppConfig = {
 	declarations: [
@@ -124,6 +130,12 @@ const AppConfig = {
 		GraphIndicatorHistogramComponent,
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
+		GraphSectorsComponent,
+		GraphCountsComponent,
+		GraphHistogramComponent,
+		GraphSumPricesComponent,
+		GraphAuthoritiesComponent,
+		GraphCompaniesComponent,
 
 		DefinedPipe,
 		EuropamLinkPipe,

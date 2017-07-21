@@ -31,7 +31,7 @@ export interface ICompany {
 	country?: string;
 }
 
-export interface IStatsLotsInYears {
+export interface IStatsPcLotsInYears {
 	[year: string]: {
 		total: number;
 		value: number;
@@ -39,42 +39,51 @@ export interface IStatsLotsInYears {
 	};
 }
 
-export interface IStatsCpvs {
+export interface IStatsLotsInYears {
+	[year: string]: number;
+}
+
+export interface IStatsPcCpvs {
 	[id: string]: { name: string; value: number; percent: number; total: number };
+}
+
+export interface IStatsCpvs {
+	[id: string]: { name: string; value: number };
+}
+
+export interface IStatsCounts {
+	bids_awarded: number;
+	bids: number;
+	lots: number;
+	tenders: number;
 }
 
 export interface IStatsIndicators {
 	[name: string]: number;
 }
 
+export interface IStatsSumPrices {
+	[currency: string]: number;
+}
+export interface IStatsAuthorities {
+	top10: Array<IAuthority>;
+}
+export interface IStatsCompanies {
+	top10: Array<ICompany>;
+}
+
 export interface IStats {
-	cpvs: IStatsCpvs;
-	lots_in_years: {
-		[year: string]: number;
-	};
-	indicators: IStatsIndicators;
-	lots_pc_in_years: IStatsLotsInYears;
-	bids_in_years: {
-		[year: string]: number;
-	};
-	sum_price: {
-		[currency: string]: number;
-	};
-	suppliers: {
-		top10: Array<ICompany>
-	};
-	buyers: {
-		top10: Array<IAuthority>
-	};
-	corruption: {
-		[_type: string]: number;
-	},
-	counts: {
-		bids_awarded: number;
-		bids: number;
-		lots: number;
-		tenders: number;
-	};
+	terms_main_cpvs: IStatsCpvs;
+	terms_pc_main_cpvs: IStatsPcCpvs;
+	terms_main_cpvs_full: IStatsPcCpvs;
+	sums_finalPrice: IStatsSumPrices;
+	top_winning_companies: IStatsCompanies;
+	top_companies: IStatsCompanies;
+	top_authorities: IStatsAuthorities;
+	count_lots_bids: IStatsCounts;
+	terms_indicators: IStatsIndicators;
+	histogram_lots_awardDecisionDate: IStatsLotsInYears;
+	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 }
 
 export interface ISearchTenderData {

@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsCpvs} from '../../app.interfaces';
+import {IStatsPcCpvs} from '../../app.interfaces';
 
 @Component({
 	selector: 'graph[indicator-sectors]',
@@ -22,13 +22,13 @@ import {IStatsCpvs} from '../../app.interfaces';
 })
 export class GraphIndicatorSectorsComponent implements OnChanges {
 	@Input()
-	data: IStatsCpvs;
+	data: IStatsPcCpvs;
 	@Input()
 	indicator: string = 'Indicators';
 	// @Output()
 	// sortChange = new EventEmitter();
 
-	cpvs_codes_average: IChartBar =  {
+	cpvs_codes_average: IChartBar = {
 		visible: false,
 		chart: {
 			schemeType: 'ordinal',
@@ -40,7 +40,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Average %',
+				label: 'Average % of Tender in Sector',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},
@@ -48,8 +48,8 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 				show: true,
 				showLabel: true,
 				label: 'Sector (CPV Division)',
-				defaultWidth: 130,
-				maxLength: 20,
+				defaultWidth: 150,
+				maxLength: 24,
 				tickFormatting: Utils.formatCPVName
 			},
 			valueFormatting: Utils.formatPercent,
@@ -77,7 +77,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Tenders',
+				label: 'Nr. of Tenders in Sector',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},
@@ -85,8 +85,8 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 				show: true,
 				showLabel: true,
 				label: 'Sector (CPV Division)',
-				defaultWidth: 130,
-				maxLength: 20,
+				defaultWidth: 150,
+				maxLength: 24,
 				tickFormatting: Utils.formatCPVName
 			},
 			valueFormatting: Utils.formatValue,
@@ -112,11 +112,23 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		this.cpvs_codes_average.data = [];
 		this.cpvs_codes_absolute.data = [];
 		if (this.data) {
-			this.cpvs_codes_average.data = Object.keys(this.data).map((key) => {
-				return {name: this.data[key].name, value: this.data[key].percent};
+			let codes = Object.keys(this.data).map((key) => {
+				return {id: key, name: this.data[key].name, value: this.data[key].value, percent: this.data[key].percent};
 			});
-			this.cpvs_codes_absolute.data = Object.keys(this.data).map((key) => {
-				return {name: this.data[key].name, value: this.data[key].value};
+			codes.sort((a, b) => {
+				if (a.percent < b.percent) {
+					return -1;
+				}
+				if (a.percent > b.percent) {
+					return 1;
+				}
+				return 0;
+			});
+			this.cpvs_codes_average.data = codes.map((code) => {
+				return {name: code.name, value: code.percent};
+			});
+			this.cpvs_codes_absolute.data = codes.map((code) => {
+				return {name: code.name, value: code.value};
 			});
 		}
 		this.cpvs_codes_average.visible = this.cpvs_codes_average.data.length > 0;

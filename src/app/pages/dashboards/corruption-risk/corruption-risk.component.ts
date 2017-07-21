@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../../model/search';
 import {ApiService} from '../../../services/api.service';
-import {IStats, IStatsCpvs, IStatsIndicators, IStatsLotsInYears} from '../../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears} from '../../../app.interfaces';
 import {Consts} from '../../../model/consts';
 import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../../model/utils';

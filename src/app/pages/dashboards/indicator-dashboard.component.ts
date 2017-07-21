@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsCpvs, IStatsIndicators, IStatsLotsInYears} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -26,8 +26,8 @@ export class DashboardsIndicatorComponent {
 		lots_total: number,
 		bids_total: number,
 		bids_awarded: number,
-		lots_in_years: IStatsLotsInYears,
-		cpvs_codes: IStatsCpvs
+		lots_in_years: IStatsPcLotsInYears,
+		cpvs_codes: IStatsPcCpvs
 		indicators: IStatsIndicators
 	} = {
 		sum_prices: [],
@@ -78,34 +78,34 @@ export class DashboardsIndicatorComponent {
 			return;
 		}
 
-		vis.lots_in_years = data.lots_pc_in_years;
-		vis.cpvs_codes = data.cpvs;
-		vis.indicators = data.indicators;
+		vis.lots_in_years = data.histogram_pc_lots_awardDecisionDate;
+		vis.cpvs_codes = data.terms_pc_main_cpvs;
+		vis.indicators = data.terms_indicators;
 
-		if (data.sum_price) {
-			Object.keys(data.sum_price).forEach(key => {
-				if (data.sum_price[key] > 0) {
-					vis.sum_prices.push({currency: key.toString().toUpperCase(), value: data.sum_price[key]});
+		if (data.sums_finalPrice) {
+			Object.keys(data.sums_finalPrice).forEach(key => {
+				if (data.sums_finalPrice[key] > 0) {
+					vis.sum_prices.push({currency: key.toString().toUpperCase(), value: data.sums_finalPrice[key]});
 				}
 			});
 		}
-		if (data.suppliers) {
-			vis.suppliers = data.suppliers.top10;
+		if (data.top_companies) {
+			vis.suppliers = data.top_companies.top10;
 		}
-		if (data.buyers) {
-			vis.buyers = data.buyers.top10;
+		if (data.top_authorities) {
+			vis.buyers = data.top_authorities.top10;
 		}
-		if (data.counts) {
-			vis.bids_awarded = data.counts.bids_awarded;
-			vis.bids_total = data.counts.bids;
-			vis.lots_total = data.counts.lots;
-			vis.tenders_total = data.counts.tenders;
+		if (data.count_lots_bids) {
+			vis.bids_awarded = data.count_lots_bids.bids_awarded;
+			vis.bids_total = data.count_lots_bids.bids;
+			vis.lots_total = data.count_lots_bids.lots;
+			vis.tenders_total = data.count_lots_bids.tenders;
 		}
 		this.vis = vis;
 
 		if (this.startYear === 0) {
-			if (data.lots_in_years) {
-				Object.keys(data.lots_in_years).forEach((key) => {
+			if (data.histogram_pc_lots_awardDecisionDate) {
+				Object.keys(data.histogram_pc_lots_awardDecisionDate).forEach((key) => {
 					this.startYear = this.startYear == 0 ? parseInt(key, 10) : Math.min(parseInt(key, 10), this.startYear);
 					this.endYear = this.endYear == 0 ? parseInt(key, 10) : Math.max(parseInt(key, 10), this.endYear);
 				});

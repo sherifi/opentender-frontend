@@ -55,67 +55,24 @@
 		<h2>Indicators</h2>
 		<div class="container slab-beta-light container-padded-large">
 			<div class="container">
-				<div class="container-left-6" *ngIf="charts.bids_in_years.visible">
-					<div class="title">Number of Contracts Bids awarded per Year</div>
-					<ngx-charts-bar-vertical
-							class="chart-container"
-							[chart]="charts.bids_in_years.chart"
-							[data]="charts.bids_in_years.data"
-							(select)="charts.bids_in_years.select($event)"
-							(legendLabelClick)="charts.bids_in_years.onLegendLabelClick($event)">
-					</ngx-charts-bar-vertical>
-				</div>
-				<div class="container-left-6" *ngIf="charts.cpvs_code_main && charts.cpvs_code_main.visible">
-					<div class="title">Structure of Spending (Main CPV)</div>
-					<ngx-charts-pie-chart
-							class="chart-container"
-							[chart]="charts.cpvs_code_main.chart"
-							[data]="charts.cpvs_code_main.data"
-							(legendLabelClick)="charts.cpvs_code_main.onLegendLabelClick($event)"
-							(select)="charts.cpvs_code_main.select($event)">
-					</ngx-charts-pie-chart>
-				</div>
-			</div>
-			<div class="container">
 				<div class="container-left-6">
-					<div class="title">Total Number of Contracts</div>
-					<div class="stats">
-						<ul>
-							<li><span>Tenders</span><span>{{vis.tenders_total| formatNumber}}</span></li>
-							<li><span>Lots</span><span>{{vis.lots_total| formatNumber}}</span></li>
-							<li><span>Bids</span><span>{{vis.bids_total| formatNumber}}</span></li>
-							<li><span>Bids awarded</span><span>{{vis.bids_awarded| formatNumber}}</span></li>
-						</ul>
-					</div>
+					<graph histogram [data]="vis.lots_in_years"></graph><br/>
+					<graph counts [data]="vis.counts"></graph><br/>
+					<graph sum_prices [data]="vis.sums_finalPrice"></graph>
 				</div>
 				<div class="container-left-6">
-					<div class="title">Total Contract Value <i class="icon-info" ngx-tooltip [tooltipTitle]="'Net amount of the tender final price is used to calculate the sum'"></i></div>
-					<div *ngFor="let val of vis.sum_prices">
-						<span class="currency-prefix">{{val.currency | formatCurrency}}</span> <span>{{val.value | formatCurrencyValue}}</span>
-					</div>
+					<graph sectors [data]="vis.cpvs_codes"></graph>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<section class="container container-margin">
-		<h2>Main suppliers</h2>
 		<div class="container">
 			<div class="container-left-6">
-				<table class="tables">
-					<tr>
-						<th>Supplier</th>
-						<th>Awarded Bids</th>
-					</tr>
-					<tr *ngFor="let val of vis.suppliers">
-						<td>
-							<tender-body-line [body]="val.body" [link]="'/company/'+val.body.groupId"></tender-body-line>
-						</td>
-						<td>{{val.value| formatNumber}}</td>
-					</tr>
-				</table>
+				<graph companies [data]="vis.top_companies"></graph>
 			</div>
 			<div class="container-left-6">
-
 			</div>
 		</div>
 	</section>

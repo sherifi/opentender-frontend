@@ -95,7 +95,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 			data.sectors_stats.forEach((s) => {
 				this.sectors.push(s.sector);
 				this.charts.cpvs_code_main.data.push({name: s.sector.name, value: s.sector.value, id: s.sector.id});
-				this.charts.cpvs_code_main_volume.data.push({name: s.sector.name, value: s.stats.sum_price['EUR'] || 0, id: s.sector.id});
+				this.charts.cpvs_code_main_volume.data.push({name: s.sector.name, value: s.stats.sums_finalPrice['EUR'] || 0, id: s.sector.id});
 			});
 		}
 		this.charts.cpvs_code_main.visible = this.charts.cpvs_code_main.data.length > 0;

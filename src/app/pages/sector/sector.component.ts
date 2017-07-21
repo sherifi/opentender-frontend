@@ -3,13 +3,8 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
-import Body = Definitions.Body;
-import Buyer = Definitions.Buyer;
 import {StateService} from '../../services/state.service';
-import {IChartBar, IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {ISector, IStats} from '../../app.interfaces';
-import {Consts} from '../../model/consts';
-import {Utils} from '../../model/utils';
+import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSumPrices, IStatsAuthorities, IStatsCompanies} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -25,88 +20,20 @@ export class SectorPage implements OnInit, OnDestroy {
 	private subscription: any;
 	vis: {
 		subgroups: Array<any>,
-		sum_prices: Array<any>,
-		buyers: Array<any>,
-		suppliers: Array<any>,
-		tenders_total: number,
-		lots_total: number,
-		bids_total: number,
-		bids_awarded: number
+		top_companies: IStatsCompanies,
+		top_authorities: IStatsAuthorities,
+		sums_finalPrice: IStatsSumPrices,
+		lots_in_years: IStatsLotsInYears,
+		cpvs_codes: IStatsPcCpvs,
+		counts: IStatsCounts
 	} = {
 		subgroups: [],
-		sum_prices: [],
-		buyers: [],
-		suppliers: [],
-		tenders_total: 0,
-		lots_total: 0,
-		bids_total: 0,
-		bids_awarded: 0
-	};
-
-	private charts: {
-		lots_in_years: IChartBar;
-		cpvs_codes: IChartPie;
-	} = {
-		lots_in_years: {
-			visible: false,
-			chart: {
-				schemeType: 'ordinal',
-				view: {
-					def: {width: 470, height: 320},
-					min: {height: 320},
-					max: {height: 320}
-				},
-				xAxis: {
-					show: true,
-					showLabel: true,
-					label: 'Year',
-					defaultHeight: 20,
-					tickFormatting: Utils.formatYear
-				},
-				yAxis: {
-					show: true,
-					showLabel: true,
-					label: 'Number of Lots',
-					defaultWidth: 30,
-					minInterval: 1,
-					tickFormatting: Utils.formatValue
-				},
-				showGridLines: true,
-				gradient: false,
-				colorScheme: {
-					domain: Consts.colors.single
-				}
-			},
-			select: (event) => {
-			},
-			onLegendLabelClick: (event) => {
-			},
-			data: []
-		},
-		cpvs_codes: {
-			visible: false,
-			chart: {
-				schemeType: 'ordinal',
-				view: {
-					def: {width: 470, height: 320},
-					min: {height: 320},
-					max: {height: 320}
-				},
-				labels: true,
-				explodeSlices: false,
-				valueFormatting: Utils.formatPercent,
-				doughnut: false,
-				gradient: false,
-				colorScheme: {
-					domain: Consts.colors.diverging
-				}
-			},
-			select: (event) => {
-			},
-			onLegendLabelClick: (event) => {
-			},
-			data: []
-		}
+		top_companies: null,
+		top_authorities: null,
+		sums_finalPrice: null,
+		lots_in_years: null,
+		cpvs_codes: null,
+		counts: null
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService) {
@@ -119,7 +46,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
-			this.api.getSector(id).subscribe(
+			this.api.getSectorStats({id: id}).subscribe(
 				(result) => this.display(result.data),
 				(error) => {
 					this.error = error._body;
@@ -138,7 +65,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		});
 	}
 
-	display(data: {sector: ISector, parent?: ISector, stats: IStats}): void {
+	display(data: { sector: ISector, parent?: ISector, stats: IStats }): void {
 		this.sector = null;
 		this.parent_sector = null;
 		if (data && data.sector) {
@@ -157,52 +84,24 @@ export class SectorPage implements OnInit, OnDestroy {
 	displayStats(data: IStats): void {
 		let vis = {
 			subgroups: [],
-			sum_prices: [],
-			buyers: [],
-			suppliers: [],
-			tenders_total: 0,
-			lots_total: 0,
-			bids_total: 0,
-			bids_awarded: 0
+			top_authorities: null,
+			top_companies: null,
+			sums_finalPrice: null,
+			cpvs_codes: null,
+			lots_in_years: null,
+			counts: null
 		};
-		this.charts.cpvs_codes.data = [];
-		if (data.cpvs) {
-			this.charts.cpvs_codes.data = Object.keys(data.cpvs).map(key => {
-				if (this.sector && key !== this.sector.id) {
-					vis.subgroups.push({id: key, name: data.cpvs[key].name, value: data.cpvs[key].value});
-				}
-				return {name: data.cpvs[key].name, value: data.cpvs[key].value};
-			});
+		if (!data) {
+			this.vis = vis;
+			return;
 		}
-		this.charts.cpvs_codes.visible = this.charts.cpvs_codes.data.length > 0;
+		vis.cpvs_codes = data.terms_main_cpvs_full;
+		vis.lots_in_years = data.histogram_lots_awardDecisionDate;
+		vis.counts = data.count_lots_bids;
+		vis.sums_finalPrice = data.sums_finalPrice;
+		vis.top_companies = data.top_companies;
+		vis.top_authorities = data.top_authorities;
 
-		this.charts.lots_in_years.data = [];
-		if (data.lots_in_years) {
-			this.charts.lots_in_years.data = Object.keys(data.lots_in_years).map((key, index) => {
-				return {name: key, value: data.lots_in_years[key]};
-			});
-		}
-		this.charts.lots_in_years.visible = this.charts.lots_in_years.data.length > 0;
-
-		if (data.sum_price) {
-			Object.keys(data.sum_price).forEach(key => {
-				if (data.sum_price[key] > 0) {
-					vis.sum_prices.push({currency: key.toString().toUpperCase(), value: data.sum_price[key]});
-				}
-			});
-		}
-		if (data.suppliers) {
-			vis.suppliers = data.suppliers.top10;
-		}
-		if (data.buyers) {
-			vis.buyers = data.buyers.top10;
-		}
-		if (data.counts) {
-			vis.bids_awarded = data.counts.bids_awarded;
-			vis.bids_total = data.counts.bids;
-			vis.lots_total = data.counts.lots;
-			vis.tenders_total = data.counts.tenders;
-		}
 		this.vis = vis;
 	}
 
@@ -224,7 +123,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		let search_cmd = new SearchCommand();
 		search_cmd.filters = [filter];
 		this.search_cmd = search_cmd;
-	};
+	}
 
 	searchChange(data) {
 	}
