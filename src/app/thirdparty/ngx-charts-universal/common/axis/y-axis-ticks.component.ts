@@ -56,7 +56,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	innerTickSize: any = 6;
 	tickPadding: any = 3;
 	tickSpacing: any;
-	verticalSpacing: number = 10;
+	verticalSpacing: number = 20;
 	textAnchor: any = 'middle';
 	dy: any;
 	x1: any;
@@ -83,21 +83,31 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		if (this.platform.isBrowser) {
-			setTimeout(() => this.updateDims());
-		} else {
-			this.updateDims();
-		}
+		this.update();
 	}
 
 	updateDims(): void {
-		const width = this.platform.isBrowser ? parseInt(this.ticksElement.nativeElement.getBoundingClientRect().width, 10) : this.defaultWidth;
+		if (!this.ticks || this.ticks.length === 0) {
+			this.width = this.defaultWidth;
+			if (this.platform.isBrowser) {
+				setTimeout(() => {
+					this.dimensionsChanged.emit({width: this.width});
+				});
+			}
+			return;
+		}
+		let width = (this.platform.isBrowser && this.ticks && (this.ticks.length > 0)) ? parseInt(this.ticksElement.nativeElement.getBoundingClientRect().width, 10) : this.defaultWidth;
+		if (width === 0) {
+			width = this.defaultWidth;
+		}
 		if (width !== this.width) {
 			this.width = width;
-			this.dimensionsChanged.emit({width});
-			if (this.platform.isBrowser) {
-				setTimeout(() => this.updateDims());
-			}
+			setTimeout(() => {
+				this.dimensionsChanged.emit({width: this.width});
+			});
+			// if (this.platform.isBrowser) {
+			// 	setTimeout(() => this.updateDims());
+			// }
 		}
 	}
 
@@ -163,8 +173,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 				this.dy = '.32em';
 				break;
 		}
-
-		setTimeout(() => this.updateDims());
+		this.updateDims();
 	}
 
 	getTicks(): any {

@@ -59,7 +59,7 @@ export abstract class BaseXYAxisComponent extends BaseChartComponent {
 			showXAxis: this.chart.xAxis.show,
 			showYAxis: this.chart.yAxis.show,
 			xAxisHeight: this.xAxisHeight,
-			yAxisWidth: this.yAxisWidth,
+			yAxisWidth: this.yAxisWidth || this.chart.yAxis.defaultWidth,
 			showXLabel: this.chart.xAxis.showLabel,
 			showYLabel: this.chart.yAxis.showLabel,
 			showLegend: this.chart.legend && this.chart.legend.show,
