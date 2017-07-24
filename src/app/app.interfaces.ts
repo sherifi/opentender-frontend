@@ -73,8 +73,8 @@ export interface IStatsCompanies {
 }
 
 export interface IStats {
-	terms_main_cpvs: IStatsCpvs;
-	terms_pc_main_cpvs: IStatsPcCpvs;
+	terms_main_cpv_divisions: IStatsCpvs;
+	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	terms_main_cpvs_full: IStatsPcCpvs;
 	sums_finalPrice: IStatsSumPrices;
 	top_winning_companies: IStatsCompanies;

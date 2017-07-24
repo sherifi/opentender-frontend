@@ -151,7 +151,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		let stats = data.stats;
 		vis.lots_in_years = stats.histogram_lots_awardDecisionDate;
 		vis.counts = stats.count_lots_bids;
-		vis.cpvs_codes = stats.terms_main_cpvs;
+		vis.cpvs_codes = stats.terms_main_cpv_divisions;
 		vis.sums_finalPrice = stats.sums_finalPrice;
 		vis.top_authorities = stats.top_authorities;
 		this.vis = vis;

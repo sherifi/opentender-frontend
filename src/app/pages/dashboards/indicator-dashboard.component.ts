@@ -79,7 +79,7 @@ export class DashboardsIndicatorComponent {
 		}
 
 		vis.lots_in_years = data.histogram_pc_lots_awardDecisionDate;
-		vis.cpvs_codes = data.terms_pc_main_cpvs;
+		vis.cpvs_codes = data.terms_pc_main_cpv_divisions;
 		vis.indicators = data.terms_indicators;
 
 		if (data.sums_finalPrice) {

@@ -115,7 +115,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			value: [true]
 		};
 		let filter: SearchCommandFilter = {
-			field: this.sector.id.length === 2 ? 'cpvs.code.main' : 'cpvs.code',
+			field: this.sector.id.length === 2 ? 'cpvs.code.divisions' : 'cpvs.code',
 			type: 'term',
 			value: [this.sector.id],
 			and: [subfilter]

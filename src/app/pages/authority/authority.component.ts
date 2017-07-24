@@ -135,7 +135,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		let stats = data.stats;
 		vis.lots_in_years = stats.histogram_lots_awardDecisionDate;
 		vis.sums_finalPrice = stats.sums_finalPrice;
-		vis.cpvs_codes = stats.terms_main_cpvs;
+		vis.cpvs_codes = stats.terms_main_cpv_divisions;
 		vis.counts = stats.count_lots_bids;
 		vis.top_companies = stats.top_winning_companies;
 		this.vis = vis;
