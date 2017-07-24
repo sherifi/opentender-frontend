@@ -26,29 +26,30 @@
 		</div>
 		<h1>{{authority.name}}</h1>
 		<tender-body-address [address]="authority.address"></tender-body-address>
-	</section>
 
-	<section class="container" *ngIf="similar.length > 0">
-		<div class="similars">
-			<div class="title">Similar Authorities</div>
-			<div class="similar" *ngFor="let sim of similar">
-				<a [routerLink]="['/authority/'+sim.body.groupId]" title="Click to jump to the authority profile"><i class="icon-library"></i> </a>
-				<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
-			</div>
-		</div>
-		<div class="debug_groupids clickable" style="font-size: 0.8em">
-			<div (click)="showDebugGroupIds = !showDebugGroupIds">[Click to show all groupId bodies - this function is only for debugging and will be removed in final portals]</div>
-			<div *ngIf="showDebugGroupIds">
-				<div class="similar">
-					<a [routerLink]="['/authority/'+authority.groupId]" title="Click to jump to the authority profile">Current</a>
-					<pre>{{plain(authority)}}</pre>
-				</div>
-				<div class="similar" *ngFor="let sim of similar; let i = index;">
-					<a [routerLink]="['/authority/'+sim.body.groupId]" title="Click to jump to the authority profile">Similar {{i+1}}</a>
-					<pre>{{plain(sim.body)}}</pre>
+		<div *ngIf="similar.length > 0">
+			<div class="similars">
+				<div class="title">Similar Authorities</div>
+				<div class="similar" *ngFor="let sim of similar">
+					<a [routerLink]="['/authority/'+sim.body.groupId]" title="Click to jump to the authority profile"><i class="icon-library"></i> </a>
+					<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
 				</div>
 			</div>
+			<div class="debug_groupids clickable" style="font-size: 0.8em">
+				<div (click)="showDebugGroupIds = !showDebugGroupIds">[Click to show all groupId bodies - this function is only for debugging and will be removed in final portals]</div>
+				<div *ngIf="showDebugGroupIds">
+					<div class="similar">
+						<a [routerLink]="['/authority/'+authority.groupId]" title="Click to jump to the authority profile">Current</a>
+						<pre>{{plain(authority)}}</pre>
+					</div>
+					<div class="similar" *ngFor="let sim of similar; let i = index;">
+						<a [routerLink]="['/authority/'+sim.body.groupId]" title="Click to jump to the authority profile">Similar {{i+1}}</a>
+						<pre>{{plain(sim.body)}}</pre>
+					</div>
+				</div>
+			</div>
 		</div>
+
 	</section>
 
 	<section class="container container-margin">

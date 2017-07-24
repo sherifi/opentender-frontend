@@ -119,7 +119,7 @@ export class TestPage {
 		};
 		this.api.getNutsMap().subscribe(
 			result => {
-				this.api.getAuthorityNuts().subscribe(
+				this.api.getAuthorityNutsStats().subscribe(
 					res => {
 						let nuts1 = {};
 						let max = 0;

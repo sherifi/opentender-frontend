@@ -27,7 +27,7 @@ export class AboutDataQualityPage implements OnInit {
 
 	ngOnInit() {
 		this.isLoading = true;
-		this.api.getUsage().subscribe(
+		this.api.getFieldsUsage().subscribe(
 			(result) => {
 				this.isLoading = false;
 				this.display(result.data);

@@ -4,19 +4,8 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import Tender = Definitions.Tender;
-import Body = Definitions.Body;
 import {CountryService} from './country.service';
-import Bidder = Definitions.Bidder;
-import Buyer = Definitions.Buyer;
-import {
-	ISector, ICountryStats, IUsageEntry, ICompany, IStats, IAuthority, ISearchCompanyData,
-	ISearchAuthorityData, ISearchTenderData, IVizData
-} from '../app.interfaces';
-
-export interface VizResult {
-	viz: any;
-}
-
+import {ISector, ICountryStats, IUsageEntry, ICompany, IStats, IAuthority, ISearchCompanyData, ISearchAuthorityData, ISearchTenderData} from '../app.interfaces';
 
 /* api-transfer-packages */
 
@@ -25,7 +14,9 @@ export interface ITenderApiResult {
 }
 
 export interface ISectorsApiResult {
-	data: Array<ISector>;
+	data: {
+		[cpvcode: string]: { name: string; value: number; }
+	};
 }
 
 export interface IPortalsStatsApiResult {
@@ -42,12 +33,6 @@ export interface ICompanyApiResult {
 	};
 }
 
-export interface ICompanyStatsApiResult {
-	data: {
-		stats: IStats;
-	};
-}
-
 export interface ICompanySimilarApiResult {
 	data: {
 		similar: Array<ICompany>;
@@ -57,12 +42,6 @@ export interface ICompanySimilarApiResult {
 export interface IAuthorityApiResult {
 	data: {
 		authority: IAuthority;
-	};
-}
-
-export interface IAuthorityApiStatsResult {
-	data: {
-		stats: IStats;
 	};
 }
 
@@ -106,8 +85,10 @@ export interface IStatApiResult {
 	data: IStats;
 }
 
-export interface IVizApiResult {
-	data: IVizData;
+export interface IStatStatsApiResult {
+	data: {
+		stats: IStats;
+	};
 }
 
 export interface IApiResult {
@@ -133,15 +114,12 @@ export class ApiService {
 
 	constructor(private http: Http, private config: ConfigService, private countryService: CountryService) {
 		this.absUrl = config.absUrl;
-		// console.log('using absolute url', this.absUrl);
-		// console.log('using backendUrl', config.get('backendUrl'));
 		this.actionUrl = config.get('backendUrl') + '/api/';
 		this.actionCountryUrl = this.actionUrl + (countryService.get().id || 'eu' ) + '/';
 		this.headers = new Headers();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');
 	}
-
 
 	getIndicatorStats(params: any): Observable<IStatApiResult> {
 		return this.http.post(this.actionCountryUrl + 'indicators/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
@@ -151,14 +129,21 @@ export class ApiService {
 		return this.http.post(this.actionCountryUrl + 'sector/stats', JSON.stringify(params), {headers: this.headers}).map(res => <ISectorApiResult>res.json());
 	}
 
-	getCompanyStats(params: any): Observable<ICompanyStatsApiResult> {
-		return this.http.post(this.actionCountryUrl + 'company/stats', JSON.stringify(params), {headers: this.headers}).map(res => <ICompanyStatsApiResult>res.json());
+	getCompanyStats(params: any): Observable<IStatStatsApiResult> {
+		return this.http.post(this.actionCountryUrl + 'company/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatStatsApiResult>res.json());
 	}
 
-	getAuthorityStats(params: any): Observable<IAuthorityApiStatsResult> {
-		return this.http.post(this.actionCountryUrl + 'authority/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IAuthorityApiStatsResult>res.json());
+	getAuthorityStats(params: any): Observable<IStatStatsApiResult> {
+		return this.http.post(this.actionCountryUrl + 'authority/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatStatsApiResult>res.json());
 	}
 
+	getMarketAnalysisStats(params: any): Observable<IStatApiResult> {
+		return this.http.post(this.actionCountryUrl + 'market/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
+	}
+
+	getHomeStats(params: any): Observable<IStatApiResult> {
+		return this.http.post(this.actionCountryUrl + 'home/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
+	}
 
 	getNutsMap(): Observable<IApiGeoJSONResult> {
 		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiGeoJSONResult>res.json());
@@ -180,7 +165,7 @@ export class ApiService {
 		return this.http.get(this.actionUrl + 'portals/countries-stats').map(res => <IPortalsStatsApiResult>res.json());
 	}
 
-	getUsage(): Observable<IUsageApiResult> {
+	getFieldsUsage(): Observable<IUsageApiResult> {
 		return this.http.get(this.actionCountryUrl + 'quality/usage').map(res => <IUsageApiResult>res.json());
 	}
 
@@ -196,7 +181,7 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'company/id/' + id).map(res => <ICompanyApiResult>res.json());
 	}
 
-	getCompanyNuts(): Observable<INutsApiResult> {
+	getCompanyNutsStats(): Observable<INutsApiResult> {
 		return this.http.get(this.actionCountryUrl + 'company/nuts').map(res => <INutsApiResult>res.json());
 	}
 
@@ -208,14 +193,13 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'authority/id/' + id).map(res => <IAuthorityApiResult>res.json());
 	}
 
-	getAuthorityNuts(): Observable<INutsApiResult> {
+	getAuthorityNutsStats(): Observable<INutsApiResult> {
 		return this.http.get(this.actionCountryUrl + 'authority/nuts').map(res => <INutsApiResult>res.json());
 	}
 
 	getAuthoritySimilar(id: string): Observable<IAuthoritySimilarApiResult> {
 		return this.http.get(this.actionCountryUrl + 'authority/similar/' + id).map(res => <IAuthoritySimilarApiResult>res.json());
 	}
-
 
 	searchAuthority(params: any): Observable<ISearchAuthorityApiResult> {
 		return this.http.post(this.actionCountryUrl + 'authority/search', JSON.stringify(params), {headers: this.headers}).map(res => <ISearchAuthorityApiResult>res.json());
@@ -229,11 +213,7 @@ export class ApiService {
 		return this.http.post(this.actionCountryUrl + 'tender/search', JSON.stringify(params), {headers: this.headers}).map(res => <ISearchTenderApiResult>res.json());
 	}
 
-	getViz(ids: Array<string>): Observable<IVizApiResult> {
-		return this.http.get(this.actionCountryUrl + 'viz/ids/' + ids.join(',')).map(res => <IVizApiResult>res.json());
-	}
-
-	autocomplete(entity: string, field: string, search: string): Observable<IVizApiResult> {
+	autocomplete(entity: string, field: string, search: string): Observable<IApiResult> {
 		return this.http.post(this.actionCountryUrl + 'autocomplete', JSON.stringify({entity: entity, field: field, search: search}), {headers: this.headers}).map(res => <IApiResult>res.json());
 	}
 }

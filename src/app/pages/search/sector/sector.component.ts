@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {ApiService} from '../../../services/api.service';
+import {ApiService, ISectorsApiResult} from '../../../services/api.service';
 import {ISector} from '../../../app.interfaces';
 
 @Component({
@@ -17,7 +17,7 @@ export class SearchSectorPage implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.subscription = this.api.getSectors().subscribe(
-			result => this.display(result.data),
+			result => this.display(result),
 			error => {
 				this.error = error._body;
 				// console.error(error);
@@ -31,9 +31,16 @@ export class SearchSectorPage implements OnInit, OnDestroy {
 		this.subscription.unsubscribe();
 	}
 
-	display(data: Array<ISector>): void {
-		if (data) {
-			this.sectors = data;
+	display(result: ISectorsApiResult): void {
+		this.sectors = [];
+		if (result && result.data) {
+			this.sectors = Object.keys(result.data).map(key => {
+				return {
+					id: key,
+					name: result.data[key].name,
+					value: result.data[key].value
+				};
+			});
 		}
 	}
 

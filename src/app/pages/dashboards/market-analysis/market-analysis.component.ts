@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {IChartTreeMap} from '../../../thirdparty/ngx-charts-universal/chart.interface';
-import {IVizData, ISector} from '../../../app.interfaces';
+import {ISector, IStats} from '../../../app.interfaces';
 import {Consts} from '../../../model/consts';
 import {Router} from '@angular/router';
 import {Utils} from '../../../model/utils';
@@ -66,7 +66,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	}
 
 	public ngOnInit(): void {
-		this.api.getViz(['sectors_stats']).subscribe(
+		this.api.getMarketAnalysisStats({}).subscribe(
 			(result) => {
 				this.display(result.data);
 				this.loading = false;
@@ -84,7 +84,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	public ngOnDestroy(): void {
 	}
 
-	display(data: IVizData): void {
+	display(data: IStats): void {
 		if (!data) {
 			return;
 		}

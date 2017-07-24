@@ -25,14 +25,15 @@ export class GraphSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 716},
-				min: {height: 716},
-				max: {height: 716}
+				def: {width: 470, height: 320},
+				min: {height: 320},
+				max: {height: 320}
 			},
 			xAxis: {
 				show: true,
 				showLabel: true,
 				label: 'Nr. of Tenders in Sector',
+				minInterval: 1,
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},
@@ -80,7 +81,7 @@ export class GraphSectorsComponent implements OnChanges {
 			});
 			let othergroup;
 			let othergroupcount = 0;
-			while (this.cpvs_codes_absolute.data.length > 39) {
+			while (this.cpvs_codes_absolute.data.length > 9) {
 				if (!othergroup) {
 					othergroup = {name: '', value: 0};
 				}

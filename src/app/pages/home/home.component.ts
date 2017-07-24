@@ -3,7 +3,7 @@ import {CountryService} from '../../services/country.service';
 import {Router} from '@angular/router';
 import {Consts} from '../../model/consts';
 import {ApiService} from '../../services/api.service';
-import {IVizData} from '../../app.interfaces';
+import {IStats} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 
@@ -69,7 +69,7 @@ export class HomePage implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		this.api.getViz(['tender_lots_per_year']).subscribe(
+		this.api.getHomeStats({}).subscribe(
 			(result) => this.display(result.data),
 			(error) => {
 				console.error(error);
@@ -79,11 +79,11 @@ export class HomePage implements OnInit {
 			});
 	}
 
-	private display(data: IVizData) {
+	private display(data: IStats) {
 		this.charts.lots_in_years.data = [];
-		if (data.tender_lots_per_year && data.tender_lots_per_year.lots_in_years) {
-			this.charts.lots_in_years.data = Object.keys(data.tender_lots_per_year.lots_in_years).map((key) => {
-				return {name: key, value: data.tender_lots_per_year.lots_in_years[key]};
+		if (data.histogram_lots_awardDecisionDate) {
+			this.charts.lots_in_years.data = Object.keys(data.histogram_lots_awardDecisionDate).map((key) => {
+				return {name: key, value: data.histogram_lots_awardDecisionDate[key]};
 			});
 		}
 		this.charts.lots_in_years.visible = this.charts.lots_in_years.data.length > 0;
