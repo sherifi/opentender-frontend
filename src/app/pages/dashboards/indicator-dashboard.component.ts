@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears, IStatsCompanies, IStatsAuthorities} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -16,37 +16,31 @@ export class DashboardsIndicatorComponent {
 	@Input()
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
-	public error: string;
-	public search_cmd: SearchCommand;
-	vis: {
-		sum_prices: Array<any>,
-		buyers: Array<any>,
-		suppliers: Array<any>,
-		tenders_total: number,
-		lots_total: number,
-		bids_total: number,
-		bids_awarded: number,
+	private error: string;
+	private search_cmd: SearchCommand;
+	private vis: {
+		top_companies: IStatsCompanies,
+		top_authorities: IStatsAuthorities,
 		lots_in_years: IStatsPcLotsInYears,
 		cpvs_codes: IStatsPcCpvs
-		indicators: IStatsIndicators
+		terms_indicators: IStatsIndicators
 	} = {
-		sum_prices: [],
-		buyers: [],
-		suppliers: [],
-		tenders_total: 0,
-		lots_total: 0,
-		bids_total: 0,
-		bids_awarded: 0,
+		top_companies: null,
+		top_authorities: null,
 		lots_in_years: null,
 		cpvs_codes: null,
-		indicators: null
+		terms_indicators: null
 	};
-
-	private startYear: number = 0;
-	private endYear: number = 0;
-
-	private selectedStartYear: number = 0;
-	private selectedEndYear: number = 0;
+	private filter: {
+		time?: {
+			startYear: number;
+			endYear: number;
+			selectedStartYear: number;
+			selectedEndYear: number;
+		}
+	} = {
+		time: null
+	};
 
 	constructor(private api: ApiService) {
 	}
@@ -61,61 +55,47 @@ export class DashboardsIndicatorComponent {
 
 	display(stats: IStats): void {
 		let vis = {
-			sum_prices: [],
-			buyers: [],
-			suppliers: [],
-			tenders_total: 0,
-			lots_total: 0,
-			bids_total: 0,
-			bids_awarded: 0,
+			top_companies: null,
+			top_authorities: null,
 			lots_in_years: null,
 			cpvs_codes: null,
-			indicators: null
+			terms_indicators: null
 		};
-		let data = stats;
-		if (!data) {
+		if (!stats) {
 			this.vis = vis;
 			return;
 		}
 
-		vis.lots_in_years = data.histogram_pc_lots_awardDecisionDate;
-		vis.cpvs_codes = data.terms_pc_main_cpv_divisions;
-		vis.indicators = data.terms_indicators;
+		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate;
+		vis.cpvs_codes = stats.terms_pc_main_cpv_divisions;
+		vis.terms_indicators = stats.terms_indicators;
+		vis.top_companies = stats.top_companies;
+		vis.top_authorities = stats.top_authorities;
 
-		if (data.sums_finalPrice) {
-			Object.keys(data.sums_finalPrice).forEach(key => {
-				if (data.sums_finalPrice[key] > 0) {
-					vis.sum_prices.push({currency: key.toString().toUpperCase(), value: data.sums_finalPrice[key]});
-				}
-			});
-		}
-		if (data.top_companies) {
-			vis.suppliers = data.top_companies.top10;
-		}
-		if (data.top_authorities) {
-			vis.buyers = data.top_authorities.top10;
-		}
-		if (data.count_lots_bids) {
-			vis.bids_awarded = data.count_lots_bids.bids_awarded;
-			vis.bids_total = data.count_lots_bids.bids;
-			vis.lots_total = data.count_lots_bids.lots;
-			vis.tenders_total = data.count_lots_bids.tenders;
-		}
 		this.vis = vis;
 
-		if (this.startYear === 0) {
-			if (data.histogram_pc_lots_awardDecisionDate) {
-				Object.keys(data.histogram_pc_lots_awardDecisionDate).forEach((key) => {
-					this.startYear = this.startYear == 0 ? parseInt(key, 10) : Math.min(parseInt(key, 10), this.startYear);
-					this.endYear = this.endYear == 0 ? parseInt(key, 10) : Math.max(parseInt(key, 10), this.endYear);
-				});
-			}
+		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate) {
+			let startYear = 0;
+			let endYear = 0;
+			Object.keys(stats.histogram_pc_lots_awardDecisionDate).forEach((key) => {
+				let year = parseInt(key, 10);
+				startYear = startYear == 0 ? year : Math.min(year, startYear);
+				endYear = endYear == 0 ? year : Math.max(year, endYear);
+			});
+			this.filter.time = {
+				startYear, endYear,
+				selectedStartYear: startYear,
+				selectedEndYear: endYear
+			};
 		}
 	}
 
 	onSliderChange(event) {
-		this.selectedStartYear = event.startValue;
-		this.selectedEndYear = event.endValue;
+		if (!this.filter.time) {
+			return;
+		}
+		this.filter.time.selectedStartYear = event.startValue;
+		this.filter.time.selectedEndYear = event.endValue;
 		this.visualize();
 		this.search();
 	}
@@ -140,11 +120,11 @@ export class DashboardsIndicatorComponent {
 			value: [this.searchPrefix]
 		};
 		let filters = [filter];
-		if (this.selectedStartYear > 0 && this.selectedEndYear > 0) {
+		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
 			let yearFilter: SearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'range',
-				value: [this.selectedStartYear, this.selectedEndYear + 1],
+				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
 			};
 			filters.push(yearFilter);
 		}
