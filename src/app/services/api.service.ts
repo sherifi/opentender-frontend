@@ -98,7 +98,8 @@ export interface IApiResult {
 export interface IApiGeoJSONResult {
 	features: Array<{
 		properties: {
-			NUTS_ID: string;
+			id: string;
+			name: string; s
 		}
 	}>;
 }
@@ -145,8 +146,8 @@ export class ApiService {
 		return this.http.post(this.actionCountryUrl + 'home/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IStatApiResult>res.json());
 	}
 
-	getNutsMap(): Observable<IApiGeoJSONResult> {
-		return this.http.get(this.absUrl + '/data/nuts1.geojson').map(res => <IApiGeoJSONResult>res.json());
+	getNutsMap(level: number): Observable<IApiGeoJSONResult> {
+		return this.http.get(this.absUrl + '/data/nuts' + level + '.geojson').map(res => <IApiGeoJSONResult>res.json());
 	}
 
 	getDownloads(): Observable<IApiResult> {

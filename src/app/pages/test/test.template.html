@@ -5,62 +5,14 @@
 </div>
 
 <div>
+	<div class="graph-toolbar">
+		<button class="tool-button" [ngClass]="{down:!companies}" (click)="toggle()">Authorities</button>
+		<button class="tool-button" [ngClass]="{down:companies}" (click)="toggle()">Companies</button>
+		-
+		<button class="tool-button" [ngClass]="{down:level==1}" (click)="setLevel(1)">Level 1</button>
+		<button class="tool-button" [ngClass]="{down:level==2}" (click)="setLevel(2)">Level 2</button>
+		<button class="tool-button" [ngClass]="{down:level==3}" (click)="setLevel(3)">Level 3</button>
+	</div>
 	<div leaflet style="height: 300px;" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
 	<small>Administrative boundaries: © GISCO - Eurostat (European Commission) © EuroGeographics © UN-FAO © Turkstat.</small>
 </div>
-
-<div *ngIf="false">
-	<section class="container-outer dashboards">
-		<section class="container">
-			<div class="container-title">Test</div>
-		</section>
-	</section>
-	<!--<section class="container container-margin">-->
-		<!--<div class="container slab-beta-light container-padded-large">-->
-			<!--<slider-->
-					<!--min="0"-->
-					<!--max="100"-->
-					<!--startValue="0"-->
-					<!--endValue="10"-->
-					<!--stepValue="1"-->
-					<!--defaultWidth="928"-->
-					<!--(onSliderChange)="onTestSliderChange($event)">-->
-			<!--</slider>-->
-		<!--</div>-->
-	<!--</section>-->
-	<section class="container container-margin">
-		<div class="container slab-beta-light container-padded-large">
-			<slider
-					min="0"
-					max="100"
-					startValue="0"
-					[endValue]="chartwidth"
-					stepValue="1"
-					defaultWidth="928"
-					(onSliderChange)="onSliderChange($event)">
-			</slider>
-			<div>
-				width: {{chartwidth*10}}px
-			</div>
-			<div [style.width.px]="chartwidth*10" style="border: 1px solid blue; display:block;" *ngIf="charts.cpvs_code_main.visible">
-				<ngx-charts-tree-map
-						class="chart-container"
-						[chart]="charts.cpvs_code_main.chart"
-						[data]="charts.cpvs_code_main.data"
-						(select)="charts.cpvs_code_main.select($event)"
-						(legendLabelClick)="charts.cpvs_code_main.onLegendLabelClick($event)">
-				</ngx-charts-tree-map>
-			</div>
-			<div [style.width.px]="chartwidth*10" style="border: 1px solid red; display:block;" *ngIf="charts.cpvs_codes.visible">
-				<ngx-charts-pie-chart
-						class="chart-container"
-						[chart]="charts.cpvs_codes.chart"
-						[data]="charts.cpvs_codes.data"
-						(legendLabelClick)="charts.cpvs_codes.onLegendLabelClick($event)"
-						(select)="charts.cpvs_codes.select($event)">
-				</ngx-charts-pie-chart>
-			</div>
-		</div>
-	</section>
-</div>
-
