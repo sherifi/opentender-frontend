@@ -52,8 +52,7 @@ export class YAxisComponent implements OnChanges {
 	@Input() showGridLines = false;
 	@Input() showLabel;
 	@Input() labelText;
-	@Input() minInterval;
-	@Input() yAxisTickInterval;
+	@Input() minInterval: number;
 	@Input() trimLabelLength: number;
 
 	@Output() dimensionsChanged = new EventEmitter();

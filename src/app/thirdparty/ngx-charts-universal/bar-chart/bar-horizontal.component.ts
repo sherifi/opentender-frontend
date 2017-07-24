@@ -25,6 +25,7 @@ import {ILegendOptions, IDomain} from '../common/common.interface';
 			   [defaultHeight]="chart.xAxis.defaultHeight"
 			   [labelText]="chart.xAxis.label"
 			   [tickFormatting]="chart.xAxis.tickFormatting"
+			   [minInterval]="chart.xAxis.minInterval"
 			   (dimensionsChanged)="updateXAxisHeight($event)">
 		</svg:g>
 		<svg:g ngx-charts-y-axis
@@ -36,6 +37,7 @@ import {ILegendOptions, IDomain} from '../common/common.interface';
 			   [labelText]="chart.yAxis.label"
 			   [trimLabelLength]="chart.yAxis.maxLength"
 			   [tickFormatting]="chart.yAxis.tickFormatting"
+			   [minInterval]="chart.yAxis.minInterval"
 			   (dimensionsChanged)="updateYAxisWidth($event)">
 		</svg:g>
 		<svg:g ngx-charts-series-horizontal

@@ -184,6 +184,20 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 			ticks = this.tickValues;
 		} else if (this.scale.ticks) {
 			ticks = this.scale.ticks.apply(this.scale, this.tickArguments);
+			if (this.minInterval && ticks.length > 1) {
+				let tickInterval = ticks[1] - ticks[0];
+				let tickcount = this.tickArguments ? this.tickArguments[0] : maxTicks;
+				tickcount--;
+				while (tickInterval > 0 && tickInterval < this.minInterval) {
+					ticks = this.scale.ticks.apply(this.scale, [tickcount]);
+					if (ticks.length < 2) {
+						tickInterval = this.minInterval;
+					} else {
+						tickInterval = ticks[1] - ticks[0];
+					}
+					tickcount--;
+				}
+			}
 			if (ticks.length > maxTicks) {
 				if (this.tickArguments) {
 					this.tickArguments[0] = Math.min(this.tickArguments[0], maxTicks);
