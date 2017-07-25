@@ -65,7 +65,7 @@ export class YAxisComponent implements OnChanges {
 	width: number = 0;
 	yAxisOffset: number = -5;
 	yOrient: string = 'left';
-	labelOffset: number = 80;
+	labelOffset: number = 0;
 	fill: string = 'none';
 	stroke: string = '#CCC';
 	tickStroke: string = '#CCC';
@@ -80,8 +80,11 @@ export class YAxisComponent implements OnChanges {
 		this.width = this.dims.width;
 		if (this.width === 0) {
 			this.width = this.defaultWidth;
-			this.labelOffset = 0;
+			this.labelOffset = this.defaultWidth;
 			this.dimensionsChanged.emit({width: this.width});
+		}
+		if (this.labelOffset === 0) {
+			this.labelOffset = this.defaultWidth;
 		}
 		this.offset = this.yAxisOffset;
 		if (this.yOrient === 'right') {
@@ -96,8 +99,8 @@ export class YAxisComponent implements OnChanges {
 	}
 
 	emitTicksWidth({width}): void {
+		this.labelOffset = width;
 		if (width !== this.labelOffset) {
-			this.labelOffset = width;
 			setTimeout(() => {
 				this.dimensionsChanged.emit({width});
 			});
