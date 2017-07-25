@@ -12,9 +12,7 @@ import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
 import {DashboardsAdministrativeQualityPage} from './pages/dashboards/administrative-quality/administrative-quality.component';
 import {DashboardsCorruptionPage} from './pages/dashboards/corruption-risk/corruption-risk.component';
-import {DashboardsLatestPage} from './pages/dashboards/latest/latest.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
-import {DashboardsRankingsPage} from './pages/dashboards/rankings/rankings.component';
 import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
 import {DashboardsTransparencyPage} from './pages/dashboards/transparency/transparency.component';
 import {HomePage} from './pages/home/home.component';
@@ -27,6 +25,7 @@ import {SectorPage} from './pages/sector/sector.component';
 import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
+import {RegionPage} from './pages/region/region.component';
 
 export const routes: Routes = [
 	{path: '', component: HomePage},
@@ -37,12 +36,10 @@ export const routes: Routes = [
 		component: DashboardsPage,
 		data: {title: 'Dashboards'},
 		children: [
-			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis'}},
-			{path: 'latest', component: DashboardsLatestPage, data: {title: 'Latest Tenders'}},
-			{path: 'rankings', component: DashboardsRankingsPage, data: {title: 'Rankings'}},
-			{path: 'transparency-indicators', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators'}},
-			{path: 'corruption-indicators', component: DashboardsCorruptionPage, data: {title: 'Explore Corruption Risk Indicators'}},
-			{path: 'administrative-quality', component: DashboardsAdministrativeQualityPage, data: {title: 'Administrative Quality Indicators'}}
+			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Dashboard Market Analysis'}},
+			{path: 'transparency-indicators', component: DashboardsTransparencyPage, data: {title: 'Dashboard Transparency Indicators'}},
+			{path: 'corruption-indicators', component: DashboardsCorruptionPage, data: {title: 'Dashboard Corruption Risk Indicators'}},
+			{path: 'administrative-quality', component: DashboardsAdministrativeQualityPage, data: {title: 'Dashboard Administrative Quality Indicators'}}
 		]
 	},
 	{
@@ -61,6 +58,7 @@ export const routes: Routes = [
 	{path: 'authority/:id', component: AuthorityPage},
 	{path: 'tender/:id', component: TenderPage},
 	{path: 'sector/:id', component: SectorPage},
+	{path: 'region/:id', component: RegionPage},
 
 	{
 		path: 'about',

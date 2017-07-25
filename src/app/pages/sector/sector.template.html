@@ -16,16 +16,18 @@
 		<div class="container slab-beta-light container-padded-large">
 			<div class="container">
 				<div class="container-left-6">
-					<graph histogram [data]="vis.lots_in_years"></graph><br/>
-					<graph counts [data]="vis.counts"></graph><br/>
+					<graph histogram [data]="vis.lots_in_years"></graph>
+					<br/>
+					<graph counts [data]="vis.counts"></graph>
+					<br/>
 					<graph sum_prices [data]="vis.sums_finalPrice"></graph>
 				</div>
 				<div class="container-left-6">
-					<div *ngIf="parent_sector">
-						<div class="title">Group:</div>
-						<a [routerLink]="'/sector/'+parent_sector.id">{{parent_sector.name}}</a>
+					<div *ngIf="parent_sectors.length>0">
+						<div class="title">Parent CPV:</div>
+						<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">CPV{{val.id}}: {{val.name}}</a></div>
 					</div>
-					<div *ngIf="!parent_sector">
+					<div *ngIf="vis.cpvs_codes">
 						<graph sectors [data]="vis.cpvs_codes"></graph>
 					</div>
 				</div>

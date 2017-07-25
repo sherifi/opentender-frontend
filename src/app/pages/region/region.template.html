@@ -1,0 +1,16 @@
+<section class="container-outer authority entity" *ngIf="!region">
+	<section class="container">
+		<div class="entity-title">Region</div>
+		<div *ngIf="error">Error: {{error}}</div>
+		<div *ngIf="!error">Loading...</div>
+	</section>
+</section>
+<section class="container-outer sector entity" *ngIf="region">
+	<section class="container">
+		<div class="entity-title"><i class="icon-location icon-large"></i> Region</div>
+		<h1>{{region.name}}</h1>
+	</section>
+	<section class="container">
+		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+	</section>
+</section>

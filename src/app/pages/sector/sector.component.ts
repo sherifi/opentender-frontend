@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSumPrices, IStatsAuthorities, IStatsCompanies} from '../../app.interfaces';
+import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSumPrices, IStatsAuthorities, IStatsCompanies, ISectorStats} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -13,7 +13,7 @@ import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSu
 })
 export class SectorPage implements OnInit, OnDestroy {
 	public sector: ISector;
-	public parent_sector: ISector;
+	public parent_sectors: Array<ISector> = [];
 	public error: string;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
@@ -65,19 +65,18 @@ export class SectorPage implements OnInit, OnDestroy {
 		});
 	}
 
-	display(data: { sector: ISector, parent?: ISector, stats: IStats }): void {
+	display(data: ISectorStats): void {
 		this.sector = null;
-		this.parent_sector = null;
-		if (data && data.sector) {
-			this.sector = data.sector;
+		this.parent_sectors = [];
+		if (!data) {
+			return;
+		}
+		this.sector = data.sector;
+		this.parent_sectors = data.parents || [];
+		if (data.sector) {
 			this.titleService.set(data.sector.name);
 		}
-		if (data && data.parent) {
-			this.parent_sector = data.parent;
-		}
-		if (data && data.stats) {
-			this.displayStats(data.stats);
-		}
+		this.displayStats(data.stats);
 		this.search();
 	}
 
@@ -95,12 +94,35 @@ export class SectorPage implements OnInit, OnDestroy {
 			this.vis = vis;
 			return;
 		}
-		vis.cpvs_codes = data.terms_main_cpvs_full;
+		vis.cpvs_codes = data.terms_main_cpv_categories || data.terms_main_cpv_groups || data.terms_main_cpv_categories || data.terms_main_cpv_full;
 		vis.lots_in_years = data.histogram_lots_awardDecisionDate;
 		vis.counts = data.count_lots_bids;
 		vis.sums_finalPrice = data.sums_finalPrice;
 		vis.top_companies = data.top_companies;
 		vis.top_authorities = data.top_authorities;
+
+		if (vis.cpvs_codes) {
+			Object.keys(vis.cpvs_codes).forEach(key => {
+				if (this.sector && key !== this.sector.id) {
+					vis.subgroups.push({id: key, name: vis.cpvs_codes[key].name, value: vis.cpvs_codes[key].value});
+				}
+			});
+			vis.subgroups.sort((a, b) => {
+				if (a.value > b.value) {
+					return -1;
+				}
+				if (a.value < b.value) {
+					return 1;
+				}
+				if (a.name < b.name) {
+					return -1;
+				}
+				if (a.name > b.name) {
+					return 1;
+				}
+				return 0;
+			});
+		}
 
 		this.vis = vis;
 	}
@@ -115,7 +137,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			value: [true]
 		};
 		let filter: SearchCommandFilter = {
-			field: this.sector.id.length === 2 ? 'cpvs.code.divisions' : 'cpvs.code',
+			field: this.sector.level ? 'cpvs.code.' + this.sector.level : 'cpvs.code',
 			type: 'term',
 			value: [this.sector.id],
 			and: [subfilter]

@@ -3,106 +3,12 @@ import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
-import Tender = Definitions.Tender;
 import {CountryService} from './country.service';
-import {ISector, ICountryStats, IUsageEntry, ICompany, IStats, IAuthority, ISearchCompanyData, ISearchAuthorityData, ISearchTenderData, IStatsNuts} from '../app.interfaces';
-
-/* api-transfer-packages */
-
-export interface ITenderApiResult {
-	data: Tender;
-}
-
-export interface ISectorsApiResult {
-	data: {
-		[cpvcode: string]: { name: string; value: number; }
-	};
-}
-
-export interface IPortalsStatsApiResult {
-	data: ICountryStats;
-}
-
-export interface IUsageApiResult {
-	data: Array<IUsageEntry>;
-}
-
-export interface ICompanyApiResult {
-	data: {
-		company: ICompany;
-	};
-}
-
-export interface ICompanySimilarApiResult {
-	data: {
-		similar: Array<ICompany>;
-	};
-}
-
-export interface IAuthorityApiResult {
-	data: {
-		authority: IAuthority;
-	};
-}
-
-export interface INutsApiResult {
-	data: IStatsNuts;
-}
-
-export interface IAuthoritySimilarApiResult {
-	data: {
-		similar: Array<IAuthority>;
-	};
-}
-
-export interface ISectorApiResult {
-	data: {
-		sector: ISector;
-		parent?: ISector;
-		stats: IStats;
-	};
-}
-
-export interface ISchemaApiResult {
-	data: any;
-}
-
-export interface ISearchCompanyApiResult {
-	data: ISearchCompanyData;
-}
-
-export interface ISearchAuthorityApiResult {
-	data: ISearchAuthorityData;
-}
-
-export interface ISearchTenderApiResult {
-	data: ISearchTenderData;
-}
-
-export interface IStatApiResult {
-	data: IStats;
-}
-
-export interface IStatStatsApiResult {
-	data: {
-		stats: IStats;
-	};
-}
-
-export interface IApiResult {
-	data: any;
-}
-
-export interface IApiGeoJSONResult {
-	type: string;
-	features: Array<{
-		properties: {
-			id: string;
-			name: string;
-		}
-	}>;
-}
-
+import {
+	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, INutsApiResult,
+	IPortalsStatsApiResult, IRegionApiResult, ISchemaApiResult, ISearchAuthorityApiResult, ISearchCompanyApiResult, ISearchTenderApiResult,
+	ISectorApiResult, ISectorsApiResult, IStatApiResult, IStatStatsApiResult, ITenderApiResult, IUsageApiResult
+} from '../app.interfaces';
 
 @Injectable()
 export class ApiService {
@@ -127,6 +33,10 @@ export class ApiService {
 
 	getSectorStats(params: any): Observable<ISectorApiResult> {
 		return this.http.post(this.actionCountryUrl + 'sector/stats', JSON.stringify(params), {headers: this.headers}).map(res => <ISectorApiResult>res.json());
+	}
+
+	getRegionStats(params: any): Observable<IRegionApiResult> {
+		return this.http.post(this.actionCountryUrl + 'region/stats', JSON.stringify(params), {headers: this.headers}).map(res => <IRegionApiResult>res.json());
 	}
 
 	getCompanyStats(params: any): Observable<IStatStatsApiResult> {

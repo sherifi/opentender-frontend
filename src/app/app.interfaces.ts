@@ -6,6 +6,14 @@ import {ColumnSort} from './model/columns';
 export interface ISector {
 	id: string;
 	name: string;
+	level: string;
+	value?: number;
+}
+
+export interface IRegion {
+	id: string;
+	name: string;
+	level: number;
 	value?: number;
 }
 
@@ -69,9 +77,11 @@ export interface IStatsNuts {
 export interface IStatsSumPrices {
 	[currency: string]: number;
 }
+
 export interface IStatsAuthorities {
 	top10: Array<IAuthority>;
 }
+
 export interface IStatsCompanies {
 	top10: Array<ICompany>;
 }
@@ -79,9 +89,11 @@ export interface IStatsCompanies {
 export interface IStats {
 	terms_authority_nuts: IStatsNuts;
 	terms_company_nuts: IStatsNuts;
+	terms_main_cpv_categories: IStatsCpvs;
+	terms_main_cpv_groups: IStatsCpvs;
 	terms_main_cpv_divisions: IStatsCpvs;
+	terms_main_cpv_full: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
-	terms_main_cpvs_full: IStatsPcCpvs;
 	sums_finalPrice: IStatsSumPrices;
 	top_winning_companies: IStatsCompanies;
 	top_companies: IStatsCompanies;
@@ -92,6 +104,20 @@ export interface IStats {
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 }
+
+export interface ISectorStats {
+	sector: ISector;
+	parents?: Array<ISector>;
+	stats: IStats;
+}
+
+export interface IRegionStats {
+	region: IRegion;
+	parents?: Array<IRegion>;
+	stats: IStats;
+}
+
+/* search-result-packages */
 
 export interface ISearchTenderData {
 	hits: {
@@ -116,4 +142,100 @@ export interface ISearchCompanyData {
 		hits: Array<ICompany>;
 	};
 	aggregations: any;
+}
+
+/* api-transfer-packages */
+
+export interface ITenderApiResult {
+	data: Tender;
+}
+
+export interface ISectorsApiResult {
+	data: {
+		[cpvcode: string]: { name: string; value: number; }
+	};
+}
+
+export interface IPortalsStatsApiResult {
+	data: ICountryStats;
+}
+
+export interface IUsageApiResult {
+	data: Array<IUsageEntry>;
+}
+
+export interface ICompanyApiResult {
+	data: {
+		company: ICompany;
+	};
+}
+
+export interface ICompanySimilarApiResult {
+	data: {
+		similar: Array<ICompany>;
+	};
+}
+
+export interface IAuthorityApiResult {
+	data: {
+		authority: IAuthority;
+	};
+}
+
+export interface INutsApiResult {
+	data: IStatsNuts;
+}
+
+export interface IAuthoritySimilarApiResult {
+	data: {
+		similar: Array<IAuthority>;
+	};
+}
+
+export interface ISectorApiResult {
+	data: ISectorStats;
+}
+
+export interface IRegionApiResult {
+	data: IRegionStats;
+}
+
+export interface ISchemaApiResult {
+	data: any;
+}
+
+export interface ISearchCompanyApiResult {
+	data: ISearchCompanyData;
+}
+
+export interface ISearchAuthorityApiResult {
+	data: ISearchAuthorityData;
+}
+
+export interface ISearchTenderApiResult {
+	data: ISearchTenderData;
+}
+
+export interface IStatApiResult {
+	data: IStats;
+}
+
+export interface IStatStatsApiResult {
+	data: {
+		stats: IStats;
+	};
+}
+
+export interface IApiResult {
+	data: any;
+}
+
+export interface IApiGeoJSONResult {
+	type: string;
+	features: Array<{
+		properties: {
+			id: string;
+			name: string;
+		}
+	}>;
 }
