@@ -25,7 +25,7 @@ export class HomeMapComponent {
 	}
 
 	getEntitiesTitle() {
-		return this.map_companies ? 'Companies' : 'Authorities';
+		return this.map_companies ? 'Suppliers' : 'Buyers';
 	}
 
 	formatTooltipCallback(featureProperties) {

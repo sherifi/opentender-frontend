@@ -9,9 +9,9 @@ import * as d3 from 'd3';
 @Component({
 	selector: 'graph[nutsmap]',
 	template: `
-		<div class="map-container" style="width: 100%; height: 300px; border: 1px solid #ececec; overflow: hidden;">
-			<div leaflet style="width: 100%; height: 100%; position: relative; z-index: 1;" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
-			<div *ngIf="valid==0" style="top: -100%; width: 100%; height: 100%; position: relative; z-index: 2; text-align: center; line-height: 300px; opacity: 0.7; background-color: white;">NO DATA</div>
+		<div class="nutsmap_containers" style="height: 360px">
+			<div leaflet class="nutsmap_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
+			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 360px">NO DATA</div>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
 		<div *ngIf="invalid>0" class="nutsmap_subtitle">{{invalid}} invalid NUTS codes</div>
@@ -48,7 +48,7 @@ export class GraphNutsMapComponent implements OnChanges {
 					} else {
 						tooltip = feature.properties['name'] + ': ' + feature.properties['value'];
 					}
-					let popup = layer.bindPopup(tooltip, {closeButton: false, autoPan: false});
+					let popup = layer.bindPopup(tooltip, {closeButton: false, autoPan: false, className: 'nutsmap_popup'});
 					layer.on('mouseover', (e) => {
 						popup.openPopup();
 					});
