@@ -5,7 +5,7 @@ import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import Buyer = Definitions.Buyer;
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsSumPrices, IStatsLotsInYears} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsSumPrices, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
 import {CountryService, Country} from '../../services/country.service';
 
 @Component({
@@ -28,12 +28,14 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
 		sums_finalPrice: IStatsSumPrices,
+		company_nuts: IStatsNuts,
 		lots_in_years: IStatsLotsInYears
 	} = {
 		top_companies: null,
 		sums_finalPrice: null,
 		cpvs_codes: null,
 		counts: null,
+		company_nuts: null,
 		lots_in_years: null
 	};
 
@@ -126,7 +128,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			sums_finalPrice: null,
 			cpvs_codes: null,
 			counts: null,
-			lots_in_years: null
+			lots_in_years: null,
+			company_nuts: null
 		};
 		if (!data || !data.stats) {
 			this.vis = vis;
@@ -138,6 +141,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		vis.cpvs_codes = stats.terms_main_cpv_divisions;
 		vis.counts = stats.count_lots_bids;
 		vis.top_companies = stats.top_winning_companies;
+		vis.company_nuts = stats.terms_company_nuts;
 		this.vis = vis;
 	}
 

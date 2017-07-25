@@ -99,3 +99,19 @@ home-tabs {
     float: right;
   }
 }
+
+home-map {
+
+  .container {
+    margin-top: 10px;
+    .container-left-6 {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .container-left-6:first-of-type {
+      padding-top: 30px;
+    }
+  }
+}

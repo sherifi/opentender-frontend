@@ -62,6 +62,10 @@ export interface IStatsIndicators {
 	[name: string]: number;
 }
 
+export interface IStatsNuts {
+	[nutscode: string]: number;
+}
+
 export interface IStatsSumPrices {
 	[currency: string]: number;
 }
@@ -73,6 +77,8 @@ export interface IStatsCompanies {
 }
 
 export interface IStats {
+	terms_authority_nuts: IStatsNuts;
+	terms_company_nuts: IStatsNuts;
 	terms_main_cpv_divisions: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	terms_main_cpvs_full: IStatsPcCpvs;

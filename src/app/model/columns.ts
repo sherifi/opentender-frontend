@@ -1,7 +1,6 @@
 import Tender = Definitions.Tender;
 import Buyer = Definitions.Buyer;
 import Body = Definitions.Body;
-import Cpv = Definitions.Cpv;
 import Lot = Definitions.Lot;
 import Bid = Definitions.Bid;
 import {Utils} from './utils';
@@ -27,12 +26,15 @@ export interface TableLine {
 	prefix?: string;
 	list?: boolean;
 }
+
 export interface TableCell {
 	lines: Array<TableLine>;
 }
+
 export interface TableRow {
 	cells: Array<TableCell>;
 }
+
 export interface Table {
 	name: string;
 	columns: Array<Column>;
@@ -130,11 +132,11 @@ const FormatUtils = {
 				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currencyNational) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
 			}
 		});
-		['netAmount', 'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
-			if (price.hasOwnProperty(key)) {
-				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currency) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
-			}
-		});
+		// ['netAmount', 'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
+		// 	if (price.hasOwnProperty(key)) {
+		// 		result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currency) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
+		// 	}
+		// });
 		return result;
 	}
 };

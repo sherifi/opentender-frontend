@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import Tender = Definitions.Tender;
 import {CountryService} from './country.service';
-import {ISector, ICountryStats, IUsageEntry, ICompany, IStats, IAuthority, ISearchCompanyData, ISearchAuthorityData, ISearchTenderData} from '../app.interfaces';
+import {ISector, ICountryStats, IUsageEntry, ICompany, IStats, IAuthority, ISearchCompanyData, ISearchAuthorityData, ISearchTenderData, IStatsNuts} from '../app.interfaces';
 
 /* api-transfer-packages */
 
@@ -46,9 +46,7 @@ export interface IAuthorityApiResult {
 }
 
 export interface INutsApiResult {
-	data: {
-		[nutscode: string]: number;
-	};
+	data: IStatsNuts;
 }
 
 export interface IAuthoritySimilarApiResult {
@@ -96,10 +94,11 @@ export interface IApiResult {
 }
 
 export interface IApiGeoJSONResult {
+	type: string;
 	features: Array<{
 		properties: {
 			id: string;
-			name: string; s
+			name: string;
 		}
 	}>;
 }

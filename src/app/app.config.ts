@@ -95,6 +95,8 @@ import {GraphHistogramComponent} from './components/graphs/histogram.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
 import {GraphAuthoritiesComponent} from './components/graphs/authorities.component';
 import {GraphCompaniesComponent} from './components/graphs/companies.component';
+import {GraphNutsMapComponent} from './components/graphs/nuts-map.component';
+import {HomeMapComponent} from './components/map-home.component';
 
 const AppConfig = {
 	declarations: [
@@ -109,6 +111,7 @@ const AppConfig = {
 		FooterComponent,
 		HeaderComponent,
 		PaginationComponent,
+		HomeMapComponent,
 		PortalMapComponent,
 		SearchBoxComponent,
 		SelectColumnsButtonComponent,
@@ -136,6 +139,7 @@ const AppConfig = {
 		GraphSumPricesComponent,
 		GraphAuthoritiesComponent,
 		GraphCompaniesComponent,
+		GraphNutsMapComponent,
 
 		DefinedPipe,
 		EuropamLinkPipe,

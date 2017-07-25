@@ -1,25 +1,35 @@
 import {Component} from '@angular/core';
-import {PlatformService} from '../../services/platform.service';
-import {ApiService} from '../../services/api.service';
-import {IStatsNuts} from '../../app.interfaces';
+import {PlatformService} from '../services/platform.service';
+import {ApiService} from '../services/api.service';
+import {IStatsNuts} from '../app.interfaces';
 
 @Component({
 	moduleId: __filename,
-	selector: 'test',
-	templateUrl: 'test.template.html'
+	selector: 'home-map',
+	templateUrl: 'map-home.template.html'
 })
-export class TestPage {
+export class HomeMapComponent {
 	private map_level: number = 1;
 	private map_companies: boolean = false;
 	private map_data: IStatsNuts = null;
+	private formatTooltip: (featureProperties: any) => string;
 
 	constructor(private api: ApiService, private platform: PlatformService) {
+		this.formatTooltip = this.formatTooltipCallback.bind(this);
 		this.fillMap();
 	}
 
 	toggle() {
 		this.map_companies = !this.map_companies;
 		this.fillMap();
+	}
+
+	getEntitiesTitle() {
+		return this.map_companies ? 'Companies' : 'Authorities';
+	}
+
+	formatTooltipCallback(featureProperties) {
+		return featureProperties.name + ': ' + featureProperties.value + ' ' + this.getEntitiesTitle();
 	}
 
 	fillMap() {
