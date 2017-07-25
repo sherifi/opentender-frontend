@@ -152,7 +152,7 @@ export interface ITenderApiResult {
 
 export interface ISectorsApiResult {
 	data: {
-		[cpvcode: string]: { name: string; value: number; }
+		[cpvcode: string]: { name: string; value: number; level: string }
 	};
 }
 

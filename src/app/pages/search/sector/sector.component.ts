@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {ApiService, ISectorsApiResult} from '../../../services/api.service';
-import {ISector} from '../../../app.interfaces';
+import {ApiService} from '../../../services/api.service';
+import {ISector, ISectorsApiResult} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -37,6 +37,7 @@ export class SearchSectorPage implements OnInit, OnDestroy {
 			this.sectors = Object.keys(result.data).map(key => {
 				return {
 					id: key,
+					level: result.data[key].level,
 					name: result.data[key].name,
 					value: result.data[key].value
 				};

@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {IStatsNuts, IStatsPcCpvs} from '../../app.interfaces';
+import {IApiGeoJSONResult, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
-import {ApiService, IApiGeoJSONResult} from '../../services/api.service';
+import {ApiService} from '../../services/api.service';
 import GeoJSON = L.GeoJSON;
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import * as d3 from 'd3';
