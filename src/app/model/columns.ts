@@ -5,6 +5,7 @@ import Lot = Definitions.Lot;
 import Bid = Definitions.Bid;
 import {Utils} from './utils';
 import {IAuthority, ICompany} from '../app.interfaces';
+import Price = Definitions.Price;
 
 const ICON = {
 	tender: 'icon-newspaper',
@@ -126,7 +127,7 @@ export interface TenderColumn extends Column {
 }
 
 const FormatUtils = {
-	formatPrice: (price) => {
+	formatPrice: (price: Price) => {
 		if (!price) {
 			return [];
 		}
@@ -137,7 +138,7 @@ const FormatUtils = {
 			}
 		});
 		['netAmountNational'].forEach(key => {
-			if (price.hasOwnProperty(key)) {
+			if (price.hasOwnProperty(key) && price.currencyNational !== 'EUR') {
 				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currencyNational) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
 			}
 		});
