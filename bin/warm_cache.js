@@ -31,7 +31,9 @@ let warm_site = (site, cb) => {
 	async.forEachSeries(portals, (portal, next) => {
 		let url = 'http://' + config.server.listen.host + ':' + config.server.listen.port + '/' + portal.id.toLowerCase() + site;
 		console.log(url);
+		console.time('took');
 		request(url, {timeout: 300000}, (error, response, body) => {
+			console.timeEnd('took');
 			if (error) console.log(error);
 			next();
 		});
