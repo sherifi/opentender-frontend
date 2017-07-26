@@ -4,8 +4,8 @@
 	</div>
 	<div class="container-left-6">
 		<div class="graph-toolbar">
-			<button class="tool-button" [ngClass]="{down:!map_companies}" (click)="toggle()">Suppliers</button>
-			<button class="tool-button" [ngClass]="{down:map_companies}" (click)="toggle()">Buyers</button>
+			<button class="tool-button" [ngClass]="{down:!map_companies}" (click)="toggle()">Buyers</button>
+			<button class="tool-button" [ngClass]="{down:map_companies}" (click)="toggle()">Suppliers</button>
 			<span>&nbsp;</span>
 			<button class="tool-button" [ngClass]="{down:map_level==1}" (click)="setLevel(1)">Level 1</button>
 			<button class="tool-button" [ngClass]="{down:map_level==2}" (click)="setLevel(2)">Level 2</button>
