@@ -64,12 +64,13 @@ export class PaginationComponent implements OnChanges, OnInit {
 	}
 
 	onPageSizeChange(newValue: number) {
+		this.display(this.pagination.total);
 		this.refresh();
 	}
 
 	display(total: number): void {
 		this.pagination.total = total;
-		this.pagination.pageCount = Math.ceil(this.pagination.total / +this.pagination.pageSize);
+		this.pagination.pageCount = Math.ceil(this.pagination.total / this.pagination.pageSize);
 		this.pagination.quick = [];
 		let current = this.pagination.page;
 		let items: Array<any> = [current];
