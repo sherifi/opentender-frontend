@@ -21,7 +21,6 @@ export class GraphHistogramComponent implements OnChanges {
 	data: IStatsLotsInYears;
 
 	lots_in_years: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -70,7 +69,6 @@ export class GraphHistogramComponent implements OnChanges {
 				return {name: key, value: this.data[key]};
 			});
 		}
-		this.lots_in_years.visible = this.lots_in_years.data && this.lots_in_years.data.length > 0;
 	}
 
 }
