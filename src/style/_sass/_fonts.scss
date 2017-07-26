@@ -67,7 +67,10 @@ small, .smaller {
 
 .icon-rotate {
 	display: inline-block;
+	margin-top: 3px;
 	font-size: 0.9em;
 	animation: anim-rotate 2500ms infinite linear;
 	transition: opacity 0.6s ease 0s;
+	height: 1em;
+	line-height: 1;
 }

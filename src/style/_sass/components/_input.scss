@@ -79,10 +79,6 @@ $baseline-grid: 8px !default;
     position: absolute;
     @include rtl(transform-origin, left top, right top);
 
-    .mini-progress {
-      margin-left: 4px;
-      margin-top: 7px;
-    }
   }
 
   &.empty {

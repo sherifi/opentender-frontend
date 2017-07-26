@@ -1,15 +1,6 @@
 <div class="autocomplete-container labeled-input-container" [ngClass]="{empty:isEmpty(),focused:focused}">
-	<label><span>{{placeholder}}</span>
-		<div *ngIf="typeaheadLoading" class="mini-progress">
-			<div class="floatBarsG floatBarsG_1"></div>
-			<div class="floatBarsG floatBarsG_2"></div>
-			<div class="floatBarsG floatBarsG_3"></div>
-			<div class="floatBarsG floatBarsG_4"></div>
-			<div class="floatBarsG floatBarsG_5"></div>
-			<div class="floatBarsG floatBarsG_6"></div>
-			<div class="floatBarsG floatBarsG_7"></div>
-			<div class="floatBarsG floatBarsG_8"></div>
-		</div>
+	<label>
+		<span>{{placeholder}}</span><span *ngIf="typeaheadLoading">&nbsp;<i class="icon-spinner2 icon-rotate"></i></span>
 	</label>
 	<input [(ngModel)]="asyncSelected"
 		   [typeahead]="dataSource"
