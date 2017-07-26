@@ -55,7 +55,7 @@ $baseline-grid: 8px !default;
   position: relative;
   padding: 2px;
   vertical-align: middle;
-  margin: 8px 0 0;
+  margin: 14px 0 0;
 
   label {
     overflow: hidden;
@@ -65,7 +65,6 @@ $baseline-grid: 8px !default;
     order: 1;
     color: $base-font-color;
     pointer-events: none;
-    -webkit-font-smoothing: antialiased;
     @include rtl(padding-left, $input-container-padding + 1px, 0);
     @include rtl(padding-right, 0, $input-container-padding + 1px);
     z-index: 1;
@@ -75,6 +74,7 @@ $baseline-grid: 8px !default;
     // The max-width is necessary, because in some browsers, using this together with
     // a calc might cause it to overflow the parent. See #7403
     max-width: 100%;
+    margin-left: -2px;
 
     position: absolute;
     @include rtl(transform-origin, left top, right top);
@@ -85,6 +85,7 @@ $baseline-grid: 8px !default;
     label {
       transform: translate3d(0, $input-label-float-offset + 4, 0) scale($input-label-float-scale);
       bottom: 100%;
+      -webkit-font-smoothing: antialiased;
       @include rtl(left, 0, auto);
       @include rtl(right, auto, 0);
       color: rgba(0, 0, 0, 0.48);
@@ -102,12 +103,13 @@ $baseline-grid: 8px !default;
     padding-bottom: $input-border-width-focused - $input-border-width-default;
     padding-left: 2px;
     padding-right: 2px;
-    border-width: 0 0 $input-border-width-default 0;
     line-height: $input-line-height;
     height: $input-line-height + ($input-padding-top * 2);
     -ms-flex-preferred-size: $input-line-height; //IE fix
+    border-width: 0 0 $input-border-width-default 0;
     border-radius: 0;
     border-style: solid; // Firefox fix
+    border-color: $base-border-color;
     font-size: 100%;
     // Fix number inputs in Firefox to be full-width
     width: 100%;

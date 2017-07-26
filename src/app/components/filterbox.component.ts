@@ -43,6 +43,16 @@ export class FilterBoxComponent implements OnChanges {
 		this.refresh(true);
 	}
 
+	getValueTitle(bucket, filter) {
+		if (bucket.name) {
+			return bucket.name;
+		}
+		if (filter.def.valueFormatter) {
+			return filter.def.valueFormatter(bucket.key);
+		}
+		return bucket.key;
+	}
+
 	getFilterClass(index) {
 		let count = this.active_filters.length;
 		let col = 4;

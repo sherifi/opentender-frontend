@@ -4,7 +4,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.3);
 	z-index: 999;
 }
 
@@ -37,13 +37,6 @@
 		padding-right: 20px;
 	}
 }
-
-//@media (min-width: 768px) {
-//	.dialog {
-//		top: 20%;
-//		max-height: 60%;
-//	}
-//}
 
 .dialog__close-btn {
 	border: 0;

@@ -6,18 +6,14 @@
 		<div *ngIf="filter.active" [ngSwitch]="filter.def.type">
 			<div class="title">{{filter.def.name}} <span class="filter-close" (click)="closeFilter(filter)"><i class="icon-cross"></i></span></div>
 			<div class="text" *ngSwitchCase="'text'">
-				<!--<div class="input-icon-wrap">-->
-				<!--<input type="text" [(ngModel)]="filter.value" (keyup)="refreshDelay($event.target.value)">-->
-				<!--<span *ngIf="filter.value && filter.value.length>0" class="input-icon" (click)="clearFilter(filter)"><i class="icon-cross"></i></span>-->
-				<!--</div>-->
 				<div class="filter-checks">
-					<div *ngFor="let a of filter.buckets">
+					<div *ngFor="let bucket of filter.buckets">
 						<label class="checkbox">
-							<input type="checkbox" [(ngModel)]="filter.enabled[a.key]" (ngModelChange)="refresh(a.key)">
+							<input type="checkbox" [(ngModel)]="filter.enabled[bucket.key]" (ngModelChange)="refresh(bucket.key)">
 							<div class="checkbox-columns">
 								<span class="checkbox-column">
-									<span class="value" title="{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}">{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}</span>
-									<span class="count">{{a.doc_count | formatNumber}}</span>
+									<span class="value" title="{{getValueTitle(bucket,filter)}}">{{getValueTitle(bucket,filter)}}</span>
+									<span class="count">{{bucket.doc_count | formatNumber}}</span>
 								</span>
 							</div>
 						</label>
@@ -25,14 +21,14 @@
 				</div>
 			</div>
 			<div class="select" *ngSwitchCase="'select'">
-				<div *ngFor="let a of filter.buckets">
+				<div *ngFor="let bucket of filter.buckets">
 					<label class="checkbox">
-						<input type="checkbox" [(ngModel)]="filter.enabled[a.key]" (ngModelChange)="refresh(a.key)">
+						<input type="checkbox" [(ngModel)]="filter.enabled[bucket.key]" (ngModelChange)="refresh(bucket.key)">
 						<div class="checkbox-columns">
-								<span class="checkbox-column">
-									<span class="value" title="{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}">{{filter.def.valueFormatter?filter.def.valueFormatter(a.key):a.key}}</span>
-									<span class="count">{{a.doc_count | formatNumber}}</span>
-								</span>
+							<span class="checkbox-column">
+								<span class="value" title="{{getValueTitle(bucket,filter)}}">{{getValueTitle(bucket,filter)}}</span>
+								<span class="count">{{bucket.doc_count | formatNumber}}</span>
+							</span>
 						</div>
 					</label>
 				</div>

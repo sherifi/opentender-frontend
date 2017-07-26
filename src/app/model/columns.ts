@@ -15,8 +15,8 @@ const ICON = {
 export interface Column {
 	name: string;
 	id: string;
+	group: string;
 	sortBy?: ColumnSort;
-	group?: string;
 	right?: boolean;
 }
 
@@ -47,7 +47,6 @@ export interface ColumnSort {
 	ascend: boolean;
 }
 
-
 export interface AuthorityColumn extends Column {
 	format: (authority: IAuthority) => Array<TableLine>;
 }
@@ -56,26 +55,31 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 	{
 		name: 'Name',
 		id: 'body.name',
+		group: 'Authority',
 		format: authority => [{content: authority.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
 		id: 'body.address.city',
+		group: 'Authority',
 		format: authority => [{content: authority.body.address.city}]
 	},
 	{
 		name: 'Country',
 		id: 'body.address.country',
+		group: 'Authority',
 		format: authority => [{content: Utils.expandCountry(authority.body.address.country)}]
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
+		group: 'Authority',
 		format: authority => [{content: (authority.value || '').toString()}]
 	},
 	{
 		name: 'Profile Link',
 		id: 'id',
+		group: 'Authority',
 		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.groupId}]
 	}
 ];
@@ -87,27 +91,32 @@ export interface CompanyColumn extends Column {
 export const CompanyColumns: Array<CompanyColumn> = [
 	{
 		name: 'Name',
+		group: 'Company',
 		id: 'body.name',
 		format: company => [{content: company.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
+		group: 'Company',
 		id: 'body.address.city',
 		format: company => [{content: company.body.address.city}]
 	},
 	{
 		name: 'Country',
+		group: 'Company',
 		id: 'body.address.country',
 		format: company => [{content: Utils.expandCountry(company.body.address.country)}]
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
+		group: 'Company',
 		format: company => [{content: (company.value || '').toString()}]
 	},
 	{
 		name: 'Profile Link',
 		id: 'id',
+		group: 'Company',
 		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.groupId}]
 	}
 ];

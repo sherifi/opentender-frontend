@@ -2,6 +2,7 @@ import {Utils} from './utils';
 
 
 export interface Bucket {
+	name?: string;
 	key: string;
 	doc_count: number;
 }
@@ -109,9 +110,30 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.capitalize
 	},
 	{
+		id: 'cpvs.code.divisions',
+		name: 'CPV (Divisions)',
+		group: 'Tender CPV',
+		field: 'cpvs.code.divisions',
+		type: 'select'
+	},
+	{
+		id: 'cpvs.code.groups',
+		name: 'CPV (Groups)',
+		group: 'Tender CPV',
+		field: 'cpvs.code.groups',
+		type: 'select'
+	},
+	{
+		id: 'cpvs.code.categories',
+		name: 'CPV (Categories)',
+		group: 'Tender CPV',
+		field: 'cpvs.code.categories',
+		type: 'select'
+	},
+	{
 		id: 'cpvs.code',
-		name: 'CPV',
-		group: 'Tender',
+		name: 'CPV (Full)',
+		group: 'Tender CPV',
 		field: 'cpvs.code',
 		type: 'select'
 	},
