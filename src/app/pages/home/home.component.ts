@@ -26,7 +26,6 @@ export class HomePage implements OnInit {
 		lots_in_years: IChartBar;
 	} = {
 		lots_in_years: {
-			visible: false,
 			chart: {
 				schemeType: 'ordinal',
 				view: {
@@ -59,7 +58,7 @@ export class HomePage implements OnInit {
 			},
 			onLegendLabelClick: (event) => {
 			},
-			data: []
+			data: null
 		},
 	};
 
@@ -80,12 +79,11 @@ export class HomePage implements OnInit {
 	}
 
 	private display(data: IStats) {
-		this.charts.lots_in_years.data = [];
+		this.charts.lots_in_years.data = null;
 		if (data.histogram_lots_awardDecisionDate) {
 			this.charts.lots_in_years.data = Object.keys(data.histogram_lots_awardDecisionDate).map((key) => {
 				return {name: key, value: data.histogram_lots_awardDecisionDate[key]};
 			});
 		}
-		this.charts.lots_in_years.visible = this.charts.lots_in_years.data.length > 0;
 	}
 }

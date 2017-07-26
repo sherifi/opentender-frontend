@@ -21,7 +21,6 @@ export class GraphSectorsComponent implements OnChanges {
 	data: IStatsPcCpvs;
 
 	cpvs_codes_absolute: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -56,7 +55,7 @@ export class GraphSectorsComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 
 	graph: IChartBar = this.cpvs_codes_absolute;
@@ -95,7 +94,6 @@ export class GraphSectorsComponent implements OnChanges {
 			}
 			this.cpvs_codes_absolute.data = this.cpvs_codes_absolute.data.reverse();
 		}
-		this.cpvs_codes_absolute.visible = this.cpvs_codes_absolute.data.length > 0;
 	}
 
 }

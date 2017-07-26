@@ -64,6 +64,9 @@ export class BarSeriesVerticalComponent implements OnChanges {
 	}
 
 	update(): void {
+		if (!this.series) {
+			return;
+		}
 		let width;
 		if (this.series.length) {
 			width = this.xScale.bandwidth();

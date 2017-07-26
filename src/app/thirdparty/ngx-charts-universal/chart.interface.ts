@@ -170,7 +170,6 @@ export interface IChartHeatmapSettings extends IChartXYAxisSettings {
 }
 
 export interface IChartFlowChart {
-	visible: boolean;
 	data: Array<IChartNode>;
 	chart: IChartFlowChartSettings;
 	select?: (event) => void;
@@ -178,7 +177,6 @@ export interface IChartFlowChart {
 }
 
 export interface IChartHeatmap {
-	visible: boolean;
 	data: Array<IChartData>;
 	chart: IChartHeatmapSettings;
 	select?: (event) => void;
@@ -186,7 +184,6 @@ export interface IChartHeatmap {
 }
 
 export interface IChartBar {
-	visible: boolean;
 	data: Array<IChartData>;
 	chart: IChartBarsSettings;
 	select?: (event) => void;
@@ -194,7 +191,6 @@ export interface IChartBar {
 }
 
 export interface IChartPie {
-	visible: boolean;
 	data: Array<IChartData>;
 	chart: IChartPieSettings;
 	select?: (event) => void;
@@ -202,14 +198,12 @@ export interface IChartPie {
 }
 
 export interface IChartArea {
-	visible: boolean;
 	chart: IChartLineSettings;
 	data: Array<IChartData>;
 	select?: (event) => void;
 	onLegendLabelClick?: (event) => void;
 }
 export interface IChartLine {
-	visible: boolean;
 	chart: IChartLineSettings;
 	data: Array<IChartData>;
 	select?: (event) => void;
@@ -217,7 +211,6 @@ export interface IChartLine {
 }
 
 export interface IChartTreeMap {
-	visible: boolean;
 	data: Array<IChartData>;
 	chart: IChartBaseSettings;
 	select?: (event) => void;

@@ -25,11 +25,8 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 	data: IStatsPcLotsInYears;
 	@Input()
 	indicator: string = 'Indicators';
-	// @Output()
-	// sortChange = new EventEmitter();
 
 	lots_pc_in_years: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -63,11 +60,10 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 
 	lots_in_years: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -101,7 +97,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 
 	graph: IChartBar = this.lots_pc_in_years;
@@ -110,8 +106,8 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.lots_pc_in_years.data = [];
-		this.lots_in_years.data = [];
+		this.lots_pc_in_years.data = null;
+		this.lots_in_years.data = null;
 		if (this.data) {
 			this.lots_pc_in_years.data = Object.keys(this.data).map((key) => {
 				return {name: key, value: this.data[key].percent};
@@ -120,8 +116,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 				return {name: key, value: this.data[key].value};
 			});
 		}
-		this.lots_pc_in_years.visible = this.lots_pc_in_years.data.length > 0;
-		this.lots_in_years.visible = this.lots_in_years.data.length > 0;
 	}
 
 }

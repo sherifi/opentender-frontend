@@ -28,7 +28,6 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 	indicator: string = 'Indicators';
 
 	indicators: IChartPie =  {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -49,7 +48,7 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 	graph: IChartPie =  this.indicators;
 
@@ -57,13 +56,12 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.indicators.data = [];
+		this.indicators.data = null;
 		if (this.data) {
 			this.indicators.data = Object.keys(this.data).map(key => {
 				return {name: Utils.expandUnderlined(key.split('_').slice(1).join('_')), value: this.data[key]};
 			});
 		}
-		this.indicators.visible = this.indicators.data.length > 0;
 	}
 
 }

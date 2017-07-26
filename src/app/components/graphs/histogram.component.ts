@@ -55,7 +55,7 @@ export class GraphHistogramComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 
 	graph: IChartBar = this.lots_in_years;
@@ -64,13 +64,13 @@ export class GraphHistogramComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.lots_in_years.data = [];
+		this.lots_in_years.data = null;
 		if (this.data) {
 			this.lots_in_years.data = Object.keys(this.data).map((key) => {
 				return {name: key, value: this.data[key]};
 			});
 		}
-		this.lots_in_years.visible = this.lots_in_years.data.length > 0;
+		this.lots_in_years.visible = this.lots_in_years.data && this.lots_in_years.data.length > 0;
 	}
 
 }

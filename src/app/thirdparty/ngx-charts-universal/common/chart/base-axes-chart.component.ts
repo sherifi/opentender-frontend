@@ -73,16 +73,19 @@ export abstract class BaseXYAxisComponent extends BaseChartComponent {
 		this.zone.run(() => {
 			this.updateViewDim();
 
-			this.xDomain = this.getXDomain();
-			this.yDomain = this.getYDomain();
-			this.updateDomains();
+			if (this.data) {
 
-			this.xScale = this.getXScale();
-			this.yScale = this.getYScale();
-			this.updateScales();
+				this.xDomain = this.getXDomain();
+				this.yDomain = this.getYDomain();
+				this.updateDomains();
 
-			this.setColors();
-			this.legendOptions = this.getLegendOptions();
+				this.xScale = this.getXScale();
+				this.yScale = this.getYScale();
+				this.updateScales();
+
+				this.setColors();
+				this.legendOptions = this.getLegendOptions();
+			}
 
 			this.transform = `translate(${ this.viewDim.xOffset } , ${ this.margin[0] })`;
 		});

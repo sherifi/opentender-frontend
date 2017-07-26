@@ -1,24 +1,15 @@
-<section class="container-outer dashboards" *ngIf="loading">
+<section class="container-outer dashboards">
 	<section class="container">
 		<section class="container">
 			<div class="container-title">Market Analysis</div>
 		</section>
-		<section class="container">
-			<div *ngIf="error">Error: {{error}}</div>
-			<div *ngIf="!error">Loading...</div>
-		</section>
-	</section>
-</section>
-
-<section class="container-outer dashboards" *ngIf="!loading">
-	<section class="container">
-		<section class="container">
-			<div class="container-title">Market Analysis</div>
-		</section>
+		<div class="error" *ngIf="error">
+			Error: {{error}}
+		</div>
 		<section class="container">
 			<div class="container slab-beta-light container-padded-large">
 				<div class="container">
-					<div class="container-left-12" *ngIf="charts.cpvs_code_main.visible">
+					<div class="container-left-12">
 						<div class="title">Structure by Tender Count</div>
 						<ngx-charts-tree-map
 								class="chart-container"
@@ -31,7 +22,7 @@
 				</div>
 				<br>
 				<div class="container">
-					<div class="container-left-12" *ngIf="charts.cpvs_code_main_volume.visible">
+					<div class="container-left-12">
 						<div class="title">Volume by Sector in €</div>
 						<ngx-charts-tree-map
 								class="chart-container"

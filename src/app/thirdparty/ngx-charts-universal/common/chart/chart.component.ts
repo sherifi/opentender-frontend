@@ -7,33 +7,37 @@ import {ILegendOptions} from '../common.interface';
 @Component({
 	providers: [InjectionService],
 	selector: 'ngx-charts-chart',
-	template: `<div [style.width.px]="dim.width">
-	<svg class="ngx-charts" [attr.width]="chartWidth" [attr.height]="dim.height">
-		<ng-content></ng-content>
-	</svg>
-	<ngx-charts-scale-legend
-			*ngIf="chart.legend && chart.legend.show && legendType === 'scaleLegend'"
-			class="chart-legend"
-			[valueRange]="legendOptions.domain"
-			[colors]="legendOptions.colors"
-			[height]="dim.height"
-			[width]="legendWidth">
-	</ngx-charts-scale-legend>
-	<ngx-charts-legend
-			*ngIf="chart.legend && chart.legend.show && legendType === 'legend'"
-			class="chart-legend"
-			[data]="legendOptions.domain"
-			[title]="chart.legend.title"
-			[colors]="legendOptions.colors"
-			[height]="dim.height"
-			[width]="legendWidth"
-			[activeEntries]="activeEntries"
-			(labelClick)="legendLabelClick.emit($event)"
-			(labelActivate)="legendLabelActivate.emit($event)"
-			(labelDeactivate)="legendLabelDeactivate.emit($event)">
-	</ngx-charts-legend>
-</div>
-  `,
+	template: `
+		<div [style.width.px]="dim.width">
+			<svg class="ngx-charts" [attr.width]="chartWidth" [attr.height]="dim.height">
+				<ng-content></ng-content>
+				<g>
+					<text stroke-width="0.01" text-anchor="middle" [attr.x]="label.x" [attr.y]="label.y">{{label.text}}</text>
+				</g>
+			</svg>
+			<ngx-charts-scale-legend
+					*ngIf="chart.legend && chart.legend.show && legendType === 'scaleLegend'"
+					class="chart-legend"
+					[valueRange]="legendOptions.domain"
+					[colors]="legendOptions.colors"
+					[height]="dim.height"
+					[width]="legendWidth">
+			</ngx-charts-scale-legend>
+			<ngx-charts-legend
+					*ngIf="chart.legend && chart.legend.show && legendType === 'legend'"
+					class="chart-legend"
+					[data]="legendOptions.domain"
+					[title]="chart.legend.title"
+					[colors]="legendOptions.colors"
+					[height]="dim.height"
+					[width]="legendWidth"
+					[activeEntries]="activeEntries"
+					(labelClick)="legendLabelClick.emit($event)"
+					(labelActivate)="legendLabelActivate.emit($event)"
+					(labelDeactivate)="legendLabelDeactivate.emit($event)">
+			</ngx-charts-legend>
+		</div>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	// animations: [
 	// 	trigger('animationState', [
@@ -50,16 +54,22 @@ export class ChartComponent implements OnChanges {
 	@Input() chart: IChartBaseSettings;
 	@Input() legendOptions: ILegendOptions;
 	@Input() activeEntries: any[];
-		@Output() legendLabelClick: EventEmitter<any> = new EventEmitter();
-		@Output() legendLabelActivate: EventEmitter<any> = new EventEmitter();
+	@Output() legendLabelClick: EventEmitter<any> = new EventEmitter();
+	@Output() legendLabelActivate: EventEmitter<any> = new EventEmitter();
 	@Output() legendLabelDeactivate: EventEmitter<any> = new EventEmitter();
 
 	chartWidth: number;
 	legendWidth: number;
 	legendType: string;
+	label = {
+		x: 0,
+		y: 0,
+		text: ''
+	};
 
 	constructor(private vcr: ViewContainerRef, private injectionService: InjectionService) {
 		this.injectionService.setRootViewContainer(vcr);
+		this.label.text = 'LOADING';
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -79,6 +89,9 @@ export class ChartComponent implements OnChanges {
 		let chartColumns = 12 - legendColumns;
 		this.chartWidth = this.dim.width * chartColumns / 12.0;
 		this.legendWidth = this.dim.width * legendColumns / 12.0;
+		this.label.x = this.dim.width / 2;
+		this.label.y = this.dim.height / 2;
+		this.label.text = (!this.data) ? 'LOADING' : (this.data.length == 0 ? 'NO DATA' : '');
 	}
 
 	getLegendType(): string {

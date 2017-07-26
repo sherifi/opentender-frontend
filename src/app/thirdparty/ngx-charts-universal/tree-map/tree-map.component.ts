@@ -53,6 +53,10 @@ export class TreeMapComponent extends BaseChartComponent {
 				margins: this.margin
 			});
 
+			if (!this.data) {
+				return;
+			}
+
 			let treemap = d3.treemap<{name: string, value: number, valueId: string, isRoot?: boolean}>()
 				.size([this.viewDim.width, this.viewDim.height]);
 

@@ -65,6 +65,9 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 	}
 
 	update(): void {
+		if (!this.series) {
+			return;
+		}
 		let d0 = 0;
 		let total;
 		if (this.type === 'normalized') {

@@ -13,7 +13,6 @@ import {Utils} from '../../../model/utils';
 })
 export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	public error: string;
-	public loading = true;
 	public sectors: Array<ISector>;
 
 	private charts: {
@@ -21,7 +20,6 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		cpvs_code_main_volume: IChartTreeMap;
 	} = {
 		cpvs_code_main: {
-			visible: false,
 			chart: {
 				schemeType: 'ordinal',
 				view: {
@@ -37,14 +35,13 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 			select: (event) => {
 				this.router.navigate(['/sector/' + event.id]);
 			},
-			data: []
+			data: null
 		},
 		cpvs_code_main_volume: {
-			visible: false,
 			chart: {
 				schemeType: 'ordinal',
 				view: {
-					def: {width: 470, height: 400},
+					def: {width: 964, height: 400},
 					min: {height: 400},
 					max: {height: 400}
 				},
@@ -58,7 +55,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 			select: (event) => {
 				this.router.navigate(['/sector/' + event.id]);
 			},
-			data: []
+			data: null
 		}
 	};
 
@@ -69,11 +66,9 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		this.api.getMarketAnalysisStats({}).subscribe(
 			(result) => {
 				this.display(result.data);
-				this.loading = false;
 			},
 			(error) => {
 				this.error = error._body;
-				this.loading = false;
 				// console.error(error);
 			},
 			() => {
@@ -85,21 +80,20 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	}
 
 	display(data: IStats): void {
-		if (!data) {
-			return;
-		}
-		this.charts.cpvs_code_main.data = [];
-		this.charts.cpvs_code_main_volume.data = [];
+		this.charts.cpvs_code_main.data = null;
+		this.charts.cpvs_code_main_volume.data = null;
 		this.sectors = [];
-		if (data.sectors_stats) {
-			data.sectors_stats.forEach((s) => {
-				this.sectors.push(s.sector);
-				this.charts.cpvs_code_main.data.push({name: s.sector.name, value: s.sector.value, id: s.sector.id});
-				this.charts.cpvs_code_main_volume.data.push({name: s.sector.name, value: s.stats.sums_finalPrice['EUR'] || 0, id: s.sector.id});
+		if (data && data.sectors_stats) {
+			this.charts.cpvs_code_main.data = data.sectors_stats.map(s => {
+				return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
+			});
+			this.charts.cpvs_code_main_volume.data = data.sectors_stats.map(s => {
+				return {name: s.sector.name, value: s.stats.sums_finalPrice['EUR'] || 0, id: s.sector.id};
+			});
+			this.sectors = data.sectors_stats.map(s => {
+				return s.sector;
 			});
 		}
-		this.charts.cpvs_code_main.visible = this.charts.cpvs_code_main.data.length > 0;
-		this.charts.cpvs_code_main_volume.visible = this.charts.cpvs_code_main_volume.data.length > 0;
 	}
 
 }

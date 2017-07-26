@@ -6,31 +6,32 @@ import {ILegendOptions} from '../common/common.interface';
 
 @Component({
 	selector: 'ngx-charts-pie-chart',
-	template: `<ngx-charts-chart
-		[dim]="dim" [chart]="chart" [data]="data"
-		[legendOptions]="legendOptions"
-		[activeEntries]="activeEntries"
-		(legendLabelActivate)="onActivate($event)"
-		(legendLabelDeactivate)="onDeactivate($event)"
-		(legendLabelClick)="onClick($event)">
-	<svg:g [attr.transform]="transform" class="pie-chart chart">
-		<svg:g ngx-charts-pie-series
-			   [colors]="colors"
-			   [showLabels]="showLabels"
-			   [series]="piedata"
-			   [activeEntries]="activeEntries"
-			   [innerRadius]="innerRadius"
-			   [outerRadius]="outerRadius"
-			   [explodeSlices]="chart.explodeSlices"
-			   [gradient]="chart.gradient"
-			   [valueFormatting]="chart.valueFormatting"
-			   (select)="onClick($event)"
-			   (activate)="onActivate($event)"
-			   (deactivate)="onDeactivate($event)"
-		/>
-	</svg:g>
-</ngx-charts-chart>
-  `,
+	template: `
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				[activeEntries]="activeEntries"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)"
+				(legendLabelClick)="onClick($event)">
+			<svg:g [attr.transform]="transform" class="pie-chart chart">
+				<svg:g ngx-charts-pie-series
+					   [colors]="colors"
+					   [showLabels]="showLabels"
+					   [series]="piedata"
+					   [activeEntries]="activeEntries"
+					   [innerRadius]="innerRadius"
+					   [outerRadius]="outerRadius"
+					   [explodeSlices]="chart.explodeSlices"
+					   [gradient]="chart.gradient"
+					   [valueFormatting]="chart.valueFormatting"
+					   (select)="onClick($event)"
+					   (activate)="onActivate($event)"
+					   (deactivate)="onDeactivate($event)"
+				/>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PieChartComponent extends BasePieChartComponent {
@@ -79,15 +80,16 @@ export class PieChartComponent extends BasePieChartComponent {
 				this.innerRadius = this.outerRadius * 0.75;
 			}
 
-			this.domain = this.getDomain();
+			if (this.data) {
+				this.domain = this.getDomain();
 
-			// sort data according to domain
-			this.piedata = this.data.sort((a, b) => {
-				return this.domain.indexOf(a.name) - this.domain.indexOf(b.name);
-			});
-
-			this.setColors();
-			this.legendOptions = this.getLegendOptions();
+				// sort data according to domain
+				this.piedata = this.data.sort((a, b) => {
+					return this.domain.indexOf(a.name) - this.domain.indexOf(b.name);
+				});
+				this.setColors();
+				this.legendOptions = this.getLegendOptions();
+			}
 		});
 	}
 

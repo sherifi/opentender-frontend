@@ -25,11 +25,8 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 	data: IStatsPcCpvs;
 	@Input()
 	indicator: string = 'Indicators';
-	// @Output()
-	// sortChange = new EventEmitter();
 
 	cpvs_codes_average: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -63,10 +60,9 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 	cpvs_codes_absolute: IChartBar = {
-		visible: false,
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -100,7 +96,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: []
+		data: null
 	};
 
 	graph: IChartBar = this.cpvs_codes_average;
@@ -109,8 +105,8 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.cpvs_codes_average.data = [];
-		this.cpvs_codes_absolute.data = [];
+		this.cpvs_codes_average.data = null;
+		this.cpvs_codes_absolute.data = null;
 		if (this.data) {
 			let codes = Object.keys(this.data).map((key) => {
 				return {id: key, name: this.data[key].name, value: this.data[key].value, percent: this.data[key].percent};
@@ -131,8 +127,6 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 				return {name: code.name, value: code.value};
 			});
 		}
-		this.cpvs_codes_average.visible = this.cpvs_codes_average.data.length > 0;
-		this.cpvs_codes_absolute.visible = this.cpvs_codes_absolute.data.length > 0;
 	}
 
 }

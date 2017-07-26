@@ -64,7 +64,7 @@ interface PieArc {
 export class PieSeriesComponent implements OnChanges {
 
 	@Input() colors: ColorHelper;
-	@Input() series: any = [];
+	@Input() series: any;
 	@Input() dims;
 	@Input() innerRadius = 60;
 	@Input() outerRadius = 80;
@@ -87,6 +87,9 @@ export class PieSeriesComponent implements OnChanges {
 	}
 
 	update(): void {
+		if (!this.series) {
+			return;
+		}
 		let pie = d3.pie<{ value: number }>()
 			.value((d) => d.value)
 			.sort(null);
