@@ -11,7 +11,7 @@ import {ILegendOptions} from '../common.interface';
 		<div [style.width.px]="dim.width">
 			<svg class="ngx-charts" [attr.width]="chartWidth" [attr.height]="dim.height">
 				<ng-content></ng-content>
-				<g>
+				<g *ngIf="label.text.length>0">
 					<text stroke-width="0.01" text-anchor="middle" [attr.x]="label.x" [attr.y]="label.y">{{label.text}}</text>
 				</g>
 			</svg>
