@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
 		{icon: 'icon-database', url: '/downloads', title: 'Download', subtitle: 'Download data', text: Consts.IPSUM},
 		{icon: 'icon-checkmark', url: '/dashboards/transparency-indicators', title: 'Transparency Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
 		{icon: 'icon-flag', url: '/dashboards/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
-		{icon: 'icon-library', url: '/dashboards/administrative-quality', title: 'Administrative quality', subtitle: 'Indicators', text: Consts.IPSUM}
+		{icon: 'icon-library', url: '/dashboards/administrative-capacity-indicators', title: 'Administrative Capacity Indicators', subtitle: 'Indicators', text: Consts.IPSUM}
 	];
 	private charts: {
 		lots_in_years: IChartBar;

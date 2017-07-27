@@ -184,8 +184,8 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		}
 	},
 	{
-		id: 'indicators.type_aqi',
-		name: 'Administrative Quality Indicators',
+		id: 'indicators.type_aci',
+		name: 'Administrative Capacity Indicators',
 		group: 'Tender Indicators',
 		field: 'indicators.type',
 		type: 'select',

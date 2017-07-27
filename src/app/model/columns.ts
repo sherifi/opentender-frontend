@@ -328,8 +328,8 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
-		name: 'Administrative Quality Indicator',
-		id: 'indicators.aqi',
+		name: 'Administrative Capacity Indicator',
+		id: 'indicators.aci',
 		group: 'Tender Indicators',
 		format: tender => {
 			if (!tender.indicators) {

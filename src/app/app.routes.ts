@@ -10,7 +10,7 @@ import {AboutHowPage} from './pages/about/how/how.component';
 import {AboutPage} from './pages/about/about.component';
 import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
-import {DashboardsAdministrativeQualityPage} from './pages/dashboards/administrative-quality/administrative-quality.component';
+import {DashboardsAdministrativeCapacityPage} from './pages/dashboards/administrative-capacity/administrative-capacity.component';
 import {DashboardsCorruptionPage} from './pages/dashboards/corruption-risk/corruption-risk.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
 import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
@@ -39,7 +39,7 @@ export const routes: Routes = [
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Dashboard Market Analysis'}},
 			{path: 'transparency-indicators', component: DashboardsTransparencyPage, data: {title: 'Dashboard Transparency Indicators'}},
 			{path: 'corruption-indicators', component: DashboardsCorruptionPage, data: {title: 'Dashboard Corruption Risk Indicators'}},
-			{path: 'administrative-quality', component: DashboardsAdministrativeQualityPage, data: {title: 'Dashboard Administrative Quality Indicators'}}
+			{path: 'administrative-capacity-indicators', component: DashboardsAdministrativeCapacityPage, data: {title: 'Dashboard Administrative Capacity Indicators'}}
 		]
 	},
 	{

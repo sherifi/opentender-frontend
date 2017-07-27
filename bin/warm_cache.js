@@ -24,7 +24,7 @@ let sites = ['/',
 	'/dashboards/market-analysis',
 	'/dashboards/corruption-indicators',
 	'/dashboards/transparency-indicators',
-	'/dashboards/administrative-quality'
+	'/dashboards/administrative-capacity'
 ];
 
 let warm_site = (site, cb) => {

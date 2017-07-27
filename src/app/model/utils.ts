@@ -31,7 +31,7 @@ export const Utils = {
 			return 'Corruption Risk Indicator';
 		}
 		if (value === 'ADMINISTRATIVE') {
-			return 'Administrative Quality Indicator';
+			return 'Administrative Capacity Indicator';
 		}
 		if (value === 'TRANSPARENCY') {
 			return 'Transparency Indicator';

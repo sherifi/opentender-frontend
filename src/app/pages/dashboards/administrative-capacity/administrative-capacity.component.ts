@@ -8,11 +8,11 @@ import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
-	selector: 'administrative-quality',
-	templateUrl: 'administrative-quality.template.html'
+	selector: 'administrative-capacity',
+	templateUrl: 'administrative-capacity.template.html'
 })
-export class DashboardsAdministrativeQualityPage {
-	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aqi'];
-	public indicator: string = 'Administrative Quality Indicators';
+export class DashboardsAdministrativeCapacityPage {
+	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aci'];
+	public indicator: string = 'Administrative Capacity Indicators';
 	public searchPrefix = 'ADMINISTRATIVE';
 }

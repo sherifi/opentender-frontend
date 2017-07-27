@@ -33,7 +33,7 @@ import {AboutFOIPage} from './pages/about/foi/foi.component';
 import {AboutHowPage} from './pages/about/how/how.component';
 import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
-import {DashboardsAdministrativeQualityPage} from './pages/dashboards/administrative-quality/administrative-quality.component';
+import {DashboardsAdministrativeCapacityPage} from './pages/dashboards/administrative-capacity/administrative-capacity.component';
 import {DashboardsCorruptionPage} from './pages/dashboards/corruption-risk/corruption-risk.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
 import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
@@ -166,7 +166,7 @@ const AppConfig = {
 		AboutHowPage,
 		AboutDataQualityPage,
 		DownloadsPage,
-		DashboardsAdministrativeQualityPage,
+		DashboardsAdministrativeCapacityPage,
 		DashboardsCorruptionPage,
 		DashboardsPage,
 		DashboardsMarketAnalysisPage,
