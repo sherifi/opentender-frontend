@@ -37,7 +37,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	}
 
 	display(data: IStats): void {
-		this.sectorInfos=[];
+		this.sectors_stats = [];
 		this.viz.sectors_stats = null;
 		if (data) {
 			this.viz.sectors_stats = data.sectors_stats;
