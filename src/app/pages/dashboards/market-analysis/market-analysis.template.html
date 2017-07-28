@@ -18,12 +18,14 @@
 				<th>CPV</th>
 				<th>Name</th>
 				<th>Tender Count</th>
+				<th>Volume (€)</th>
 			</tr>
-			<tr *ngFor="let sector of sectors">
-				<td><a routerLink="/sector/{{sector.id}}"><i class="icon-hammer icon-large"></i></a></td>
-				<td>{{sector.id}}</td>
-				<td>{{sector.name}}</td>
-				<td>{{sector.value | formatNumber}}</td>
+			<tr *ngFor="let sectorInfo of sectors_stats">
+				<td><a routerLink="/sector/{{sectorInfo.sector.id}}"><i class="icon-hammer icon-large"></i></a></td>
+				<td>{{sectorInfo.sector.id}}</td>
+				<td>{{sectorInfo.sector.name}}</td>
+				<td>{{sectorInfo.sector.value | formatNumber}}</td>
+				<td>€ {{sectorInfo.stats.sums_finalPrice['EUR'] | formatCurrencyValue}}</td>
 			</tr>
 		</table>
 	</section>

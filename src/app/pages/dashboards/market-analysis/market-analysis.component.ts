@@ -9,7 +9,7 @@ import {ISector, IStats} from '../../../app.interfaces';
 })
 export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	private error: string;
-	private sectors: Array<ISector>;
+	private sectors_stats: Array<{ sector: ISector, stats: IStats }> = [];
 	private viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	} = {
@@ -37,13 +37,11 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	}
 
 	display(data: IStats): void {
+		this.sectorInfos=[];
 		this.viz.sectors_stats = null;
-		this.sectors = [];
 		if (data) {
 			this.viz.sectors_stats = data.sectors_stats;
-			this.sectors = data.sectors_stats.map(s => {
-				return s.sector;
-			});
+			this.sectors_stats = data.sectors_stats;
 		}
 	}
 
