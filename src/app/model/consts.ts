@@ -1212,7 +1212,8 @@ export const Consts = {
 			'#35978f',
 			'#01665e',
 			'#003c30'],
-		single: ['#66A4D9']
+		single: ['#66A4D9'],
+		single2: ['#35978f']
 	}
 
 };

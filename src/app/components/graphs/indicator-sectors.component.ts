@@ -53,7 +53,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
-				domain: Consts.colors.diverging
+				domain: Consts.colors.single2
 			}
 		},
 		select: (event) => {
@@ -89,7 +89,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
-				domain: Consts.colors.diverging
+				domain: Consts.colors.single2
 			}
 		},
 		select: (event) => {
