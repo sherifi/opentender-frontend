@@ -2,7 +2,7 @@
 	@include span-columns(12);
 
 	background-color: $white;
-	border-radius: 10px;
+	border-radius: 5px;
 	height: auto;
 	margin-bottom: $base-padding;
 	position: relative;
@@ -58,7 +58,7 @@
 
 img.card-image, .card-image-placeholder {
 	border-bottom: 4px solid $light-gray;
-	border-radius: 10px 10px 0 0;
+	border-radius: 5px 5px 0 0;
 	width: 100%;
 
 	&:hover,

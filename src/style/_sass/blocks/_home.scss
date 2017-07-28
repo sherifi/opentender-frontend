@@ -70,14 +70,20 @@ home-tabs {
   padding-top: 0;
 }
 
+.portal-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  @include respond-to(small-up) {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+  }
+}
+
 .portal-link {
-  min-width: 100%;
-  max-width: 100%;
-  display: inline-block;
-  padding-left: 8px;
-  padding-right: 8px;
   border-bottom: 1px solid #f9f9f9;
-  font-size: 1.3em;
+  font-size: 1.2em;
   line-height: 2em;
   border-top: 1px solid $base-border-color;
 
@@ -86,8 +92,6 @@ home-tabs {
   }
 
   @include respond-to(small-up) {
-    min-width: 50%;
-    max-width: 50%;
     font-size: 0.9em;
   }
   &.active {
@@ -95,7 +99,7 @@ home-tabs {
   }
 
   > span:last-of-type {
-    font-size: 0.8em;
+    font-size: 0.7em;
     float: right;
   }
 }

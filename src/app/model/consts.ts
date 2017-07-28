@@ -1212,7 +1212,7 @@ export const Consts = {
 			'#35978f',
 			'#01665e',
 			'#003c30'],
-		single: ['#d70206']
+		single: ['#66A4D9']
 	}
 
 };

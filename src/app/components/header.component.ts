@@ -24,4 +24,8 @@ export class HeaderComponent {
 		return (routerurl === '/')
 	}
 
+	public isActiveStart(routerurl: string) {
+		return (routerurl === '/start')
+	}
+
 }
