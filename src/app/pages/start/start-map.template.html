@@ -2,8 +2,17 @@
 	<portal-map [portals]="portals"></portal-map>
 </div>
 <div class="container-left-6">
-	<div class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.current}">
-		<span><a href="/{{portal.id}}">{{portal.name}}</a></span>
-		<span>{{portal.count | formatNumber}} Tenders</span>
-	</div>
+	<ul class="portal-links">
+		<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.current}">
+			<span><a href="/{{portal.id}}">{{portal.name}}</a></span>
+			<span>{{portal.count | formatNumber}} Tenders</span>
+		</li>
+	</ul>
+	<ul class="portal-links">
+		<li class="portal-link"></li>
+		<li class="portal-link" [ngClass]="{active:allportal.current}">
+			<span><a href="/eu">All available data</a></span>
+			<span>{{allportal.count | formatNumber}} Tenders</span>
+		</li>
+	</ul>
 </div>

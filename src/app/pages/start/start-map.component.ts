@@ -11,6 +11,7 @@ import {ICountryStats} from '../../app.interfaces';
 })
 export class StartMapComponent {
 	portals = [];
+	allportal = {};
 
 	constructor(private api: ApiService, private portalService: PortalsService, private countryService: CountryService) {
 		this.api.getPortalsStats().subscribe(
@@ -34,13 +35,19 @@ export class StartMapComponent {
 			}
 		});
 		data['eu'] = count_all;
-		this.portals = ps.map(p => {
-			return {
+		this.portals = [];
+		ps.forEach(p => {
+			let portal = {
 				id: p.id,
 				name: p.name,
 				count: data[p.id] || 0,
 				current: currentCountry.id === p.id
 			};
+			if (p.id !== 'eu') {
+				this.portals.push(portal);
+			} else {
+				this.allportal = portal;
+			}
 		});
 	}
 }
