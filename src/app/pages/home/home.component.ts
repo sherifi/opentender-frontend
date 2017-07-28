@@ -3,7 +3,7 @@ import {CountryService} from '../../services/country.service';
 import {Router} from '@angular/router';
 import {Consts} from '../../model/consts';
 import {ApiService} from '../../services/api.service';
-import {IStats} from '../../app.interfaces';
+import {IStats, IStatsLotsInYears} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 
@@ -22,46 +22,11 @@ export class HomePage implements OnInit {
 		{icon: 'icon-flag', url: '/dashboards/corruption-indicators', title: 'Corruption Risk Indicators', subtitle: 'Indicators', text: Consts.IPSUM},
 		{icon: 'icon-library', url: '/dashboards/administrative-capacity-indicators', title: 'Administrative Capacity Indicators', subtitle: 'Indicators', text: Consts.IPSUM}
 	];
-	private charts: {
-		lots_in_years: IChartBar;
+	public viz: {
+		lots_in_years: IStatsLotsInYears;
 	} = {
-		lots_in_years: {
-			chart: {
-				schemeType: 'ordinal',
-				view: {
-					def: {width: 1024, height: 320},
-					min: {height: 320},
-					max: {height: 320}
-				},
-				xAxis: {
-					show: true,
-					showLabel: true,
-					label: 'Years',
-					defaultHeight: 20,
-					tickFormatting: Utils.formatYear
-				},
-				yAxis: {
-					show: true,
-					showLabel: true,
-					label: 'Number of Tender Lots',
-					defaultWidth: 30,
-					minInterval: 1,
-					tickFormatting: Utils.formatValue
-				},
-				showGridLines: true,
-				gradient: false,
-				colorScheme: {
-					domain: Consts.colors.single
-				}
-			},
-			select: (event) => {
-			},
-			onLegendLabelClick: (event) => {
-			},
-			data: null
-		},
+		lots_in_years: null
 	};
-
 
 	constructor(public router: Router, private api: ApiService, private countryService: CountryService) {
 		this.country = countryService.get().name;
@@ -79,11 +44,10 @@ export class HomePage implements OnInit {
 	}
 
 	private display(data: IStats) {
-		this.charts.lots_in_years.data = null;
-		if (data.histogram_lots_awardDecisionDate) {
-			this.charts.lots_in_years.data = Object.keys(data.histogram_lots_awardDecisionDate).map((key) => {
-				return {name: key, value: data.histogram_lots_awardDecisionDate[key]};
-			});
+		if (!data) {
+			this.viz = {lots_in_years: null};
+		} else {
+			this.viz.lots_in_years = data.histogram_lots_awardDecisionDate;
 		}
 	}
 }

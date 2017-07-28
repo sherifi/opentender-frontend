@@ -62,6 +62,7 @@ import {GraphAuthoritiesComponent} from './components/graphs/authorities.compone
 import {GraphCompaniesComponent} from './components/graphs/companies.component';
 import {GraphCountsComponent} from './components/graphs/counts.component';
 import {GraphHistogramComponent} from './components/graphs/histogram.component';
+import {GraphHomeHistogramComponent} from './components/graphs/home-histogram.component';
 import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
 import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
@@ -139,6 +140,7 @@ const AppConfig = {
 		GraphAuthoritiesComponent,
 		GraphCompaniesComponent,
 		GraphNutsMapComponent,
+		GraphHomeHistogramComponent,
 
 		DefinedPipe,
 		EuropamLinkPipe,
