@@ -7,7 +7,7 @@
   $base-font-color: $dark-gray !default;
   $pagination-border-color: silver;
   $pagination-border: 1px solid $pagination-border-color;
-  $pagination-background: #fff;
+  $pagination-background: $primary-button-color;
   $pagination-hover-background: darken($pagination-background, 5);
   $pagination-color: $base-font-color;
   $pagination-disabled-color: lighten($pagination-color, 40%);
@@ -41,7 +41,7 @@
     a {
       padding: ($base-spacing / 4) ($gutter / 2);
       @include transition (all 0.2s ease-in-out);
-      background: $pagination-background;
+      background-color: $pagination-background;
       border-radius: $base-border-radius;
       border: $pagination-border;
       text-decoration: none;
@@ -51,7 +51,7 @@
       display: block;
 
       &:hover {
-        background: $pagination-hover-background;
+        background-color: $pagination-hover-background;
         color: $action-color;
       }
     }

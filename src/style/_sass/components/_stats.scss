@@ -10,7 +10,7 @@
   }
 
   li {
-    border-right: 1px solid transparentize($base-font-color, 0.8);
+    border-right: 1px solid #ebebeb;
     color: $stats-color;
     display: inline-block;
     font-size: 1.2em;
@@ -31,7 +31,7 @@
   }
 
   li:first-of-type {
-    border-left: 1px solid transparentize($base-font-color, 0.8);
+      border-left: 1px solid #ebebeb;
   }
 }
 
