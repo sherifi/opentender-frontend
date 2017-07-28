@@ -26,16 +26,47 @@ pie {
 graph {
   display: block;
   width: 100%;
+  margin-top: 20px;
 }
 
 .graph-toolbar {
   text-align: right;
-  width: 100%;
-
+  display: block;
+  //width: 100%;
   button {
     font-size: 0.8em;
   }
 }
+.graph-header {
+  margin-bottom: 3px;
+
+  .graph-title {
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    @include respond-to(small-down) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .graph-toolbar {
+    float: right;
+    display: inline-block;
+
+    @include respond-to(small-down) {
+      float: inherit;
+      display: block;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
 
 .nutsmap_leaflet {
   width: 100%;

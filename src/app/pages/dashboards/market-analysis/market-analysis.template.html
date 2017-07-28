@@ -8,27 +8,7 @@
 		</div>
 		<div class="container">
 			<div class="container-left-12">
-				<div class="title">Structure by Tender Count</div>
-				<ngx-charts-tree-map
-						class="chart-container"
-						[chart]="charts.cpvs_code_main.chart"
-						[data]="charts.cpvs_code_main.data"
-						(select)="charts.cpvs_code_main.select($event)"
-						(legendLabelClick)="charts.cpvs_code_main.onLegendLabelClick($event)">
-				</ngx-charts-tree-map>
-			</div>
-		</div>
-		<br>
-		<div class="container">
-			<div class="container-left-12">
-				<div class="title">Volume by Sector in €</div>
-				<ngx-charts-tree-map
-						class="chart-container"
-						[chart]="charts.cpvs_code_main_volume.chart"
-						[data]="charts.cpvs_code_main_volume.data"
-						(select)="charts.cpvs_code_main_volume.select($event)"
-						(legendLabelClick)="charts.cpvs_code_main_volume.onLegendLabelClick($event)">
-				</ngx-charts-tree-map>
+				<graph market-treemap [data]="viz.sectors_stats"></graph>
 			</div>
 		</div>
 		<br>
