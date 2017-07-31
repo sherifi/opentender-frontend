@@ -8,7 +8,12 @@ export class TitleService {
 	defaultName = 'Opentender Portal';
 
 	constructor(private activatedRoute: ActivatedRoute, private country: CountryService, private router: Router, private titleService: Title) {
-		this.defaultName += ' ' + country.get().name;
+		let c = country.get();
+		if (c.id) {
+			this.defaultName += ' ' + c.name;
+		} else {
+			this.defaultName = 'Opentender Portals';
+		}
 		router.events.subscribe(e => {
 				if (e instanceof NavigationStart) {
 					this.setDefault();
