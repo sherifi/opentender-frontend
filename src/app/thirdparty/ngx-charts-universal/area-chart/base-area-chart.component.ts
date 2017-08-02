@@ -15,7 +15,7 @@ export interface IAreaChartData {
 	series?: Array<IAreaChartData>;
 }
 
-export abstract class BaseAreaChartComponent extends BaseXYAxisComponent {
+export class BaseAreaChartComponent extends BaseXYAxisComponent {
 	@Input() chart: IChartAreaSettings;
 	@Input() data: Array<IChartData>;
 	@Output() select: EventEmitter<any>;
@@ -44,7 +44,9 @@ export abstract class BaseAreaChartComponent extends BaseXYAxisComponent {
 		super(chartElement, zone, cd, platform);
 	}
 
-	abstract updateSet(): Array<IAreaChartData>;
+	updateSet(): Array<IAreaChartData> {
+		return null; // "abstract"
+	}
 
 	updateDomains(): void {
 		if (this.chart.timeline) {

@@ -19,7 +19,8 @@
     "lint": "tslint \"src/**/*.ts\"",
     "schema": "cd bin && node schema2ts.js",
     "langs": "cd bin && node languages2files.js",
-    "debug": "node --debug-brk dist/server/index.js"
+    "debug": "node --debug-brk dist/server/index.js",
+    "docs": "typedoc --inlineSourceMap --mode file --out ./dist/docs ./src"
   },
   "dependencies": {
     "@angular/animations": "^4.3.1",
@@ -87,11 +88,14 @@
     "webpack": "^3.3.0",
     "webpack-bundle-analyzer": "2.8.3",
     "webpack-merge": "=4.1.0",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "reflect-metadata": "latest",
+    "@angular/tsc-wrapped": "latest"
   },
   "devDependencies": {
     "dtsgenerator": "=0.9.5",
     "nodemon": "=1.11.0",
+    "typedoc": "^0.8.0",
     "xml-lite": "=0.8.1"
   }
 }

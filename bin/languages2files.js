@@ -62,22 +62,20 @@ let runNGi18n = function (cb) {
 	}
 
 	console.log('run ng-xi18n');
-	let cliOptions = new tsc.I18nExtractionCliOptions({project: dest});
-	tsc.main(dest, cliOptions, extract)
-		.then(function (exitCode) {
-			fs.copySync(path.join(dest, 'src/i18n/messages.xlf'), source_message);
-			removeDest();
-			console.log(source_message, 'written');
-			fs.readFile(source_message, (err, data) => {
-				if (err) return cb(err);
-				cb(null, data);
-			});
-		})
-		.catch(function (e) {
-			console.log('error');
-			removeDest();
-			cb(e);
+	let cliOptions = new tsc.I18nExtractionCliOptions({project: dest, i18nFormat: 'xlf'});
+	tsc.main(dest, cliOptions, extract, { noEmit: true }).then(function (exitCode) {
+		fs.copySync(path.join(dest, 'src/i18n/messages.xlf'), source_message);
+		removeDest();
+		console.log(source_message, 'written');
+		fs.readFile(source_message, (err, data) => {
+			if (err) return cb(err);
+			cb(null, data);
 		});
+	}).catch((e) => {
+		console.log('error');
+		removeDest();
+		cb(e);
+	});
 };
 
 let getLangs = function (cb) {
@@ -87,7 +85,7 @@ let getLangs = function (cb) {
 		files.forEach(file => {
 			let base = path.basename(file).split('.');
 			if (base.length === 3) {
-				if (base[0] === 'messages' && base[2] == 'xlf') {
+				if (base[0] === 'messages' && base[2] === 'xlf') {
 					langs.push(base[1]);
 				}
 			}

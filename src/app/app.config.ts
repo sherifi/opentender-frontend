@@ -5,8 +5,8 @@ import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
+import {AppRoutingModule} from './app.routes';
 
-import {routing, appRoutingProviders}  from './app.routes';
 import {App} from './app.component';
 
 import {DefinedPipe} from './directives/defined.pipe';
@@ -192,18 +192,16 @@ const AppConfig = {
 		SVGCountryGroupDirective
 	],
 	imports: [
-		routing,
 		FormsModule,
 		DropdownModule,
 		NgxChartsModule,
 		CommonTooltipModule,
 		SliderModule,
-		TypeaheadModule
-		// LeafletModule
+		TypeaheadModule,
+		AppRoutingModule
 	],
 	providers: [
 		{provide: 'portals', useValue: Portals},
-		appRoutingProviders,
 		TitleService,
 		PortalsService,
 		CountryService,

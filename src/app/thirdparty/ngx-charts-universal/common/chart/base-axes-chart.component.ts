@@ -5,7 +5,7 @@ import {IChartXYAxisSettings, IChartData} from '../../chart.interface';
 import {ColorHelper} from '../../utils/color.helper';
 import {IDomain, ILegendOptions} from '../common.interface';
 
-export abstract class BaseXYAxisComponent extends BaseChartComponent {
+export class BaseXYAxisComponent extends BaseChartComponent {
 	@Input() chart: IChartXYAxisSettings;
 	@Input() data: Array<IChartData>;
 	@Input() activeEntries: any[];
@@ -33,17 +33,29 @@ export abstract class BaseXYAxisComponent extends BaseChartComponent {
 		super(chartElement, zone, cd, platform);
 	}
 
-	abstract getXScale();
+	getXScale(){
+		return null; // "abstract"
+	}
 
-	abstract getYScale();
+	getYScale(){
+		return null; // "abstract"
+	}
 
-	abstract getXDomain(): IDomain;
+	getXDomain(): IDomain{
+		return null; // "abstract"
+	}
 
-	abstract getYDomain(): IDomain;
+	getYDomain(): IDomain{
+		return null; // "abstract"
+	}
 
-	abstract getLegendOptions(): ILegendOptions;
+	getLegendOptions(): ILegendOptions{
+		return null; // "abstract"
+	}
 
-	abstract getColorDomain(): IDomain;
+	getColorDomain(): IDomain{
+		return null; // "abstract"
+	}
 
 	updateDomains(): void {
 	}

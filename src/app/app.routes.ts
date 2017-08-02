@@ -1,4 +1,4 @@
-import {ModuleWithProviders} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {AboutOpentenderPage} from './pages/about/opentender/opentender.component';
@@ -79,6 +79,14 @@ export const routes: Routes = [
 	{path: '**', redirectTo: 'start'}
 ];
 
-export const appRoutingProviders: any[] = [];
+// export const appRoutingProviders: any[] = [];
+//
+// export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+	declarations: [],
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
