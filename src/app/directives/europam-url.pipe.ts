@@ -5,6 +5,6 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class EuropamLinkPipe implements PipeTransform {
 	transform(value: string, args: any[]): string {
-		return 'http://europam.eu/?module=legislation' + (value !== 'Europe' ? '&country=' + value : '');
+		return 'http://europam.eu/?module=country-profile' + (value !== 'Europe' ? '&country=' + value : '') + '#info_PP';
 	}
 }
