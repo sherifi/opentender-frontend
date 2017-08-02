@@ -202,11 +202,11 @@
 				<div [hidden]="lot.$open">
 					<div class="margined-text" *ngIf="lot.title | defined">{{lot.title}}</div>
 					<div class="grid" *ngIf="lot.bids | defined">
-						<div [ngClass]="{'grid-item-2':lot.bids.length>1,'grid-item-1':lot.bids.length<=1}" *ngFor="let bid of lot.bids; let index_b = index">
-							<div class="margined-text" *ngIf="!lot.title && (lot.description | defined)">{{lot.description}}</div>
+						<div [ngClass]="{'grid-item-2':lot.bids.length>1,'grid-item-1':lot.bids.length<=1}" *ngFor="let bid of lot.bids">
+							<div class="margined-text" *ngIf="!lot.title && lot.description">{{lot.description}}</div>
 							<div class="container container-padded-top-lite">
-								<div class="container-left-8">
-									<div class="lot-bidder" *ngFor="let bidder of bid.bidders; let index_c = index">
+s								<div class="container-left-8">
+									<div class="lot-bidder" *ngFor="let bidder of bid.bidders">
 										<tender-body-line [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.groupId"></tender-body-line>
 									</div>
 								</div>
@@ -270,9 +270,9 @@
 						<div class="container-left-8">
 							<h4>Bids</h4>
 							<div *ngIf="lot.bids | defined">
-								<div *ngFor="let bid of lot.bids; let index_b = index">
+								<div *ngFor="let bid of lot.bids">
 									<div class="container-left-8">
-										<div *ngFor="let bidder of bid.bidders; let index_c = index">
+										<div *ngFor="let bidder of bid.bidders">
 											<div *ngIf="bid.bidders | defined">
 												<tender-body [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.groupId"></tender-body>
 											</div>
@@ -291,9 +291,9 @@
 											<h4>Is Subcontracted</h4>
 											{{bid.isSubcontracted}}
 										</div>
-										<div class="inline-info" *ngIf="bid.subcontactedValue | defined">
+										<div class="inline-info" *ngIf="bid.subcontractedValue | defined">
 											<h4>Subcontacted Value</h4>
-											<tender-price [price]="bid.subcontactedValue"></tender-price>
+											<tender-price [price]="bid.subcontractedValue"></tender-price>
 										</div>
 										<div class="inline-info" *ngIf="bid.unitPrices | defined">
 											<h4 *ngIf="bid.unitPrices.length>0">Unit Prices</h4>
@@ -364,11 +364,11 @@
 			<collapse-expand [o]="state.documents" [title]="'Documents'"></collapse-expand>
 		</h3>
 		<div *ngIf="state.documents.$open" class="container slab-beta-light container-padded-large">
-			<div class="container-left-4" *ngFor="let document of tender.documents; let index_d=index">
+			<div class="container-left-4" *ngFor="let doc of tender.documents; let index_d=index">
 				<h4>Nr. {{index_d}}</h4>
-				<div class="inline-info" *ngIf="pub.url | defined">
+				<div class="inline-info" *ngIf="doc.url | defined">
 					<h4>URL</h4>
-					<a href="{{pub.url}}">{{pub.url | extractdomain}}</a>
+					<a href="{{doc.url}}">{{doc.url | extractdomain}}</a>
 				</div>
 			</div>
 		</div>
@@ -376,9 +376,9 @@
 
 	<section class="container">
 		<h3>
-			<collapse-expand [o]="state.additionals" [title]="'Additional Information'"></collapse-expand>
+			<collapse-expand [o]="state.additional" [title]="'Additional Information'"></collapse-expand>
 		</h3>
-		<div *ngIf="state.additionals.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.additional.$open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-4">
 				<h4>Tender Information</h4>
 				<div class="inline-info" *ngIf="tender.isEInvoiceAccepted | defined">

@@ -384,6 +384,10 @@ declare namespace Definitions {
 		 */
 		estimatedDurationInDays?: number;
 		/**
+		 * Estimated tender duration in years
+		 */
+		estimatedDurationInYears?: number;
+		/**
 		 * Envisaged maximum number of participatns to the framework agreement
 		 */
 		maxFrameworkAgreementParticipants?: number;
@@ -726,6 +730,10 @@ declare namespace Definitions {
 		 * Estimated tender duration in days
 		 */
 		estimatedDurationInDays?: number;
+		/**
+		 * Estimated tender duration in years
+		 */
+		estimatedDurationInYears?: number;
 		/**
 		 * awardDeadlineDuration
 		 */

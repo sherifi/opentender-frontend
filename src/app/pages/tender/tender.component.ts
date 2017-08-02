@@ -20,7 +20,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		buyer: {$open: true},
 		info: {$open: true},
 		desc: {$open: true},
-		additionals: {$open: false},
+		additional: {$open: false},
 		documents: {$open: false},
 		publications: {$open: false},
 		raw: {$open: false},
@@ -29,7 +29,7 @@ export class TenderPage implements OnInit, OnDestroy {
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private portals: PortalsService, private country: CountryService, private platform: PlatformService) {
 		if (!this.platform.isBrowser) {
-			this.state.additionals.$open = true;
+			this.state.additional.$open = true;
 			this.state.documents.$open = true;
 			this.state.publications.$open = true;
 			this.state.raw.$open = true;
