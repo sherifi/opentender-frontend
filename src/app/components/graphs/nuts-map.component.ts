@@ -5,6 +5,7 @@ import {ApiService} from '../../services/api.service';
 import GeoJSON = L.GeoJSON;
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import * as d3 from 'd3';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'graph[nutsmap]',
@@ -31,7 +32,7 @@ export class GraphNutsMapComponent implements OnChanges {
 	private geolayer: GeoJSON;
 	private leaflet_options = {};
 
-	constructor(private api: ApiService, private platform: PlatformService) {
+	constructor(private api: ApiService, private platform: PlatformService, private router: Router) {
 		this.initMap();
 	}
 
@@ -54,6 +55,9 @@ export class GraphNutsMapComponent implements OnChanges {
 					});
 					layer.on('mouseout', (e) => {
 						popup.closePopup();
+					});
+					layer.on('click', (e) => {
+						this.router.navigate(['/region/' + feature.properties['id']]);
 					});
 				}),
 				style: (feature) => {

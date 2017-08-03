@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {PlatformService} from '../services/platform.service';
 import {ApiService} from '../services/api.service';
 import {IStatsNuts} from '../app.interfaces';
 
@@ -14,7 +13,7 @@ export class HomeMapComponent {
 	private map_data: IStatsNuts = null;
 	private formatTooltip: (featureProperties: any) => string;
 
-	constructor(private api: ApiService, private platform: PlatformService) {
+	constructor(private api: ApiService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
 		this.fillMap();
 	}

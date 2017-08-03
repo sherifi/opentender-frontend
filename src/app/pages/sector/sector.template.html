@@ -9,6 +9,10 @@
 	<section class="container">
 		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
 		<h1>{{sector.name}}</h1>
+		<div *ngIf="parent_sectors.length>0">
+			<div class="title">Parent CPV:</div>
+			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">CPV{{val.id}}: {{val.name}}</a></div>
+		</div>
 	</section>
 
 	<section class="container container-margin">
@@ -22,12 +26,8 @@
 				<graph sum_prices [data]="vis.sums_finalPrice"></graph>
 			</div>
 			<div class="container-left-6">
-				<div *ngIf="parent_sectors.length>0">
-					<div class="title">Parent CPV:</div>
-					<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">CPV{{val.id}}: {{val.name}}</a></div>
-				</div>
 				<div *ngIf="vis.cpvs_codes">
-					<graph sectors [data]="vis.cpvs_codes"></graph>
+					<graph sectors [data]="vis.cpvs_codes" [title]="'Subsectors'"></graph>
 				</div>
 			</div>
 		</div>

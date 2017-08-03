@@ -3,6 +3,7 @@ import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsPcCpvs} from '../../app.interfaces';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'graph[indicator-sectors]',
@@ -57,6 +58,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			}
 		},
 		select: (event) => {
+			this.router.navigate(['/sector/' + event.id]);
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -93,6 +95,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			}
 		},
 		select: (event) => {
+			this.router.navigate(['/sector/' + event.id]);
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -101,7 +104,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 
 	graph: IChartBar = this.cpvs_codes_average;
 
-	constructor() {
+	constructor(private router: Router) {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -121,10 +124,10 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 				return 0;
 			});
 			this.cpvs_codes_average.data = codes.map((code) => {
-				return {name: code.name, value: code.percent};
+				return {id: code.id, name: code.name, value: code.percent};
 			});
 			this.cpvs_codes_absolute.data = codes.map((code) => {
-				return {name: code.name, value: code.value};
+				return {id: code.id, name: code.name, value: code.value};
 			});
 		}
 	}

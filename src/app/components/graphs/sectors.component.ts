@@ -3,11 +3,12 @@ import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsPcCpvs} from '../../app.interfaces';
+import {Router} from '@angular/router';
 
 @Component({
 	selector: 'graph[sectors]',
 	template: `
-		<div class="title">Sectors</div>
+		<div class="title">{{title}}</div>
 		<ngx-charts-bar-horizontal
 				class="chart-container"
 				[chart]="graph.chart"
@@ -19,6 +20,8 @@ import {IStatsPcCpvs} from '../../app.interfaces';
 export class GraphSectorsComponent implements OnChanges {
 	@Input()
 	data: IStatsPcCpvs;
+	@Input()
+	title: string = 'Sectors';
 
 	cpvs_codes_absolute: IChartBar = {
 		chart: {
@@ -48,10 +51,13 @@ export class GraphSectorsComponent implements OnChanges {
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
-					domain: Consts.colors.single2
+				domain: Consts.colors.single2
 			}
 		},
 		select: (event) => {
+			if (event.id) {
+				this.router.navigate(['/sector/' + event.id]);
+			}
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -60,14 +66,14 @@ export class GraphSectorsComponent implements OnChanges {
 
 	graph: IChartBar = this.cpvs_codes_absolute;
 
-	constructor() {
+	constructor(private router: Router) {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.cpvs_codes_absolute.data = [];
 		if (this.data) {
 			this.cpvs_codes_absolute.data = Object.keys(this.data).map((key) => {
-				return {name: this.data[key].name, value: this.data[key].value};
+				return {id: key, name: this.data[key].name, value: this.data[key].value};
 			});
 			this.cpvs_codes_absolute.data.sort((a, b) => {
 				if (a.value > b.value) {
@@ -80,7 +86,7 @@ export class GraphSectorsComponent implements OnChanges {
 			});
 			let othergroup;
 			let othergroupcount = 0;
-			while (this.cpvs_codes_absolute.data.length > 9) {
+			while (this.cpvs_codes_absolute.data.length - 9 > 2) {
 				if (!othergroup) {
 					othergroup = {name: '', value: 0};
 				}
