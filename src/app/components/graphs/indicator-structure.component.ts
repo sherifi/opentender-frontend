@@ -8,10 +8,6 @@ import {Consts} from '../../model/consts';
 	selector: 'graph[indicator-structure]',
 	template: `
 		<div class="title">Structure of {{indicator}}</div>
-		<div class="graph-toolbar">
-			<!--<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>-->
-			<!--<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>-->
-		</div>
 		<ngx-charts-pie-chart
 				class="chart-container"
 				[chart]="graph.chart"
@@ -31,7 +27,7 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 320},
+				def: {width: 500, height: 320},
 				min: {height: 320},
 				max: {height: 320}
 			},

@@ -31,7 +31,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 330},
+				def: {width: 500, height: 330},
 				min: {height: 320},
 				max: {height: 320}
 			},
@@ -68,7 +68,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 330},
+				def: {width: 500, height: 330},
 				min: {height: 320},
 				max: {height: 320}
 			},
@@ -105,7 +105,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 330},
+				def: {width: 500, height: 330},
 				min: {height: 320},
 				max: {height: 320}
 			},
