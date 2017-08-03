@@ -3,8 +3,8 @@
 		<div class="container-left-10 hero">
 			<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
 			<p>
-				Welcome to the portal for {{country}}!<br/>
-				This platform is part of the <a class="link-charlie" href="http://digiwhist.eu">DIGIWHIST project</a><br>
+				<ng-container i18n>Welcome to the portal for {{country}}!</ng-container><br/>
+				<ng-container i18n>This platform is part of the <a class="link-charlie" href="http://digiwhist.eu">DIGIWHIST project</a></ng-container><br>
 			</p>
 		</div>
 		<div class="container-right-2">
@@ -26,7 +26,7 @@
 <section class="slab-beta-dark container-padded">
 	<div class="container-outer">
 		<div class="container-left-3">
-			<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h4>
+			<h4 i18n>You can select between different ways of interacting with the data using these tiles. They are interconnected so the same full data depth can be accessed in different ways.</h4>
 		</div>
 		<div class="container-left-9">
 			<article class="card" *ngFor="let card of cards; let i = index;">
@@ -47,5 +47,5 @@
 
 <section class="slab-alpha container-padded u-centered u-padding-small_screen home-bottom-links">
 	<h3 i18n>Not sure where to go? Start&nbsp;here&nbsp;…</h3>
-	<h3><a [routerLink]="['/documentation']" i18n>Learn what is this about <span class="icon-chevron-thin-right icon-pull-down icon-padded"></span></a></h3>
+	<h3><a [routerLink]="['/documentation']"><ng-container i18n>Learn what is this about</ng-container> <span class="icon-chevron-thin-right icon-pull-down icon-padded"></span></a></h3>
 </section>

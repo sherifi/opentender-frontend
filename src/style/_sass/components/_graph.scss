@@ -26,7 +26,6 @@ pie {
 graph {
   display: block;
   width: 100%;
-  margin-top: 20px;
 }
 
 .graph-toolbar {
@@ -37,8 +36,17 @@ graph {
     font-size: 0.8em;
   }
 }
+
+
+.graph-title {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+
 .graph-header {
   margin-bottom: 3px;
+  margin-top: 20px;
 
   .graph-title {
     line-height: 30px;
@@ -66,7 +74,6 @@ graph {
     }
   }
 }
-
 
 .nutsmap_leaflet {
   width: 100%;

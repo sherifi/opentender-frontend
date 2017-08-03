@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 @Component({
 	selector: 'graph[indicator-sectors]',
 	template: `
-		<div class="title">Tenders with {{indicator}} per Sector</div>
+		<div class="graph-title">Tenders with {{indicator}} per Sector</div>
 		<div class="graph-toolbar">
 			<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>
 			<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>

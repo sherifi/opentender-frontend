@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[indicator-structure]',
 	template: `
-		<div class="title">Structure of {{indicator}}</div>
+		<div class="graph-title">Structure of {{indicator}}</div>
 		<ngx-charts-pie-chart
 				class="chart-container"
 				[chart]="graph.chart"

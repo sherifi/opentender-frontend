@@ -7,7 +7,7 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 @Component({
 	selector: 'graph[indicator-histogram]',
 	template: `
-		<div class="title">Contracts (Lots) with {{indicator}} per Year</div>
+		<div class="graph-title">Contracts (Lots) with {{indicator}} per Year</div>
 		<div class="graph-toolbar">
 			<button class="tool-button" [ngClass]="{down:this.graph==this.lots_pc_in_years}" (click)="this.graph=this.lots_pc_in_years">Average</button>
 			<button class="tool-button" [ngClass]="{down:this.graph==this.lots_in_years}" (click)="this.graph=this.lots_in_years">Absolute</button>
