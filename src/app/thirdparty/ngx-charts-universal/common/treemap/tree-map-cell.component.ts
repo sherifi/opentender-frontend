@@ -61,7 +61,7 @@ export class MeasureDirective implements OnChanges {
         [attr.height]="height"
         class="label"
       	>
-        <xhtml:p measure class="treemap-box" [measureTrigger]="measureTrigger" (measured)="onMeasureTextBox($event)"
+        <xhtml:p measure class="treemap-box" (click)="onClick()" [measureTrigger]="measureTrigger" (measured)="onMeasureTextBox($event)"
           [style.color]="textColor"
           [style.height.px]="height"
           [style.width.px]="width"
