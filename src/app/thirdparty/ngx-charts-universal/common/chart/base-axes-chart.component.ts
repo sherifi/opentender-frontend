@@ -33,27 +33,27 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 		super(chartElement, zone, cd, platform);
 	}
 
-	getXScale(){
+	getXScale() {
 		return null; // "abstract"
 	}
 
-	getYScale(){
+	getYScale() {
 		return null; // "abstract"
 	}
 
-	getXDomain(): IDomain{
+	getXDomain(): IDomain {
 		return null; // "abstract"
 	}
 
-	getYDomain(): IDomain{
+	getYDomain(): IDomain {
 		return null; // "abstract"
 	}
 
-	getLegendOptions(): ILegendOptions{
+	getLegendOptions(): ILegendOptions {
 		return null; // "abstract"
 	}
 
-	getColorDomain(): IDomain{
+	getColorDomain(): IDomain {
 		return null; // "abstract"
 	}
 

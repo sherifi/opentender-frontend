@@ -73,6 +73,7 @@ export class YAxisComponent implements OnChanges {
 	@ViewChild(YAxisTicksComponent) ticksComponent: YAxisTicksComponent;
 
 	ngOnChanges(changes: SimpleChanges): void {
+		this.labelOffset = this.defaultWidth;
 		this.update();
 	}
 

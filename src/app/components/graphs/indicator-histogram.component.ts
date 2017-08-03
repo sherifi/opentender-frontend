@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsPcLotsInYears} from '../../app.interfaces';
+import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 
 @Component({
 	selector: 'graph[indicator-histogram]',
@@ -10,7 +10,8 @@ import {IStatsPcLotsInYears} from '../../app.interfaces';
 		<div class="title">Contracts (Lots) with {{indicator}} per Year</div>
 		<div class="graph-toolbar">
 			<button class="tool-button" [ngClass]="{down:this.graph==this.lots_pc_in_years}" (click)="this.graph=this.lots_pc_in_years">Average</button>
-			<button class="tool-button" [ngClass]="{down:this.graph==this.lots_in_years}"  (click)="this.graph=this.lots_in_years">Absolute</button>
+			<button class="tool-button" [ngClass]="{down:this.graph==this.lots_in_years}" (click)="this.graph=this.lots_in_years">Absolute</button>
+			<button class="tool-button" [ngClass]="{down:this.graph==this.sums_Prices_in_years}" (click)="this.graph=this.sums_Prices_in_years">Volume (€)</button>
 		</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
@@ -22,7 +23,7 @@ import {IStatsPcLotsInYears} from '../../app.interfaces';
 })
 export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
-	data: IStatsPcLotsInYears;
+	data: IStatsPcPricesLotsInYears;
 	@Input()
 	indicator: string = 'Indicators';
 
@@ -100,6 +101,44 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		data: null
 	};
 
+	sums_Prices_in_years: IChartBar = {
+		chart: {
+			schemeType: 'ordinal',
+			view: {
+				def: {width: 470, height: 330},
+				min: {height: 320},
+				max: {height: 320}
+			},
+			xAxis: {
+				show: true,
+				showLabel: true,
+				label: 'Year',
+				defaultHeight: 20,
+				tickFormatting: Utils.formatYear
+			},
+			yAxis: {
+				show: true,
+				showLabel: true,
+				label: 'Volumne of Contracts (€)',
+				defaultWidth: 80,
+				tickFormatting: Utils.formatCurrencyValue
+			},
+			valueFormatting: (value: number) => {
+				return '€ ' + Utils.formatCurrencyValue(value);
+			},
+			showGridLines: true,
+			gradient: false,
+			colorScheme: {
+				domain: Consts.colors.single
+			}
+		},
+		select: (event) => {
+		},
+		onLegendLabelClick: (event) => {
+		},
+		data: null
+	};
+
 	graph: IChartBar = this.lots_pc_in_years;
 
 	constructor() {
@@ -114,6 +153,9 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			});
 			this.lots_in_years.data = Object.keys(this.data).map((key) => {
 				return {name: key, value: this.data[key].value};
+			});
+			this.sums_Prices_in_years.data = Object.keys(this.data).map((key) => {
+				return {name: key, value: this.data[key].sums_finalPrice['EUR'] || 0};
 			});
 		}
 	}

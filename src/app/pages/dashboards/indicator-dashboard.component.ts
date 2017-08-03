@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears, IStatsCompanies, IStatsAuthorities} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -21,7 +21,7 @@ export class DashboardsIndicatorComponent {
 	private vis: {
 		top_companies: IStatsCompanies,
 		top_authorities: IStatsAuthorities,
-		lots_in_years: IStatsPcLotsInYears,
+		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
 		terms_indicators: IStatsIndicators
 	} = {
@@ -66,7 +66,7 @@ export class DashboardsIndicatorComponent {
 			return;
 		}
 
-		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate;
+		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice;
 		vis.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		vis.terms_indicators = stats.terms_indicators;
 		vis.top_companies = stats.top_companies;
@@ -74,10 +74,10 @@ export class DashboardsIndicatorComponent {
 
 		this.vis = vis;
 
-		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate) {
+		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice) {
 			let startYear = 0;
 			let endYear = 0;
-			Object.keys(stats.histogram_pc_lots_awardDecisionDate).forEach((key) => {
+			Object.keys(stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice).forEach((key) => {
 				let year = parseInt(key, 10);
 				startYear = startYear == 0 ? year : Math.min(year, startYear);
 				endYear = endYear == 0 ? year : Math.max(year, endYear);

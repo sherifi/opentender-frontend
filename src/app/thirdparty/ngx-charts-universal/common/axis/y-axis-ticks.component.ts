@@ -105,9 +105,9 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 			setTimeout(() => {
 				this.dimensionsChanged.emit({width: this.width});
 			});
-			// if (this.platform.isBrowser) {
-			// 	setTimeout(() => this.updateDims());
-			// }
+			if (this.platform.isBrowser) {
+				setTimeout(() => this.updateDims());
+			}
 		}
 	}
 

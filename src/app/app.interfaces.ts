@@ -39,14 +39,6 @@ export interface ICompany {
 	country?: string;
 }
 
-export interface IStatsPcLotsInYears {
-	[year: string]: {
-		total: number;
-		value: number;
-		percent: number;
-	};
-}
-
 export interface IStatsLotsInYears {
 	[year: string]: number;
 }
@@ -78,6 +70,23 @@ export interface IStatsSumPrices {
 	[currency: string]: number;
 }
 
+export interface IStatsPcLotsInYears {
+	[year: string]: {
+		total: number;
+		value: number;
+		percent: number;
+	};
+}
+
+export interface IStatsPcPricesLotsInYears {
+	[year: string]: {
+		total: number;
+		value: number;
+		percent: number;
+		sums_finalPrice: IStatsSumPrices;
+	};
+}
+
 export interface IStatsAuthorities {
 	top10: Array<IAuthority>;
 }
@@ -102,6 +111,7 @@ export interface IStats {
 	terms_indicators: IStatsIndicators;
 	histogram_lots_awardDecisionDate: IStatsLotsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
+	histogram_pc_lots_awardDecisionDate_sums_finalPrice: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 }
 
