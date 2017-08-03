@@ -88,6 +88,7 @@ import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, T
 import {TenderTableComponent} from './components/tables/table.tender.component';
 import {TreeViewComponent, AboutDataformatPage} from './pages/about/data/dataformat.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
+import {I18NComponent} from './components/i18n.component';
 
 import {ApiService} from './services/api.service';
 import {ConfigService} from './services/config.service';
@@ -96,6 +97,7 @@ import {PlatformService} from './services/platform.service';
 import {PortalsService} from './services/portals.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
+import {I18NService} from './services/i18n.service';
 
 import * as Portals from 'portals.json';
 
@@ -143,6 +145,7 @@ const AppConfig = {
 		GraphCompaniesComponent,
 		GraphNutsMapComponent,
 		GraphHomeHistogramComponent,
+		I18NComponent,
 
 		DefinedPipe,
 		EuropamLinkPipe,
@@ -208,6 +211,7 @@ const AppConfig = {
 		ConfigService,
 		StateService,
 		PlatformService,
+		I18NService,
 		Title,
 		ApiService
 	]
