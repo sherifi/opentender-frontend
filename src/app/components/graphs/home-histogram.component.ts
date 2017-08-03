@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[home-histogram]',
 	template: `
-		<div class="title">Available Tender Lots per Year</div>
+		<div class="graph-title">Available Tender Lots per Year</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"

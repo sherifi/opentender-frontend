@@ -68,7 +68,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 470, height: 716},
+				def: {width: 500, height: 716},
 				min: {height: 716},
 				max: {height: 716}
 			},
