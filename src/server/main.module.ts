@@ -33,14 +33,29 @@ const config = {
 
 // Trick the Universal Obj Cache into different instances
 
-@NgModule(config)
+@NgModule({
+	bootstrap: config.bootstrap,
+	declarations: config.declarations,
+	imports: config.imports,
+	providers: config.providers
+})
 export class MainModuleEN {
 }
 
-@NgModule(config)
+@NgModule({
+	bootstrap: config.bootstrap,
+	declarations: config.declarations,
+	imports: config.imports,
+	providers: config.providers
+})
 export class MainModuleDE {
 }
 
-@NgModule(config)
+@NgModule({
+	bootstrap: config.bootstrap,
+	declarations: config.declarations,
+	imports: config.imports,
+	providers: config.providers
+})
 export class MainModuleES {
 }
