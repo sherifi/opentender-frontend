@@ -56,14 +56,14 @@ export class SectorPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
+			this.error = null;
 			this.api.getSectorStats({id: id}).subscribe(
 				(result) => this.display(result.data),
 				(error) => {
-					this.error = error._body;
-					// console.error(error);
+					this.error = error._body.statusText || 'Connection refused.';
 				},
 				() => {
-					// console.log('sector complete');
+					// console.log('c complete');
 				});
 		});
 	}
@@ -103,14 +103,14 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		let filters = this.buildFilters();
+		this.error = null;
 		this.api.getSectorStats({id: this.sector.id, filters: filters}).subscribe(
 			(result) => this.displayStats(result.data.stats),
 			(error) => {
-				this.error = error._body;
-				// console.error(error);
+				this.error = error._body.statusText || 'Connection refused.';
 			},
 			() => {
-				// console.log('market analysis complete');
+				// console.log('sector stats complete');
 			});
 	}
 
@@ -169,7 +169,6 @@ export class SectorPage implements OnInit, OnDestroy {
 		if (viz.subsectors) {
 			viz.cpvs_codes = {};
 			viz.subsectors.forEach(sub => {
-				console.log(sub);
 				viz.cpvs_codes[sub.sector.id] = {
 					name: sub.sector.name, value: sub.sector.value, percent: 5, total: 100
 				};

@@ -23,7 +23,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	public similar: Array<ICompany> = [];
 	public search_similars = {};
 
-	private vis: {
+	private viz: {
 		authority_nuts: IStatsNuts,
 		top_authorities: IStatsAuthorities,
 		counts: IStatsCounts,
@@ -139,7 +139,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	}
 
 	displayStats(data: { stats: IStats }): void {
-		let vis = {
+		let viz = {
 			authority_nuts: null,
 			top_authorities: null,
 			sums_finalPrice: null,
@@ -148,17 +148,17 @@ export class CompanyPage implements OnInit, OnDestroy {
 			lots_in_years: null
 		};
 		if (!data || !data.stats) {
-			this.vis = vis;
+			this.viz = viz;
 			return;
 		}
 		let stats = data.stats;
-		vis.lots_in_years = stats.histogram_lots_awardDecisionDate;
-		vis.counts = stats.count_lots_bids;
-		vis.cpvs_codes = stats.terms_main_cpv_divisions;
-		vis.sums_finalPrice = stats.sums_finalPrice;
-		vis.top_authorities = stats.top_authorities;
-		vis.authority_nuts = stats.terms_authority_nuts;
-		this.vis = vis;
+		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
+		viz.counts = stats.count_lots_bids;
+		viz.cpvs_codes = stats.terms_main_cpv_divisions;
+		viz.sums_finalPrice = stats.sums_finalPrice;
+		viz.top_authorities = stats.top_authorities;
+		viz.authority_nuts = stats.terms_authority_nuts;
+		this.viz = viz;
 	}
 
 	searchChange(data) {

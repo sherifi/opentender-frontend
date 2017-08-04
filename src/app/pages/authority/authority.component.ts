@@ -23,7 +23,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public similar: Array<IAuthority> = [];
 	public search_similars = {};
 
-	private vis: {
+	private viz: {
 		top_companies: IStatsCompanies,
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
@@ -123,7 +123,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	displayStats(data: { stats: IStats }): void {
-		let vis = {
+		let viz = {
 			top_companies: null,
 			sums_finalPrice: null,
 			cpvs_codes: null,
@@ -132,17 +132,17 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			company_nuts: null
 		};
 		if (!data || !data.stats) {
-			this.vis = vis;
+			this.viz = viz;
 			return;
 		}
 		let stats = data.stats;
-		vis.lots_in_years = stats.histogram_lots_awardDecisionDate;
-		vis.sums_finalPrice = stats.sums_finalPrice;
-		vis.cpvs_codes = stats.terms_main_cpv_divisions;
-		vis.counts = stats.count_lots_bids;
-		vis.top_companies = stats.top_winning_companies;
-		vis.company_nuts = stats.terms_company_nuts;
-		this.vis = vis;
+		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
+		viz.sums_finalPrice = stats.sums_finalPrice;
+		viz.cpvs_codes = stats.terms_main_cpv_divisions;
+		viz.counts = stats.count_lots_bids;
+		viz.top_companies = stats.top_winning_companies;
+		viz.company_nuts = stats.terms_company_nuts;
+		this.viz = viz;
 	}
 
 

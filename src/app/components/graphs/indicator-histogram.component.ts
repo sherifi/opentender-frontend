@@ -12,7 +12,7 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 			<div class="graph-toolbar graph-toolbar-left">
 				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')">Nr. of Contracts</button>
 				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')">Volume (€)</button>
-				<button class="tool-button" [ngClass]="{down:mode==='score'}" (click)="toggleValue('score')">Score</button>
+				<!--<button class="tool-button" [ngClass]="{down:mode==='score'}" (click)="toggleValue('score')">Score</button>-->
 			</div>
 			<div class="graph-toolbar graph-toolbar-right">
 				<button class="tool-button" [ngClass]="{down:!absolute}" (click)="toggleAbsolute(false)">Average</button>

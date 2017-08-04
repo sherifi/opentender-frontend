@@ -18,7 +18,7 @@ export class DashboardsIndicatorComponent {
 
 	private error: string;
 	private search_cmd: SearchCommand;
-	private vis: {
+	private viz: {
 		top_companies: IStatsCompanies,
 		top_authorities: IStatsAuthorities,
 		lots_in_years: IStatsPcPricesLotsInYears,
@@ -54,7 +54,7 @@ export class DashboardsIndicatorComponent {
 	}
 
 	display(stats: IStats): void {
-		let vis = {
+		let viz = {
 			top_companies: null,
 			top_authorities: null,
 			lots_in_years: null,
@@ -62,17 +62,17 @@ export class DashboardsIndicatorComponent {
 			terms_indicators: null
 		};
 		if (!stats) {
-			this.vis = vis;
+			this.viz = viz;
 			return;
 		}
 
-		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
-		vis.cpvs_codes = stats.terms_pc_main_cpv_divisions;
-		vis.terms_indicators = stats.terms_indicators;
-		vis.top_companies = stats.top_companies;
-		vis.top_authorities = stats.top_authorities;
+		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
+		viz.terms_indicators = stats.terms_indicators;
+		viz.top_companies = stats.top_companies;
+		viz.top_authorities = stats.top_authorities;
 
-		this.vis = vis;
+		this.viz = viz;
 
 		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;

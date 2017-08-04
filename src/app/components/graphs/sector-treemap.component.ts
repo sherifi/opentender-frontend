@@ -78,7 +78,6 @@ export class GraphSectorTreemap implements OnChanges {
 		this.cpv_codes_nr.data = null;
 		this.cpv_codes_prices.data = null;
 		if (this.data) {
-			console.log(this.data);
 			this.cpv_codes_nr.data = this.data.map(s => {
 				return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
 			});

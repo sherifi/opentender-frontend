@@ -14,13 +14,13 @@
 		Error: {{error}}
 	</section>
 	<section class="container container-margin">
-		<h2>{{sector.name}}</h2>
 
-		<div *ngIf="parent_sectors.length>0">
-			<div class="title">Parent CPV:</div>
-			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">CPV{{val.id}}: {{val.name}}</a></div>
+		<div *ngIf="parent_sectors.length>0" class="pull-right">
+			<div class="title">Parent Sectors:</div>
+			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a> </div>
 		</div>
 
+		<h2>{{sector.name}} (CPV {{sector.id}})</h2>
 		<div *ngIf="filter.time">
 			<slider
 					[min]="filter.time.startYear"
