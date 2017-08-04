@@ -164,14 +164,14 @@ export const TenderColumns: Array<TenderColumn> = [
 			if (!tender.lots) {
 				return [];
 			}
-			let companies = {}; // TODO: use bidder.stable_id if available someday
+			let companies = {};
 			tender.lots.forEach((lot: Lot, index_l: number) => {
 				if (lot.bids) {
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Body) => {
-								companies[bidder.name] = companies[bidder.name] || {bidder: bidder, lots: [], link: '/company/' + bidder.groupId};
-								companies[bidder.name].lots.push(index_l + 1);
+								companies[bidder.groupId] = companies[bidder.name] || {bidder: bidder, lots: [], link: '/company/' + bidder.groupId};
+								companies[bidder.groupId].lots.push(index_l + 1);
 							});
 						}
 					});
@@ -347,9 +347,26 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
-		name: 'CPV Code',
-		id: 'cpvs',
-		group: 'Tender Meta Data',
+		name: 'Main Sector',
+		id: 'cpvs.main.names',
+		group: 'Sector',
+		sortBy: {
+			id: 'cpvs.code',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.cpvs) {
+				return [];
+			}
+			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
+				return {content: cpv['name'] || cpv.code, link: '/sector/' + cpv.code};
+			});
+		}
+	},
+	{
+		name: 'Sectors',
+		id: 'cpvs.names',
+		group: 'Sector',
 		sortBy: {
 			id: 'cpvs.code',
 			ascend: true
@@ -359,11 +376,41 @@ export const TenderColumns: Array<TenderColumn> = [
 				return [];
 			}
 			return tender.cpvs.map(cpv => {
-				let result: TableLine = {content: cpv.code};
-				if (cpv.isMain) {
-					result.link = '/sector/' + cpv.code;
-				}
-				return result;
+				return {list: true, content: cpv['name'] || cpv.code, link: '/sector/' + cpv.code};
+			});
+		}
+	},
+	{
+		name: 'Main CPV Code',
+		id: 'cpvs.main.codes',
+		group: 'Sector',
+		sortBy: {
+			id: 'cpvs.code',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.cpvs) {
+				return [];
+			}
+			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
+				return {content: cpv.code, link: '/sector/' + cpv.code};
+			});
+		}
+	},
+	{
+		name: 'CPV Codes',
+		id: 'cpvs.codes',
+		group: 'Sector',
+		sortBy: {
+			id: 'cpvs.code',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.cpvs) {
+				return [];
+			}
+			return tender.cpvs.map(cpv => {
+				return {list: true, content: cpv.code, link: '/sector/' + cpv.code};
 			});
 		}
 	},
