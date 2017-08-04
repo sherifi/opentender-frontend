@@ -66,7 +66,7 @@ export class DashboardsIndicatorComponent {
 			return;
 		}
 
-		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice;
+		vis.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		vis.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		vis.terms_indicators = stats.terms_indicators;
 		vis.top_companies = stats.top_companies;
@@ -74,10 +74,10 @@ export class DashboardsIndicatorComponent {
 
 		this.vis = vis;
 
-		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice) {
+		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;
 			let endYear = 0;
-			Object.keys(stats.histogram_pc_lots_awardDecisionDate_sums_finalPrice).forEach((key) => {
+			Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
 				let year = parseInt(key, 10);
 				startYear = startYear == 0 ? year : Math.min(year, startYear);
 				endYear = endYear == 0 ? year : Math.max(year, endYear);

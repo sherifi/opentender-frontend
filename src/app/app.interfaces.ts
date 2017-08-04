@@ -66,7 +66,7 @@ export interface IStatsNuts {
 	[nutscode: string]: number;
 }
 
-export interface IStatsSumPrices {
+export interface IStatsPrices {
 	[currency: string]: number;
 }
 
@@ -83,7 +83,8 @@ export interface IStatsPcPricesLotsInYears {
 		total: number;
 		value: number;
 		percent: number;
-		sums_finalPrice: IStatsSumPrices;
+		sums_finalPrice: IStatsPrices;
+		avgs_finalPrice: IStatsPrices;
 	};
 }
 
@@ -103,7 +104,7 @@ export interface IStats {
 	terms_main_cpv_divisions: IStatsCpvs;
 	terms_main_cpv_full: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
-	sums_finalPrice: IStatsSumPrices;
+	sums_finalPrice: IStatsPrices;
 	top_winning_companies: IStatsCompanies;
 	top_companies: IStatsCompanies;
 	top_authorities: IStatsAuthorities;
@@ -111,7 +112,7 @@ export interface IStats {
 	terms_indicators: IStatsIndicators;
 	histogram_lots_awardDecisionDate: IStatsLotsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
-	histogram_pc_lots_awardDecisionDate_sums_finalPrice: IStatsPcPricesLotsInYears;
+	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 }
 

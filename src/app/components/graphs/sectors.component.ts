@@ -34,7 +34,7 @@ export class GraphSectorsComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Tenders in Sector',
+				label: 'Nr. of Contracts',
 				minInterval: 1,
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc

@@ -56,14 +56,14 @@
 		<h2>Indicators</h2>
 		<div class="container">
 			<div class="container-left-6">
-				<graph histogram [data]="vis.lots_in_years"></graph>
+				<graph histogram [data]="viz.lots_in_years"></graph>
 				<br/>
-				<graph counts [data]="vis.counts"></graph>
+				<graph counts [data]="viz.counts"></graph>
 				<br/>
-				<graph sum_prices [data]="vis.sums_finalPrice"></graph>
+				<graph sum_prices [data]="viz.sums_finalPrice"></graph>
 			</div>
 			<div class="container-left-6">
-				<graph sectors [data]="vis.cpvs_codes"></graph>
+				<graph sectors [data]="viz.cpvs_codes"></graph>
 			</div>
 		</div>
 	</section>
@@ -71,11 +71,11 @@
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6">
-				<graph authorities [data]="vis.top_authorities"></graph>
+				<graph authorities [data]="viz.top_authorities"></graph>
 			</div>
 			<div class="container-left-6">
 				<h2>Buyers by Regions</h2>
-				<graph nutsmap [data]="vis.authority_nuts" [level]="1"></graph>
+				<graph nutsmap [data]="viz.authority_nuts" [level]="1"></graph>
 			</div>
 		</div>
 	</section>

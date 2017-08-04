@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSumPrices, IStatsAuthorities, IStatsCompanies, ISectorStats} from '../../app.interfaces';
+import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -12,28 +12,38 @@ import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsSu
 	templateUrl: 'sector.template.html'
 })
 export class SectorPage implements OnInit, OnDestroy {
-	public sector: ISector;
-	public parent_sectors: Array<ISector> = [];
-	public error: string;
-	public search_cmd: SearchCommand;
-	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
+	private sector: ISector;
+	private parent_sectors: Array<ISector> = [];
+	private error: string;
+	private search_cmd: SearchCommand;
+	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
-	vis: {
-		subgroups: Array<any>,
+	private viz: {
+		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_companies: IStatsCompanies,
 		top_authorities: IStatsAuthorities,
-		sums_finalPrice: IStatsSumPrices,
+		sums_finalPrice: IStatsPrices,
 		lots_in_years: IStatsLotsInYears,
 		cpvs_codes: IStatsPcCpvs,
 		counts: IStatsCounts
 	} = {
-		subgroups: [],
+		subsectors: [],
 		top_companies: null,
 		top_authorities: null,
 		sums_finalPrice: null,
 		lots_in_years: null,
 		cpvs_codes: null,
 		counts: null
+	};
+	private filter: {
+		time?: {
+			startYear: number;
+			endYear: number;
+			selectedStartYear: number;
+			selectedEndYear: number;
+		}
+	} = {
+		time: null
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService) {
@@ -65,6 +75,45 @@ export class SectorPage implements OnInit, OnDestroy {
 		});
 	}
 
+	onSliderChange(event) {
+		if (!this.filter.time) {
+			return;
+		}
+		this.filter.time.selectedStartYear = event.startValue;
+		this.filter.time.selectedEndYear = event.endValue;
+		this.visualize();
+		this.search();
+	}
+
+	buildFilters() {
+		let filters = [];
+		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
+			let yearFilter: SearchCommandFilter = {
+				field: 'lots.awardDecisionDate',
+				type: 'range',
+				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
+			};
+			filters.push(yearFilter);
+		}
+		return filters;
+	}
+
+	visualize() {
+		if (!this.sector) {
+			return;
+		}
+		let filters = this.buildFilters();
+		this.api.getSectorStats({id: this.sector.id, filters: filters}).subscribe(
+			(result) => this.displayStats(result.data.stats),
+			(error) => {
+				this.error = error._body;
+				// console.error(error);
+			},
+			() => {
+				// console.log('market analysis complete');
+			});
+	}
+
 	display(data: ISectorStats): void {
 		this.sector = null;
 		this.parent_sectors = [];
@@ -76,13 +125,28 @@ export class SectorPage implements OnInit, OnDestroy {
 		if (data.sector) {
 			this.titleService.set(data.sector.name);
 		}
+
 		this.displayStats(data.stats);
 		this.search();
 	}
 
 	displayStats(data: IStats): void {
-		let vis = {
-			subgroups: [],
+		if (!this.filter.time && data.histogram_lots_awardDecisionDate) {
+			let startYear = 0;
+			let endYear = 0;
+			Object.keys(data.histogram_lots_awardDecisionDate).forEach((key) => {
+				let year = parseInt(key, 10);
+				startYear = startYear === 0 ? year : Math.min(year, startYear);
+				endYear = endYear === 0 ? year : Math.max(year, endYear);
+			});
+			this.filter.time = {
+				startYear, endYear,
+				selectedStartYear: startYear,
+				selectedEndYear: endYear
+			};
+		}
+		let viz = {
+			subsectors: null,
 			top_authorities: null,
 			top_companies: null,
 			sums_finalPrice: null,
@@ -91,46 +155,35 @@ export class SectorPage implements OnInit, OnDestroy {
 			counts: null
 		};
 		if (!data) {
-			this.vis = vis;
+			this.viz = viz;
 			return;
 		}
-		vis.cpvs_codes = data.terms_main_cpv_categories || data.terms_main_cpv_groups || data.terms_main_cpv_categories || data.terms_main_cpv_full;
-		vis.lots_in_years = data.histogram_lots_awardDecisionDate;
-		vis.counts = data.count_lots_bids;
-		vis.sums_finalPrice = data.sums_finalPrice;
-		vis.top_companies = data.top_companies;
-		vis.top_authorities = data.top_authorities;
+		viz.cpvs_codes = null;
+		viz.lots_in_years = data.histogram_lots_awardDecisionDate;
+		viz.counts = data.count_lots_bids;
+		viz.sums_finalPrice = data.sums_finalPrice;
+		viz.top_companies = data.top_companies;
+		viz.top_authorities = data.top_authorities;
+		viz.subsectors = data.sectors_stats;
 
-		if (vis.cpvs_codes) {
-			Object.keys(vis.cpvs_codes).forEach(key => {
-				if (this.sector && key !== this.sector.id) {
-					vis.subgroups.push({id: key, name: vis.cpvs_codes[key].name, value: vis.cpvs_codes[key].value});
-				}
-			});
-			vis.subgroups.sort((a, b) => {
-				if (a.value > b.value) {
-					return -1;
-				}
-				if (a.value < b.value) {
-					return 1;
-				}
-				if (a.name < b.name) {
-					return -1;
-				}
-				if (a.name > b.name) {
-					return 1;
-				}
-				return 0;
+		if (viz.subsectors) {
+			viz.cpvs_codes = {};
+			viz.subsectors.forEach(sub => {
+				console.log(sub);
+				viz.cpvs_codes[sub.sector.id] = {
+					name: sub.sector.name, value: sub.sector.value, percent: 5, total: 100
+				};
 			});
 		}
 
-		this.vis = vis;
+		this.viz = viz;
 	}
 
 	search() {
 		if (!this.sector) {
 			return;
 		}
+		let filters = this.buildFilters();
 		let subfilter: SearchCommandFilter = {
 			field: 'cpvs.isMain',
 			type: 'term',
@@ -142,8 +195,9 @@ export class SectorPage implements OnInit, OnDestroy {
 			value: [this.sector.id],
 			and: [subfilter]
 		};
+		filters.push(filter);
 		let search_cmd = new SearchCommand();
-		search_cmd.filters = [filter];
+		search_cmd.filters = filters;
 		this.search_cmd = search_cmd;
 	}
 

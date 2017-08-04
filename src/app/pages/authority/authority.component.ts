@@ -5,7 +5,7 @@ import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import Buyer = Definitions.Buyer;
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsSumPrices, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsPrices, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
 import {CountryService, Country} from '../../services/country.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		top_companies: IStatsCompanies,
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
-		sums_finalPrice: IStatsSumPrices,
+		sums_finalPrice: IStatsPrices,
 		company_nuts: IStatsNuts,
 		lots_in_years: IStatsLotsInYears
 	} = {

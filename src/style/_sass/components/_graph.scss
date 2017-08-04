@@ -29,20 +29,16 @@ graph {
 }
 
 .graph-toolbar {
-  text-align: right;
   display: block;
-  //width: 100%;
   button {
     font-size: 0.8em;
   }
 }
 
-
 .graph-title {
   font-size: 0.9em;
   font-weight: bold;
 }
-
 
 .graph-header {
   margin-bottom: 3px;
@@ -59,7 +55,6 @@ graph {
   }
 
   .graph-toolbar {
-    float: right;
     display: inline-block;
 
     @include respond-to(small-down) {
@@ -73,6 +68,27 @@ graph {
       margin-bottom: 0;
     }
   }
+
+}
+
+.graph-toolbar-container {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 3px;
+
+  button {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.graph-toolbar-left {
+  float: left;
+}
+
+.graph-toolbar-right {
+  float: right;
+  text-align: right;
 }
 
 .nutsmap_leaflet {

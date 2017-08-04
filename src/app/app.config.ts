@@ -100,6 +100,7 @@ import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 
 import * as Portals from 'portals.json';
+import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 
 const AppConfig = {
 	declarations: [
@@ -145,6 +146,7 @@ const AppConfig = {
 		GraphCompaniesComponent,
 		GraphNutsMapComponent,
 		GraphHomeHistogramComponent,
+		GraphSectorTreemap,
 		I18NComponent,
 
 		DefinedPipe,

@@ -91,6 +91,10 @@ export class ApiService {
 		return this.http.get(this.actionCountryUrl + 'company/id/' + id).map(res => <ICompanyApiResult>res.json());
 	}
 
+	getSector(id: string): Observable<ISectorApiResult> {
+		return this.http.get(this.actionCountryUrl + 'sector/id/' + id).map(res => <ISectorApiResult>res.json());
+	}
+
 	getCompanyNutsStats(): Observable<INutsApiResult> {
 		return this.http.get(this.actionCountryUrl + 'company/nuts').map(res => <INutsApiResult>res.json());
 	}

@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {IStatsSumPrices} from '../../app.interfaces';
+import {IStatsPrices} from '../../app.interfaces';
 
 @Component({
 	selector: 'graph[sum_prices]',
@@ -11,7 +11,7 @@ import {IStatsSumPrices} from '../../app.interfaces';
 })
 export class GraphSumPricesComponent implements OnChanges {
 	@Input()
-	data: IStatsSumPrices;
+	data: IStatsPrices;
 	sum_prices = [];
 
 	constructor() {

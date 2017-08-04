@@ -9,9 +9,11 @@ import {Router} from '@angular/router';
 	selector: 'graph[indicator-sectors]',
 	template: `
 		<div class="graph-title">Tenders with {{indicator}} per Sector</div>
-		<div class="graph-toolbar">
-			<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>
-			<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>
+		<div class="graph-toolbar-container">
+			<div class="graph-toolbar graph-toolbar-right">
+				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>
+				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>
+			</div>
 		</div>
 		<ngx-charts-bar-horizontal
 				class="chart-container"
@@ -31,14 +33,14 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 716},
-				min: {height: 716},
-				max: {height: 716}
+				def: {width: 500, height: 722},
+				min: {height: 722},
+				max: {height: 722}
 			},
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Average % of Tender in Sector',
+				label: 'Average % of Contracts',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},
@@ -68,14 +70,14 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 716},
-				min: {height: 716},
-				max: {height: 716}
+				def: {width: 500, height: 722},
+				min: {height: 722},
+				max: {height: 722}
 			},
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Tenders in Sector',
+				label: 'Nr. of Contracts',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},

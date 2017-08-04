@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[home-histogram]',
 	template: `
-		<div class="graph-title">Available Tender Lots per Year</div>
+		<div class="graph-title">Available Contracts (Lots) per Year</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"
@@ -38,7 +38,7 @@ export class GraphHomeHistogramComponent implements OnChanges {
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Number of Tender Lots',
+				label: 'Number of Contracts (Lots)',
 				defaultWidth: 44,
 				minInterval: 1,
 				tickFormatting: Utils.formatValue

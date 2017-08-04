@@ -6,7 +6,7 @@ import {ISector, IStats} from '../../app.interfaces';
 import {Router} from '@angular/router';
 
 @Component({
-	selector: 'graph[market-treemap]',
+	selector: 'graph[sector-treemap]',
 	template: `
 		<div class="graph-header">
 			<div class="graph-title">Sector Overview</div>
@@ -25,11 +25,11 @@ import {Router} from '@angular/router';
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-tree-map>`
 })
-export class GraphMarketTreemap implements OnChanges {
+export class GraphSectorTreemap implements OnChanges {
 	@Input()
 	data: Array<{ sector: ISector; stats: IStats }>;
 
-	cpvs_code_main: IChartTreeMap = {
+	cpv_codes_nr: IChartTreeMap = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -48,7 +48,7 @@ export class GraphMarketTreemap implements OnChanges {
 		data: null
 	};
 
-	cpvs_code_main_volume: IChartTreeMap = {
+	cpv_codes_prices: IChartTreeMap = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -69,19 +69,20 @@ export class GraphMarketTreemap implements OnChanges {
 		data: null
 	};
 
-	graph: IChartTreeMap = this.cpvs_code_main_volume;
+	graph: IChartTreeMap = this.cpv_codes_prices;
 
 	constructor(private router: Router) {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.cpvs_code_main.data = null;
-		this.cpvs_code_main_volume.data = null;
+		this.cpv_codes_nr.data = null;
+		this.cpv_codes_prices.data = null;
 		if (this.data) {
-			this.cpvs_code_main.data = this.data.map(s => {
+			console.log(this.data);
+			this.cpv_codes_nr.data = this.data.map(s => {
 				return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
 			});
-			this.cpvs_code_main_volume.data = this.data.map(s => {
+			this.cpv_codes_prices.data = this.data.map(s => {
 				return {name: s.sector.name, value: s.stats.sums_finalPrice['EUR'] || 0, id: s.sector.id};
 			});
 		}

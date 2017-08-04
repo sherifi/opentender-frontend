@@ -1,59 +1,88 @@
-<section class="container-outer authority entity" *ngIf="!sector">
+<section class="container-outer sector entity" *ngIf="!sector">
 	<section class="container">
-		<div class="entity-title">Sector</div>
+		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
 		<div *ngIf="error">Error: {{error}}</div>
 		<div *ngIf="!error">Loading...</div>
 	</section>
 </section>
+
 <section class="container-outer sector entity" *ngIf="sector">
 	<section class="container">
 		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
-		<h1>{{sector.name}}</h1>
+	</section>
+	<section class="container error" *ngIf="error">
+		Error: {{error}}
+	</section>
+	<section class="container container-margin">
+		<h2>{{sector.name}}</h2>
+
 		<div *ngIf="parent_sectors.length>0">
 			<div class="title">Parent CPV:</div>
 			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">CPV{{val.id}}: {{val.name}}</a></div>
 		</div>
-	</section>
 
+		<div *ngIf="filter.time">
+			<slider
+					[min]="filter.time.startYear"
+					[max]="filter.time.endYear"
+					[startValue]="filter.time.startYear"
+					[endValue]="filter.time.endYear"
+					stepValue="1"
+					defaultWidth="934"
+					(onSliderChange)="onSliderChange($event)"></slider>
+		</div>
+	</section>
+	<section class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
+		<div class="container">
+			<div class="container-left-12">
+				<graph sector-treemap [data]="viz.subsectors"></graph>
+			</div>
+		</div>
+	</section>
 	<section class="container container-margin">
-		<h2>Indicators</h2>
 		<div class="container">
 			<div class="container-left-6">
-				<graph histogram [data]="vis.lots_in_years"></graph>
-				<br/>
-				<graph counts [data]="vis.counts"></graph>
-				<br/>
-				<graph sum_prices [data]="vis.sums_finalPrice"></graph>
+				<graph histogram [data]="viz.lots_in_years"></graph>
 			</div>
 			<div class="container-left-6">
-				<div *ngIf="vis.cpvs_codes">
-					<graph sectors [data]="vis.cpvs_codes" [title]="'Subsectors'"></graph>
+				<div *ngIf="viz.cpvs_codes">
+					<graph sectors [data]="viz.cpvs_codes" [title]="'Subsectors'"></graph>
 				</div>
 			</div>
 		</div>
+		<!--<div class="container">-->
+			<!--<div class="container-left-6">-->
+				<!--<graph counts [data]="viz.counts"></graph>-->
+			<!--</div>-->
+			<!--<div class="container-left-6">-->
+				<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
+			<!--</div>-->
+		<!--</div>-->
 	</section>
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6">
-				<graph companies [data]="vis.top_companies"></graph>
+				<graph companies [data]="viz.top_companies"></graph>
 			</div>
 			<div class="container-left-6">
-				<graph authorities [data]="vis.top_authorities"></graph>
+				<graph authorities [data]="viz.top_authorities"></graph>
 			</div>
 		</div>
 		<div class="container">
-			<div class="container-left-6" *ngIf="vis.subgroups && vis.subgroups.length>0">
-				<h2>Subgroups</h2>
+			<div class="container-left-6" *ngIf="viz.subsectors && viz.subsectors.length>0">
+				<h2>Subsectors</h2>
 				<table class="tables">
 					<tr>
-						<th>Subgroup</th>
-						<th>Tenders</th>
+						<th>Subsector</th>
+						<th>Nr. of Contracts</th>
+						<th>Volume of Contracts</th>
 					</tr>
-					<tr *ngFor="let val of vis.subgroups">
+					<tr *ngFor="let val of viz.subsectors">
 						<td>
-							<a [routerLink]="'/sector/'+val.id">{{val.name}}</a>
+							<a [routerLink]="'/sector/'+val.sector.id">{{val.sector.name}}</a>
 						</td>
-						<td>{{val.value| formatNumber}}</td>
+						<td>{{val.sector.value| formatNumber}}</td>
+						<td>€ {{val.stats.sums_finalPrice['EUR'] | formatCurrencyValue}}</td>
 					</tr>
 				</table>
 			</div>
@@ -61,8 +90,8 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="container">
 		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
 	</section>
 </section>
+
