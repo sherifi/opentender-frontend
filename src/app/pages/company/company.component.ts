@@ -4,8 +4,8 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
+import {ConfigService, Country} from '../../services/config.service';
 import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, IStatsPrices, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
-import {CountryService, Country} from '../../services/country.service';
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
@@ -41,9 +41,8 @@ export class CompanyPage implements OnInit, OnDestroy {
 		lots_in_years: null
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
-				private state: StateService, private countryService: CountryService) {
-		this.country = countryService.get();
+	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService, private config: ConfigService) {
+		this.country = config.country;
 	}
 
 	ngOnInit(): void {

@@ -20,6 +20,7 @@ const extractor_1 = require('@angular/compiler-cli/src/extractor');
 const fs = require('fs-extra');
 const async = require('async');
 const path = require('path');
+const clone = require('clone');
 const XMLLite = require('xml-lite');
 
 /*************************************
@@ -31,11 +32,7 @@ const source_messages_path = path.join(source, 'src', 'i18n');
 const source_message = path.join(source, 'src', 'i18n', 'messages.xlf');
 
 function copyArray(source) {
-	let copy = [];
-	for (elem of source) {
-		copy.push(elem);
-	}
-	return copy;
+	return source.map(node => clone(node));
 }
 
 let removeDest = function () {
@@ -63,7 +60,7 @@ let runNGi18n = function (cb) {
 
 	console.log('run ng-xi18n');
 	let cliOptions = new tsc.I18nExtractionCliOptions({project: dest, i18nFormat: 'xlf'});
-	tsc.main(dest, cliOptions, extract, { noEmit: true }).then(function (exitCode) {
+	tsc.main(dest, cliOptions, extract, {noEmit: true}).then(function (exitCode) {
 		fs.copySync(path.join(dest, 'src/i18n/messages.xlf'), source_message);
 		removeDest();
 		console.log(source_message, 'written');
@@ -100,16 +97,12 @@ let packageLanguage = function (lang, content, cb) {
 	console.log('packaging to file', filename);
 	let nodes = xmljson.children[0].children[0].children[0].children;
 	nodes = nodes.filter(node => {
-		let target = null;
-		node.children = node.children.filter(subnode => {
-			if (subnode.tag === 'target') target = subnode;
-			return subnode.tag !== 'note';
-		});
-		if (!target || !target.children) return false;
-		return true;
+		node.children = node.children.filter(subnode => (subnode.tag === 'target'));
+		return node.children.length > 0;
 	});
 	xmljson.children[0].children[0].children[0].children = nodes;
-	let ts = "export const TRANSLATION_" + lang.toUpperCase() + " = `" + XMLLite.js2xml(xmljson) + "`;";
+	let s = XMLLite.js2xml(xmljson).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+	let ts = "export const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;";
 	fs.writeFile(filename, ts, cb)
 };
 
@@ -117,6 +110,7 @@ let updateLanguage = function (lang, currentNodes, cb) {
 	let transNodes = copyArray(currentNodes);
 
 	function getNodeIndexByTag(nodeList, tag) {
+		if (!nodeList) return -1;
 		for (let i = 0, iLen = nodeList.length; i < iLen; i++) {
 			if (nodeList[i].tag === tag) {
 				return i;
@@ -126,6 +120,7 @@ let updateLanguage = function (lang, currentNodes, cb) {
 	}
 
 	function getNodeIndexById(nodeList, id) {
+		if (!nodeList) return -1;
 		for (let i = 0, iLen = nodeList.length; i < iLen; i++) {
 			if (nodeList[i].attributes.id === id) {
 				return i;
@@ -135,34 +130,22 @@ let updateLanguage = function (lang, currentNodes, cb) {
 	}
 
 	let filename = path.join(source_messages_path, 'messages.' + lang + '.xlf');
-	console.log('merging to file', filename);
+	console.log('merging to ', lang, 'file', filename);
 	fs.readFile(filename, (err, content) => {
 		if (err) return cb(err);
 		let xmljson = XMLLite.xml2js(content.toString());
 		let nodes = xmljson.children[0].children[0].children[0].children;
-		nodes = nodes.map((node) => {
-			let i = getNodeIndexById(transNodes, node.attributes.id);
-			if (i === -1) {
-				console.log('Removing language node', lang, ':', JSON.stringify(node));
-				return null;
+		transNodes.forEach((transNode) => {
+			let i = getNodeIndexById(nodes, transNode.attributes.id);
+			if (i >= 0) {
+				let node = nodes[i];
+				let i_Target = getNodeIndexByTag(node.children, 'target');
+				if (i_Target >= 0) {
+					transNode.children.push(node.children[i_Target]);
+				}
 			}
-			let transNode = transNodes[i];
-
-			let i_transTarget = getNodeIndexByTag(transNode.children, 'target');
-			let i_Target = getNodeIndexByTag(node.children, 'target');
-			transNode.children[i_transTarget] = node.children[i_Target];
-
-			transNodes.splice(i, 1);
-			return transNode;
-			return true;
-		}).filter(node => {
-			return node;
 		});
-		if (transNodes.length > 0) {
-			console.log('Adding ', transNodes.length, ' Entries');
-			nodes = nodes.concat(transNodes);
-		}
-		xmljson.children[0].children[0].children[0].children = nodes;
+		xmljson.children[0].children[0].children[0].children = transNodes;
 		let xml = XMLLite.beautify(XMLLite.js2xml(xmljson));
 		fs.writeFile(filename, xml, function (err) {
 			if (err) return cb(err);

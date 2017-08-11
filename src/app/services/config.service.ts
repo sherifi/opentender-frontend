@@ -3,28 +3,34 @@
 import {Injectable, Inject} from '@angular/core';
 import {PlatformService} from './platform.service';
 
+export interface Country {
+	id: string;
+	name: string;
+	ip?: Country;
+	foi?: any;
+}
+
 @Injectable()
 export class ConfigService {
-	private _config: ClientConfig;
+	public config: ClientConfig;
+	public country: Country;
 	absUrl = '';
 
-	constructor(@Inject('config') externalConfig, @Inject('absurl') externalAbsUrl, private platform: PlatformService) {
+	constructor(@Inject('opentender') externalConfig, @Inject('absurl') externalAbsUrl, private platform: PlatformService) {
 		let config = externalConfig;
 		if (!config && this.platform.isBrowser) {
-			config = document['config'];
+			config = document['opentender'];
 		}
 		if (!platform.isBrowser) {
 			this.absUrl = externalAbsUrl;
 		}
 		if (config) {
-			this._config = config;
+			this.config = config.config;
+			this.country = config.country;
 		} else {
-			this._config = {backendUrl: null, version: 'unknown'};
+			this.config = {backendUrl: null, version: 'unknown'};
+			this.country = {id: null, name: 'General', foi: null};
 		}
-	}
-
-	get(value) {
-		return this._config[value];
 	}
 
 }

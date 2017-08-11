@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {Country, CountryService} from '../../services/country.service';
 import {PlatformService} from '../../services/platform.service';
+import {ConfigService, Country} from '../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -26,7 +26,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		discussion: {$open: false},
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private country: CountryService, private platform: PlatformService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService) {
 		if (!this.platform.isBrowser) {
 			this.state.additional.$open = true;
 			this.state.documents.$open = true;
@@ -34,7 +34,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.raw.$open = true;
 			this.state.discussion.$open = true;
 		}
-		this.portal = country.get();
+		this.portal = config.country;
 	}
 
 	ngOnInit(): void {

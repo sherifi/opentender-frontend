@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {CountryService} from '../../services/country.service';
 import {Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {IStats, IStatsLotsInYears} from '../../app.interfaces';
+import {ConfigService} from '../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -17,8 +17,8 @@ export class HomePage implements OnInit {
 		lots_in_years: null
 	};
 
-	constructor(public router: Router, private api: ApiService, private countryService: CountryService) {
-		this.country = countryService.get().name;
+	constructor(public router: Router, private api: ApiService, private config: ConfigService) {
+		this.country = config.country.name;
 	}
 
 	public ngOnInit(): void {

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {Country, CountryService} from '../../services/country.service';
 import {ICountryStats} from '../../app.interfaces';
+import {ConfigService, Country} from '../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -13,8 +13,8 @@ export class StartMapComponent {
 	allportal: ICountryStats;
 	current: Country;
 
-	constructor(private api: ApiService, private countryService: CountryService) {
-		this.current = this.countryService.get();
+	constructor(private api: ApiService, private config: ConfigService) {
+		this.current = this.config.country;
 		this.api.getPortalsStats().subscribe(
 			(result) => this.display(result.data),
 			(error) => console.error(error),

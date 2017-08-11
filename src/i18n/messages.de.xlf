@@ -1,6 +1,86 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" target-language="de" datatype="plaintext" original="ng2.template">
+  <file datatype="plaintext" original="ng2.template" source-language="en" target-language="de">
     <body>
+      <trans-unit id="ca7250a22d99c18f87ff541d7ff814e2f2855394" datatype="html">
+        <source>
+          This lists shows how much data per field is available.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/quality/quality.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
+          </context>
+        </context-group>
+        <target>
+          Diese Liste zeigt wieviel Daten in den jeweiligen Feldern verfügbar sind.
+        </target>
+      </trans-unit>
+      <trans-unit id="32a904abdc4745a632d092d39b944991ada0ba9d" datatype="html">
+        <source>
+          Show fields with 100% missing data
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/quality/quality.component.ts
+          </context>
+          <context context-type="linenumber">
+            13
+          </context>
+        </context-group>
+        <target>
+          Felder mit 100% fehlenden Daten anzeigen
+        </target>
+      </trans-unit>
+      <trans-unit id="87b5a4b1c81f74c0937d7ee1f9714d6fe67270ec" datatype="html">
+        <source>
+          Field Name
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/quality/quality.component.ts
+          </context>
+          <context context-type="linenumber">
+            21
+          </context>
+        </context-group>
+        <target>
+          Feldname
+        </target>
+      </trans-unit>
+      <trans-unit id="b7da3e3505cc80f9bf3cffc8444c53e8a9ec70a5" datatype="html">
+        <source>
+          Available
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/quality/quality.component.ts
+          </context>
+          <context context-type="linenumber">
+            22
+          </context>
+        </context-group>
+        <target>
+          Verfügbar
+        </target>
+      </trans-unit>
+      <trans-unit id="da5d7e263a3c6dc585d04844074afaa7229b88a0" datatype="html">
+        <source>
+          Missing
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/quality/quality.component.ts
+          </context>
+          <context context-type="linenumber">
+            24
+          </context>
+        </context-group>
+        <target>
+          Fehlend
+        </target>
+      </trans-unit>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
         <source>
           Making Public Tenders More Transparent
@@ -27,84 +107,9 @@
         <note priority="1" from="meaning">
           Banner Slogan Main Page
         </note>
-      </trans-unit>
-      <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
-        <source>
-          Not sure where to go? Start here …
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            112
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ca7250a22d99c18f87ff541d7ff814e2f2855394" datatype="html">
-        <source>
-          This lists shows how much data per field is available.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/quality/quality.component.ts
-          </context>
-          <context context-type="linenumber">
-            8
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="32a904abdc4745a632d092d39b944991ada0ba9d" datatype="html">
-        <source>
-          Show fields with 100% missing data
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/quality/quality.component.ts
-          </context>
-          <context context-type="linenumber">
-            13
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="87b5a4b1c81f74c0937d7ee1f9714d6fe67270ec" datatype="html">
-        <source>
-          Field Name
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/quality/quality.component.ts
-          </context>
-          <context context-type="linenumber">
-            21
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b7da3e3505cc80f9bf3cffc8444c53e8a9ec70a5" datatype="html">
-        <source>
-          Available
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/quality/quality.component.ts
-          </context>
-          <context context-type="linenumber">
-            22
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="da5d7e263a3c6dc585d04844074afaa7229b88a0" datatype="html">
-        <source>
-          Missing
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/quality/quality.component.ts
-          </context>
-          <context context-type="linenumber">
-            24
-          </context>
-        </context-group>
+        <target>
+          Öffentliche Ausschreibungen transparenter machen
+        </target>
       </trans-unit>
       <trans-unit id="eca2d8396269e745f5084483b58ba5ee32ce4a72" datatype="html">
         <source>
@@ -121,6 +126,9 @@
             6
           </context>
         </context-group>
+        <target>
+          Willkommen im Portal für &lt;x id="INTERPOLATION"/&gt;!
+        </target>
       </trans-unit>
       <trans-unit id="512bf9c0d4f7525c747098d506a7b11c2dd956b5" datatype="html">
         <source>
@@ -139,6 +147,9 @@
             8
           </context>
         </context-group>
+        <target>
+          Diese Plattform ist Teil des &lt;x ctype="x-a" id="START_LINK"/&gt;DIGIWHIST Projekts&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
         <source>
@@ -153,37 +164,6 @@
           </context>
         </context-group>
       </trans-unit>
-      <trans-unit id="35ff0c7c097243d436faa59dabe85512a571145a" datatype="html">
-        <source>
-          Learn what is this about
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            114
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="mainTitle" datatype="html">
-        <source>
-          test
-          <x id="INTERPOLATION">
-          </x>
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            1
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-      </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
         <source>
           Search and Find
@@ -196,6 +176,9 @@
             42
           </context>
         </context-group>
+        <target>
+          Suchen und Finden
+        </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>
@@ -209,6 +192,9 @@
             43
           </context>
         </context-group>
+        <target>
+          Suche
+        </target>
       </trans-unit>
       <trans-unit id="773956187369ec37b07123a55cc80153a3d99e2d" datatype="html">
         <source>
@@ -243,6 +229,9 @@
             54
           </context>
         </context-group>
+        <target>
+          Datenüberblick
+        </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
         <source>
@@ -256,6 +245,9 @@
             55
           </context>
         </context-group>
+        <target>
+          Marktüberblick
+        </target>
       </trans-unit>
       <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
         <source>
@@ -282,6 +274,9 @@
             66
           </context>
         </context-group>
+        <target>
+          Daten herunterladen
+        </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
         <source>
@@ -295,6 +290,9 @@
             67
           </context>
         </context-group>
+        <target>
+          Download
+        </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
         <source>
@@ -324,6 +322,9 @@
             102
           </context>
         </context-group>
+        <target>
+          Indikatoren
+        </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
         <source>
@@ -337,6 +338,9 @@
             79
           </context>
         </context-group>
+        <target>
+          Transparenz
+        </target>
       </trans-unit>
       <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
         <source>
@@ -363,6 +367,9 @@
             91
           </context>
         </context-group>
+        <target>
+          Korruptionsrisiko
+        </target>
       </trans-unit>
       <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
         <source>
@@ -389,6 +396,9 @@
             103
           </context>
         </context-group>
+        <target>
+          Administrative Kapazität
+        </target>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
         <source>
@@ -402,6 +412,168 @@
             104
           </context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
+        <source>
+          Not sure where to go? Start here …
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            112
+          </context>
+        </context-group>
+        <target>
+          Nicht sicher wohin? Fang hier an…
+        </target>
+      </trans-unit>
+      <trans-unit id="35ff0c7c097243d436faa59dabe85512a571145a" datatype="html">
+        <source>
+          Learn what is this about
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            114
+          </context>
+        </context-group>
+        <target>
+          Worum es bei Opentender geht
+        </target>
+      </trans-unit>
+      <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
+        <source>
+          It looks like you are browsing from
+          <x id="INTERPOLATION">
+          </x>
+          .
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            4
+          </context>
+        </context-group>
+        <target>
+          Es sieht so aus als ob sie aus &lt;x id="INTERPOLATION"/&gt; sind.
+        </target>
+      </trans-unit>
+      <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
+        <source>
+          We invite you to visit
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          Opentender
+          <x id="INTERPOLATION">
+          </x>
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          .
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+        <target>
+          Wir laden Sie ein &lt;x ctype="x-a" id="START_LINK"/&gt;Opentender &lt;x id="INTERPOLATION"/&gt;&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; zu besuchen.
+        </target>
+      </trans-unit>
+      <trans-unit id="bffd5ce4fcc08707d61bd414a4cbb91a9c4e0708" datatype="html">
+        <source>
+          Please choose a country portal or explore
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          all available data
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            11
+          </context>
+        </context-group>
+        <target>
+          Bitte wählen Sie ein Länderportal oder durchsuchen sie &lt;x ctype="x-a" id="START_LINK"/&gt;alle verfügbaren Daten&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
+        </target>
+      </trans-unit>
+      <trans-unit id="028f20cd413fbebff166e57c12f2fd15e8c11c0f" datatype="html">
+        <source>
+          {VAR_PLURAL, plural, =1 {tender} other {tenders} }
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start-map.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
+          </context>
+        </context-group>
+        <target>
+          {VAR_PLURAL, plural, =1 {Auschreibung} other {Auschreibungen} }
+        </target>
+      </trans-unit>
+      <trans-unit id="c7b20c3467a473ba8e0d1f69d8883b0f85243486" datatype="html">
+        <source>
+          All available data
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start-map.component.ts
+          </context>
+          <context context-type="linenumber">
+            14
+          </context>
+        </context-group>
+        <target>
+          Alle verfügbaren Daten
+        </target>
+      </trans-unit>
+      <trans-unit id="4bce4a397dc2da3c36abd0f8ee8f8941e6cf73ce" datatype="html">
+        <source>
+          {VAR_PLURAL, plural, =1 {tender} other {tenders} }
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start-map.component.ts
+          </context>
+          <context context-type="linenumber">
+            15
+          </context>
+        </context-group>
+        <target>
+          {VAR_PLURAL, plural, =1 {Auschreibung} other {Auschreibungen} }
+        </target>
+      </trans-unit>
+      <trans-unit id="mainTitle" datatype="html">
+        <source>
+          test
+          <x id="INTERPOLATION">
+          </x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
       </trans-unit>
     </body>
   </file>

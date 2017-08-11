@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {CountryService, Country} from '../services/country.service';
+import {ConfigService, Country} from '../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -11,8 +11,8 @@ export class HeaderComponent {
 	public country: Country;
 	public isRootPage = false;
 
-	constructor(public router: Router, private countryService: CountryService) {
-		this.country = countryService.get();
+	constructor(public router: Router, private config: ConfigService) {
+		this.country = config.country;
 		this.isRootPage = this.country.id === null;
 	}
 
@@ -21,11 +21,11 @@ export class HeaderComponent {
 	}
 
 	public isActiveHome(routerurl: string) {
-		return (routerurl === '/')
+		return (routerurl === '/');
 	}
 
 	public isActiveStart(routerurl: string) {
-		return (routerurl === '/start')
+		return (routerurl === '/start');
 	}
 
 }

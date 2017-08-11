@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CountryService, Country} from '../../services/country.service';
+import {ConfigService, Country} from '../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -9,7 +9,7 @@ import {CountryService, Country} from '../../services/country.service';
 export class StartPage {
 	public ip_country: Country;
 
-	constructor(private countryService: CountryService) {
-		this.ip_country = countryService.get().ip;
+	constructor(private config: ConfigService) {
+		this.ip_country = config.country.ip;
 	}
 }

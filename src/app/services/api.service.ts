@@ -3,7 +3,6 @@ import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
-import {CountryService} from './country.service';
 import {
 	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, INutsApiResult, IPortalsApiResult,
 	IPortalsStatsApiResult, IRegionApiResult, ISchemaApiResult, ISearchAuthorityApiResult, ISearchCompanyApiResult, ISearchTenderApiResult,
@@ -18,10 +17,10 @@ export class ApiService {
 	private actionCountryUrl = '';
 	private headers: Headers;
 
-	constructor(private http: Http, private config: ConfigService, private countryService: CountryService) {
+	constructor(private http: Http, private config: ConfigService) {
 		this.absUrl = config.absUrl;
-		this.actionUrl = config.get('backendUrl') + '/api/';
-		this.actionCountryUrl = this.actionUrl + (countryService.get().id || 'eu' ) + '/';
+		this.actionUrl = (config.config.backendUrl || '') + '/api/';
+		this.actionCountryUrl = this.actionUrl + (config.country.id || 'eu' ) + '/';
 		this.headers = new Headers();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');

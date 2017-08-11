@@ -20,8 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 	providers: [
 		...AppConfig.providers,
 		{provide: 'absurl', useValue: null},
-		{provide: 'config', useValue: null},
-		{provide: 'COUNTRY', useValue: null},
+		{provide: 'opentender', useValue: null},
 		{provide: 'isBrowser', useValue: true},
 		{provide: 'globals', useValue: {window: window, document: document}}
 	]

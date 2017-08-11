@@ -13,6 +13,7 @@ import {REQUEST, RESPONSE} from './tokens';
  */
 export interface NgSetupOptions {
 	bootstrap?: Type<{}> | NgModuleFactory<{}>;
+	languageProviders?: Provider[];
 	providers?: Provider[];
 	prepareHTML?: (html) => string;
 }
@@ -28,7 +29,7 @@ export interface RenderOptions extends NgSetupOptions {
 /**
  * This holds a cached version of each index used.
  */
-const templateCache: {[key: string]: string} = {};
+const templateCache: { [key: string]: string } = {};
 
 /**
  * Map of Module Factories
@@ -46,6 +47,7 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 	const compiler: Compiler = compilerFactory.createCompiler([
 		{
 			providers: [
+				...(setupOptions.languageProviders || []),
 				{provide: ResourceLoader, useClass: FileLoader}
 			]
 		}
@@ -74,7 +76,6 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 						}
 					}
 				]);
-
 			getFactory(moduleOrFactory, compiler)
 				.then(factory => {
 					return renderModuleFactory(factory, {

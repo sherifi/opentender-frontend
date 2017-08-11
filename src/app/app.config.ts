@@ -92,7 +92,6 @@ import {I18NComponent} from './components/i18n.component';
 
 import {ApiService} from './services/api.service';
 import {ConfigService} from './services/config.service';
-import {CountryService} from './services/country.service';
 import {PlatformService} from './services/platform.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
@@ -205,7 +204,6 @@ const AppConfig = {
 	],
 	providers: [
 		TitleService,
-		CountryService,
 		ConfigService,
 		StateService,
 		PlatformService,

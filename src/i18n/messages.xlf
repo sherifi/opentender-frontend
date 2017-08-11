@@ -202,6 +202,48 @@
           <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
+        <source>It looks like you are browsing from <x id="INTERPOLATION"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
+        <source>We invite you to visit <x id="START_LINK" ctype="x-a"/>Opentender <x id="INTERPOLATION"/><x id="CLOSE_LINK" ctype="x-a"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bffd5ce4fcc08707d61bd414a4cbb91a9c4e0708" datatype="html">
+        <source>Please choose a country portal or explore <x id="START_LINK" ctype="x-a"/>all available data<x id="CLOSE_LINK" ctype="x-a"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="028f20cd413fbebff166e57c12f2fd15e8c11c0f" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {tender} other {tenders} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start-map.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7b20c3467a473ba8e0d1f69d8883b0f85243486" datatype="html">
+        <source>All available data</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start-map.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4bce4a397dc2da3c36abd0f8ee8f8941e6cf73ce" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {tender} other {tenders} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start-map.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="mainTitle" datatype="html">
         <source>test <x id="INTERPOLATION"/></source>
         <context-group purpose="location">

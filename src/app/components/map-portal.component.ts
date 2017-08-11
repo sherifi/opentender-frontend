@@ -1,7 +1,7 @@
 import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {ICountryStats} from '../app.interfaces';
-import {Country, CountryService} from '../services/country.service';
+import {ConfigService, Country} from '../services/config.service';
 
 @Directive({selector: 'g.country'})
 export class SVGCountryGroupDirective {
@@ -38,8 +38,8 @@ export class PortalMapComponent implements AfterViewInit, OnChanges {
 	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
 	public current: Country;
 
-	constructor(private api: ApiService, private country: CountryService) {
-		this.current = country.get();
+	constructor(private api: ApiService, private config: ConfigService) {
+		this.current = config.country;
 	}
 
 	public ngAfterViewInit(): void {

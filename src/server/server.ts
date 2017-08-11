@@ -88,6 +88,12 @@ app.use('/robots.txt', express.static(path.join(ROOT, '/robots.txt')));
 app.use('/favicon.ico', express.static(path.join(ROOT, '/favicons/favicon.ico')));
 app.use('/assets/js', express.static(DIST, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
+app.use('/assets/lang/:id', (req, res) => {
+	if (!languages[req.params.id]) {
+		return res.sendStatus(404);
+	}
+	res.send(languages[req.params.id].translation);
+});
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
 app.use('/data/nuts1.geojson', express.static(path.join(DATA, '/nuts/nuts_20M_lvl1.geojson')));
 app.use('/data/nuts2.geojson', express.static(path.join(DATA, '/nuts/nuts_20M_lvl2.geojson')));
@@ -109,9 +115,39 @@ app.use('/api*', (req, res) => {
 	}
 });
 
-
 app.use(cookieParser('OpenTenderPortal'));
 app.use(bodyParser.json());
+
+let render = function(req, res, language, country) {
+	let engine = ngExpressEngine({
+		bootstrap: language.module,
+		providers: [
+			{provide: 'isBrowser', useValue: false},
+			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
+			{provide: 'opentender', useValue: {locale: language.lang, config: Config.client, country: country}}
+		],
+		languageProviders: [
+			{provide: TRANSLATIONS, useValue: language.translation || ''},
+			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
+			{provide: LOCALE_ID, useValue: language.lang}
+		],
+		prepareHTML: (html) => {
+			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
+				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? country.name : '')
+				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
+				.replace(/\{\{OPENTENDER\}\}/g, JSON.stringify({locale: language.lang, config: Config.client, country: country}));
+		}
+	});
+	console.time(`GET: ${req.originalUrl}`);
+	return engine(VIEW, {req: req, res: res}, (status: number, body?: any) => {
+		console.timeEnd(`GET: ${req.originalUrl}`);
+		if (status !== null || !body) {
+			console.log('err', status, body);
+			return res.status(500).send('There is an error in error land…');
+		}
+		return sendAndAddToCache(req, res, body);
+	});
+};
 
 let startApp = function(req, res) {
 	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -128,69 +164,12 @@ let startApp = function(req, res) {
 		}
 	}
 	let country = {id: null, name: 'Portals', ip: ip_country};
-	let language = languages['en'];
-	let engine = ngExpressEngine({
-		bootstrap: language.module,
-		providers: [
-			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
-			{provide: 'config', useValue: Config.client},
-			{provide: 'COUNTRY', useValue: country},
-			{provide: TRANSLATIONS, useValue: language.translation || ''},
-			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
-			{provide: LOCALE_ID, useValue: language.lang}
-		],
-		prepareHTML: (html) => {
-			return html.replace(/\{\{BASE_HREF\}\}/g, '/')
-				.replace(/\{\{COUNTRY_NAME\}\}/g, '')
-				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
-				.replace(/\{\{LANG\}\}/g, language.lang)
-				.replace(/\{\{CONFIG\}\}/g, JSON.stringify(Config.client))
-				.replace(/\{\{COUNTRY\}\}/g, JSON.stringify(country));
-		}
-	});
 	req.originalUrl = '/start';
-	console.time(`GET: ${req.originalUrl}`);
-	engine(VIEW, {req: req, res: res}, (status: number, body?: any) => {
-		console.timeEnd(`GET: ${req.originalUrl}`);
-		if (status !== null || !body) {
-			console.log('err', status, body);
-			return res.status(500).send('There is an error in error land…');
-		}
-		return res.status(200).send(body);
-	});
+	render(req, res, languages['en'], country);
 };
 
 let portalApp = function(req, res, country) {
-	// let language = languages[country.id || 'en'];
-	let language = languages['en'];
-	let engine = ngExpressEngine({
-		bootstrap: language.module,
-		providers: [
-			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
-			{provide: 'COUNTRY', useValue: {id: country.id, name: country.name}},
-			{provide: 'config', useValue: Config.client},
-			{provide: TRANSLATIONS, useValue: language.translation || ''},
-			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
-			{provide: LOCALE_ID, useValue: language.lang}
-		],
-		prepareHTML: (html) => {
-			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
-				.replace(/\{\{COUNTRY_NAME\}\}/g, country.name)
-				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
-				.replace(/\{\{LANG\}\}/g, language.lang)
-				.replace(/\{\{CONFIG\}\}/g, JSON.stringify(Config.client))
-				.replace(/\{\{COUNTRY\}\}/g, JSON.stringify(country));
-		}
-	});
-	console.time(`GET: ${req.originalUrl}`);
-	return engine(VIEW, {req: req, res: res}, (status: number, body?: any) => {
-		console.timeEnd(`GET: ${req.originalUrl}`);
-		if (status !== null || !body) {
-			console.log('err', status, body);
-			return res.status(500).send('There is an error in error land…');
-		}
-		return sendAndAddToCache(req, res, body);
-	});
+	render(req, res, languages['en'], country);
 };
 
 let registerPages = country => {

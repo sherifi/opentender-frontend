@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
-import {CountryService} from './country.service';
 import {Router, NavigationStart, ActivatedRoute, NavigationEnd} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {ConfigService} from './config.service';
 
 @Injectable()
 export class TitleService {
 	defaultName = 'Opentender Portal';
 
-	constructor(private activatedRoute: ActivatedRoute, private country: CountryService, private router: Router, private titleService: Title) {
-		let c = country.get();
+	constructor(private activatedRoute: ActivatedRoute, private config: ConfigService, private router: Router, private titleService: Title) {
+		let c = config.country;
 		if (c.id) {
 			this.defaultName += ' ' + c.name;
 		} else {
