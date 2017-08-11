@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {CountryService} from './country.service';
 import {
-	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, INutsApiResult,
+	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, INutsApiResult, IPortalsApiResult,
 	IPortalsStatsApiResult, IRegionApiResult, ISchemaApiResult, ISearchAuthorityApiResult, ISearchCompanyApiResult, ISearchTenderApiResult,
 	ISectorApiResult, ISectorsApiResult, IStatApiResult, IStatStatsApiResult, ITenderApiResult, IUsageApiResult
 } from '../app.interfaces';
@@ -72,7 +72,11 @@ export class ApiService {
 	}
 
 	getPortalsStats(): Observable<IPortalsStatsApiResult> {
-		return this.http.get(this.actionUrl + 'portals/countries-stats').map(res => <IPortalsStatsApiResult>res.json());
+		return this.http.get(this.actionUrl + 'portals/stats').map(res => <IPortalsStatsApiResult>res.json());
+	}
+
+	getPortals(): Observable<IPortalsApiResult> {
+		return this.http.get(this.actionUrl + 'portals/list').map(res => <IPortalsApiResult>res.json());
 	}
 
 	getFieldsUsage(): Observable<IUsageApiResult> {

@@ -29,7 +29,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 	getGroupDomain(): any[] {
 		let domain = [];
 		for (let group of this.data) {
-			if (!domain.includes(group.name)) {
+			if (domain.indexOf(group.name) < 0) {
 				domain.push(group.name);
 			}
 		}
@@ -41,7 +41,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 
 		for (let group of this.data) {
 			for (let d of group.series) {
-				if (!domain.includes(d.name)) {
+				if (domain.indexOf(d.name) < 0) {
 					domain.push(d.name);
 				}
 			}

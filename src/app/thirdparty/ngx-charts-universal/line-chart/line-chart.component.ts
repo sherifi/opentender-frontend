@@ -1,111 +1,111 @@
 import {Component, Input, Output, EventEmitter, HostListener, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
 import {UrlId} from '../utils/id.helper';
-import d3 from '../d3';
 import {IChartLineSettings, IChartData} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {IDomain, ILegendOptions} from '../common/common.interface';
 import {toDate, isDate} from '../utils/date.helper';
-
+import {scaleLinear, scaleTime, scalePoint} from 'd3-scale';
+import {curveLinear} from 'd3-shape';
 
 @Component({
 	selector: 'ngx-charts-line-chart',
 	template: `
-    <ngx-charts-chart
-      [dim]="dim" [chart]="chart" [data]="data"
-      [legendOptions]="legendOptions"
-      [activeEntries]="activeEntries"
-      (legendLabelClick)="onClick($event)"
-      (legendLabelActivate)="onActivate($event)"
-      (legendLabelDeactivate)="onDeactivate($event)">
-      <svg:defs>
-        <svg:clipPath [attr.id]="clipId.id">
-          <svg:rect
-            [attr.width]="viewDim.width + 10"
-            [attr.height]="viewDim.height + 10"
-            [attr.transform]="'translate(-5, -5)'"/>
-        </svg:clipPath>
-      </svg:defs>
-      <svg:g [attr.transform]="transform" class="line-chart chart">
-        <svg:g ngx-charts-x-axis
-          *ngIf="chart.xAxis.show"
-          [xScale]="xScale"
-          [dims]="viewDim"
-          [showGridLines]="chart.showGridLines"
-          [showLabel]="chart.xAxis.showLabel"
-          [labelText]="chart.xAxis.label"
-          (dimensionsChanged)="updateXAxisHeight($event)">
-        </svg:g>
-        <svg:g ngx-charts-y-axis
-          *ngIf="chart.yAxis.show"
-          [yScale]="yScale"
-          [dims]="viewDim"
-          [showGridLines]="chart.showGridLines"
-          [showLabel]="chart.yAxis.showLabel"
-          [labelText]="chart.yAxis.label"
-          (dimensionsChanged)="updateYAxisWidth($event)">
-        </svg:g>
-        <svg:g [attr.clip-path]="clipId.url">
-          <svg:g *ngFor="let series of data; trackBy:trackBy">
-            <svg:g ngx-charts-line-series
-              [xScale]="xScale"
-              [yScale]="yScale"
-              [colors]="colors"
-              [data]="series"
-              [activeEntries]="activeEntries"
-              [scaleType]="scaleType"
-              [curve]="curve"
-            />
-          </svg:g>
-          <svg:g ngx-charts-area-tooltip
-            [xSet]="xSet"
-            [xScale]="xScale"
-            [yScale]="yScale"
-            [results]="data"
-            [height]="viewDim.height"
-            [colors]="colors"
-            (hover)="updateHoveredVertical($event)"
-          />
-          <svg:g *ngFor="let series of data">
-            <svg:g ngx-charts-circle-series
-              [xScale]="xScale"
-              [yScale]="yScale"
-              [colors]="colors"
-              [data]="series"
-              [scaleType]="scaleType"
-              [visibleValue]="hoveredVertical"
-              [activeEntries]="activeEntries"
-              (select)="onClick($event, series)"
-              (activate)="onActivate($event)"
-              (deactivate)="onDeactivate($event)"
-            />
-          </svg:g>
-        </svg:g>
-      </svg:g>
-      <svg:g ngx-charts-timeline
-        *ngIf="timeline && scaleType === 'time'"
-        [attr.transform]="timelineTransform"
-        [results]="data"
-        [view]="[timelineWidth, height]"
-        [height]="timelineHeight"
-        [scheme]="chart.colorScheme"
-        [customColors]="chart.customColors"
-        [scaleType]="scaleType"
-        [legend]="chart.legend && chart.legend.show"
-        (onDomainChange)="updateDomain($event)">
-        <svg:g *ngFor="let series of data; trackBy:trackBy">
-          <svg:g ngx-charts-line-series
-            [xScale]="timelineXScale"
-            [yScale]="timelineYScale"
-            [colors]="colors"
-            [data]="series"
-            [scaleType]="scaleType"
-            [curve]="curve"
-          />
-        </svg:g>
-      </svg:g>
-    </ngx-charts-chart>
-  `,
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				[activeEntries]="activeEntries"
+				(legendLabelClick)="onClick($event)"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)">
+			<svg:defs>
+				<svg:clipPath [attr.id]="clipId.id">
+					<svg:rect
+							[attr.width]="viewDim.width + 10"
+							[attr.height]="viewDim.height + 10"
+							[attr.transform]="'translate(-5, -5)'"/>
+				</svg:clipPath>
+			</svg:defs>
+			<svg:g [attr.transform]="transform" class="line-chart chart">
+				<svg:g ngx-charts-x-axis
+					   *ngIf="chart.xAxis.show"
+					   [xScale]="xScale"
+					   [dims]="viewDim"
+					   [showGridLines]="chart.showGridLines"
+					   [showLabel]="chart.xAxis.showLabel"
+					   [labelText]="chart.xAxis.label"
+					   (dimensionsChanged)="updateXAxisHeight($event)">
+				</svg:g>
+				<svg:g ngx-charts-y-axis
+					   *ngIf="chart.yAxis.show"
+					   [yScale]="yScale"
+					   [dims]="viewDim"
+					   [showGridLines]="chart.showGridLines"
+					   [showLabel]="chart.yAxis.showLabel"
+					   [labelText]="chart.yAxis.label"
+					   (dimensionsChanged)="updateYAxisWidth($event)">
+				</svg:g>
+				<svg:g [attr.clip-path]="clipId.url">
+					<svg:g *ngFor="let series of data; trackBy:trackBy">
+						<svg:g ngx-charts-line-series
+							   [xScale]="xScale"
+							   [yScale]="yScale"
+							   [colors]="colors"
+							   [data]="series"
+							   [activeEntries]="activeEntries"
+							   [scaleType]="scaleType"
+							   [curve]="curve"
+						/>
+					</svg:g>
+					<svg:g ngx-charts-area-tooltip
+						   [xSet]="xSet"
+						   [xScale]="xScale"
+						   [yScale]="yScale"
+						   [results]="data"
+						   [height]="viewDim.height"
+						   [colors]="colors"
+						   (hover)="updateHoveredVertical($event)"
+					/>
+					<svg:g *ngFor="let series of data">
+						<svg:g ngx-charts-circle-series
+							   [xScale]="xScale"
+							   [yScale]="yScale"
+							   [colors]="colors"
+							   [data]="series"
+							   [scaleType]="scaleType"
+							   [visibleValue]="hoveredVertical"
+							   [activeEntries]="activeEntries"
+							   (select)="onClick($event, series)"
+							   (activate)="onActivate($event)"
+							   (deactivate)="onDeactivate($event)"
+						/>
+					</svg:g>
+				</svg:g>
+			</svg:g>
+			<svg:g ngx-charts-timeline
+				   *ngIf="timeline && scaleType === 'time'"
+				   [attr.transform]="timelineTransform"
+				   [results]="data"
+				   [view]="[timelineWidth, height]"
+				   [height]="timelineHeight"
+				   [scheme]="chart.colorScheme"
+				   [customColors]="chart.customColors"
+				   [scaleType]="scaleType"
+				   [legend]="chart.legend && chart.legend.show"
+				   (onDomainChange)="updateDomain($event)">
+				<svg:g *ngFor="let series of data; trackBy:trackBy">
+					<svg:g ngx-charts-line-series
+						   [xScale]="timelineXScale"
+						   [yScale]="timelineYScale"
+						   [colors]="colors"
+						   [data]="series"
+						   [scaleType]="scaleType"
+						   [curve]="curve"
+					/>
+				</svg:g>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LineChartComponent extends BaseXYAxisComponent {
@@ -116,7 +116,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 	@Output() activate: EventEmitter<any>;
 	@Output() deactivate: EventEmitter<any>;
 
-	curve = d3.shape.curveLinear;
+	curve = curveLinear;
 	xSet: IDomain;
 	seriesDomain: IDomain;
 	scaleType: string;
@@ -156,7 +156,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		let values = [];
 		for (let group of this.data) {
 			for (let d of group.series) {
-				if (!values.includes(d.name)) {
+				if (values.indexOf(d.name) < 0) {
 					values.push(d.name);
 				}
 			}
@@ -189,7 +189,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 
 		for (let results of this.data) {
 			for (let d of results.series) {
-				if (!domain.includes(d.value)) {
+				if (domain.indexOf(d.value) < 0) {
 					domain.push(d.value);
 				}
 			}
@@ -253,15 +253,15 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		let scale;
 
 		if (this.scaleType === 'time') {
-			scale = d3.scaleTime()
+			scale = scaleTime()
 				.range([0, width])
 				.domain(domain);
 		} else if (this.scaleType === 'linear') {
-			scale = d3.scaleLinear()
+			scale = scaleLinear()
 				.range([0, width])
 				.domain(domain);
 		} else if (this.scaleType === 'ordinal') {
-			scale = d3.scalePoint()
+			scale = scalePoint()
 				.range([0, width])
 				.padding(0.1)
 				.domain(domain);
@@ -271,7 +271,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 	}
 
 	_getYScale(domain, height) {
-		const scale = d3.scaleLinear()
+		const scale = scaleLinear()
 			.range([height, 0])
 			.domain(domain);
 		return scale;
@@ -296,7 +296,6 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		}
 		return 'ordinal';
 	}
-
 
 	updateDomain(domain: IDomain): void {
 		this.filteredDomain = domain;

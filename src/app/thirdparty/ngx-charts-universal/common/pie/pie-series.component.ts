@@ -1,10 +1,10 @@
 import {Component, SimpleChanges, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
-import d3 from '../../d3';
 import {formatLabel} from '../../utils/label.helper';
 import {ColorHelper} from '../../utils/color.helper';
 import {IChartData} from '../../chart.interface';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
-
+import {arc, pie} from 'd3-shape';
+import {max} from 'd3-array';
 
 interface PieArc {
 	data: IChartData;
@@ -90,17 +90,17 @@ export class PieSeriesComponent implements OnChanges {
 		if (!this.series) {
 			return;
 		}
-		let pie = d3.pie<{ value: number }>()
+		let p = pie<{ value: number }>()
 			.value((d) => d.value)
 			.sort(null);
 
-		const arcData = pie(this.series).map(d => {
+		const arcData = p(this.series).map(d => {
 			// TODO: proper extend PieArcDataum
 			return <any>d;
 		});
 
 		this.total = 0;
-		this.max = d3.max(arcData, (d) => {
+		this.max = max(arcData, (d) => {
 			this.total += d.value;
 			return d.value;
 		});
@@ -135,8 +135,8 @@ export class PieSeriesComponent implements OnChanges {
 	}
 
 	orderLabels(arcData) {
-		this.orderLabelsSide(arcData.filter(arc => arc.isLeft));
-		this.orderLabelsSide(arcData.filter(arc => !arc.isLeft));
+		this.orderLabelsSide(arcData.filter(a => a.isLeft));
+		this.orderLabelsSide(arcData.filter(a => !a.isLeft));
 	}
 
 
@@ -146,25 +146,24 @@ export class PieSeriesComponent implements OnChanges {
 
 	outerArc(): any {
 		const factor = 1.5;
-
-		return d3.arc()
+		return arc()
 			.innerRadius(this.outerRadius * factor)
 			.outerRadius(this.outerRadius * factor);
 	}
 
-	labelVisible(arc): boolean {
-		return this.showLabels && (arc.endAngle - arc.startAngle > Math.PI / 30);
+	labelVisible(a): boolean {
+		return this.showLabels && (a.endAngle - a.startAngle > Math.PI / 30);
 	}
 
-	tooltipText(arc) {
+	tooltipText(a) {
 		let text = '';
-		let percent = this.total > 0 ? arc.data.value / (this.total / 100) : 0;
+		let percent = this.total > 0 ? a.data.value / (this.total / 100) : 0;
 		if (this.valueFormatting) {
 			text = this.valueFormatting(percent);
 		} else {
 			text = formatLabel(Math.round(percent * 100) / 100) + '%';
 		}
-		return getTooltipLabeledText(arc.label, text);
+		return getTooltipLabeledText(a.label, text);
 	}
 
 	trackBy(index, item): string {

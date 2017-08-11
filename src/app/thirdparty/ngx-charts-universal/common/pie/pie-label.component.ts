@@ -1,25 +1,22 @@
 import {Component, Input, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
 import {trimLabel} from '../../utils/label.helper';
-import d3 from '../../d3';
 import {PlatformService} from '../../../../services/platform.service';
+import {select} from 'd3-selection';
+import {arc} from 'd3-shape';
 
 @Component({
 	selector: 'g[ngx-charts-pie-label]',
 	template: `
     <title>{{label}}</title>
-    <svg:text
-      class="pie-label"
+    <svg:text class="pie-label" dy=".35em"
       [attr.transform]="transform"
-      dy=".35em"
       [style.text-anchor]="textAnc"
       [style.shape-rendering]="'crispEdges'">
       {{text}}
     </svg:text>
-    <svg:path
+    <svg:path fill="none" class="line"
       [attr.d]="line"
       [attr.stroke]="color"
-      fill="none"
-      class="line"
       [style.stroke-dasharray]="2000"
       [style.stroke-dashoffset]="0">
     </svg:path>
@@ -61,7 +58,7 @@ export class PieLabelComponent implements OnChanges {
 	update(): void {
 		const factor = 1.2;
 
-		let outerArc = d3.arc()
+		let outerArc = arc()
 			.innerRadius(this.radius * factor)
 			.outerRadius(this.radius * factor);
 
@@ -70,7 +67,7 @@ export class PieLabelComponent implements OnChanges {
 			startRadius = this.radius * this.value / this.max;
 		}
 
-		let innerArc = d3.arc()
+		let innerArc = arc()
 			.innerRadius(startRadius)
 			.outerRadius(startRadius);
 
@@ -97,8 +94,8 @@ export class PieLabelComponent implements OnChanges {
 	}
 
 	loadAnimation(): void {
-		let label = d3.select(this.element).select('.label');
-		let line = d3.select(this.element).select('.line');
+		let label = select(this.element).select('.label');
+		let line = select(this.element).select('.line');
 
 		label
 			.attr('opacity', 0)

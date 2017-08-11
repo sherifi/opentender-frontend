@@ -1,3 +1,4 @@
+/// <reference path="./tender.d.ts" />
 import Tender = Definitions.Tender;
 import Buyer = Definitions.Buyer;
 import Body = Definitions.Body;

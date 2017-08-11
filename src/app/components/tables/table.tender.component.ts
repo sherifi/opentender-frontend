@@ -1,9 +1,11 @@
 import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {SearchCommand} from '../../model/search';
-import Tender = Definitions.Tender;
 import {TenderColumns, TenderColumn, Table, ColumnSort} from '../../model/columns';
 import {ISearchTenderData} from '../../app.interfaces';
+
+/// <reference path="../../model/tender.d.ts" />
+import Tender = Definitions.Tender;
 
 @Component({
 	selector: 'tender-table',

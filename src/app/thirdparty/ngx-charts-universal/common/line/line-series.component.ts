@@ -1,44 +1,29 @@
 import {Component, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
-import d3 from '../../d3';
 import {UrlId} from '../../utils/id.helper';
 import {sortLinear, sortByTime, sortByDomain} from '../../utils/sort.helper';
 import {toDate} from '../../utils/date.helper';
 import {PlatformService} from '../../../../services/platform.service';
-import {Area, Line, CurveFactory} from 'd3-shape';
+import {line, area, CurveFactory, Line, Area} from 'd3-shape';
 
 @Component({
 	selector: 'g[ngx-charts-line-series]',
-	template: `
-    <svg:g>
-      <defs>
-        <svg:g ngx-charts-svg-linear-gradient ng-if="hasGradient"
-          [color]="colors.getColor(data.name)"
-          orientation="vertical"
-          [name]="gradId.id"
-          [stops]="gradientStops"
-        />
-      </defs>
-      <svg:g ngx-charts-area
-        class="line-highlight"
-        [data]="data"
-        [path]="areaPath"
-        [fill]="hasGradient ? gradId.url : colors.getColor(data.name)"
-        [opacity]="0.25"
-        [startOpacity]="0"
-        [gradient]="true"
-        [stops]="areaGradientStops"
-        [class.active]="isActive(data)"
-        [class.inactive]="isInactive(data)"
-      />    
-      <svg:g ngx-charts-line
-        class="line-series"
-        [data]="data"
-        [path]="path"
-        [stroke]="hasGradient ? gradId.url : colors.getColor(data.name)"
-        [class.active]="isActive(data)"
-        [class.inactive]="isInactive(data)"
-      />
-    </svg:g>
+	template: `<svg:g>
+	<defs>
+		<svg:g ngx-charts-svg-linear-gradient ng-if="hasGradient" [color]="colors.getColor(data.name)" orientation="vertical" [name]="gradId.id" [stops]="gradientStops"/>
+	</defs>
+	<svg:g ngx-charts-area class="line-highlight"
+		   [data]="data"
+		   [path]="areaPath"
+		   [fill]="hasGradient ? gradId.url : colors.getColor(data.name)"
+		   [opacity]="0.25" [startOpacity]="0"
+		   [gradient]="true" [stops]="areaGradientStops"
+		   [class.active]="isActive(data)" [class.inactive]="isInactive(data)"
+	/>
+	<svg:g ngx-charts-line class="line-series"
+		   [data]="data" [path]="path"
+		   [stroke]="hasGradient ? gradId.url : colors.getColor(data.name)"
+		   [class.active]="isActive(data)" [class.inactive]="isInactive(data)"/>
+</svg:g>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -69,17 +54,17 @@ export class LineSeriesComponent implements OnChanges {
 	update(): void {
 		this.updateGradients();
 
-		let line = this.getLineGenerator();
-		let area = this.getAreaGenerator();
+		let _line = this.getLineGenerator();
+		let _area = this.getAreaGenerator();
 
 		let data = this.sortData(this.data.series);
 
-		this.path = line(data) || '';
-		this.areaPath = area(data) || '';
+		this.path = _line(data) || '';
+		this.areaPath = _area(data) || '';
 	}
 
 	getLineGenerator(): Line<{value: number, name: string}> {
-		let result = d3.line<{value: number, name: string}>();
+		let result = line<{value: number, name: string}>();
 		return result
 			.x(d => {
 				let label = d.name;
@@ -103,7 +88,7 @@ export class LineSeriesComponent implements OnChanges {
 			return this.xScale(label);
 		};
 
-		return d3.area<{value: number, name: string}>()
+		return area<{value: number, name: string}>()
 			.x(xProperty)
 			.y0(() => this.yScale.range()[0])
 			.y1(d => this.yScale(d.value))
@@ -139,7 +124,9 @@ export class LineSeriesComponent implements OnChanges {
 	}
 
 	isActive(entry): boolean {
-		if (!this.activeEntries) return false;
+		if (!this.activeEntries) {
+			return false;
+		}
 		let item = this.activeEntries.find(d => {
 			return entry.name === d.name;
 		});
@@ -147,7 +134,9 @@ export class LineSeriesComponent implements OnChanges {
 	}
 
 	isInactive(entry): boolean {
-		if (!this.activeEntries || this.activeEntries.length === 0) return false;
+		if (!this.activeEntries || this.activeEntries.length === 0) {
+			return false;
+		}
 		let item = this.activeEntries.find(d => {
 			return entry.name === d.name;
 		});

@@ -94,12 +94,10 @@ import {ApiService} from './services/api.service';
 import {ConfigService} from './services/config.service';
 import {CountryService} from './services/country.service';
 import {PlatformService} from './services/platform.service';
-import {PortalsService} from './services/portals.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 
-import * as Portals from 'portals.json';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 
 const AppConfig = {
@@ -206,9 +204,7 @@ const AppConfig = {
 		AppRoutingModule
 	],
 	providers: [
-		{provide: 'portals', useValue: Portals},
 		TitleService,
-		PortalsService,
 		CountryService,
 		ConfigService,
 		StateService,

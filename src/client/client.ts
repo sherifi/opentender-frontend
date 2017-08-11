@@ -1,3 +1,12 @@
+// import 'core-js/client/shim'; // support for internet explorer 11
+// import 'classlist.js'; // support for internet explorer 11
+//
+// import 'zone.js/dist/zone';
+// import 'reflect-metadata';
+// import 'rxjs/Observable';
+// import 'rxjs/add/operator/map';
+
+
 import {enableProdMode, Provider} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MainModule} from './main.module';

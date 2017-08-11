@@ -5,12 +5,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = require('./config.js');
-const portals = require(path.join(path.resolve(__dirname, config.server.data.path), '/portals.json'));
 
 const replacements = {
-	'portals.json': () => portals,
 	'config.js': () => config,
-	'config.browser.js': () => config.client,
 	'config.node.js': () => {
 		return {version: config.client.version, backendUrl: config.server.backendUrl}
 	}
@@ -133,26 +130,29 @@ const clientConfig = () => {
 
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.UglifyJsPlugin({
-			// beautify: true,
+			beautify: false,
+			comments: false,
 			// mangle: false,
 			output: {
 				comments: false
 			},
-			comments: false,
-			compress: {
-				warnings: false,
-				conditionals: true,
+			mangle: {
 				screw_ie8: true,
-				unused: true,
-				evaluate: true,
+				// keep_fnames: true
+			},
+			compress: {
 				loops: true,
 				comparisons: true,
-				sequences: true,
+				conditionals: true,
 				dead_code: true,
 				evaluate: true,
 				if_return: true,
 				join_vars: true,
-				negate_iife: false // we need this for lazy v8
+				screw_ie8: true,
+				sequences: true,
+				unused: true,
+				negate_iife: false, // we need this for lazy v8
+				warnings: false
 			},
 			sourceMap: config.webpack.sourcemaps
 		}));
@@ -182,6 +182,7 @@ const clientConfig = () => {
 		externals: (context, request, cb) => {
 			let replacement = replacements[request];
 			if (!replacement) return cb();
+			console.log('request replacement', request);
 			return cb(null, 'var ' + JSON.stringify(replacement()));
 		},
 		plugins: plugins,
@@ -267,23 +268,23 @@ const styleConfig = () => {
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: ExtractTextPlugin
-						.extract({
-							fallback: 'style-loader',
-							use: [
-								{
-									loader: 'css-loader',
-									query: {
-										modules: false,
-										sourceMap: config.webpack.sourcemaps,
-										importLoaders: 2,
-										localIdentName: '[name]__[local]___[hash:base64:5]'
-									}
-								},
-								// {loader: 'css-loader', query: {modules: false, sourceMaps: true}},
-								// { loader: 'postcss-loader' },
-								{loader: 'sass-loader', query: {sourceMaps: config.webpack.sourcemaps}}
-							]
-						})
+					.extract({
+						fallback: 'style-loader',
+						use: [
+							{
+								loader: 'css-loader',
+								query: {
+									modules: false,
+									sourceMap: config.webpack.sourcemaps,
+									importLoaders: 2,
+									localIdentName: '[name]__[local]___[hash:base64:5]'
+								}
+							},
+							// {loader: 'css-loader', query: {modules: false, sourceMaps: true}},
+							// { loader: 'postcss-loader' },
+							{loader: 'sass-loader', query: {sourceMaps: config.webpack.sourcemaps}}
+						]
+					})
 				},
 				{
 					test: /\.(woff|woff2|ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

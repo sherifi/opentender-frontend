@@ -58,9 +58,9 @@ let settings = {
 
 run `npm run develop` and `npm run watch` in two separate terminals to build your client app, start a web server, and allow file changes to update in realtime
 
-### Update Schema.ts after changes on schema.json
+### Update typescript definitions after changes on schema.json
 
-`npm run schema` to convert schema.json into /src/app/model/tender.ts
+`npm run schema` to convert schema.json into /src/app/model/tender.d.ts
 
 ### Update Language files for Translation
 

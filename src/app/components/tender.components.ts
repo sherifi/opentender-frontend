@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+/// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
 import Address = Definitions.Address;
 import Price = Definitions.Price;

@@ -1,5 +1,4 @@
 import {Component, Input, ChangeDetectionStrategy, Output, EventEmitter, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
-import d3 from '../d3';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {IChartHeatmapSettings, IChartData} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
@@ -7,7 +6,7 @@ import {calculateViewDimensions} from '../utils/view-dimensions.helper';
 import {IDomain, ILegendOptions} from '../common/common.interface';
 import {formatDates} from '../utils/data.helper';
 import {PlatformService} from '../../../services/platform.service';
-
+import {scaleBand} from 'd3-scale';
 
 interface IRect {
 	x: number;
@@ -21,48 +20,48 @@ interface IRect {
 @Component({
 	selector: 'ngx-charts-heat-map',
 	template: `
-    <ngx-charts-chart
-      [dim]="dim" [chart]="chart" [data]="data"
-      [legendOptions]="legendOptions"
-      (legendLabelActivate)="onActivate($event)"
-      (legendLabelDeactivate)="onDeactivate($event)"
-      (legendLabelClick)="onClick($event)">
-      <svg:g [attr.transform]="transform" class="heat-map chart">
-        <svg:g ngx-charts-x-axis
-          *ngIf="xAxis"
-          [xScale]="xScale"
-          [dims]="viewDim"
-          [showLabel]="showXAxisLabel"
-          [labelText]="xAxisLabel"
-          (dimensionsChanged)="updateXAxisHeight($event)">
-        </svg:g>
-        <svg:g ngx-charts-y-axis
-          *ngIf="yAxis"
-          [yScale]="yScale"
-          [dims]="viewDim"
-          [showLabel]="showYAxisLabel"
-          [labelText]="yAxisLabel"
-          (dimensionsChanged)="updateYAxisWidth($event)">
-        </svg:g>
-        <svg:rect *ngFor="let rect of rects"
-          [attr.x]="rect.x"
-          [attr.y]="rect.y"
-          [attr.rx]="rect.rx"
-          [attr.width]="rect.width"
-          [attr.height]="rect.height"
-          [attr.fill]="rect.fill"
-        />
-        <svg:g ngx-charts-heat-map-cell-series
-          [xScale]="xScale"
-          [yScale]="yScale"
-          [colors]="colors"
-          [data]="results"
-          [gradient]="gradient"
-          (select)="onClick($event)"
-        />
-      </svg:g>
-    </ngx-charts-chart>
-  `,
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)"
+				(legendLabelClick)="onClick($event)">
+			<svg:g [attr.transform]="transform" class="heat-map chart">
+				<svg:g ngx-charts-x-axis
+					   *ngIf="xAxis"
+					   [xScale]="xScale"
+					   [dims]="viewDim"
+					   [showLabel]="showXAxisLabel"
+					   [labelText]="xAxisLabel"
+					   (dimensionsChanged)="updateXAxisHeight($event)">
+				</svg:g>
+				<svg:g ngx-charts-y-axis
+					   *ngIf="yAxis"
+					   [yScale]="yScale"
+					   [dims]="viewDim"
+					   [showLabel]="showYAxisLabel"
+					   [labelText]="yAxisLabel"
+					   (dimensionsChanged)="updateYAxisWidth($event)">
+				</svg:g>
+				<svg:rect *ngFor="let rect of rects"
+						  [attr.x]="rect.x"
+						  [attr.y]="rect.y"
+						  [attr.rx]="rect.rx"
+						  [attr.width]="rect.width"
+						  [attr.height]="rect.height"
+						  [attr.fill]="rect.fill"
+				/>
+				<svg:g ngx-charts-heat-map-cell-series
+					   [xScale]="xScale"
+					   [yScale]="yScale"
+					   [colors]="colors"
+					   [data]="results"
+					   [gradient]="gradient"
+					   (select)="onClick($event)"
+				/>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeatMapComponent extends BaseXYAxisComponent {
@@ -98,7 +97,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 			showLegend: this.chart.legend && this.chart.legend.show,
 			legendType: 'linear'
 		});
-	};
+	}
 
 	update(): void {
 		formatDates(this.data);
@@ -109,7 +108,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 	getXDomain(): IDomain {
 		let domain = [];
 		for (let group of this.data) {
-			if (!domain.includes(group.name)) {
+			if (domain.indexOf(group.name) < 0) {
 				domain.push(group.name);
 			}
 		}
@@ -120,7 +119,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 		let domain = [];
 		for (let group of this.data) {
 			for (let d of group.series) {
-				if (!domain.includes(d.name)) {
+				if (domain.indexOf(d.name) < 0) {
 					domain.push(d.name);
 				}
 			}
@@ -133,7 +132,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 	}
 
 	getXScale() {
-		const scale = d3.scaleBand<number>()
+		const scale = scaleBand<number>()
 			.rangeRound([0, this.viewDim.width])
 			.paddingInner(0.1)
 			.domain(this.xDomain.map(i => {
@@ -143,7 +142,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 	}
 
 	getYScale() {
-		const scale = d3.scaleBand<number>()
+		const scale = scaleBand<number>()
 			.rangeRound([this.viewDim.height, 0])
 			.paddingInner(0.1)
 			.domain(this.yDomain.map(i => {
@@ -168,7 +167,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 		let domain = [];
 		for (let group of this.data) {
 			for (let d of group.series) {
-				if (!domain.includes(d.value)) {
+				if (domain.indexOf(d.value) < 0) {
 					domain.push(d.value);
 				}
 			}

@@ -1,29 +1,21 @@
 import {Component, Input, OnChanges, ChangeDetectionStrategy} from '@angular/core';
-import d3 from '../../d3';
+import {line} from 'd3-shape';
 
 @Component({
 	selector: 'g[ngx-charts-gauge-axis]',
 	template: `
-    <svg:g [attr.transform]="rotate">
-        <svg:g *ngFor="let tick of ticks.big"
-            class="gauge-tick gauge-tick-large">
-            <svg:path [attr.d]="tick.line" />
-        </svg:g>
-        <svg:g *ngFor="let tick of ticks.big"
-            class="gauge-tick gauge-tick-large">
-            <svg:text
-                [style.text-anchor]="tick.textAnchor"
-                [attr.transform]="tick.textTransform"
-                alignment-baseline="central">
-                {{tick.text}}
-            </svg:text>
-        </svg:g>
-        <svg:g *ngFor="let tick of ticks.small"            
-            class="gauge-tick gauge-tick-small">
-            <svg:path [attr.d]="tick.line" />
-        </svg:g>
-    </svg:g>
-  `,
+		<svg:g [attr.transform]="rotate">
+			<svg:g *ngFor="let tick of ticks.big" class="gauge-tick gauge-tick-large">
+				<svg:path [attr.d]="tick.line"/>
+			</svg:g>
+			<svg:g *ngFor="let tick of ticks.big" class="gauge-tick gauge-tick-large">
+				<svg:text [style.text-anchor]="tick.textAnchor" [attr.transform]="tick.textTransform" alignment-baseline="central">{{tick.text}}</svg:text>
+			</svg:g>
+			<svg:g *ngFor="let tick of ticks.small" class="gauge-tick gauge-tick-small">
+				<svg:path [attr.d]="tick.line"/>
+			</svg:g>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GaugeAxisComponent implements OnChanges {
@@ -115,8 +107,8 @@ export class GaugeAxisComponent implements OnChanges {
 		let x2 = (startDistance + tickLength) * Math.cos(angle);
 
 		let points = [{x: x1, y: y1}, {x: x2, y: y2}];
-		let line = d3.line<{x: number;y: number;}>().x(d => d.x).y(d => d.y);
-		return line(points);
+		let _line = line<{ x: number; y: number; }>().x(d => d.x).y(d => d.y);
+		return _line(points);
 	}
 
 }

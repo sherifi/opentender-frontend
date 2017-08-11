@@ -1,10 +1,9 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
-
 import {BaseChartComponent, PlatformService} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {ColorHelper} from '../utils/color.helper';
 import {IChartBaseSettings, IChartData} from '../chart.interface';
-import d3 from '../d3';
+import {treemap, stratify} from 'd3-hierarchy';
 
 @Component({
 	selector: 'ngx-charts-tree-map',
@@ -57,7 +56,7 @@ export class TreeMapComponent extends BaseChartComponent {
 				return;
 			}
 
-			let treemap = d3.treemap<{name: string, value: number, valueId: string, isRoot?: boolean}>()
+			let tmap = treemap<{name: string, value: number, valueId: string, isRoot?: boolean}>()
 				.size([this.viewDim.width, this.viewDim.height]);
 
 			let rootNode = {
@@ -76,7 +75,7 @@ export class TreeMapComponent extends BaseChartComponent {
 				});
 			});
 
-			let root = d3.stratify<{name: string, value: number, valueId: string, isRoot?: boolean}>()
+			let root = stratify<{name: string, value: number, valueId: string, isRoot?: boolean}>()
 				.id(d => {
 					return d.name;
 				})
@@ -86,7 +85,7 @@ export class TreeMapComponent extends BaseChartComponent {
 				(nodes)
 				.sum(d => d.value);
 
-			this.node = treemap(root);
+			this.node = tmap(root);
 
 			this.domain = this.getDomain();
 

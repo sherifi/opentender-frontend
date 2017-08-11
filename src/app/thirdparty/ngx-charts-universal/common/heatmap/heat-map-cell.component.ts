@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter, SimpleChanges, ElementRef, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {UrlId} from '../../utils/id.helper';
-import d3 from '../../d3';
 import {PlatformService} from '../../../../services/platform.service';
+import {select} from 'd3-selection';
 
 @Component({
 	selector: 'g[ngx-charts-heat-map-cell]',
@@ -78,13 +78,13 @@ export class HeatMapCellComponent implements OnChanges {
 	}
 
 	loadAnimation(): void {
-		let node = d3.select(this.element).select('.cell');
+		let node = select(this.element).select('.cell');
 		node.attr('opacity', 0);
 		this.animateToCurrentForm();
 	}
 
 	animateToCurrentForm(): void {
-		let node = d3.select(this.element).select('.cell');
+		let node = select(this.element).select('.cell');
 
 		node.transition().duration(750)
 			.attr('opacity', 1);

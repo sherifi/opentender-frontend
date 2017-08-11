@@ -1,10 +1,13 @@
 import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
 import {ApiService} from '../services/api.service';
+import {ICountryStats} from '../app.interfaces';
+import {Country, CountryService} from '../services/country.service';
 
 @Directive({selector: 'g.country'})
 export class SVGCountryGroupDirective {
 	@Input() id: string;
-	portal: any;
+	portal: ICountryStats;
+	current: boolean;
 
 	constructor(private el: ElementRef, public renderer: Renderer2) {
 		renderer.listen(el.nativeElement, 'click', (event) => {
@@ -14,11 +17,12 @@ export class SVGCountryGroupDirective {
 		});
 	}
 
-	public setData(portal: any) {
+	public setData(portal: ICountryStats, isCurrent: boolean) {
 		this.portal = portal;
-		if (portal.current) {
+		this.current = isCurrent;
+		if (this.current) {
 			this.renderer.addClass(this.el.nativeElement, 'current');
-		} else if (portal.count > 0) {
+		} else if (portal.value > 0) {
 			this.renderer.addClass(this.el.nativeElement, 'active');
 		}
 	}
@@ -29,11 +33,13 @@ export class SVGCountryGroupDirective {
 	templateUrl: 'map-portal.template.html'
 })
 export class PortalMapComponent implements AfterViewInit, OnChanges {
-	@Input() portals: any;
+	@Input() portals: Array<ICountryStats>;
 	@ViewChildren(SVGCountryGroupDirective) items: QueryList<SVGCountryGroupDirective>;
-	public svg: Array<{id: string; p: Array<string>; c?: Array<{cx: number; cy: number; r: number}>}>;
+	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
+	public current: Country;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private country: CountryService) {
+		this.current = country.get();
 	}
 
 	public ngAfterViewInit(): void {
@@ -58,7 +64,7 @@ export class PortalMapComponent implements AfterViewInit, OnChanges {
 			this.items.forEach((item) => {
 				let portal = this.portals.filter(p => p.id == item.id)[0];
 				if (portal) {
-					item.setData(portal);
+					item.setData(portal, item.id === this.current.id);
 				}
 			});
 		}

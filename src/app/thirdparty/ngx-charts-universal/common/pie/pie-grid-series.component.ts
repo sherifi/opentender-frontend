@@ -1,27 +1,26 @@
 import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
-import d3 from '../../d3';
+import {pie} from 'd3-shape';
 
 @Component({
 	selector: 'g[ngx-charts-pie-grid-series]',
-	template: `
-    <svg:g class="pie-grid-arcs">
-      <svg:g ngx-charts-pie-arc *ngFor="let arc of arcs; trackBy:trackBy"
-        [attr.class]="arc.class"
-        [startAngle]="arc.startAngle"
-        [endAngle]="arc.endAngle"
-        [innerRadius]="innerRadius"
-        [outerRadius]="outerRadius"
-        [fill]="color(arc)"
-        [value]="arc.data.value"
-        [data]="arc.data"
-        [max]="max"
-        [gradient]="false"
-        [pointerEvents]="arc.pointerEvents"
-        [animate]="arc.animate"
-        (select)="onClick($event)">
-      </svg:g>
-    </svg:g>
-  `,
+	template: `<svg:g class="pie-grid-arcs">
+	<svg:g ngx-charts-pie-arc *ngFor="let arc of arcs; trackBy:trackBy"
+		   [attr.class]="arc.class"
+		   [startAngle]="arc.startAngle"
+		   [endAngle]="arc.endAngle"
+		   [innerRadius]="innerRadius"
+		   [outerRadius]="outerRadius"
+		   [fill]="color(arc)"
+		   [value]="arc.data.value"
+		   [data]="arc.data"
+		   [max]="max"
+		   [gradient]="false"
+		   [pointerEvents]="arc.pointerEvents"
+		   [animate]="arc.animate"
+		   (select)="onClick($event)">
+	</svg:g>
+</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
@@ -47,7 +46,7 @@ export class PieGridSeriesComponent implements OnChanges {
 	}
 
 	update(): void {
-		this.layout = d3.pie<{data: {value: number}}>()
+		this.layout = pie<{ data: { value: number } }>()
 			.value((d) => {
 				return d.data.value;
 			}).sort(null);

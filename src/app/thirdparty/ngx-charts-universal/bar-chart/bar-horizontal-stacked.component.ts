@@ -1,8 +1,8 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 // import {animate, style, transition, trigger} from '@angular/animations';
-import d3 from '../d3';
 import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
 import {IChartBarsSettings, IChartData} from '../chart.interface';
+import {scaleBand, scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-bar-horizontal-stacked',
@@ -83,7 +83,7 @@ export class BarHorizontalStackedComponent extends BaseBarGroupedComponent {
 
 	getYScale() {
 		const spacing = 0.1;
-		const scale = d3.scaleBand()
+		const scale = scaleBand()
 			.rangeRound([this.viewDim.height, 0])
 			.paddingInner(spacing)
 			.domain(this.groupDomain);
@@ -91,7 +91,7 @@ export class BarHorizontalStackedComponent extends BaseBarGroupedComponent {
 	}
 
 	getXScale() {
-		const scale = d3.scaleLinear()
+		const scale = scaleLinear()
 			.range([0, this.viewDim.width])
 			.domain(this.valueDomain);
 		return scale;

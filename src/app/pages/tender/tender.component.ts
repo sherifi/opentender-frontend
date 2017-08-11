@@ -1,8 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {PortalsService, Portal} from '../../services/portals.service';
-import {CountryService} from '../../services/country.service';
+import {Country, CountryService} from '../../services/country.service';
 import {PlatformService} from '../../services/platform.service';
 
 @Component({
@@ -14,7 +13,7 @@ export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
 	public tender_raw: string;
 	private sub: any;
-	public portal: Portal;
+	public portal: Country;
 	public state = {
 		lots: {$open: true},
 		buyer: {$open: true},
@@ -27,7 +26,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		discussion: {$open: false},
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private portals: PortalsService, private country: CountryService, private platform: PlatformService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private country: CountryService, private platform: PlatformService) {
 		if (!this.platform.isBrowser) {
 			this.state.additional.$open = true;
 			this.state.documents.$open = true;
@@ -35,7 +34,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.raw.$open = true;
 			this.state.discussion.$open = true;
 		}
-		this.portal = portals.get().filter(portal => portal.id === country.get().id)[0];
+		this.portal = country.get();
 	}
 
 	ngOnInit(): void {

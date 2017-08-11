@@ -1,11 +1,11 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Router} from '@angular/router';
 import {IApiGeoJSONResult, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
 import {ApiService} from '../../services/api.service';
 import GeoJSON = L.GeoJSON;
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
-import * as d3 from 'd3';
-import {Router} from '@angular/router';
+import {scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'graph[nutsmap]',
@@ -82,7 +82,7 @@ export class GraphNutsMapComponent implements OnChanges {
 			nuts[nutskey] = (nuts[nutskey] || 0) + this.data[key];
 			max = Math.max(max, nuts[nutskey]);
 		});
-		let scale = d3.scaleLinear().domain([0, max]).range([0, 1]);
+		let scale = scaleLinear().domain([0, max]).range([0, 1]);
 		this.valid = 0;
 		geo.features = geo.features.filter(feature => {
 			let value = nuts[feature.properties.id];

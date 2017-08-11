@@ -22,12 +22,13 @@
 
 	<base href="{{BASE_HREF}}">
 	<link rel="stylesheet" type="text/css" href="/assets/style/style.css?{{RES_VERSION}}">
-	<script>document.country = {{COUNTRY}};document.locale = "{{LANG}}";</script>
+	<script>document.country = {{COUNTRY}};document.locale = "{{LANG}}";document.config = {{CONFIG}};</script>
 </head>
 <body>
 <app id="app">Loading Opentender…</app>
 <script src="/assets/js/polyfills.js?{{RES_VERSION}}"></script>
 <script src="/assets/js/vendor.js?{{RES_VERSION}}"></script>
 <script src="/assets/js/app.js?{{RES_VERSION}}"></script>
+<!--<script src="/assets/js/app.bundle.js?{{RES_VERSION}}"></script>-->
 </body>
 </html>

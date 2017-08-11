@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {PortalsService} from '../../services/portals.service';
 import {ApiService} from '../../services/api.service';
-import {CountryService} from '../../services/country.service';
+import {Country, CountryService} from '../../services/country.service';
 import {ICountryStats} from '../../app.interfaces';
 
 @Component({
@@ -10,10 +9,12 @@ import {ICountryStats} from '../../app.interfaces';
 	templateUrl: 'start-map.template.html'
 })
 export class StartMapComponent {
-	portals = [];
-	allportal = {};
+	portals: Array<ICountryStats> = [];
+	allportal: ICountryStats;
+	current: Country;
 
-	constructor(private api: ApiService, private portalService: PortalsService, private countryService: CountryService) {
+	constructor(private api: ApiService, private countryService: CountryService) {
+		this.current = this.countryService.get();
 		this.api.getPortalsStats().subscribe(
 			(result) => this.display(result.data),
 			(error) => console.error(error),
@@ -22,31 +23,16 @@ export class StartMapComponent {
 			});
 	}
 
-	display(data: ICountryStats): void {
+	display(data: Array<ICountryStats>): void {
 		if (!data) {
 			return;
 		}
-		let currentCountry = this.countryService.get();
-		let count_all = 0;
-		let ps = this.portalService.get();
-		ps.forEach((p) => {
-			if (p.id !== 'eu') {
-				count_all += data[p.id] || 0;
-			}
-		});
-		data['eu'] = count_all;
 		this.portals = [];
-		ps.forEach(p => {
-			let portal = {
-				id: p.id,
-				name: p.name,
-				count: data[p.id] || 0,
-				current: currentCountry.id === p.id
-			};
+		data.forEach(p => {
 			if (p.id !== 'eu') {
-				this.portals.push(portal);
+				this.portals.push(p);
 			} else {
-				this.allportal = portal;
+				this.allportal = p;
 			}
 		});
 	}

@@ -25,7 +25,7 @@ dtsgen.default(schemas, prefix).then((result) => {
 	sl.pop();
 	sl.push('}');
 	sl.push('');
-	fs.writeFileSync('../src/app/model/tender.ts', sl.join('\n')
+	fs.writeFileSync('../src/app/model/tender.d.ts', sl.join('\n')
 			.replace(/string;\s*\| number/, 'string | number') //fix format bug "string; | number" => "string | number"
 			// .replace(/_id: string;/g, 'id: string;')
 			.replace(/        /g, '    ')

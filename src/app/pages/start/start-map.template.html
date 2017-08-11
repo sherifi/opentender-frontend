@@ -3,16 +3,16 @@
 </div>
 <div class="container-left-6">
 	<ul class="portal-links">
-		<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.current}">
+		<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.id===current.id}">
 			<span><a href="/{{portal.id}}">{{portal.name}}</a></span>
-			<span>{{portal.count | formatNumber}} Tenders</span>
+			<span>{{portal.value | formatNumber}} Tenders</span>
 		</li>
 	</ul>
-	<ul class="portal-links">
+	<ul class="portal-links" *ngIf="allportal">
 		<li class="portal-link"></li>
-		<li class="portal-link" [ngClass]="{active:allportal.current}">
+		<li class="portal-link" [ngClass]="{active:allportal.id===current.id}">
 			<span><a href="/eu">All available data</a></span>
-			<span>{{allportal.count | formatNumber}} Tenders</span>
+			<span>{{allportal.value | formatNumber}} Tenders</span>
 		</li>
 	</ul>
 </div>

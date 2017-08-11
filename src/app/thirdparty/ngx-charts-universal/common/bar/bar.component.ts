@@ -1,8 +1,8 @@
 import {Component, Input, Output, EventEmitter, HostListener, ElementRef, SimpleChanges, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {UrlId} from '../../utils/id.helper';
-import d3 from '../../d3';
 import {PlatformService} from '../../../../services/platform.service';
 import {roundedRect} from '../shapes/shapes.helper';
+import {select} from 'd3-selection';
 
 @Component({
 	selector: 'g[ngx-charts-bar]',
@@ -92,7 +92,7 @@ export class BarComponent implements OnChanges {
 		if (!this.platform.isBrowser) {
 			this.path = path;
 		} else {
-			let node = d3.select(this.element).select('.bar');
+			let node = select(this.element).select('.bar');
 			node.transition().duration(750).attr('d', path);
 		}
 	}

@@ -2,10 +2,10 @@ import {Component, ContentChild, ElementRef, HostListener, Input, TemplateRef, V
 import {ChartComponent} from '../common/chart/chart.component';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
-import d3 from '../d3';
 import {ColorHelper} from '../utils/color.helper';
 import {IChartFlowChartSettings, IChartData, IChartLink, IChartNode} from '../chart.interface';
 import {ILegendOptions} from '../common/common.interface';
+import {forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY} from 'd3-force';
 
 @Component({
 	selector: 'ngx-charts-force-directed-graph',
@@ -19,9 +19,7 @@ import {ILegendOptions} from '../common/common.interface';
 			<svg:g [attr.transform]="transform" class="force-directed-graph chart">
 				<svg:g class="links">
 					<svg:g *ngFor="let link of links; trackBy:trackLinkBy">
-						<ng-template *ngIf="linkTemplate"
-									 [ngTemplateOutlet]="linkTemplate"
-									 [ngOutletContext]="{ $implicit: link }">
+						<ng-template *ngIf="linkTemplate" [ngTemplateOutlet]="linkTemplate" [ngOutletContext]="{ $implicit: link }">
 						</ng-template>
 						<svg:line *ngIf="!linkTemplate"
 								  strokeWidth="1" class="edge"
@@ -43,10 +41,7 @@ import {ILegendOptions} from '../common/common.interface';
 						   [tooltipPlacement]="'top'"
 						   [tooltipType]="'tooltip'"
 						   [tooltipTitle]="node.value">
-						<ng-template *ngIf="nodeTemplate"
-									 [ngTemplateOutlet]="nodeTemplate"
-									 [ngOutletContext]="{ $implicit: node }">
-						</ng-template>
+						<ng-template *ngIf="nodeTemplate" [ngTemplateOutlet]="nodeTemplate" [ngOutletContext]="{ $implicit: node }"></ng-template>
 						<svg:circle *ngIf="!nodeTemplate" r="5"/>
 					</svg:g>
 				</svg:g>
@@ -63,13 +58,13 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 	@Output() activate: EventEmitter<any>;
 	@Output() deactivate: EventEmitter<any>;
 
-	@Input() force = d3.forceSimulation()
-		.force('charge', d3.forceManyBody())
-		.force('collide', d3.forceCollide(5))
-		.force('x', d3.forceX())
-		.force('y', d3.forceY());
+	@Input() force = forceSimulation()
+		.force('charge', forceManyBody())
+		.force('collide', forceCollide(5))
+		.force('x', forceX())
+		.force('y', forceY());
 
-	@Input() forceLink = d3.forceLink<IChartNode, IChartLink>().id(node => node.value.toString());
+	@Input() forceLink = forceLink<IChartNode, IChartLink>().id(node => node.value.toString());
 	@Input() groupResultsBy: (node: any) => string = node => node.value;
 	@Input() legend: boolean;
 
@@ -117,9 +112,14 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 
 	getSeriesDomain(): any[] {
 		return this.data.map(d => this.groupResultsBy(d))
-			.reduce((nodes: any[], node): any[] => nodes.includes(node) ? nodes : nodes.concat([node]), [])
+			.reduce(
+				(nodes: any[], node): any[] => (nodes.indexOf(node) >= 0) ? nodes : nodes.concat([node]), []
+			)
 			.sort();
 	}
+
+	// if (values.indexOf(d.name) < 0) {
+
 
 	trackLinkBy(index, link): any {
 		return link.index;

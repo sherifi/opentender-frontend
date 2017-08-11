@@ -1,9 +1,9 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
-import d3 from '../d3';
 import {IChartBarsSettings, IChartData} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {ILegendOptions, IDomain} from '../common/common.interface';
+import {scaleBand, scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-bar-vertical',
@@ -71,7 +71,7 @@ export class BarVerticalComponent extends BaseXYAxisComponent {
 
 	getXScale() {
 		const spacing = 0.2;
-		const scale = d3.scaleBand()
+		const scale = scaleBand()
 			.rangeRound([0, this.viewDim.width])
 			.paddingInner(spacing)
 			.domain(this.xDomain.map(i => {
@@ -81,7 +81,7 @@ export class BarVerticalComponent extends BaseXYAxisComponent {
 	}
 
 	getYScale() {
-		const scale = d3.scaleLinear()
+		const scale = scaleLinear()
 			.range([this.viewDim.height, 0])
 			.domain(<Array<number>>this.yDomain);
 		return scale;

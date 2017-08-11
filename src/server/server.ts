@@ -2,6 +2,7 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
+import * as fs from 'fs';
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
@@ -27,9 +28,11 @@ let languages = {
 	'es': {lang: 'es', translation: TRANSLATION_ES, module: MainModuleES}
 };
 
-import * as Portals from 'portals.json';
+
 import * as Config from 'config.js';
 import {routes} from '../app/app.routes';
+
+let portals = JSON.parse(fs.readFileSync(path.join(Config.server.data.path, 'portals.json')).toString());
 
 let useCache = !Config.server.disableCache;
 let addToCache = (req, data) => {
@@ -119,7 +122,7 @@ let startApp = function(req, res) {
 		if (c_id === 'gb') {
 			c_id = 'uk';
 		}
-		ip_country = Portals.active.filter(portal => portal.id == c_id)[0];
+		ip_country = portals.filter(portal => portal.id == c_id)[0];
 		if (ip_country) {
 			ip_country = {id: ip_country.id, name: ip_country.name};
 		}
@@ -130,6 +133,7 @@ let startApp = function(req, res) {
 		bootstrap: language.module,
 		providers: [
 			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
+			{provide: 'config', useValue: Config.client},
 			{provide: 'COUNTRY', useValue: country},
 			{provide: TRANSLATIONS, useValue: language.translation || ''},
 			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
@@ -140,6 +144,7 @@ let startApp = function(req, res) {
 				.replace(/\{\{COUNTRY_NAME\}\}/g, '')
 				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
 				.replace(/\{\{LANG\}\}/g, language.lang)
+				.replace(/\{\{CONFIG\}\}/g, JSON.stringify(Config.client))
 				.replace(/\{\{COUNTRY\}\}/g, JSON.stringify(country));
 		}
 	});
@@ -163,6 +168,7 @@ let portalApp = function(req, res, country) {
 		providers: [
 			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
 			{provide: 'COUNTRY', useValue: {id: country.id, name: country.name}},
+			{provide: 'config', useValue: Config.client},
 			{provide: TRANSLATIONS, useValue: language.translation || ''},
 			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
 			{provide: LOCALE_ID, useValue: language.lang}
@@ -172,7 +178,8 @@ let portalApp = function(req, res, country) {
 				.replace(/\{\{COUNTRY_NAME\}\}/g, country.name)
 				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
 				.replace(/\{\{LANG\}\}/g, language.lang)
-				.replace(/\{\{COUNTRY\}\}/g, JSON.stringify({id: country.id, name: country.name}));
+				.replace(/\{\{CONFIG\}\}/g, JSON.stringify(Config.client))
+				.replace(/\{\{COUNTRY\}\}/g, JSON.stringify(country));
 		}
 	});
 	console.time(`GET: ${req.originalUrl}`);
@@ -209,7 +216,7 @@ let registerPages = country => {
 	});
 };
 
-Portals.active.forEach(portal => {
+portals.forEach(portal => {
 	if (portal.id) {
 		registerPages(portal);
 	}

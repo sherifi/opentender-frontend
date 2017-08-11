@@ -1,10 +1,9 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
-import d3 from '../d3';
 import {IChartBarsSettings, IChartData} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {ILegendOptions, IDomain} from '../common/common.interface';
-
+import {scaleBand, scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-bar-horizontal',
@@ -72,7 +71,7 @@ export class BarHorizontalComponent extends BaseXYAxisComponent {
 	}
 
 	getXScale() {
-		let scale = d3.scaleLinear()
+		let scale = scaleLinear()
 			.range([0, this.viewDim.width])
 			.domain(this.xDomain.map(item => {
 				return <number>item;
@@ -82,7 +81,7 @@ export class BarHorizontalComponent extends BaseXYAxisComponent {
 
 	getYScale() {
 		const spacing = 0.2;
-		let scale = d3.scaleBand()
+		let scale = scaleBand()
 			.rangeRound([this.viewDim.height, 0])
 			.paddingInner(spacing)
 			.domain(this.yDomain.map(item => {

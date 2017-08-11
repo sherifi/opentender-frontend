@@ -1,7 +1,9 @@
 import {Component, Input, Output, EventEmitter, ElementRef, SimpleChanges, OnChanges, ChangeDetectionStrategy} from '@angular/core';
-import d3 from '../../d3';
 import {UrlId} from '../../utils/id.helper';
 import {PlatformService} from '../../../../services/platform.service';
+import {select} from 'd3-selection';
+import {arc} from 'd3-shape';
+import {interpolate} from 'd3-interpolate';
 
 @Component({
 	selector: 'g[ngx-charts-pie-arc]',
@@ -65,8 +67,7 @@ export class PieArcComponent implements OnChanges {
 	}
 
 	update(): void {
-		let arc = this.calculateArc();
-		this.path = arc.startAngle(this.startAngle).endAngle(this.endAngle)();
+		this.path = this.calculateArc().startAngle(this.startAngle).endAngle(this.endAngle)();
 		this.startOpacity = 0.5;
 		this.gradId.generate('linearGrad', this.platform.isBrowser);
 		if (this.platform.isBrowser) {
@@ -86,52 +87,49 @@ export class PieArcComponent implements OnChanges {
 		if (this.explodeSlices && this.innerRadius === 0) {
 			outerRadius = this.outerRadius * this.value / this.max;
 		}
-
-		return d3.arc()
+		return arc()
 			.innerRadius(this.innerRadius)
 			.outerRadius(outerRadius)
 			.cornerRadius(this.cornerRadius);
 	}
 
 	loadAnimation(): void {
-		let node = d3.select(this.element).selectAll('.arc').data([{startAngle: this.startAngle, endAngle: this.endAngle}]);
-		let arc = this.calculateArc();
-
+		let node = select(this.element).selectAll('.arc').data([{startAngle: this.startAngle, endAngle: this.endAngle}]);
+		let a = this.calculateArc();
 		node
 			.transition()
 			.attrTween('d', function(d) {
 				this['_current'] = this['_current'] || d;
 				let copyOfD = Object.assign({}, d);
 				copyOfD.endAngle = copyOfD.startAngle;
-				let interpolate = d3.interpolate(copyOfD, copyOfD);
-				this['_current'] = interpolate(0);
+				let interpol = interpolate(copyOfD, copyOfD);
+				this['_current'] = interpol(0);
 				return function(t) {
-					return arc(interpolate(t));
+					return a(interpol(t));
 				};
 			})
 			.transition().duration(750)
 			.attrTween('d', function(d) {
 				this['_current'] = this['_current'] || d;
-				let interpolate = d3.interpolate(this['_current'], d);
-				this['_current'] = interpolate(0);
+				let interpol = interpolate(this['_current'], d);
+				this['_current'] = interpol(0);
 				return function(t) {
-					return arc(interpolate(t));
+					return a(interpol(t));
 				};
 			});
 	}
 
 	updateAnimation(): void {
-		let node = d3.select(this.element).selectAll('.arc').data([{startAngle: this.startAngle, endAngle: this.endAngle}]);
-		let arc = this.calculateArc();
-
+		let node = select(this.element).selectAll('.arc').data([{startAngle: this.startAngle, endAngle: this.endAngle}]);
+		let a = this.calculateArc();
 		node
 			.transition().duration(750)
 			.attrTween('d', function(d) {
 				this['_current'] = this['_current'] || d;
-				let interpolate = d3.interpolate(this['_current'], d);
-				this['_current'] = interpolate(0);
+				let interpol = interpolate(this['_current'], d);
+				this['_current'] = interpol(0);
 				return function(t) {
-					return arc(interpolate(t));
+					return a(interpol(t));
 				};
 			});
 	}

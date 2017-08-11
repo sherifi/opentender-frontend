@@ -3,10 +3,12 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
-import Body = Definitions.Body;
 import {StateService} from '../../services/state.service';
 import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, IStatsPrices, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
 import {CountryService, Country} from '../../services/country.service';
+
+/// <reference path="./model/tender.d.ts" />
+import Body = Definitions.Body;
 
 @Component({
 	moduleId: __filename,

@@ -1,45 +1,44 @@
 import {Component, Input, ElementRef, ViewChild, AfterViewInit, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
-import d3 from '../d3';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {IChartGaugeSettings, IChartData} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
+import {scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-gauge',
-	template: `
-    <ngx-charts-chart [dim]="dim" [chart]="chart">
-      <svg:g [attr.transform]="transform" class="gauge chart">
-        <svg:g *ngFor="let arc of arcs" [attr.transform]="rotation">
-          <svg:g ngx-charts-gauge-arc
-            [backgroundArc]="arc.backgroundArc"
-            [valueArc]="arc.valueArc"
-            [cornerRadius]="cornerRadius"
-            [colors]="colors"
-            (select)="onClick($event)">
-          </svg:g>
-        </svg:g>
-        <svg:g ngx-charts-gauge-axis
-          *ngIf="chart.showAxis"
-          [bigSegments]="chart.bigSegments || 10"
-          [smallSegments]="chart.smallSegments || 5"
-          [min]="min"
-          [max]="max"
-          [radius]="outerRadius"
-          [angleSpan]="angleSpan"
-          [valueScale]="valueScale"
-          [startAngle]="startAngle">
-        </svg:g>
-        <svg:text #textEl
-            [style.text-anchor]="'middle'"
-            [attr.transform]="textTransform"
-            alignment-baseline="central">
-          <tspan x="0" dy="0">{{displayValue}}</tspan>
-          <tspan x="0" dy="1.2em">{{chart.units}}</tspan>
-        </svg:text>
-        
-      </svg:g>
-    </ngx-charts-chart>
+	template: `<ngx-charts-chart [dim]="dim" [chart]="chart">
+	<svg:g [attr.transform]="transform" class="gauge chart">
+		<svg:g *ngFor="let arc of arcs" [attr.transform]="rotation">
+			<svg:g ngx-charts-gauge-arc
+				   [backgroundArc]="arc.backgroundArc"
+				   [valueArc]="arc.valueArc"
+				   [cornerRadius]="cornerRadius"
+				   [colors]="colors"
+				   (select)="onClick($event)">
+			</svg:g>
+		</svg:g>
+		<svg:g ngx-charts-gauge-axis
+			   *ngIf="chart.showAxis"
+			   [bigSegments]="chart.bigSegments || 10"
+			   [smallSegments]="chart.smallSegments || 5"
+			   [min]="min"
+			   [max]="max"
+			   [radius]="outerRadius"
+			   [angleSpan]="angleSpan"
+			   [valueScale]="valueScale"
+			   [startAngle]="startAngle">
+		</svg:g>
+		<svg:text #textEl
+				  [style.text-anchor]="'middle'"
+				  [attr.transform]="textTransform"
+				  alignment-baseline="central">
+			<tspan x="0" dy="0">{{displayValue}}</tspan>
+			<tspan x="0" dy="1.2em">{{chart.units}}</tspan>
+		</svg:text>
+
+	</svg:g>
+</ngx-charts-chart>
   `,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -199,7 +198,7 @@ export class GaugeComponent extends BaseChartComponent implements AfterViewInit 
 	}
 
 	getValueScale(): any {
-		return d3.scaleLinear()
+		return scaleLinear()
 			.range([0, this.angleSpan])
 			.domain(this.valueDomain);
 	}

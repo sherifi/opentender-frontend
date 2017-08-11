@@ -1,9 +1,9 @@
-import d3 from '../d3';
+import {scaleBand} from 'd3-scale';
 
 export function gridLayout(dims, data, minWidth) {
 	let rows = 1;
-	let xScale: any = d3.scaleBand();
-	let yScale: any = d3.scaleBand();
+	let xScale: any = scaleBand();
+	let yScale: any = scaleBand();
 	let dataLength = data.length;
 	let width = dims.width;
 	let height = dims.height;

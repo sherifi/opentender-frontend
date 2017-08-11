@@ -1,7 +1,7 @@
 import {Component, Input, Output, SimpleChanges, EventEmitter, ElementRef, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {UrlId} from '../../utils/id.helper';
-import d3 from '../../d3';
 import {PlatformService} from '../../../../services/platform.service';
+import {select} from 'd3-selection';
 
 @Component({
 	selector: 'g[ngx-charts-area]',
@@ -76,7 +76,7 @@ export class AreaComponent implements OnChanges {
 	}
 
 	animateToCurrentForm(): void {
-		let node = d3.select(this.element).select('.area');
+		let node = select(this.element).select('.area');
 
 		node.transition().duration(750)
 			.attr('d', this.path);

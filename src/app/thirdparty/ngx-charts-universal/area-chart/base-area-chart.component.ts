@@ -1,14 +1,15 @@
 import {Input, Output, EventEmitter, HostListener, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
 import {IChartAreaSettings, IChartData} from '../chart.interface';
-import d3 from '../d3';
 import {UrlId} from '../utils/id.helper';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {toDate} from '../utils/date.helper';
 import {IDomain, ILegendOptions} from '../common/common.interface';
+import {curveLinear} from 'd3-shape';
+import {scaleTime, scaleLinear, scalePoint} from 'd3-scale';
 
 export interface IAreaChartData {
-	name: string|Date;
+	name: string | Date;
 	value: number;
 	d0?: number;
 	d1?: number;
@@ -23,7 +24,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 	@Output() activate: EventEmitter<any>;
 	@Output() deactivate: EventEmitter<any>;
 
-	@Input() curve = d3.shape.curveLinear;
+	@Input() curve = curveLinear;
 
 	xSet: any[]; // the set of all values on the X Axis
 	seriesDomain: IDomain;
@@ -102,7 +103,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 
 		for (let results of this.data) {
 			for (let d of results.series) {
-				if (!values.includes(d.name)) {
+				if (values.indexOf(d.name) < 0) {
 					values.push(d.name);
 				}
 			}
@@ -138,15 +139,15 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 		let scale;
 
 		if (this.scaleType === 'time') {
-			scale = d3.scaleTime()
+			scale = scaleTime()
 				.range([0, width])
 				.domain(domain);
 		} else if (this.scaleType === 'linear') {
-			scale = d3.scaleLinear()
+			scale = scaleLinear()
 				.range([0, width])
 				.domain(domain);
 		} else if (this.scaleType === 'ordinal') {
-			scale = d3.scalePoint()
+			scale = scalePoint()
 				.range([0, width])
 				.padding(0.1)
 				.domain(domain);
@@ -156,7 +157,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 	}
 
 	_getYScale(domain: IDomain, height: number) {
-		const scale = d3.scaleLinear()
+		const scale = scaleLinear()
 			.range([height, 0])
 			.domain(domain.map(i => {
 				return <number>i;

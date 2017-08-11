@@ -1,7 +1,9 @@
+/// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
 import Bidder = Definitions.Bidder;
 import Tender = Definitions.Tender;
 import {ColumnSort} from './model/columns';
+import {Country} from './services/country.service';
 
 export interface ISector {
 	id: string;
@@ -18,7 +20,9 @@ export interface IRegion {
 }
 
 export interface ICountryStats {
-	[country: string]: number;
+	id: string;
+	name: string;
+	value: number;
 }
 
 export interface IUsageEntry {
@@ -167,8 +171,12 @@ export interface ISectorsApiResult {
 	};
 }
 
+export interface IPortalsApiResult {
+	data: Array<Country>;
+}
+
 export interface IPortalsStatsApiResult {
-	data: ICountryStats;
+	data: Array<ICountryStats>;
 }
 
 export interface IUsageApiResult {

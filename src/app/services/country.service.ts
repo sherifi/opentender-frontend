@@ -1,7 +1,5 @@
-import {Injectable, InjectionToken, Inject} from '@angular/core';
+import {Injectable, Inject} from '@angular/core';
 import {PlatformService} from './platform.service';
-import {PortalsService} from './portals.service';
-declare var Zone: any;
 
 export interface Country {
 	id: string;
@@ -14,7 +12,7 @@ export interface Country {
 export class CountryService {
 	private _country: Country;
 
-	constructor(@Inject('COUNTRY') externalCountry, private platform: PlatformService, portalservice: PortalsService) {
+	constructor(@Inject('COUNTRY') externalCountry, private platform: PlatformService) {
 		let country = externalCountry;
 		if (!country && this.platform.isBrowser) {
 			country = document['country'];
@@ -22,15 +20,9 @@ export class CountryService {
 		if (country) {
 			this._country = country;
 		} else {
-			this._country = {id: null, name: 'General'};
+			this._country = {id: null, name: 'General', foi: null};
 			console.log('No country found');
 		}
-		let portals = portalservice.get();
-		portals.forEach(portal => {
-			if (portal.id == this._country.id) {
-				this._country.foi = portal.foi;
-			}
-		});
 	}
 
 	get() {

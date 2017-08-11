@@ -1,4 +1,5 @@
-import d3 from '../d3';
+import {scaleBand, scaleLinear, scaleOrdinal, scaleQuantile} from 'd3-scale';
+import {range} from 'd3-array';
 
 export class ColorHelper {
 	scale: any;
@@ -18,18 +19,18 @@ export class ColorHelper {
 	generateColorScheme(scheme, type, domain) {
 		let colorScale;
 		if (type === 'quantile') {
-			colorScale = d3.scaleQuantile()
+			colorScale = scaleQuantile()
 				.range(scheme.domain)
 				.domain(domain);
 
 		} else if (type === 'ordinal') {
-			colorScale = d3.scaleOrdinal()
+			colorScale = scaleOrdinal()
 				.range(scheme.domain)
 				.domain(domain);
 
 		} else { // if (type === 'linear') {
-			colorScale = d3.scaleLinear()
-				.domain(d3.range(0, 1, 1.0 / (scheme.domain.length - 1)))
+			colorScale = scaleLinear()
+				.domain(range(0, 1, 1.0 / (scheme.domain.length - 1)))
 				.range(scheme.domain);
 		}
 
@@ -38,7 +39,7 @@ export class ColorHelper {
 
 	getColor(value) {
 		if (this.scaleType === 'linear') {
-			let valueScale = d3.scaleLinear()
+			let valueScale = scaleLinear()
 				.domain(this.domain)
 				.range([0, 1]);
 
@@ -65,11 +66,11 @@ export class ColorHelper {
 			start = this.domain[0];
 		}
 
-		let valueScale = d3.scaleLinear()
+		let valueScale = scaleLinear()
 			.domain(this.domain)
 			.range([0, 1]);
 
-		let colorValueScale = d3.scaleBand()
+		let colorValueScale = scaleBand()
 			.domain(this.colorDomain)
 			.range([0, 1]);
 

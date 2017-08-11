@@ -1,62 +1,63 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 // import {animate, style, transition, trigger} from '@angular/animations';
-import d3 from '../d3';
 import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
 import {IChartBarsSettings, IChartData} from '../chart.interface';
+import {scaleBand, scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-bar-horizontal-grouped',
-	template: `<ngx-charts-chart
-        [dim]="dim" [chart]="chart" [data]="data"
-		[legendOptions]="legendOptions"
-		[activeEntries]="activeEntries"
-		(legendLabelActivate)="onActivate($event)"
-		(legendLabelDeactivate)="onDeactivate($event)"
-		(legendLabelClick)="onClick($event)">
-	<svg:g [attr.transform]="transform" class="bar-chart chart">
-		<svg:g ngx-charts-grid-panel-series
-			   [xScale]="valueScale"
-			   [yScale]="groupScale"
-			   [data]="data"
-			   [dims]="viewDim"
-			   orient="horizontal">
-		</svg:g>
-		<svg:g ngx-charts-x-axis
-			   *ngIf="chart.xAxis.show"
-			   [xScale]="valueScale"
-			   [dims]="viewDim"
-			   [showGridLines]="chart.showGridLines"
-			   [showLabel]="chart.xAxis.showLabel"
-			   [labelText]="chart.xAxis.label"
-			   (dimensionsChanged)="updateXAxisHeight($event)">
-		</svg:g>
-		<svg:g ngx-charts-y-axis
-			   *ngIf="chart.yAxis.show"
-			   [yScale]="groupScale"
-			   [dims]="viewDim"
-			   [showLabel]="chart.yAxis.showLabel"
-			   [labelText]="chart.yAxis.label"
-			   (dimensionsChanged)="updateYAxisWidth($event)">
-		</svg:g>
-		<svg:g
-				*ngFor="let group of data; trackBy:trackBy"
-				[attr.transform]="groupTransform(group)">
-			<svg:g ngx-charts-series-horizontal
-				   [xScale]="valueScale"
-				   [activeEntries]="activeEntries"
-				   [yScale]="innerScale"
-				   [colors]="colors"
-				   [series]="group.series"
-				   [dims]="viewDim"
-				   [gradient]="chart.gradient"
-				   (select)="onClick($event, group)"
-				   (activate)="onActivate($event, group)"
-				   (deactivate)="onDeactivate($event, group)"
-			/>
-		</svg:g>
-	</svg:g>
-</ngx-charts-chart>
-  `,
+	template: `
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				[activeEntries]="activeEntries"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)"
+				(legendLabelClick)="onClick($event)">
+			<svg:g [attr.transform]="transform" class="bar-chart chart">
+				<svg:g ngx-charts-grid-panel-series
+					   [xScale]="valueScale"
+					   [yScale]="groupScale"
+					   [data]="data"
+					   [dims]="viewDim"
+					   orient="horizontal">
+				</svg:g>
+				<svg:g ngx-charts-x-axis
+					   *ngIf="chart.xAxis.show"
+					   [xScale]="valueScale"
+					   [dims]="viewDim"
+					   [showGridLines]="chart.showGridLines"
+					   [showLabel]="chart.xAxis.showLabel"
+					   [labelText]="chart.xAxis.label"
+					   (dimensionsChanged)="updateXAxisHeight($event)">
+				</svg:g>
+				<svg:g ngx-charts-y-axis
+					   *ngIf="chart.yAxis.show"
+					   [yScale]="groupScale"
+					   [dims]="viewDim"
+					   [showLabel]="chart.yAxis.showLabel"
+					   [labelText]="chart.yAxis.label"
+					   (dimensionsChanged)="updateYAxisWidth($event)">
+				</svg:g>
+				<svg:g
+						*ngFor="let group of data; trackBy:trackBy"
+						[attr.transform]="groupTransform(group)">
+					<svg:g ngx-charts-series-horizontal
+						   [xScale]="valueScale"
+						   [activeEntries]="activeEntries"
+						   [yScale]="innerScale"
+						   [colors]="colors"
+						   [series]="group.series"
+						   [dims]="viewDim"
+						   [gradient]="chart.gradient"
+						   (select)="onClick($event, group)"
+						   (activate)="onActivate($event, group)"
+						   (deactivate)="onDeactivate($event, group)"
+					/>
+				</svg:g>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	// animations: [
 	// 	trigger('animationState', [
@@ -90,7 +91,7 @@ export class BarHorizontalGroupedComponent extends BaseBarGroupedComponent {
 
 	getGroupScale() {
 		const spacing = 0.2;
-		const scale =  d3.scaleBand()
+		const scale = scaleBand()
 			.rangeRound([this.viewDim.height, 0])
 			.paddingInner(spacing)
 			.paddingOuter(spacing / 2)
@@ -100,7 +101,7 @@ export class BarHorizontalGroupedComponent extends BaseBarGroupedComponent {
 
 	getInnerScale() {
 		const spacing = 0.2;
-		const scale =  d3.scaleBand()
+		const scale = scaleBand()
 			.rangeRound([0, this.groupScale.bandwidth()])
 			.paddingInner(spacing)
 			.domain(this.innerDomain);
@@ -108,7 +109,7 @@ export class BarHorizontalGroupedComponent extends BaseBarGroupedComponent {
 	}
 
 	getValueScale() {
-		const scale =  d3.scaleLinear()
+		const scale = scaleLinear()
 			.range([0, this.viewDim.width])
 			.domain(this.valueDomain);
 		return scale;

@@ -1,25 +1,26 @@
 import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, ChangeDetectionStrategy, NgZone, ChangeDetectorRef, SimpleChanges} from '@angular/core';
-import d3 from '../../d3';
 import {UrlId} from '../../utils/id.helper';
 import {IDomain} from '../common.interface';
 import {ViewDimensions} from '../../utils/view-dimensions.helper';
 import {toDate} from '../../utils/date.helper';
 import {PlatformService} from '../../../../services/platform.service';
+import {select, selection} from 'd3-selection';
+import {scaleTime, scaleLinear, scalePoint} from 'd3-scale';
+import {brushX} from 'd3-brush';
 
 @Component({
 	selector: 'g[ngx-charts-timeline]',
 	template: `
-    <svg:g
-      class="timeline"
-      [attr.transform]="transform">
-      <svg:filter [attr.id]="filterId.id">
-        <svg:feColorMatrix in="SourceGraphic" type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0" />
-      </svg:filter>
-      <svg:g class="embedded-chart"><ng-content></ng-content></svg:g>
-      <svg:rect x="0" y="0" class="brush-background" [attr.width]="view[0]" [attr.height]="height" />
-      <svg:g class="brush"></svg:g>
-    </svg:g>
-  `,
+		<svg:g class="timeline" [attr.transform]="transform">
+			<svg:filter [attr.id]="filterId.id">
+				<svg:feColorMatrix in="SourceGraphic" type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"/>
+			</svg:filter>
+			<svg:g class="embedded-chart">
+				<ng-content></ng-content>
+			</svg:g>
+			<svg:rect x="0" y="0" class="brush-background" [attr.width]="view[0]" [attr.height]="height"/>
+			<svg:g class="brush"></svg:g>
+		</svg:g>`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimelineComponent implements OnChanges {
@@ -85,7 +86,7 @@ export class TimelineComponent implements OnChanges {
 
 		for (let results of this.results) {
 			for (let d of results.series) {
-				if (!values.includes(d.name)) {
+				if (values.indexOf(d.name) < 0) {
 					values.push(d.name);
 				}
 			}
@@ -115,15 +116,15 @@ export class TimelineComponent implements OnChanges {
 			return <number>d;
 		});
 		if (this.scaleType === 'time') {
-			scale = d3.scaleTime()
+			scale = scaleTime()
 				.range([0, this.dims.width])
 				.domain(domain);
 		} else if (this.scaleType === 'linear') {
-			scale = d3.scaleLinear()
+			scale = scaleLinear()
 				.range([0, this.dims.width])
 				.domain(domain);
 		} else if (this.scaleType === 'ordinal') {
-			scale = d3.scalePoint<number>()
+			scale = scalePoint<number>()
 				.range([0, this.dims.width])
 				.padding(0.1)
 				.domain(domain);
@@ -139,19 +140,19 @@ export class TimelineComponent implements OnChanges {
 		const height = this.height;
 		const width = this.view[0];
 
-		this.brush = d3.brushX()
+		this.brush = brushX()
 			.extent([[0, 0], [width, height]])
 			.on('brush end', () => {
 				this.zone.run(() => {
-					const selection = d3.selection.event.selection || this.xScale.range();
-					const newDomain = selection.map(this.xScale.invert);
+					const sel = /*selection.event.selection ||*/ this.xScale.range();
+					const newDomain = sel.map(this.xScale.invert);
 
 					this.onDomainChange.emit(newDomain);
 					this.cd.markForCheck();
 				});
 			});
 
-		d3.select(this.element)
+		select(this.element)
 			.select('.brush')
 			.call(this.brush);
 	}
@@ -166,12 +167,12 @@ export class TimelineComponent implements OnChanges {
 
 		this.zone.run(() => {
 			this.brush.extent([[0, 0], [width, height]]);
-			d3.select(this.element)
+			select(this.element)
 				.select('.brush')
 				.call(this.brush);
 
 			// clear hardcoded properties so they can be defined by CSS
-			d3.select(this.element).select('.selection')
+			select(this.element).select('.selection')
 				.attr('fill', undefined)
 				.attr('stroke', undefined)
 				.attr('fill-opacity', undefined);
