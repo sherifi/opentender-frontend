@@ -1,12 +1,3 @@
-// import 'core-js/client/shim'; // support for internet explorer 11
-// import 'classlist.js'; // support for internet explorer 11
-//
-// import 'zone.js/dist/zone';
-// import 'reflect-metadata';
-// import 'rxjs/Observable';
-// import 'rxjs/add/operator/map';
-
-
 import {enableProdMode, Provider} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MainModule} from './main.module';
@@ -21,14 +12,3 @@ getTranslationProviders().then(providers => {
 	// "bootstrapModule" will assign the providers to the compiler and not our AppModule
 	platformBrowserDynamic(<Provider[]>options.providers).bootstrapModule(MainModule, options);
 });
-
-
-// platformBrowserDynamic().bootstrapModule(MainModule);
-
-// // on document ready bootstrap Angular 2
-// document.addEventListener('DOMContentLoaded', () => {
-// 	getTranslationProviders().then(providers => {
-// 		const options = { providers };
-// 		platformRef.bootstrapModule(MainModule, options);
-// 	});
-// });

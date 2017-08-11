@@ -16,8 +16,8 @@ const replacements = {
 // config for client & server app
 
 const defaultConfig = () => {
-	// https://webpack.github.io/docs/configuration.html#devtool
 	return {
+		// https://webpack.github.io/docs/configuration.html#devtool
 		devtool: config.webpack.sourcemaps ? 'source-map' : undefined,
 		context: __dirname,
 		resolve: {
@@ -31,9 +31,6 @@ const defaultConfig = () => {
 			loaders: [
 				{test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader']},
 				{test: /\.html$/, loader: 'raw-loader'},
-				// {test: /\.css$/, loader: "style-loader!css-loader"},
-				// {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
-				// {test: /\.css$/, loader: 'raw-loader'},
 				{test: /\.json$/, loader: 'raw-loader'}
 			]
 		},
@@ -67,6 +64,10 @@ const clientConfig = () => {
 			chunks: ['polyfills']
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
+			name: 'polyfills_ie',
+			chunks: ['polyfills_ie']
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
 			// filename: 'vendor.js',
 			// minChunks: Infinity,
 			name: 'vendor',
@@ -76,69 +77,21 @@ const clientConfig = () => {
 		new webpack.NormalModuleReplacementPlugin(
 			/zone\.js(\\|\/)dist(\\|\/)long-stack-trace-zone/,
 			root('empty.js')
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/rxjs(\\|\/)testing/,
+			root('empty.js')
 		)
 	];
-
-	// if (!config.webpack.debug) {
-	// 	plugins = plugins.concat([
-	// new webpack.ContextReplacementPlugin(
-	// 	/angular(\\|\/)core(\\|\/)@angular/,
-	// 	path.resolve(__dirname, '../src')
-	// )
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/facade(\\|\/)async/,
-	// 	root('node_modules/@angular/core/src/facade/async.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/facade(\\|\/)collection/,
-	// 	root('node_modules/@angular/core/src/facade/collection.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/facade(\\|\/)errors/,
-	// 	root('node_modules/@angular/core/src/facade/errors.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/facade(\\|\/)lang/,
-	// 	root('node_modules/@angular/core/src/facade/lang.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/facade(\\|\/)math/,
-	// 	root('node_modules/@angular/core/src/facade/math.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/@angular(\\|\/)upgrade/,
-	// 	root('empty.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/dom(\\|\/)debug(\\|\/)ng_probe/,
-	// 	root('empty.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/dom(\\|\/)debug(\\|\/)by/,
-	// 	root('empty.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/src(\\|\/)debug(\\|\/)debug_node/,
-	// 	root('empty.js')
-	// ),
-	// new webpack.NormalModuleReplacementPlugin(
-	// 	/src(\\|\/)debug(\\|\/)debug_renderer/,
-	// 	root('empty.js')
-	// )
-	// ]);
-	// }
-
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.UglifyJsPlugin({
 			beautify: false,
 			comments: false,
-			// mangle: false,
 			output: {
 				comments: false
 			},
 			mangle: {
-				screw_ie8: true,
-				// keep_fnames: true
+				screw_ie8: true
 			},
 			compress: {
 				loops: true,
@@ -172,18 +125,13 @@ const clientConfig = () => {
 		target: 'web',
 		entry: {
 			app: './src/client/client',
-			polyfills: './src/client/polyfills'
+			polyfills: './src/client/polyfills',
+			polyfills_ie: './src/client/polyfills_ie'
 		},
 		recordsPath: root('webpack.records.json'),
 		output: {
 			path: root('dist/client'),
 			filename: '[name].js'
-		},
-		externals: (context, request, cb) => {
-			let replacement = replacements[request];
-			if (!replacement) return cb();
-			console.log('request replacement', request);
-			return cb(null, 'var ' + JSON.stringify(replacement()));
 		},
 		plugins: plugins,
 		node: {
@@ -209,15 +157,14 @@ const serverConfig = () => {
 		},
 		externals: (context, request, cb) => {
 			let replacement = replacements[request];
-			if (replacement) return cb(null, 'var ' + JSON.stringify(replacement()));
+			if (replacement) {
+				return cb(null, 'var ' + JSON.stringify(replacement()));
+			}
 			if (!path.isAbsolute(request) && request.charAt(0) !== '.') {
 				return cb(null, 'commonjs ' + request);
 			}
 			cb();
 		},
-		// externals: includeClientPackages(
-		// 	/@angularclass|@angular|angular2-|ng2-|ng-|@ng-|angular-|@ngrx|ngrx-|@angular2|ionic|@ionic|-angular2|-ng2|-ng/
-		// ),
 		node: {
 			global: true,
 			crypto: true,
@@ -280,7 +227,6 @@ const styleConfig = () => {
 									localIdentName: '[name]__[local]___[hash:base64:5]'
 								}
 							},
-							// {loader: 'css-loader', query: {modules: false, sourceMaps: true}},
 							// { loader: 'postcss-loader' },
 							{loader: 'sass-loader', query: {sourceMaps: config.webpack.sourcemaps}}
 						]

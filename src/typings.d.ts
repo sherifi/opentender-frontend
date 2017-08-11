@@ -82,10 +82,6 @@ declare module 'config.js' {
 	export var client: ClientConfig;
 }
 
-declare module 'config.browser.js' {
-	export var client: ClientConfig;
-}
-
 declare module 'config.node.js' {
 	export var client: ClientConfig;
 }
