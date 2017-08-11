@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Search, SearchCommand} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {CompanyFilterDefs} from '../../../model/filters';
+import {CompanyFilterDefs, FilterType} from '../../../model/filters';
 import {ISearchCompanyData} from '../../../app.interfaces';
 
 @Component({
@@ -16,7 +16,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	columns = ['id', 'body.name', 'body.address.city', 'body.address.country'];
 	quick_filters = [];
 	check_filters = CompanyFilterDefs;
-	search_filters = CompanyFilterDefs.filter(f => f.type !== 'select');
+	search_filters = CompanyFilterDefs.filter(f => f.type !== FilterType.select);
 
 	constructor(private state: StateService) {
 		this.search.filters.forEach(filter => {

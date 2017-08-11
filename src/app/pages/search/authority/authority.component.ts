@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {SearchCommand, Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {AuthorityFilterDefs, FilterDef} from '../../../model/filters';
+import {AuthorityFilterDefs, FilterType} from '../../../model/filters';
 import {ISearchAuthorityData} from '../../../app.interfaces';
 
 @Component({
@@ -16,7 +16,7 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
 	quick_filters = [];
 	check_filters = AuthorityFilterDefs;
-	search_filters = AuthorityFilterDefs.filter(f => f.type !== 'select');
+	search_filters = AuthorityFilterDefs.filter(f => f.type !== FilterType.select);
 
 	constructor(private state: StateService) {
 		this.search.filters.forEach(filter => {
