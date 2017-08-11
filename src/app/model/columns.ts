@@ -10,6 +10,7 @@ import Price = Definitions.Price;
 
 const ICON = {
 	tender: 'icon-newspaper',
+	region: 'icon-location',
 	authority: 'icon-library',
 	company: 'icon-office'
 };
@@ -27,6 +28,7 @@ export interface TableLine {
 	link?: string;
 	prefix?: string;
 	list?: boolean;
+	icon?: string;
 }
 
 export interface TableCell {
@@ -245,6 +247,31 @@ export const TenderColumns: Array<TenderColumn> = [
 			return tender.buyers.map((buyer: Buyer) => {
 				return {icon: ICON.authority, content: buyer.name || '[Name not available]', link: '/authority/' + buyer.groupId};
 			});
+		}
+	},
+	{
+		name: 'Buyer Region',
+		id: 'buyer.address.nuts',
+		group: 'Buyer',
+		sortBy: {
+			id: 'buyers.address.nuts',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.buyers) {
+				return [];
+			}
+			let result: Array<TableLine> = [];
+			tender.buyers.forEach((buyer: Buyer) => {
+				if (buyer.address && buyer.address.nuts) {
+					buyer.address.nuts.forEach(nut => {
+						if (nut) {
+							result.push({icon: ICON.region, content: nut, link: '/region/' + nut});
+						}
+					});
+				}
+			});
+			return result;
 		}
 	},
 	{

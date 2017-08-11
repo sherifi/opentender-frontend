@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {StateService} from '../../../services/state.service';
 import {Search, SearchCommand} from '../../../model/search';
-import {TenderFilterDefs, FilterDef} from '../../../model/filters';
+import {TenderFilterDefs, FilterDef, FilterType} from '../../../model/filters';
 import {ISearchTenderData} from '../../../app.interfaces';
 
 @Component({
@@ -14,8 +14,8 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	search = new Search('tender');
 	search_cmd: SearchCommand;
 	quick_search_filters: Array<FilterDef> = [];
-	search_filters = TenderFilterDefs.filter(f => f.type !== 'select' && f.type !== 'range');
-	check_filters = TenderFilterDefs.filter(f => f.type !== 'value');
+	search_filters = TenderFilterDefs.filter(f => f.type !== FilterType.select && f.type !== FilterType.range);
+	check_filters = TenderFilterDefs.filter(f => f.type !== FilterType.value);
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'lots.bids.price'];
 	filterIds = ['indicators.type_cri', 'indicators.type_aci', 'indicators.type_ti', 'lots.awardDecisionDate'];
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];

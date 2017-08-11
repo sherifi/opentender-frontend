@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Filter, Search} from '../model/search';
+import {FilterType} from '../model/filters';
 
 @Component({
 	moduleId: __filename,
@@ -15,6 +16,7 @@ export class SearchBoxComponent {
 	public quick_filters: Array<Filter>;
 	@Output()
 	public onChange = new EventEmitter();
+	FilterType: typeof FilterType = FilterType;
 
 	constructor() {
 	}

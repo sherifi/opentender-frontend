@@ -3,7 +3,7 @@ import {Filter, Search} from '../model/search';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import {FilterDef} from '../model/filters';
+import {FilterDef, FilterType} from '../model/filters';
 import {PlatformService} from '../services/platform.service';
 
 @Component({
@@ -19,6 +19,8 @@ export class FilterBoxComponent implements OnChanges {
 	public filters: Array<Filter>;
 	@Output()
 	public onChange = new EventEmitter();
+
+	FilterType: typeof FilterType = FilterType;
 	public active_filters: Array<FilterDef> = [];
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();

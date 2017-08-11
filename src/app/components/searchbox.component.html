@@ -6,8 +6,8 @@
 	<div class="filter filter-search" *ngFor="let s of search.searches; let i = index;" [ngClass]="getFilterClass(i)">
 		<span class="filter-close" (click)="closeSearch(s)"><i class="icon-cross"></i></span>
 		<div [ngSwitch]="s.def.type">
-			<autocomplete *ngSwitchCase="'text'" [entity]="search.entity" [field]="s.def.field" [placeholder]="s.def.name" (onSelect)="onSelectSearchEntry($event, s)"></autocomplete>
-			<valueinput *ngSwitchCase="'value'" [placeholder]="s.def.name" (onSelect)="onSelectSearchValueEntry($event, s)"></valueinput>
+			<autocomplete *ngSwitchCase="FilterType.text" [entity]="search.entity" [field]="s.def.field" [placeholder]="s.def.name" (onSelect)="onSelectSearchEntry($event, s)"></autocomplete>
+			<valueinput *ngSwitchCase="FilterType.value" [placeholder]="s.def.name" (onSelect)="onSelectSearchValueEntry($event, s)"></valueinput>
 		</div>
 	</div>
 </div>
