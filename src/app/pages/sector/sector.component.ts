@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats} from '../../app.interfaces';
+import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -23,7 +23,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		top_companies: IStatsCompanies,
 		top_authorities: IStatsAuthorities,
 		sums_finalPrice: IStatsPrices,
-		lots_in_years: IStatsLotsInYears,
+		histogram: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs,
 		counts: IStatsCounts
 	} = {
@@ -31,7 +31,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		top_companies: null,
 		top_authorities: null,
 		sums_finalPrice: null,
-		lots_in_years: null,
+		histogram: null,
 		cpvs_codes: null,
 		counts: null
 	};
@@ -131,10 +131,10 @@ export class SectorPage implements OnInit, OnDestroy {
 	}
 
 	displayStats(data: IStats): void {
-		if (!this.filter.time && data.histogram_lots_awardDecisionDate) {
+		if (!this.filter.time && data.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;
 			let endYear = 0;
-			Object.keys(data.histogram_lots_awardDecisionDate).forEach((key) => {
+			Object.keys(data.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
 				let year = parseInt(key, 10);
 				startYear = startYear === 0 ? year : Math.min(year, startYear);
 				endYear = endYear === 0 ? year : Math.max(year, endYear);
@@ -151,7 +151,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			top_companies: null,
 			sums_finalPrice: null,
 			cpvs_codes: null,
-			lots_in_years: null,
+			histogram: null,
 			counts: null
 		};
 		if (!data) {
@@ -159,7 +159,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		viz.cpvs_codes = null;
-		viz.lots_in_years = data.histogram_lots_awardDecisionDate;
+		viz.histogram = data.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.counts = data.count_lots_bids;
 		viz.sums_finalPrice = data.sums_finalPrice;
 		viz.top_companies = data.top_companies;

@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 @Component({
 	selector: 'graph[indicator-sectors]',
 	template: `
-		<div class="graph-title">Tenders with {{indicator}} per Sector</div>
+		<div class="graph-title">Tenders with {{title}} per Sector</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-right">
 				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>
@@ -27,7 +27,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 	@Input()
 	data: IStatsPcCpvs;
 	@Input()
-	indicator: string = 'Indicators';
+	title: string = 'Indicators';
 
 	cpvs_codes_average: IChartBar = {
 		chart: {

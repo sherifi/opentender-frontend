@@ -3,7 +3,6 @@ import {ApiService} from '../../services/api.service';
 import {Utils} from '../../model/utils';
 import {CountryService} from '../../services/country.service';
 
-
 interface Download {
 	country: string;
 	filename: string;
@@ -40,7 +39,7 @@ export class DownloadsPage implements OnInit {
 					}
 				});
 				data = data.filter(download => {
-					return this.current !== download;
+					return (this.current !== download) && (download.count > 0);
 				});
 				data = data.sort((a, b) => {
 					if (a.name < b.name) return -1;

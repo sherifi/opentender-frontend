@@ -28,13 +28,13 @@
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6">
-				<graph indicator-histogram [data]="viz.lots_in_years" [indicator]="indicator"></graph>
+				<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicator"></graph>
 				<br/>
 				<br/>
-				<graph indicator-structure [data]="viz.terms_indicators" [indicator]="indicator"></graph>
+				<graph indicator-structure [data]="viz.terms_indicators" [title]="indicator"></graph>
 			</div>
 			<div class="container-left-6">
-				<graph indicator-sectors [data]="viz.cpvs_codes" [indicator]="indicator"></graph>
+				<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicator"></graph>
 			</div>
 		</div>
 	</section>

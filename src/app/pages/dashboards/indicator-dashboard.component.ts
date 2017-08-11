@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,

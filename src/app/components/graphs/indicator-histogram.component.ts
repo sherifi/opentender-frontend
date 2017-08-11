@@ -7,7 +7,7 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 @Component({
 	selector: 'graph[indicator-histogram]',
 	template: `
-		<div class="graph-title">{{indicator}} in Time</div>
+		<div class="graph-title">{{title}} in Time</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
 				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')">Nr. of Contracts</button>
@@ -31,7 +31,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
 	data: IStatsPcPricesLotsInYears;
 	@Input()
-	indicator: string = 'Indicators';
+	title: string = 'Indicators';
 
 	absolute: boolean = false;
 	mode: string = 'nr';
@@ -56,7 +56,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 				showLabel: true,
 				label: 'Average % of Contracts (Lots)',
 				defaultWidth: 30,
-				minInterval: 5,
+				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
 			},
 			valueFormatting: Utils.formatPercent,
