@@ -1,5 +1,6 @@
 {
     "name": "Opentender",
+    "short_name": "Opentender",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",

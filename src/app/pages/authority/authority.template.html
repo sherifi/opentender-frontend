@@ -12,16 +12,16 @@
 		<div class="info-links">
 			<div class="info-link-box">
 				Read more about tender legislation<br>
-				<a target="_blank" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
+				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
 				Find Freedom of Information requests at<br>
-				<a target="_blank" href="{{ authority.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
+				<a target="_blank" rel="noopener" href="{{ authority.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">
 				Search this authority at<br>
-				<a target="_blank" href="http://openinterests.eu/entities?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
-				<a target="_blank" href="http://farmsubsidy.openspending.org/search/?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
+				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
+				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 			</div>
 		</div>
 		<h1>{{authority.name}}</h1>

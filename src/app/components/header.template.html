@@ -9,8 +9,10 @@
 		<a class="header-image_link" [routerLink]="['/start']" *ngIf="!isRootPage">
 			<span class="header-image_wrapper">
 				<img class="header-image" alt="Opentender" src="/assets/img/ot-logo.svg"/>
-				<span *ngIf="isActiveStart(router.url);else country_content" class="header-image_desc" i18n>Portals</span>
-				<ng-template #country_content >{{country.name}}</ng-template>
+				<span class="header-image_desc">
+					<ng-container *ngIf="isActiveStart(router.url);else country_content" i18n>Portals</ng-container>
+					<ng-template #country_content>{{country.name}}</ng-template>
+				</span>
 			</span>
 		</a>
 	</div>

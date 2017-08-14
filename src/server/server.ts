@@ -150,6 +150,9 @@ let render = function(req, res, language, country) {
 	});
 };
 
+let currentlang = 'en';
+// let currentlang = 'de';
+
 let startApp = function(req, res) {
 	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	let c_id = geoip.lookupCountry(ip);
@@ -166,11 +169,11 @@ let startApp = function(req, res) {
 	}
 	let country = {id: null, name: 'Portals', ip: ip_country};
 	req.originalUrl = '/start';
-	render(req, res, languages['en'], country);
+	render(req, res, languages[currentlang], country);
 };
 
 let portalApp = function(req, res, country) {
-	render(req, res, languages['en'], country);
+	render(req, res, languages[currentlang], country);
 };
 
 let registerPages = country => {

@@ -12,17 +12,17 @@
 		<div class="info-links">
 			<div class="info-link-box">
 				Read more about tender legislation<br>
-				<a target="_blank" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
+				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
 				Find Freedom of Information requests at<br>
-				<a target="_blank" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
+				<a target="_blank" rel="noopener" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">
 				Search this company at<br>
-				<a target="_blank" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
-				<a target="_blank" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
-				<a target="_blank" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
+				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
+				<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
+				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 			</div>
 		</div>
 		<h1>{{company.name | nameGuard}}</h1>

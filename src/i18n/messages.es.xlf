@@ -78,14 +78,6 @@
             4
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            27
-          </context>
-        </context-group>
         <note priority="1" from="description">
           The portal slogan
         </note>
@@ -126,6 +118,14 @@
             8
           </context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            31
+          </context>
+        </context-group>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
         <source>
@@ -163,6 +163,22 @@
           </context>
           <context context-type="linenumber">
             43
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            33
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            24
           </context>
         </context-group>
       </trans-unit>
@@ -249,6 +265,14 @@
           </context>
           <context context-type="linenumber">
             67
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            25
           </context>
         </context-group>
       </trans-unit>
@@ -434,6 +458,421 @@
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            11
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dab1af6ba43c8dd113734ea6cb57300ed6b88c42" datatype="html">
+        <source>
+          About Opentender
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            25
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
+        <source>
+          What is Opentender?
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            26
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
+        <source>
+          How Opentender works
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            27
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
+        <source>
+          Data
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            32
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be37a41139d137a21483439caa3709cdcea48185" datatype="html">
+        <source>
+          Dashboards
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            34
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            23
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="822fab38216f64e8166d368b59fe756ca39d301b" datatype="html">
+        <source>
+          Downloads
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            35
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
+        <source>
+          Imprint
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            40
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
+        <source>
+          Contact
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="01dac0bf3d300f1a1556a5f312c5c69d06499aff" datatype="html">
+        <source>
+          Legal Notice
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
+        <source>
+          Privacy Policy
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            43
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d68ce4f097c2db0b05e823eb2c4025f66f2364ad" datatype="html">
+        <source>
+          Questions?
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            49
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b2ba0058011086805244b6dd86cd0edce3aef63" datatype="html">
+        <source>
+          Contact Opentender at
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          <x id="INTERPOLATION">
+          </x>
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          .
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            50
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
+        <source>
+          This site (
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          <x id="INTERPOLATION">
+          </x>
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          ) is powered by open source code.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            52
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="778f8d4e1d800b732a93d20e8f8a0858a603799b" datatype="html">
+        <source>
+          We welcome contributions and comments on
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          GitHub
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          .
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            53
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83be59bfa61a6accd9d6e353912ab7fee53096d9" datatype="html">
+        <source>
+          Follow us
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            57
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99cb827741e93125476a0f5b676372d85d15b5fc" datatype="html">
+        <source>
+          Twitter
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            59
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="838a46816b130c73fe73b96e69176da9eb3b1190" datatype="html">
+        <source>
+          Facebook
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            62
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
+        <source>
+          This project has received funding from the
+          <x id="START_LINK" ctype="x-a">
+          </x>
+          European Union’s Horizon 2020 research and innovation programme
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          under grant agreement
+          <x id="START_LINK_1" ctype="x-a">
+          </x>
+          No 645852
+          <x id="CLOSE_LINK" ctype="x-a">
+          </x>
+          .
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            68
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6990ad8d6182662e864495ac31c3758cda1c7a28" datatype="html">
+        <source>
+          Portals
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            13
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+        <source>
+          Home
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            22
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
+        <source>
+          About
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            26
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
+        <source>
+          Making Public Tenders More Transparent
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            30
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b22e27829e9275fb453e8edf6ac2aa5696f8d837" datatype="html">
+        <source>
+          Number of
+          <x id="INTERPOLATION">
+          </x>
+          by Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
+          </context>
+          <context context-type="linenumber">
+            2
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">
+        <source>
+          Buyers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d59bf68e8dab37e7aff7d2c005064e64279e86b5" datatype="html">
+        <source>
+          Suppliers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9cf900e27326dae9ad9dcaa7c3049788f5143961" datatype="html">
+        <source>
+          NUTS 1
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
+          </context>
+          <context context-type="linenumber">
+            9
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8bd8472ece5180c2cf647e62aa698a7a80b50e14" datatype="html">
+        <source>
+          NUTS 2
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
+          </context>
+          <context context-type="linenumber">
+            10
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="43311e75b4948fee987d94dbc39855efa70cd07a" datatype="html">
+        <source>
+          NUTS 3
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/map-home.component.ts
           </context>
           <context context-type="linenumber">
             11
