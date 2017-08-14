@@ -187,47 +187,27 @@ const styleConfig = () => {
 		devtool: config.webpack.sourcemaps ? 'source-map' : undefined,
 		context: __dirname,
 		resolve: {
-			extensions: ['*', '.scss']
+			extensions: ['.scss']
 		},
 		module: {
 			loaders: [
-				{
-					test: /\.css$/,
-					exclude: /node_modules/,
-					use: ExtractTextPlugin.extract({
-						fallback: 'style-loader',
-						use: [
-							{
-								loader: 'css-loader',
-								// options: {},
-								query: {
-									minimize: true,
-									modules: false,
-									localIdentName: '[name]__[local]___[hash:base64:5]'
-								}
-							}
-							// ,
-							// 'postcss-loader'
-						]
-					}),
-				},
 				{
 					test: /\.scss$/,
 					exclude: /node_modules/,
 					use: ExtractTextPlugin
 					.extract({
-						fallback: 'style-loader',
 						use: [
 							{
 								loader: 'css-loader',
 								query: {
 									modules: false,
+									minimize: config.webpack.minimize,
 									sourceMap: config.webpack.sourcemaps,
 									importLoaders: 2,
 									localIdentName: '[name]__[local]___[hash:base64:5]'
 								}
 							},
-							// { loader: 'postcss-loader' },
+							// {loader: 'postcss-loader'},
 							{loader: 'sass-loader', query: {sourceMaps: config.webpack.sourcemaps}}
 						]
 					})
