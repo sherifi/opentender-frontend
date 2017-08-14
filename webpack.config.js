@@ -78,10 +78,8 @@ const clientConfig = () => {
 			/zone\.js(\\|\/)dist(\\|\/)long-stack-trace-zone/,
 			root('empty.js')
 		),
-		new webpack.NormalModuleReplacementPlugin(
-			/rxjs(\\|\/)testing/,
-			root('empty.js')
-		)
+		new webpack.ContextReplacementPlugin(/rxjs[\/\\]testing/, /nope/),
+		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de.js|it/)
 	];
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.UglifyJsPlugin({
