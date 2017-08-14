@@ -7,7 +7,7 @@ export function getTranslationProviders(): Promise<Object[]> {
 		return Promise.resolve(noProviders);
 	}
 	// console.log('loading translation', config.locale);
-	let promise = new Promise(function(resolve, reject) {
+	let promise = new Promise<Object[]>(function(resolve, reject) {
 		let xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4) {

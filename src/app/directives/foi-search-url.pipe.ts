@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Country} from '../services/country.service';
+import {Country} from '../services/config.service';
 
 @Pipe({
 	name: 'foiSearchLink'

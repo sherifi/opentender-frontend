@@ -201,7 +201,9 @@ const styleConfig = () => {
 						use: [
 							{
 								loader: 'css-loader',
+								// options: {},
 								query: {
+									minimize: true,
 									modules: false,
 									localIdentName: '[name]__[local]___[hash:base64:5]'
 								}

@@ -3,7 +3,7 @@ import Buyer = Definitions.Buyer;
 import Bidder = Definitions.Bidder;
 import Tender = Definitions.Tender;
 import {ColumnSort} from './model/columns';
-import {Country} from './services/country.service';
+import {Country} from './services/config.service';
 
 export interface ISector {
 	id: string;

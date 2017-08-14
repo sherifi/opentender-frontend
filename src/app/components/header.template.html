@@ -3,27 +3,28 @@
 		<a class="header-image_link" href="/start" *ngIf="isRootPage">
 			<span class="header-image_wrapper">
 				<img class="header-image" alt="Opentender" src="/assets/img/ot-logo.svg"/>
-				<span class="header-image_desc">Portals</span>
+				<span class="header-image_desc" i18n>Portals</span>
 			</span>
 		</a>
 		<a class="header-image_link" [routerLink]="['/start']" *ngIf="!isRootPage">
 			<span class="header-image_wrapper">
 				<img class="header-image" alt="Opentender" src="/assets/img/ot-logo.svg"/>
-				<span class="header-image_desc">{{isActiveStart(router.url)?'Portals':country.name}}</span>
+				<span *ngIf="isActiveStart(router.url);else country_content" class="header-image_desc" i18n>Portals</span>
+				<ng-template #country_content >{{country.name}}</ng-template>
 			</span>
 		</a>
 	</div>
 </div>
 <nav class="header-right" *ngIf="!isActiveStart(router.url)">
 	<ul class="header-nav">
-		<li class="header-nav_item"><a [class.active]="isActiveHome(router.url)" [routerLink]="['/']">Home</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('dashboards', router.url)" [routerLink]="['/dashboards/corruption-indicators']">Dashboards</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)" [routerLink]="['/search/tender']">Search</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)" [routerLink]="['/downloads']">Download</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('about', router.url)" [routerLink]="['/about/about-opentender']">About</a></li>
+		<li class="header-nav_item"><a [class.active]="isActiveHome(router.url)" [routerLink]="['/']" i18n>Home</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('dashboards', router.url)" [routerLink]="['/dashboards/corruption-indicators']" i18n>Dashboards</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)" [routerLink]="['/search/tender']" i18n>Search</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)" [routerLink]="['/downloads']" i18n>Download</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('about', router.url)" [routerLink]="['/about/about-opentender']" i18n>About</a></li>
 	</ul>
 </nav>
 <nav class="header-right header-hero container-outer" *ngIf="isActiveStart(router.url)">
-	<h2 class="header-hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
-	<p>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
+	<h2 class="header-hero-title_text" i18n>Making Public Tenders More Transparent</h2>
+	<p i18n>This platform is part of the <a href="http://digiwhist.eu">DIGIWHIST project</a></p>
 </nav>

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
-import {Country} from '../../../services/country.service';
+import {Country} from '../../../services/config.service';
 
 @Component({
 	moduleId: __filename,
