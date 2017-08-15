@@ -55,7 +55,7 @@ export class ApiService {
 	}
 
 	getNutsMap(level: number): Observable<IApiGeoJSONResult> {
-		return this.http.get(this.absUrl + '/data/nuts' + level + '.geojson').map(res => <IApiGeoJSONResult>res.json());
+		return this.http.get(this.absUrl + '/data/nuts' + level + '.geo.json').map(res => <IApiGeoJSONResult>res.json());
 	}
 
 	getDownloads(): Observable<IApiResult> {
