@@ -1095,11 +1095,9 @@
           {VAR_PLURAL, plural, =1 {Auschreibung} other {Auschreibungen} }
         </target>
       </trans-unit>
-      <trans-unit id="mainTitle" datatype="html">
+      <trans-unit id="CorruptionRiskIndicators" datatype="html">
         <source>
-          test
-          <x id="INTERPOLATION">
-          </x>
+          Corruption Risk Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -1112,6 +1110,85 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Korruptionsrisiko-Indikatoren
+        </target>
+      </trans-unit>
+      <trans-unit id="CorruptionRisk" datatype="html">
+        <source>
+          Corruption Risk
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Korruptionsrisiko
+        </target>
+      </trans-unit>
+      <trans-unit id="AdministrativeCapacity" datatype="html">
+        <source>
+          Administrative Capacity
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Administrative Kapazität
+        </target>
+      </trans-unit>
+      <trans-unit id="Transparency" datatype="html">
+        <source>
+          Transparency
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Transparenz
+        </target>
+      </trans-unit>
+      <trans-unit id="MarketAnalysis" datatype="html">
+        <source>
+          Market Analysis
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Marktüberblick
+        </target>
       </trans-unit>
     </body>
   </file>

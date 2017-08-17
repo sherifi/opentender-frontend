@@ -5,13 +5,19 @@ function getParameterByName(name) {
 	name = name.replace(/[\[\]]/g, '\\$&');
 	let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
 	let results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
+	if (!results) {
+		return null;
+	}
+	if (!results[2]) {
+		return '';
+	}
 	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 export function getTranslationProviders(): Promise<Object[]> {
-	const noProviders: Object[] = [];
+	const noProviders: Object[] = [{
+		provide: TRANSLATIONS, useValue: null
+	}];
 	const config = document['opentender'];
 	let locale: string = null;
 	let query_locale = getParameterByName('lang');

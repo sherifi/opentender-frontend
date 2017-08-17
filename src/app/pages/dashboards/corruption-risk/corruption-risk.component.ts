@@ -1,10 +1,5 @@
 import {Component} from '@angular/core';
-import {SearchCommand, SearchCommandFilter} from '../../../model/search';
-import {ApiService} from '../../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsPcLotsInYears} from '../../../app.interfaces';
-import {Consts} from '../../../model/consts';
-import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/chart.interface';
-import {Utils} from '../../../model/utils';
+import {I18NService} from '../../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -13,6 +8,10 @@ import {Utils} from '../../../model/utils';
 })
 export class DashboardsCorruptionPage {
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.cri'];
-	public indicator: string = 'Corruption Risk Indicators';
+	public indicator: string;
 	public searchPrefix: string = 'CORRUPTION';
+
+	constructor(i18n: I18NService) {
+		this.indicator = i18n.get('Corruption Risk Indicators');
+	}
 }

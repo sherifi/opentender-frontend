@@ -1,9 +1,9 @@
-import {Pipe} from '@angular/core'
+import {Pipe, PipeTransform} from '@angular/core'
 
 @Pipe({
 	name: 'extractdomain'
 })
-export class ExtractDomainPipe {
+export class ExtractDomainPipe implements PipeTransform {
 	transform(value: string, args): string {
 		let domain = value;
 		if (value.indexOf('://') > -1) {

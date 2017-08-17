@@ -66,6 +66,7 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 
 			const extraProviders = setupOptions.providers.concat(
 				options.providers,
+				...(setupOptions.languageProviders || []),
 				getReqResProviders(options.req, options.res),
 				[
 					{

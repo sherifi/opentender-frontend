@@ -24,6 +24,7 @@ import {FormatNumberPipe} from './directives/format-number';
 import {KeyValuesPipe} from './directives/key-values.pipe';
 import {NameGuardPipe} from './directives/name-guard.pipe';
 import {TruncatePipe} from './directives/truncate.pipe';
+import {I18nPipe} from './directives/i18n.pipe';
 
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
@@ -69,6 +70,7 @@ import {GraphIndicatorStructureComponent} from './components/graphs/indicator-st
 import {GraphMarketTreemap} from './components/graphs/market-treemap.component';
 import {GraphNutsMapComponent} from './components/graphs/nuts-map.component';
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
+import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
 import {HeaderComponent} from './components/header.component';
 import {HomeMapComponent} from './components/map-home.component';
@@ -96,8 +98,6 @@ import {PlatformService} from './services/platform.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
-
-import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 
 const AppConfig = {
 	declarations: [
@@ -162,6 +162,7 @@ const AppConfig = {
 		TruncatePipe,
 		FOISearchLinkPipe,
 		FormatNumberPipe,
+		I18nPipe,
 
 		AuthorityPage,
 		CompanyPage,

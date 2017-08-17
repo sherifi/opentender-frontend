@@ -1,6 +1,6 @@
 /// <reference path="../../typings.d.ts" />
 
-import {Injectable, Inject} from '@angular/core';
+import {Injectable, Inject, LOCALE_ID} from '@angular/core';
 import {PlatformService} from './platform.service';
 
 export interface Country {
@@ -14,9 +14,11 @@ export interface Country {
 export class ConfigService {
 	public config: ClientConfig;
 	public country: Country;
-	absUrl = '';
+	public absUrl: string = '';
+	public locale: string;
 
-	constructor(@Inject('opentender') externalConfig, @Inject('absurl') externalAbsUrl, private platform: PlatformService) {
+	constructor(@Inject('opentender') externalConfig, @Inject('absurl') externalAbsUrl, @Inject(LOCALE_ID) externalLocale, private platform: PlatformService) {
+		this.locale = externalLocale;
 		let config = externalConfig;
 		if (!config && this.platform.isBrowser) {
 			config = document['opentender'];

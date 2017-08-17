@@ -22,6 +22,7 @@ const async = require('async');
 const path = require('path');
 const clone = require('clone');
 const XMLLite = require('xml-lite');
+const runtimestrings = require('./runtime-strings.json');
 
 /*************************************
  * Constants
@@ -53,6 +54,7 @@ let runNGi18n = function (cb) {
 	fs.copySync(path.join(source, 'webpack.config.js'), path.join(dest, 'webpack.config.js'));
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
+	fillI18nTemplate(path.join(dest, 'src/app/components/i18n.template.html'));
 
 	function extract(ngOptions, cliOptions, program, host) {
 		return extractor_1.Extractor.create(ngOptions, program, host, cliOptions.locale).extract(cliOptions.i18nFormat, cliOptions.outFile);
@@ -106,6 +108,13 @@ let packageLanguage = function (lang, content, cb) {
 	fs.writeFile(filename, ts, cb)
 };
 
+let fillI18nTemplate = function (filename) {
+	let list = runtimestrings.map(s => {
+		return '<span i18n="runtime@@' + s.replace(/ /g, '') + '">' + s + '</span>';
+	});
+	fs.writeFileSync(filename, list.join());
+};
+
 let updateLanguage = function (lang, currentNodes, cb) {
 	let transNodes = copyArray(currentNodes);
 
@@ -130,7 +139,7 @@ let updateLanguage = function (lang, currentNodes, cb) {
 	}
 
 	let filename = path.join(source_messages_path, 'messages.' + lang + '.xlf');
-	console.log('merging to ', lang, 'file', filename);
+	console.log('merging to', lang, 'file', filename);
 	fs.readFile(filename, (err, content) => {
 		if (err) return cb(err);
 		let xmljson = XMLLite.xml2js(content.toString());

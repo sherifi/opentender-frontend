@@ -1,10 +1,5 @@
 import {Component} from '@angular/core';
-import {SearchCommand, SearchCommandFilter} from '../../../model/search';
-import {ApiService} from '../../../services/api.service';
-import {IStats} from '../../../app.interfaces';
-import {Consts} from '../../../model/consts';
-import {IChartBar, IChartPie} from '../../../thirdparty/ngx-charts-universal/chart.interface';
-import {Utils} from '../../../model/utils';
+import {I18NService} from '../../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -13,6 +8,10 @@ import {Utils} from '../../../model/utils';
 })
 export class DashboardsTransparencyPage {
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.ti'];
-	public indicator: string = 'Transparency Indicators';
+	public indicator: string;
 	public searchPrefix = 'TRANSPARENCY';
+
+	constructor(i18n: I18NService) {
+		this.indicator = i18n.get('Transparency Indicators');
+	}
 }

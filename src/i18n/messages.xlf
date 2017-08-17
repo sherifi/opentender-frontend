@@ -460,8 +460,40 @@
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="mainTitle" datatype="html">
-        <source>test <x id="INTERPOLATION"/></source>
+      <trans-unit id="CorruptionRiskIndicators" datatype="html">
+        <source>Corruption Risk Indicators</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="CorruptionRisk" datatype="html">
+        <source>Corruption Risk</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="AdministrativeCapacity" datatype="html">
+        <source>Administrative Capacity</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="Transparency" datatype="html">
+        <source>Transparency</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="MarketAnalysis" datatype="html">
+        <source>Market Analysis</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
           <context context-type="linenumber">1</context>

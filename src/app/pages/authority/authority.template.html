@@ -2,7 +2,7 @@
 	<section class="container">
 		<div class="entity-title">Authority</div>
 		<div *ngIf="error">Error: {{error}}</div>
-		<div *ngIf="!error">Loading...</div>
+		<div *ngIf="!error">Loading…</div>
 	</section>
 </section>
 
@@ -15,7 +15,7 @@
 				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
-				Find Freedom of Information requests at<br>
+				Find Freedom of Information requests<br>
 				<a target="_blank" rel="noopener" href="{{ authority.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">

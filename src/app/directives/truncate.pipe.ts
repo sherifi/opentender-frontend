@@ -1,9 +1,9 @@
-import {Pipe} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
 	name: 'truncate'
 })
-export class TruncatePipe {
+export class TruncatePipe implements PipeTransform {
 	transform(value: string, args): string {
 		if (!isNaN(args)) args = [args];
 		let limit = args.length > 0 ? parseInt(args[0], 10) : 10;

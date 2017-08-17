@@ -7,16 +7,16 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 @Component({
 	selector: 'graph[indicator-histogram]',
 	template: `
-		<div class="graph-title">{{title}} in Time</div>
+		<div class="graph-title" i18n>{{title}} in Time</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
-				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')">Nr. of Contracts</button>
-				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')">Volume (€)</button>
-				<!--<button class="tool-button" [ngClass]="{down:mode==='score'}" (click)="toggleValue('score')">Score</button>-->
+				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>
+				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')" i18n>Volume (€)</button>
+				<!--<button class="tool-button" [ngClass]="{down:mode==='score'}" (click)="toggleValue('score')" i18n>Score</button>-->
 			</div>
 			<div class="graph-toolbar graph-toolbar-right">
-				<button class="tool-button" [ngClass]="{down:!absolute}" (click)="toggleAbsolute(false)">Average</button>
-				<button class="tool-button" [ngClass]="{down:absolute}" (click)="toggleAbsolute(true)">Absolute</button>
+				<button class="tool-button" [ngClass]="{down:!absolute}" (click)="toggleAbsolute(false)" i18n>Average</button>
+				<button class="tool-button" [ngClass]="{down:absolute}" (click)="toggleAbsolute(true)" i18n>Absolute</button>
 			</div>
 		</div>
 		<ngx-charts-bar-vertical
@@ -31,7 +31,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
 	data: IStatsPcPricesLotsInYears;
 	@Input()
-	title: string = 'Indicators';
+	title: string = '';
 
 	absolute: boolean = false;
 	mode: string = 'nr';
