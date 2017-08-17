@@ -82,8 +82,10 @@ declare module 'config.js' {
 	export var client: ClientConfig;
 }
 
-declare module 'config.node.js' {
-	export var client: ClientConfig;
+declare module 'client.config.js' {
+	export var version: string;
+	export var backendUrl: string;
+	// export var client: ClientConfig;
 }
 
 declare module 'geoip-ultralight' {

@@ -3,12 +3,13 @@ const path = require('path');
 const webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const SemverWebpackPlugin = require('semver-extended-webpack-plugin');
 
 const config = require('./config.js');
 
 const replacements = {
 	'config.js': () => config,
-	'config.node.js': () => {
+	'client.config.js': () => {
 		return {version: config.client.version, backendUrl: config.server.backendUrl}
 	}
 };
@@ -59,6 +60,13 @@ const defaultConfig = () => {
 
 const clientConfig = () => {
 	let plugins = [
+		// new SemverWebpackPlugin({
+		// 	files: [path.resolve(__dirname, 'version.json')],
+		// 	incArgs: ['patch'],
+		// 	console: true,
+		// 	buildDate: true,
+		// 	// version: '1.8'  // optional if you want to set the desired version
+		// }),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'polyfills',
 			chunks: ['polyfills']

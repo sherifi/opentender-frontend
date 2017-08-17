@@ -28,7 +28,6 @@ let languages = {
 	'es': {lang: 'es', translation: TRANSLATION_ES, module: MainModuleES}
 };
 
-
 import * as Config from 'config.js';
 import {routes} from '../app/app.routes';
 

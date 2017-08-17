@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import * as Config from 'config.node.js';
+import * as Config from 'client.config.js';
 import {App, AppConfig} from '../app/app.config';
 
 import {BrowserModule} from '@angular/platform-browser';
