@@ -32,7 +32,6 @@ export class HomeMapComponent {
 	}
 
 	fillMap(level) {
-		console.log('fill map');
 		if (this.map_companies) {
 			this.api.getCompanyNutsStats().subscribe(
 				res => {
