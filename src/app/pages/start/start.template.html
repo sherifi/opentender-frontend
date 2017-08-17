@@ -9,6 +9,23 @@
 <section class="slab-alpha container-padded-bottom">
 	<div class="container-outer">
 		<h3 class="start-heading" i18n>Please choose a country portal or explore <a href="/eu">all available data</a></h3>
-		<start-map></start-map>
+		<div class="container-left-6">
+			<portal-map [portals]="portals"></portal-map>
+		</div>
+		<div class="container-left-6">
+			<ul class="portal-links">
+				<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.id===current.id}">
+					<span><a href="/{{portal.id}}">{{portal.name}}</a></span>
+					<span>{{portal.value | formatNumber}} <ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container></span>
+				</li>
+			</ul>
+			<ul class="portal-links" *ngIf="allportal">
+				<li class="portal-link"></li>
+				<li class="portal-link" [ngClass]="{active:allportal.id===current.id}">
+					<span><a href="/eu" i18n>All available data</a></span>
+					<span>{{allportal.value | formatNumber}} <ng-container i18n>{allportal.value, plural, =1 {tender} other {tenders}}</ng-container></span>
+				</li>
+			</ul>
+		</div>
 	</div>
 </section>

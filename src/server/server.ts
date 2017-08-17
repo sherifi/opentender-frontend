@@ -94,6 +94,7 @@ app.use('/assets/lang/:id', (req, res) => {
 	res.send(languages[req.params.id].translation);
 });
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
+app.use('/data/nuts0.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl0.geo.json')));
 app.use('/data/nuts1.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl1.geo.json')));
 app.use('/data/nuts2.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl2.geo.json')));
 app.use('/data/nuts3.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl3.geo.json')));

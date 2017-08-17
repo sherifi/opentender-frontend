@@ -33,13 +33,20 @@ export class DashboardsIndicatorComponent {
 	};
 	private filter: {
 		time?: {
+			isSet: boolean;
 			startYear: number;
 			endYear: number;
 			selectedStartYear: number;
 			selectedEndYear: number;
 		}
 	} = {
-		time: null
+		time: {
+			isSet: false,
+			startYear: null,
+			endYear: null,
+			selectedStartYear: null,
+			selectedEndYear: null
+		}
 	};
 
 	constructor(private api: ApiService) {
@@ -74,7 +81,7 @@ export class DashboardsIndicatorComponent {
 
 		this.viz = viz;
 
-		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
+		if (!this.filter.time.isSet && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;
 			let endYear = 0;
 			Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
@@ -83,6 +90,7 @@ export class DashboardsIndicatorComponent {
 				endYear = endYear == 0 ? year : Math.max(year, endYear);
 			});
 			this.filter.time = {
+				isSet: true,
 				startYear, endYear,
 				selectedStartYear: startYear,
 				selectedEndYear: endYear

@@ -84,7 +84,6 @@ import {SelectFiltersButtonComponent} from './components/selects/select-filters-
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
 import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
-import {StartMapComponent} from './pages/start/start-map.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
@@ -121,7 +120,6 @@ const AppConfig = {
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
 		SelectRangeFilterComponent,
-		StartMapComponent,
 		TableComponent,
 		TenderBodyAddressComponent,
 		TenderBodyComponent,

@@ -1,12 +1,9 @@
-<section class="container-outer authority entity" *ngIf="loading">
-	<section class="container">
-		<div class="entity-title">{{indicator}}</div>
+<section class="container-outer authority entity">
+
+	<div class="loading-overlay" *ngIf="loading">
 		<div *ngIf="error">Error: {{error}}</div>
 		<div *ngIf="!error">Loading…</div>
-	</section>
-</section>
-
-<section class="container-outer authority entity" *ngIf="!loading">
+	</div>
 
 	<section class="container">
 		<div class="entity-title">{{indicator}}</div>
@@ -14,7 +11,7 @@
 
 	<section class="container container-margin">
 		<h2>{{indicator}}</h2>
-		<div *ngIf="filter.time">
+		<div>
 			<slider
 					[min]="filter.time.startYear"
 					[max]="filter.time.endYear"

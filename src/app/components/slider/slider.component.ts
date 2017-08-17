@@ -108,11 +108,10 @@ export class SliderComponent implements OnChanges {
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.resize();
-		this.calculateTicks();
 	}
 
 	calculateTicks() {
-		let valueSpan = this._max - this._min;
+		let valueSpan = Math.max(1, this._max - this._min);
 		let mod = 0;
 		if (!this.compact) {
 			// TODO: better tick show/hide heuristic
