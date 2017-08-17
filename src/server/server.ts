@@ -38,7 +38,7 @@ let addToCache = (req, data) => {
 	if (!useCache) {
 		return;
 	}
-	let url = req.originalUrl + '?' + JSON.stringify(req.body);
+	let url = req.originalUrl + '|' + JSON.stringify(req.body);
 	let c = cache.get(url);
 	if (!c) {
 		cache.put(url, {url: url, data: data}, 60 * 60 * 1000);
@@ -52,7 +52,7 @@ let checkCache = (req, res, cb) => {
 	if (!useCache) {
 		return cb();
 	}
-	let url = req.originalUrl + '?' + JSON.stringify(req.body);
+	let url = req.originalUrl + '|' + JSON.stringify(req.body);
 	let c = cache.get(url);
 	if (c) {
 		// console.log('request found in cache', url);
@@ -149,9 +149,6 @@ let render = function(req, res, language, country) {
 	});
 };
 
-let currentlang = 'en';
-// let currentlang = 'de';
-
 let startApp = function(req, res) {
 	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	let c_id = geoip.lookupCountry(ip);
@@ -168,11 +165,16 @@ let startApp = function(req, res) {
 	}
 	let country = {id: null, name: 'Portals', ip: ip_country};
 	req.originalUrl = '/start';
-	render(req, res, languages[currentlang], country);
+	render(req, res, getLang(req), country);
+};
+
+let getLang = function(req) {
+	let lang = languages[req.query.lang];
+	return lang || languages['en'];
 };
 
 let portalApp = function(req, res, country) {
-	render(req, res, languages[currentlang], country);
+	render(req, res, getLang(req), country);
 };
 
 let registerPages = country => {
@@ -190,7 +192,8 @@ let registerPages = country => {
 		}
 	});
 	app.use(country_path + '/', checkCache, (req, res) => {
-		if ([country_path, country_path + '/', country_path + '/index.html'].indexOf(req.originalUrl) < 0) {
+		let url = (req.originalUrl || '').split('?')[0];
+		if ([country_path, country_path + '/', country_path + '/index.html'].indexOf(url) < 0) {
 			return errorResponse(req, res);
 		} else {
 			return ngApp(req, res);
@@ -206,7 +209,8 @@ portals.forEach(portal => {
 
 app.use('/start*', startApp);
 app.use('/', (req, res) => {
-	if (['/', '/index.html'].indexOf(req.originalUrl) < 0) {
+	let url = (req.originalUrl || '').split('?')[0];
+	if (['/', '/index.html'].indexOf(url) < 0) {
 		return errorResponse(req, res);
 	} else {
 		return startApp(req, res);

@@ -1,9 +1,27 @@
 import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
 
+function getParameterByName(name) {
+	let url = window.location.href;
+	name = name.replace(/[\[\]]/g, '\\$&');
+	let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+	let results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 export function getTranslationProviders(): Promise<Object[]> {
 	const noProviders: Object[] = [];
 	const config = document['opentender'];
-	if (!config || !config.locale || config.locale === 'en') {
+	let locale: string = null;
+	let query_locale = getParameterByName('lang');
+	if (query_locale && query_locale.length == 2) {
+		locale = query_locale;
+	}
+	if (!locale && config && config.locale) {
+		locale = config.locale;
+	}
+	if (!locale || locale === 'en') {
 		return Promise.resolve(noProviders);
 	}
 	// console.log('loading translation', config.locale);
@@ -16,7 +34,7 @@ export function getTranslationProviders(): Promise<Object[]> {
 					resolve([
 							{provide: TRANSLATIONS, useValue: translation},
 							{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
-							{provide: LOCALE_ID, useValue: config.locale}
+							{provide: LOCALE_ID, useValue: locale}
 						]
 					);
 				} else {
@@ -27,7 +45,7 @@ export function getTranslationProviders(): Promise<Object[]> {
 		xhr.onerror = function() {
 			resolve(noProviders);
 		};
-		xhr.open('GET', '/assets/lang/' + config.locale, true);
+		xhr.open('GET', '/assets/lang/' + locale, true);
 		xhr.send();
 	});
 	return promise;
