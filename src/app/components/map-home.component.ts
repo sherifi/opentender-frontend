@@ -15,12 +15,12 @@ export class HomeMapComponent {
 
 	constructor(private api: ApiService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
-		this.fillMap();
+		this.fillMap(this.map_level);
 	}
 
 	toggle() {
 		this.map_companies = !this.map_companies;
-		this.fillMap();
+		this.fillMap(this.map_level);
 	}
 
 	getEntitiesTitle() {
@@ -31,10 +31,12 @@ export class HomeMapComponent {
 		return featureProperties.name + ': ' + featureProperties.value + ' ' + this.getEntitiesTitle();
 	}
 
-	fillMap() {
+	fillMap(level) {
+		console.log('fill map');
 		if (this.map_companies) {
 			this.api.getCompanyNutsStats().subscribe(
 				res => {
+					this.map_level = level;
 					this.map_data = res.data;
 				},
 				err => {
@@ -47,6 +49,7 @@ export class HomeMapComponent {
 		} else {
 			this.api.getAuthorityNutsStats().subscribe(
 				res => {
+					this.map_level = level;
 					this.map_data = res.data;
 				},
 				err => {
@@ -60,7 +63,6 @@ export class HomeMapComponent {
 	}
 
 	setLevel(level) {
-		this.map_level = level;
-		this.fillMap();
+		this.fillMap(level);
 	}
 }
