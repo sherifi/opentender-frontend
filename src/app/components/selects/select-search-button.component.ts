@@ -1,5 +1,6 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {FilterDef} from '../../model/filters';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -14,6 +15,11 @@ export class SelectSearchesButtonComponent {
 	@Output()
 	selectChange = new EventEmitter();
 	showDialog = false;
+	title: string;
+
+	constructor(public i18n: I18NService) {
+		this.title = i18n.get('Add Search Fields');
+	}
 
 	onSelectFilters(event) {
 		this.selectChange.emit(event);

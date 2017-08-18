@@ -69,6 +69,9 @@
             16
           </context>
         </context-group>
+        <target>
+          Wer ist Opentender?
+        </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
         <source>
@@ -180,6 +183,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Wie Opentender funktioniert
+        </target>
       </trans-unit>
       <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
         <source>
@@ -329,6 +335,9 @@
             9
           </context>
         </context-group>
+        <target>
+          Auf dieser Seite finden Sie alle Ausschreibungsdaten dieses Portals.
+        </target>
       </trans-unit>
       <trans-unit id="11db3f53da11cc43e48960e6cc537b79c5fd789e" datatype="html">
         <source>
@@ -342,6 +351,9 @@
             13
           </context>
         </context-group>
+        <target>
+          CSV
+        </target>
       </trans-unit>
       <trans-unit id="2c085b87eddb0e2a761919adf90c7b486e5d3918" datatype="html">
         <source>
@@ -355,6 +367,9 @@
             18
           </context>
         </context-group>
+        <target>
+          Newline Delimited JSON
+        </target>
       </trans-unit>
       <trans-unit id="136a530eb58de00378268f4779dac626f76a9fb0" datatype="html">
         <source>
@@ -374,6 +389,9 @@
             19
           </context>
         </context-group>
+        <target>
+          Aufgrund der Dateigrößen wurden die DIGIWHIST Tender JSON Daten als gzip-komprimiertes &lt;x ctype="x-a" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; gespeichert.
+        </target>
       </trans-unit>
       <trans-unit id="2ef75ba6c1163906a7b6dd39ee31e8476212fd5a" datatype="html">
         <source>
@@ -393,6 +411,9 @@
             20
           </context>
         </context-group>
+        <target>
+          Die Struktur der Daten ist &lt;x ctype="x-a" id="START_LINK"/&gt;hier&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; umrissen.
+        </target>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
         <source>
@@ -406,6 +427,9 @@
             25
           </context>
         </context-group>
+        <target>
+          Aktuelles Portal
+        </target>
       </trans-unit>
       <trans-unit id="028f20cd413fbebff166e57c12f2fd15e8c11c0f" datatype="html">
         <source>
@@ -443,6 +467,9 @@
             33
           </context>
         </context-group>
+        <target>
+          Land
+        </target>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
         <source>
@@ -456,6 +483,9 @@
             34
           </context>
         </context-group>
+        <target>
+          Ausschreibungen
+        </target>
       </trans-unit>
       <trans-unit id="b0893834a0476ae3201c76cef03857f9ed6ede83" datatype="html">
         <source>
@@ -469,6 +499,9 @@
             35
           </context>
         </context-group>
+        <target>
+          Dateigröße
+        </target>
       </trans-unit>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
         <source>
@@ -885,6 +918,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Aussschreibung
+        </target>
       </trans-unit>
       <trans-unit id="6ef0619a37140118b9e640c6cc36ee4e9fb4372a" datatype="html">
         <source>
@@ -898,6 +934,9 @@
             4
           </context>
         </context-group>
+        <target>
+          Firma
+        </target>
       </trans-unit>
       <trans-unit id="b0d23d6ebf965718e595c77b85e92c07aa19c470" datatype="html">
         <source>
@@ -911,6 +950,9 @@
             5
           </context>
         </context-group>
+        <target>
+          Behörde
+        </target>
       </trans-unit>
       <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
         <source>
@@ -1537,6 +1579,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Vorherige
+        </target>
       </trans-unit>
       <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
         <source>
@@ -1550,6 +1595,9 @@
             4
           </context>
         </context-group>
+        <target>
+          Nächste
+        </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
         <source>
@@ -1563,6 +1611,9 @@
             5
           </context>
         </context-group>
+        <target>
+          Einträge pro Seite
+        </target>
       </trans-unit>
       <trans-unit id="02c7747f38014504ddbc5b3b17b329b74db68800" datatype="html">
         <source>
@@ -1584,6 +1635,9 @@
             11
           </context>
         </context-group>
+        <target>
+          Seite: &lt;x id="INTERPOLATION"/&gt; von &lt;x id="INTERPOLATION_1"/&gt; - Einträge: &lt;x id="INTERPOLATION_2"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="5ca707824ab93066c7d9b44e1b8bf216725c2c22" datatype="html">
         <source>
@@ -1597,6 +1651,9 @@
             6
           </context>
         </context-group>
+        <target>
+          Filter
+        </target>
       </trans-unit>
       <trans-unit id="d9a2d748d645a9a51a535f9b8266eee949172f59" datatype="html">
         <source>
@@ -1610,6 +1667,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Hinzufügen
+        </target>
       </trans-unit>
       <trans-unit id="MarketAnalysis" datatype="html">
         <source>
@@ -1873,6 +1933,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Zuschlagsentscheidung
+        </target>
       </trans-unit>
       <trans-unit id="AwardDecisionDate" datatype="html">
         <source>
@@ -1908,6 +1971,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Zuschlagsentscheidungsjahr
+        </target>
       </trans-unit>
       <trans-unit id="Dates" datatype="html">
         <source>
@@ -2114,6 +2180,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Metadaten
+        </target>
       </trans-unit>
       <trans-unit id="Country" datatype="html">
         <source>
@@ -2738,6 +2807,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          CPV (Divisionen)
+        </target>
       </trans-unit>
       <trans-unit id="CPV(Groups)" datatype="html">
         <source>
@@ -2754,6 +2826,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          CPV (Gruppen)
+        </target>
       </trans-unit>
       <trans-unit id="CPV(Categories)" datatype="html">
         <source>
@@ -2770,6 +2845,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          CPV (Kategorien)
+        </target>
       </trans-unit>
       <trans-unit id="CPV(Full)" datatype="html">
         <source>
@@ -2786,6 +2864,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          CPV (Voll)
+        </target>
       </trans-unit>
       <trans-unit id="SelectFilter" datatype="html">
         <source>
@@ -2802,6 +2883,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Filterauswahl
+        </target>
       </trans-unit>
       <trans-unit id="DocumentPrice" datatype="html">
         <source>
@@ -2818,6 +2902,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Dokumentpreis
+        </target>
       </trans-unit>
       <trans-unit id="All" datatype="html">
         <source>
@@ -2834,6 +2921,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Alle
+        </target>
       </trans-unit>
     </body>
   </file>
