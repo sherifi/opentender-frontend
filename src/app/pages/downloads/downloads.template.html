@@ -23,7 +23,7 @@
 	<section class="container container-current-download" *ngIf="current">
 		<p>
 			<ng-container i18n>Current Portal</ng-container>:<br/>
-			<a href="/files/{{current.filename}}" download><i class="icon-cloud-download"></i> {{current.name}}</a> - {{current.count}} <ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container> - {{current.size | formatFileSize}}
+			<a href="/files/{{current.filename}}" download><i class="icon-cloud-download"></i> {{current.name}}</a> - {{current.count}} <ng-container i18n>{current.count, plural, =1 {tender} other {tenders}}</ng-container> - {{current.size | formatFileSize}}
 		</p>
 	</section>
 	<section class="container">
@@ -38,7 +38,7 @@
 			<tbody>
 			<tr *ngFor="let download of downloads">
 				<td><a href="/files/{{download.filename}}" download><i class="icon-cloud-download"></i> {{download.name}}</a></td>
-				<td class="right">{{download.count}} Entries</td>
+				<td class="right">{{download.count}} {download.count, plural, =1 {tender} other {tenders}}</td>
 				<td class="right">{{download.size | formatFileSize}}</td>
 			</tr>
 			</tbody>
