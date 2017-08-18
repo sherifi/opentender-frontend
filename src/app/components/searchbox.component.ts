@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Filter, Search} from '../model/search';
 import {FilterType} from '../model/filters';
+import {I18NService} from '../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -18,7 +19,7 @@ export class SearchBoxComponent {
 	public onChange = new EventEmitter();
 	FilterType: typeof FilterType = FilterType;
 
-	constructor() {
+	constructor(private i18n: I18NService) {
 	}
 
 	addSearch(filterDef) {
@@ -43,6 +44,10 @@ export class SearchBoxComponent {
 		searchEntry.value = (data.value || '').trim();
 		searchEntry.mode = data.mode;
 		this.refresh();
+	}
+
+	getPlaceholder(filter) {
+		return this.i18n.get(filter.def.group) + ': ' + this.i18n.get(filter.def.name);
 	}
 
 	getFilterClass(index) {

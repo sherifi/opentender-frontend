@@ -4,7 +4,7 @@
 <div class="filter-box">
 	<div class="filter" *ngFor="let filter of search.filters; let i = index;" [ngClass]="getFilterClass(i)">
 		<div *ngIf="filter.active" [ngSwitch]="filter.def.type">
-			<div class="title">{{filter.def.name}} <span class="filter-close" (click)="closeFilter(filter)"><i class="icon-cross"></i></span></div>
+			<div class="title">{{filter.def.group | i18n}}: {{filter.def.name | i18n}} <span class="filter-close" (click)="closeFilter(filter)"><i class="icon-cross"></i></span></div>
 			<div class="text" *ngSwitchCase="FilterType.text">
 				<div class="filter-checks">
 					<div *ngFor="let bucket of filter.buckets">

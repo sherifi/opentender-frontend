@@ -45,7 +45,6 @@ export class GraphSectorsComponent implements OnChanges {
 				label: 'Sector (CPV)',
 				defaultWidth: 150,
 				maxLength: 24,
-				tickFormatting: Utils.formatCPVName
 			},
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,

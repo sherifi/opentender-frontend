@@ -31,8 +31,8 @@ export interface FilterDef {
 export const TenderFilterDefs: Array<FilterDef> = [
 	{
 		id: 'buyers.name',
-		name: 'Authority Name',
-		group: 'Authority',
+		name: 'Name',
+		group: 'Buyer',
 		field: 'buyers.name',
 		type: FilterType.text,
 		aggregation_field: 'buyers.name.raw',
@@ -40,52 +40,43 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 	{
 		id: 'buyers.address.city',
-		name: 'Authority City',
-		group: 'Authority',
+		name: 'City',
+		group: 'Buyer',
 		field: 'buyers.address.city',
 		type: FilterType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
 		id: 'buyers.address.country',
-		name: 'Authority Country',
-		group: 'Authority',
+		name: 'Country',
+		group: 'Buyer',
 		field: 'buyers.address.country',
 		type: FilterType.select,
 		valueFormatter: Utils.expandCountry,
 		size: 30
 	},
 	{
-		id: 'lots.bids.bidders.address.country',
-		name: 'Company Country',
-		group: 'Company',
-		field: 'lots.bids.bidders.address.country',
-		type: FilterType.select,
-		valueFormatter: Utils.expandCountry,
-		size: 30
-	},
-	{
-		id: 'country',
-		name: 'Tender Country',
-		group: 'Tender',
-		field: 'country',
-		type: FilterType.select,
-		valueFormatter: Utils.expandCountry,
-		size: 30
-	},
-	{
 		id: 'buyers.mainActivities',
-		name: 'Authority Main Activities',
-		group: 'Authority',
+		name: 'Main Activities',
+		group: 'Buyer',
 		field: 'buyers.mainActivities',
 		type: FilterType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
 	},
 	{
+		id: 'buyers.buyerType',
+		name: 'Type',
+		group: 'Buyer',
+		field: 'buyers.buyerType',
+		type: FilterType.select,
+		valueFormatter: Utils.expandUnderlined
+	},
+
+	{
 		id: 'lots.bids.bidders.name',
-		name: 'Company Name',
-		group: 'Company',
+		name: 'Name',
+		group: 'Supplier',
 		field: 'lots.bids.bidders.name',
 		type: FilterType.text,
 		aggregation_field: 'lots.bids.bidders.name.raw',
@@ -93,15 +84,25 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 	{
 		id: 'lots.bids.bidders.address.city',
-		name: 'Company City',
-		group: 'Company',
+		name: 'City',
+		group: 'Supplier',
 		field: 'lots.bids.bidders.address.city',
 		type: FilterType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
+		id: 'lots.bids.bidders.address.country',
+		name: 'Country',
+		group: 'Supplier',
+		field: 'lots.bids.bidders.address.country',
+		type: FilterType.select,
+		valueFormatter: Utils.expandCountry,
+		size: 30
+	},
+
+	{
 		id: 'title',
-		name: 'Tender Title',
+		name: 'Title',
 		group: 'Tender',
 		field: 'title',
 		type: FilterType.text,
@@ -111,12 +112,40 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 	{
 		id: 'titleEnglish',
-		name: 'Tender Title English',
+		name: 'Title English',
 		group: 'Tender',
 		field: 'titleEnglish',
 		type: FilterType.text,
 		valueFormatter: Utils.capitalize
 	},
+	{
+		id: 'country',
+		name: 'Country',
+		group: 'Tender',
+		field: 'country',
+		type: FilterType.select,
+		valueFormatter: Utils.expandCountry,
+		size: 30
+	},
+
+	{
+		id: 'procedureType',
+		name: 'Procedure Type',
+		group: 'Tender',
+		field: 'procedureType',
+		type: FilterType.select,
+		valueFormatter: Utils.expandUnderlined,
+		size: 30
+	},
+	{
+		id: 'supplyType',
+		name: 'Supply Type',
+		group: 'Tender',
+		field: 'supplyType',
+		type: FilterType.select,
+		valueFormatter: Utils.expandUnderlined
+	},
+
 	{
 		id: 'cpvs.code.divisions',
 		name: 'CPV (Divisions)',
@@ -145,43 +174,19 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		field: 'cpvs.code',
 		type: FilterType.select
 	},
-	{
-		id: 'buyers.buyerType',
-		name: 'Authority Type',
-		group: 'Authority',
-		field: 'buyers.buyerType',
-		type: FilterType.select,
-		valueFormatter: Utils.expandUnderlined
-	},
-	{
-		id: 'procedureType',
-		name: 'Procedure Type',
-		group: 'Tender',
-		field: 'procedureType',
-		type: FilterType.select,
-		valueFormatter: Utils.expandUnderlined,
-		size: 30
-	},
-	{
-		id: 'supplyType',
-		name: 'Supply Type',
-		group: 'Tender',
-		field: 'supplyType',
-		type: FilterType.select,
-		valueFormatter: Utils.expandUnderlined
-	},
+
 	{
 		id: 'indicators.type',
-		name: 'Indicators',
-		group: 'Tender Indicators',
+		name: 'All',
+		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
 		valueFormatter: Utils.expandUnderlined
 	},
 	{
 		id: 'indicators.type_cri',
-		name: 'Corruption Risk Indicators',
-		group: 'Tender Indicators',
+		name: 'Corruption Risk',
+		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
 		valueFormatter: Utils.formatIndicatorName,
@@ -193,8 +198,8 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 	{
 		id: 'indicators.type_aci',
-		name: 'Administrative Capacity Indicators',
-		group: 'Tender Indicators',
+		name: 'Administrative Capacity',
+		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
 		valueFormatter: Utils.formatIndicatorName,
@@ -206,8 +211,8 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 	{
 		id: 'indicators.type_ti',
-		name: 'Transparency Indicators',
-		group: 'Tender Indicators',
+		name: 'Transparency',
+		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
 		valueFormatter: Utils.formatIndicatorName,
@@ -217,38 +222,39 @@ export const TenderFilterDefs: Array<FilterDef> = [
 			});
 		}
 	},
+
 	{
 		id: 'finalPrice.netAmount',
 		name: 'Final Price',
-		group: 'Tender Prices',
+		group: 'Prices',
 		field: 'finalPrice.netAmount',
 		type: FilterType.value
 	},
 	{
 		id: 'documentsPrice.netAmount',
 		name: 'Document Price',
-		group: 'Tender Prices',
+		group: 'Prices',
 		field: 'documentsPrice.netAmount',
 		type: FilterType.value
 	},
 	{
 		id: 'estimatedPrice.netAmount',
 		name: 'Estimated Price',
-		group: 'Tender Prices',
+		group: 'Prices',
 		field: 'estimatedPrice.netAmount',
 		type: FilterType.value
 	},
 	{
 		id: 'lots.bids.price.netAmount',
-		name: 'Lot Bid Price',
-		group: 'Tender Prices',
+		name: 'Bid Price',
+		group: 'Prices',
 		field: 'lots.bids.price.netAmount',
 		type: FilterType.value
 	},
 	{
 		id: 'lots.awardDecisionDate',
 		name: 'Award Decision Year',
-		group: 'Tender Dates',
+		group: 'Dates',
 		field: 'lots.awardDecisionDate',
 		type: FilterType.range,
 	}
@@ -286,7 +292,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.name',
 		name: 'Name',
-		group: 'Authority',
+		group: 'Buyer',
 		field: 'body.name',
 		type: FilterType.text,
 		aggregation_field: 'body.name.raw',
@@ -295,7 +301,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.address.city',
 		name: 'City',
-		group: 'Authority',
+		group: 'Buyer',
 		field: 'body.address.city',
 		type: FilterType.text,
 		valueFormatter: Utils.capitalize
@@ -303,7 +309,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.address.country',
 		name: 'Country',
-		group: 'Authority',
+		group: 'Buyer',
 		field: 'body.address.country',
 		valueFormatter: Utils.expandCountry,
 		type: FilterType.select,
@@ -312,7 +318,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.mainActivities',
 		name: 'Main Activities',
-		group: 'Authority',
+		group: 'Buyer',
 		field: 'body.mainActivities',
 		type: FilterType.select,
 		valueFormatter: Utils.expandUnderlined,

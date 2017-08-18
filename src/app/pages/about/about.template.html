@@ -1,19 +1,7 @@
 <div class="header-sub">
 	<ul class="header-nav_bottom">
-		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/about/about-opentender']">About Opentender</a></li>
-		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/about/how-opentender-works']">How Opentender works</a></li>
+		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/about/about-opentender']" i18n>About Opentender</a></li>
+		<li class="header-nav_item"><a [routerLinkActive]="['active']" [routerLink]="['/about/how-opentender-works']" i18n>How Opentender works</a></li>
 	</ul>
 </div>
-<section class="container-outer documentation" *ngIf="isRootPage">
-	<section class="container">
-		<div class="container-title">Documentation</div>
-	</section>
-	<section class="container">
-		<div class="container-left-7">
-			<h2 class="h3" id="data">Read more...</h2>
-			<p><a [routerLink]="['/about/about-opentender']">... About Opentender</a></p>
-			<p><a [routerLink]="['/about/how-opentender-works']">... How Opentender works</a></p>
-		</div>
-	</section>
-</section>
 <router-outlet></router-outlet>

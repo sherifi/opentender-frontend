@@ -98,11 +98,11 @@ app.use('/data/nuts0.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_l
 app.use('/data/nuts1.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl1.geo.json')));
 app.use('/data/nuts2.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl2.geo.json')));
 app.use('/data/nuts3.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl3.geo.json')));
+app.use('/data/files', express.static(path.join(DATA, '/downloads'), {index: false}));
+app.use('/data/files', errorResponse);
 app.use('/data', errorResponse);
 app.use('/assets', express.static(ROOT, {index: false}));
 app.use('/assets', errorResponse);
-app.use('/files', express.static(path.join(DATA, '/downloads'), {index: false}));
-app.use('/files', errorResponse);
 
 app.use('/api*', (req, res) => {
 	try {

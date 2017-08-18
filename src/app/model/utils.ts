@@ -44,12 +44,6 @@ export const Utils = {
 		}
 		return Utils.expandUnderlined(value.split('_').slice(1).join('_'));
 	},
-	formatCPVName(value: string): string {
-		if (value === undefined || value === null) {
-			return '';
-		}
-		return value.split('(')[0].trim().replace(/ and /g, ', ').replace(/ services/g, '');
-	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {
 			return '';

@@ -34,7 +34,7 @@ export class DownloadsPage implements OnInit {
 			(data: any) => {
 				data.forEach(download => {
 					download.name = Utils.expandCountry(download.country);
-					if (download.country === current_id) {
+					if (download.country === current_id && download.count > 0) {
 						this.current = download;
 					}
 				});

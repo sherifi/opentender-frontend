@@ -156,9 +156,16 @@ const FormatUtils = {
 
 export const TenderColumns: Array<TenderColumn> = [
 	{
+		name: 'Tender Link',
+		id: 'id',
+		group: 'Tender',
+		format: tender => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id}]
+	},
+
+	{
 		name: 'Supplier',
 		id: 'lots.bids.bidders.name',
-		group: 'Company',
+		group: 'Supplier',
 		// sortBy: {
 		// 	id: 'lots.bids.bidders.name.raw',
 		// 	ascend: true
@@ -196,42 +203,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			return result;
 		}
 	},
-	{
-		name: 'Award Decision Date',
-		id: 'lots.awardDecisionDate',
-		group: 'Tender Dates',
-		sortBy: {
-			id: 'lots.awardDecisionDate',
-			ascend: false
-		},
-		format: tender => {
-			if (!tender.lots) {
-				return [];
-			}
-			let dates = {};
-			tender.lots.forEach((lot: Lot, index_l: number) => {
-				if (lot.awardDecisionDate) {
-					dates[lot.awardDecisionDate] = dates[lot.awardDecisionDate] || {date: lot.awardDecisionDate, lots: []};
-					dates[lot.awardDecisionDate].lots.push(index_l + 1);
-				}
-			});
-			let result = [];
-			let datekeys = Object.keys(dates);
-			datekeys.forEach(key => {
-					let c = dates[key];
-					// if (tender.lots.length > 1 && datekeys.length > 1) {
-					// 	result.push({content: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
-					// }
-					if (c.lots.length > 5) {
-						c.lots = c.lots.slice(0, 5);
-						c.lots.push('…');
-					}
-					result.push({content: Utils.formatDate(c.date), hint: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
-				}
-			);
-			return result;
-		}
-	},
+
 	{
 		name: 'Buyer',
 		id: 'buyers.name',
@@ -292,9 +264,30 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
+		name: 'Appeal Body Name',
+		id: 'appealBodyName',
+		group: 'Buyer',
+		sortBy: {
+			id: 'appealBodyName.raw',
+			ascend: true
+		},
+		format: tender => [{content: tender.appealBodyName}]
+	},
+	{
+		name: 'Mediation Body Name',
+		id: 'mediationBodyName',
+		group: 'Buyer',
+		sortBy: {
+			id: 'mediationBodyName.raw',
+			ascend: true
+		},
+		format: tender => [{content: tender.mediationBodyName}]
+	},
+
+	{
 		name: 'Indicators',
 		id: 'indicators',
-		group: 'Tender Indicators',
+		group: 'Indicators',
 		format: tender => {
 			if (!tender.indicators) {
 				return [];
@@ -320,7 +313,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Corruption Risk Indicator',
 		id: 'indicators.cri',
-		group: 'Tender Indicators',
+		group: 'Indicators',
 		format: tender => {
 			if (!tender.indicators) {
 				return [];
@@ -339,7 +332,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Transparency Indicator',
 		id: 'indicators.ti',
-		group: 'Tender Indicators',
+		group: 'Indicators',
 		format: tender => {
 			if (!tender.indicators) {
 				return [];
@@ -358,7 +351,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Administrative Capacity Indicator',
 		id: 'indicators.aci',
-		group: 'Tender Indicators',
+		group: 'Indicators',
 		format: tender => {
 			if (!tender.indicators) {
 				return [];
@@ -374,6 +367,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			return result;
 		}
 	},
+
 	{
 		name: 'Main Sector',
 		id: 'cpvs.main.names',
@@ -442,34 +436,62 @@ export const TenderColumns: Array<TenderColumn> = [
 			});
 		}
 	},
+
 	{
-		name: 'Tender Country',
-		id: 'country',
-		group: 'Tender Meta Data',
-		format: tender => {
-			if (!tender.country) {
-				return [];
-			}
-			return [{content: Utils.expandCountry(tender.country)}];
-		}
-	},
-	{
-		name: 'Eligible Bid Languages',
-		id: 'eligibleBidLanguages',
+		name: 'Title',
+		id: 'title',
 		group: 'Tender',
-		format: tender => {
-			if (!tender.eligibleBidLanguages) {
-				return [];
-			}
-			return tender.eligibleBidLanguages.map(lang => {
-				return {content: lang};
-			});
-		}
+		sortBy: {
+			id: 'title.raw',
+			ascend: true
+		},
+		format: tender => [{content: tender.title}]
 	},
+	{
+		name: 'Title English',
+		id: 'titleEnglish',
+		group: 'Tender',
+		sortBy: {
+			id: 'titleEnglish.raw',
+			ascend: true
+		},
+		format: tender => [{content: tender.titleEnglish}]
+	},
+	{
+		name: 'Description',
+		id: 'description',
+		group: 'Tender',
+		sortBy: {
+			id: 'description.raw',
+			ascend: true
+		},
+		format: tender => [{content: tender.description}]
+	},
+	{
+		name: 'Procedure Type',
+		id: 'procedureType',
+		group: 'Tender',
+		sortBy: {
+			id: 'procedureType',
+			ascend: true
+		},
+		format: tender => [{content: Utils.expandUnderlined(tender.procedureType)}]
+	},
+	{
+		name: 'Supply Type',
+		id: 'supplyType',
+		group: 'Tender',
+		sortBy: {
+			id: 'supplyType',
+			ascend: true
+		},
+		format: tender => [{content: Utils.expandUnderlined(tender.supplyType)}]
+	},
+
 	{
 		name: 'Final Price',
 		id: 'finalPrice',
-		group: 'Tender Prices',
+		group: 'Prices',
 		sortBy: {
 			id: 'finalPrice.netAmount',
 			ascend: false
@@ -479,7 +501,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Estimated Price',
 		id: 'estimatedPrice',
-		group: 'Tender Prices',
+		group: 'Prices',
 		sortBy: {
 			id: 'estimatedPrice.netAmount',
 			ascend: false
@@ -489,7 +511,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Documents Price',
 		id: 'documentsPrice',
-		group: 'Tender Prices',
+		group: 'Prices',
 		sortBy: {
 			id: 'documentsPrice.netAmount',
 			ascend: false
@@ -499,7 +521,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Bid Price',
 		id: 'lots.bids.price',
-		group: 'Tender Prices',
+		group: 'Prices',
 		format: tender => {
 			if (!tender.lots) {
 				return [];
@@ -521,55 +543,19 @@ export const TenderColumns: Array<TenderColumn> = [
 			return result;
 		}
 	},
+
 	{
-		name: 'Tender Title',
-		id: 'title',
-		group: 'Tender',
-		sortBy: {
-			id: 'title.raw',
-			ascend: true
-		},
-		format: tender => [{content: tender.title}]
-	},
-	{
-		name: 'Tender Title English',
-		id: 'titleEnglish',
-		group: 'Tender',
-		sortBy: {
-			id: 'titleEnglish.raw',
-			ascend: true
-		},
-		format: tender => [{content: tender.titleEnglish}]
-	},
-	{
-		name: 'Tender Description',
-		id: 'description',
-		group: 'Tender',
-		sortBy: {
-			id: 'description.raw',
-			ascend: true
-		},
-		format: tender => [{content: tender.description}]
-	},
-	{
-		name: 'Appeal Body Name',
-		id: 'appealBodyName',
-		group: 'Authority',
-		sortBy: {
-			id: 'appealBodyName.raw',
-			ascend: true
-		},
-		format: tender => [{content: tender.appealBodyName}]
-	},
-	{
-		name: 'Mediation Body Name',
-		id: 'mediationBodyName',
-		group: 'Authority',
-		sortBy: {
-			id: 'mediationBodyName.raw',
-			ascend: true
-		},
-		format: tender => [{content: tender.mediationBodyName}]
+		name: 'Eligible Bid Languages',
+		id: 'eligibleBidLanguages',
+		group: 'Tender Requirements',
+		format: tender => {
+			if (!tender.eligibleBidLanguages) {
+				return [];
+			}
+			return tender.eligibleBidLanguages.map(lang => {
+				return {content: lang};
+			});
+		}
 	},
 	{
 		name: 'Deposits',
@@ -596,30 +582,47 @@ export const TenderColumns: Array<TenderColumn> = [
 		group: 'Tender Requirements',
 		format: tender => [{content: tender.technicalRequirements}]
 	},
+
 	{
-		name: 'Procedure Type',
-		id: 'procedureType',
-		group: 'Tender',
+		name: 'Award Decision Date',
+		id: 'lots.awardDecisionDate',
+		group: 'Dates',
 		sortBy: {
-			id: 'procedureType',
-			ascend: true
+			id: 'lots.awardDecisionDate',
+			ascend: false
 		},
-		format: tender => [{content: Utils.expandUnderlined(tender.procedureType)}]
-	},
-	{
-		name: 'Supply Type',
-		id: 'supplyType',
-		group: 'Tender',
-		sortBy: {
-			id: 'supplyType',
-			ascend: true
-		},
-		format: tender => [{content: Utils.expandUnderlined(tender.supplyType)}]
+		format: tender => {
+			if (!tender.lots) {
+				return [];
+			}
+			let dates = {};
+			tender.lots.forEach((lot: Lot, index_l: number) => {
+				if (lot.awardDecisionDate) {
+					dates[lot.awardDecisionDate] = dates[lot.awardDecisionDate] || {date: lot.awardDecisionDate, lots: []};
+					dates[lot.awardDecisionDate].lots.push(index_l + 1);
+				}
+			});
+			let result = [];
+			let datekeys = Object.keys(dates);
+			datekeys.forEach(key => {
+					let c = dates[key];
+					// if (tender.lots.length > 1 && datekeys.length > 1) {
+					// 	result.push({content: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
+					// }
+					if (c.lots.length > 5) {
+						c.lots = c.lots.slice(0, 5);
+						c.lots.push('…');
+					}
+					result.push({content: Utils.formatDate(c.date), hint: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
+				}
+			);
+			return result;
+		}
 	},
 	{
 		name: 'Estimated Start Date',
 		id: 'estimatedStartDate',
-		group: 'Tender Dates',
+		group: 'Dates',
 		sortBy: {
 			id: 'estimatedStartDate',
 			ascend: false
@@ -629,7 +632,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Estimated Completion Date',
 		id: 'estimatedCompletionDate',
-		group: 'Tender Dates',
+		group: 'Dates',
 		sortBy: {
 			id: 'estimatedCompletionDate',
 			ascend: false
@@ -639,7 +642,7 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Bid Deadline',
 		id: 'bidDeadline',
-		group: 'Tender Dates',
+		group: 'Dates',
 		sortBy: {
 			id: 'bidDeadline',
 			ascend: false
@@ -649,13 +652,14 @@ export const TenderColumns: Array<TenderColumn> = [
 	{
 		name: 'Documents Deadline',
 		id: 'documentsDeadline',
-		group: 'Tender Dates',
+		group: 'Dates',
 		sortBy: {
 			id: 'documentsDeadline',
 			ascend: false
 		},
 		format: tender => [{content: Utils.formatDatetime(tender.documentsDeadline)}]
 	},
+
 	{
 		name: 'Creation Date',
 		id: 'created',
@@ -677,9 +681,15 @@ export const TenderColumns: Array<TenderColumn> = [
 		format: tender => [{content: Utils.formatDatetime(tender.modified)}]
 	},
 	{
-		name: 'Tender Link',
-		id: 'id',
-		group: 'Tender',
-		format: tender => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id}]
+		name: 'Country',
+		id: 'country',
+		group: 'Tender Meta Data',
+		format: tender => {
+			if (!tender.country) {
+				return [];
+			}
+			return [{content: Utils.expandCountry(tender.country)}];
+		}
 	}
+
 ];

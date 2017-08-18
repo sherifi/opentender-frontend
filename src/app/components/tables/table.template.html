@@ -2,7 +2,7 @@
 	<thead>
 	<tr>
 		<th *ngFor="let col of table.columns" (click)="setSort(col)" [class.clickable]="col.sortBy">
-			{{col.name}}
+			{{col.name | i18n}}
 		 	<span *ngIf="table.sortBy && col.sortBy && (table.sortBy.id === col.sortBy.id)" class="pull-right"><i [ngClass]="{'icon-chevron-small-down':table.sortBy.ascend,'icon-chevron-small-up':!table.sortBy.ascend}"></i></span>
 		</th>
 	</tr>

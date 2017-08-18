@@ -1,6 +1,5 @@
-import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {Filter} from '../../model/search';
-import {yearOf} from '../../thirdparty/ngx-charts-universal/utils/date.helper';
 
 @Component({
 	moduleId: __filename,

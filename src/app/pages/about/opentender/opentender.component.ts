@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Consts} from '../../../model/consts';
 
 @Component({
 	moduleId: __filename,
@@ -6,4 +7,5 @@ import {Component} from '@angular/core';
 	templateUrl: 'opentender.template.html'
 })
 export class AboutOpentenderPage {
+	lorem = Consts.IPSUM;
 }

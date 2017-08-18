@@ -1,29 +1,38 @@
 <section class="container-outer downloads">
 
 	<section class="container">
-		<div class="container-title">Downloads</div>
+		<div class="container-title" i18n>Downloads</div>
 	</section>
+
 	<section class="container">
-		<h2 class="h3" id="opentender">Downloads</h2>
-		<p>Here you find all the tender data of this portal.<br/>The file format is gzip compressed <a href="http://ndjson.org/">Newline Delimited JSON</a>.
-			The structure of entries is documented <a [routerLink]="['/documentation/dataformat']">here</a>.</p>
-
-		<p>[<i class="icon-hammer"></i> CSV download is under construction]</p>
-
+		<h2 i18n>Downloads</h2>
+		<p i18n>On this page you find all the tender data of this portal.</p>
 	</section>
+
+	<section class="container">
+		<h2 class="h3" i18n>CSV</h2>
+		<p>[<i class="icon-hammer"></i> CSV download is under construction]</p>
+	</section>
+
+	<section class="container">
+		<h2 class="h3" i18n>Newline Delimited JSON</h2>
+		<p i18n>Due to the file size, DIGIWHIST Tender JSON data has been save as gzip compressed <a href="http://ndjson.org/">Newline Delimited JSON</a>.</p>
+		<p i18n>The structure of entries is outlined <a [routerLink]="['/about/dataformat']">here</a>.</p>
+	</section>
+
 	<section class="container container-current-download" *ngIf="current">
 		<p>
-			Current Portal:<br/>
-			<a href="/files/{{current.filename}}" download><i class="icon-cloud-download"></i> {{current.name}}</a> - {{current.count}} Entries - {{current.size | formatFileSize}}
+			<ng-container i18n>Current Portal</ng-container>:<br/>
+			<a href="/files/{{current.filename}}" download><i class="icon-cloud-download"></i> {{current.name}}</a> - {{current.count}} <ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container> - {{current.size | formatFileSize}}
 		</p>
 	</section>
 	<section class="container">
 		<table class="tables">
 			<thead>
 			<tr>
-				<th>Country</th>
-				<th>Entries</th>
-				<th>File Size</th>
+				<th i18n>Country</th>
+				<th i18n>Tenders</th>
+				<th i18n>File Size</th>
 			</tr>
 			</thead>
 			<tbody>

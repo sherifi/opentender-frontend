@@ -138,7 +138,11 @@ export class ApiService {
 	// country unspecific gets from frontend
 
 	getDownloads(): Observable<IApiResult> {
-		return this.http.get(this.absUrl + '/files/downloads.json').map(res => <IApiResult>res.json());
+		return this.http.get(this.absUrl + '/data/files/downloads.json').map(res => <IApiResult>res.json());
+	}
+
+	getSchema(): Observable<ISchemaApiResult> {
+		return this.http.get(this.absUrl + '/data/schema.json').map(res => <ISchemaApiResult>res.json());
 	}
 
 	getNutsMap(level: number): Observable<IApiGeoJSONResult> {
@@ -147,10 +151,6 @@ export class ApiService {
 
 	getPortalMapData(): Observable<IApiResult> {
 		return this.http.get(this.absUrl + '/assets/data/portal-map.svg.json').map(res => <IApiResult>res.json());
-	}
-
-	getSchema(): Observable<ISchemaApiResult> {
-		return this.http.get(this.absUrl + '/assets/schema.json').map(res => <ISchemaApiResult>res.json());
 	}
 
 }
