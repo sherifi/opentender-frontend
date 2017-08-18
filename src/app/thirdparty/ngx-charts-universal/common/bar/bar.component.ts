@@ -7,23 +7,23 @@ import {select} from 'd3-selection';
 @Component({
 	selector: 'g[ngx-charts-bar]',
 	template: `
-    <svg:defs *ngIf="hasGradient">
-      <svg:g ngx-charts-svg-linear-gradient
-        [color]="fill"
-        [orientation]="orientation"
-        [name]="gradId.id"
-        [stops]="gradientStops"
-      />
-    </svg:defs>
-    <svg:path
-      class="bar"
-      stroke="none"
-      [class.active]="isActive"
-      [attr.d]="path"
-      [attr.fill]="hasGradient ? gradId.url : fill"
-      (click)="select.emit(data)"
-    />
-  `,
+		<svg:defs *ngIf="hasGradient">
+			<svg:g ngx-charts-svg-linear-gradient
+				   [color]="fill"
+				   [orientation]="orientation"
+				   [name]="gradId.id"
+				   [stops]="gradientStops"
+			/>
+		</svg:defs>
+		<svg:path
+				class="bar"
+				stroke="none"
+				[class.active]="isActive"
+				[attr.d]="path"
+				[attr.fill]="hasGradient ? gradId.url : fill"
+				(click)="select.emit(data)"
+		/>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BarComponent implements OnChanges {
@@ -58,6 +58,7 @@ export class BarComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
+		this.initialized = false;
 		this.update();
 	}
 
@@ -72,8 +73,7 @@ export class BarComponent implements OnChanges {
 		this.path = this.getStartingPath();
 		if (this.platform.isBrowser) {
 			if (!this.initialized) {
-				this.loadAnimation();
-				this.initialized = true;
+				setTimeout(this.loadAnimation.bind(this), 0);
 			} else {
 				this.animateToCurrentForm();
 			}
@@ -83,17 +83,18 @@ export class BarComponent implements OnChanges {
 	}
 
 	loadAnimation(): void {
+		this.initialized = true;
 		this.path = this.getStartingPath();
 		setTimeout(this.update.bind(this), 100);
 	}
 
 	animateToCurrentForm(): void {
-		let path = this.getPath();
 		if (!this.platform.isBrowser) {
-			this.path = path;
+			this.path = this.getPath();
 		} else {
 			let node = select(this.element).select('.bar');
-			node.transition().duration(750).attr('d', path);
+			let path = this.getPath();
+			node.transition().duration(250).attr('d', path);
 		}
 	}
 
@@ -139,15 +140,15 @@ export class BarComponent implements OnChanges {
 		if (this.roundEdges) {
 			if (this.orientation === 'vertical') {
 				if (this.data.value > 0) {
-					edges =  [true, true, false, false];
+					edges = [true, true, false, false];
 				} else {
-					edges =  [false, false, true, true];
+					edges = [false, false, true, true];
 				}
 			} else if (this.orientation === 'horizontal') {
 				if (this.data.value > 0) {
-					edges =  [false, true, false, true];
+					edges = [false, true, false, true];
 				} else {
-					edges =  [true, false, true, false];
+					edges = [true, false, true, false];
 				}
 			}
 		}

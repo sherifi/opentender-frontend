@@ -27,9 +27,9 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 320},
-				min: {height: 320},
-				max: {height: 320}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			labels: true,
 			explodeSlices: false,

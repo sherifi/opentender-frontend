@@ -24,9 +24,9 @@ export class GraphHistogramComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 320},
-				min: {height: 320},
-				max: {height: 320}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			xAxis: {
 				show: true,

@@ -1,77 +1,82 @@
 import {
-  Component,
-  Input,
-  ElementRef,
-  OnChanges,
-  SimpleChanges,
-  ChangeDetectionStrategy
+	Component,
+	Input,
+	ElementRef,
+	OnChanges,
+	SimpleChanges,
+	ChangeDetectionStrategy
 } from '@angular/core';
 
 @Component({
-  selector: 'g[ngx-charts-axis-label]',
-  template: `
-    <svg:text
-      [attr.stroke-width]="strokeWidth"
-      [attr.text-anchor]="textAnchor"
-      [attr.x]="x"
-      [attr.y]="y"
-      [attr.text-anchor]="textAnchor"
-      [attr.transform]="transform">
-      {{label}}
-    </svg:text>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'g[ngx-charts-axis-label]',
+	template: `
+		<svg:text
+				[attr.stroke-width]="strokeWidth"
+				[attr.text-anchor]="textAnchor"
+				[attr.x]="x"
+				[attr.y]="y"
+				[attr.text-anchor]="textAnchor"
+				[attr.transform]="transform">
+			{{label}}
+		</svg:text>
+	`,
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AxisLabelComponent implements OnChanges {
-  
-  @Input() orient;
-  @Input() label;
-  @Input() offset;
-  @Input() width;
-  @Input() height;
 
-  x: any;
-  y: any;
-  transform: any;
-  strokeWidth: any;
-  textAnchor: any;
-  element: ElementRef;
-  textHeight = 25;
-  margin = 5;
+	@Input() orient;
+	@Input() label;
+	@Input() offset;
+	@Input() width;
+	@Input() height;
 
-  constructor(element: ElementRef) {
-    this.element = element.nativeElement;
-  }
+	x: any;
+	y: any;
+	transform: any;
+	strokeWidth: any;
+	textAnchor: any;
+	element: ElementRef;
+	textHeight = 25;
+	margin = 5;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.update();
-  }
+	constructor(element: ElementRef) {
+		this.element = element.nativeElement;
+	}
 
-  update(): void {
-    this.strokeWidth = '0.01';
-    this.textAnchor = 'middle';
-    this.transform = '';
+	ngOnChanges(changes: SimpleChanges): void {
+		this.update();
+	}
 
-    switch (this.orient) {
-      case 'top':
-        this.y = this.offset;
-        this.x = this.width / 2;
-        break;
-      case 'bottom':
-        this.y = this.offset;
-        this.x = this.width / 2;
-        break;
-      case 'left':
-        this.y = - (this.offset + this.textHeight + this.margin);
-        this.x = -this.height / 2;
-        this.transform = "rotate(270)";
-        break;
-      case 'right':
-        this.y = this.offset + this.margin;
-        this.x = -this.height / 2;
-        this.transform = "rotate(270)";
-        break;
-    }
-  }
+	update(): void {
+		this.strokeWidth = '0.01';
+		this.textAnchor = 'middle';
+		this.transform = '';
+
+		switch (this.orient) {
+			case 'inline':
+				this.y = this.offset;
+				this.x = 0;
+				this.textAnchor = 'left';
+				break;
+			case 'top':
+				this.y = this.offset;
+				this.x = this.width / 2;
+				break;
+			case 'bottom':
+				this.y = this.offset;
+				this.x = this.width / 2;
+				break;
+			case 'left':
+				this.y = -(this.offset + this.textHeight + this.margin);
+				this.x = -this.height / 2;
+				this.transform = 'rotate(270)';
+				break;
+			case 'right':
+				this.y = this.offset + this.margin;
+				this.x = -this.height / 2;
+				this.transform = 'rotate(270)';
+				break;
+		}
+	}
 
 }

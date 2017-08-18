@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {ChartCommonModule} from '../common/chart/common-chart.module';
 import {BarHorizontalComponent} from './bar-horizontal.component';
 import {BarVerticalComponent} from './bar-vertical.component';
+import {BarHorizontalLabeledComponent} from './bar-horizontal-labeled.component';
 import {BarHorizontalStackedComponent} from './bar-horizontal-stacked.component';
 import {BarVerticalStackedComponent} from './bar-vertical-stacked.component';
 import {BarHorizontalGroupedComponent} from './bar-horizontal-grouped.component';
@@ -14,11 +15,12 @@ import {BaseBarGroupedComponent} from './base-bar-grouped-chart.component';
 export {
 	BarHorizontalComponent, BarVerticalComponent,
 	BarHorizontalStackedComponent, BarVerticalStackedComponent,
-	BarHorizontalGroupedComponent, BarVerticalGroupedComponent
+	BarHorizontalGroupedComponent, BarVerticalGroupedComponent,
+	BarHorizontalLabeledComponent
 };
 
 const COMPONENTS = [BarHorizontalComponent, BarVerticalComponent,
-	BarHorizontalStackedComponent, BarVerticalStackedComponent,
+	BarHorizontalStackedComponent, BarVerticalStackedComponent, BarHorizontalLabeledComponent,
 	BarHorizontalGroupedComponent, BarVerticalGroupedComponent, BaseBarGroupedComponent];
 
 @NgModule({

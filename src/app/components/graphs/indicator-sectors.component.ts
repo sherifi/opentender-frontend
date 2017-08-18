@@ -15,13 +15,13 @@ import {Router} from '@angular/router';
 				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>
 			</div>
 		</div>
-		<ngx-charts-bar-horizontal
+		<ngx-charts-bar-horizontal-labeled
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-bar-horizontal>`
+		</ngx-charts-bar-horizontal-labeled>`
 })
 export class GraphIndicatorSectorsComponent implements OnChanges {
 	@Input()
@@ -33,24 +33,24 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 722},
-				min: {height: 722},
-				max: {height: 722}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			xAxis: {
 				show: true,
 				showLabel: true,
 				label: 'Average % of Contracts',
+				minInterval: 1,
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
 			},
 			yAxis: {
-				show: true,
+				show: false,
 				showLabel: true,
 				label: 'Sector (CPV Division)',
 				defaultWidth: 150,
 				maxLength: 24,
-				tickFormatting: Utils.formatCPVName
 			},
 			valueFormatting: Utils.formatPercent,
 			showGridLines: true,
@@ -70,24 +70,24 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 722},
-				min: {height: 722},
-				max: {height: 722}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			xAxis: {
 				show: true,
 				showLabel: true,
 				label: 'Nr. of Contracts',
 				defaultHeight: 20,
+				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
 			},
 			yAxis: {
-				show: true,
+				show: false,
 				showLabel: true,
 				label: 'Sector (CPV Division)',
 				defaultWidth: 150,
-				maxLength: 24,
-				tickFormatting: Utils.formatCPVName
+				maxLength: 24
 			},
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
@@ -116,21 +116,60 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 			let codes = Object.keys(this.data).map((key) => {
 				return {id: key, name: this.data[key].name, value: this.data[key].value, percent: this.data[key].percent};
 			});
-			codes.sort((a, b) => {
-				if (a.percent < b.percent) {
+			this.cpvs_codes_average.data = codes.map((code) => {
+				return {id: code.id, name: code.name, value: code.percent};
+			}).sort((a, b) => {
+				if (a.value < b.value) {
 					return -1;
 				}
-				if (a.percent > b.percent) {
+				if (a.value > b.value) {
 					return 1;
 				}
 				return 0;
 			});
-			this.cpvs_codes_average.data = codes.map((code) => {
-				return {id: code.id, name: code.name, value: code.percent};
-			});
+
+			let othergroup;
+			let othergroupcount = 0;
+			while (this.cpvs_codes_average.data.length - 8 > 2) {
+				if (!othergroup) {
+					othergroup = {name: '', value: 0};
+				}
+				let item = this.cpvs_codes_average.data.shift();
+				othergroup.value = item.value;
+				othergroupcount++;
+				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + Utils.formatPercent(item.value) + ')';
+			}
+			if (othergroup) {
+				this.cpvs_codes_average.data.unshift(othergroup);
+			}
+
 			this.cpvs_codes_absolute.data = codes.map((code) => {
 				return {id: code.id, name: code.name, value: code.value};
+			}).sort((a, b) => {
+				if (a.value < b.value) {
+					return -1;
+				}
+				if (a.value > b.value) {
+					return 1;
+				}
+				return 0;
 			});
+
+			othergroup = null;
+			othergroupcount = 0;
+			while (this.cpvs_codes_absolute.data.length - 8 > 2) {
+				if (!othergroup) {
+					othergroup = {name: '', value: 0};
+				}
+				let item = this.cpvs_codes_absolute.data.shift();
+				othergroup.value = item.value;
+				othergroupcount++;
+				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + item.value + ')';
+			}
+			if (othergroup) {
+				this.cpvs_codes_absolute.data.unshift(othergroup);
+			}
+
 		}
 	}
 

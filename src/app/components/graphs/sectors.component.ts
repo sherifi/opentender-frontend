@@ -9,13 +9,13 @@ import {Router} from '@angular/router';
 	selector: 'graph[sectors]',
 	template: `
 		<div class="title">{{title}}</div>
-		<ngx-charts-bar-horizontal
+		<ngx-charts-bar-horizontal-labeled
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-bar-horizontal>`
+		</ngx-charts-bar-horizontal-labeled>`
 })
 export class GraphSectorsComponent implements OnChanges {
 	@Input()
@@ -27,9 +27,9 @@ export class GraphSectorsComponent implements OnChanges {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 320},
-				min: {height: 320},
-				max: {height: 320}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			xAxis: {
 				show: true,
@@ -40,7 +40,7 @@ export class GraphSectorsComponent implements OnChanges {
 				tickFormatting: Utils.formatTrunc
 			},
 			yAxis: {
-				show: true,
+				show: false,
 				showLabel: true,
 				label: 'Sector (CPV)',
 				defaultWidth: 150,
@@ -77,28 +77,27 @@ export class GraphSectorsComponent implements OnChanges {
 			});
 			this.cpvs_codes_absolute.data.sort((a, b) => {
 				if (a.value > b.value) {
-					return -1;
+					return 1;
 				}
 				if (a.value < b.value) {
-					return 1;
+					return -1;
 				}
 				return 0;
 			});
 			let othergroup;
 			let othergroupcount = 0;
-			while (this.cpvs_codes_absolute.data.length - 9 > 2) {
+			while (this.cpvs_codes_absolute.data.length - 8 > 2) {
 				if (!othergroup) {
 					othergroup = {name: '', value: 0};
 				}
-				let last = this.cpvs_codes_absolute.data.pop();
-				othergroup.value += last.value;
+				let item = this.cpvs_codes_absolute.data.shift();
+				othergroup.value += item.value;
 				othergroupcount++;
-				othergroup.name = othergroupcount + ' other Sectors < ' + last.value;
+				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + item.value + ')';
 			}
 			if (othergroup) {
-				this.cpvs_codes_absolute.data.push(othergroup);
+				this.cpvs_codes_absolute.data.unshift(othergroup);
 			}
-			this.cpvs_codes_absolute.data = this.cpvs_codes_absolute.data.reverse();
 		}
 	}
 
