@@ -1,11 +1,41 @@
+
 export const Consts = {
+	indicators: {
+		ac: {
+			name: 'Administrative Capacity Indicator',
+			plural: 'Administrative Capacity Indicators',
+			prefix: 'ADMINISTRATIVE',
+			subindicators: [
+				'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT',
+				'ADMINISTRATIVE_ELECTRONIC_AUCTION',
+				'ADMINISTRATIVE_COVERED_BY_GPA',
+				'ADMINISTRATIVE_FRAMEWORK_AGREEMENT',
+				'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE'
+			]
+		},
+		cr: {
+			name: 'Corruption Risk Indicator',
+			plural: 'Corruption Risk Indicators',
+			prefix: 'CORRUPTION',
+			subindicators: [
+				'CORRUPTION_SINGLE_BID',
+				'CORRUPTION_PRIOR_INFORMATION_NOTICE',
+				'CORRUPTION_ADVERTISEMENT_PERIOD',
+				'CORRUPTION_PROCEDURE_TYPE',
+				'CORRUPTION_DECISION_PERIOD',
+				'CORRUPTION_TAX_HAVEN',
+				'CORRUPTION_NEW_COMPANY'
+			]
+		},
+		tr: {name: 'Transparency Indicator', plural: 'Transparency Indicators', prefix: 'TRANSPARENCY', subindicators: []}
+	},
 	countries: {
 		'AF': 'Afghanistan',
 		'AX': 'Åland Islands',
 		'AL': 'Albania',
 		'DZ': 'Algeria',
 		'AS': 'American Samoa',
-		'AD': 'AndorrA',
+		'AD': 'Andorra',
 		'AO': 'Angola',
 		'AI': 'Anguilla',
 		'AQ': 'Antarctica',
@@ -1215,5 +1245,4 @@ export const Consts = {
 		single: ['#66A4D9'],
 		single2: ['#35978f']
 	}
-
 };

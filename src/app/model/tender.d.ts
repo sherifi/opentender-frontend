@@ -118,6 +118,7 @@ declare namespace Definitions {
 		 * Array of Buyer Activity Type
 		 */
 		mainActivities?: string[];
+		metaData?: BodyMetadata;
 	}
 	export interface Body {
 		id?: string;
@@ -147,6 +148,7 @@ declare namespace Definitions {
 		 * Address of the body seat
 		 */
 		address?: Address;
+		metaData?: BodyMetadata;
 	}
 	/**
 	 * VAT ID or other unique country ID
@@ -164,6 +166,9 @@ declare namespace Definitions {
 		 * scope under which the identifier is unique. typically country code ( ISO 3166-1 alpha-2 = two letter ), or EU for VAT ID, null for global identifiers such as opencorporates or Bureau Van Dijk identifiers.
 		 */
 		scope?: string;
+	}
+	export interface BodyMetadata {
+		foundationDate?: string;
 	}
 	export interface Buyer {
 		id?: string;
@@ -206,6 +211,7 @@ declare namespace Definitions {
 		 * Identifies the leader of consortium (typically buyer or bidder)
 		 */
 		isLeader?: boolean;
+		metaData?: BodyMetadata;
 	}
 	export type BuyerType = 'NATIONAL_AUTHORITY' | 'NATIONAL_AGENCY' | 'REGIONAL_AUTHORITY' | 'REGIONAL_AGENCY' | 'PUBLIC_BODY' | 'EUROPEAN_AGENCY' | 'OTHER';
 	export interface Correction {
@@ -320,12 +326,21 @@ declare namespace Definitions {
 		/**
 		 * Type of indicator
 		 */
-		type?: 'CORRUPTION_SINGLE_BID' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT';
+		type?: 'CORRUPTION_SINGLE_BID' | 'CORRUPTION_PRIOR_INFORMATION_NOTICE' | 'CORRUPTION_ADVERTISEMENT_PERIOD' | 'CORRUPTION_PROCEDURE_TYPE' | 'CORRUPTION_DECISION_PERIOD' | 'CORRUPTION_TAX_HAVEN' | 'CORRUPTION_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE';
 		metaData?: {
 		/**
 		 * Array of lotTitles
 		 */
 		lotTitles?: (string | null)[];
+		/**
+		 * Array of bidderGroupIds
+		 */
+		bidderGroupIds?: string[];
+		advertisementPeriodLength?: number;
+		decisionPeriodLEngth?: number;
+		callForTenderDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		awardDecisionDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		bidDeadline?: DateTime; // ^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d$
 		};
 	}
 	/**
@@ -739,11 +754,11 @@ declare namespace Definitions {
 		 */
 		awardDeadlineDuration?: number;
 		/**
-		 * Envisaged maximum number of participatns to the framework agreement
+		 * Envisaged maximum number of participants to the framework agreement
 		 */
 		maxFrameworkAgreementParticipants?: number;
 		/**
-		 * Maximum number of bids, typically used in Restricted or Negotiated with publication procedure..
+		 * Maximum number of bids, typically used in Restricted or Negotiated with publication procedure
 		 */
 		maxBidsCount?: number;
 		/**

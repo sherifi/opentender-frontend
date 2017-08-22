@@ -5,6 +5,13 @@ import Tender = Definitions.Tender;
 import {ColumnSort} from './model/columns';
 import {Country} from './services/config.service';
 
+export interface IndicatorInfo {
+	name: string;
+	plural: string;
+	prefix: string;
+	subindicators: Array<string>;
+}
+
 export interface ISector {
 	id: string;
 	name: string;

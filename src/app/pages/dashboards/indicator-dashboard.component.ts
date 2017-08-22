@@ -1,22 +1,27 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo} from '../../app.interfaces';
+import {I18NService} from '../../services/i18n.service';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
 	selector: 'indicator-dashboard',
 	templateUrl: 'indicator-dashboard.template.html'
 })
-export class DashboardsIndicatorComponent {
+export class DashboardsIndicatorComponent implements OnChanges {
 	@Input()
-	indicator: string = 'Indicators';
-	@Input()
-	searchPrefix: string = '';
+	indicator: IndicatorInfo;
 	@Input()
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
+	private title: string = '';
+	private searchPrefix: string = '';
+	private indicatorTitle: string;
+	private columnTitle: string;
 	private error: string;
+	private selected: string = 'all';
 	private search_cmd: SearchCommand;
 	private viz: {
 		top_companies: IStatsCompanies,
@@ -49,7 +54,14 @@ export class DashboardsIndicatorComponent {
 		}
 	};
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private i18n: I18NService) {
+		this.columnTitle = i18n.get('Tenders');
+	}
+
+	public ngOnChanges(changes: SimpleChanges): void {
+		this.title = this.i18n.get(this.indicator.plural);
+		this.indicatorTitle = this.i18n.get(this.indicator.plural);
+		this.searchPrefix = this.indicator.prefix;
 	}
 
 	ngOnInit(): void {
@@ -58,6 +70,22 @@ export class DashboardsIndicatorComponent {
 	}
 
 	ngOnDestroy() {
+	}
+
+	selectChange(event) {
+		this.displayIndicator();
+	}
+
+	displayIndicator() {
+		if (this.selected == 'all') {
+			this.indicatorTitle = this.i18n.get(this.indicator.plural);
+			this.searchPrefix = this.indicator.prefix;
+		} else {
+			this.searchPrefix = this.selected;
+			this.indicatorTitle = this.i18n.get(Utils.formatIndicatorName(this.selected)) + ' ' + this.i18n.get('Indicator');
+		}
+		this.visualize();
+		this.search();
 	}
 
 	display(stats: IStats): void {

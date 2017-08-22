@@ -6,32 +6,40 @@
 	</div>
 
 	<section class="container">
-		<div class="entity-title">{{indicator}}</div>
+		<div class="entity-title">{{title}}</div>
 	</section>
 
 	<section class="container container-margin">
-		<h2>{{indicator}}</h2>
+		<h2>{{title}}</h2>
 		<div>
 			<slider
 					[min]="filter.time.startYear"
 					[max]="filter.time.endYear"
 					[startValue]="filter.time.startYear"
 					[endValue]="filter.time.endYear"
-					stepValue="1"
-					defaultWidth="934"
+					stepValue="1" defaultWidth="934"
 					(onSliderChange)="onSliderChange($event)"></slider>
 		</div>
+
+		<div class="form-group">
+			<label for="subindicator">Choose a subindicator</label>
+			<select class="form-control" id="subindicator" required [(ngModel)]="selected" (change)="selectChange($event)">
+				<option value="all">[All subindicator]</option>
+				<option *ngFor="let indi of indicator.subindicators" [value]="indi">{{indi | formatIndicatorName}}</option>
+			</select>
+		</div>
+
 	</section>
 	<section class="container container-margin">
 		<div class="container">
 			<div class="container-left-6">
-				<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicator"></graph>
+				<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
 				<br/>
 				<br/>
-				<graph indicator-structure [data]="viz.terms_indicators" [title]="indicator"></graph>
+				<graph indicator-structure [data]="viz.terms_indicators" [title]="indicatorTitle"></graph>
 			</div>
 			<div class="container-left-6">
-				<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicator"></graph>
+				<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle"></graph>
 			</div>
 		</div>
 	</section>
@@ -48,7 +56,7 @@
 	</section>
 
 	<section class="container">
-		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="columnTitle" (searchChange)="searchChange($event);"></tender-table>
 	</section>
 
 </section>

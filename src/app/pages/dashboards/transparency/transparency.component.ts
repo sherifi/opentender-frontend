@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {I18NService} from '../../../services/i18n.service';
+import {Consts} from '../../../model/consts';
+import {IndicatorInfo} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -7,11 +8,6 @@ import {I18NService} from '../../../services/i18n.service';
 	templateUrl: 'transparency.template.html'
 })
 export class DashboardsTransparencyPage {
+	public indicator: IndicatorInfo = Consts.indicators.tr;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.ti'];
-	public indicator: string;
-	public searchPrefix = 'TRANSPARENCY';
-
-	constructor(i18n: I18NService) {
-		this.indicator = i18n.get('Transparency Indicators');
-	}
 }

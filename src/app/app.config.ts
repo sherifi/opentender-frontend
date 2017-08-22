@@ -97,6 +97,7 @@ import {PlatformService} from './services/platform.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
+import {FormatIndicatorName} from './directives/format-indicator.pipe';
 
 const AppConfig = {
 	declarations: [
@@ -156,6 +157,7 @@ const AppConfig = {
 		FormatDatePipe,
 		FormatDatetimePipe,
 		FormatFileSizePipe,
+		FormatIndicatorName,
 		KeyValuesPipe,
 		TruncatePipe,
 		FOISearchLinkPipe,

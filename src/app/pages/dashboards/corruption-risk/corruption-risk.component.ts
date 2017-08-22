@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {I18NService} from '../../../services/i18n.service';
+import {Consts} from '../../../model/consts';
+import {IndicatorInfo} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -7,11 +8,6 @@ import {I18NService} from '../../../services/i18n.service';
 	templateUrl: 'corruption-risk.template.html'
 })
 export class DashboardsCorruptionPage {
+	public indicator: IndicatorInfo = Consts.indicators.cr;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.cri'];
-	public indicator: string;
-	public searchPrefix: string = 'CORRUPTION';
-
-	constructor(i18n: I18NService) {
-		this.indicator = i18n.get('Corruption Risk Indicators');
-	}
 }
