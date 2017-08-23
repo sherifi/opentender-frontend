@@ -9,6 +9,7 @@ import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, IStatsPri
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -18,12 +19,12 @@ import Body = Definitions.Body;
 export class CompanyPage implements OnInit, OnDestroy {
 	public company: Body;
 	public country: Country;
-	public error: string;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'finalPrice'];
-	private subscription: any;
 	public similar: Array<ICompany> = [];
 	public search_similars = {};
+	public loading: number = 0;
+	private subscription: any;
 
 	private viz: {
 		authority_nuts: IStatsNuts,
@@ -41,7 +42,8 @@ export class CompanyPage implements OnInit, OnDestroy {
 		lots_in_years: null
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService, private config: ConfigService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
+				private state: StateService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 	}
 
@@ -52,14 +54,16 @@ export class CompanyPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
+			this.loading++;
 			this.api.getCompany(id).subscribe(
-				result => this.display(result.data),
+				result => {
+					this.display(result.data);
+				},
 				error => {
-					this.error = error._body;
-					// console.error(error);
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('company complete');
+					this.loading--;
 				});
 		});
 	}
@@ -72,26 +76,30 @@ export class CompanyPage implements OnInit, OnDestroy {
 	}
 
 	getStats(ids: Array<string>) {
+		this.loading++;
 		this.api.getCompanyStats({ids: ids}).subscribe(
-			result => this.displayStats(result.data),
+			result => {
+				this.displayStats(result.data);
+			},
 			error => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('company complete');
+				this.loading--;
 			});
 	}
 
 	getSimilars(id: string) {
+		this.loading++;
 		this.api.getCompanySimilar(id).subscribe(
-			result => this.displaySimilar(result.data),
+			result => {
+				this.displaySimilar(result.data);
+			},
 			error => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('company complete');
+				this.loading--;
 			});
 	}
 

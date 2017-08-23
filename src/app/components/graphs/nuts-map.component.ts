@@ -6,6 +6,7 @@ import {ApiService} from '../../services/api.service';
 import GeoJSON = L.GeoJSON;
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	selector: 'graph[nutsmap]',
@@ -26,13 +27,14 @@ export class GraphNutsMapComponent implements OnChanges {
 	@Input()
 	formatTooltip: any;
 
+	private loading: number = 0;
 	private invalid: number = 0;
 	private valid: number = 0;
 	private map: any;
 	private geolayer: GeoJSON;
 	private leaflet_options = {};
 
-	constructor(private api: ApiService, private platform: PlatformService, private router: Router) {
+	constructor(private api: ApiService, private platform: PlatformService, private router: Router, private notify: NotifyService) {
 		this.initMap();
 	}
 
@@ -116,20 +118,20 @@ export class GraphNutsMapComponent implements OnChanges {
 				return code.slice(0, 2 + level);
 			}
 		}
-		// console.log('invalid code', code);
 		return 'invalid';
 	}
 
 	loadMap() {
+		this.loading++;
 		this.api.getNutsMap(this.level).subscribe(
-			result => {
+			(result) => {
 				this.displayNuts(result);
 			},
-			error => {
-				console.error(error);
+			(error) => {
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('nuts map complete');
+				this.loading--;
 			});
 	}
 

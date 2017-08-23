@@ -1,5 +1,5 @@
 <div>
-	<h2 class="table-title">{{title}} <i class="icon-spinner2 icon-rotate" *ngIf="isLoading"></i></h2>
+	<h2 class="table-title">{{title}} <i class="icon-spinner2 icon-rotate" *ngIf="loading>0"></i></h2>
 	<select-columns-button [columns_all]="all_columns" [columns_active]="columns" (selectChange)="onSelectColumns($event)"></select-columns-button>
 </div>
 <doc-table [table]="table" (sortChange)="sortChange($event)"></doc-table>

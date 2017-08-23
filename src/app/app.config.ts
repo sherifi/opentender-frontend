@@ -6,6 +6,7 @@ import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 import {AppRoutingModule} from './app.routes';
+import {ToastyModule} from 'ng2-toasty';
 
 import {App} from './app.component';
 
@@ -98,6 +99,7 @@ import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 import {FormatIndicatorName} from './directives/format-indicator.pipe';
+import {NotifyService} from './services/notify.service';
 
 const AppConfig = {
 	declarations: [
@@ -201,6 +203,7 @@ const AppConfig = {
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule,
+		ToastyModule,
 		AppRoutingModule
 	],
 	providers: [
@@ -209,6 +212,7 @@ const AppConfig = {
 		StateService,
 		PlatformService,
 		I18NService,
+		NotifyService,
 		Title,
 		ApiService
 	]

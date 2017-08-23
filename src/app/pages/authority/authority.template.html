@@ -1,8 +1,7 @@
 <section class="container-outer authority entity" *ngIf="!authority">
 	<section class="container">
 		<div class="entity-title">Authority</div>
-		<div *ngIf="error">Error: {{error}}</div>
-		<div *ngIf="!error">Loading…</div>
+		<div>Loading…</div>
 	</section>
 </section>
 
@@ -52,35 +51,37 @@
 
 	</section>
 
-	<section class="container container-margin">
-		<h2>Indicators</h2>
-		<div class="container">
-			<div class="container-left-6">
-				<graph histogram [data]="viz.lots_in_years"></graph>
-				<br/>
-				<graph counts [data]="viz.counts"></graph>
-				<br/>
-				<graph sum_prices [data]="viz.sums_finalPrice"></graph>
+	<div [ngClass]="{'is-loading': loading>0}">
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph histogram [data]="viz.lots_in_years"></graph>
+					<br/>
+					<graph counts [data]="viz.counts"></graph>
+					<br/>
+					<graph sum_prices [data]="viz.sums_finalPrice"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph sectors [data]="viz.cpvs_codes"></graph>
+				</div>
 			</div>
-			<div class="container-left-6">
-				<graph sectors [data]="viz.cpvs_codes"></graph>
-			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="container container-margin">
-		<div class="container">
-			<div class="container-left-6">
-				<graph companies [data]="viz.top_companies"></graph>
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies"></graph>
+				</div>
+				<div class="container-left-6">
+					<h2>Suppliers by Region</h2>
+					<graph nutsmap [data]="viz.company_nuts" [level]="1"></graph>
+				</div>
 			</div>
-			<div class="container-left-6">
-				<h2>Suppliers by Region</h2>
-				<graph nutsmap [data]="viz.company_nuts" [level]="1"></graph>
-			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="container">
-		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
-	</section>
+		<section class="container">
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+		</section>
+	</div>
+
 </section>

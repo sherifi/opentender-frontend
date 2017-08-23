@@ -3,6 +3,7 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand} from '../../model/search';
 import {CompanyColumns, CompanyColumn, Table, ColumnSort} from '../../model/columns';
 import {ICompany, ISearchCompanyData} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	selector: 'company-table',
@@ -25,12 +26,12 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	sortBy: ColumnSort;
 	companies: Array<ICompany> = [];
 
-	isLoading = false;
-	total = 0;
-	defaultPageSize = 10;
-	defaultPage = 0;
+	loading: number = 0;
+	total: number = 0;
+	defaultPageSize: number = 10;
+	defaultPage: number = 0;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 	ngOnInit(): void {
@@ -98,21 +99,18 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 
 	refresh(): void {
 		let cmd = this.search_cmd;
-		this.isLoading = true;
+		this.loading++;
 		this.api.searchCompany(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
-					this.isLoading = false;
 					this.display(result.data);
 				}
 			},
 			(error) => {
-				this.isLoading = false;
-				console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				this.isLoading = false;
-				// console.log('searchCompany complete');
+				this.loading--;
 			});
 	}
 

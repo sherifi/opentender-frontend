@@ -1,8 +1,7 @@
 <section class="container-outer sector entity" *ngIf="!sector">
 	<section class="container">
 		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
-		<div *ngIf="error">Error: {{error}}</div>
-		<div *ngIf="!error">Loading…</div>
+		<div>Loading…</div>
 	</section>
 </section>
 
@@ -10,14 +9,11 @@
 	<section class="container">
 		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
 	</section>
-	<section class="container error" *ngIf="error">
-		Error: {{error}}
-	</section>
-	<section class="container container-margin">
 
+	<section class="container container-margin">
 		<div *ngIf="parent_sectors.length>0" class="pull-right">
 			<div class="title">Parent Sectors:</div>
-			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a> </div>
+			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a></div>
 		</div>
 
 		<h2>{{sector.name}} (CPV {{sector.id}})</h2>
@@ -32,66 +28,71 @@
 					(onSliderChange)="onSliderChange($event)"></slider>
 		</div>
 	</section>
-	<section class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
-		<div class="container">
-			<div class="container-left-12">
-				<graph sector-treemap [data]="viz.subsectors"></graph>
-			</div>
-		</div>
-	</section>
-	<section class="container container-margin">
-		<div class="container">
-			<div class="container-left-6">
-				<graph indicator-histogram [title]="'Sector'" [data]="viz.histogram"></graph>
-			</div>
-			<div class="container-left-6">
-				<div *ngIf="viz.cpvs_codes">
-					<graph sectors [data]="viz.cpvs_codes" [title]="'Subsectors'"></graph>
+
+	<div [ngClass]="{'is-loading': loading>0}">
+
+		<section class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
+			<div class="container">
+				<div class="container-left-12">
+					<graph sector-treemap [data]="viz.subsectors"></graph>
 				</div>
 			</div>
-		</div>
-		<!--<div class="container">-->
+		</section>
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph indicator-histogram [title]="'Sector'" [data]="viz.histogram"></graph>
+				</div>
+				<div class="container-left-6">
+					<div *ngIf="viz.cpvs_codes">
+						<graph sectors [data]="viz.cpvs_codes" [title]="'Subsectors'"></graph>
+					</div>
+				</div>
+			</div>
+			<!--<div class="container">-->
 			<!--<div class="container-left-6">-->
-				<!--<graph counts [data]="viz.counts"></graph>-->
+			<!--<graph counts [data]="viz.counts"></graph>-->
 			<!--</div>-->
 			<!--<div class="container-left-6">-->
-				<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
+			<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
 			<!--</div>-->
-		<!--</div>-->
-	</section>
-	<section class="container container-margin">
-		<div class="container">
-			<div class="container-left-6">
-				<graph companies [data]="viz.top_companies"></graph>
+			<!--</div>-->
+		</section>
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph authorities [data]="viz.top_authorities"></graph>
+				</div>
 			</div>
-			<div class="container-left-6">
-				<graph authorities [data]="viz.top_authorities"></graph>
+			<div class="container">
+				<div class="container-left-6" *ngIf="viz.subsectors && viz.subsectors.length>0">
+					<h2>Subsectors</h2>
+					<table class="tables">
+						<tr>
+							<th>Subsector</th>
+							<th>Nr. of Contracts</th>
+							<th>Volume of Contracts</th>
+						</tr>
+						<tr *ngFor="let val of viz.subsectors">
+							<td>
+								<a [routerLink]="'/sector/'+val.sector.id">{{val.sector.name}}</a>
+							</td>
+							<td>{{val.sector.value| formatNumber}}</td>
+							<td>€ {{val.stats.sums_finalPrice['EUR'] | formatCurrencyValue}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="container-left-6">
+				</div>
 			</div>
-		</div>
-		<div class="container">
-			<div class="container-left-6" *ngIf="viz.subsectors && viz.subsectors.length>0">
-				<h2>Subsectors</h2>
-				<table class="tables">
-					<tr>
-						<th>Subsector</th>
-						<th>Nr. of Contracts</th>
-						<th>Volume of Contracts</th>
-					</tr>
-					<tr *ngFor="let val of viz.subsectors">
-						<td>
-							<a [routerLink]="'/sector/'+val.sector.id">{{val.sector.name}}</a>
-						</td>
-						<td>{{val.sector.value| formatNumber}}</td>
-						<td>€ {{val.stats.sums_finalPrice['EUR'] | formatCurrencyValue}}</td>
-					</tr>
-				</table>
-			</div>
-			<div class="container-left-6">
-			</div>
-		</div>
-	</section>
-	<section class="container">
-		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
-	</section>
+		</section>
+		<section class="container">
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+		</section>
+	</div>
+
 </section>
 

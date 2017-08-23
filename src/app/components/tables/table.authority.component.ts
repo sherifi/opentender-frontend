@@ -3,6 +3,7 @@ import {ApiService} from '../../services/api.service';
 import {AuthorityColumns, AuthorityColumn, Table, ColumnSort} from '../../model/columns';
 import {SearchCommand} from '../../model/search';
 import {IAuthority, ISearchAuthorityData} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	selector: 'authority-table',
@@ -23,13 +24,13 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	sortBy: ColumnSort;
 	authorities: Array<IAuthority> = [];
 
-	isLoading = false;
+	loading: number = 0;
 	total = 0;
 	defaultPageSize = 10;
 	defaultPage = 0;
 	all_columns = AuthorityColumns;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 	ngOnInit(): void {
@@ -95,21 +96,18 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 
 	refresh(): void {
 		let cmd = this.search_cmd;
-		this.isLoading = true;
+		this.loading++;
 		this.api.searchAuthority(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
-					this.isLoading = false;
 					this.display(result.data);
 				}
 			},
-			error => {
-				this.isLoading = false;
-				console.error(error);
+			(error) => {
+				this.notify.error(error);
 			},
 			() => {
-				this.isLoading = false;
-				// console.log('searchAuthority complete');
+				this.loading--;
 			});
 	}
 

@@ -2,9 +2,9 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {SearchCommand} from '../../model/search';
-import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {IStats, IRegion, IRegionStats} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -14,12 +14,12 @@ import {IStats, IRegion, IRegionStats} from '../../app.interfaces';
 export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;
 	public parent_regions: Array<IRegion> = [];
-	public error: string;
+	private loading: number = 0;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
 	private subscription: any;
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private notify: NotifyService, private state: StateService) {
 	}
 
 	ngOnInit(): void {
@@ -29,14 +29,16 @@ export class RegionPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
+			this.loading++;
 			this.api.getRegionStats({id: id}).subscribe(
-				(result) => this.display(result.data),
+				(result) => {
+					this.display(result.data);
+				},
 				(error) => {
-					this.error = error._body;
-					// console.error(error);
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('region complete');
+					this.loading--;
 				});
 		});
 	}

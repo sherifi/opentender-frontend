@@ -4,6 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 import {Utils} from '../../model/utils';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -20,7 +21,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
 	private columnTitle: string;
-	private error: string;
+	private loading: number = 0;
 	private selected: string = 'all';
 	private search_cmd: SearchCommand;
 	private viz: {
@@ -54,7 +55,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		}
 	};
 
-	constructor(private api: ApiService, private i18n: I18NService) {
+	constructor(private api: ApiService, private i18n: I18NService, private notify: NotifyService) {
 		this.columnTitle = i18n.get('Tenders');
 	}
 
@@ -138,14 +139,16 @@ export class DashboardsIndicatorComponent implements OnChanges {
 
 	visualize() {
 		let filters = this.buildFilters();
+		this.loading++;
 		this.api.getIndicatorStats({filters: filters}).subscribe(
-			(result) => this.display(result.data),
+			(result) => {
+				this.display(result.data)
+			},
 			(error) => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('indicators complete');
+				this.loading--;
 			});
 	}
 

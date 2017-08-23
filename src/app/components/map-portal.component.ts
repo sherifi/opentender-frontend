@@ -2,6 +2,7 @@ import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterV
 import {ApiService} from '../services/api.service';
 import {ICountryStats} from '../app.interfaces';
 import {ConfigService, Country} from '../services/config.service';
+import {NotifyService} from '../services/notify.service';
 
 @Directive({selector: 'g.country'})
 export class SVGCountryGroupDirective {
@@ -37,20 +38,33 @@ export class PortalMapComponent implements AfterViewInit, OnChanges {
 	@ViewChildren(SVGCountryGroupDirective) items: QueryList<SVGCountryGroupDirective>;
 	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
 	public current: Country;
+	public loading: number = 0;
 
-	constructor(private api: ApiService, private config: ConfigService) {
+	constructor(private api: ApiService, private config: ConfigService, private notify: NotifyService) {
 		this.current = config.country;
 	}
 
 	public ngAfterViewInit(): void {
+		setTimeout(() => {
+			this.load();
+		}, 0);
+	}
+
+	load() {
+		this.loading++;
 		this.api.getPortalMapData().subscribe(
-			res => {
-				this.display(res);
+			(result) => {
+				this.display(result);
 			},
 			error => {
-				console.log(error);
-			});
+				this.notify.error(error);
+			},
+			() => {
+				this.loading--;
+			}
+		);
 	}
+
 
 	display(svg) {
 		this.svg = svg;

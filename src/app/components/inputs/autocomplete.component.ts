@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {TypeaheadMatch} from '../../thirdparty/typeahead/typeahead-match.class';
 import {Observable} from 'rxjs';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	selector: 'autocomplete',
@@ -21,19 +22,33 @@ export class AutoCompleteComponent {
 	public typeaheadNoResults: boolean = false;
 	public focused: boolean = false;
 	public items: Array<string> = [];
-	public dataSource = Observable.create((observer: any) => {
-		this.api.autocomplete(this.entity, this.field, this.asyncSelected).subscribe(
-			(result: any) => {
-				observer.next(result.data);
-			},
-			(error) => {
-				console.log(error);
-				observer.next([]);
-			}
-		);
-	});
+	public loading: number = 0;
+	public dataSource: Observable<any>;
 
-	public constructor(private api: ApiService) {
+	public constructor(private api: ApiService, private notify: NotifyService) {
+		this.init();
+	}
+
+	init() {
+		this.dataSource = Observable.create((observer: any) => {
+			if (!this.field || this.field.trim().length === 0) {
+				return observer.next([]);
+			}
+			this.loading++;
+			this.api.autocomplete(this.entity, this.field, this.asyncSelected).subscribe(
+				(result: any) => {
+					observer.next(result.data);
+				},
+				(error) => {
+					this.notify.error(error);
+					observer.next([]);
+				},
+				() => {
+					this.loading--;
+				}
+			);
+		});
+
 	}
 
 	public isEmpty(): boolean {

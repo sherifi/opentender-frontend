@@ -1,25 +1,24 @@
 <section class="container-outer dashboards">
-	<section class="container">
-		<section class="container">
-			<div class="container-title">Market Analysis</div>
-		</section>
-		<div class="error" *ngIf="error">
-			Error: {{error}}
-		</div>
 
-		<section class="container container-margin">
-			<h2>Market Analysis</h2>
-			<div *ngIf="filter.time">
-				<slider
-						[min]="filter.time.startYear"
-						[max]="filter.time.endYear"
-						[startValue]="filter.time.startYear"
-						[endValue]="filter.time.endYear"
-						stepValue="1"
-						defaultWidth="934"
-						(onSliderChange)="onSliderChange($event)"></slider>
-			</div>
-		</section>
+	<section class="container">
+		<div class="container-title">Market Analysis</div>
+	</section>
+
+	<section class="container container-margin">
+		<h2>Market Analysis</h2>
+		<div *ngIf="filter.time">
+			<slider
+					[min]="filter.time.startYear"
+					[max]="filter.time.endYear"
+					[startValue]="filter.time.startYear"
+					[endValue]="filter.time.endYear"
+					stepValue="1"
+					defaultWidth="934"
+					(onSliderChange)="onSliderChange($event)"></slider>
+		</div>
+	</section>
+
+	<div [ngClass]="{'is-loading': loading>0}">
 
 		<section class="container container-margin">
 			<div class="container">
@@ -46,5 +45,6 @@
 				<td>€ {{sectorInfo.stats.sums_finalPrice['EUR'] | formatCurrencyValue}}</td>
 			</tr>
 		</table>
-	</section>
+
+	</div>
 </section>

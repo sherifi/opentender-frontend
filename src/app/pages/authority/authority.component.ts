@@ -9,6 +9,7 @@ import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsPri
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
 import {ConfigService, Country} from '../../services/config.service';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -18,7 +19,7 @@ import {ConfigService, Country} from '../../services/config.service';
 export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;
 	public country: Country;
-	public error: string;
+	public loading: number = 0;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'lots.bids.bidders.name', 'finalPrice'];
 	private subscription: any;
@@ -41,7 +42,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		lots_in_years: null
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService, private config: ConfigService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
+				private state: StateService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 	}
 
@@ -52,14 +54,16 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
+			this.loading++;
 			this.api.getAuthority(id).subscribe(
-				(result) => this.display(result.data),
+				(result) => {
+					this.display(result.data);
+				},
 				(error) => {
-					this.error = error._body;
-					// console.error(error);
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('authority complete');
+					this.loading--;
 				});
 		});
 	}
@@ -81,26 +85,28 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	getStats(ids: Array<string>) {
+		this.loading++;
 		this.api.getAuthorityStats({ids: ids}).subscribe(
-			result => this.displayStats(result.data),
-			error => {
-				this.error = error._body;
-				// console.error(error);
+			(result) => {
+				this.displayStats(result.data);
+			},
+			(error) => {
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('authority complete');
+				this.loading--;
 			});
 	}
 
 	getSimilars(id: string) {
+		this.loading++;
 		this.api.getAuthoritySimilar(id).subscribe(
 			result => this.displaySimilar(result.data),
 			error => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('authority complete');
+				this.loading--;
 			});
 	}
 

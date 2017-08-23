@@ -1,10 +1,5 @@
 <section class="container-outer authority entity">
 
-	<div class="loading-overlay" *ngIf="loading">
-		<div *ngIf="error">Error: {{error}}</div>
-		<div *ngIf="!error">Loading…</div>
-	</div>
-
 	<section class="container">
 		<div class="entity-title">{{title}}</div>
 	</section>
@@ -24,39 +19,42 @@
 		<div class="form-group">
 			<label for="subindicator">Choose a subindicator</label>
 			<select class="form-control" id="subindicator" required [(ngModel)]="selected" (change)="selectChange($event)">
-				<option value="all">[All subindicator]</option>
+				<option value="all">[ <ng-container i18n>All subindicators</ng-container> ]
+				</option>
 				<option *ngFor="let indi of indicator.subindicators" [value]="indi">{{indi | formatIndicatorName}}</option>
 			</select>
 		</div>
-
-	</section>
-	<section class="container container-margin">
-		<div class="container">
-			<div class="container-left-6">
-				<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
-				<br/>
-				<br/>
-				<graph indicator-structure [data]="viz.terms_indicators" [title]="indicatorTitle"></graph>
-			</div>
-			<div class="container-left-6">
-				<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle"></graph>
-			</div>
-		</div>
 	</section>
 
-	<section class="container container-margin">
-		<div class="container">
-			<div class="container-left-6">
-				<graph companies [data]="viz.top_companies"></graph>
-			</div>
-			<div class="container-left-6">
-				<graph authorities [data]="viz.top_authorities"></graph>
-			</div>
-		</div>
-	</section>
+	<div [ngClass]="{'is-loading': loading>0}">
 
-	<section class="container">
-		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="columnTitle" (searchChange)="searchChange($event);"></tender-table>
-	</section>
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
+					<br/>
+					<br/>
+					<graph indicator-structure [data]="viz.terms_indicators" [title]="indicatorTitle"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle"></graph>
+				</div>
+			</div>
+		</section>
 
+		<section class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph authorities [data]="viz.top_authorities"></graph>
+				</div>
+			</div>
+		</section>
+
+		<section class="container">
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="columnTitle" (searchChange)="searchChange($event);"></tender-table>
+		</section>
+	</div>
 </section>

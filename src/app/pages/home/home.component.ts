@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {IStats, IStatsLotsInYears} from '../../app.interfaces';
 import {ConfigService} from '../../services/config.service';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -11,24 +12,28 @@ import {ConfigService} from '../../services/config.service';
 })
 export class HomePage implements OnInit {
 	public country: string;
+	private loading: number = 0;
 	public viz: {
 		lots_in_years: IStatsLotsInYears;
 	} = {
 		lots_in_years: null
 	};
 
-	constructor(public router: Router, private api: ApiService, private config: ConfigService) {
+	constructor(public router: Router, private api: ApiService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country.name;
 	}
 
 	public ngOnInit(): void {
+		this.loading++;
 		this.api.getHomeStats({}).subscribe(
-			(result) => this.display(result.data),
+			(result) => {
+				this.display(result.data);
+			},
 			(error) => {
-				console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('getViz tender_per_year complete');
+				this.loading--;
 			});
 	}
 

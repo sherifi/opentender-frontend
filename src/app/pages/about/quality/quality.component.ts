@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {IUsageEntry} from '../../../app.interfaces';
+import {NotifyService} from '../../../services/notify.service';
 
 interface QualityEntry {
 	field: string;
@@ -20,25 +21,22 @@ export class AboutDataQualityPage implements OnInit {
 	usage: Array<QualityEntry>;
 	data: Array<QualityEntry>;
 	showEmpty = false;
-	isLoading = false;
+	loading: number = 0;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 	ngOnInit() {
-		this.isLoading = true;
+		this.loading++;
 		this.api.getFieldsUsage().subscribe(
 			(result) => {
-				this.isLoading = false;
 				this.display(result.data);
 			},
-			error => {
-				this.isLoading = false;
-				console.error(error);
+			(error) => {
+				this.notify.error(error);
 			},
 			() => {
-				this.isLoading = false;
-				// console.log('getQuality complete');
+				this.loading--;
 			});
 	}
 

@@ -5,6 +5,7 @@ import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -14,7 +15,7 @@ import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPr
 export class SectorPage implements OnInit, OnDestroy {
 	private sector: ISector;
 	private parent_sectors: Array<ISector> = [];
-	private error: string;
+	private loading: number = 0;
 	private search_cmd: SearchCommand;
 	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
@@ -46,7 +47,8 @@ export class SectorPage implements OnInit, OnDestroy {
 		time: null
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService, private state: StateService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
+				private state: StateService, private notify: NotifyService) {
 	}
 
 	ngOnInit(): void {
@@ -56,14 +58,16 @@ export class SectorPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
-			this.error = null;
+			this.loading++;
 			this.api.getSectorStats({id: id}).subscribe(
-				(result) => this.display(result.data),
+				(result) => {
+					this.display(result.data);
+				},
 				(error) => {
-					this.error = error._body.statusText || 'Connection refused.';
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('c complete');
+					this.loading--;
 				});
 		});
 	}
@@ -103,14 +107,14 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		let filters = this.buildFilters();
-		this.error = null;
+		this.loading++;
 		this.api.getSectorStats({id: this.sector.id, filters: filters}).subscribe(
 			(result) => this.displayStats(result.data.stats),
 			(error) => {
-				this.error = error._body.statusText || 'Connection refused.';
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('sector stats complete');
+				this.loading--;
 			});
 	}
 

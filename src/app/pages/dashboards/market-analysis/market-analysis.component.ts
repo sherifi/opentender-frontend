@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {ISector, IStats} from '../../../app.interfaces';
 import {SearchCommandFilter} from '../../../model/search';
+import {NotifyService} from '../../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -9,8 +10,8 @@ import {SearchCommandFilter} from '../../../model/search';
 	templateUrl: 'market-analysis.template.html'
 })
 export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
-	private error: string;
 	private sectors_stats: Array<{ sector: ISector, stats: IStats }> = [];
+	private loading: number = 0;
 	private viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	} = {
@@ -27,7 +28,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		time: null
 	};
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 
@@ -38,19 +39,20 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		this.filter.time.selectedStartYear = event.startValue;
 		this.filter.time.selectedEndYear = event.endValue;
 		this.visualize();
-		// this.search();
 	}
 
 	visualize() {
 		let filters = this.buildFilters();
+		this.loading++;
 		this.api.getMarketAnalysisStats({filters: filters}).subscribe(
-			(result) => this.display(result.data),
+			(result) => {
+				this.display(result.data);
+			},
 			(error) => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('market analysis complete');
+				this.loading--;
 			});
 	}
 

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {IStatsNuts} from '../app.interfaces';
+import {NotifyService} from '../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -12,8 +13,9 @@ export class HomeMapComponent {
 	private map_companies: boolean = false;
 	private map_data: IStatsNuts = null;
 	private formatTooltip: (featureProperties: any) => string;
+	private loading: number = 0;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
 		this.fillMap(this.map_level);
 	}
@@ -33,29 +35,31 @@ export class HomeMapComponent {
 
 	fillMap(level) {
 		if (this.map_companies) {
+			this.loading++;
 			this.api.getCompanyNutsStats().subscribe(
-				res => {
+				(result) => {
 					this.map_level = level;
-					this.map_data = res.data;
+					this.map_data = result.data;
 				},
-				err => {
-					console.error(err);
+				(error) => {
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('nuts complete');
+					this.loading--;
 				}
 			);
 		} else {
+			this.loading++;
 			this.api.getAuthorityNutsStats().subscribe(
-				res => {
+				(result) => {
 					this.map_level = level;
-					this.map_data = res.data;
+					this.map_data = result.data;
 				},
-				err => {
-					console.error(err);
+				(error) => {
+					this.notify.error(error);
 				},
 				() => {
-					// console.log('nuts complete');
+					this.loading--;
 				}
 			);
 		}

@@ -1,34 +1,32 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {ISector, ISectorsApiResult} from '../../../app.interfaces';
+import {NotifyService} from '../../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
 	selector: 'sector',
 	templateUrl: 'sector.template.html'
 })
-export class SearchSectorPage implements OnInit, OnDestroy {
-	private subscription: any;
-	public error: string;
+export class SearchSectorPage implements OnInit {
+	private loading: number = 0;
 	public sectors: Array<ISector> = [];
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 	ngOnInit(): void {
-		this.subscription = this.api.getSectors().subscribe(
-			result => this.display(result),
+		this.loading++;
+		this.api.getSectors().subscribe(
+			result => {
+				this.display(result);
+			},
 			error => {
-				this.error = error._body;
-				// console.error(error);
+				this.notify.error(error);
 			},
 			() => {
-				// console.log('sector complete');
+				this.loading--;
 			});
-	}
-
-	ngOnDestroy(): void {
-		this.subscription.unsubscribe();
 	}
 
 	display(result: ISectorsApiResult): void {

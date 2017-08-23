@@ -6,6 +6,7 @@ import {ISearchTenderData} from '../../app.interfaces';
 
 /// <reference path="../../model/tender.d.ts" />
 import Tender = Definitions.Tender;
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	selector: 'tender-table',
@@ -28,12 +29,12 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	table: Table;
 	sortBy: ColumnSort;
 
-	total = 0;
-	defaultPageSize = 10;
-	defaultPage = 0;
-	isLoading = false;
+	total: number = 0;
+	defaultPageSize: number = 10;
+	defaultPage: number = 0;
+	loading: number = 0;
 
-	constructor(private api: ApiService) {
+	constructor(private api: ApiService, private notify: NotifyService) {
 	}
 
 	ngOnInit(): void {
@@ -75,28 +76,25 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.refresh();
 	}
 
-	sortChange(data: {value: ColumnSort}) {
+	sortChange(data: { value: ColumnSort }) {
 		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
 		this.refresh();
 	}
 
 	refresh(): void {
 		let cmd = this.search_cmd;
-		this.isLoading = true;
+		this.loading++;
 		this.api.searchTender(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
-					this.isLoading = false;
 					this.display(result.data);
 				}
 			},
-			error => {
-				this.isLoading = false;
-				console.error(error);
+			(error) => {
+				this.notify.error(error);
 			},
 			() => {
-				this.isLoading = false;
-				// console.log('searchTender complete');
+				this.loading--;
 			});
 	}
 
