@@ -31,11 +31,12 @@ export class AutoCompleteComponent {
 
 	init() {
 		this.dataSource = Observable.create((observer: any) => {
-			if (!this.field || this.field.trim().length === 0) {
+			let query = (this.asyncSelected || '').trim();
+			if (query.length === 0) {
 				return observer.next([]);
 			}
 			this.loading++;
-			this.api.autocomplete(this.entity, this.field, this.asyncSelected).subscribe(
+			this.api.autocomplete(this.entity, this.field, query).subscribe(
 				(result: any) => {
 					observer.next(result.data);
 				},
