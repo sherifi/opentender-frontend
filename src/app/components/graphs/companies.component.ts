@@ -63,7 +63,7 @@ export class GraphCompaniesComponent implements OnChanges {
 			}
 		},
 		select: (event) => {
-			this.router.navigate(['/authority/' + event.id]);
+			this.router.navigate(['/company/' + event.id]);
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -116,28 +116,12 @@ export class GraphCompaniesComponent implements OnChanges {
 		let companies: Array<ICompany> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
 		this.companies_absolute.data = companies.map((company) => {
 			return {id: company.body.groupId, name: company.body.name, value: company.value};
-		}).sort((a, b) => {
-			if (a.value < b.value) {
-				return -1;
-			}
-			if (a.value > b.value) {
-				return 1;
-			}
-			return 0;
-		});
+		}).reverse();
 
 		companies = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
-		this.companies_volume.data = companies.map((authority) => {
-			return {id: authority.body.groupId, name: authority.body.name, value: authority.value};
-		}).sort((a, b) => {
-			if (a.value < b.value) {
-				return -1;
-			}
-			if (a.value > b.value) {
-				return 1;
-			}
-			return 0;
-		});
+		this.companies_volume.data = companies.map((company) => {
+			return {id: company.body.groupId, name: company.body.name, value: company.value};
+		}).reverse();
 	}
 
 	toggleValue(mode: string) {

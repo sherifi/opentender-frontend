@@ -56,31 +56,31 @@
 			<div class="container">
 				<div class="container-left-6">
 					<graph histogram [data]="viz.lots_in_years"></graph>
-					<br/>
-					<graph counts [data]="viz.counts"></graph>
-					<br/>
-					<graph sum_prices [data]="viz.sums_finalPrice"></graph>
+
 				</div>
 				<div class="container-left-6">
 					<graph sectors [data]="viz.cpvs_codes"></graph>
 				</div>
 			</div>
-		</section>
-
-		<section class="container container-margin">
+			<br/>
 			<div class="container">
 				<div class="container-left-6">
 					<graph authorities [data]="viz.top_authorities"></graph>
 				</div>
 				<div class="container-left-6">
-					<h2>Buyers by Regions</h2>
-					<graph nutsmap [data]="viz.authority_nuts" [level]="1"></graph>
+					<graph buyer-nutsmap [data]="viz.authority_nuts"></graph>
 				</div>
 			</div>
+			<br/>
+			<!--<br/>- -->
+			<!--<graph counts [data]="viz.counts"></graph>-->
+			<!--<br/>-->
+			<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
 		</section>
+
 
 		<section class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
 		</section>
 	</div>
-s</section>
+</section>

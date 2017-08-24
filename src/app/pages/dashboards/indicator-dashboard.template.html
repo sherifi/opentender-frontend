@@ -32,23 +32,26 @@
 			<div class="container">
 				<div class="container-left-6">
 					<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
-					<br/>
-					<br/>
-					<graph indicator-structure [data]="viz.terms_indicators" [title]="indicatorTitle"></graph>
 				</div>
 				<div class="container-left-6">
 					<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle"></graph>
 				</div>
 			</div>
-		</section>
-
-		<section class="container container-margin">
+			<br/>
 			<div class="container">
 				<div class="container-left-6">
 					<graph companies [data]="viz.top_companies"></graph>
 				</div>
 				<div class="container-left-6">
 					<graph authorities [data]="viz.top_authorities"></graph>
+				</div>
+			</div>
+			<br/>
+			<div class="container">
+				<div class="container-left-6">
+					<graph indicator-structure [data]="viz.terms_indicators" [title]="indicatorTitle"></graph>
+				</div>
+				<div class="container-left-6">
 				</div>
 			</div>
 		</section>

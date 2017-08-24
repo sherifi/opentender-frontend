@@ -26,6 +26,7 @@ import {KeyValuesPipe} from './directives/key-values.pipe';
 import {NameGuardPipe} from './directives/name-guard.pipe';
 import {TruncatePipe} from './directives/truncate.pipe';
 import {I18nPipe} from './directives/i18n.pipe';
+import {FormatIndicatorNamePipe} from './directives/format-indicator.pipe';
 
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
@@ -70,6 +71,8 @@ import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sect
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
 import {GraphMarketTreemap} from './components/graphs/market-treemap.component';
 import {GraphNutsMapComponent} from './components/graphs/nuts-map.component';
+import {GraphSupplierNutsMapComponent} from './components/graphs/supplier-nuts-map.component';
+import {GraphBuyerNutsMapComponent} from './components/graphs/buyer-nuts-map.component';
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
@@ -98,7 +101,6 @@ import {PlatformService} from './services/platform.service';
 import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
-import {FormatIndicatorName} from './directives/format-indicator.pipe';
 import {NotifyService} from './services/notify.service';
 
 const AppConfig = {
@@ -144,6 +146,8 @@ const AppConfig = {
 		GraphCompaniesComponent,
 		GraphNutsMapComponent,
 		GraphHomeHistogramComponent,
+		GraphSupplierNutsMapComponent,
+		GraphBuyerNutsMapComponent,
 		GraphSectorTreemap,
 		I18NComponent,
 
@@ -159,7 +163,7 @@ const AppConfig = {
 		FormatDatePipe,
 		FormatDatetimePipe,
 		FormatFileSizePipe,
-		FormatIndicatorName,
+		FormatIndicatorNamePipe,
 		KeyValuesPipe,
 		TruncatePipe,
 		FOISearchLinkPipe,

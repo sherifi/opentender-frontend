@@ -113,31 +113,14 @@ export class GraphAuthoritiesComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		let authorities: Array<IAuthority> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
-		this.authorities_absolute.data = authorities.map((authority) => {
+		let absolute: Array<IAuthority> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
+		this.authorities_absolute.data = absolute.map((authority) => {
 			return {id: authority.body.groupId, name: authority.body.name, value: authority.value};
-		}).sort((a, b) => {
-			if (a.value < b.value) {
-				return -1;
-			}
-			if (a.value > b.value) {
-				return 1;
-			}
-			return 0;
-		});
-
-		authorities = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
-		this.authorities_volume.data = authorities.map((authority) => {
+		}).reverse();
+		let volume = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
+		this.authorities_volume.data = volume.map((authority) => {
 			return {id: authority.body.groupId, name: authority.body.name, value: authority.value};
-		}).sort((a, b) => {
-			if (a.value < b.value) {
-				return -1;
-			}
-			if (a.value > b.value) {
-				return 1;
-			}
-			return 0;
-		});
+		}).reverse();
 	}
 
 	toggleValue(mode: string) {
