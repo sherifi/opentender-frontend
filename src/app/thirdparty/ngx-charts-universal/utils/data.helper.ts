@@ -11,29 +11,14 @@ import {IChartData} from '../chart.interface';
  * @memberOf BaseChart
  */
 export function cloneData(data: Array<IChartData>): Array<IChartData> {
-	let results = [];
-
-	for (let item of data) {
-		let copy = {
-			name: item['name']
+	return data.map(item => {
+		return {
+			name: item.name,
+			value: item.value,
+			id: item.id,
+			series: item.series ? cloneData(item.series) : undefined
 		};
-
-		if (item['value'] !== undefined) {
-			copy['value'] = item['value'];
-		}
-
-		if (item['id'] !== undefined) {
-			copy['id'] = item['id'];
-		}
-
-		if (item['series'] !== undefined) {
-			copy['series'] = cloneData(item['series']);
-		}
-
-		results.push(copy);
-	}
-
-	return results;
+	});
 }
 
 // converts all date objects that appear as name into formatted date strings

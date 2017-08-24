@@ -111,7 +111,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 	}
 
 	trackBy(index, item): string {
-		return item.name;
+		return item.id || item.name;
 	}
 
 	setColors(): void {

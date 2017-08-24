@@ -216,7 +216,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 	}
 
 	trackBy(index, item): string {
-		return item.name;
+		return item.id || item.name;
 	}
 
 	getColorDomain(): IDomain {

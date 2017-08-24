@@ -86,7 +86,7 @@ export class BarHorizontalLabeledComponent extends BaseXYAxisComponent {
 	}
 
 	getYDomain(): IDomain {
-		return this.data.map(d => d.name);
+		return this.data.map(d => (d.id || d.name));
 	}
 
 	getLegendOptions(): ILegendOptions {

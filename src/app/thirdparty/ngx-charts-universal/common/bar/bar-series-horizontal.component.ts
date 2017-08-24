@@ -83,6 +83,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 			const roundEdges = this.type === 'standard';
 
 			let bar: any = {
+				id: d.id,
 				value,
 				label,
 				roundEdges,
@@ -159,7 +160,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 	}
 
 	trackBy(index, bar) {
-		return bar.label;
+		return bar.id || bar.label;
 	}
 
 	click(data): void {

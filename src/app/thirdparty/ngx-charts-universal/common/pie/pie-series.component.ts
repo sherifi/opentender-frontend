@@ -167,7 +167,7 @@ export class PieSeriesComponent implements OnChanges {
 	}
 
 	trackBy(index, item): string {
-		return item.data.name;
+		return item.data.id || item.data.name;
 	}
 
 	onClick(data): void {

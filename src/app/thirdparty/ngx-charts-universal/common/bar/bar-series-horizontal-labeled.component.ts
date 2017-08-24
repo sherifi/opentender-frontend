@@ -92,15 +92,14 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 
 		this.bars = this.series.map((d, index) => {
 			let value = d.value;
-			let label = d.name;
-			const formattedLabel = formatLabel(label);
+			const formattedLabel = formatLabel(d.name);
 			const roundEdges = this.type === 'standard';
 			const fontSize = '11px';
 			const labelPadding = 3;
 			let barHeight = 11;
 			let bar: any = {
 				value,
-				label,
+				label: d.name,
 				roundEdges,
 				data: d,
 				formattedLabel,
@@ -108,7 +107,8 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 				barHeight,
 				barY: 0,
 				x: 0,
-				y: 0
+				y: 0,
+				id: d.id
 			};
 			bar.height = this.yScale.bandwidth();
 			let fontsize = Math.min(Math.round(bar.height / 2), 11);
@@ -122,7 +122,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 				} else {
 					bar.x = this.xScale(0);
 				}
-				bar.y = this.yScale(label);
+				bar.y = this.yScale(d.id || d.name);
 				bar.barY = bar.y + labelPadding;
 			} else if (this.type === 'stacked') {
 				let offset0 = d0;
@@ -156,7 +156,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 			}
 
 			if (this.colors.scaleType === 'ordinal') {
-				bar.color = this.colors.getColor(label);
+				bar.color = this.colors.getColor(d.id || d.name);
 			} else {
 				if (this.type === 'standard') {
 					bar.color = this.colors.getColor(value);
@@ -184,7 +184,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 	}
 
 	trackBy(index, bar) {
-		return bar.label;
+		return bar.id || bar.label;
 	}
 
 	click(data): void {

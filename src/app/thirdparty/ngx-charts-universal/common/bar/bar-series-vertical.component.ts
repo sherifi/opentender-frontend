@@ -95,7 +95,8 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				formattedLabel,
 				height: 0,
 				x: 0,
-				y: 0
+				y: 0,
+				id: d.id
 			};
 
 			if (this.type === 'standard') {
@@ -171,7 +172,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 	}
 
 	trackBy(index, bar): string {
-		return bar.label;
+		return bar.id || bar.label;
 	}
 
 }
