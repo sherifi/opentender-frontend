@@ -28,7 +28,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 
 	private viz: {
 		authority_nuts: IStatsNuts,
-		top_authorities: IStatsAuthorities,
+		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
 		sums_finalPrice: IStatsPrices,
@@ -165,7 +165,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		viz.counts = stats.count_lots_bids;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
 		viz.sums_finalPrice = stats.sums_finalPrice;
-		viz.top_authorities = stats.top_authorities;
+		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.authority_nuts = stats.terms_authority_nuts;
 		this.viz = viz;
 	}

@@ -26,6 +26,12 @@ export const Utils = {
 		}
 		return Utils.formatValue(value); // .toLocaleString();
 	},
+	formatCurrencyValueEUR: (value: number, fractionSize: number = 2): string => {
+		if (value === undefined) {
+			return '';
+		}
+		return '€ ' + Utils.formatValue(value); // .toLocaleString();
+	},
 	formatIndicatorGroupName(value: string): string {
 		if (value === 'CORRUPTION') {
 			return 'Corruption Risk Indicator';

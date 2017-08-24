@@ -8,11 +8,11 @@ import {Router} from '@angular/router';
 @Component({
 	selector: 'graph[indicator-sectors]',
 	template: `
-		<div class="graph-title">Tenders with {{title}} per Sector</div>
+		<div class="graph-title" i18n>Tenders with {{title}} per Sector</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-right">
-				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average">Average</button>
-				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute">Absolute</button>
+				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average" i18n>Average</button>
+				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_absolute}" (click)="this.graph=this.cpvs_codes_absolute" i18n>Absolute</button>
 			</div>
 		</div>
 		<ngx-charts-bar-horizontal-labeled

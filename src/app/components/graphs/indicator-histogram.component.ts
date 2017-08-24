@@ -202,13 +202,11 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Volumne of Contracts (€)',
+				label: 'Volume of Contracts (€)',
 				defaultWidth: 80,
 				tickFormatting: Utils.formatCurrencyValue
 			},
-			valueFormatting: (value: number) => {
-				return '€ ' + Utils.formatCurrencyValue(value);
-			},
+			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {

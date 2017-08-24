@@ -27,7 +27,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public search_similars = {};
 
 	private viz: {
-		top_companies: IStatsCompanies,
+		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
 		sums_finalPrice: IStatsPrices,
@@ -147,7 +147,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		viz.sums_finalPrice = stats.sums_finalPrice;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
 		viz.counts = stats.count_lots_bids;
-		viz.top_companies = stats.top_winning_companies;
+		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.company_nuts = stats.terms_company_nuts;
 		this.viz = viz;
 	}

@@ -116,9 +116,13 @@ export interface IStats {
 	terms_main_cpv_full: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	sums_finalPrice: IStatsPrices;
-	top_winning_companies: IStatsCompanies;
-	top_companies: IStatsCompanies;
-	top_authorities: IStatsAuthorities;
+	// top_winning_companies: IStatsCompanies;
+	// top_companies: IStatsCompanies;
+	// top_authorities: IStatsAuthorities;
+	top_sum_finalPrice_authorities: IStatsAuthorities;
+	top_terms_companies: IStatsCompanies;
+	top_sum_finalPrice_companies: IStatsCompanies;
+	top_terms_authorities: IStatsAuthorities;
 	count_lots_bids: IStatsCounts;
 	terms_indicators: IStatsIndicators;
 	histogram_lots_awardDecisionDate: IStatsLotsInYears;

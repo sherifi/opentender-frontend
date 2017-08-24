@@ -25,8 +25,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private selected: string = 'all';
 	private search_cmd: SearchCommand;
 	private viz: {
-		top_companies: IStatsCompanies,
-		top_authorities: IStatsAuthorities,
+		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
+		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
 		terms_indicators: IStatsIndicators
@@ -105,8 +105,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		viz.terms_indicators = stats.terms_indicators;
-		viz.top_companies = stats.top_companies;
-		viz.top_authorities = stats.top_authorities;
+		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 
 		this.viz = viz;
 

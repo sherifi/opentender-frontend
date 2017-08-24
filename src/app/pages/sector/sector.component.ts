@@ -21,8 +21,8 @@ export class SectorPage implements OnInit, OnDestroy {
 	private subscription: any;
 	private viz: {
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
-		top_companies: IStatsCompanies,
-		top_authorities: IStatsAuthorities,
+		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
+		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		sums_finalPrice: IStatsPrices,
 		histogram: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs,
@@ -134,11 +134,11 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.search();
 	}
 
-	displayStats(data: IStats): void {
-		if (!this.filter.time && data.histogram_pc_lots_awardDecisionDate_finalPrices) {
+	displayStats(stats: IStats): void {
+		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;
 			let endYear = 0;
-			Object.keys(data.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
+			Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
 				let year = parseInt(key, 10);
 				startYear = startYear === 0 ? year : Math.min(year, startYear);
 				endYear = endYear === 0 ? year : Math.max(year, endYear);
@@ -158,17 +158,17 @@ export class SectorPage implements OnInit, OnDestroy {
 			histogram: null,
 			counts: null
 		};
-		if (!data) {
+		if (!stats) {
 			this.viz = viz;
 			return;
 		}
 		viz.cpvs_codes = null;
-		viz.histogram = data.histogram_pc_lots_awardDecisionDate_finalPrices;
-		viz.counts = data.count_lots_bids;
-		viz.sums_finalPrice = data.sums_finalPrice;
-		viz.top_companies = data.top_companies;
-		viz.top_authorities = data.top_authorities;
-		viz.subsectors = data.sectors_stats;
+		viz.histogram = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		viz.counts = stats.count_lots_bids;
+		viz.sums_finalPrice = stats.sums_finalPrice;
+		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
+		viz.subsectors = stats.sectors_stats;
 
 		if (viz.subsectors) {
 			viz.cpvs_codes = {};
