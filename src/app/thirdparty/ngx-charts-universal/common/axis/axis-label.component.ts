@@ -4,8 +4,10 @@ import {
 	ElementRef,
 	OnChanges,
 	SimpleChanges,
-	ChangeDetectionStrategy
+	ChangeDetectionStrategy,
 } from '@angular/core';
+import {PlatformService} from '../../../../services/platform.service';
+import {select} from 'd3-selection';
 
 @Component({
 	selector: 'g[ngx-charts-axis-label]',
@@ -17,34 +19,35 @@ import {
 				[attr.y]="y"
 				[attr.text-anchor]="textAnchor"
 				[attr.transform]="transform">
-			{{label}}
+			{{text}}
 		</svg:text>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AxisLabelComponent implements OnChanges {
 
-	@Input() orient;
-	@Input() label;
-	@Input() offset;
-	@Input() width;
-	@Input() height;
+	@Input() orient: string;
+	@Input() label: string;
+	@Input() offset: number;
+	@Input() width: number;
+	@Input() height: number;
 
-	x: any;
-	y: any;
-	transform: any;
-	strokeWidth: any;
-	textAnchor: any;
-	element: ElementRef;
-	textHeight = 25;
-	margin = 5;
+	x: number;
+	y: number;
+	transform: string;
+	strokeWidth: string;
+	textAnchor: string;
+	textHeight: number = 25;
+	margin: number = 5;
+	text: string = '';
 
-	constructor(element: ElementRef) {
-		this.element = element.nativeElement;
+	constructor(private element: ElementRef, private platform: PlatformService) {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
+		this.text = this.label;
 		this.update();
+		this.ellipseText();
 	}
 
 	update(): void {
@@ -76,6 +79,24 @@ export class AxisLabelComponent implements OnChanges {
 				this.x = -this.height / 2;
 				this.transform = 'rotate(270)';
 				break;
+		}
+	}
+
+	ellipseText() {
+		if (this.platform.isBrowser) {
+			let self = select(this.element.nativeElement.firstElementChild);
+			self.text(this.label);
+			let textLength = self.node().getComputedTextLength(),
+				text = this.label,
+				padding = 0;
+			while (textLength > (this.width - 2 * padding) && text.length > 0) {
+				text = text.slice(0, -1);
+				this.text = text + '…';
+				self.text(this.text);
+				textLength = self.node().getComputedTextLength();
+			}
+		} else {
+			this.text = this.label;
 		}
 	}
 

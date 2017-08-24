@@ -6,7 +6,7 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 @Component({
 	selector: 'g[ngx-charts-series-vertical]',
 	template: `
-    <svg:g ngx-charts-bar *ngFor="let bar of bars; trackBy: trackBy"
+    <svg:g ngx-charts-bar *ngFor="let bar of bars; trackBy:trackBy"
       [width]="bar.width"
       [height]="bar.height"
       [x]="bar.x"

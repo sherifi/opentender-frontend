@@ -7,13 +7,8 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 	selector: 'g[ngx-charts-series-horizontal-labeled]',
 	template: `
 
-		<svg:g
-				*ngFor="let bar of bars; trackBy: trackBy"
-				ngx-tooltip
-				[tooltipPlacement]="'top'"
-				[tooltipType]="'tooltip'"
-				[tooltipTitle]="bar.tooltipText"
-		>
+		<svg:g *ngFor="let bar of bars; trackBy: trackBy"
+				ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'" [tooltipTitle]="bar.tooltipText">
 			<svg:g ngx-charts-axis-label
 				   style="cursor: pointer;"
 				   [style.font-size]="bar.fontSize"
@@ -168,7 +163,6 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 			}
 
 			bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
-			// console.log('bar', bar);
 			return bar;
 		});
 	}
