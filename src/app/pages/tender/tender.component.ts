@@ -4,6 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {PlatformService} from '../../services/platform.service';
 import {ConfigService, Country} from '../../services/config.service';
 import {Consts} from '../../model/consts';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -13,6 +14,7 @@ import {Consts} from '../../model/consts';
 export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
 	public tender_raw: string;
+	private loading: number = 0;
 	private sub: any;
 	public portal: Country;
 	public state = {
@@ -34,7 +36,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		ac: []
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService) {
 		if (!this.platform.isBrowser) {
 			this.state.additional.$open = true;
 			this.state.documents.$open = true;
@@ -49,11 +51,14 @@ export class TenderPage implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.sub = this.route.params.subscribe(params => {
 			let id = params['id'];
+			this.loading++;
 			this.api.getTender(id).subscribe(
 				(result) => this.display(result.data),
-				error => console.error(error),
+				(error) => {
+					this.notify.error(error);
+				},
 				() => {
-					// console.log('getTender complete');
+					this.loading--;
 				});
 		});
 	}

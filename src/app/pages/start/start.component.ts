@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ConfigService, Country} from '../../services/config.service';
 import {ApiService} from '../../services/api.service';
 import {ICountryStats} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 @Component({
 	moduleId: __filename,
@@ -13,15 +14,21 @@ export class StartPage {
 	private portals: Array<ICountryStats> = [];
 	private allportal: ICountryStats;
 	private current: Country;
+	private loading: number = 0;
 
-	constructor(private api: ApiService, private config: ConfigService) {
+	constructor(private api: ApiService, private config: ConfigService, private notify: NotifyService) {
 		this.ip_country = config.country.ip;
 		this.current = this.config.country;
+		this.loading++;
 		this.api.getPortalsStats().subscribe(
-			(result) => this.display(result.data),
-			(error) => console.error(error),
+			(result) => {
+				this.display(result.data);
+			},
+			(error) => {
+				this.notify.error(error);
+			},
 			() => {
-				// console.log('getPortalsStats complete');
+				this.loading--;
 			});
 	}
 

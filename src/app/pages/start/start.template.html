@@ -1,7 +1,8 @@
 <section class="slab-top" *ngIf="ip_country">
 	<div class="container-outer">
 		<div class="container-left-12 container-padded slab-info u-centered slab-border-light">
-			<ng-container i18n>It looks like you are browsing from {{ip_country.name}}.</ng-container><br/>
+			<ng-container i18n>It looks like you are browsing from {{ip_country.name}}.</ng-container>
+			<br/>
 			<ng-container i18n>We invite you to visit <a href="/{{ip_country.id}}">Opentender {{ip_country.name}}</a>.</ng-container>
 		</div>
 	</div>
@@ -15,17 +16,19 @@
 		<div class="container-left-6">
 			<ul class="portal-links">
 				<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.id===current.id}">
-					<span><a href="/{{portal.id}}">{{portal.name}}</a></span>
-					<span>{{portal.value | formatNumber}} <ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container></span>
+					<a [routerLink]="['/']" *ngIf="portal.id===current.id">{{portal.name}}</a>
+					<a href="/{{portal.id}}" *ngIf="portal.id!==current.id">{{portal.name}}</a>
+					<div>{{portal.value | formatNumber}}&nbsp;<ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container>
+					</div>
 				</li>
 			</ul>
-			<ul class="portal-links" *ngIf="allportal">
-				<li class="portal-link"></li>
-				<li class="portal-link" [ngClass]="{active:allportal.id===current.id}">
-					<span><a href="/eu" i18n>All available data</a></span>
-					<span>{{allportal.value | formatNumber}} <ng-container i18n>{allportal.value, plural, =1 {tender} other {tenders}}</ng-container></span>
-				</li>
-			</ul>
+			<!--<ul class="portal-links" *ngIf="allportal">-->
+				<!--<li class="portal-link" [ngClass]="{active:allportal.id===current.id}">-->
+					<!--<a href="/eu" i18n>All available data</a>-->
+					<!--<div>{{allportal.value | formatNumber}}&nbsp;<ng-container i18n>{allportal.value, plural, =1 {tender} other {tenders}}</ng-container></div>-->
+				<!--</li>-->
+				<!--<li class="portal-link"></li>-->
+			<!--</ul>-->
 		</div>
 	</div>
 </section>

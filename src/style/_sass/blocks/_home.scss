@@ -82,10 +82,22 @@ home-tabs {
 }
 
 .portal-link {
-  border-bottom: 1px solid #f9f9f9;
+  border-bottom: 1px solid $base-border-color;
   font-size: 1.2em;
   line-height: 2em;
-  border-top: 1px solid $base-border-color;
+
+  position: relative;
+  display: block;
+  clear: both;
+
+  a {
+    text-decoration: none;
+  }
+
+  > div:last-of-type {
+    float: right;
+    font-size: 0.7em;
+  }
 
   &:hover {
     background-color: $light-gray-light;
@@ -94,14 +106,11 @@ home-tabs {
   @include respond-to(small-up) {
     font-size: 0.9em;
   }
+
   &.active {
     font-weight: bold;
   }
 
-  > span:last-of-type {
-    font-size: 0.7em;
-    float: right;
-  }
 }
 
 home-map {

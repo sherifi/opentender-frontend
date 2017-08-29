@@ -3,12 +3,15 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MainModule} from './main.module';
 import {getTranslationProviders} from './i18n-providers';
 
-enableProdMode();
+const init = () => {
+	getTranslationProviders().then(providers => {
+		const options = {providers};
+		// here we pass "options.providers" to "platformBrowserDynamic" as extra providers.
+		// otherwise when we inject the token TRANSLATIONS it will be empty. The second argument of
+		// "bootstrapModule" will assign the providers to the compiler and not our AppModule
+		platformBrowserDynamic(<Provider[]>options.providers).bootstrapModule(MainModule, options);
+	});
+};
 
-getTranslationProviders().then(providers => {
-	const options = {providers};
-	// here we pass "options.providers" to "platformBrowserDynamic" as extra providers.
-	// otherwise when we inject the token TRANSLATIONS it will be empty. The second argument of
-	// "bootstrapModule" will assign the providers to the compiler and not our AppModule
-	platformBrowserDynamic(<Provider[]>options.providers).bootstrapModule(MainModule, options);
-});
+enableProdMode();
+setTimeout(init, 10);

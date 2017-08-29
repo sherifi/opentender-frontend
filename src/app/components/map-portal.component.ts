@@ -3,6 +3,7 @@ import {ApiService} from '../services/api.service';
 import {ICountryStats} from '../app.interfaces';
 import {ConfigService, Country} from '../services/config.service';
 import {NotifyService} from '../services/notify.service';
+import {Router} from '@angular/router';
 
 @Directive({selector: 'g.country'})
 export class SVGCountryGroupDirective {
@@ -10,10 +11,14 @@ export class SVGCountryGroupDirective {
 	portal: ICountryStats;
 	current: boolean;
 
-	constructor(private el: ElementRef, public renderer: Renderer2) {
+	constructor(private el: ElementRef, private config: ConfigService, private renderer: Renderer2, private router: Router) {
 		renderer.listen(el.nativeElement, 'click', (event) => {
 			if (this.portal) {
-				window.location.href = '/' + (this.portal.id || '');
+				if (this.portal.id === this.config.country.id) {
+					router.navigate(['/']);
+				} else {
+					window.location.href = '/' + (this.portal.id || '');
+				}
 			}
 		});
 	}
