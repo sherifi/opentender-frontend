@@ -2,6 +2,10 @@
   margin-bottom: 20px;
 }
 
+.portal-map-container {
+  text-align: center;
+}
+
 .portal-map-svg {
   min-width: 320px;
   max-width: 500px;
@@ -9,7 +13,6 @@
   height: 100%;
   overflow: hidden;
 }
-
 
 .map {
   background-color: white;

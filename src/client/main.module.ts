@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {LeafletModule} from '@asymmetrik/angular2-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserPrebootModule} from 'preboot/browser';
 
 @NgModule({
 	bootstrap: [App],
@@ -13,6 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 	imports: [
 		HttpModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
+		BrowserPrebootModule.replayEvents(),
 		BrowserAnimationsModule,
 		LeafletModule.forRoot(),
 		...AppConfig.imports

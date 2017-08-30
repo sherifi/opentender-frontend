@@ -87,6 +87,7 @@
     "ng2-toasty": "^4.0.3",
     "node-sass": "^4.5.0",
     "postcss-loader": "^2.0.6",
+    "preboot": "^5.0.0",
     "raw-loader": "=0.5.1",
     "reflect-metadata": "latest",
     "request": "=2.81.0",
