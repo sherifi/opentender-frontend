@@ -20,16 +20,16 @@ export class App implements OnInit {
 		if ((location.pathname == '/' && (url !== '/start')) || (location.pathname == '' && (url !== 'start'))) {
 			this.router.navigate(['/start']);
 		}
-		// if (url) {
-		// 	let document = this.el.nativeElement.ownerDocument;
-		// 	if (document && document.documentElement) {
-		// 		document.documentElement.scrollTop = 0;
-		// 		// document.scrollTo(0, 0);
-		// 		if (window.scrollTo) {
-		// 			window.scrollTo(0, 0);
-		// 		}
-		// 	}
-		// }
+		if (url) {
+			let document = this.el.nativeElement.ownerDocument;
+			if (document && document.documentElement) {
+				document.documentElement.scrollTop = 0;
+				// document.scrollTo(0, 0);
+				if (window.scrollTo) {
+					window.scrollTo(0, 0);
+				}
+			}
+		}
 	}
 
 	ngOnInit(): void {
