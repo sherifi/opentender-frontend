@@ -12,8 +12,8 @@ import {Router} from '@angular/router';
 			<div class="graph-title">Sector Overview</div>
 			<div class="graph-toolbar-container">
 				<div class="graph-toolbar">
-					<button class="tool-button" [ngClass]="{down:this.graph==this.cpv_codes_prices}" (click)="this.graph=this.cpv_codes_prices">Volume (€)</button>
-					<button class="tool-button" [ngClass]="{down:this.graph==this.cpv_codes_nr}" (click)="this.graph=this.cpv_codes_nr">Nr. of Contracts</button>
+					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main_volume}" (click)="this.graph=this.cpvs_code_main_volume">Volume (€)</button>
+					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main}" (click)="this.graph=this.cpvs_code_main">Nr. of Contracts</button>
 				</div>
 			</div>
 		</div>
