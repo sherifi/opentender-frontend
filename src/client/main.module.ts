@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {App, AppConfig} from '../app/app.config';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
-import {LeafletModule} from '@asymmetrik/angular2-leaflet';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserPrebootModule} from 'preboot/browser';
 

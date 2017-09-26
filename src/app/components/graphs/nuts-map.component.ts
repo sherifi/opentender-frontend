@@ -1,12 +1,15 @@
+
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
 import {IApiGeoJSONResult, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
 import {ApiService} from '../../services/api.service';
-import GeoJSON = L.GeoJSON;
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
 import {NotifyService} from '../../services/notify.service';
+
+/// <reference path="../../../../node_modules/@types/leaflet/index.d.ts" />
+declare var L;
 
 @Component({
 	selector: 'graph[nutsmap]',
@@ -31,7 +34,7 @@ export class GraphNutsMapComponent implements OnChanges {
 	private invalid: number = 0;
 	private valid: number = 0;
 	private map: any;
-	private geolayer: GeoJSON;
+	private geolayer: L.GeoJSON;
 	private leaflet_options = {};
 
 	constructor(private api: ApiService, private platform: PlatformService, private router: Router, private notify: NotifyService) {
