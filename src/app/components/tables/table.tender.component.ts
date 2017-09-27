@@ -53,6 +53,19 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		}
 	}
 
+	download(format): void {
+		let cmd = this.search_cmd;
+		this.api.requestDownload(cmd).subscribe(
+			(result) => {
+				this.api.startDownload(result);
+			},
+			(error) => {
+				this.notify.error(error);
+			},
+			() => {
+			});
+	}
+
 	setColumnsByIds(): void {
 		this.columns = [];
 		this.columnIds.forEach(c => {
@@ -116,7 +129,6 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		}
 		this.table = table;
 	};
-
 
 	display(data: ISearchTenderData): void {
 		if (data) {

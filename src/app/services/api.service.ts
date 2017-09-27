@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {
-	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, INutsApiResult, IPortalsApiResult,
+	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, IDownloadTenderApiResult, INutsApiResult, IPortalsApiResult,
 	IPortalsStatsApiResult, IRegionApiResult, ISchemaApiResult, ISearchAuthorityApiResult, ISearchCompanyApiResult, ISearchTenderApiResult,
 	ISectorApiResult, ISectorsApiResult, IStatApiResult, IStatStatsApiResult, ITenderApiResult, IUsageApiResult
 } from '../app.interfaces';
@@ -71,6 +71,14 @@ export class ApiService {
 
 	searchTender(params: any): Observable<ISearchTenderApiResult> {
 		return this.post('tender/search', params).map(res => <ISearchTenderApiResult>res.json());
+	}
+
+	startDownload(params: IDownloadTenderApiResult): void {
+		window.location.href = this.actionCountryUrl + 'download/id/' + params.data.id;
+	}
+
+	requestDownload(params: any): Observable<IDownloadTenderApiResult> {
+		return this.post('tender/download', params).map(res => <IDownloadTenderApiResult>res.json());
 	}
 
 	autocomplete(entity: string, field: string, search: string): Observable<IApiResult> {

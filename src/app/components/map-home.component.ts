@@ -14,6 +14,7 @@ export class HomeMapComponent {
 	private map_data: IStatsNuts = null;
 	private formatTooltip: (featureProperties: any) => string;
 	private loading: number = 0;
+	private title: string = '';
 
 	constructor(private api: ApiService, private notify: NotifyService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
@@ -25,15 +26,16 @@ export class HomeMapComponent {
 		this.fillMap(this.map_level);
 	}
 
-	getEntitiesTitle() {
-		return this.map_companies ? 'Suppliers' : 'Buyers';
+	getTitle() {
+		return 'Number of ' + (this.map_companies ? 'Suppliers' : 'Buyers') + ' by Region';
 	}
 
 	formatTooltipCallback(featureProperties) {
-		return featureProperties.name + ': ' + featureProperties.value + ' ' + this.getEntitiesTitle();
+		return featureProperties.name + ': ' + featureProperties.value + ' ' + (this.map_companies ? 'Suppliers' : 'Buyers');
 	}
 
 	fillMap(level) {
+		this.title = this.getTitle();
 		if (this.map_companies) {
 			this.loading++;
 			this.api.getCompanyNutsStats().subscribe(

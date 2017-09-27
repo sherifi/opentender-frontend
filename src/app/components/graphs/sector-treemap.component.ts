@@ -23,7 +23,15 @@ import {Router} from '@angular/router';
 				[data]=" graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-tree-map>`
+		</ngx-charts-tree-map>
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphSectorTreemap implements OnChanges {
 	@Input()
@@ -39,6 +47,9 @@ export class GraphSectorTreemap implements OnChanges {
 			},
 			colorScheme: {
 				'domain': Consts.colors.diverging
+			},
+			legend: {
+				title: 'Volume (€)'
 			},
 			valueFormatting: Utils.formatValue
 		},
@@ -59,6 +70,9 @@ export class GraphSectorTreemap implements OnChanges {
 			colorScheme: {
 				'domain': Consts.colors.diverging
 			},
+			legend: {
+				title: 'Number of Contracts'
+			},
 			valueFormatting: (n: number): string => {
 				return '€ ' + Utils.formatValue(n);
 			}
@@ -72,6 +86,10 @@ export class GraphSectorTreemap implements OnChanges {
 	graph: IChartTreeMap = this.cpv_codes_prices;
 
 	constructor(private router: Router) {
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'subsector-overview');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

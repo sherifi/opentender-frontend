@@ -3,4 +3,11 @@
 	<select-columns-button [columns_all]="all_columns" [columns_active]="columns" (selectChange)="onSelectColumns($event)"></select-columns-button>
 </div>
 <doc-table [table]="table" (sortChange)="sortChange($event)"></doc-table>
+<div class="graph-footer">
+	<div class="graph-toolbar-container">
+		<div class="graph-toolbar">
+			<button class="tool-button" (click)="this.download('json.gz')" title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> JSON.GZ</button>
+		</div>
+	</div>
+</div>
 <pagination class="pagination" [total]="total" [defaultPageSize]="defaultPageSize" [defaultPage]="defaultPage" (paginationChange)="paginationChange($event)"></pagination>

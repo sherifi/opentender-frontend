@@ -246,6 +246,12 @@ export interface ISearchTenderApiResult {
 	data: ISearchTenderData;
 }
 
+export interface IDownloadTenderApiResult {
+	data: {
+		id: string;
+	};
+}
+
 export interface IStatApiResult {
 	data: IStats;
 }

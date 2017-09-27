@@ -14,7 +14,15 @@ import {IStatsLotsInYears} from '../../app.interfaces';
 				[data]="graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-bar-vertical>`
+		</ngx-charts-bar-vertical>
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphHistogramComponent implements OnChanges {
 	@Input()
@@ -60,6 +68,10 @@ export class GraphHistogramComponent implements OnChanges {
 	graph: IChartBar = this.lots_in_years;
 
 	constructor() {
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'}, 'histogram');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

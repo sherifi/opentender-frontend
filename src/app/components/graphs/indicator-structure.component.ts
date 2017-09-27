@@ -15,7 +15,14 @@ import {Consts} from '../../model/consts';
 				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
 		</ngx-charts-pie-chart>
-	`
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphIndicatorStructureComponent implements OnChanges {
 	@Input()
@@ -23,7 +30,7 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 	@Input()
 	title: string = 'Indicators';
 
-	indicators: IChartPie =  {
+	indicators: IChartPie = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -46,9 +53,13 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 		},
 		data: null
 	};
-	graph: IChartPie =  this.indicators;
+	graph: IChartPie = this.indicators;
 
 	constructor() {
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: 'Percent %', name: 'Name'}, this.title + '-structure');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

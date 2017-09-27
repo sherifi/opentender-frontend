@@ -46,7 +46,7 @@ export interface IChartLink {
 }
 
 export interface IChartLegendSettings {
-	show: boolean;
+	show?: boolean;
 	title: string;
 }
 

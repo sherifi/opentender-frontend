@@ -22,7 +22,14 @@ import {Utils} from '../../model/utils';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-	`
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphAuthoritiesComponent implements OnChanges {
 	@Input()
@@ -121,6 +128,10 @@ export class GraphAuthoritiesComponent implements OnChanges {
 		this.authorities_volume.data = volume.map((authority) => {
 			return {id: authority.body.groupId, name: authority.body.name, value: authority.value};
 		}).reverse();
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'buyers');
 	}
 
 	toggleValue(mode: string) {

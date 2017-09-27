@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import {Consts} from './consts';
+import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
@@ -106,5 +107,42 @@ export const Utils = {
 			return r_string + ' ' + unit;
 		}
 		return n.toLocaleString();
+	},
+	download: function(format, data, header, exportfilename) {
+		if (format === 'csv') {
+			Utils.downloadCSVSeries(data, header, exportfilename);
+		} else if (format === 'json') {
+			Utils.downloadJSON({fields: header, data: data}, exportfilename);
+		}
+	},
+	downloadCSVSeries(data: IChartData[], header, exportfilename: string) {
+		let hasID = header.hasOwnProperty('id');
+		let list = data.map(d => {
+			return JSON.stringify(hasID ? [d.id, d.name, d.value] : [d.name, d.value]);
+		});
+		list.unshift(JSON.stringify(hasID ? [header.id, header.name, header.value] : [header.name, header.value]));
+		let csv = list.join('\n').replace(/(^\[)|(\]$)/mg, ''); // remove opening [ and closing ] brackets from each line
+		Utils.downloadCSV(csv, exportfilename);
+	},
+	downloadCSV: function(csvString, exportfilename) {
+		Utils.downloadBlob(csvString, exportfilename, 'csv', 'text/csv;charset=utf8;');
+	},
+	downloadJSON: function(obj, exportfilename) {
+		Utils.downloadBlob(JSON.stringify(obj, null, '\t'), exportfilename, 'json', 'application/json');
+	},
+	downloadBlob: function(string, exportfilename, ext, type) {
+		const blob = new Blob([string], {'type': type});
+		const filename = exportfilename.toLowerCase().replace(/ /g, '_') + '.' + ext;
+		if (window.navigator.msSaveOrOpenBlob) { // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+			window.navigator.msSaveBlob(blob, filename);
+		} else {
+			const a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(blob);
+			a.download = filename;
+			a.textContent = 'Download ' + filename;
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+		}
 	}
 };

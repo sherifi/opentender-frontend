@@ -1,4 +1,3 @@
-
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
 import {IApiGeoJSONResult, IStatsNuts} from '../../app.interfaces';
@@ -7,6 +6,7 @@ import {ApiService} from '../../services/api.service';
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
 import {NotifyService} from '../../services/notify.service';
+import {Utils} from '../../model/utils';
 
 /// <reference path="../../../../node_modules/@types/leaflet/index.d.ts" />
 declare var L;
@@ -19,7 +19,15 @@ declare var L;
 			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 360px">NO DATA</div>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
-		<div *ngIf="invalid>0" class="nutsmap_subtitle">{{invalid}} invalid NUTS codes</div>
+		<!--<div *ngIf="invalid>0" class="nutsmap_subtitle">{{invalid}} invalid NUTS codes</div>-->
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>
 	`
 })
 export class GraphNutsMapComponent implements OnChanges {
@@ -29,6 +37,8 @@ export class GraphNutsMapComponent implements OnChanges {
 	level: number = 1;
 	@Input()
 	formatTooltip: any;
+	@Input()
+	title: string;
 
 	private loading: number = 0;
 	private invalid: number = 0;
@@ -36,6 +46,7 @@ export class GraphNutsMapComponent implements OnChanges {
 	private map: any;
 	private geolayer: L.GeoJSON;
 	private leaflet_options = {};
+	private data_list = [];
 
 	constructor(private api: ApiService, private platform: PlatformService, private router: Router, private notify: NotifyService) {
 		this.initMap();
@@ -79,6 +90,11 @@ export class GraphNutsMapComponent implements OnChanges {
 		};
 	}
 
+
+	download(format): void {
+		Utils.download(format, this.data_list, {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, this.title);
+	}
+
 	displayNuts(geo: IApiGeoJSONResult) {
 		let nuts = {};
 		let max = 0;
@@ -88,6 +104,7 @@ export class GraphNutsMapComponent implements OnChanges {
 			max = Math.max(max, nuts[nutskey]);
 		});
 		let scale = scaleLinear().domain([0, max]).range([0, 1]);
+		this.data_list = [];
 		this.valid = 0;
 		geo.features = geo.features.filter(feature => {
 			let value = nuts[feature.properties.id];
@@ -96,6 +113,7 @@ export class GraphNutsMapComponent implements OnChanges {
 				feature.properties['value'] = value;
 				feature.properties['color'] = d3chroma.interpolateBlues(scale(value));
 				this.valid += value;
+				this.data_list.push({id: feature.properties.id, name: feature.properties.name, value: value});
 				return true;
 			}
 			return false;

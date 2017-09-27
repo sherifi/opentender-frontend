@@ -25,7 +25,15 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 				[data]="graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-bar-vertical>`
+		</ngx-charts-bar-vertical>
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
@@ -281,6 +289,10 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		} else if (this.mode === 'score') {
 			this.graph = this.absolute ? this.sum_scores_in_years : this.avg_scores_in_years;
 		}
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'},  this.title + '-histogram');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

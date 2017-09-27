@@ -71,6 +71,15 @@ graph {
 
 }
 
+
+.graph-footer {
+  float: right;
+  font-size: 0.8em;
+  .tool-button {
+    border: none;
+  }
+}
+
 .graph-toolbar-container {
   overflow: hidden;
   width: 100%;

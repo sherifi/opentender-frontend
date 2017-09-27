@@ -15,7 +15,15 @@ import {Router} from '@angular/router';
 				[data]="graph.data"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-bar-horizontal-labeled>`
+		</ngx-charts-bar-horizontal-labeled>
+		<div class="graph-footer">
+			<div class="graph-toolbar-container">
+				<div class="graph-toolbar">
+					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
+					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				</div>
+			</div>
+		</div>`
 })
 export class GraphSectorsComponent implements OnChanges {
 	@Input()
@@ -66,6 +74,10 @@ export class GraphSectorsComponent implements OnChanges {
 	graph: IChartBar = this.cpvs_codes_absolute;
 
 	constructor(private router: Router) {
+	}
+
+	download(format): void {
+		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, 'sectors');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

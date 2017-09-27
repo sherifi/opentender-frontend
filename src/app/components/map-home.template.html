@@ -1,5 +1,5 @@
 <div class="graph-header">
-	<div class="graph-title" i18n>Number of {{getEntitiesTitle()}} by Region</div>
+	<div class="graph-title">{{title}}</div>
 	<div class="graph-toolbar-container">
 		<div class="graph-toolbar graph-toolbar-left">
 			<button class="tool-button" [ngClass]="{down:!map_companies}" (click)="toggle()" i18n>Buyers</button>
@@ -12,4 +12,4 @@
 		</div>
 	</div>
 </div>
-<graph nutsmap [data]="map_data" [level]="map_level" [formatTooltip]="formatTooltip"></graph>
+<graph nutsmap [data]="map_data" [level]="map_level" [formatTooltip]="formatTooltip" [title]="title"></graph>

@@ -3,7 +3,7 @@ import {IStatsNuts} from '../../app.interfaces';
 
 @Component({
 	selector: 'graph[buyer-nutsmap]',
-	template: `<div class="graph-title" i18n>Buyers by Region</div><graph nutsmap [data]="data" [level]="1"></graph>`
+	template: `<div class="graph-title" i18n>Buyers by Region</div><graph nutsmap [data]="data" [level]="1" [title]="'Buyers'"></graph>`
 })
 export class GraphBuyerNutsMapComponent {
 	@Input()
