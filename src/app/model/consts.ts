@@ -227,6 +227,7 @@ export const Consts = {
 		'SA': 'Saudi Arabia',
 		'SN': 'Senegal',
 		'CS': 'Serbia and Montenegro',
+		'RS': 'Serbia',
 		'SC': 'Seychelles',
 		'SL': 'Sierra Leone',
 		'SG': 'Singapore',
