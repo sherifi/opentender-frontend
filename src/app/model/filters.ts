@@ -189,6 +189,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
+		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
@@ -202,6 +203,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
+		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
@@ -215,6 +217,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
+		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
