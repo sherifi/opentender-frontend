@@ -5,6 +5,7 @@ import {PlatformService} from '../../services/platform.service';
 import {ConfigService, Country} from '../../services/config.service';
 import {Consts} from '../../model/consts';
 import {NotifyService} from '../../services/notify.service';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -13,7 +14,6 @@ import {NotifyService} from '../../services/notify.service';
 })
 export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
-	public tender_raw: string;
 	private loading: number = 0;
 	private sub: any;
 	public portal: Country;
@@ -27,7 +27,6 @@ export class TenderPage implements OnInit, OnDestroy {
 		additional: {$open: false},
 		documents: {$open: false},
 		publications: {$open: false},
-		raw: {$open: false},
 		discussion: {$open: false},
 	};
 	public indicators = {
@@ -42,7 +41,6 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.documents.$open = true;
 			this.state.publications.$open = true;
 			this.state.reqs.$open = true;
-			this.state.raw.$open = true;
 			this.state.discussion.$open = true;
 		}
 		this.portal = config.country;
@@ -84,8 +82,10 @@ export class TenderPage implements OnInit, OnDestroy {
 				}
 			});
 		}
+	}
 
-		this.tender_raw = JSON.stringify(tender, null, '\t');
+	download(format): void {
+		Utils.downloadJSON(this.tender, 'tender-' + this.tender.id);
 	}
 
 }

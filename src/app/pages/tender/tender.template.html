@@ -478,14 +478,11 @@
 			</div>
 		</div>
 	</section>
-
-	<section class="container" *ngIf="tender_raw">
-		<h3>
-			<collapse-expand [o]="state.raw" [title]="'Raw Data'"></collapse-expand>
-		</h3>
-		<div *ngIf="state.raw.$open" class="container slab-beta-light container-padded-large">
-			<pre>{{tender_raw}}</pre>
+	<div class="graph-footer">
+		<div class="graph-toolbar-container">
+			<div class="graph-toolbar">
+				<button class="tool-button" (click)="this.download('json')" title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+			</div>
 		</div>
-	</section>
-
+	</div>
 </section>
