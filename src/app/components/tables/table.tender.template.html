@@ -11,3 +11,11 @@
 	</div>
 </div>
 <pagination class="pagination" [total]="total" [defaultPageSize]="defaultPageSize" [defaultPage]="defaultPage" (paginationChange)="paginationChange($event)"></pagination>
+<app-dialog [title]="'Large Download'" [(visible)]="showDownloadDialog">
+	<br/>
+	The download contains <b>{{total}} entries</b> and the compressed file size will be approximately over <b>{{total/1000*1200000 | formatFileSize}}</b>.
+	<br/>
+	<br/>
+	<button class="button" (click)="this.download('json.gz')" title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> Download Large File</button>
+	<button class="button" (click)="showDownloadDialog=false;">Cancel</button>
+</app-dialog>

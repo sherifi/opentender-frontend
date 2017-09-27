@@ -28,6 +28,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	tenders: Array<Tender> = [];
 	table: Table;
 	sortBy: ColumnSort;
+	showDownloadDialog: boolean = false;
 
 	total: number = 0;
 	defaultPageSize: number = 10;
@@ -54,6 +55,15 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	download(format): void {
+
+		if (this.total > 1000) {
+			if (!this.showDownloadDialog) {
+				this.showDownloadDialog = true;
+				return;
+			}
+		}
+		this.showDownloadDialog = false;
+
 		let cmd = this.search_cmd;
 		this.api.requestDownload(cmd).subscribe(
 			(result) => {
