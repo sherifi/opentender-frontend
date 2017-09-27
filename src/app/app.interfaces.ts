@@ -8,6 +8,7 @@ import {Country} from './services/config.service';
 export interface IndicatorInfo {
 	name: string;
 	plural: string;
+	icon: string;
 	prefix: string;
 	subindicators: Array<string>;
 }

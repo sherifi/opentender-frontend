@@ -1,4 +1,3 @@
-
 export const Consts = {
 	indicators: {
 		ac: {
@@ -11,7 +10,8 @@ export const Consts = {
 				'ADMINISTRATIVE_COVERED_BY_GPA',
 				'ADMINISTRATIVE_FRAMEWORK_AGREEMENT',
 				'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE'
-			]
+			],
+			icon: 'icon-trophy'
 		},
 		cr: {
 			name: 'Corruption Risk Indicator',
@@ -25,9 +25,13 @@ export const Consts = {
 				'CORRUPTION_DECISION_PERIOD',
 				'CORRUPTION_TAX_HAVEN',
 				'CORRUPTION_NEW_COMPANY'
-			]
+			],
+			icon: 'icon-flag'
 		},
-		tr: {name: 'Transparency Indicator', plural: 'Transparency Indicators', prefix: 'TRANSPARENCY', subindicators: []}
+		tr: {
+			name: 'Transparency Indicator', plural: 'Transparency Indicators', prefix: 'TRANSPARENCY', subindicators: [],
+			icon: 'icon-checkmark'
+		}
 	},
 	countries: {
 		'AF': 'Afghanistan',

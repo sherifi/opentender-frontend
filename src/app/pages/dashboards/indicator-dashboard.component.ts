@@ -18,6 +18,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
 	private title: string = '';
+	private icon: string = '';
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
 	private columnTitle: string;
@@ -63,6 +64,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.title = this.i18n.get(this.indicator.plural);
 		this.indicatorTitle = this.i18n.get(this.indicator.plural);
 		this.searchPrefix = this.indicator.prefix;
+		this.icon = this.indicator.icon;
 	}
 
 	ngOnInit(): void {
