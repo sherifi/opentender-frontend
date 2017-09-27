@@ -118,7 +118,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, this.title + '-per-sector');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, this.title + '-per-sector');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

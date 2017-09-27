@@ -89,7 +89,7 @@ export class GraphMarketTreemap implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'sector-overview');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'sector-overview');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

@@ -77,7 +77,7 @@ export class GraphSectorsComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, 'sectors');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, 'sectors');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

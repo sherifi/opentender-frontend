@@ -89,7 +89,7 @@ export class GraphSectorTreemap implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'subsector-overview');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'subsector-overview');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

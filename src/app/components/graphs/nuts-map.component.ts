@@ -92,7 +92,7 @@ export class GraphNutsMapComponent implements OnChanges {
 
 
 	download(format): void {
-		Utils.download(format, this.data_list, {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, this.title);
+		Utils.downloadSeries(format, this.data_list, {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, this.title);
 	}
 
 	displayNuts(geo: IApiGeoJSONResult) {

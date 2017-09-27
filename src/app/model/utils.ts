@@ -108,7 +108,7 @@ export const Utils = {
 		}
 		return n.toLocaleString();
 	},
-	download: function(format, data, header, exportfilename) {
+	downloadSeries: function(format, data, header, exportfilename) {
 		if (format === 'csv') {
 			Utils.downloadCSVSeries(data, header, exportfilename);
 		} else if (format === 'json') {

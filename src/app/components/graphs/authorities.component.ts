@@ -131,7 +131,7 @@ export class GraphAuthoritiesComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'buyers');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'buyers');
 	}
 
 	toggleValue(mode: string) {

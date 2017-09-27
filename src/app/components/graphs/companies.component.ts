@@ -132,7 +132,7 @@ export class GraphCompaniesComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'suppliers');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'suppliers');
 	}
 
 	toggleValue(mode: string) {

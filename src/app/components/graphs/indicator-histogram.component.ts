@@ -292,7 +292,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'},  this.title + '-histogram');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'},  this.title + '-histogram');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

@@ -59,7 +59,7 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: 'Percent %', name: 'Name'}, this.title + '-structure');
+		Utils.downloadSeries(format, this.graph.data, {value: 'Percent %', name: 'Name'}, this.title + '-structure');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

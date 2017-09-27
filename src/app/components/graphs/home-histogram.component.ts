@@ -70,7 +70,7 @@ export class GraphHomeHistogramComponent implements OnChanges {
 	}
 
 	download(format): void {
-		Utils.download(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'}, 'histogram');
+		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'}, 'histogram');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
