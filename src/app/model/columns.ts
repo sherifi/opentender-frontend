@@ -60,25 +60,37 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 		name: 'Name',
 		id: 'body.name',
 		group: 'Authority',
+		sortBy: {
+			id: 'body.name.raw',
+			ascend: true
+		},
 		format: authority => [{content: authority.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
 		id: 'body.address.city',
 		group: 'Authority',
+		sortBy: {
+			id: 'body.address.city',
+			ascend: true
+		},
 		format: authority => [{content: authority.body.address.city}]
 	},
 	{
 		name: 'Country',
 		id: 'body.address.country',
 		group: 'Authority',
+		sortBy: {
+			id: 'body.address.country',
+			ascend: true
+		},
 		format: authority => [{content: Utils.expandCountry(authority.body.address.country)}]
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
 		group: 'Authority',
-		format: authority => [{content: (authority.value || '').toString()}]
+		format: authority => [{content: Utils.formatValue(authority.sources.length)}]
 	},
 	{
 		name: 'Profile Link',
@@ -97,25 +109,37 @@ export const CompanyColumns: Array<CompanyColumn> = [
 		name: 'Name',
 		group: 'Company',
 		id: 'body.name',
+		sortBy: {
+			id: 'body.name.raw',
+			ascend: true
+		},
 		format: company => [{content: company.body.name || '[Name not available]'}]
 	},
 	{
 		name: 'City',
 		group: 'Company',
 		id: 'body.address.city',
+		sortBy: {
+			id: 'body.address.city',
+			ascend: true
+		},
 		format: company => [{content: company.body.address.city}]
 	},
 	{
 		name: 'Country',
 		group: 'Company',
 		id: 'body.address.country',
+		sortBy: {
+			id: 'body.address.country',
+			ascend: true
+		},
 		format: company => [{content: Utils.expandCountry(company.body.address.country)}]
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
 		group: 'Company',
-		format: company => [{content: (company.value || '').toString()}]
+		format: company => [{content: Utils.formatValue(company.sources.length)}]
 	},
 	{
 		name: 'Profile Link',

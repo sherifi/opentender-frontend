@@ -39,16 +39,28 @@ export interface IUsageEntry {
 	missing: number;
 }
 
+export interface IAuthoritySources {
+	body: Buyer;
+	tender: string;
+	country: string;
+}
+
 export interface IAuthority {
 	body: Buyer;
+	sources?: IAuthoritySources[];
 	value?: number;
-	country?: string;
+}
+
+export interface ICompanySources {
+	body: Buyer;
+	tender: string;
+	country: string;
 }
 
 export interface ICompany {
 	body: Bidder;
+	sources: ICompanySources[];
 	value?: number;
-	country?: string;
 }
 
 export interface IStatsLotsInYears {

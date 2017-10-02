@@ -75,7 +75,6 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 			rows: []
 		};
 		if (this.companies) {
-			// let companies = this.companies.slice(this.pagination.from, this.pagination.from + this.pagination.size);
 			this.companies.forEach(company => {
 				let row = [];
 				this.columns.forEach(col => {
@@ -91,10 +90,11 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
 		this.search_cmd.size = data.value.pageSize;
 		this.refresh();
-		// this.pagination.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
-		// this.pagination.size = data.value.pageSize;
-		// this.buildTable();
-		// this.refresh();
+	}
+
+	sortChange(data: { value: ColumnSort }) {
+		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
+		this.refresh();
 	}
 
 	refresh(): void {

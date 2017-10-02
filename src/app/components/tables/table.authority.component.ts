@@ -88,9 +88,11 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	paginationChange(data): void {
 		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
 		this.search_cmd.size = data.value.pageSize;
-		// this.pagination.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
-		// this.pagination.size = data.value.pageSize;
-		// this.buildTable();
+		this.refresh();
+	}
+
+	sortChange(data: { value: ColumnSort }) {
+		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
 		this.refresh();
 	}
 
