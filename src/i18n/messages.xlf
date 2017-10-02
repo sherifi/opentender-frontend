@@ -163,39 +163,25 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2c085b87eddb0e2a761919adf90c7b486e5d3918" datatype="html">
-        <source>Newline Delimited JSON</source>
+      <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
+        <source>Hierarchical JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="136a530eb58de00378268f4779dac626f76a9fb0" datatype="html">
-        <source>Due to the file size, DIGIWHIST Tender JSON data has been save as gzip compressed <x id="START_LINK" ctype="x-a"/>Newline Delimited JSON<x id="CLOSE_LINK" ctype="x-a"/>.</source>
+      <trans-unit id="b03634a850309703c6b44a50a0d67e8c4f41550a" datatype="html">
+        <source>Current Portal: </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2ef75ba6c1163906a7b6dd39ee31e8476212fd5a" datatype="html">
-        <source>The structure of entries is outlined <x id="START_LINK" ctype="x-a"/>here<x id="CLOSE_LINK" ctype="x-a"/>.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
-        <source>Current Portal</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4051dde66e245b862420f7c8cd49db70a52a5c1f" datatype="html">
         <source>{VAR_PLURAL, plural, =1 {tender} other {tenders} }</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
@@ -212,11 +198,39 @@
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b0893834a0476ae3201c76cef03857f9ed6ede83" datatype="html">
-        <source>File Size</source>
+      <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
+        <source>JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
           <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c4ca89a999288712aede90091a5228ce76f489c" datatype="html">
+        <source>NDJSON*</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
+        <source>Files are compressed with <x id="START_LINK" ctype="x-a"/>GZip<x id="CLOSE_LINK" ctype="x-a"/>, which should be supported by your ZIP application.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
+        <source>* Due to the amount of entries and many JSON parser don&apos;t support the file size, DIGIWHIST Tender JSON data has also been saved as <x id="START_LINK" ctype="x-a"/>Newline Delimited JSON<x id="CLOSE_LINK" ctype="x-a"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
+        <source>The structure of entries is outlined in a <x id="START_LINK" ctype="x-a"/>JSON Schema File<x id="CLOSE_LINK" ctype="x-a"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/downloads/downloads.component.ts</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
@@ -1192,13 +1206,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header.component.ts</context>
           <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b22e27829e9275fb453e8edf6ac2aa5696f8d837" datatype="html">
-        <source>Number of <x id="INTERPOLATION"/> by Region</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/map-home.component.ts</context>
-          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">

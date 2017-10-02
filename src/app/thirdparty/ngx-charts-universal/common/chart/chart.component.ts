@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, ViewContainerRef, ChangeDetectionStrategy, EventEmitter, Output, SimpleChanges} from '@angular/core';
 // import {animate, style, transition, trigger} from '@angular/animations';
-import {InjectionService} from '../services/injection.service';
+import {InjectionService} from '../tooltip/injection.service';
 import {IChartDimension, IChartBaseSettings, IChartData} from '../../chart.interface';
 import {ILegendOptions} from '../common.interface';
 

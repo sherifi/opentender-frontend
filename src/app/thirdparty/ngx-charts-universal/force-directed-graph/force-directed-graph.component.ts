@@ -19,7 +19,7 @@ import {forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY}
 			<svg:g [attr.transform]="transform" class="force-directed-graph chart">
 				<svg:g class="links">
 					<svg:g *ngFor="let link of links; trackBy:trackLinkBy">
-						<ng-template *ngIf="linkTemplate" [ngTemplateOutlet]="linkTemplate" [ngOutletContext]="{ $implicit: link }">
+						<ng-template *ngIf="linkTemplate" [ngTemplateOutlet]="linkTemplate" [ngTemplateOutletContext]="{ $implicit: link }">
 						</ng-template>
 						<svg:line *ngIf="!linkTemplate"
 								  strokeWidth="1" class="edge"
@@ -41,7 +41,7 @@ import {forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY}
 						   [tooltipPlacement]="'top'"
 						   [tooltipType]="'tooltip'"
 						   [tooltipTitle]="node.value">
-						<ng-template *ngIf="nodeTemplate" [ngTemplateOutlet]="nodeTemplate" [ngOutletContext]="{ $implicit: node }"></ng-template>
+						<ng-template *ngIf="nodeTemplate" [ngTemplateOutlet]="nodeTemplate" [ngTemplateOutletContext]="{ $implicit: node }"></ng-template>
 						<svg:circle *ngIf="!nodeTemplate" r="5"/>
 					</svg:g>
 				</svg:g>

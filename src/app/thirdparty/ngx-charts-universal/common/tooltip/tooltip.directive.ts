@@ -1,4 +1,4 @@
-import {Directive, Input, Output, EventEmitter, HostListener, ViewContainerRef, ElementRef, Renderer, OnDestroy, Renderer2} from '@angular/core';
+import {Directive, Input, Output, EventEmitter, HostListener, ViewContainerRef, ElementRef, Renderer2, OnDestroy, NgZone} from '@angular/core';
 
 import {StyleTypes} from './style.type';
 import {AlignmentTypes} from './alignment.type';
@@ -26,6 +26,7 @@ export class TooltipDirective implements OnDestroy {
 	@Input() tooltipTemplate: any;
 	@Input() tooltipShowEvent: ShowTypes = ShowTypes.all;
 	@Input() tooltipContext: any;
+	@Input() tooltipImmediateExit: boolean = false;
 
 	@Output() show = new EventEmitter();
 	@Output() hide = new EventEmitter();
@@ -49,7 +50,8 @@ export class TooltipDirective implements OnDestroy {
 	constructor(private tooltipService: TooltipService,
 				private viewContainerRef: ViewContainerRef,
 				private renderer: Renderer2,
-				private element: ElementRef) {
+				private element: ElementRef,
+				private zone: NgZone) {
 	}
 
 	ngOnDestroy(): void {
@@ -88,7 +90,7 @@ export class TooltipDirective implements OnDestroy {
 				if (contains) return;
 			}
 
-			this.hideTooltip();
+			this.hideTooltip(this.tooltipImmediateExit);
 		}
 	}
 
@@ -113,7 +115,9 @@ export class TooltipDirective implements OnDestroy {
 
 			// add a tiny timeout to avoid event re-triggers
 			setTimeout(() => {
-				this.addHideListeners(this.component.instance.element.nativeElement);
+				if (this.component) {
+					this.addHideListeners(this.component.instance.element.nativeElement);
+				}
 			}, 10);
 
 			this.show.emit(true);
@@ -129,7 +133,7 @@ export class TooltipDirective implements OnDestroy {
 		// content mouse leave listener
 		if (this.tooltipCloseOnMouseLeave) {
 			this.mouseLeaveContentEvent = this.renderer.listen(tooltip, 'mouseleave', () => {
-				this.hideTooltip();
+				this.hideTooltip(this.tooltipImmediateExit);
 			});
 		}
 
@@ -142,7 +146,7 @@ export class TooltipDirective implements OnDestroy {
 		}
 	}
 
-	hideTooltip(immediate?: boolean): void {
+	hideTooltip(immediate: boolean = false): void {
 		if (!this.component) return;
 
 		const destroyFn = () => {

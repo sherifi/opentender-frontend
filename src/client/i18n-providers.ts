@@ -1,4 +1,4 @@
-import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
+import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID, StaticProvider} from '@angular/core';
 
 function getParameterByName(name) {
 	let url = window.location.href;
@@ -14,8 +14,8 @@ function getParameterByName(name) {
 	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-export function getTranslationProviders(): Promise<Object[]> {
-	const noProviders: Object[] = [{
+export function getTranslationProviders(): Promise<StaticProvider[]> {
+	const noProviders: StaticProvider[] = [{
 		provide: TRANSLATIONS, useValue: null
 	}];
 	const config = document['opentender'];
@@ -31,7 +31,7 @@ export function getTranslationProviders(): Promise<Object[]> {
 		return Promise.resolve(noProviders);
 	}
 	// console.log('loading translation', config.locale);
-	let promise = new Promise<Object[]>(function(resolve, reject) {
+	let promise = new Promise<StaticProvider[]>(function(resolve, reject) {
 		let xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4) {

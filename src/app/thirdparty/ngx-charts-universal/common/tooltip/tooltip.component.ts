@@ -1,8 +1,8 @@
-import {Input, Component, ElementRef, AfterViewInit, HostListener, ViewChild, HostBinding, Renderer2} from '@angular/core';
+import {Input, Component, ElementRef, AfterViewInit, ViewEncapsulation, HostListener, ViewChild, HostBinding, Renderer2} from '@angular/core';
 
+import {PositionHelper} from './position/position';
 import {throttleable} from '../../utils/throttle.helper';
 import {PlacementTypes} from './position/placement.type';
-import {PositionHelper} from './position/position';
 
 import {StyleTypes} from './style.type';
 import {AlignmentTypes} from './alignment.type';
@@ -11,25 +11,14 @@ import {AlignmentTypes} from './alignment.type';
 	selector: 'ngx-tooltip-content',
 	template: `
 		<div>
-      <span
-			  #caretElm
-			  [hidden]="!showCaret"
-			  class="tooltip-caret position-{{this.placement}}">
-      </span>
+			<span #caretElm [hidden]="!showCaret" class="tooltip-caret position-{{this.placement}}"></span>
 			<div class="tooltip-content">
-        <span *ngIf="!title">
-          <ng-template
-				  [ngTemplateOutlet]="template"
-				  [ngOutletContext]="{ model: context }">
-          </ng-template>
-        </span>
-				<span
-						*ngIf="title"
-						[innerHTML]="title">
-        </span>
+				<span *ngIf="!title"><ng-template [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{ model: context }"></ng-template></span>
+				<span *ngIf="title" [innerHTML]="title"></span>
 			</div>
 		</div>
-	`
+	`,
+	encapsulation: ViewEncapsulation.None
 })
 export class TooltipContentComponent implements AfterViewInit {
 
@@ -46,7 +35,7 @@ export class TooltipContentComponent implements AfterViewInit {
 
 	@HostBinding('class')
 	get cssClasses(): string {
-		let clz = 'ngx-tooltip-content';
+		let clz = 'ngx-charts-tooltip-content';
 		clz += ` position-${this.placement}`;
 		clz += ` type-${this.type}`;
 		clz += ` ${this.cssClass}`;
@@ -64,7 +53,7 @@ export class TooltipContentComponent implements AfterViewInit {
 		const nativeElm = this.element.nativeElement;
 		const hostDim = this.host.nativeElement.getBoundingClientRect();
 
-		// if no viewDim were found, never show
+		// if no dims were found, never show
 		if (!hostDim.height && !hostDim.width) return;
 
 		const elmDim = nativeElm.getBoundingClientRect();

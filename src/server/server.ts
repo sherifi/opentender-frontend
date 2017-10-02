@@ -140,13 +140,13 @@ let render = function(req, res, language, country) {
 		}
 	});
 	console.time(`GET: ${req.originalUrl}`);
-	return engine(VIEW, {req: req, res: res}, (status: number, body?: any) => {
+	return engine(VIEW, {req: req, res: res}, (err?: Error | null, html?: string) => {
 		console.timeEnd(`GET: ${req.originalUrl}`);
-		if (status !== null || !body) {
-			console.log('err', status, body);
+		if (err !== null || !html) {
+			console.log('err', err, html);
 			return res.status(500).send('There is an error in error land…');
 		}
-		return sendAndAddToCache(req, res, body);
+		return sendAndAddToCache(req, res, html);
 	});
 };
 

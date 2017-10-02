@@ -43,9 +43,9 @@ const defaultConfig = () => {
 				'process.env.AOT': false
 			}),
 			new webpack.ContextReplacementPlugin(
-				/angular(\\|\/)core(\\|\/)@angular/,
-				root('../src')
-				// path.resolve(__dirname, '../src')
+				/@angular(\\|\/)core(\\|\/)/,
+				root('../src'),
+				{}
 			),
 			new webpack.optimize.OccurrenceOrderPlugin(true),
 			new webpack.LoaderOptionsPlugin({

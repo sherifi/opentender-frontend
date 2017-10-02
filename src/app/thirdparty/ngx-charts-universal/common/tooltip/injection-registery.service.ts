@@ -1,7 +1,6 @@
-import {Injectable, ComponentRef} from '@angular/core';
-import {InjectionService} from './injection.service';
+import { ComponentRef } from '@angular/core';
+import { InjectionService } from './injection.service';
 
-@Injectable()
 export abstract class InjectionRegistery {
 
 	protected abstract type: any;
@@ -9,8 +8,7 @@ export abstract class InjectionRegistery {
 	protected defaults: any = {};
 	protected components: Map<any, any> = new Map();
 
-	constructor(protected injectionService: InjectionService) {
-	}
+	constructor(public injectionService: InjectionService) { }
 
 	getByType(type: any = this.type) {
 		return this.components.get(type);
@@ -30,13 +28,13 @@ export abstract class InjectionRegistery {
 	}
 
 	destroy(instance): void {
-		let compsByType = this.components.get(instance.componentType);
+		const compsByType = this.components.get(instance.componentType);
 
-		if (compsByType) {
+		if(compsByType) {
 			const idx = compsByType.indexOf(instance);
 
-			if (idx > -1) {
-				let component = compsByType[idx];
+			if(idx > -1) {
+				const component = compsByType[idx];
 				component.destroy();
 				compsByType.splice(idx, 1);
 			}
@@ -48,27 +46,27 @@ export abstract class InjectionRegistery {
 	}
 
 	destroyByType(type): void {
-		let comps = this.components.get(type);
+		const comps = this.components.get(type);
 
-		if (comps) {
-			for (let comp of comps) {
+		if(comps) {
+			for(const comp of comps) {
 				this.destroy(comp);
 			}
 		}
 	}
 
 	protected assignDefaults(bindings): any {
-		const {inputs, outputs} = this.defaults;
+		const { inputs, outputs } = this.defaults;
 
-		if (!bindings.inputs && !bindings.outputs) {
-			bindings = {inputs: bindings};
+		if(!bindings.inputs && !bindings.outputs) {
+			bindings = { inputs: bindings };
 		}
 
-		if (inputs) {
+		if(inputs) {
 			bindings.inputs = Object.assign(inputs, bindings.inputs);
 		}
 
-		if (outputs) {
+		if(outputs) {
 			bindings.outputs = Object.assign(outputs, bindings.outputs);
 		}
 
@@ -80,11 +78,11 @@ export abstract class InjectionRegistery {
 	}
 
 	protected register(type, component): void {
-		if (!this.components.has(type)) {
+		if(!this.components.has(type)) {
 			this.components.set(type, []);
 		}
 
-		let types = this.components.get(type);
+		const types = this.components.get(type);
 		types.push(component);
 	}
 

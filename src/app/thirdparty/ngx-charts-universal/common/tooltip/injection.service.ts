@@ -1,4 +1,4 @@
-import {ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, Injector, EmbeddedViewRef, Type} from '@angular/core';
+import {ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, Injector, EmbeddedViewRef, Type, Renderer2} from '@angular/core';
 
 /**
  * Injection service is a helper to append components
@@ -26,13 +26,13 @@ export class InjectionService {
 	 * @memberOf InjectionService
 	 */
 	getRootViewContainer(): ComponentRef<any> {
-		if (this._container) {
-			return this._container;
-		}
-		const rootComponents = this.applicationRef['_rootComponents'];
-		if (rootComponents.length) {
-			return rootComponents[0];
-		}
+		if (this._container) return this._container;
+
+		const rootComponents = this.applicationRef.components;
+		if (rootComponents.length) return rootComponents[0];
+		// const rootComponents = this.applicationRef['_rootComponents'];
+		// return this.applicationRef.components[0];
+
 		throw new Error('View Container not found! ngUpgrade needs to manually set this via setRootViewContainer.');
 	}
 
@@ -56,7 +56,10 @@ export class InjectionService {
 	 *
 	 * @memberOf InjectionService
 	 */
-	getComponentRootNode(componentRef: ComponentRef<any>): HTMLElement {
+	getComponentRootNode(componentRef: any): HTMLElement {
+		// the top most component root node has no `hostView`
+		if (!componentRef.hostView) return componentRef.element.nativeElement;
+
 		return (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 	}
 
@@ -83,15 +86,15 @@ export class InjectionService {
 	projectComponentBindings(component: ComponentRef<any>, bindings: any): ComponentRef<any> {
 		if (bindings) {
 			if (bindings.inputs !== undefined) {
-				let bindingKeys = Object.getOwnPropertyNames(bindings.inputs);
-				for (let bindingName of bindingKeys) {
+				const bindingKeys = Object.getOwnPropertyNames(bindings.inputs);
+				for (const bindingName of bindingKeys) {
 					component.instance[bindingName] = bindings.inputs[bindingName];
 				}
 			}
 
 			if (bindings.outputs !== undefined) {
-				let eventKeys = Object.getOwnPropertyNames(bindings.outputs);
-				for (let eventName of eventKeys) {
+				const eventKeys = Object.getOwnPropertyNames(bindings.outputs);
+				for (const eventName of eventKeys) {
 					component.instance[eventName] = bindings.outputs[eventName];
 				}
 			}
@@ -105,7 +108,8 @@ export class InjectionService {
 	 *
 	 * @template T
 	 * @param {Type<T>} componentClass
-	 * @param bindings
+	 * @param {*} [bindings={}]
+	 * @param {*} [options={}]
 	 * @param {Element} [location=this.getRootViewContainerNode()]
 	 * @returns {ComponentRef<any>}
 	 *
@@ -113,29 +117,23 @@ export class InjectionService {
 	 */
 	appendComponent<T>(componentClass: Type<T>, bindings: any = {}, location: Element = this.getRootViewContainerNode()): ComponentRef<any> {
 
-		let componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentClass);
-		let componentRef = componentFactory.create(this.injector);
-		let appRef: any = this.applicationRef;
-
-		let componentRootNode = this.getComponentRootNode(componentRef);
+		const componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentClass);
+		const componentRef: any = componentFactory.create(this.injector);
+		const appRef: any = this.applicationRef;
+		const componentRootNode = this.getComponentRootNode(componentRef);
 
 		// project the options passed to the component instance
 		this.projectComponentBindings(componentRef, bindings);
 
-		if (!appRef.attachView) {
-			appRef['registerChangeDetector'](componentRef.changeDetectorRef);
-			componentRef.onDestroy(() => {
-				appRef['unregisterChangeDetector'](componentRef.changeDetectorRef);
-				location.removeChild(componentRootNode);
-			});
-		} else { // since angular 2.3.0
-			appRef.attachView(componentRef.hostView);
-			componentRef.onDestroy(() => {
-				appRef.detachView(componentRef.hostView);
-			});
-		}
+		appRef.attachView(componentRef.hostView);
 
-		location.appendChild(componentRootNode);
+		componentRef.onDestroy(() => {
+			appRef.detachView(componentRef.hostView);
+		});
+
+		// use the renderer to append the element for univseral support
+		const renderer: Renderer2 = componentRef.instance.renderer;
+		renderer.appendChild(location, componentRootNode);
 
 		return componentRef;
 	}
