@@ -144,5 +144,9 @@ export const Utils = {
 			a.click();
 			document.body.removeChild(a);
 		}
+	},
+	cpv2color: function(cpv) {
+		// console.log(cpv);
+		return null;
 	}
 };

@@ -46,7 +46,10 @@ export class GraphMarketTreemap implements OnChanges {
 				max: {height: 400}
 			},
 			colorScheme: {
-				'domain': Consts.colors.diverging
+				'domain': Consts.colors.diverging,
+				'getColor': (value) => {
+					return Utils.cpv2color(value);
+				}
 			},
 			legend: {
 				title: 'Number of Contracts'
@@ -68,7 +71,10 @@ export class GraphMarketTreemap implements OnChanges {
 				max: {height: 400}
 			},
 			colorScheme: {
-				'domain': Consts.colors.diverging
+				'domain': Consts.colors.diverging,
+				'getColor': (value) => {
+					return Utils.cpv2color(value);
+				}
 			},
 			legend: {
 				title: 'Volume (€)'

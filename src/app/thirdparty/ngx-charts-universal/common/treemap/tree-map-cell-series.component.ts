@@ -65,14 +65,13 @@ export class TreeMapCellSeriesComponent implements OnChanges {
 				return d.depth === 1;
 			})
 			.map((d) => {
-				let label = d.id;
 				return {
 					x: d.x0,
 					y: d.y0,
 					width: d.x1 - d.x0,
 					height: d.y1 - d.y0,
-					fill: this.colors.getColor(label),
-					label: label,
+					fill: this.colors.getColor(d.data.valueId || d.id),
+					label: d.id,
 					value: d.value,
 					valueType: d.valueType,
 					valueId: d.data.valueId

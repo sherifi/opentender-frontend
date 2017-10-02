@@ -1,5 +1,6 @@
 import {scaleBand, scaleLinear, scaleOrdinal, scaleQuantile} from 'd3-scale';
 import {range} from 'd3-array';
+import {IColorSet} from '../chart.interface';
 
 export class ColorHelper {
 	scale: any;
@@ -7,8 +8,10 @@ export class ColorHelper {
 	colorDomain: any[];
 	domain: any;
 	customColors: any;
+	scheme: IColorSet;
 
-	constructor(scheme, type, domain, customColors?) {
+	constructor(scheme: IColorSet, type, domain, customColors?) {
+		this.scheme = scheme;
 		this.colorDomain = scheme.domain;
 		this.scaleType = type;
 		this.domain = domain;
@@ -38,6 +41,13 @@ export class ColorHelper {
 	}
 
 	getColor(value) {
+		let result;
+		if (this.scheme && this.scheme.getColor) {
+			result = this.scheme.getColor(value);
+		}
+		if (result) {
+			return result;
+		}
 		if (this.scaleType === 'linear') {
 			let valueScale = scaleLinear()
 				.domain(this.domain)

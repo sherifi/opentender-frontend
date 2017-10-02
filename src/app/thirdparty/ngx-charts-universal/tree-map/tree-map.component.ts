@@ -8,18 +8,18 @@ import {treemap, stratify} from 'd3-hierarchy';
 @Component({
 	selector: 'ngx-charts-tree-map',
 	template: `
-    <ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [activeEntries]="activeEntries">
-      <svg:g [attr.transform]="transform" class="tree-map chart">
-        <svg:g ngx-charts-tree-map-cell-series
-          [colors]="colors"
-          [node]="node"
-          [dims]="viewDim"
-          [formatSeriesNumber]="chart.valueFormatting"
-          (select)="onClick($event)"
-        />
-      </svg:g>
-    </ngx-charts-chart>
-  `,
+		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [activeEntries]="activeEntries">
+			<svg:g [attr.transform]="transform" class="tree-map chart">
+				<svg:g ngx-charts-tree-map-cell-series
+					   [colors]="colors"
+					   [node]="node"
+					   [dims]="viewDim"
+					   [formatSeriesNumber]="chart.valueFormatting"
+					   (select)="onClick($event)"
+				/>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TreeMapComponent extends BaseChartComponent {
@@ -56,7 +56,7 @@ export class TreeMapComponent extends BaseChartComponent {
 				return;
 			}
 
-			let tmap = treemap<{name: string, value: number, valueId: string, isRoot?: boolean}>()
+			let tmap = treemap<{ name: string, value: number, valueId: string, isRoot?: boolean }>()
 				.size([this.viewDim.width, this.viewDim.height]);
 
 			let rootNode = {
@@ -75,7 +75,7 @@ export class TreeMapComponent extends BaseChartComponent {
 				});
 			});
 
-			let root = stratify<{name: string, value: number, valueId: string, isRoot?: boolean}>()
+			let root = stratify<{ name: string, value: number, valueId: string, isRoot?: boolean }>()
 				.id(d => {
 					return d.name;
 				})
@@ -96,7 +96,7 @@ export class TreeMapComponent extends BaseChartComponent {
 	}
 
 	getDomain(): any[] {
-		return this.data ? this.data.map(d => d.name) : [];
+		return this.data ? this.data.map(d => d.id || d.name) : [];
 	}
 
 	onClick(data): void {
