@@ -12,7 +12,6 @@ import {Utils} from '../../../model/utils';
 	templateUrl: 'tender.template.html'
 })
 export class SearchTenderPage implements OnInit, OnDestroy {
-	title = '';
 	search = new Search('tender');
 	search_cmd: SearchCommand;
 	quick_search_filters: Array<FilterDef> = [];
@@ -35,7 +34,6 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		this.quick_search_filters = this.search_filters.filter(def => {
 			return (this.quicksearchIds.indexOf(def.field) >= 0);
 		});
-		this.setTitle();
 	}
 
 	ngOnInit(): void {
@@ -57,12 +55,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		});
 	}
 
-	setTitle(total?) {
-		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
-	}
-
 	searchChange(data: ISearchTenderData) {
-		this.setTitle(data.hits && data.hits.total ? data.hits.total : 0);
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

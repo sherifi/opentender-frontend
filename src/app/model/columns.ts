@@ -40,7 +40,6 @@ export interface TableRow {
 }
 
 export interface Table {
-	name: string;
 	columns: Array<Column>;
 	rows: Array<TableRow>;
 	sortBy: ColumnSort;

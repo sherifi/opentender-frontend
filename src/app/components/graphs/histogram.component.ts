@@ -8,7 +8,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[histogram]',
 	template: `
-		<div class="title">Contracts (Lots) per Year</div>
+		<div class="title" i18n>Contracts (Lots) per Year</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"

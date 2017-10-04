@@ -21,7 +21,6 @@ export class SectorPage implements OnInit, OnDestroy {
 	private search_cmd: SearchCommand;
 	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
-	private tableTitle: string;
 	private viz: {
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
@@ -54,7 +53,6 @@ export class SectorPage implements OnInit, OnDestroy {
 				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
 		this.viz.cpvs_codes.title = i18n.get('Sector');
 		this.viz.histogram.title = i18n.get('Subsectors');
-		this.setTableTitle();
 	}
 
 	ngOnInit(): void {
@@ -201,13 +199,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.search_cmd = search_cmd;
 	}
 
-
-	setTableTitle(total?) {
-		this.tableTitle = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
-	}
-
 	searchChange(data) {
-		this.setTableTitle(data.hits && data.hits.total ? data.hits.total : 0);
 	}
 
 }

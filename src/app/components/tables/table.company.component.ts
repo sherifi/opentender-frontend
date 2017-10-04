@@ -69,7 +69,6 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 
 	buildTable(): void {
 		let table: Table = {
-			name: 'Company',
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []

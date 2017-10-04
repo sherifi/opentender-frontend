@@ -7,6 +7,8 @@ import {ISearchTenderData} from '../../app.interfaces';
 /// <reference path="../../model/tender.d.ts" />
 import Tender = Definitions.Tender;
 import {NotifyService} from '../../services/notify.service';
+import {Utils} from '../../model/utils';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'tender-table',
@@ -17,8 +19,6 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	search_cmd: SearchCommand;
 	@Input()
 	columnIds: Array<string>;
-	@Input()
-	title: string;
 	@Output()
 	searchChange = new EventEmitter();
 
@@ -30,12 +30,14 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	sortBy: ColumnSort;
 	showDownloadDialog: boolean = false;
 
+	title: string;
 	total: number = 0;
 	defaultPageSize: number = 10;
 	defaultPage: number = 0;
 	loading: number = 0;
 
-	constructor(private api: ApiService, private notify: NotifyService) {
+	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService) {
+		this.setTableTitle();
 	}
 
 	ngOnInit(): void {
@@ -55,7 +57,6 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	download(format): void {
-
 		if (this.total > 1000) {
 			if (!this.showDownloadDialog) {
 				this.showDownloadDialog = true;
@@ -123,7 +124,6 @@ export class TenderTableComponent implements OnChanges, OnInit {
 
 	buildTable(): void {
 		let table: Table = {
-			name: 'Tender',
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []
@@ -140,8 +140,13 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.table = table;
 	};
 
+	setTableTitle(total?) {
+		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+	}
+
 	display(data: ISearchTenderData): void {
 		if (data) {
+			this.setTableTitle(data.hits && data.hits.total ? data.hits.total : 0);
 			this.total = data.hits.total;
 			this.sortBy = data.sortBy;
 			this.tenders = data.hits.hits;

@@ -68,7 +68,6 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 
 	buildTable(): void {
 		let table: Table = {
-			name: 'Authority',
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []

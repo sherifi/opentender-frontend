@@ -1,24 +1,24 @@
 <section class="container-outer authority entity" *ngIf="!authority">
 	<section class="container">
-		<div class="entity-title">Authority</div>
-		<div>Loading…</div>
+		<div class="entity-title"><i class="icon-library"></i> <ng-container i18n>Authority</ng-container></div>
+		<div i18n>Loading…</div>
 	</section>
 </section>
 
 <section class="container-outer authority entity" *ngIf="authority">
 	<section class="container">
-		<div class="entity-title"><i class="icon-library"></i> Authority</div>
+		<div class="entity-title"><i class="icon-library"></i> <ng-container i18n>Authority</ng-container></div>
 		<div class="info-links">
 			<div class="info-link-box">
-				Read more about tender legislation<br>
+				<ng-container i18n>Read more about tender legislation</ng-container><br>
 				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
-				Find Freedom of Information requests<br>
+				<ng-container i18n>Find Freedom of Information requests</ng-container><br>
 				<a target="_blank" rel="noopener" href="{{ authority.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">
-				Search this authority at<br>
+				<ng-container i18n>Search this authority at</ng-container><br>
 				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
 				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 			</div>
@@ -28,7 +28,7 @@
 
 		<div *ngIf="similar.length > 0">
 			<div class="similars">
-				<div class="title">Similar Authorities</div>
+				<div class="title" i18n>Similar Authorities</div>
 				<div class="similar" *ngFor="let sim of similar">
 					<a [routerLink]="['/authority/'+sim.body.groupId]" i18n-title title="Click to jump to the authority profile"><i class="icon-library"></i> </a>
 					<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
@@ -72,16 +72,8 @@
 			</div>
 			<br>
 		</section>
-		<!--<section class="container">-->
-		<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
-		<!--<br/>-->
-		<!--<graph counts [data]="viz.counts"></graph>-->
-		<!--<br/>-->
-		<!--</section>-->
-
 		<section class="container">
-			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
 		</section>
 	</div>
-
 </section>

@@ -21,7 +21,6 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
-	private columnTitle: string;
 	private loading: number = 0;
 	private selected: string = 'all';
 	private search_cmd: SearchCommand;
@@ -57,7 +56,6 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	};
 
 	constructor(private api: ApiService, private i18n: I18NService, private notify: NotifyService) {
-		this.columnTitle = i18n.get('Tenders');
 	}
 
 	public ngOnChanges(changes: SimpleChanges): void {

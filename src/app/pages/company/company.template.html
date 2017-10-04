@@ -1,24 +1,24 @@
 <section class="container-outer authority entity" *ngIf="!company">
 	<section class="container">
-		<div class="entity-title">Company</div>
-		<div>Loading…</div>
+		<div class="entity-title"><i class="icon-office"></i> <ng-container i18n>Company</ng-container></div>
+		<div i18n>Loading…</div>
 	</section>
 </section>
 
 <section class="container-outer company entity" *ngIf="company">
 	<section class="container">
-		<div class="entity-title"><i class="icon-office"></i> Company</div>
+		<div class="entity-title"><i class="icon-office"></i> <ng-container i18n>Company</ng-container></div>
 		<div class="info-links">
 			<div class="info-link-box">
-				Read more about tender legislation<br>
+				<ng-container i18n>Read more about tender legislation</ng-container><br>
 				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
-				Find Freedom of Information requests at<br>
+				<ng-container i18n>Find Freedom of Information requests at</ng-container><br>
 				<a target="_blank" rel="noopener" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">
-				Search this company at<br>
+				<ng-container i18n>Search this company at</ng-container><br>
 				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
 				<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
 				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
@@ -72,15 +72,9 @@
 				</div>
 			</div>
 			<br/>
-			<!--<br/>- -->
-			<!--<graph counts [data]="viz.counts"></graph>-->
-			<!--<br/>-->
-			<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
 		</section>
-
-
 		<section class="container">
-			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
 		</section>
 	</div>
 </section>
