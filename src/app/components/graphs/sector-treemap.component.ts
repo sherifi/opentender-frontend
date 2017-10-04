@@ -74,8 +74,8 @@ export class GraphSectorTreemap implements OnChanges {
 	graph: IChartTreeMap = this.cpv_codes_prices;
 
 	constructor(private router: Router, private i18n: I18NService) {
-		this.cpv_codes_nr.chart.legend.title = i18n.get('Nr, of Contracts');
-		this.cpv_codes_prices.chart.legend.title = i18n.get('Volume (€)');
+		this.cpv_codes_nr.chart.legend = {title: i18n.get('Nr, of Contracts')};
+		this.cpv_codes_prices.chart.legend = {title: i18n.get('Volume (€)')};
 	}
 
 	getSeriesInfo() {

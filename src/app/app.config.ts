@@ -69,7 +69,6 @@ import {GraphHomeHistogramComponent} from './components/graphs/home-histogram.co
 import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
 import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
-import {GraphMarketTreemap} from './components/graphs/market-treemap.component';
 import {GraphNutsMapComponent} from './components/graphs/nuts-map.component';
 import {GraphSupplierNutsMapComponent} from './components/graphs/supplier-nuts-map.component';
 import {GraphBuyerNutsMapComponent} from './components/graphs/buyer-nuts-map.component';
@@ -139,7 +138,6 @@ const AppConfig = {
 		GraphIndicatorHistogramComponent,
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
-		GraphMarketTreemap,
 		GraphSectorsComponent,
 		GraphCountsComponent,
 		GraphHistogramComponent,
