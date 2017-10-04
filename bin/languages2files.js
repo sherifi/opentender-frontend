@@ -61,9 +61,13 @@ let runNGi18n = function (cb) {
 	}
 
 	console.log('run ng-xi18n');
-	let cliOptions = new tsc.I18nExtractionCliOptions({project: dest, i18nFormat: 'xlf'});
+	let cliOptions = new tsc.I18nExtractionCliOptions({i18nFormat: 'xlf', outFile: 'out.xlf', locale: 'en'});
+
 	tsc.main(dest, cliOptions, extract, {noEmit: true}).then(function (exitCode) {
-		fs.copySync(path.join(dest, 'src/i18n/messages.xlf'), source_message);
+		if (exitCode) {
+			console.log(exitCode);
+		}
+		fs.copySync(path.join(dest, 'out.xlf'), source_message);
 		removeDest();
 		console.log(source_message, 'written');
 		fs.readFile(source_message, (err, data) => {
@@ -71,7 +75,7 @@ let runNGi18n = function (cb) {
 			cb(null, data);
 		});
 	}).catch((e) => {
-		console.log('error');
+		console.log('error', e);
 		removeDest();
 		cb(e);
 	});
@@ -112,7 +116,7 @@ let fillI18nTemplate = function (filename) {
 	let list = runtimestrings.map(s => {
 		return '<span i18n="runtime@@' + s.replace(/ /g, '') + '">' + s + '</span>';
 	});
-	fs.writeFileSync(filename, list.join());
+	fs.writeFileSync(filename, list.join('\n'));
 };
 
 let updateLanguage = function (lang, currentNodes, cb) {
