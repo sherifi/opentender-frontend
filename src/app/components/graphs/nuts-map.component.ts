@@ -19,16 +19,7 @@ declare var L;
 			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 360px">NO DATA</div>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
-		<!--<div *ngIf="invalid>0" class="nutsmap_subtitle">{{invalid}} invalid NUTS codes</div>-->
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>
-	`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphNutsMapComponent implements OnChanges {
 	@Input()
@@ -249,9 +240,8 @@ export class GraphNutsMapComponent implements OnChanges {
 		};
 	}
 
-
-	download(format): void {
-		Utils.downloadSeries(format, this.data_list, {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, this.title);
+	getSeriesInfo() {
+		return {data: this.data_list, header: {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, filename: this.title};
 	}
 
 	displayNuts(geo: IApiGeoJSONResult) {

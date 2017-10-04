@@ -295,7 +295,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.name',
 		name: 'Name',
-		group: 'Buyer',
+		group: 'Authority',
 		field: 'body.name',
 		type: FilterType.text,
 		aggregation_field: 'body.name.raw',
@@ -304,7 +304,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.address.city',
 		name: 'City',
-		group: 'Buyer',
+		group: 'Authority',
 		field: 'body.address.city',
 		type: FilterType.text,
 		valueFormatter: Utils.capitalize
@@ -312,7 +312,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.address.country',
 		name: 'Country',
-		group: 'Buyer',
+		group: 'Authority',
 		field: 'body.address.country',
 		valueFormatter: Utils.expandCountry,
 		type: FilterType.select,
@@ -321,7 +321,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 	{
 		id: 'body.mainActivities',
 		name: 'Main Activities',
-		group: 'Buyer',
+		group: 'Authority',
 		field: 'body.mainActivities',
 		type: FilterType.select,
 		valueFormatter: Utils.expandUnderlined,

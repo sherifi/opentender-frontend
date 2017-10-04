@@ -8,26 +8,24 @@ import Price = Definitions.Price;
 	moduleId: __filename,
 	selector: 'collapse-expand',
 	template: `
-		<span *ngIf="o" class="link-no_under" title="Click to {{o.$open?'hide':'show'}} this section" (click)="o.$open=!o.$open">{{title}} <i class="icon-chevron-down" [ngClass]="{'icon-chevron-down':!o.$open,'icon-chevron-up':o.$open}"></i></span>
-`
+		<span *ngIf="o" class="link-no_under" i18n-title title="Click to hide/show this section" (click)="o.open=!o.open">{{o.label}} <i class="icon-chevron-down" [ngClass]="{'icon-chevron-down':!o.open,'icon-chevron-up':o.open}"></i></span>
+	`
 })
 export class CollapseExpandComponent {
 	@Input()
-	public o: any;
-	@Input()
-	public title: string;
+	public o: { open: boolean; label: string };
 }
 
 @Component({
 	moduleId: __filename,
 	selector: 'tender-body-address',
 	template: `
-<div *ngIf="address">
-	<div *ngIf="address.street | defined">{{address.street}}</div>
-	<div *ngIf="(address.postcode||address.city) | defined"><span *ngIf="address.postcode | defined">{{address.postcode}}, </span>{{address.city}}</div>
-	<div *ngIf="address.country | defined">{{address.country | expandCountry}}</div>
-</div>
-`
+		<div *ngIf="address">
+			<div *ngIf="address.street | defined">{{address.street}}</div>
+			<div *ngIf="(address.postcode||address.city) | defined"><span *ngIf="address.postcode | defined">{{address.postcode}}, </span>{{address.city}}</div>
+			<div *ngIf="address.country | defined">{{address.country | expandCountry}}</div>
+		</div>
+	`
 })
 export class TenderBodyAddressComponent {
 	@Input()
@@ -38,11 +36,11 @@ export class TenderBodyAddressComponent {
 	moduleId: __filename,
 	selector: 'tender-body',
 	template: `
-<div *ngIf="body">
-	<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name | nameGuard}}</a><span *ngIf="!link">{{body.name | nameGuard}}</span><br/>
-	<tender-body-address *ngIf="body.address" [address]="body.address"></tender-body-address>
-</div>
-`
+		<div *ngIf="body">
+			<a *ngIf="link" routerLink="{{link}}"><i *ngIf="icon" class="{{icon}}"></i> {{body.name | nameGuard}}</a><span *ngIf="!link">{{body.name | nameGuard}}</span><br/>
+			<tender-body-address *ngIf="body.address" [address]="body.address"></tender-body-address>
+		</div>
+	`
 })
 export class TenderBodyComponent {
 	@Input()

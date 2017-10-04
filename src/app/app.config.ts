@@ -84,6 +84,7 @@ import {PortalMapComponent, SVGCountryGroupDirective} from './components/map-por
 import {SearchBoxComponent} from './components/searchbox.component';
 import {SelectColumnsButtonComponent} from './components/selects/select-columns-button.component';
 import {SelectColumnsComponent} from './components/selects/select-columns.component';
+import {SelectDownloadSeriesComponent} from './components/selects/select-download-series.component';
 import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
 import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
@@ -121,6 +122,7 @@ const AppConfig = {
 		SearchBoxComponent,
 		SelectColumnsButtonComponent,
 		SelectColumnsComponent,
+		SelectDownloadSeriesComponent,
 		SelectSearchesButtonComponent,
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,

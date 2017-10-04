@@ -20,10 +20,10 @@
 
 	<section class="container container-current-download" *ngIf="current">
 		<p>
-			<ng-container i18n>Current Portal: </ng-container>{{current.name}}<br/>
-			{{current.count}} <ng-container i18n>{current.count, plural, =1 {tender} other {tenders}}</ng-container><br/>
-			<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i>JSON</a> {{current.formats.json.size | formatFileSize}} -
-			<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i>NDJSON</a> {{current.formats.ndjson.size | formatFileSize}}
+			<ng-container i18n>Current Portal</ng-container>: {{current.name}}<br/>
+			<ng-container i18n>Tenders</ng-container>: {{current.count}}<br/>
+			<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i> JSON</a> {{current.formats.json.size | formatFileSize}} -
+			<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i> NDJSON</a> {{current.formats.ndjson.size | formatFileSize}}
 		</p>
 	</section>
 	<section class="container">
@@ -39,9 +39,9 @@
 			<tbody>
 			<tr *ngFor="let download of downloads">
 				<td>{{download.name}}</td>
-				<td class="right">{{download.count}} {download.count, plural, =1 {tender} other {tenders}}</td>
-				<td class="right"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a><br/> {{download.formats.json.size | formatFileSize}}</td>
-				<td class="right"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a><br/> {{download.formats.ndjson.size | formatFileSize}}</td>
+				<td class="right">{{download.count}}</td>
+				<td class="right"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a><br/>{{download.formats.json.size | formatFileSize}}</td>
+				<td class="right"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a><br/>{{download.formats.ndjson.size | formatFileSize}}</td>
 			</tr>
 			</tbody>
 		</table>

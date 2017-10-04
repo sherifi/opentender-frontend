@@ -1,17 +1,17 @@
 <section class="container-outer tender entity" *ngIf="tender">
 	<section class="container">
-		<div class="entity-title"><i class="icon-newspaper"></i> Tender</div>
-		<h1>
-			{{tender.title}}
-		</h1>
+		<div class="entity-title"><i class="icon-newspaper"></i>
+			<ng-container i18n>Tender</ng-container>
+		</div>
+		<h1>{{tender.title}}</h1>
 		<h3>{{tender.titleEnglish}}</h3>
 	</section>
 
 	<section class="container">
 		<h3>
-			<collapse-expand [o]="state.desc" [title]="'Description'"></collapse-expand>
+			<collapse-expand [o]="state.desc"></collapse-expand>
 		</h3>
-		<div *ngIf="state.desc.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.desc.open" class="container slab-beta-light container-padded-large">
 			<div class="container justify" *ngIf="tender.description | defined">
 				<span>{{tender.description}}</span>
 			</div>
@@ -20,22 +20,22 @@
 
 	<section class="container" *ngIf="tender.indicators | defined">
 		<h3>
-			<collapse-expand [o]="state.indi" [title]="'Indicators'"></collapse-expand>
+			<collapse-expand [o]="state.indi"></collapse-expand>
 		</h3>
-		<div *ngIf="state.indi.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.indi.open" class="container slab-beta-light container-padded-large">
 			<div class="container justify">
-				<div *ngIf="tender.indicators.length===0">There are no Indicators for this Tender</div>
+				<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
 				<div class="grid">
 					<div class="grid-item-3" *ngIf="indicators.cr.length>0">
-						<small>Corruption Risk Indicators</small>
+						<small i18n>Corruption Risk Indicators</small>
 						<div *ngFor="let indi of indicators.cr">{{indi.type | formatIndicatorName}}</div>
 					</div>
 					<div class="grid-item-3" *ngIf="indicators.ac.length>0">
-						<small>Administrative Capacity Indicators</small>
+						<small i18n>Administrative Capacity Indicators</small>
 						<div *ngFor="let indi of indicators.ac">{{indi.type | formatIndicatorName}}</div>
 					</div>
 					<div class="grid-item-3" *ngIf="indicators.tr.length>0">
-						<small>Transparency Indicators</small>
+						<small i18n>Transparency Indicators</small>
 						<div *ngFor="let indi of indicators.tr">{{indi.type | formatIndicatorName}}</div>
 					</div>
 				</div>
@@ -45,9 +45,9 @@
 
 	<section class="container">
 		<h3>
-			<collapse-expand [o]="state.buyer" [title]="'Buyer'"></collapse-expand>
+			<collapse-expand [o]="state.buyer"></collapse-expand>
 		</h3>
-		<div *ngIf="state.buyer.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.buyer.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-6">
 				<div *ngIf="tender.buyers | defined">
 					<tender-body *ngFor="let authority of tender.buyers; let i = index" [body]="authority" [icon]="'icon-library'" [link]="'/authority/'+authority.groupId"></tender-body>
@@ -92,9 +92,9 @@
 
 	<section class="container">
 		<h3>
-			<collapse-expand [o]="state.info" [title]="'Tender Information'"></collapse-expand>
+			<collapse-expand [o]="state.info"></collapse-expand>
 		</h3>
-		<div *ngIf="state.info.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.info.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-6">
 				<!--<div class="info-foi" *ngIf="!tender.estimatedPrice || !tender.estimatedPrice.value">-->
 				<!--No value is given for this contract, you may request it via your Freedom of Information Laws.<br/>-->
@@ -194,14 +194,14 @@
 
 	<section class="container" *ngIf="tender.lots | defined">
 		<h3>
-			<collapse-expand [o]="state.lots" [title]="'Lots'"></collapse-expand>
+			<collapse-expand [o]="state.lots"></collapse-expand>
 		</h3>
-		<div *ngIf="state.lots.$open" class="container ">
+		<div *ngIf="state.lots.open" class="container ">
 			<div class="lot slab-beta-light container-padded-large" *ngFor="let lot of tender.lots; let index_l = index">
 				<h4>
-					<collapse-expand [o]="lot" [title]="'Lot '+(index_l+1)"></collapse-expand>
+					<collapse-expand [o]="getLotCollapse(lot,index_l)"></collapse-expand>
 				</h4>
-				<div [hidden]="lot.$open">
+				<div [hidden]="getLotCollapse(lot,index_l).open">
 					<div class="margined-text" *ngIf="lot.title | defined">{{lot.title}}</div>
 					<div class="grid" *ngIf="lot.bids | defined">
 						<div [ngClass]="{'grid-item-2':lot.bids.length>1,'grid-item-1':lot.bids.length<=1}" *ngFor="let bid of lot.bids">
@@ -222,7 +222,7 @@
 						</div>
 					</div>
 				</div>
-				<div [hidden]="!lot.$open">
+				<div [hidden]="!lot.open">
 					<div class="margined-text" *ngIf="lot.title | defined">{{lot.title}}</div>
 					<div class="margined-text" *ngIf="lot.description | defined">{{lot.description}}</div>
 					<div class="container container-padded-top-lite">
@@ -313,9 +313,9 @@
 
 	<section class="container" *ngIf="(tender.personalRequirements || tender.economicRequirements || tender.technicalRequirements) | defined">
 		<h3>
-			<collapse-expand [o]="state.reqs" [title]="'Requirements'"></collapse-expand>
+			<collapse-expand [o]="state.reqs"></collapse-expand>
 		</h3>
-		<div *ngIf="state.reqs.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.reqs.open" class="container slab-beta-light container-padded-large">
 			<div class="container" *ngIf="tender.personalRequirements | defined">
 				<h4 i18n>Personal Requirements</h4>
 				<span>{{tender.personalRequirements}}</span>
@@ -337,9 +337,9 @@
 
 	<section class="container" *ngIf="tender.publications | defined">
 		<h3>
-			<collapse-expand [o]="state.publications" [title]="'Publications'"></collapse-expand>
+			<collapse-expand [o]="state.publications"></collapse-expand>
 		</h3>
-		<div *ngIf="state.publications.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.publications.open" class="container slab-beta-light container-padded-large">
 			<div class="grid">
 				<div class="grid-item-3"
 					 *ngFor="let pub of tender.publications; let index_p=index">
@@ -387,9 +387,9 @@
 
 	<section class="container" *ngIf="tender.documents | defined">
 		<h3>
-			<collapse-expand [o]="state.documents" [title]="'Documents'"></collapse-expand>
+			<collapse-expand [o]="state.documents"></collapse-expand>
 		</h3>
-		<div *ngIf="state.documents.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.documents.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-4" *ngFor="let doc of tender.documents; let index_d=index">
 				<h4>Nr. {{index_d}}</h4>
 				<div class="inline-info" *ngIf="doc.url | defined">
@@ -402,9 +402,9 @@
 
 	<section class="container">
 		<h3>
-			<collapse-expand [o]="state.additional" [title]="'Additional Information'"></collapse-expand>
+			<collapse-expand [o]="state.additional"></collapse-expand>
 		</h3>
-		<div *ngIf="state.additional.$open" class="container slab-beta-light container-padded-large">
+		<div *ngIf="state.additional.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-4">
 				<h4 i18n>Tender Information</h4>
 				<div class="inline-info" *ngIf="tender.isEInvoiceAccepted | defined">
@@ -481,7 +481,7 @@
 	<div class="graph-footer">
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar">
-				<button class="tool-button" (click)="this.download('json')" title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				<button class="tool-button" (click)="this.download('json')" i18n-title title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>
 			</div>
 		</div>
 	</div>

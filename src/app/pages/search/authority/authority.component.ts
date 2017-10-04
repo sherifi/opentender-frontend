@@ -3,14 +3,16 @@ import {SearchCommand, Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
 import {AuthorityFilterDefs, FilterType} from '../../../model/filters';
 import {ISearchAuthorityData} from '../../../app.interfaces';
+import {I18NService} from '../../../services/i18n.service';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
-	selector: 'authority',
+	selector: 'search_authority',
 	templateUrl: 'authority.template.html'
 })
 export class SearchAuthorityPage implements OnInit, OnDestroy {
-	title = 'Authorities';
+	title = '';
 	search = new Search('authority', AuthorityFilterDefs);
 	search_cmd: SearchCommand;
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
@@ -18,13 +20,14 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 	check_filters = AuthorityFilterDefs;
 	search_filters = AuthorityFilterDefs.filter(f => f.type !== FilterType.select);
 
-	constructor(private state: StateService) {
+	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.filters.forEach(filter => {
 			filter.active = true;
 		});
 		this.search_filters.forEach(filter => {
 			this.search.addSearch(filter);
 		});
+		this.setTitle();
 	}
 
 	ngOnInit(): void {
@@ -46,9 +49,13 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 		});
 	}
 
+	setTitle(total?) {
+		this.title = this.i18n.get('Authorities') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+	}
+
 	searchChange(data: ISearchAuthorityData) {
 		let total = data.hits && data.hits.total ? data.hits.total : 0;
-		this.title = 'Results: ' + (total == 1000 ? '> ' : '') + total.toLocaleString();
+		this.setTitle(total);
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

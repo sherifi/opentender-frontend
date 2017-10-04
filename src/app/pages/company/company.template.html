@@ -31,7 +31,7 @@
 			<div class="similars">
 				<div class="title">Similar Companies</div>
 				<div class="similar" *ngFor="let sim of similar">
-					<a [routerLink]="['/company/'+sim.body.groupId]" title="Click to jump to the company profile"><i class="icon-office"></i> </a>
+					<a [routerLink]="['/company/'+sim.body.groupId]" i18n-title title="Click to jump to the company profile"><i class="icon-office"></i> </a>
 					<a (click)="toggleSimilar(sim)" title="Click to {{search_similars[sim.body.groupId]?'exclude':'include'}} into view">{{search_similars[sim.body.groupId]?'-':'+'}} <span>{{sim.body.name | nameGuard}}</span></a>
 				</div>
 			</div>
@@ -39,11 +39,11 @@
 				<div (click)="showDebugGroupIds = !showDebugGroupIds">[Click to show all groupId bodies - this function is only for debugging and will be removed in final portals]</div>
 				<div *ngIf="showDebugGroupIds">
 					<div class="similar">
-						<a [routerLink]="['/company/'+company.groupId]" title="Click to jump to the company profile">Current</a>
+						<a [routerLink]="['/company/'+company.groupId]" i18n-title title="Click to jump to the company profile">Current</a>
 						<pre>{{plain(company)}}</pre>
 					</div>
 					<div class="similar" *ngFor="let sim of similar; let i = index;">
-						<a [routerLink]="['/company/'+sim.body.groupId]" title="Click to jump to the company profile">Similar {{i+1}}</a>
+						<a [routerLink]="['/company/'+sim.body.groupId]" i18n-title title="Click to jump to the company profile">Similar {{i+1}}</a>
 						<pre>{{plain(sim.body)}}</pre>
 					</div>
 				</div>

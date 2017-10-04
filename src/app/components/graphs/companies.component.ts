@@ -4,6 +4,7 @@ import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Router} from '@angular/router';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[companies]',
@@ -22,14 +23,8 @@ import {Consts} from '../../model/consts';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>
+	`
 })
 export class GraphCompaniesComponent implements OnChanges {
 	@Input()
@@ -50,7 +45,6 @@ export class GraphCompaniesComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Contracts',
 				minInterval: 1,
 				defaultHeight: 20,
 				tickFormatting: Utils.formatValue
@@ -58,7 +52,6 @@ export class GraphCompaniesComponent implements OnChanges {
 			yAxis: {
 				show: false,
 				showLabel: true,
-				label: 'Supplier',
 				defaultWidth: 150,
 				maxLength: 24,
 			},
@@ -88,14 +81,12 @@ export class GraphCompaniesComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Total Volume of Contracts (€)',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatCurrencyValue
 			},
 			yAxis: {
 				show: false,
 				showLabel: true,
-				label: 'Supplier',
 				defaultWidth: 150,
 				maxLength: 24,
 			},
@@ -116,7 +107,11 @@ export class GraphCompaniesComponent implements OnChanges {
 
 	graph = this.companies_absolute;
 
-	constructor(private router: Router) {
+	constructor(private router: Router, private i18n: I18NService) {
+		this.companies_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
+		this.companies_absolute.chart.yAxis.label = this.i18n.get('Supplier');
+		this.companies_volume.chart.xAxis.label = this.i18n.get('Total Volume of Contracts (€)');
+		this.companies_volume.chart.yAxis.label = this.i18n.get('Supplier');
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -131,8 +126,8 @@ export class GraphCompaniesComponent implements OnChanges {
 		}).reverse();
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'Name'}, 'suppliers');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'Name'}, filename: 'suppliers'};
 	}
 
 	toggleValue(mode: string) {

@@ -18,17 +18,9 @@
 				<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.id===current.id}">
 					<a [routerLink]="['/']" *ngIf="portal.id===current.id">{{portal.name}}</a>
 					<a href="/{{portal.id}}" *ngIf="portal.id!==current.id">{{portal.name}}</a>
-					<div>{{portal.value | formatNumber}}&nbsp;<ng-container i18n>{portal.value, plural, =1 {tender} other {tenders}}</ng-container>
-					</div>
+					<div>{{portal.value | formatNumber}}&nbsp;<ng-container i18n>Tenders</ng-container></div>
 				</li>
 			</ul>
-			<!--<ul class="portal-links" *ngIf="allportal">-->
-				<!--<li class="portal-link" [ngClass]="{active:allportal.id===current.id}">-->
-					<!--<a href="/eu" i18n>All available data</a>-->
-					<!--<div>{{allportal.value | formatNumber}}&nbsp;<ng-container i18n>{allportal.value, plural, =1 {tender} other {tenders}}</ng-container></div>-->
-				<!--</li>-->
-				<!--<li class="portal-link"></li>-->
-			<!--</ul>-->
 		</div>
 	</div>
 </section>

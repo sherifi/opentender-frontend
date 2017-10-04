@@ -4,6 +4,7 @@ import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsPcCpvs} from '../../app.interfaces';
 import {Router} from '@angular/router';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[sectors]',
@@ -16,20 +17,13 @@ import {Router} from '@angular/router';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphSectorsComponent implements OnChanges {
 	@Input()
 	data: IStatsPcCpvs;
 	@Input()
-	title: string = 'Sectors';
+	title: string = '';
 
 	cpvs_codes_absolute: IChartBar = {
 		chart: {
@@ -42,7 +36,6 @@ export class GraphSectorsComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Contracts',
 				minInterval: 1,
 				defaultHeight: 20,
 				tickFormatting: Utils.formatTrunc
@@ -50,7 +43,6 @@ export class GraphSectorsComponent implements OnChanges {
 			yAxis: {
 				show: false,
 				showLabel: true,
-				label: 'Sector (CPV)',
 				defaultWidth: 150,
 				maxLength: 24,
 			},
@@ -73,11 +65,13 @@ export class GraphSectorsComponent implements OnChanges {
 
 	graph: IChartBar = this.cpvs_codes_absolute;
 
-	constructor(private router: Router) {
+	constructor(private router: Router, private i18n: I18NService) {
+		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
+		this.cpvs_codes_absolute.chart.yAxis.label = this.i18n.get('Sector (CPV)');
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, 'sectors');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: 'sectors'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

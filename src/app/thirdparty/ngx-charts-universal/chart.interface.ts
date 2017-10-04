@@ -2,8 +2,8 @@ import {SimulationNodeDatum} from 'd3-force';
 
 export interface IAxisSettings {
 	show: boolean;
-	showLabel: boolean;
-	label: string;
+	showLabel?: boolean;
+	label?: string;
 	defaultHeight?: number;
 	defaultWidth?: number;
 	maxLength?: number;

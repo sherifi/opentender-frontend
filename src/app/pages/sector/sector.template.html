@@ -1,13 +1,13 @@
 <section class="container-outer sector entity" *ngIf="!sector">
 	<section class="container">
-		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
-		<div>Loading…</div>
+		<div class="entity-title"><i class="icon-hammer icon-large"></i> <ng-container i18n>Sector</ng-container></div>
+		<div i18n>Loading…</div>
 	</section>
 </section>
 
 <section class="container-outer sector entity" *ngIf="sector">
 	<section class="container">
-		<div class="entity-title"><i class="icon-hammer icon-large"></i> Sector</div>
+		<div class="entity-title"><i class="icon-hammer icon-large"></i> <ng-container i18n>Sector</ng-container></div>
 	</section>
 
 	<section class="container container-margin">
@@ -69,12 +69,12 @@
 			</div>
 			<div class="container">
 				<div class="container-left-6" *ngIf="viz.subsectors && viz.subsectors.length>0">
-					<h2>Subsectors</h2>
+					<h2 i18n>Subsectors</h2>
 					<table class="tables">
 						<tr>
-							<th>Subsector</th>
-							<th>Nr. of Contracts</th>
-							<th>Volume of Contracts</th>
+							<th i18n>Subsector</th>
+							<th i18n>Nr. of Contracts</th>
+							<th i18n>Volume of Contracts</th>
 						</tr>
 						<tr *ngFor="let val of viz.subsectors">
 							<td>

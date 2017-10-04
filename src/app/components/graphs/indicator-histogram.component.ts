@@ -3,6 +3,7 @@ import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[indicator-histogram]',
@@ -26,14 +27,7 @@ import {IStatsPcPricesLotsInYears} from '../../app.interfaces';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphIndicatorHistogramComponent implements OnChanges {
 	@Input()
@@ -55,14 +49,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Average % of Contracts (Lots)',
 				defaultWidth: 30,
 				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
@@ -92,14 +84,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Average Indicator Score',
 				defaultWidth: 30,
 				minInterval: 5,
 				tickFormatting: Utils.formatTrunc
@@ -129,14 +119,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Contracts (Lots)',
 				defaultWidth: 30,
 				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
@@ -166,14 +154,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Sum of Indicator Score',
 				defaultWidth: 30,
 				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
@@ -203,14 +189,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Volume of Contracts (€)',
 				defaultWidth: 80,
 				tickFormatting: Utils.formatCurrencyValue
 			},
@@ -239,14 +223,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Average Volume of Contracts (€)',
 				defaultWidth: 80,
 				tickFormatting: Utils.formatCurrencyValue
 			},
@@ -268,8 +250,22 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 
 	graph: IChartBar = this.avg_lots_in_years;
 
-	constructor() {
+	constructor(private i18n: I18NService) {
+		let year = this.i18n.get('Year');
+		this.avg_lots_in_years.chart.xAxis.label = year;
+		this.avg_lots_in_years.chart.yAxis.label = this.i18n.get('Average % of Contracts (Lots)');
+		this.avg_scores_in_years.chart.xAxis.label = year;
+		this.avg_scores_in_years.chart.yAxis.label = this.i18n.get('Average Indicator Score');
+		this.sum_lots_in_years.chart.xAxis.label = year;
+		this.sum_lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts (Lots)');
+		this.sum_scores_in_years.chart.xAxis.label = year;
+		this.sum_scores_in_years.chart.yAxis.label = this.i18n.get('Sum of Indicator Score');
+		this.sum_prices_in_years.chart.xAxis.label = year;
+		this.sum_prices_in_years.chart.yAxis.label = this.i18n.get('Volume of Contracts (€)');
+		this.avg_prices_in_years.chart.xAxis.label = year;
+		this.avg_prices_in_years.chart.yAxis.label = this.i18n.get('Average Volume of Contracts (€)');
 	}
+
 
 	toggleAbsolute(val: boolean) {
 		this.absolute = val;
@@ -291,8 +287,8 @@ export class GraphIndicatorHistogramComponent implements OnChanges {
 		}
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'},  this.title + '-histogram');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: 'Year'}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {IStatsNuts} from '../app.interfaces';
 import {NotifyService} from '../services/notify.service';
+import {I18NService} from '../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -16,7 +17,7 @@ export class HomeMapComponent {
 	private loading: number = 0;
 	private title: string = '';
 
-	constructor(private api: ApiService, private notify: NotifyService) {
+	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
 		this.fillMap(this.map_level);
 	}
@@ -27,11 +28,11 @@ export class HomeMapComponent {
 	}
 
 	getTitle() {
-		return 'Number of ' + (this.map_companies ? 'Suppliers' : 'Buyers') + ' by Region';
+		return this.i18n.get(this.map_companies ? 'Number of Suppliers by Region' : 'Number of Buyers by Region');
 	}
 
 	formatTooltipCallback(featureProperties) {
-		return featureProperties.name + ': ' + featureProperties.value + ' ' + (this.map_companies ? 'Suppliers' : 'Buyers');
+		return featureProperties.name + ': ' + featureProperties.value + ' ' + (this.i18n.get(this.map_companies ? 'Suppliers' : 'Buyers'));
 	}
 
 	fillMap(level) {

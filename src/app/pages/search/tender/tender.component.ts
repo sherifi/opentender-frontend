@@ -3,14 +3,16 @@ import {StateService} from '../../../services/state.service';
 import {Search, SearchCommand} from '../../../model/search';
 import {TenderFilterDefs, FilterDef, FilterType} from '../../../model/filters';
 import {ISearchTenderData} from '../../../app.interfaces';
+import {I18NService} from '../../../services/i18n.service';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
-	selector: 'tender',
+	selector: 'search_tender',
 	templateUrl: 'tender.template.html'
 })
 export class SearchTenderPage implements OnInit, OnDestroy {
-	title = 'Results';
+	title = '';
 	search = new Search('tender');
 	search_cmd: SearchCommand;
 	quick_search_filters: Array<FilterDef> = [];
@@ -21,7 +23,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
 	quicksearchIds = []; // 'title', 'buyers.name', 'buyers.address.city', 'lots.bids.bidders.name', 'lots.bids.bidders.address.city', 'finalPrice.netAmount'];
 
-	constructor(private state: StateService) {
+	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.build(this.check_filters.filter(def => {
 			return this.filterIds.indexOf(def.id) >= 0;
 		}));
@@ -33,6 +35,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		this.quick_search_filters = this.search_filters.filter(def => {
 			return (this.quicksearchIds.indexOf(def.field) >= 0);
 		});
+		this.setTitle();
 	}
 
 	ngOnInit(): void {
@@ -54,8 +57,12 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		});
 	}
 
+	setTitle(total?) {
+		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+	}
+
 	searchChange(data: ISearchTenderData) {
-		this.title = 'Tenders: ' + data.hits.total.toLocaleString();
+		this.setTitle(data.hits && data.hits.total ? data.hits.total : 0);
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

@@ -3,6 +3,7 @@ import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsLotsInYears} from '../../app.interfaces';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[histogram]',
@@ -15,14 +16,7 @@ import {IStatsLotsInYears} from '../../app.interfaces';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphHistogramComponent implements OnChanges {
 	@Input()
@@ -39,14 +33,12 @@ export class GraphHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Year',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Nr. of Contracts',
 				defaultWidth: 30,
 				minInterval: 1,
 				tickFormatting: Utils.formatTrunc
@@ -67,11 +59,13 @@ export class GraphHistogramComponent implements OnChanges {
 
 	graph: IChartBar = this.lots_in_years;
 
-	constructor() {
+	constructor(private i18n: I18NService) {
+		this.lots_in_years.chart.xAxis.label = this.i18n.get('Year');
+		this.lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts');
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'}, 'histogram');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: 'Year'}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

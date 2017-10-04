@@ -3,14 +3,16 @@ import {Search, SearchCommand} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
 import {CompanyFilterDefs, FilterType} from '../../../model/filters';
 import {ISearchCompanyData} from '../../../app.interfaces';
+import {Utils} from '../../../model/utils';
+import {I18NService} from '../../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
-	selector: 'company',
+	selector: 'search_company',
 	templateUrl: 'company.template.html'
 })
 export class SearchCompanyPage implements OnInit, OnDestroy {
-	title = 'Companies';
+	title = '';
 	search = new Search('company', CompanyFilterDefs);
 	search_cmd: SearchCommand;
 	columns = ['id', 'body.name', 'body.address.city', 'body.address.country'];
@@ -18,13 +20,14 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	check_filters = CompanyFilterDefs;
 	search_filters = CompanyFilterDefs.filter(f => f.type !== FilterType.select);
 
-	constructor(private state: StateService) {
+	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.filters.forEach(filter => {
 			filter.active = true;
 		});
 		this.search_filters.forEach(filter => {
 			this.search.addSearch(filter);
 		});
+		this.setTitle();
 	}
 
 	ngOnInit(): void {
@@ -46,9 +49,12 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 		});
 	}
 
+	setTitle(total?) {
+		this.title = this.i18n.get('Companies') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+	}
+
 	searchChange(data: ISearchCompanyData) {
-		let total = data.hits && data.hits.total ? data.hits.total : 0;
-		this.title = 'Companies: ' + total.toLocaleString();
+		this.setTitle(data.hits && data.hits.total ? data.hits.total : 0);
 		this.search.fillAggregationResults(data.aggregations);
 	}
 

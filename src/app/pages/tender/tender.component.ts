@@ -6,6 +6,7 @@ import {ConfigService, Country} from '../../services/config.service';
 import {Consts} from '../../model/consts';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -17,17 +18,16 @@ export class TenderPage implements OnInit, OnDestroy {
 	private loading: number = 0;
 	private sub: any;
 	public portal: Country;
-	public state = {
-		lots: {$open: true},
-		buyer: {$open: true},
-		indi: {$open: true},
-		info: {$open: true},
-		desc: {$open: true},
-		reqs: {$open: false},
-		additional: {$open: false},
-		documents: {$open: false},
-		publications: {$open: false},
-		discussion: {$open: false},
+	public state: { [name: string]: { open: boolean, label?: string } } = {
+		lots: {open: true},
+		buyer: {open: true},
+		indi: {open: true},
+		info: {open: true},
+		desc: {open: true},
+		reqs: {open: false},
+		additional: {open: false},
+		documents: {open: false},
+		publications: {open: false},
 	};
 	public indicators = {
 		cr: [],
@@ -35,15 +35,35 @@ export class TenderPage implements OnInit, OnDestroy {
 		ac: []
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService, private i18n: I18NService) {
 		if (!this.platform.isBrowser) {
-			this.state.additional.$open = true;
-			this.state.documents.$open = true;
-			this.state.publications.$open = true;
-			this.state.reqs.$open = true;
-			this.state.discussion.$open = true;
+			this.state.additional.open = true;
+			this.state.documents.open = true;
+			this.state.publications.open = true;
+			this.state.reqs.open = true;
 		}
+		this.state.lots.label = this.i18n.get('Lots');
+		this.state.buyer.label = this.i18n.get('Buyer');
+		this.state.indi.label = this.i18n.get('Indicators');
+		this.state.info.label = this.i18n.get('Tender Information');
+		this.state.desc.label = this.i18n.get('Description');
+		this.state.reqs.label = this.i18n.get('Requirements');
+		this.state.additional.label = this.i18n.get('Additional Information');
+		this.state.documents.label = this.i18n.get('Documents');
+		this.state.publications.label = this.i18n.get('Publications');
 		this.portal = config.country;
+	}
+
+	getLotCollapse(lot, index) {
+		let result = (this.state['lot' + index]);
+		if (!result) {
+			result = {
+				open: !this.platform.isBrowser,
+				label: this.i18n.get('Lot') + ' ' + (index + 1)
+			};
+			this.state['lot' + index] = result;
+		}
+		return result;
 	}
 
 	ngOnInit(): void {

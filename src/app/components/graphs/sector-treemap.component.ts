@@ -24,14 +24,7 @@ import {Router} from '@angular/router';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-tree-map>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphSectorTreemap implements OnChanges {
 	@Input()
@@ -88,8 +81,8 @@ export class GraphSectorTreemap implements OnChanges {
 	constructor(private router: Router) {
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, 'subsector-overview');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.legend.title, name: 'CPV Name', id: 'CPV Nr.'}, filename: 'subsector-overview'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[indicator-structure]',
 	template: `
-		<div class="graph-title">Structure of {{title}}</div>
+		<div class="graph-title" i18n>Structure of {{title}}</div>
 		<ngx-charts-pie-chart
 				class="chart-container"
 				[chart]="graph.chart"
@@ -15,20 +15,13 @@ import {Consts} from '../../model/consts';
 				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
 		</ngx-charts-pie-chart>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphIndicatorStructureComponent implements OnChanges {
 	@Input()
 	data: IStatsIndicators;
 	@Input()
-	title: string = 'Indicators';
+	title: string = '';
 
 	indicators: IChartPie = {
 		chart: {
@@ -58,8 +51,8 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 	constructor() {
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: 'Percent %', name: 'Name'}, this.title + '-structure');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: 'Percent %', name: 'Name'}, filename: this.title + '-structure'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

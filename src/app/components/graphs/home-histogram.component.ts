@@ -3,11 +3,12 @@ import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {IStatsLotsInYears} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[home-histogram]',
 	template: `
-		<div class="graph-title">Available Contracts (Lots) per Year</div>
+		<div class="graph-title" i18n>Available Contracts (Lots) per Year</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"
@@ -15,20 +16,13 @@ import {Consts} from '../../model/consts';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical>
-		<div class="graph-footer">
-			<div class="graph-toolbar-container">
-				<div class="graph-toolbar">
-					<button class="tool-button" (click)="this.download('csv')" title="Download data as CSV"><i class="icon-cloud-download"></i> CSV</button>
-					<button class="tool-button" (click)="this.download('json')" title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
-				</div>
-			</div>
-		</div>`
+		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphHomeHistogramComponent implements OnChanges {
 	@Input()
 	data: IStatsLotsInYears;
 
-	lots_in_years = {
+	lots_in_years: IChartBar = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -39,14 +33,12 @@ export class GraphHomeHistogramComponent implements OnChanges {
 			xAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Years',
 				defaultHeight: 20,
 				tickFormatting: Utils.formatYear
 			},
 			yAxis: {
 				show: true,
 				showLabel: true,
-				label: 'Number of Contracts (Lots)',
 				defaultWidth: 44,
 				minInterval: 1,
 				tickFormatting: Utils.formatValue
@@ -66,11 +58,13 @@ export class GraphHomeHistogramComponent implements OnChanges {
 
 	graph: IChartBar = this.lots_in_years;
 
-	constructor() {
+	constructor(private i18n: I18NService) {
+		this.lots_in_years.chart.xAxis.label = this.i18n.get('Year');
+		this.lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts (Lots)');
 	}
 
-	download(format): void {
-		Utils.downloadSeries(format, this.graph.data, {value: this.graph.chart.yAxis.label, name: 'Year'}, 'histogram');
+	getSeriesInfo() {
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: 'Year'}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
