@@ -12,7 +12,7 @@
 
 	<section class="container container-margin">
 		<div *ngIf="parent_sectors.length>0" class="pull-right">
-			<div class="title">Parent Sectors:</div>
+			<div class="title"><ng-container i18n>Parent Sectors</ng-container>:</div>
 			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a></div>
 		</div>
 
@@ -41,22 +41,14 @@
 		<section class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
-					<graph indicator-histogram [title]="'Sector'" [data]="viz.histogram"></graph>
+					<graph indicator-histogram [data]="viz.histogram.data" [title]="viz.histogram.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<div *ngIf="viz.cpvs_codes">
-						<graph sectors [data]="viz.cpvs_codes" [title]="'Subsectors'"></graph>
+					<div *ngIf="viz.cpvs_codes.data">
+						<graph sectors [data]="viz.cpvs_codes.data" [title]="viz.cpvs_codes.title"></graph>
 					</div>
 				</div>
 			</div>
-			<!--<div class="container">-->
-			<!--<div class="container-left-6">-->
-			<!--<graph counts [data]="viz.counts"></graph>-->
-			<!--</div>-->
-			<!--<div class="container-left-6">-->
-			<!--<graph sum_prices [data]="viz.sums_finalPrice"></graph>-->
-			<!--</div>-->
-			<!--</div>-->
 		</section>
 		<section class="container container-margin">
 			<div class="container">
@@ -90,7 +82,7 @@
 			</div>
 		</section>
 		<section class="container">
-			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="'Tenders'" (searchChange)="searchChange($event);"></tender-table>
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="tableTitle" (searchChange)="searchChange($event);"></tender-table>
 		</section>
 	</div>
 

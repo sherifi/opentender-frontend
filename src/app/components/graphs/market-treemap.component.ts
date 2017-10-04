@@ -4,16 +4,17 @@ import {Consts} from '../../model/consts';
 import {IChartTreeMap} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISector, IStats} from '../../app.interfaces';
 import {Router} from '@angular/router';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[market-treemap]',
 	template: `
 		<div class="graph-header">
-			<div class="graph-title">Sector Overview</div>
+			<div class="graph-title" i18n>Sector Overview</div>
 			<div class="graph-toolbar-container">
 				<div class="graph-toolbar">
-					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main_volume}" (click)="this.graph=this.cpvs_code_main_volume">Volume (€)</button>
-					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main}" (click)="this.graph=this.cpvs_code_main">Nr. of Contracts</button>
+					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main_volume}" (click)="this.graph=this.cpvs_code_main_volume" i18n>Volume (€)</button>
+					<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_code_main}" (click)="this.graph=this.cpvs_code_main" i18n>Nr. of Contracts</button>
 				</div>
 			</div>
 		</div>
@@ -44,9 +45,6 @@ export class GraphMarketTreemap implements OnChanges {
 					return Utils.cpv2color(value);
 				}
 			},
-			legend: {
-				title: 'Number of Contracts'
-			},
 			valueFormatting: Utils.formatValue
 		},
 		select: (event) => {
@@ -69,9 +67,6 @@ export class GraphMarketTreemap implements OnChanges {
 					return Utils.cpv2color(value);
 				}
 			},
-			legend: {
-				title: 'Volume (€)'
-			},
 			valueFormatting: (n: number): string => {
 				return '€ ' + Utils.formatValue(n);
 			}
@@ -84,7 +79,9 @@ export class GraphMarketTreemap implements OnChanges {
 
 	graph: IChartTreeMap = this.cpvs_code_main_volume;
 
-	constructor(private router: Router) {
+	constructor(private router: Router, private i18n: I18NService) {
+		this.cpvs_code_main.chart.legend.title = i18n.get('Nr, of Contracts');
+		this.cpvs_code_main_volume.chart.legend.title = i18n.get('Volume (€)');
 	}
 
 	getSeriesInfo() {

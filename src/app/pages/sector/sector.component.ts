@@ -6,6 +6,8 @@ import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
+import {I18NService} from '../../services/i18n.service';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -19,21 +21,22 @@ export class SectorPage implements OnInit, OnDestroy {
 	private search_cmd: SearchCommand;
 	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
+	private tableTitle: string;
 	private viz: {
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		sums_finalPrice: IStatsPrices,
-		histogram: IStatsPcPricesLotsInYears,
-		cpvs_codes: IStatsPcCpvs,
+		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
+		cpvs_codes: { data: IStatsPcCpvs, title?: string },
 		counts: IStatsCounts
 	} = {
 		subsectors: [],
 		top_companies: null,
 		top_authorities: null,
 		sums_finalPrice: null,
-		histogram: null,
-		cpvs_codes: null,
+		histogram: {data: null},
+		cpvs_codes: {data: null},
 		counts: null
 	};
 	private filter: {
@@ -48,7 +51,10 @@ export class SectorPage implements OnInit, OnDestroy {
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
-				private state: StateService, private notify: NotifyService) {
+				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
+		this.viz.cpvs_codes.title = i18n.get('Sector');
+		this.viz.histogram.title = i18n.get('Subsectors');
+		this.setTableTitle();
 	}
 
 	ngOnInit(): void {
@@ -149,21 +155,12 @@ export class SectorPage implements OnInit, OnDestroy {
 				selectedEndYear: endYear
 			};
 		}
-		let viz = {
-			subsectors: null,
-			top_authorities: null,
-			top_companies: null,
-			sums_finalPrice: null,
-			cpvs_codes: null,
-			histogram: null,
-			counts: null
-		};
 		if (!stats) {
-			this.viz = viz;
 			return;
 		}
-		viz.cpvs_codes = null;
-		viz.histogram = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		let viz = this.viz;
+		viz.cpvs_codes.data = null;
+		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.counts = stats.count_lots_bids;
 		viz.sums_finalPrice = stats.sums_finalPrice;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
@@ -171,9 +168,9 @@ export class SectorPage implements OnInit, OnDestroy {
 		viz.subsectors = stats.sectors_stats;
 
 		if (viz.subsectors) {
-			viz.cpvs_codes = {};
+			viz.cpvs_codes.data = {};
 			viz.subsectors.forEach(sub => {
-				viz.cpvs_codes[sub.sector.id] = {
+				viz.cpvs_codes.data[sub.sector.id] = {
 					name: sub.sector.name, value: sub.sector.value, percent: 5, total: 100
 				};
 			});
@@ -204,7 +201,13 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.search_cmd = search_cmd;
 	}
 
+
+	setTableTitle(total?) {
+		this.tableTitle = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+	}
+
 	searchChange(data) {
+		this.setTableTitle(data.hits && data.hits.total ? data.hits.total : 0);
 	}
 
 }
