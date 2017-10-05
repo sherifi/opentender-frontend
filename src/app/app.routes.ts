@@ -4,7 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {AboutOpentenderPage} from './pages/about/opentender/opentender.component';
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
-import {AboutDataformatPage} from './pages/about/data/dataformat.component';
+import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
 import {AboutFOIPage} from './pages/about/foi/foi.component';
 import {AboutHowPage} from './pages/about/how/how.component';
 import {AboutPage} from './pages/about/about.component';
@@ -67,7 +67,7 @@ export const routes: Routes = [
 		children: [
 			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender'}},
 			{path: 'how-opentender-works', component: AboutHowPage, data: {title: 'How Opentender works'}},
-			{path: 'dataformat', component: AboutDataformatPage, data: {title: 'Raw Data Format'}},
+			{path: 'glossary', component: AboutGlossaryPage, data: {title: 'Glossary'}},
 			{path: 'foi', component: AboutFOIPage, data: {title: 'FOI Overview'}},
 			{path: 'quality', component: AboutDataQualityPage, data: {title: 'Data Quality'}}
 		]
@@ -78,10 +78,6 @@ export const routes: Routes = [
 	{path: 'test', component: TestPage, data: {title: 'Test'}},
 	{path: '**', redirectTo: 'start'}
 ];
-
-// export const appRoutingProviders: any[] = [];
-//
-// export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
 
 @NgModule({
 	declarations: [],

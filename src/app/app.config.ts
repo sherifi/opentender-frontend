@@ -91,7 +91,7 @@ import {SelectSearchesButtonComponent} from './components/selects/select-search-
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
-import {TreeViewComponent, AboutDataformatPage} from './pages/about/data/dataformat.component';
+import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
 import {I18NComponent} from './components/i18n.component';
 
@@ -132,7 +132,6 @@ const AppConfig = {
 		TenderBodyLineComponent,
 		TenderPriceComponent,
 		TenderTableComponent,
-		TreeViewComponent,
 		ValueInputComponent,
 		DashboardsIndicatorComponent,
 		GraphIndicatorHistogramComponent,
@@ -174,7 +173,7 @@ const AppConfig = {
 		CompanyPage,
 		AboutPage,
 		AboutOpentenderPage,
-		AboutDataformatPage,
+		AboutGlossaryPage,
 		AboutFOIPage,
 		AboutHowPage,
 		AboutDataQualityPage,

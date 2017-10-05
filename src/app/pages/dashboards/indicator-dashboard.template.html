@@ -18,10 +18,9 @@
 
 		<div class="form-group">
 			<label for="subindicator" i18n>Choose a subindicator</label>
-			<select class="form-control" id="subindicator" required [(ngModel)]="selected" (change)="selectChange($event)">
-				<option value="all">[ <ng-container i18n>All subindicators</ng-container> ]
-				</option>
-				<option *ngFor="let indi of indicator.subindicators" [value]="indi">{{indi | formatIndicatorName}}</option>
+			<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
+				<option [ngValue]="null">[ <ng-container i18n>All subindicators</ng-container> ]</option>
+				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
 			</select>
 		</div>
 	</section>

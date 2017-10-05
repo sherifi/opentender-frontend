@@ -8,6 +8,6 @@ import {IndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'corruption-risk.template.html'
 })
 export class DashboardsCorruptionPage {
-	public indicator: IndicatorInfo = Consts.indicators.cr;
+	public indicator: IndicatorInfo = Consts.indicators.CORRUPTION;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.cri'];
 }

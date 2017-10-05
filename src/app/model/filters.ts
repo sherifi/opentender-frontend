@@ -181,7 +181,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
-		valueFormatter: Utils.expandUnderlined
+		valueFormatter: Utils.formatIndicatorName
 	},
 	{
 		id: 'indicators.type_cri',

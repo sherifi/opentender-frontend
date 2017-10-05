@@ -8,6 +8,6 @@ import {IndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'transparency.template.html'
 })
 export class DashboardsTransparencyPage {
-	public indicator: IndicatorInfo = Consts.indicators.tr;
+	public indicator: IndicatorInfo = Consts.indicators.TRANSPARENCY;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.ti'];
 }

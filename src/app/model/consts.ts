@@ -1,35 +1,64 @@
 export const Consts = {
 	indicators: {
-		ac: {
+		ADMINISTRATIVE: {
+			id: 'ADMINISTRATIVE',
 			name: 'Administrative Capacity Indicator',
 			plural: 'Administrative Capacity Indicators',
-			prefix: 'ADMINISTRATIVE',
-			subindicators: [
-				'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT',
-				'ADMINISTRATIVE_ELECTRONIC_AUCTION',
-				'ADMINISTRATIVE_COVERED_BY_GPA',
-				'ADMINISTRATIVE_FRAMEWORK_AGREEMENT',
-				'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE'
-			],
+			subindicators: {
+				ADMINISTRATIVE_CENTRALIZED_PROCUREMENT: {name: 'Joint of centralized procurement', desc: 'Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.'},
+				ADMINISTRATIVE_USE_OF_WTO_FRAMEWORK: {name: 'Use of WTO framework', desc: 'Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.'},
+				ADMINISTRATIVE_FRAMEWORK_AGREEMENT: {name: 'Use of framework agreements', desc: 'Framework agreement suggests good administrative capacity if the tender establishes a framework agreement.'},
+				ADMINISTRATIVE_ELECTRONIC_AUCTION: {name: 'Electronic auction', desc: 'Electronic auction points at good administrative capacity if the tender was conducted through an electronic auction.'},
+				ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE: {name: 'English as foreign language', desc: 'English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.'},
+				ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD: {
+					name: 'Discrepancies between call for tender and contract award notices',
+					desc: 'Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).'
+				},
+				ADMINISTRATIVE_COVERED_BY_GPA: {name: 'Covered by GPA', desc: 'N/A'},
+			},
 			icon: 'icon-trophy'
 		},
-		cr: {
+		CORRUPTION: {
+			id: 'CORRUPTION',
 			name: 'Corruption Risk Indicator',
 			plural: 'Corruption Risk Indicators',
-			prefix: 'CORRUPTION',
-			subindicators: [
-				'CORRUPTION_SINGLE_BID',
-				'CORRUPTION_PRIOR_INFORMATION_NOTICE',
-				'CORRUPTION_ADVERTISEMENT_PERIOD',
-				'CORRUPTION_PROCEDURE_TYPE',
-				'CORRUPTION_DECISION_PERIOD',
-				'CORRUPTION_TAX_HAVEN',
-				'CORRUPTION_NEW_COMPANY'
-			],
+			subindicators: {
+				CORRUPTION_SINGLE_BID: {name: 'Single bidder contract', desc: 'Single bid signals a risk when only one bid is submitted in a tender in a competitive market.'},
+				CORRUPTION_CALL_FOR_TENDER_PUBLICATION: {
+					name: 'Call for tenders publication',
+					desc: 'Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.'
+				},
+				CORRUPTION_PROCEDURE_TYPE: {
+					name: 'Procedure type',
+					desc: 'Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).'
+				},
+				CORRUPTION_ADVERTISEMENT_PERIOD: {name: 'Length of advertisement period', desc: 'Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.'},
+				CORRUPTION_DESCRIPTION_LENGTH: {name: 'Description length', desc: 'Product description length signals the risk of product description being tailored to one company, when the description is excessively long.'},
+				CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH: {
+					name: 'Eligibility criteria length',
+					desc: 'Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.'
+				},
+				CORRUPTION_EVALUATION_CRITERIA: {name: 'Evaluation criteria', desc: 'Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.'},
+				CORRUPTION_DECISION_PERIOD: {name: 'Length of decision period', desc: 'Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.'},
+				CORRUPTION_WINNER_CONTRACT_SHARE: {name: 'Winner contract share', desc: 'Winner contract share is the share of contract value won by a given company from a given buyer in a given year.'},
+				CORRUPTION_NEW_COMPANY: {name: 'New company', desc: 'New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).'},
+				CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS: {name: 'Political connections of suppliers', desc: 'Political connection of the supplier captures the risk of at least one owner or manager holding a political office.'},
+				CORRUPTION_TAX_HAVEN: {name: 'Tax haven', desc: 'Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).'},
+				CORRUPTION_PRIOR_INFORMATION_NOTICE: {name: 'Prior Information Notice', desc: 'N/A'},
+			},
 			icon: 'icon-flag'
 		},
-		tr: {
-			name: 'Transparency Indicator', plural: 'Transparency Indicators', prefix: 'TRANSPARENCY', subindicators: [],
+		TRANSPARENCY: {
+			id: 'TRANSPARENCY',
+			name: 'Transparency Indicator',
+			plural: 'Transparency Indicators',
+			subindicators: {
+				TRANSPARENCY_PUBLICATION_RATE: {name: 'Publication rate', desc: 'Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.'},
+				TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS: {
+					name: 'Number of key missing fields in form',
+					desc: 'Number of key missing fields is the ratio of fields with missing values in the call for tender and contract award announcement related to a given tender (based on the most recently published versions).'
+				}
+			},
 			icon: 'icon-checkmark'
 		}
 	},

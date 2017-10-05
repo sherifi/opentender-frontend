@@ -1,6 +1,7 @@
 import * as moment from 'moment';
 import {Consts} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
+import {Indicator, SubIndicator} from '../app.interfaces';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
@@ -25,31 +26,58 @@ export const Utils = {
 		if (value === undefined) {
 			return '';
 		}
-		return Utils.formatValue(value); // .toLocaleString();
+		return Utils.formatValue(value);
 	},
 	formatCurrencyValueEUR: (value: number, fractionSize: number = 2): string => {
 		if (value === undefined) {
 			return '';
 		}
-		return '€ ' + Utils.formatValue(value); // .toLocaleString();
+		return '€ ' + Utils.formatValue(value);
 	},
 	formatIndicatorGroupName(value: string): string {
-		if (value === 'CORRUPTION') {
-			return 'Corruption Risk Indicator';
-		}
-		if (value === 'ADMINISTRATIVE') {
-			return 'Administrative Capacity Indicator';
-		}
-		if (value === 'TRANSPARENCY') {
-			return 'Transparency Indicator';
+		let group = Object.keys(Consts.indicators).find(key => {
+			return key === Consts.indicators[key].prefix;
+		});
+		if (Consts.indicators[group]) {
+			return Consts.indicators[group].name;
 		}
 		return value;
 	},
 	formatIndicatorName(value: string): string {
-		if (value === undefined || value === null) {
-			return '';
+		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
+		if (!sub) {
+			return value;
 		}
-		return Utils.expandUnderlined(value.split('_').slice(1).join('_'));
+		return sub.name;
+	},
+	indicatorShortID(key: string): string {
+		return key.split('_').map(part => {
+			return part[0].toUpperCase();
+		}).join('');
+	},
+	subindicators(indicatorId: string): Array<SubIndicator> {
+		return Object.keys(Consts.indicators[indicatorId].subindicators).map(subkey => {
+			let sub = Consts.indicators[indicatorId].subindicators[subkey];
+			return {
+				id: subkey,
+				sid: Utils.indicatorShortID(subkey),
+				name: sub.name,
+				desc: sub.desc
+			};
+		});
+	},
+	indicators(): Array<Indicator> {
+		return Object.keys(Consts.indicators).map(key => {
+			let ii = Consts.indicators[key];
+			return {
+				id: ii.prefix,
+				sid: key,
+				name: ii.name,
+				plural: ii.plural,
+				icon: ii.icon,
+				subindicators: Utils.subindicators(key)
+			};
+		});
 	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {

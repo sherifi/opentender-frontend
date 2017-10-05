@@ -30,9 +30,9 @@ export class TenderPage implements OnInit, OnDestroy {
 		publications: {open: false},
 	};
 	public indicators = {
-		cr: [],
-		tr: [],
-		ac: []
+		CORRUPTION: [],
+		TRANSPARENCY: [],
+		ADMINISTRATIVE: []
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService, private i18n: I18NService) {
@@ -88,18 +88,16 @@ export class TenderPage implements OnInit, OnDestroy {
 	display(tender: Definitions.Tender): void {
 		this.tender = tender;
 
-		this.indicators.ac = [];
-		this.indicators.cr = [];
-		this.indicators.tr = [];
+		this.indicators.ADMINISTRATIVE = [];
+		this.indicators.CORRUPTION = [];
+		this.indicators.TRANSPARENCY = [];
 		if (tender.indicators) {
 			tender.indicators.forEach(indicator => {
-				if (indicator.type.indexOf(Consts.indicators.ac.prefix) === 0) {
-					this.indicators.ac.push(indicator);
-				} else if (indicator.type.indexOf(Consts.indicators.cr.prefix) === 0) {
-					this.indicators.cr.push(indicator);
-				} else if (indicator.type.indexOf(Consts.indicators.tr.prefix) === 0) {
-					this.indicators.tr.push(indicator);
-				}
+				Object.keys(Consts.indicators).forEach(key => {
+					if (indicator.type.indexOf(key) === 0) {
+						this.indicators[key].push(indicator);
+					}
+				});
 			});
 		}
 	}

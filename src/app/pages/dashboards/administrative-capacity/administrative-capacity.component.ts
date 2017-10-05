@@ -8,6 +8,6 @@ import {IndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'administrative-capacity.template.html'
 })
 export class DashboardsAdministrativeCapacityPage {
-	public indicator: IndicatorInfo = Consts.indicators.ac;
+	public indicator: IndicatorInfo = Consts.indicators.ADMINISTRATIVE;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aci'];
 }

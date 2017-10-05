@@ -319,7 +319,7 @@ export const TenderColumns: Array<TenderColumn> = [
 
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				let id = indicator.type.split('_').slice(1).join('_');
+				let id = indicator.type;
 				collect[group] = collect[group] || {};
 				collect[group][id] = (collect[group][id] || 0) + 1;
 			});
@@ -327,7 +327,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			Object.keys(collect).forEach(key => {
 				result.push({prefix: Utils.formatIndicatorGroupName(key)});
 				Object.keys(collect[key]).forEach(id => {
-					result.push({list: true, content: Utils.expandUnderlined(id)});
+					result.push({list: true, content: Utils.formatIndicatorName(id)});
 				});
 			});
 			return result;
@@ -344,9 +344,8 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				let id = indicator.type.split('_').slice(1).join('_');
 				if (group === 'CORRUPTION') {
-					result.push({list: true, content: Utils.expandUnderlined(id)});
+					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});
 			return result;
@@ -363,9 +362,8 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				let id = indicator.type.split('_').slice(1).join('_');
 				if (group === 'TRANSPARENCY') {
-					result.push({list: true, content: Utils.expandUnderlined(id)});
+					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});
 			return result;
@@ -382,9 +380,8 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				let id = indicator.type.split('_').slice(1).join('_');
 				if (group === 'ADMINISTRATIVE') {
-					result.push({list: true, content: Utils.expandUnderlined(id)});
+					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});
 			return result;

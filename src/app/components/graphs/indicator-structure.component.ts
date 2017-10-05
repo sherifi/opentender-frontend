@@ -59,7 +59,7 @@ export class GraphIndicatorStructureComponent implements OnChanges {
 		this.indicators.data = null;
 		if (this.data) {
 			this.indicators.data = Object.keys(this.data).map(key => {
-				return {name: Utils.expandUnderlined(key.split('_').slice(1).join('_')), value: this.data[key]};
+				return {name: Utils.formatIndicatorName(key), value: this.data[key]};
 			});
 		}
 	}

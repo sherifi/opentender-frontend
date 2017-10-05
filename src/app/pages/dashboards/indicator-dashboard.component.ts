@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo, SubIndicator} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
@@ -21,8 +21,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
+	private subindicators: SubIndicator[] = [];
 	private loading: number = 0;
-	private selected: string = 'all';
+	private selected: SubIndicator = null;
 	private search_cmd: SearchCommand;
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
@@ -61,8 +62,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.title = this.i18n.get(this.indicator.plural);
 		this.indicatorTitle = this.i18n.get(this.indicator.plural);
-		this.searchPrefix = this.indicator.prefix;
+		this.searchPrefix = this.indicator.id;
 		this.icon = this.indicator.icon;
+		this.subindicators = Utils.subindicators(this.indicator.id);
 	}
 
 	ngOnInit(): void {
@@ -78,12 +80,12 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	displayIndicator() {
-		if (this.selected == 'all') {
+		if (!this.selected) {
 			this.indicatorTitle = this.i18n.get(this.indicator.plural);
-			this.searchPrefix = this.indicator.prefix;
+			this.searchPrefix = this.indicator.id;
 		} else {
-			this.searchPrefix = this.selected;
-			this.indicatorTitle = this.i18n.get(Utils.formatIndicatorName(this.selected)) + ' ' + this.i18n.get('Indicator');
+			this.searchPrefix = this.selected.id;
+			this.indicatorTitle = this.i18n.get(this.selected.name) + ' ' + this.i18n.get('Indicator');
 		}
 		this.visualize();
 		this.search();
@@ -142,7 +144,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.loading++;
 		this.api.getIndicatorStats({filters: filters}).subscribe(
 			(result) => {
-				this.display(result.data)
+				this.display(result.data);
 			},
 			(error) => {
 				this.notify.error(error);

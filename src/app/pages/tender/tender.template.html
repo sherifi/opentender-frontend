@@ -26,17 +26,17 @@
 			<div class="container justify">
 				<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
 				<div class="grid">
-					<div class="grid-item-3" *ngIf="indicators.cr.length>0">
+					<div class="grid-item-3" *ngIf="indicators.CORRUPTION.length>0">
 						<small i18n>Corruption Risk Indicators</small>
-						<div *ngFor="let indi of indicators.cr">{{indi.type | formatIndicatorName}}</div>
+						<div *ngFor="let indi of indicators.CORRUPTION">{{indi.type | formatIndicatorName}}</div>
 					</div>
-					<div class="grid-item-3" *ngIf="indicators.ac.length>0">
+					<div class="grid-item-3" *ngIf="indicators.ADMINISTRATIVE.length>0">
 						<small i18n>Administrative Capacity Indicators</small>
-						<div *ngFor="let indi of indicators.ac">{{indi.type | formatIndicatorName}}</div>
+						<div *ngFor="let indi of indicators.ADMINISTRATIVE">{{indi.type | formatIndicatorName}}</div>
 					</div>
-					<div class="grid-item-3" *ngIf="indicators.tr.length>0">
+					<div class="grid-item-3" *ngIf="indicators.TRANSPARENCY.length>0">
 						<small i18n>Transparency Indicators</small>
-						<div *ngFor="let indi of indicators.tr">{{indi.type | formatIndicatorName}}</div>
+						<div *ngFor="let indi of indicators.TRANSPARENCY">{{indi.type | formatIndicatorName}}</div>
 					</div>
 				</div>
 			</div>

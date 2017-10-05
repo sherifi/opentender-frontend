@@ -6,12 +6,34 @@ import {ColumnSort} from './model/columns';
 import {Country} from './services/config.service';
 
 export interface IndicatorInfo {
+	id: string;
 	name: string;
 	plural: string;
 	icon: string;
-	prefix: string;
-	subindicators: Array<string>;
+	subindicators: {
+		[id: string]: {
+			name: string;
+			desc: string;
+		}
+	};
 }
+
+export interface SubIndicator {
+	id: string;
+	sid: string;
+	name: string;
+	desc: string;
+}
+
+export interface Indicator {
+	id: string;
+	sid: string;
+	name: string;
+	plural: string;
+	icon: string;
+	subindicators: SubIndicator[];
+}
+
 
 export interface ISector {
 	id: string;
