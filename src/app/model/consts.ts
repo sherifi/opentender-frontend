@@ -24,7 +24,7 @@ export const Consts = {
 			plural: 'Corruption Risk Indicators',
 			subindicators: {
 				CORRUPTION_SINGLE_BID: {name: 'Single bidder contract', desc: 'Single bid signals a risk when only one bid is submitted in a tender in a competitive market.'},
-				CORRUPTION_CALL_FOR_TENDER_PUBLICATION: {
+				CORRUPTION_PRIOR_INFORMATION_NOTICE: {
 					name: 'Call for tenders publication',
 					desc: 'Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.'
 				},
@@ -43,8 +43,7 @@ export const Consts = {
 				CORRUPTION_WINNER_CONTRACT_SHARE: {name: 'Winner contract share', desc: 'Winner contract share is the share of contract value won by a given company from a given buyer in a given year.'},
 				CORRUPTION_NEW_COMPANY: {name: 'New company', desc: 'New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).'},
 				CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS: {name: 'Political connections of suppliers', desc: 'Political connection of the supplier captures the risk of at least one owner or manager holding a political office.'},
-				CORRUPTION_TAX_HAVEN: {name: 'Tax haven', desc: 'Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).'},
-				CORRUPTION_PRIOR_INFORMATION_NOTICE: {name: 'Prior Information Notice', desc: 'N/A'},
+				CORRUPTION_TAX_HAVEN: {name: 'Tax haven', desc: 'Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).'}
 			},
 			icon: 'icon-flag'
 		},
