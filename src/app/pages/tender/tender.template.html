@@ -222,7 +222,7 @@
 						</div>
 					</div>
 				</div>
-				<div [hidden]="!lot.open">
+				<div [hidden]="!getLotCollapse(lot,index_l).open">
 					<div class="margined-text" *ngIf="lot.title | defined">{{lot.title}}</div>
 					<div class="margined-text" *ngIf="lot.description | defined">{{lot.description}}</div>
 					<div class="container container-padded-top-lite">
