@@ -10,7 +10,7 @@ import {I18NService} from '../services/i18n.service';
 	templateUrl: 'map-home.template.html'
 })
 export class HomeMapComponent {
-	private map_level: number = 1;
+	private map_level: number = 2;
 	private map_companies: boolean = false;
 	private map_data: IStatsNuts = null;
 	private formatTooltip: (featureProperties: any) => string;
