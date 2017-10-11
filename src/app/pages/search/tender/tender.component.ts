@@ -48,11 +48,12 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.state.put('search.tender', {
+		let state = {
 			columnIds: this.columnIds,
 			search: this.search,
 			search_cmd: this.search_cmd
-		});
+		};
+		this.state.put('search.tender', state);
 	}
 
 	searchChange(data: ISearchTenderData) {

@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {TypeaheadMatch} from '../../thirdparty/typeahead/typeahead-match.class';
 import {Observable} from 'rxjs';
@@ -8,10 +8,11 @@ import {NotifyService} from '../../services/notify.service';
 	selector: 'autocomplete',
 	templateUrl: 'autocomplete.component.html',
 })
-export class AutoCompleteComponent {
+export class AutoCompleteComponent implements OnChanges {
 	@Input() placeholder: string = ' ';
 	@Input() field: string = ' ';
 	@Input() entity: string = ' ';
+	@Input() value: string = '';
 	@Output() onSelect = new EventEmitter();
 
 	public selected: string = '';
@@ -27,6 +28,12 @@ export class AutoCompleteComponent {
 
 	public constructor(private api: ApiService, private notify: NotifyService) {
 		this.init();
+	}
+
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes.value && changes.value.currentValue && changes.value.currentValue !== this.asyncSelected) {
+			this.asyncSelected = changes.value.currentValue;
+		}
 	}
 
 	init() {

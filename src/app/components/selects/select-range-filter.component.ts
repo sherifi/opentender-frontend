@@ -1,4 +1,4 @@
-import {Component, Input, EventEmitter, Output} from '@angular/core';
+import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
 import {Filter} from '../../model/search';
 
 @Component({
@@ -6,7 +6,7 @@ import {Filter} from '../../model/search';
 	selector: 'select-range-filter',
 	templateUrl: 'select-range-filter.component.html'
 })
-export class SelectRangeFilterComponent {
+export class SelectRangeFilterComponent implements OnChanges {
 	@Input()
 	filter: Filter;
 
@@ -20,6 +20,13 @@ export class SelectRangeFilterComponent {
 	private startYear: number = 2009;
 	private maxYear: number = 2017;
 	private endYear: number = 2017;
+
+	public ngOnChanges(changes: SimpleChanges): void {
+		if (changes.filter && changes.filter.currentValue && changes.filter.currentValue.values) {
+			this.startYear = changes.filter.currentValue.values[0];
+			this.endYear = changes.filter.currentValue.values[1] - 1;
+		}
+	}
 
 	onSliderChange(event) {
 		this.startYear = event.startValue;
