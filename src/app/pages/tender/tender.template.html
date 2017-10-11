@@ -27,7 +27,7 @@
 				<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
 				<div class="grid">
 					<div class="grid-item-3" *ngIf="indicators.CORRUPTION.length>0">
-						<small i18n>Corruption Risk Indicators</small>
+						<small i18n>Procurement Integrity Indicators</small>
 						<div *ngFor="let indi of indicators.CORRUPTION">{{indi.type | formatIndicatorName}}</div>
 					</div>
 					<div class="grid-item-3" *ngIf="indicators.ADMINISTRATIVE.length>0">

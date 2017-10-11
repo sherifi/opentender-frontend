@@ -20,7 +20,7 @@
 <nav class="header-right" *ngIf="!isActiveStart(router.url)">
 	<ul class="header-nav">
 		<li class="header-nav_item"><a [class.active]="isActiveHome(router.url)" [routerLink]="['/']" i18n>Home</a></li>
-		<li class="header-nav_item"><a [class.active]="isActive('dashboards', router.url)" [routerLink]="['/dashboards/corruption-indicators']" i18n>Dashboards</a></li>
+		<li class="header-nav_item"><a [class.active]="isActive('dashboards', router.url)" [routerLink]="['/dashboards/procurement-integrity']" i18n>Dashboards</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('search', router.url)" [routerLink]="['/search/tender']" i18n>Search</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('downloads', router.url)" [routerLink]="['/downloads']" i18n>Download</a></li>
 		<li class="header-nav_item"><a [class.active]="isActive('about', router.url)" [routerLink]="['/about/about-opentender']" i18n>About</a></li>

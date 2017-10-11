@@ -11,7 +11,7 @@ import {AboutPage} from './pages/about/about.component';
 import {AboutDataQualityPage} from './pages/about/quality/quality.component';
 import {DownloadsPage} from './pages/downloads/downloads.component';
 import {DashboardsAdministrativeCapacityPage} from './pages/dashboards/administrative-capacity/administrative-capacity.component';
-import {DashboardsCorruptionPage} from './pages/dashboards/corruption-risk/corruption-risk.component';
+import {DashboardsIntegrityPage} from './pages/dashboards/procurement-integrity/procurement-integrity.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
 import {DashboardsMarketAnalysisPage} from './pages/dashboards/market-analysis/market-analysis.component';
 import {DashboardsTransparencyPage} from './pages/dashboards/transparency/transparency.component';
@@ -37,9 +37,9 @@ export const routes: Routes = [
 		data: {title: 'Dashboards'},
 		children: [
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Dashboard Market Analysis'}},
-			{path: 'transparency-indicators', component: DashboardsTransparencyPage, data: {title: 'Dashboard Transparency Indicators'}},
-			{path: 'corruption-indicators', component: DashboardsCorruptionPage, data: {title: 'Dashboard Corruption Risk Indicators'}},
-			{path: 'administrative-capacity-indicators', component: DashboardsAdministrativeCapacityPage, data: {title: 'Dashboard Administrative Capacity Indicators'}}
+			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Dashboard Transparency Indicators'}},
+			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Dashboard Procurement Integrity Indicators'}},
+			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Dashboard Administrative Capacity Indicators'}}
 		]
 	},
 	{

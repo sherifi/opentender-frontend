@@ -4,10 +4,10 @@ import {IndicatorInfo} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
-	selector: 'corruption-risk',
-	templateUrl: 'corruption-risk.template.html'
+	selector: 'procurement-integrity',
+	templateUrl: 'procurement-integrity.template.html'
 })
-export class DashboardsCorruptionPage {
+export class DashboardsIntegrityPage {
 	public indicator: IndicatorInfo = Consts.indicators.CORRUPTION;
-	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.cri'];
+	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.pii'];
 }

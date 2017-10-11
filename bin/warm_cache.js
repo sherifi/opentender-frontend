@@ -13,7 +13,7 @@ const request = require('request');
 const config = require('../config.js');
 
 let data_folder = config.server.data.path;
-if (config.server.data.path[0] == '.') {
+if (config.server.data.path[0] === '.') {
 	data_folder = path.resolve(__dirname, '..', config.server.data.path);
 }
 let portals = JSON.parse(fs.readFileSync(path.join(data_folder, 'portals.json')).toString());
@@ -22,8 +22,8 @@ let sites = ['/',
 	'/search/company',
 	'/search/authority',
 	'/dashboards/market-analysis',
-	'/dashboards/corruption-indicators',
-	'/dashboards/transparency-indicators',
+	'/dashboards/procurement-integrity',
+	'/dashboards/transparency',
 	'/dashboards/administrative-capacity'
 ];
 

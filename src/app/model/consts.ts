@@ -20,8 +20,8 @@ export const Consts = {
 		},
 		CORRUPTION: {
 			id: 'CORRUPTION',
-			name: 'Corruption Risk Indicator',
-			plural: 'Corruption Risk Indicators',
+			name: 'Procurement Integrity Indicator',
+			plural: 'Procurement Integrity Indicators',
 			subindicators: {
 				CORRUPTION_SINGLE_BID: {name: 'Single bidder contract', desc: 'Single bid signals a risk when only one bid is submitted in a tender in a competitive market.'},
 				CORRUPTION_PRIOR_INFORMATION_NOTICE: {

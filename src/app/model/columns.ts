@@ -7,6 +7,7 @@ import Bid = Definitions.Bid;
 import {Utils} from './utils';
 import {IAuthority, ICompany} from '../app.interfaces';
 import Price = Definitions.Price;
+import {Consts} from './consts';
 
 const ICON = {
 	tender: 'icon-newspaper',
@@ -334,8 +335,8 @@ export const TenderColumns: Array<TenderColumn> = [
 		}
 	},
 	{
-		name: 'Corruption Risk Indicator',
-		id: 'indicators.cri',
+		name: 'Procurement Integrity Indicator',
+		id: 'indicators.pii',
 		group: 'Indicators',
 		format: tender => {
 			if (!tender.indicators) {
@@ -344,7 +345,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === 'CORRUPTION') {
+				if (group === Consts.indicators.CORRUPTION.id) {
 					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});
@@ -362,7 +363,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === 'TRANSPARENCY') {
+				if (group === Consts.indicators.TRANSPARENCY.id) {
 					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});
@@ -380,7 +381,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			let result = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === 'ADMINISTRATIVE') {
+				if (group === Consts.indicators.ADMINISTRATIVE.id) {
 					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
 				}
 			});

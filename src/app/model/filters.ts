@@ -1,4 +1,5 @@
 import {Utils} from './utils';
+import {Consts} from './consts';
 
 export enum FilterType {
 	text = 1,
@@ -184,8 +185,8 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.formatIndicatorName
 	},
 	{
-		id: 'indicators.type_cri',
-		name: 'Corruption Risk',
+		id: 'indicators.type_pii',
+		name: 'Procurement Integrity',
 		group: 'Indicators',
 		field: 'indicators.type',
 		type: FilterType.select,
@@ -193,7 +194,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
-				return bucket.key.indexOf('CORRUPTION_') === 0;
+				return bucket.key.indexOf(Consts.indicators.CORRUPTION.id) === 0;
 			});
 		}
 	},
@@ -207,7 +208,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
-				return bucket.key.indexOf('ADMINISTRATIVE_') === 0;
+				return bucket.key.indexOf(Consts.indicators.ADMINISTRATIVE.id) === 0;
 			});
 		}
 	},
@@ -221,7 +222,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
 			return buckets.filter(bucket => {
-				return bucket.key.indexOf('TRANSPARENCY_') === 0;
+				return bucket.key.indexOf(Consts.indicators.TRANSPARENCY.id) === 0;
 			});
 		}
 	},
