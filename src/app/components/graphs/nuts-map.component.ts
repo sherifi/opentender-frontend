@@ -6,10 +6,9 @@ import {ApiService} from '../../services/api.service';
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
 import {NotifyService} from '../../services/notify.service';
-import {Utils} from '../../model/utils';
 
 /// <reference path="../../../../node_modules/@types/leaflet/index.d.ts" />
-declare var L;
+declare let L;
 
 @Component({
 	selector: 'graph[nutsmap]',
@@ -17,6 +16,19 @@ declare var L;
 		<div class="nutsmap_containers" style="height: 360px">
 			<div leaflet class="nutsmap_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
 			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 360px">NO DATA</div>
+		</div>
+		<div class="nutsmap_legend">
+			<span>{{valueLow}}</span>
+			<svg width="300" height="20">
+				<defs>
+					<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+						<stop offset="0" [attr.stop-color]="colorLow" stop-opacity="0.3"></stop>
+						<stop offset="1" [attr.stop-color]="colorHigh" stop-opacity="1"></stop>
+					</linearGradient>
+				</defs>
+				<rect fill="url(#legendGradient)" x="0" y="0" width="300" height="20"></rect>
+			</svg>
+			<span>{{valueHigh}}</span>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
@@ -30,6 +42,11 @@ export class GraphNutsMapComponent implements OnChanges {
 	formatTooltip: any;
 	@Input()
 	title: string;
+
+	private colorLow: string = '';
+	private valueLow: number;
+	private colorHigh: string = '';
+	private valueHigh: number;
 
 	private loading: number = 0;
 	private invalid: number = 0;
@@ -61,7 +78,7 @@ export class GraphNutsMapComponent implements OnChanges {
 				},
 
 				onAdd: function(map) {
-					var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
+					let container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
 
 					this.link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
 					this.link.href = '#';
@@ -92,7 +109,7 @@ export class GraphNutsMapComponent implements OnChanges {
 				},
 
 				toggleFullscreen: function(options) {
-					var container = this.getContainer();
+					let container = this.getContainer();
 					if (this.isFullscreen()) {
 						if (options && options.pseudoFullscreen) {
 							this._disablePseudoFullscreen(container);
@@ -139,7 +156,7 @@ export class GraphNutsMapComponent implements OnChanges {
 
 				_setFullscreen: function(fullscreen) {
 					this._isFullscreen = fullscreen;
-					var container = this.getContainer();
+					let container = this.getContainer();
 					if (fullscreen) {
 						L.DomUtil.addClass(container, 'leaflet-fullscreen-on');
 					} else {
@@ -149,7 +166,7 @@ export class GraphNutsMapComponent implements OnChanges {
 				},
 
 				_onFullscreenChange: function(e) {
-					var fullscreenElement =
+					let fullscreenElement =
 						document.fullscreenElement ||
 						document['mozFullScreenElement'] ||
 						document.webkitFullscreenElement ||
@@ -175,7 +192,7 @@ export class GraphNutsMapComponent implements OnChanges {
 					this.addControl(this.fullscreenControl);
 				}
 
-				var fullscreenchange;
+				let fullscreenchange;
 
 				if ('onfullscreenchange' in document) {
 					fullscreenchange = 'fullscreenchange';
@@ -188,7 +205,7 @@ export class GraphNutsMapComponent implements OnChanges {
 				}
 
 				if (fullscreenchange) {
-					var onFullscreenChange = L.bind(this._onFullscreenChange, this);
+					let onFullscreenChange = L.bind(this._onFullscreenChange, this);
 
 					this.whenReady(function() {
 						L.DomEvent.on(document, fullscreenchange, onFullscreenChange);
@@ -247,12 +264,25 @@ export class GraphNutsMapComponent implements OnChanges {
 	displayNuts(geo: IApiGeoJSONResult) {
 		let nuts = {};
 		let max = 0;
+		let min = null;
 		Object.keys(this.data).forEach(key => {
 			let nutskey = this.validateNutsCode(key, this.level);
 			nuts[nutskey] = (nuts[nutskey] || 0) + this.data[key];
-			max = Math.max(max, nuts[nutskey]);
+			let val = nuts[nutskey];
+			if (nutskey !== 'invalid') {
+				max = Math.max(max, val);
+				if (min !== null) {
+					min = Math.min(min, val);
+				} else {
+					min = val;
+				}
+			}
 		});
 		let scale = scaleLinear().domain([0, max]).range([0, 1]);
+		this.colorLow = d3chroma.interpolateBlues(scale(min));
+		this.valueLow = min;
+		this.colorHigh = d3chroma.interpolateBlues(scale(max));
+		this.valueHigh = max;
 		this.data_list = [];
 		this.valid = 0;
 		geo.features = geo.features.filter(feature => {

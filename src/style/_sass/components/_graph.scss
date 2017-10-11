@@ -74,7 +74,6 @@ graph {
 
 }
 
-
 .graph-footer {
   font-size: 0.8em;
   .tool-button {
@@ -128,6 +127,15 @@ graph {
   width: 100%;
   font-size: 10px;
   text-align: right;
+}
+
+.nutsmap_legend {
+  float: left;
+  font-size: 12px;
+
+  span {
+    vertical-align: top;
+  }
 }
 
 .nutsmap_containers {
