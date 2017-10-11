@@ -35,8 +35,7 @@ export class TreeMapComponent extends BaseChartComponent {
 	domain: any;
 	colors: ColorHelper;
 	node: any;
-	margin = [10, 10, 10, 10];
-
+	margin = [0, 0, 0, 0];
 
 	constructor(protected chartElement: ElementRef, protected zone: NgZone, protected cd: ChangeDetectorRef, protected platform: PlatformService) {
 		super(chartElement, zone, cd, platform);

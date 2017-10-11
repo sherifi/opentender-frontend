@@ -21,7 +21,6 @@ export interface Column {
 	id: string;
 	group: string;
 	sortBy?: ColumnSort;
-	right?: boolean;
 }
 
 export interface TableLine {
@@ -33,6 +32,7 @@ export interface TableLine {
 }
 
 export interface TableCell {
+	align?: string;
 	lines: Array<TableLine>;
 }
 
@@ -183,9 +183,8 @@ export const TenderColumns: Array<TenderColumn> = [
 		name: 'Tender Link',
 		id: 'id',
 		group: 'Tender',
-		format: tender => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id}]
+		format: tender => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id, align: 'center'}]
 	},
-
 	{
 		name: 'Supplier',
 		id: 'lots.bids.bidders.name',
@@ -227,7 +226,6 @@ export const TenderColumns: Array<TenderColumn> = [
 			return result;
 		}
 	},
-
 	{
 		name: 'Buyer',
 		id: 'buyers.name',
@@ -582,8 +580,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		name: 'Deposits',
 		id: 'deposits',
 		group: 'Tender Requirements',
-		format: tender => [{content: tender.deposits}],
-		right: true
+		format: tender => [{content: tender.deposits}]
 	},
 	{
 		name: 'Personal Requirements',

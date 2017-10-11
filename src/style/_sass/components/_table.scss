@@ -23,6 +23,9 @@ doc-table {
     &.right {
       text-align: right;
     }
+    &.center {
+      text-align: center;
+    }
   }
 
   tbody {
@@ -38,6 +41,9 @@ doc-table {
         }
         &.right {
           text-align: right;
+        }
+        &.center {
+          text-align: center;
         }
         i.icon-large {
           font-size: 1.5em;

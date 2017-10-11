@@ -26,6 +26,9 @@ pie {
 graph {
   display: block;
   width: 100%;
+
+  //border-radius: .375rem;
+  //box-shadow: 0 2px 12px 0 #dfe3eb;
 }
 
 .graph-toolbar {
@@ -73,11 +76,14 @@ graph {
 
 
 .graph-footer {
-  float: right;
   font-size: 0.8em;
   .tool-button {
     border: none;
   }
+  .graph-toolbar {
+    float: right;
+  }
+  clear: both;
 }
 
 .graph-toolbar-container {
