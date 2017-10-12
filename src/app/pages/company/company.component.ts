@@ -21,8 +21,8 @@ export class CompanyPage implements OnInit, OnDestroy {
 	public country: Country;
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'finalPrice'];
-	public similar: Array<ICompany> = [];
-	public search_similars = {};
+	public similar: Array<Body> = [];
+	public include_companies_ids: Array<string> = [];
 	public loading: number = 0;
 	private subscription: any;
 
@@ -116,17 +116,9 @@ export class CompanyPage implements OnInit, OnDestroy {
 		if (!this.company) {
 			return;
 		}
-		let ids = Object.keys(this.search_similars).filter((key) => {
-			return this.search_similars[key];
-		});
-		ids.unshift(this.company.groupId);
+		let ids = [this.company.groupId].concat(this.include_companies_ids);
 		this.getStats(ids);
 		this.search(ids);
-	}
-
-	toggleSimilar(sim: ICompany): void {
-		this.search_similars[sim.body.groupId] = !this.search_similars[sim.body.groupId];
-		this.refresh();
 	}
 
 	search(ids: Array<string>) {
@@ -144,7 +136,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		if (!data.similar) {
 			return;
 		}
-		this.similar = data.similar;
+		this.similar = data.similar.map(company => company.body);
 	}
 
 	displayStats(data: { stats: IStats }): void {
@@ -170,11 +162,13 @@ export class CompanyPage implements OnInit, OnDestroy {
 		this.viz = viz;
 	}
 
+	similarChange(data) {
+		this.include_companies_ids = data.value;
+		this.refresh();
+	}
+
 	searchChange(data) {
 	}
 
-	plain(o) {
-		return JSON.stringify(o, null, '\t');
-	}
 
 }

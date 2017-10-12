@@ -102,6 +102,7 @@ import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
+import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
 
 const AppConfig = {
 	declarations: [
@@ -126,6 +127,7 @@ const AppConfig = {
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
 		SelectRangeFilterComponent,
+		SelectSimilarListComponent,
 		TableComponent,
 		TenderBodyAddressComponent,
 		TenderBodyComponent,

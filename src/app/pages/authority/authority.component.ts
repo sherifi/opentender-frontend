@@ -23,8 +23,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public search_cmd: SearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'lots.bids.bidders.name', 'finalPrice'];
 	private subscription: any;
-	public similar: Array<IAuthority> = [];
-	public search_similars = {};
+	private include_authorities_ids: Array<string> = [];
+	public similar: Array<Body> = [];
 
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
@@ -114,17 +114,14 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		if (!data.similar) {
 			return;
 		}
-		this.similar = data.similar;
+		this.similar = data.similar.map(authority => <Body>authority.body);
 	}
 
 	refresh(): void {
 		if (!this.authority) {
 			return;
 		}
-		let ids = Object.keys(this.search_similars).filter((key) => {
-			return this.search_similars[key];
-		});
-		ids.unshift(this.authority.groupId);
+		let ids = [this.authority.groupId].concat(this.include_authorities_ids);
 		this.getStats(ids);
 		this.search(ids);
 	}
@@ -152,12 +149,6 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.viz = viz;
 	}
 
-
-	toggleSimilar(sim: IAuthority): void {
-		this.search_similars[sim.body.groupId] = !this.search_similars[sim.body.groupId];
-		this.refresh();
-	}
-
 	search(ids: Array<string>) {
 		let search_cmd = new SearchCommand();
 		search_cmd.filters = [{
@@ -168,11 +159,13 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.search_cmd = search_cmd;
 	}
 
+	similarChange(data) {
+		this.include_authorities_ids = data.value;
+		this.refresh();
+	}
+
 	searchChange(data) {
 	}
 
-	plain(o) {
-		return JSON.stringify(o, null, '\t');
-	}
 
 }
