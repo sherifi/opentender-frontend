@@ -6,6 +6,7 @@ import {ApiService} from '../../services/api.service';
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
 import {NotifyService} from '../../services/notify.service';
+import {Utils} from '../../model/utils';
 
 /// <reference path="../../../../node_modules/@types/leaflet/index.d.ts" />
 declare let L;
@@ -13,22 +14,22 @@ declare let L;
 @Component({
 	selector: 'graph[nutsmap]',
 	template: `
-		<div class="nutsmap_containers" style="height: 360px">
+		<div class="nutsmap_containers" style="height: 376px">
 			<div leaflet class="nutsmap_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
-			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 360px">NO DATA</div>
+			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 376px">NO DATA</div>
 		</div>
 		<div class="nutsmap_legend">
-			<span>{{valueLow}}</span>
-			<svg width="300" height="20">
+			<span>{{valueLow | formatNumber}}</span>
+			<svg width="200" height="20">
 				<defs>
 					<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
 						<stop offset="0" [attr.stop-color]="colorLow" stop-opacity="0.3"></stop>
 						<stop offset="1" [attr.stop-color]="colorHigh" stop-opacity="1"></stop>
 					</linearGradient>
 				</defs>
-				<rect fill="url(#legendGradient)" x="0" y="0" width="300" height="20"></rect>
+				<rect fill="url(#legendGradient)" x="0" y="0" width="200" height="20"></rect>
 			</svg>
-			<span>{{valueHigh}}</span>
+			<span>{{valueHigh | formatNumber}}</span>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
@@ -266,7 +267,7 @@ export class GraphNutsMapComponent implements OnChanges {
 		let max = 0;
 		let min = null;
 		Object.keys(this.data).forEach(key => {
-			let nutskey = this.validateNutsCode(key, this.level);
+			let nutskey = Utils.validateNutsCode(key, this.level);
 			nuts[nutskey] = (nuts[nutskey] || 0) + this.data[key];
 			let val = nuts[nutskey];
 			if (nutskey !== 'invalid') {
@@ -309,16 +310,6 @@ export class GraphNutsMapComponent implements OnChanges {
 			this.geolayer.addData(geo);
 			this.map.fitBounds(this.geolayer.getBounds());
 		}
-	}
-
-	validateNutsCode(code, level) {
-		if (code.length > 1 && code.length < 6) {
-			code = code.toUpperCase();
-			if (code.match(/[A-Z]{2}[A-Z0-9]{0,3}/)) {
-				return code.slice(0, 2 + level);
-			}
-		}
-		return 'invalid';
 	}
 
 	loadMap() {

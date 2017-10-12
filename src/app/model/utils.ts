@@ -111,6 +111,17 @@ export const Utils = {
 	formatPercentTrunc(value): string {
 		return value.toFixed(0) + '%';
 	},
+
+	validateNutsCode(code, level) {
+		if (code.length > 1 && code.length < 6) {
+			code = code.toUpperCase();
+			if (code.match(/[A-Z]{2}[A-Z0-9]{0,3}/)) {
+				return code.slice(0, 2 + level);
+			}
+		}
+		return 'invalid';
+	},
+
 	formatTrunc(value): string {
 		return value.toFixed(0);
 	},
