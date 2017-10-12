@@ -20,14 +20,14 @@ declare let L;
 		</div>
 		<div class="nutsmap_legend">
 			<span>{{valueLow | formatNumber}}</span>
-			<svg width="200" height="20">
+			<svg width="200" height="16">
 				<defs>
 					<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
 						<stop offset="0" [attr.stop-color]="colorLow" stop-opacity="0.3"></stop>
 						<stop offset="1" [attr.stop-color]="colorHigh" stop-opacity="1"></stop>
 					</linearGradient>
 				</defs>
-				<rect fill="url(#legendGradient)" x="0" y="0" width="200" height="20"></rect>
+				<rect fill="url(#legendGradient)" x="0" y="0" width="200" height="16"></rect>
 			</svg>
 			<span>{{valueHigh | formatNumber}}</span>
 		</div>
