@@ -317,16 +317,18 @@ export const TenderColumns: Array<TenderColumn> = [
 			let collect = {};
 
 			tender.indicators.forEach(indicator => {
-				let group = indicator.type.split('_')[0];
-				let id = indicator.type;
-				collect[group] = collect[group] || {};
-				collect[group][id] = (collect[group][id] || 0) + 1;
+				let info = Utils.getIndicatorInfo(indicator.type);
+				if (info) {
+					collect[info.group.id] = collect[info.group.id] || [];
+					collect[info.group.id].push(info);
+				}
 			});
 			let result = [];
 			Object.keys(collect).forEach(key => {
-				result.push({prefix: Utils.formatIndicatorGroupName(key)});
-				Object.keys(collect[key]).forEach(id => {
-					result.push({list: true, content: Utils.formatIndicatorName(id)});
+				let infos = collect[key];
+				result.push({prefix: infos[0].group.name});
+				infos.forEach(info => {
+					result.push({styleClass: 'badge-' + info.group.id, content: info.indicator.name, hint: info.indicator.desc});
 				});
 			});
 			return result;
@@ -344,7 +346,10 @@ export const TenderColumns: Array<TenderColumn> = [
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.CORRUPTION.id) {
-					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
+					let def = Consts.indicators.CORRUPTION.subindicators[indicator.type];
+					if (def) {
+						result.push({styleClass: 'badge-' + Consts.indicators.CORRUPTION.id, content: def.name, hint: def.desc});
+					}
 				}
 			});
 			return result;
@@ -362,7 +367,10 @@ export const TenderColumns: Array<TenderColumn> = [
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.TRANSPARENCY.id) {
-					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
+					let def = Consts.indicators.TRANSPARENCY.subindicators[indicator.type];
+					if (def) {
+						result.push({styleClass: 'badge-' + Consts.indicators.TRANSPARENCY.id, content: def.name, hint: def.desc});
+					}
 				}
 			});
 			return result;
@@ -380,7 +388,10 @@ export const TenderColumns: Array<TenderColumn> = [
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.ADMINISTRATIVE.id) {
-					result.push({list: true, content: Utils.formatIndicatorName(indicator.type)});
+					let def = Consts.indicators.ADMINISTRATIVE.subindicators[indicator.type];
+					if (def) {
+						result.push({styleClass: 'badge-' + Consts.indicators.ADMINISTRATIVE.id, content: def.name, hint: def.desc});
+					}
 				}
 			});
 			return result;

@@ -34,6 +34,21 @@ export const Utils = {
 		}
 		return '€ ' + Utils.formatValue(value);
 	},
+	getIndicatorInfo(value: string) {
+		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value];
+		if (sub) {
+			return {group: Consts.indicators.ADMINISTRATIVE, indicator: sub};
+		}
+		sub = Consts.indicators.CORRUPTION.subindicators[value];
+		if (sub) {
+			return {group: Consts.indicators.CORRUPTION, indicator: sub};
+		}
+		sub = Consts.indicators.TRANSPARENCY.subindicators[value];
+		if (sub) {
+			return {group: Consts.indicators.TRANSPARENCY, indicator: sub};
+		}
+		return null;
+	},
 	formatIndicatorGroupName(value: string): string {
 		let group = Object.keys(Consts.indicators).find(key => {
 			return key === Consts.indicators[key].prefix;
@@ -49,6 +64,13 @@ export const Utils = {
 			return value;
 		}
 		return sub.name;
+	},
+	getIndicatorDesc(value: string): string {
+		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
+		if (!sub) {
+			return '';
+		}
+		return sub.desc;
 	},
 	indicatorShortID(key: string): string {
 		return key.split('_').map(part => {
