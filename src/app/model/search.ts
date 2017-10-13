@@ -36,6 +36,7 @@ export interface Filter {
 	buckets?: any; // the result of aggregation
 	active?: boolean;
 	mode?: string;
+	minmax?: null | [number, number];
 }
 
 export class Search {

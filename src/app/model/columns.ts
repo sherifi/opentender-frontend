@@ -93,6 +93,22 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 		format: authority => [{content: Utils.formatValue(authority.sources.length)}]
 	},
 	{
+		name: 'Main Activities',
+		id: 'body.mainActivities',
+		group: 'Authority',
+		format: authority => {
+			return (authority.body.mainActivities || []).map(activity => {
+				return {content: Utils.expandUnderlined(activity)};
+			});
+		}
+	},
+	{
+		name: 'Buyer Type',
+		id: 'body.buyerType',
+		group: 'Authority',
+		format: authority => [{content: Utils.expandUnderlined(authority.body.buyerType)}]
+	},
+	{
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',

@@ -13,17 +13,18 @@ import {Utils} from '../../../model/utils';
 })
 export class SearchAuthorityPage implements OnInit, OnDestroy {
 	title = '';
-	search = new Search('authority', AuthorityFilterDefs);
+	search = new Search('authority');
 	search_cmd: SearchCommand;
-	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
+	columnIds = ['id', 'body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
+	filterIds = ['body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
 	quick_filters = [];
 	check_filters = AuthorityFilterDefs;
 	search_filters = AuthorityFilterDefs.filter(f => f.type !== FilterType.select);
 
 	constructor(private state: StateService, private i18n: I18NService) {
-		this.search.filters.forEach(filter => {
-			filter.active = true;
-		});
+		this.search.build(this.check_filters.filter(def => {
+			return this.filterIds.indexOf(def.id) >= 0;
+		}));
 		this.search_filters.forEach(filter => {
 			this.search.addSearch(filter);
 		});
@@ -61,5 +62,5 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 
 	refresh() {
 		this.search_cmd = this.search.getCommand();
-	};
+	}
 }

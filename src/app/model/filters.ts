@@ -261,6 +261,20 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		group: 'Dates',
 		field: 'lots.awardDecisionDate',
 		type: FilterType.range,
+	},
+	{
+		id: 'estimatedCompletionDate',
+		name: 'Estimated Completion Year',
+		group: 'Dates',
+		field: 'estimatedCompletionDate',
+		type: FilterType.range,
+	},
+	{
+		id: 'estimatedStartDate',
+		name: 'Estimated Start Year',
+		group: 'Dates',
+		field: 'estimatedStartDate',
+		type: FilterType.range,
 	}
 ];
 
@@ -324,6 +338,15 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 		name: 'Main Activities',
 		group: 'Authority',
 		field: 'body.mainActivities',
+		type: FilterType.select,
+		valueFormatter: Utils.expandUnderlined,
+		size: 30
+	},
+	{
+		id: 'body.buyerType',
+		name: 'Buyer Type',
+		group: 'Authority',
+		field: 'body.buyerType',
 		type: FilterType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
