@@ -25,7 +25,7 @@
 		</div>
 		<h1>{{authority.name}}</h1>
 		<tender-body-address [address]="authority.address"></tender-body-address>
-		<select-similar-list [title]="'Authorities'" [icon]="'icon-library'" link="'/authority/'" [current]="this.authority" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
+		<select-similar-list [title]="'Authorities'" icon="icon-library" link="/authority/" [current]="this.authority" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
 	</section>
 
 	<div [ngClass]="{'is-loading': loading>0}">

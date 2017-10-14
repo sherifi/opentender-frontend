@@ -1,9 +1,10 @@
-<div *ngIf="similar.length > 0">
-	<div class="similars">
-		<div class="title" i18n>Similar {{title}}</div>
-		<div class="similar" *ngFor="let body of similar.slice(0,10)">
+<div class="similars" *ngIf="similar.length > 0">
+	<div class="title" i18n>Similar {{title}}</div>
+	<div class="similars-list">
+		<div class="similar" *ngFor="let body of similar">
 			<a [routerLink]="[link+body.groupId]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>
-			<a (click)="toggleSimilar(body)" title="Click to {{search_similars[body.groupId]?'exclude':'include'}} into view">{{search_similars[body.groupId]?'-':'+'}} <span>{{body.name | nameGuard}}</span></a>
+			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" (change)="toggleSimilar(body)"/> {{body.name | nameGuard}}</label>
+			<!--<a (click)="toggleSimilar(body)" >{{search_similars[body.groupId]?'-':'+'}} <span>{{body.name | nameGuard}}</span></a>-->
 		</div>
 	</div>
 	<div class="debug_groupids clickable" style="font-size: 0.8em">

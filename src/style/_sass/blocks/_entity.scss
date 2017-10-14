@@ -13,13 +13,24 @@
   }
 
   .similars {
-    margin-bottom: 20px;
+
+    .similars-list {
+      max-height: 200px;
+      overflow: auto;
+      margin-bottom: 10px;
+    }
+
     .similar {
       display: inline-block;
       margin-right: 18px;
-      font-size: 0.9em;
-      span:last-of-type {
-        font-size: 0.9em;
+      label {
+        display: inline-block;
+        font-size: 0.8em;
+        margin-bottom: 0;
+      }
+      a {
+        display: inline-block;
+        font-size: 0.8em;
       }
     }
   }

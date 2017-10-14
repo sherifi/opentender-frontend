@@ -26,7 +26,7 @@
 		</div>
 		<h1>{{company.name | nameGuard}}</h1>
 		<tender-body-address [address]="company.address"></tender-body-address>
-		<select-similar-list [title]="'Companies'" [icon]="'icon-office'" link="'/company/'" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
+		<select-similar-list [title]="'Companies'" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
 	</section>
 
 	<div [ngClass]="{'is-loading': loading>0}">
