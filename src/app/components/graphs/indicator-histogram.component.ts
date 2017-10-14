@@ -304,10 +304,10 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 				return {name: key, value: this.data[key].value};
 			});
 			this.sum_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].sums_finalPrice['EUR'] || 0};
+				return {name: key, value: this.data[key].sum_finalPriceEUR.value || 0};
 			});
 			this.avg_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].avgs_finalPrice['EUR'] || 0};
+				return {name: key, value: this.data[key].avg_finalPriceEUR.value || 0};
 			});
 		}
 	}

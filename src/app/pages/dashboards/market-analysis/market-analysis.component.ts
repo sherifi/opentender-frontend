@@ -88,7 +88,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 			this.sectors_stats = data.sectors_stats;
 			let nuts = {};
 			data.region_stats.forEach(region => {
-				nuts[region.id] = region.stats.sums_finalPrice['EUR'] || 0;
+				nuts[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 			});
 			this.viz.volume_regions = nuts;
 		}

@@ -90,7 +90,7 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 				return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
 			});
 			this.cpv_codes_prices.data = this.data.map(s => {
-				return {name: s.sector.name, value: s.stats.sums_finalPrice['EUR'] || 0, id: s.sector.id};
+				return {name: s.sector.name, value: s.stats.sum_finalPriceEUR.value || 0, id: s.sector.id};
 			});
 		}
 	}

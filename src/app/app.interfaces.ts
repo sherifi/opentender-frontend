@@ -113,6 +113,10 @@ export interface IStatsNuts {
 	[nutscode: string]: number;
 }
 
+export interface IStatsPriceEUR {
+	value: number;
+}
+
 export interface IStatsPrices {
 	[currency: string]: number;
 }
@@ -130,8 +134,8 @@ export interface IStatsPcPricesLotsInYears {
 		total: number;
 		value: number;
 		percent: number;
-		sums_finalPrice: IStatsPrices;
-		avgs_finalPrice: IStatsPrices;
+		sum_finalPriceEUR: IStatsPriceEUR;
+		avg_finalPriceEUR: IStatsPriceEUR;
 	};
 }
 
@@ -152,9 +156,8 @@ export interface IStats {
 	terms_main_cpv_full: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	sums_finalPrice: IStatsPrices;
-	// top_winning_companies: IStatsCompanies;
-	// top_companies: IStatsCompanies;
-	// top_authorities: IStatsAuthorities;
+	sum_finalPriceEUR: IStatsPriceEUR;
+	avg_finalPriceEUR: IStatsPriceEUR;
 	top_sum_finalPrice_authorities: IStatsAuthorities;
 	top_terms_companies: IStatsCompanies;
 	top_sum_finalPrice_companies: IStatsCompanies;

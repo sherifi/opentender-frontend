@@ -31,12 +31,10 @@ export class CompanyPage implements OnInit, OnDestroy {
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
-		sums_finalPrice: IStatsPrices,
 		lots_in_years: IStatsLotsInYears
 	} = {
 		authority_nuts: null,
 		top_authorities: null,
-		sums_finalPrice: null,
 		cpvs_codes: null,
 		counts: null,
 		lots_in_years: null
@@ -143,7 +141,6 @@ export class CompanyPage implements OnInit, OnDestroy {
 		let viz = {
 			authority_nuts: null,
 			top_authorities: null,
-			sums_finalPrice: null,
 			cpvs_codes: null,
 			counts: null,
 			lots_in_years: null
@@ -156,7 +153,6 @@ export class CompanyPage implements OnInit, OnDestroy {
 		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
 		viz.counts = stats.count_lots_bids;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
-		viz.sums_finalPrice = stats.sums_finalPrice;
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.authority_nuts = stats.terms_authority_nuts;
 		this.viz = viz;

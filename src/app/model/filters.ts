@@ -228,31 +228,31 @@ export const TenderFilterDefs: Array<FilterDef> = [
 	},
 
 	{
-		id: 'finalPrice.netAmount',
-		name: 'Final Price',
+		id: 'finalPrice.netAmountEur',
+		name: 'Final Price EUR',
 		group: 'Prices',
-		field: 'finalPrice.netAmount',
+		field: 'finalPrice.netAmountEur',
 		type: FilterType.value
 	},
 	{
-		id: 'documentsPrice.netAmount',
-		name: 'Document Price',
+		id: 'documentsPrice.netAmountEur',
+		name: 'Document Price EUR',
 		group: 'Prices',
-		field: 'documentsPrice.netAmount',
+		field: 'documentsPrice.netAmountEur',
 		type: FilterType.value
 	},
 	{
-		id: 'estimatedPrice.netAmount',
-		name: 'Estimated Price',
+		id: 'estimatedPrice.netAmountEur',
+		name: 'Estimated Price EUR',
 		group: 'Prices',
-		field: 'estimatedPrice.netAmount',
+		field: 'estimatedPrice.netAmountEur',
 		type: FilterType.value
 	},
 	{
-		id: 'lots.bids.price.netAmount',
-		name: 'Bid Price',
+		id: 'lots.bids.price.netAmountEur',
+		name: 'Bid Price EUR',
 		group: 'Prices',
-		field: 'lots.bids.price.netAmount',
+		field: 'lots.bids.price.netAmountEur',
 		type: FilterType.value
 	},
 	{

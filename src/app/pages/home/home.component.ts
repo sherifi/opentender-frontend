@@ -12,7 +12,7 @@ import {NotifyService} from '../../services/notify.service';
 })
 export class HomePage implements OnInit {
 	public country: string;
-	private loading: number = 0;
+	public loading: number = 0;
 	public viz: {
 		lots_in_years: IStatsLotsInYears;
 	} = {

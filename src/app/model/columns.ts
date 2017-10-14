@@ -170,27 +170,14 @@ export interface TenderColumn extends Column {
 }
 
 const FormatUtils = {
-	formatPrice: (price: Price) => {
-		if (!price) {
-			return [];
+	formatPriceEURValue: (value: number) => {
+		return Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(value).replace(/ /g, '\u00a0');
+	},
+	formatPriceEUR: (price: Price) => {
+		if (price && price.hasOwnProperty('netAmountEur')) {
+			return [{content: FormatUtils.formatPriceEURValue(price.netAmountEur)}];
 		}
-		let result = [];
-		['netAmountEur'].forEach(key => {
-			if (price.hasOwnProperty(key)) {
-				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(price[key])});
-			}
-		});
-		['netAmountNational'].forEach(key => {
-			if (price.hasOwnProperty(key) && price.currencyNational !== 'EUR') {
-				result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currencyNational) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
-			}
-		});
-		// ['netAmount', 'amountWithVat', 'minNetAmount', 'maxNetAmount', 'minAmountWithVat', 'maxAmountWithVat'].forEach(key => {
-		// 	if (price.hasOwnProperty(key)) {
-		// 		result.push({prefix: '(' + key + ')', content: Utils.formatCurrency(price.currency) + '\u00a0' + Utils.formatCurrencyValue(price[key])});
-		// 	}
-		// });
-		return result;
+		return [];
 	}
 };
 
@@ -205,10 +192,10 @@ export const TenderColumns: Array<TenderColumn> = [
 		name: 'Supplier',
 		id: 'lots.bids.bidders.name',
 		group: 'Supplier',
-		// sortBy: {
-		// 	id: 'lots.bids.bidders.name.raw',
-		// 	ascend: true
-		// },
+		sortBy: {
+			id: 'lots.bids.bidders.name.slug',
+			ascend: true
+		},
 		format: tender => {
 			if (!tender.lots) {
 				return [];
@@ -234,7 +221,7 @@ export const TenderColumns: Array<TenderColumn> = [
 							c.lots = c.lots.slice(0, 5);
 							c.lots.push('…');
 						}
-						result.push({content: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
+						result.push({prefix: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
 					}
 					result.push({icon: ICON.company, content: c.bidder.name || '[Name not available]', link: c.link});
 				}
@@ -246,10 +233,10 @@ export const TenderColumns: Array<TenderColumn> = [
 		name: 'Buyer',
 		id: 'buyers.name',
 		group: 'Buyer',
-		// sortBy: {
-		// 	id: 'buyers.name.raw',
-		// 	ascend: true
-		// },
+		sortBy: {
+			id: 'buyers.name.slug',
+			ascend: true
+		},
 		format: tender => {
 			if (!tender.buyers) {
 				return [];
@@ -539,35 +526,39 @@ export const TenderColumns: Array<TenderColumn> = [
 		id: 'finalPrice',
 		group: 'Prices',
 		sortBy: {
-			id: 'finalPrice.netAmount',
+			id: 'finalPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPrice(tender.finalPrice)
+		format: tender => FormatUtils.formatPriceEUR(tender.finalPrice)
 	},
 	{
 		name: 'Estimated Price',
 		id: 'estimatedPrice',
 		group: 'Prices',
 		sortBy: {
-			id: 'estimatedPrice.netAmount',
+			id: 'estimatedPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPrice(tender.estimatedPrice)
+		format: tender => FormatUtils.formatPriceEUR(tender.estimatedPrice)
 	},
 	{
 		name: 'Documents Price',
 		id: 'documentsPrice',
 		group: 'Prices',
 		sortBy: {
-			id: 'documentsPrice.netAmount',
+			id: 'documentsPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPrice(tender.documentsPrice)
+		format: tender => FormatUtils.formatPriceEUR(tender.documentsPrice)
 	},
 	{
 		name: 'Bid Price',
 		id: 'lots.bids.price',
 		group: 'Prices',
+		sortBy: {
+			id: 'lots.bids.price.netAmountEur',
+			ascend: false
+		},
 		format: tender => {
 			if (!tender.lots) {
 				return [];
@@ -576,12 +567,11 @@ export const TenderColumns: Array<TenderColumn> = [
 			tender.lots.forEach((lot: Lot, index_l: number) => {
 				if (lot.bids) {
 					lot.bids.forEach((bid: Bid, index_b: number) => {
-						if (bid.price) {
-							let results = FormatUtils.formatPrice(bid.price);
-							if (results.length > 0) {
-								result.push({content: 'Lot ' + (index_l + 1) + ' Bid ' + (index_b + 1)});
-								result = result.concat(results);
-							}
+						if (bid.price && bid.price.netAmountEur) {
+							result.push({
+								prefix: (tender.lots.length ? 'Lot ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' Bid ' + (index_b + 1) : ''),
+								content: FormatUtils.formatPriceEURValue(bid.price.netAmountEur)
+							});
 						}
 					});
 				}
@@ -589,7 +579,6 @@ export const TenderColumns: Array<TenderColumn> = [
 			return result;
 		}
 	},
-
 	{
 		name: 'Eligible Bid Languages',
 		id: 'eligibleBidLanguages',

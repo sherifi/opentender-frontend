@@ -25,7 +25,6 @@ export class SectorPage implements OnInit, OnDestroy {
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		sums_finalPrice: IStatsPrices,
 		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
 		cpvs_codes: { data: IStatsPcCpvs, title?: string },
 		counts: IStatsCounts
@@ -33,7 +32,6 @@ export class SectorPage implements OnInit, OnDestroy {
 		subsectors: [],
 		top_companies: null,
 		top_authorities: null,
-		sums_finalPrice: null,
 		histogram: {data: null},
 		cpvs_codes: {data: null},
 		counts: null
@@ -160,7 +158,6 @@ export class SectorPage implements OnInit, OnDestroy {
 		viz.cpvs_codes.data = null;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.counts = stats.count_lots_bids;
-		viz.sums_finalPrice = stats.sums_finalPrice;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors = stats.sectors_stats;

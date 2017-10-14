@@ -281,7 +281,7 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 		});
 		let scale = scaleLinear().domain([0, max]).range([0, 1]);
 		this.colorLow = d3chroma.interpolateBlues(scale(min));
-		this.valueLow = min;
+		this.valueLow = 0;
 		this.colorHigh = d3chroma.interpolateBlues(scale(max));
 		this.valueHigh = max;
 		this.data_list = [];

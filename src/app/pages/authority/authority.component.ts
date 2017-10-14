@@ -30,12 +30,10 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
-		sums_finalPrice: IStatsPrices,
 		company_nuts: IStatsNuts,
 		lots_in_years: IStatsLotsInYears
 	} = {
 		top_companies: null,
-		sums_finalPrice: null,
 		cpvs_codes: null,
 		counts: null,
 		company_nuts: null,
@@ -129,7 +127,6 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	displayStats(data: { stats: IStats }): void {
 		let viz = {
 			top_companies: null,
-			sums_finalPrice: null,
 			cpvs_codes: null,
 			counts: null,
 			lots_in_years: null,
@@ -141,7 +138,6 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		}
 		let stats = data.stats;
 		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
-		viz.sums_finalPrice = stats.sums_finalPrice;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
 		viz.counts = stats.count_lots_bids;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
