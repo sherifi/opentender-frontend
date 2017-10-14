@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {ICompany, IStatsCompanies} from '../../app.interfaces';
+import {ICompany, ISeriesProvider, IStatsCompanies} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Router} from '@angular/router';
 import {Utils} from '../../model/utils';
@@ -26,7 +26,7 @@ import {I18NService} from '../../services/i18n.service';
 		<select-series-download-button [sender]="this"></select-series-download-button>
 	`
 })
-export class GraphCompaniesComponent implements OnChanges {
+export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: {
 		absolute: IStatsCompanies,

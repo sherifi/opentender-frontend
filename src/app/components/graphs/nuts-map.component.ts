@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
-import {IApiGeoJSONResult, IStatsNuts} from '../../app.interfaces';
+import {IApiGeoJSONResult, ISeriesProvider, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
 import {ApiService} from '../../services/api.service';
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
@@ -34,7 +34,7 @@ declare let L;
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphNutsMapComponent implements OnChanges {
+export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsNuts;
 	@Input()

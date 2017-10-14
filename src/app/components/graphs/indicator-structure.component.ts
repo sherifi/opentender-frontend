@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsIndicators} from '../../app.interfaces';
+import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 
@@ -17,7 +17,7 @@ import {Consts} from '../../model/consts';
 		</ngx-charts-pie-chart>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphIndicatorStructureComponent implements OnChanges {
+export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsIndicators;
 	@Input()

@@ -4,6 +4,7 @@ import Bidder = Definitions.Bidder;
 import Tender = Definitions.Tender;
 import {ColumnSort} from './model/columns';
 import {Country} from './services/config.service';
+import {IChartData} from './thirdparty/ngx-charts-universal/chart.interface';
 
 export interface IndicatorInfo {
 	id: string;
@@ -309,4 +310,12 @@ export interface IApiGeoJSONResult {
 			name: string;
 		}
 	}>;
+}
+
+export interface ISeries {
+	data: Array<IChartData>; header: { value: string, name: string }; filename: string;
+}
+
+export interface ISeriesProvider {
+	getSeriesInfo: () => ISeries;
 }

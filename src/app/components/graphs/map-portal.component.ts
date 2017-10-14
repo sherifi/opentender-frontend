@@ -1,8 +1,8 @@
 import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
-import {ApiService} from '../services/api.service';
-import {ICountryStats} from '../app.interfaces';
-import {ConfigService, Country} from '../services/config.service';
-import {NotifyService} from '../services/notify.service';
+import {ApiService} from '../../services/api.service';
+import {ICountryStats} from '../../app.interfaces';
+import {ConfigService, Country} from '../../services/config.service';
+import {NotifyService} from '../../services/notify.service';
 import {Router} from '@angular/router';
 
 @Directive({selector: 'g.country'})

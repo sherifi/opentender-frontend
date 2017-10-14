@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsLotsInYears} from '../../app.interfaces';
+import {ISeriesProvider, IStatsLotsInYears} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {I18NService} from '../../services/i18n.service';
@@ -18,7 +18,7 @@ import {I18NService} from '../../services/i18n.service';
 		</ngx-charts-bar-vertical>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphHomeHistogramComponent implements OnChanges {
+export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsLotsInYears;
 

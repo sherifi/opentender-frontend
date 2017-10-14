@@ -169,6 +169,13 @@ export const Utils = {
 		}
 		return n.toLocaleString();
 	},
+	seriesToTable(data: IChartData[], header) {
+		let hasID = header.hasOwnProperty('id');
+		let list = data.map(d => {
+			return hasID ? [d.id, d.name, d.value] : [d.name, d.value];
+		});
+		return {rows: list, head: hasID ? [header.id, header.name, header.value] : [header.name, header.value]};
+	},
 	downloadSeries: function(format, data, header, exportfilename) {
 		if (format === 'csv') {
 			Utils.downloadCSVSeries(data, header, exportfilename);

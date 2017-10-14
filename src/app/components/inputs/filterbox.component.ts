@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, Output, OnChanges, SimpleChanges} from '@angular/core';
-import {Filter, Search} from '../model/search';
+import {Filter, Search} from '../../model/search';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import {FilterDef, FilterType} from '../model/filters';
-import {PlatformService} from '../services/platform.service';
+import {FilterDef, FilterType} from '../../model/filters';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	moduleId: __filename,

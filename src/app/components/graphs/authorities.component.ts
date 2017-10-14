@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {IAuthority, IStatsAuthorities} from '../../app.interfaces';
+import {IAuthority, ISeriesProvider, IStatsAuthorities} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Router} from '@angular/router';
 import {Consts} from '../../model/consts';
@@ -25,7 +25,7 @@ import {I18NService} from '../../services/i18n.service';
 		</ngx-charts-bar-horizontal-labeled>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphAuthoritiesComponent implements OnChanges {
+export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: {
 		absolute: IStatsAuthorities,

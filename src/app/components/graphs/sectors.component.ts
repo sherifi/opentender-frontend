@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {IStatsPcCpvs} from '../../app.interfaces';
+import {ISeriesProvider, IStatsPcCpvs} from '../../app.interfaces';
 import {Router} from '@angular/router';
 import {I18NService} from '../../services/i18n.service';
 
@@ -19,7 +19,7 @@ import {I18NService} from '../../services/i18n.service';
 		</ngx-charts-bar-horizontal-labeled>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphSectorsComponent implements OnChanges {
+export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsPcCpvs;
 	@Input()

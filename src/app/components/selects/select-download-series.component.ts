@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Utils} from '../../model/utils';
+import {ISeries, ISeriesProvider} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -8,14 +9,26 @@ import {Utils} from '../../model/utils';
 })
 export class SelectDownloadSeriesComponent {
 	@Input()
-	sender: any;
+	sender: ISeriesProvider;
+	showDialog: boolean = false;
+	series: ISeries;
+	table: {
+		head: Array<string>;
+		rows: Array<Array<string | number | Date>>;
+	};
 
 	constructor() {
 
 	}
 
+	show(): void {
+		this.series = this.sender.getSeriesInfo();
+		this.table = Utils.seriesToTable(this.series.data, this.series.header);
+		this.showDialog = true;
+	}
+
 	download(format): void {
-		let info = this.sender.getSeriesInfo();
-		Utils.downloadSeries(format, info.data, info.header, info.filename);
+		this.showDialog = false;
+		Utils.downloadSeries(format, this.series.data, this.series.header, this.series.filename);
 	}
 }

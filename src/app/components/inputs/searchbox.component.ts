@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Filter, Search} from '../model/search';
-import {FilterType} from '../model/filters';
-import {I18NService} from '../services/i18n.service';
+import {Filter, Search} from '../../model/search';
+import {FilterType} from '../../model/filters';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
