@@ -165,6 +165,7 @@ export interface IStats {
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
+	region_stats: Array<{ id: string; value: number, stats: IStats }>;
 }
 
 export interface ISectorStats {
@@ -313,7 +314,9 @@ export interface IApiGeoJSONResult {
 }
 
 export interface ISeries {
-	data: Array<IChartData>; header: { value: string, name: string }; filename: string;
+	data: Array<IChartData>;
+	header: { value: string, name: string };
+	filename: string;
 }
 
 export interface ISeriesProvider {

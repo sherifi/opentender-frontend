@@ -40,7 +40,7 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	level: number = 1;
 	@Input()
-	formatTooltip: any;
+	formatTooltip: (properties: any) => string;
 	@Input()
 	title: string;
 
@@ -293,7 +293,7 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 				feature.properties['value'] = value;
 				feature.properties['color'] = d3chroma.interpolateBlues(scale(value));
 				this.valid += value;
-				this.data_list.push({id: feature.properties.id, name: feature.properties.name, value: value});
+				this.data_list.push({id: feature.properties.id, name: feature.properties.name, value: Utils.roundCurrencyValueFloat(value)});
 				return true;
 			}
 			return false;

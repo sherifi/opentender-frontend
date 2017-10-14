@@ -216,5 +216,8 @@ export const Utils = {
 	cpv2color: function(cpv) {
 		// console.log(cpv);
 		return null;
+	},
+	roundCurrencyValueFloat: (value) => {
+		return Math.round(value * 100) / 100;
 	}
 };

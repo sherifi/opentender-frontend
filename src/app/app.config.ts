@@ -69,17 +69,17 @@ import {GraphHomeHistogramComponent} from './components/graphs/home-histogram.co
 import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
 import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
-import {GraphNutsMapComponent} from './components/graphs/nuts-map.component';
-import {GraphSupplierNutsMapComponent} from './components/graphs/supplier-nuts-map.component';
-import {GraphBuyerNutsMapComponent} from './components/graphs/buyer-nuts-map.component';
+import {GraphNutsMapComponent} from './components/maps/nuts-map.component';
+import {GraphSupplierNutsMapComponent} from './components/maps/nuts-map-supplier.component';
+import {GraphBuyerNutsMapComponent} from './components/maps/nuts-map-buyer.component';
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
 import {HeaderComponent} from './components/header.component';
-import {HomeMapComponent} from './components/graphs/map-home.component';
+import {HomeMapComponent} from './components/maps/nuts-map-home.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
 import {PaginationComponent} from './components/tables/pagination.component';
-import {PortalMapComponent, SVGCountryGroupDirective} from './components/graphs/map-portal.component';
+import {PortalMapComponent, SVGCountryGroupDirective} from './components/maps/map-portal.component';
 import {SearchBoxComponent} from './components/inputs/searchbox.component';
 import {SelectColumnsButtonComponent} from './components/selects/select-columns-button.component';
 import {SelectColumnsComponent} from './components/selects/select-columns.component';
@@ -103,6 +103,7 @@ import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
 import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
+import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
 
 const AppConfig = {
 	declarations: [
@@ -149,6 +150,7 @@ const AppConfig = {
 		GraphHomeHistogramComponent,
 		GraphSupplierNutsMapComponent,
 		GraphBuyerNutsMapComponent,
+		GraphVolumeNutsMapComponent,
 		GraphSectorTreemap,
 		I18NComponent,
 

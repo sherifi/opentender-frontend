@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
-import {ISector, IStats} from '../../../app.interfaces';
+import {ISector, IStats, IStatsNuts} from '../../../app.interfaces';
 import {SearchCommandFilter} from '../../../model/search';
 import {NotifyService} from '../../../services/notify.service';
 
@@ -14,8 +14,10 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	private loading: number = 0;
 	private viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
+		volume_regions: IStatsNuts;
 	} = {
-		sectors_stats: null
+		sectors_stats: null,
+		volume_regions: null
 	};
 	private filter: {
 		time?: {
@@ -80,9 +82,15 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	display(data: IStats): void {
 		this.sectors_stats = [];
 		this.viz.sectors_stats = null;
+		this.viz.volume_regions = null;
 		if (data) {
 			this.viz.sectors_stats = data.sectors_stats;
 			this.sectors_stats = data.sectors_stats;
+			let nuts = {};
+			data.region_stats.forEach(region => {
+				nuts[region.id] = region.stats.sums_finalPrice['EUR'] || 0;
+			});
+			this.viz.volume_regions = nuts;
 		}
 		if (!this.filter.time && data.histogram_lots_awardDecisionDate) {
 			let startYear = 0;
