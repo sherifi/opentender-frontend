@@ -1,18 +1,9 @@
-<section class="container-outer documentation">
-	<section class="container">
-		<div class="container-title" i18n>How Opentender Works</div>
-	</section>
-	<section class="container">
-		<div class="container-left-9">
-			<h2 id="opentender" i18n>How Opentender Works</h2>
-			<p>{{lorem}}</p>
-			<p>{{lorem}}</p>
-			<p>{{lorem}}</p>
-		</div>
-		<div class="container-right-3">
-		</div>
-	</section>
-	<section class="container" *ngFor="let dummy of dummies">
+<div class="container-outer documentation">
+	<div class="container container-padded-bottom">
+		<h1 class="container-title" i18n>How Opentender Works</h1>
+		<!--<div class="container-title" i18n>How Opentender Works</div>-->
+	</div>
+	<div class="container" *ngFor="let dummy of dummies">
 		<h2 class="h3">{{dummy.title}}</h2>
 		<div class="container-left-9">
 			<p>{{dummy.text}}</p>
@@ -20,5 +11,5 @@
 		</div>
 		<div class="container-right-3">
 		</div>
-	</section>
-</section>
+	</div>
+</div>

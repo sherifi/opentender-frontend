@@ -35,7 +35,7 @@ import {AboutOpentenderPage} from './pages/about/opentender/opentender.component
 import {AboutFOIPage} from './pages/about/foi/foi.component';
 import {AboutHowPage} from './pages/about/how/how.component';
 import {AboutDataQualityPage} from './pages/about/quality/quality.component';
-import {DownloadsPage} from './pages/downloads/downloads.component';
+import {DownloadPage} from './pages/download/download.component';
 import {DashboardsAdministrativeCapacityPage} from './pages/dashboards/administrative-capacity/administrative-capacity.component';
 import {DashboardsIntegrityPage} from './pages/dashboards/procurement-integrity/procurement-integrity.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
@@ -181,7 +181,7 @@ const AppConfig = {
 		AboutFOIPage,
 		AboutHowPage,
 		AboutDataQualityPage,
-		DownloadsPage,
+		DownloadPage,
 		DashboardsAdministrativeCapacityPage,
 		DashboardsIntegrityPage,
 		DashboardsPage,

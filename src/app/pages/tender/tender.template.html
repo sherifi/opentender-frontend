@@ -1,13 +1,12 @@
-<section class="container-outer tender entity" *ngIf="tender">
-	<section class="container">
-		<div class="entity-title"><i class="icon-newspaper"></i>
-			<ng-container i18n>Tender</ng-container>
-		</div>
-		<h1>{{tender.title}}</h1>
-		<h3>{{tender.titleEnglish}}</h3>
-	</section>
+<div class="header-sub-container"></div>
 
-	<section class="container">
+<div class="container-outer tender entity" *ngIf="tender">
+	<div class="container">
+		<h1 class="container-title">{{tender.title}}</h1>
+			<h3>{{tender.titleEnglish}}</h3>
+	</div>
+
+	<div class="container">
 		<h3>
 			<collapse-expand [o]="state.desc"></collapse-expand>
 		</h3>
@@ -16,9 +15,9 @@
 				<span>{{tender.description}}</span>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngIf="tender.indicators | defined">
+	<div class="container" *ngIf="tender.indicators | defined">
 		<h3>
 			<collapse-expand [o]="state.indi"></collapse-expand>
 		</h3>
@@ -41,9 +40,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container">
+	<div class="container">
 		<h3>
 			<collapse-expand [o]="state.buyer"></collapse-expand>
 		</h3>
@@ -88,9 +87,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container">
+	<div class="container">
 		<h3>
 			<collapse-expand [o]="state.info"></collapse-expand>
 		</h3>
@@ -190,9 +189,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngIf="tender.lots | defined">
+	<div class="container" *ngIf="tender.lots | defined">
 		<h3>
 			<collapse-expand [o]="state.lots"></collapse-expand>
 		</h3>
@@ -309,9 +308,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngIf="(tender.personalRequirements || tender.economicRequirements || tender.technicalRequirements) | defined">
+	<div class="container" *ngIf="(tender.personalRequirements || tender.economicRequirements || tender.technicalRequirements) | defined">
 		<h3>
 			<collapse-expand [o]="state.reqs"></collapse-expand>
 		</h3>
@@ -333,9 +332,9 @@
 				<span>{{tender.deposits}}</span>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngIf="tender.publications | defined">
+	<div class="container" *ngIf="tender.publications | defined">
 		<h3>
 			<collapse-expand [o]="state.publications"></collapse-expand>
 		</h3>
@@ -383,9 +382,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngIf="tender.documents | defined">
+	<div class="container" *ngIf="tender.documents | defined">
 		<h3>
 			<collapse-expand [o]="state.documents"></collapse-expand>
 		</h3>
@@ -398,9 +397,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="container">
+	<div class="container">
 		<h3>
 			<collapse-expand [o]="state.additional"></collapse-expand>
 		</h3>
@@ -477,7 +476,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 	<div class="graph-footer">
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar">
@@ -485,4 +484,4 @@
 			</div>
 		</div>
 	</div>
-</section>
+</div>

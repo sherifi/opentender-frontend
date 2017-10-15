@@ -9,7 +9,7 @@ import {AboutFOIPage} from './pages/about/foi/foi.component';
 import {AboutHowPage} from './pages/about/how/how.component';
 import {AboutPage} from './pages/about/about.component';
 import {AboutDataQualityPage} from './pages/about/quality/quality.component';
-import {DownloadsPage} from './pages/downloads/downloads.component';
+import {DownloadPage} from './pages/download/download.component';
 import {DashboardsAdministrativeCapacityPage} from './pages/dashboards/administrative-capacity/administrative-capacity.component';
 import {DashboardsIntegrityPage} from './pages/dashboards/procurement-integrity/procurement-integrity.component';
 import {DashboardsPage} from './pages/dashboards/dashboards.component';
@@ -72,7 +72,7 @@ export const routes: Routes = [
 			{path: 'quality', component: AboutDataQualityPage, data: {title: 'Data Quality'}}
 		]
 	},
-	{path: 'downloads', component: DownloadsPage, data: {title: 'Downloads'}},
+	{path: 'download', component: DownloadPage, data: {title: 'Download'}},
 	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
 
 	{path: 'test', component: TestPage, data: {title: 'Test'}},

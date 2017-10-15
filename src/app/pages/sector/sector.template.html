@@ -1,22 +1,18 @@
-<section class="container-outer sector entity" *ngIf="!sector">
-	<section class="container">
-		<div class="entity-title"><i class="icon-hammer icon-large"></i> <ng-container i18n>Sector</ng-container></div>
+<div class="header-sub-container"></div>
+<div class="container-outer sector entity" *ngIf="!sector">
+	<div class="container">
 		<div i18n>Loading…</div>
-	</section>
-</section>
-
-<section class="container-outer sector entity" *ngIf="sector">
-	<section class="container">
-		<div class="entity-title"><i class="icon-hammer icon-large"></i> <ng-container i18n>Sector</ng-container></div>
-	</section>
-
-	<section class="container container-margin">
-		<div *ngIf="parent_sectors.length>0" class="pull-right">
-			<div class="title"><ng-container i18n>Parent Sectors</ng-container>:</div>
-			<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a></div>
-		</div>
-
-		<h2>{{sector.name}} (CPV {{sector.id}})</h2>
+	</div>
+</div>
+<div class="container-outer sector entity" *ngIf="sector">
+	<div class="container">
+		<h1 class="container-title">{{sector.name}} (CPV {{sector.id}})</h1>
+	</div>
+	<div class="container container-padded-top" *ngIf="parent_sectors.length>0">
+		<div class="title"><ng-container i18n>Parent Sectors</ng-container>:</div>
+		<div *ngFor="let val of parent_sectors"><a [routerLink]="'/sector/'+val.id">{{val.name}} (CPV {{val.id}})</a></div>
+	</div>
+	<div class="container container-margin">
 		<div *ngIf="filter.time">
 			<slider
 					[min]="filter.time.startYear"
@@ -27,18 +23,18 @@
 					defaultWidth="934"
 					(onSliderChange)="onSliderChange($event)"></slider>
 		</div>
-	</section>
+	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
 
-		<section class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
+		<div class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
 			<div class="container">
 				<div class="container-left-12">
 					<graph sector-treemap [data]="viz.subsectors"></graph>
 				</div>
 			</div>
-		</section>
-		<section class="container container-margin">
+		</div>
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph indicator-histogram [data]="viz.histogram.data" [title]="viz.histogram.title"></graph>
@@ -49,8 +45,8 @@
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="container container-margin">
+		</div>
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph companies [data]="viz.top_companies"></graph>
@@ -59,11 +55,11 @@
 					<graph authorities [data]="viz.top_authorities"></graph>
 				</div>
 			</div>
-		</section>
-		<section class="container">
+		</div>
+		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
-		</section>
+		</div>
 	</div>
 
-</section>
+</div>
 

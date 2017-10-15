@@ -1,11 +1,10 @@
-<section class="container-outer dashboards">
+<div class="container-outer dashboards">
 
-	<section class="container">
-		<div class="container-title"><i class="icon-hammer"></i> Market Analysis</div>
-	</section>
+	<div class="container">
+		<h1 class="container-title">Market Analysis</h1>
+	</div>
 
-	<section class="container container-margin">
-		<h2>Market Analysis</h2>
+	<div class="container container-margin">
 		<div *ngIf="filter.time">
 			<slider
 					[min]="filter.time.startYear"
@@ -16,23 +15,23 @@
 					defaultWidth="934"
 					(onSliderChange)="onSliderChange($event)"></slider>
 		</div>
-	</section>
+	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
-		<section class="container container-margin">
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-12">
 					<graph sector-treemap [data]="viz.sectors_stats"></graph>
 				</div>
 			</div>
-		</section>
-		<section class="container container-margin">
+		</div>
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-12">
 					<graph volume-nutsmap [data]="viz.volume_regions"></graph>
 				</div>
 			</div>
-		</section>
+		</div>
 		<br>
 		<table class="tables">
 			<tr>
@@ -52,4 +51,4 @@
 		</table>
 
 	</div>
-</section>
+</div>

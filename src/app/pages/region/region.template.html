@@ -1,18 +1,18 @@
-<section class="container-outer authority entity" *ngIf="!region">
-	<section class="container">
-		<div class="entity-title">Region</div>
-		<div>Loading…</div>
-	</section>
-</section>
+<div class="header-sub-container"></div>
 
-<section class="container-outer sector entity" *ngIf="region">
-	<section class="container">
-		<div class="entity-title"><i class="icon-location icon-large"></i> Region</div>
-		<h1>{{region.name}}</h1>
-	</section>
+<div class="container-outer authority entity" *ngIf="!region">
+	<div class="container">
+		<div>Loading…</div>
+	</div>
+</div>
+
+<div class="container-outer sector entity" *ngIf="region">
+	<div class="container">
+		<h1 class="container-title">{{region.name}}</h1>
+	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
-		<section class="container container-margin">
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph companies [data]="viz.top_companies"></graph>
@@ -21,10 +21,10 @@
 					<graph authorities [data]="viz.top_authorities"></graph>
 				</div>
 			</div>
-		</section>
-		<section class="container">
+		</div>
+		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
-		</section>
+		</div>
 	</div>
 
-</section>
+</div>

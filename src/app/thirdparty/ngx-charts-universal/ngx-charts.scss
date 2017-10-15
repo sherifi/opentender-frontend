@@ -13,10 +13,6 @@ ngx-charts-chart {
   }
 }
 
-ngx-charts-tree-map ngx-charts-chart > div {
-  border: none;
-}
-
 .ngx-charts {
   //float: left;
 
@@ -467,4 +463,11 @@ ngx-charts-tree-map ngx-charts-chart > div {
   .units {
     fill: #666;
   }
+}
+
+
+ngx-charts-tree-map ngx-charts-chart > div {
+  border: none;
+  background: none;
+  padding-top: 0;
 }

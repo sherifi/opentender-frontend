@@ -1,11 +1,11 @@
-<section class="container-outer documentation">
-	<section class="container">
-		<div class="container-title" i18n>Glossary</div>
-	</section>
+<div class="container-outer documentation">
+	<div class="container container-padded-bottom">
+		<h1 class="container-title" i18n>Glossary</h1>
+	</div>
 
-	<section class="container">
+	<div class="container">
 		<div class="container-left-3">
-			<h2 id="units" i18n>‎Terms</h2>
+			<h2 class="h4" id="units" i18n>‎Terms</h2>
 		</div>
 		<div class="container-right-9">
 			<h2 class="h3" id="terms-nuts">NUTS</h2>
@@ -28,11 +28,11 @@
 				<a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=LEGISSUM:l22008" target="_blank">EUR-Lex</a>
 			</p>
 		</div>
-	</section>
+	</div>
 
-	<section class="container" *ngFor="let group of indicators">
+	<div class="container" *ngFor="let group of indicators">
 		<div class="container-left-3">
-			<h2 id="{{group.sid}}">{{group.plural}}</h2>
+			<h2 class="h4" id="{{group.sid}}">{{group.plural}}</h2>
 		</div>
 		<div class="container-right-9">
 			<ng-container *ngFor="let sub of group.subindicators">
@@ -40,6 +40,6 @@
 				<p>{{sub.desc}}</p>
 			</ng-container>
 		</div>
-	</section>
+	</div>
 
-</section>
+</div>

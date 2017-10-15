@@ -1,11 +1,10 @@
-<section class="container-outer authority entity">
+<div class="container-outer authority entity">
 
-	<section class="container">
-		<div class="entity-title"><i [class]="icon"></i> {{title}}</div>
-	</section>
+	<div class="container">
+		<h1 class="container-title">{{title}}</h1>
+	</div>
 
-	<section class="container container-margin">
-		<h2>{{title}}</h2>
+	<div class="container container-margin">
 		<div>
 			<slider
 					[min]="filter.time.startYear"
@@ -23,11 +22,11 @@
 				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
 			</select>
 		</div>
-	</section>
+	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
 
-		<section class="container container-margin">
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
@@ -53,10 +52,10 @@
 				<div class="container-left-6">
 				</div>
 			</div>
-		</section>
+		</div>
 
-		<section class="container">
+		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
-		</section>
+		</div>
 	</div>
-</section>
+</div>

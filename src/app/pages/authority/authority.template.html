@@ -1,13 +1,15 @@
-<section class="container-outer authority entity" *ngIf="!authority">
-	<section class="container">
-		<div class="entity-title"><i class="icon-library"></i> <ng-container i18n>Authority</ng-container></div>
+<div class="header-sub-container"></div>
+<div class="container-outer authority entity" *ngIf="!authority">
+	<div class="container">
 		<div i18n>Loading…</div>
-	</section>
-</section>
+	</div>
+</div>
 
-<section class="container-outer authority entity" *ngIf="authority">
-	<section class="container">
-		<div class="entity-title"><i class="icon-library"></i> <ng-container i18n>Authority</ng-container></div>
+<div class="container-outer authority entity" *ngIf="authority">
+	<div class="container container-padded-bottom">
+		<h1 class="container-title">{{authority.name | nameGuard}}</h1>
+	</div>
+	<div class="container">
 		<div class="info-links">
 			<div class="info-link-box">
 				<ng-container i18n>Read more about tender legislation</ng-container><br>
@@ -23,13 +25,13 @@
 				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ authority.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 			</div>
 		</div>
-		<h1>{{authority.name}}</h1>
 		<tender-body-address [address]="authority.address"></tender-body-address>
+		<br/>
 		<select-similar-list [title]="'Authorities'" icon="icon-library" link="/authority/" [current]="this.authority" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
-	</section>
+	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
-		<section class="container container-margin">
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph histogram [data]="viz.lots_in_years"></graph>
@@ -48,9 +50,9 @@
 				</div>
 			</div>
 			<br>
-		</section>
-		<section class="container">
+		</div>
+		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
-		</section>
+		</div>
 	</div>
-</section>
+</div>

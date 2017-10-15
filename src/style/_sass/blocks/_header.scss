@@ -1,10 +1,16 @@
+$headercolor: #f9f9f9;
+
 header {
+  background-color: $headercolor;
+}
+
+.header-container {
   @include outer-container($max-width);
-  margin-top: 30px;
+  padding-top: 30px;
   margin-bottom: 0;
 
   @include respond-to(medium-up) {
-    margin-top: 40px;
+    padding-top: 40px;
   }
 }
 
@@ -99,12 +105,18 @@ header {
   }
 }
 
+.header-sub-container {
+  background-color: $headercolor;
+  min-height: 34px;
+  margin-bottom: 20px;
+}
+
 .header-sub {
   @include outer-container($max-width);
   margin-top: 0;
 
   .header-nav_bottom {
-    margin-top: 10px;
+    margin-top: -10px;
     text-align: center;
     @include respond-to(medium-up) {
       text-align: right;
@@ -145,7 +157,7 @@ header {
         text-decoration: underline;
       }
       &.active {
-        font-weight: $weight-bold;
+        text-shadow: -0.5px 0 #262626, 0.5px 0 #262626;
       }
 
       @include respond-to(huge-plus-up) {

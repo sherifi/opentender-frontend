@@ -1,36 +1,42 @@
-<section class="container-outer authority entity" *ngIf="!company">
-	<section class="container">
-		<div class="entity-title"><i class="icon-office"></i> <ng-container i18n>Company</ng-container></div>
+<div class="header-sub-container"></div>
+<div class="container-outer authority entity" *ngIf="!company">
+	<div class="container">
 		<div i18n>Loading…</div>
-	</section>
-</section>
+	</div>
+</div>
 
-<section class="container-outer company entity" *ngIf="company">
-	<section class="container">
-		<div class="entity-title"><i class="icon-office"></i> <ng-container i18n>Company</ng-container></div>
+<div class="container-outer company entity" *ngIf="company">
+	<div class="container container-padded-bottom">
+		<h1 class="container-title">{{company.name | nameGuard}}</h1>
+	</div>
+	<div class="container">
 		<div class="info-links">
 			<div class="info-link-box">
-				<ng-container i18n>Read more about tender legislation</ng-container><br>
+				<ng-container i18n>Read more about tender legislation</ng-container>
+				<br>
 				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
 			</div>
 			<div class="info-link-box" *ngIf="country.foi">
-				<ng-container i18n>Find Freedom of Information requests at</ng-container><br>
+				<ng-container i18n>Find Freedom of Information requests at</ng-container>
+				<br>
 				<a target="_blank" rel="noopener" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
 			</div>
 			<div class="info-link-box">
-				<ng-container i18n>Search this company at</ng-container><br>
+				<ng-container i18n>Search this company at</ng-container>
+				<br>
 				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
 				<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
 				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 			</div>
 		</div>
-		<h1>{{company.name | nameGuard}}</h1>
 		<tender-body-address [address]="company.address"></tender-body-address>
+		<br/>
 		<select-similar-list [title]="'Companies'" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
-	</section>
+	</div>
+
 
 	<div [ngClass]="{'is-loading': loading>0}">
-		<section class="container container-margin">
+		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph histogram [data]="viz.lots_in_years"></graph>
@@ -50,9 +56,9 @@
 				</div>
 			</div>
 			<br/>
-		</section>
-		<section class="container">
+		</div>
+		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
-		</section>
+		</div>
 	</div>
-</section>
+</div>

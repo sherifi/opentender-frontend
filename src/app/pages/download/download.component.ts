@@ -13,10 +13,10 @@ interface Download {
 
 @Component({
 	moduleId: __filename,
-	selector: 'downloads',
-	templateUrl: 'downloads.template.html'
+	selector: 'download',
+	templateUrl: 'download.template.html'
 })
-export class DownloadsPage implements OnInit {
+export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];
 	current: Download;
 

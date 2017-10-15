@@ -1,8 +1,8 @@
-<section class="container-outer search">
-	<section class="container">
-		<div class="container-title"><i class="icon-search"></i> <ng-container i18n>Search Authority</ng-container></div>
-	</section>
-	<div class="container container-padded-bottom">
+<div class="container-outer search">
+	<div class="container">
+		<h1 class="container-title" i18n>Search Authority</h1>
+	</div>
+	<div class="container container-padded-top container-padded-bottom">
 		<div class="container">
 			<search-box [search]="search" [filters]="search_filters" [quick_filters]="quick_filters" (onChange)="refresh()"></search-box>
 		</div>
@@ -12,9 +12,9 @@
 			<filter-box [search]="search" [filters]="check_filters" (onChange)="refresh()"></filter-box>
 		</div>
 	</div>
-</section>
-<section class="container-outer container-padded-top-lite">
-	<section class="container">
+</div>
+<div class="container-outer container-padded-top-lite">
+	<div class="container">
 		<authority-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="title" (searchChange)="searchChange($event);"></authority-table>
-	</section>
-</section>
+	</div>
+</div>

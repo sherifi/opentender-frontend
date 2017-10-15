@@ -1,4 +1,6 @@
-<section class="slab-delta slab-top">
+<div class="header-sub-container"></div>
+
+<div class="slab-hero slab-top">
 	<div class="container-outer">
 		<div class="container-left-10 hero">
 			<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
@@ -12,9 +14,9 @@
 		<div class="container-right-2">
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="slab-alpha container-padded">
+<div class="container-padded">
 	<div class="container-outer">
 		<div>
 			<graph home-histogram [data]="viz.lots_in_years"></graph>
@@ -23,9 +25,9 @@
 			<home-nutsmap></home-nutsmap>
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="slab-beta-dark container-padded">
+<div class="slab-beta-dark container-padded">
 	<div class="container-outer">
 		<div class="container-left-3">
 			<h4 i18n>You can select between different ways of interacting with the data using these tiles. They are interconnected so the same full data depth can be accessed in different ways.</h4>
@@ -57,14 +59,14 @@
 				</div>
 			</article>
 			<article class="card">
-				<a class="card-image_link" [routerLink]="['/downloads']">
+				<a class="card-image_link" [routerLink]="['/download']">
 					<div class="card-image-placeholder card-image-placeholder-3">
 						<i class="icon-database"></i>
 					</div>
 				</a>
 				<div class="card-content">
 					<p class="card-content-subhead" i18n>Download data</p>
-					<a [routerLink]="['/downloads']"><h3 class="card-title" i18n>Download</h3></a>
+					<a [routerLink]="['/download']"><h3 class="card-title" i18n>Download</h3></a>
 					<p i18n>Want to work with the data? You can download all the date this page is build on.</p>
 				</div>
 			</article>
@@ -106,12 +108,12 @@
 			</article>
 		</div>
 	</div>
-</section>
+</div>
 
-<section class="slab-alpha container-padded u-centered u-padding-small_screen home-bottom-links">
+<div class="container-padded u-centered u-padding-small_screen">
 	<h3 i18n>Not sure where to go? Start&nbsp;here&nbsp;…</h3>
 	<h3><a [routerLink]="['/about/about-opentender']">
 		<ng-container i18n>Learn what is this about</ng-container>
 		<span class="icon-chevron-thin-right icon-pull-down icon-padded"></span></a>
 	</h3>
-</section>
+</div>

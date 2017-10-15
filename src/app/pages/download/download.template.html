@@ -1,32 +1,29 @@
-<section class="container-outer downloads">
-
-	<section class="container">
-		<div class="container-title" i18n>Downloads</div>
-	</section>
-
-	<section class="container">
-		<h2 i18n>Downloads</h2>
+<div class="header-sub-container"></div>
+<div class="container-outer downloads">
+	<div class="container">
+		<h1 class="container-title" i18n>Download</h1>
+	</div>
+	<div class="container">
 		<p i18n>On this page you find all the tender data of this portal.</p>
-	</section>
-
-	<section class="container">
+	</div>
+	<div class="container">
 		<h2 class="h3" i18n>CSV</h2>
 		<p>[<i class="icon-hammer"></i> CSV download is under construction]</p>
-	</section>
-
-	<section class="container">
+	</div>
+	<div class="container">
 		<h2 class="h3" i18n>Hierarchical JSON</h2>
-	</section>
-
-	<section class="container container-current-download" *ngIf="current">
+	</div>
+	<div class="container container-current-download" *ngIf="current">
 		<p>
-			<ng-container i18n>Current Portal</ng-container>: {{current.name}}<br/>
-			<ng-container i18n>Tenders</ng-container>: {{current.count}}<br/>
+			<ng-container i18n>Current Portal</ng-container>
+			: {{current.name}}<br/>
+			<ng-container i18n>Tenders</ng-container>
+			: {{current.count}}<br/>
 			<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i> JSON</a> {{current.formats.json.size | formatFileSize}} -
 			<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i> NDJSON</a> {{current.formats.ndjson.size | formatFileSize}}
 		</p>
-	</section>
-	<section class="container">
+	</div>
+	<div class="container">
 		<table class="tables">
 			<thead>
 			<tr>
@@ -48,7 +45,6 @@
 		<p i18n>Files are compressed with <a href="https://en.wikipedia.org/wiki/Gzip">GZip</a>, which should be supported by your ZIP application.</p>
 		<p i18n>* Due to the amount of entries and many JSON parser don't support the file size, DIGIWHIST Tender JSON data has also been saved as <a href="http://ndjson.org/">Newline Delimited JSON</a>.</p>
 		<p i18n>The structure of entries is outlined in a <a href="https://github.com/digiwhist/opentender-data/blob/master/shared/schema.json" target="_blank">JSON Schema File</a>.</p>
-	</section>
-
-</section>
+	</div>
+</div>
 
