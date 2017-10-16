@@ -251,7 +251,10 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 				this.geolayer
 			],
 			zoom: 3,
+			minZoom: 2,
+			maxZoom: 10,
 			fullscreenControl: true,
+			scrollWheelZoom: false,
 			center: L.latLng({lat: 52.520645, lng: 13.409779})
 		};
 	}
@@ -322,6 +325,9 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 
 	onMapReady(map) {
 		this.map = map;
+		map.once('focus', () => {
+			map.scrollWheelZoom.enable();
+		});
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
