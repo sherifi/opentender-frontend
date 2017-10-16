@@ -4,6 +4,8 @@ import {AuthorityColumns, AuthorityColumn, Table, ColumnSort} from '../../model/
 import {SearchCommand} from '../../model/search';
 import {IAuthority, ISearchAuthorityData} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
+import {Utils} from '../../model/utils';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	selector: 'authority-table',
@@ -30,7 +32,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	defaultPage = 0;
 	all_columns = AuthorityColumns;
 
-	constructor(private api: ApiService, private notify: NotifyService) {
+	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService) {
 	}
 
 	ngOnInit(): void {
@@ -87,7 +89,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	paginationChange(data): void {
 		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
 		this.search_cmd.size = data.value.pageSize;
-		this.refresh();
+		this.refresh(true);
 	}
 
 	sortChange(data: { value: ColumnSort }) {
@@ -95,13 +97,16 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 		this.refresh();
 	}
 
-	refresh(): void {
+	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
 		this.api.searchAuthority(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
 					this.display(result.data);
+					if (scrollToTop && this.platform.isBrowser) {
+						Utils.scrollToFirst('tables');
+					}
 				}
 			},
 			(error) => {

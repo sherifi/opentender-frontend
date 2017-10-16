@@ -1,4 +1,4 @@
-<table class="tables" *ngIf="table">
+<table id="table-top" class="tables" *ngIf="table">
 	<thead>
 	<tr>
 		<th *ngFor="let col of table.columns" (click)="setSort(col)" [class.clickable]="col.sortBy" [ngClass]="{'tables-column-icon':col.id==='id'}">

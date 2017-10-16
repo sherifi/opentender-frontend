@@ -9,6 +9,7 @@ import Tender = Definitions.Tender;
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {I18NService} from '../../services/i18n.service';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	selector: 'tender-table',
@@ -36,7 +37,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	defaultPage: number = 0;
 	loading: number = 0;
 
-	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService) {
+	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private platform: PlatformService) {
 		this.setTableTitle();
 	}
 
@@ -97,7 +98,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	paginationChange(data): void {
 		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
 		this.search_cmd.size = data.value.pageSize;
-		this.refresh();
+		this.refresh(true);
 	}
 
 	sortChange(data: { value: ColumnSort }) {
@@ -105,13 +106,16 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.refresh();
 	}
 
-	refresh(): void {
+	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
 		this.api.searchTender(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
 					this.display(result.data);
+					if (scrollToTop && this.platform.isBrowser) {
+						Utils.scrollToFirst('tables');
+					}
 				}
 			},
 			(error) => {
