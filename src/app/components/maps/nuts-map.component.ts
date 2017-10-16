@@ -16,9 +16,9 @@ declare let L;
 	template: `
 		<div class="nutsmap_containers" style="height: 376px">
 			<div leaflet class="nutsmap_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
-			<div *ngIf="valid===0" class="nutsmap_placeholder" style="line-height: 376px">NO DATA</div>
+			<div *ngIf="data_list.length===0" class="nutsmap_placeholder" style="line-height: 376px">NO DATA</div>
 		</div>
-		<div class="nutsmap_legend">
+		<div class="nutsmap_legend" *ngIf="data_list.length>0">
 			<span>{{valueLow | formatNumber}}</span>
 			<svg width="200" height="16">
 				<defs>
@@ -50,8 +50,6 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 	private valueHigh: number;
 
 	private loading: number = 0;
-	private invalid: number = 0;
-	private valid: number = 0;
 	private map: any;
 	private geolayer: L.GeoJSON;
 	private leaflet_options = {};
@@ -264,49 +262,45 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 
 	displayNuts(geo: IApiGeoJSONResult) {
 		let nuts = {};
-		let max = 0;
-		let min = null;
 		Object.keys(this.data).forEach(key => {
 			let nutskey = Utils.validateNutsCode(key, this.level);
-			nuts[nutskey] = (nuts[nutskey] || 0) + this.data[key];
-			let val = nuts[nutskey];
-			if (nutskey !== 'invalid') {
-				max = Math.max(max, val);
-				if (min !== null) {
-					min = Math.min(min, val);
-				} else {
-					min = val;
-				}
+			let nut = nuts[nutskey];
+			if (!nut) {
+				nut = {
+					id: nutskey,
+					feature: geo.features.find(f => f.properties.id === nutskey),
+					value: 0
+				};
+				nuts[nutskey] = nut;
 			}
+			nut.value = nut.value + this.data[key];
+		});
+		let max = 0;
+		let min = 0;
+		let list = Object.keys(nuts).map(key => nuts[key]).filter(nut => nut.feature);
+		if (list.length > 0) {
+			min = list[0].value;
+			max = list[0].value;
+		}
+		list.forEach(nut => {
+			min = Math.min(nut.value, min);
+			max = Math.max(nut.value, max);
 		});
 		let scale = scaleLinear().domain([0, max]).range([0, 1]);
 		this.colorLow = d3chroma.interpolateBlues(scale(min));
 		this.valueLow = 0;
 		this.colorHigh = d3chroma.interpolateBlues(scale(max));
 		this.valueHigh = max;
-		this.data_list = [];
-		this.valid = 0;
-		geo.features = geo.features.filter(feature => {
-			let value = nuts[feature.properties.id];
-			if (value > 0) {
-				delete nuts[feature.properties.id];
-				feature.properties['value'] = value;
-				feature.properties['color'] = d3chroma.interpolateBlues(scale(value));
-				this.valid += value;
-				this.data_list.push({id: feature.properties.id, name: feature.properties.name, value: Utils.roundValueTwoDecimals(value)});
-				return true;
-			}
-			return false;
+		this.data_list = list.map(nut => {
+			return {id: nut.id, name: nut.feature.properties.name, value: nut.value};
 		});
-		this.invalid = 0;
-		if (Object.keys(nuts).length > 0) {
-			Object.keys(nuts).forEach(key => {
-				this.invalid += nuts[key];
-			});
-			// console.log('unused', nuts);
-		}
+		geo.features = list.map(nut => {
+			nut.feature.properties['value'] = nut.value;
+			nut.feature.properties['color'] = d3chroma.interpolateBlues(scale(nut.value));
+			return nut.feature;
+		});
+		this.geolayer.clearLayers();
 		if (geo.features.length > 0) {
-			this.geolayer.clearLayers();
 			this.geolayer.addData(geo);
 			this.map.fitBounds(this.geolayer.getBounds());
 		}
