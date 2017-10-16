@@ -200,6 +200,7 @@ export interface ISearchAuthorityData {
 		total: number;
 		hits: Array<IAuthority>;
 	};
+	sortBy: ColumnSort;
 	aggregations: any;
 }
 
@@ -208,6 +209,7 @@ export interface ISearchCompanyData {
 		total: number;
 		hits: Array<ICompany>;
 	};
+	sortBy: ColumnSort;
 	aggregations: any;
 }
 

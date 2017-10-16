@@ -116,6 +116,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	display(data: ISearchCompanyData): void {
 		if (data) {
 			this.total = data.hits.total;
+			this.sortBy = data.sortBy;
 			this.companies = data.hits.hits;
 			this.buildTable();
 			this.searchChange.emit(data);

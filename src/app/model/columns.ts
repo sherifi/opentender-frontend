@@ -96,6 +96,10 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 		name: 'Main Activities',
 		id: 'body.mainActivities',
 		group: 'Authority',
+		sortBy: {
+			id: 'body.mainActivities',
+			ascend: true
+		},
 		format: authority => {
 			return (authority.body.mainActivities || []).map(activity => {
 				return {content: Utils.expandUnderlined(activity)};
@@ -106,13 +110,17 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 		name: 'Buyer Type',
 		id: 'body.buyerType',
 		group: 'Authority',
+		sortBy: {
+			id: 'body.buyerType',
+			ascend: true
+		},
 		format: authority => [{content: Utils.expandUnderlined(authority.body.buyerType)}]
 	},
 	{
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',
-		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.groupId}]
+		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.groupId, align: 'center'}]
 	}
 ];
 
@@ -161,7 +169,7 @@ export const CompanyColumns: Array<CompanyColumn> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Company',
-		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.groupId}]
+		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.groupId, align: 'center'}]
 	}
 ];
 

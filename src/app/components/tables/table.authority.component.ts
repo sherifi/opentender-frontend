@@ -115,6 +115,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	display(data: ISearchAuthorityData): void {
 		if (data) {
 			this.total = data.hits.total;
+			this.sortBy = data.sortBy;
 			this.authorities = data.hits.hits;
 			this.buildTable();
 		}
