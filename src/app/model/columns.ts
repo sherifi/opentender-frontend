@@ -293,7 +293,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		id: 'appealBodyName',
 		group: 'Buyer',
 		sortBy: {
-			id: 'appealBodyName.raw',
+			id: 'appealBodyName',
 			ascend: true
 		},
 		format: tender => [{content: tender.appealBodyName}]
@@ -303,7 +303,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		id: 'mediationBodyName',
 		group: 'Buyer',
 		sortBy: {
-			id: 'mediationBodyName.raw',
+			id: 'mediationBodyName',
 			ascend: true
 		},
 		format: tender => [{content: tender.mediationBodyName}]
