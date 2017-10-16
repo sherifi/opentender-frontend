@@ -98,11 +98,13 @@ export class RegionPage implements OnInit, OnDestroy {
 				type: 'term',
 				value: [this.region.id]
 			},
-			{
-				field: 'lots.bids.bidders.address.nuts' + field,
-				type: 'term',
-				value: [this.region.id]
-			}];
+			// TODO: implement OR parameter ?
+			// {
+			// 	field: 'lots.bids.bidders.address.nuts' + field,
+			// 	type: 'term',
+			// 	value: [this.region.id]
+			// }
+			];
 		this.search_cmd = search_cmd;
 	}
 
