@@ -35,7 +35,7 @@
   }
 }
 
-$colors-list: #166496 #80aa6a #b1d9f4 #4BC2A5 #facf9c #8e9d63 ;
+$colors-list: #166496 #4BC2A5 #b1d9f4 #8e9d63 #facf9c #80aa6a;
 @for $i from 1 through length($colors-list) {
   .card-image-placeholder-#{$i} {
     background-color: nth($colors-list, $i);
