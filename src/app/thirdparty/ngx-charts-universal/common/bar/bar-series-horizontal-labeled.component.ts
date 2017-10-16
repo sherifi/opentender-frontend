@@ -105,7 +105,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 				y: 0,
 				id: d.id
 			};
-			bar.height = Math.min(50, this.yScale.bandwidth());
+			bar.height = Math.min(100, this.yScale.bandwidth());
 			let fontsize = Math.min(Math.round(bar.height / 2), 11);
 			bar.fontSize = fontsize + 'px';
 			bar.barHeight = bar.height - fontsize - labelPadding;
