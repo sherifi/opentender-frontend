@@ -5,11 +5,15 @@ import {Indicator, SubIndicator} from '../app.interfaces';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
-		if (!value || value.length === 0) return '';
+		if (!value || value.length === 0) {
+			return '';
+		}
 		return moment(value).format('DD.MM.YYYY HH:mm');
 	},
 	formatDate: (value: string): string => {
-		if (!value || value.length === 0) return '';
+		if (!value || value.length === 0) {
+			return '';
+		}
 		return moment(value).format('DD.MM.YYYY');
 	},
 	formatCurrency: (value: string): string => {
@@ -119,7 +123,9 @@ export const Utils = {
 		if (value === undefined || value === null) {
 			return '';
 		}
-		if (value === 'eu') return 'All Countries';
+		if (value === 'eu') {
+			return 'All Countries';
+		}
 		value = value.toUpperCase();
 		if (Consts.countries[value]) {
 			return Consts.countries[value];
@@ -214,13 +220,39 @@ export const Utils = {
 		}
 	},
 	cpv2color: function(cpv) {
-		// console.log(cpv);
-		return null;
+		if (cpv.length == 2) {
+			return Consts.colors.diverging[parseInt(cpv, 10)];
+		}
+		if (cpv.length == 3) {
+			let i = parseInt(cpv.slice(2, 3), 10);
+			let parentcolor = Utils.cpv2color(cpv.slice(0, 2));
+			if (i === 0) {
+				// zero id'd "child" is in fact the parent, so use that color
+				return parentcolor;
+			}
+			if (Consts.colors.diverging[i] === parentcolor) {
+				// switcheroo if using the same color as the parent
+				return Consts.colors.diverging[0];
+			}
+			return Consts.colors.diverging[i];
+		}
+		if (cpv.length == 5) {
+			let i = parseInt(cpv.slice(3, 5), 10);
+			let parentcolor = Utils.cpv2color(cpv.slice(0, 3));
+			if (i === 0) {
+				return parentcolor;
+			}
+			if (Consts.colors.diverging[i] === parentcolor) {
+				return Consts.colors.diverging[0];
+			}
+			return Consts.colors.diverging[i];
+		}
+		return '#fff';
 	},
 	roundValueTwoDecimals: (value) => {
 		return Math.round(value * 100) / 100;
 	},
-	scrollToFirst:(className:string) =>{
+	scrollToFirst: (className: string) => {
 		let elements = document.getElementsByClassName(className);
 		if (elements.length == 0) {
 			return;

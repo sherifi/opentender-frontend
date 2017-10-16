@@ -40,7 +40,10 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 				max: {height: 400}
 			},
 			colorScheme: {
-				'domain': Consts.colors.diverging
+				'domain': Consts.colors.diverging,
+				getColor: (value) => {
+					return Utils.cpv2color(value);
+				}
 			},
 			valueFormatting: Utils.formatValue
 		},
@@ -59,7 +62,10 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 				max: {height: 400}
 			},
 			colorScheme: {
-				'domain': Consts.colors.diverging
+				'domain': Consts.colors.diverging,
+				getColor: (value) => {
+					return Utils.cpv2color(value);
+				}
 			},
 			valueFormatting: (n: number): string => {
 				return '€ ' + Utils.formatValue(n);
