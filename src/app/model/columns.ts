@@ -495,7 +495,7 @@ export const TenderColumns: Array<TenderColumn> = [
 		id: 'description',
 		group: 'Tender',
 		sortBy: {
-			id: 'description.raw',
+			id: 'description',
 			ascend: true
 		},
 		format: tender => [{content: tender.description}]
