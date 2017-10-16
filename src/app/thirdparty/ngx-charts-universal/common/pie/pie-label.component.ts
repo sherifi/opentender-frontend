@@ -35,7 +35,6 @@ export class PieLabelComponent implements OnChanges {
 	@Input() explodeSlices;
 
 	element: HTMLElement;
-	trimLabel: Function;
 	labelXY: any;
 	transform: string;
 	line: string;
@@ -44,11 +43,10 @@ export class PieLabelComponent implements OnChanges {
 
 	constructor(element: ElementRef, private platform: PlatformService) {
 		this.element = element.nativeElement;
-		this.trimLabel = trimLabel;
 	}
 
 	getLabel(label: string) {
-		return trimLabel(label, 20);
+		return label; // trimLabel(label, 20);
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

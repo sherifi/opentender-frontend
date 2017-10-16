@@ -8,7 +8,7 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 	template: `
 
 		<svg:g *ngFor="let bar of bars; trackBy: trackBy"
-				ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'" [tooltipTitle]="bar.tooltipText">
+			   ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'" [tooltipTitle]="bar.tooltipText">
 			<svg:g ngx-charts-axis-label
 				   style="cursor: pointer;"
 				   [style.font-size]="bar.fontSize"
@@ -88,7 +88,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 		this.bars = this.series.map((d, index) => {
 			let value = d.value;
 			const formattedLabel = formatLabel(d.name);
-			const roundEdges = this.type === 'standard';
+			const roundEdges = false; // this.type === 'standard';
 			const fontSize = '11px';
 			const labelPadding = 3;
 			let barHeight = 11;
@@ -105,7 +105,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 				y: 0,
 				id: d.id
 			};
-			bar.height = this.yScale.bandwidth();
+			bar.height = Math.min(50, this.yScale.bandwidth());
 			let fontsize = Math.min(Math.round(bar.height / 2), 11);
 			bar.fontSize = fontsize + 'px';
 			bar.barHeight = bar.height - fontsize - labelPadding;

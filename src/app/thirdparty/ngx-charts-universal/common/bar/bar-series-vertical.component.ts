@@ -84,7 +84,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 			let value = d.value;
 			let label = d.name;
 			const formattedLabel = formatLabel(label);
-			const roundEdges = this.type === 'standard';
+			const roundEdges = false; // this.type === 'standard';
 
 			let bar: any = {
 				value,

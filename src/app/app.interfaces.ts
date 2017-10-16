@@ -164,6 +164,7 @@ export interface IStats {
 	top_terms_authorities: IStatsAuthorities;
 	count_lots_bids: IStatsCounts;
 	terms_indicators: IStatsIndicators;
+	terms_indicators_score: IStatsIndicators;
 	histogram_lots_awardDecisionDate: IStatsLotsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;

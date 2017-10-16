@@ -80,7 +80,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 			let value = d.value;
 			let label = d.name;
 			const formattedLabel = formatLabel(label);
-			const roundEdges = this.type === 'standard';
+			const roundEdges = false; // this.type === 'standard';
 
 			let bar: any = {
 				id: d.id,
@@ -93,6 +93,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 
 			bar.height = this.yScale.bandwidth();
 
+			console.log('hey', bar);
 			if (this.type === 'standard') {
 				bar.width = Math.abs(this.xScale(value) - this.xScale(0));
 				if (value < 0) {

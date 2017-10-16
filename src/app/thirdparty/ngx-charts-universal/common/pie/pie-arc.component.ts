@@ -8,32 +8,35 @@ import {interpolate} from 'd3-interpolate';
 @Component({
 	selector: 'g[ngx-charts-pie-arc]',
 	template: `
-    <svg:g class="arc-group">
-      <svg:defs *ngIf="gradient">
-        <svg:g ngx-charts-svg-radial-gradient
-          [color]="fill"
-          orientation="vertical"
-          [name]="gradId.id"
-          [startOpacity]="startOpacity"
-        />
-      </svg:defs>
-      <svg:path
-        [attr.d]="path"
-        class="arc"
-        [class.active]="isActive"
-        [attr.fill]="gradient ? gradId.url : fill"
-        (click)="onClick()"
-        (mouseenter)="activate.emit(data)"
-        (mouseleave)="deactivate.emit(data)"
-        [style.pointer-events]="pointerEvents ? 'auto' : 'none'"
-      />
-    </svg:g>
-  `,
+		<svg:g class="arc-group">
+			<svg:defs *ngIf="gradient">
+				<svg:g ngx-charts-svg-radial-gradient
+					   [color]="fill"
+					   orientation="vertical"
+					   [name]="gradId.id"
+					   [startOpacity]="startOpacity"
+				/>
+			</svg:defs>
+			<svg:path
+					[attr.d]="path"
+					class="arc"
+					[class.active]="isActive"
+					[attr.fill]="gradient ? gradId.url : fill"
+					[attr.fill-opacity]="fill?1:0"
+					[attr.stroke]="fill?fill:border"
+					(click)="onClick()"
+					(mouseenter)="activate.emit(data)"
+					(mouseleave)="deactivate.emit(data)"
+					[style.pointer-events]="pointerEvents ? 'auto' : 'none'"
+			/>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PieArcComponent implements OnChanges {
 
-	@Input() fill;
+	@Input() fill: string;
+	@Input() border: string;
 	@Input() startAngle = 0;
 	@Input() endAngle: number = Math.PI * 2;
 	@Input() innerRadius;

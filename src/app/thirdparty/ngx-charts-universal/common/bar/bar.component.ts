@@ -35,7 +35,7 @@ export class BarComponent implements OnChanges {
 	@Input() x;
 	@Input() y;
 	@Input() orientation;
-	@Input() roundEdges: boolean = true;
+	@Input() roundEdges: boolean = false;
 	@Input() gradient: boolean = false;
 	@Input() offset = 0;
 	@Input() isActive: boolean = false;

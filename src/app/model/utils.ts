@@ -217,7 +217,7 @@ export const Utils = {
 		// console.log(cpv);
 		return null;
 	},
-	roundCurrencyValueFloat: (value) => {
+	roundValueTwoDecimals: (value) => {
 		return Math.round(value * 100) / 100;
 	}
 };

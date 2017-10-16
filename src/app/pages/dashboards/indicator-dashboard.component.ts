@@ -30,13 +30,13 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
-		terms_indicators: IStatsIndicators
+		terms_indicators_score: IStatsIndicators
 	} = {
 		top_companies: null,
 		top_authorities: null,
 		lots_in_years: null,
 		cpvs_codes: null,
-		terms_indicators: null
+		terms_indicators_score: null
 	};
 	private filter: {
 		time?: {
@@ -97,7 +97,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			top_authorities: null,
 			lots_in_years: null,
 			cpvs_codes: null,
-			terms_indicators: null
+			terms_indicators_score: null
 		};
 		if (!stats) {
 			this.viz = viz;
@@ -106,7 +106,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
-		viz.terms_indicators = stats.terms_indicators;
+		viz.terms_indicators_score = stats.terms_indicators_score;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 

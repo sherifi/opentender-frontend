@@ -1275,8 +1275,11 @@ export const Consts = {
 			'#35978f',
 			'#01665e',
 			'#003c30'],
-		single: ['#66A4D9'],
-		single2: ['#35978f'],
+		single: ['#4e99ca'],
+		// single: ['#7ca4ec'],
+		// single: ['#66A4D9'],
+		single2: ['#2b908f'],
+		// single2: ['#35978f'],
 		single3: ['#dfc27d'],
 		single4: ['#e99450']
 	}

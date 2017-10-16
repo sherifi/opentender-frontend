@@ -7,14 +7,14 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[indicator-structure]',
 	template: `
-		<div class="graph-title" i18n>Structure of {{title}}</div>
-		<ngx-charts-pie-chart
+		<div class="graph-title" i18n>Score of {{title}}</div>
+		<ngx-charts-radar-chart
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
 				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
-		</ngx-charts-pie-chart>
+		</ngx-charts-radar-chart>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvider {
@@ -35,7 +35,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			explodeSlices: false,
 			doughnut: false,
 			gradient: false,
-			valueFormatting: Utils.formatPercent,
+			valueFormatting: Utils.formatValue,
 			colorScheme: {
 				domain: Consts.colors.diverging
 			}
