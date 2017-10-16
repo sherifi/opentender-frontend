@@ -52,7 +52,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: 'Percent %', name: 'Name'}, filename: this.title + '-structure'};
+		return {data: this.graph.data, header: {value: 'Score', name: 'Name'}, filename: this.title + '-scores'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
