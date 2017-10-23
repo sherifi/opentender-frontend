@@ -19,7 +19,7 @@ export class GraphSupplierNutsMapComponent {
 	@Input()
 	data: IStatsNuts;
 	title: string;
-	map_level: number = 1;
+	map_level: number = 2;
 
 	constructor(private i18n: I18NService) {
 		this.title = this.i18n.get('Suppliers');
