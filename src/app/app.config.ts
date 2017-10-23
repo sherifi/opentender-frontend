@@ -1,12 +1,14 @@
 import {FormsModule} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-// import {NgxChartsModule} from './thirdparty/ngx-charts-universal/ngx-charts.module';
 import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
-import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 import {AppRoutingModule} from './app.routes';
 import {ToastyModule} from 'ng2-toasty';
+import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
+import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
+import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
+import {BarChartModule} from './thirdparty/ngx-charts-universal/bar-chart/bar-chart.module';
 
 import {App} from './app.component';
 
@@ -75,6 +77,8 @@ import {GraphBuyerNutsMapComponent} from './components/maps/nuts-map-buyer.compo
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
+import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
+import {GraphProcedureTypesComponent} from './components/graphs/procedure-types.component';
 import {HeaderComponent} from './components/header.component';
 import {HomeMapComponent} from './components/maps/nuts-map-home.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
@@ -88,6 +92,7 @@ import {SelectFiltersButtonComponent} from './components/selects/select-filters-
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
 import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
+import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
@@ -102,11 +107,6 @@ import {StateService} from './services/state.service';
 import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
-import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
-import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
-import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
-import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
-import {BarChartModule} from './thirdparty/ngx-charts-universal/bar-chart/bar-chart.module';
 
 const AppConfig = {
 	declarations: [
@@ -150,6 +150,7 @@ const AppConfig = {
 		GraphAuthoritiesComponent,
 		GraphCompaniesComponent,
 		GraphNutsMapComponent,
+		GraphProcedureTypesComponent,
 		GraphHomeHistogramComponent,
 		GraphSupplierNutsMapComponent,
 		GraphBuyerNutsMapComponent,
@@ -209,12 +210,9 @@ const AppConfig = {
 	imports: [
 		FormsModule,
 		DropdownModule,
-
 		TreeMapModule,
 		PieChartModule,
 		BarChartModule,
-		// NgxChartsModule,
-
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule,

@@ -2,12 +2,11 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {ISeriesProvider, IStatsPcCpvs} from '../../app.interfaces';
-import {Router} from '@angular/router';
+import {ISeriesProvider, IStatsProcedureType} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
-	selector: 'graph[sectors]',
+	selector: 'graph[procedure-types]',
 	template: `
 		<div class="title">{{title}}</div>
 		<div class="graph-toolbar-container">
@@ -23,13 +22,13 @@ import {I18NService} from '../../services/i18n.service';
 		</ngx-charts-bar-horizontal-labeled>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
+export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider {
 	@Input()
-	data: IStatsPcCpvs;
+	data: IStatsProcedureType;
 	@Input()
 	title: string = '';
 
-	cpvs_codes_absolute: IChartBar = {
+	procedure_types_absolute: IChartBar = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -58,37 +57,31 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 			}
 		},
 		select: (event) => {
-			if (event.id) {
-				this.router.navigate(['/sector/' + event.id]);
-			}
 		},
 		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};
 
-	graph: IChartBar = this.cpvs_codes_absolute;
+	graph: IChartBar = this.procedure_types_absolute;
 
-	constructor(private router: Router, private i18n: I18NService) {
-		this.title = this.i18n.get('Sectors');
-		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
-		this.cpvs_codes_absolute.chart.yAxis.label = this.i18n.get('Sector (CPV)');
+	constructor(private i18n: I18NService) {
+		this.title = this.i18n.get('Procedure Type');
+		this.procedure_types_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
+		this.procedure_types_absolute.chart.yAxis.label = this.i18n.get('Procedure Type');
 	}
 
 	getSeriesInfo() {
-		let series = Object.keys(this.data).map((key) => {
-			return {id: key, name: this.data[key].name, value: this.data[key].value};
-		});
-		return {data: series, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: 'sectors'};
+		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'Procedure Type'}, filename: 'procedure_types'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.cpvs_codes_absolute.data = [];
+		this.procedure_types_absolute.data = [];
 		if (this.data) {
-			this.cpvs_codes_absolute.data = Object.keys(this.data).map((key) => {
-				return {id: key, name: this.data[key].name, value: this.data[key].value};
+			this.procedure_types_absolute.data = Object.keys(this.data).map((key) => {
+				return {id: key, name: Utils.expandUnderlined(key), value: this.data[key]};
 			});
-			this.cpvs_codes_absolute.data.sort((a, b) => {
+			this.procedure_types_absolute.data.sort((a, b) => {
 				if (a.value > b.value) {
 					return 1;
 				}
@@ -97,20 +90,6 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 				}
 				return 0;
 			});
-			let othergroup;
-			let othergroupcount = 0;
-			while (this.cpvs_codes_absolute.data.length - 8 > 2) {
-				if (!othergroup) {
-					othergroup = {name: '', value: 0};
-				}
-				let item = this.cpvs_codes_absolute.data.shift();
-				othergroup.value += item.value;
-				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + item.value + ')';
-			}
-			if (othergroup) {
-				this.cpvs_codes_absolute.data.unshift(othergroup);
-			}
 		}
 	}
 

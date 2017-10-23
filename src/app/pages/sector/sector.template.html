@@ -56,6 +56,16 @@
 				</div>
 			</div>
 		</div>
+		<div class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph procedure-types [data]="viz.procedure_types.data"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph buyer-nutsmap [data]="viz.authority_nuts"></graph>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
 		</div>

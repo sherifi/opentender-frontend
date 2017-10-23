@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears} from '../../app.interfaces';
+import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears, IStatsProcedureType, IStatsNuts} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {I18NService} from '../../services/i18n.service';
 import {Utils} from '../../model/utils';
@@ -22,19 +22,21 @@ export class SectorPage implements OnInit, OnDestroy {
 	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
 	private viz: {
-		subsectors: Array<{ sector: ISector; stats: IStats }>,
-		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
-		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
+		authority_nuts: IStatsNuts,
 		cpvs_codes: { data: IStatsPcCpvs, title?: string },
-		counts: IStatsCounts
+		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
+		procedure_types: { data: IStatsProcedureType, title?: string },
+		subsectors: Array<{ sector: ISector; stats: IStats }>,
+		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
+		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 	} = {
-		subsectors: [],
-		top_companies: null,
-		top_authorities: null,
-		histogram: {data: null},
+		authority_nuts: {data: null},
 		cpvs_codes: {data: null},
-		counts: null
+		histogram: {data: null},
+		procedure_types: {data: null},
+		subsectors: [],
+		top_authorities: null,
+		top_companies: null,
 	};
 	private filter: {
 		time?: {
@@ -51,6 +53,7 @@ export class SectorPage implements OnInit, OnDestroy {
 				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
 		this.viz.cpvs_codes.title = i18n.get('Sector');
 		this.viz.histogram.title = i18n.get('Subsectors');
+		this.viz.procedure_types.title = i18n.get('Procedure Type');
 	}
 
 	ngOnInit(): void {
@@ -157,10 +160,11 @@ export class SectorPage implements OnInit, OnDestroy {
 		let viz = this.viz;
 		viz.cpvs_codes.data = null;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
-		viz.counts = stats.count_lots_bids;
+		viz.procedure_types.data = stats.terms_procedure_type;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors = stats.sectors_stats;
+		viz.authority_nuts = stats.terms_authority_nuts;
 
 		if (viz.subsectors) {
 			viz.cpvs_codes.data = {};
