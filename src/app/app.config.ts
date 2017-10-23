@@ -1,6 +1,6 @@
 import {FormsModule} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-import {NgxChartsModule} from './thirdparty/ngx-charts-universal/ngx-charts.module';
+// import {NgxChartsModule} from './thirdparty/ngx-charts-universal/ngx-charts.module';
 import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
@@ -104,6 +104,9 @@ import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
 import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
 import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
+import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
+import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
+import {BarChartModule} from './thirdparty/ngx-charts-universal/bar-chart/bar-chart.module';
 
 const AppConfig = {
 	declarations: [
@@ -206,7 +209,12 @@ const AppConfig = {
 	imports: [
 		FormsModule,
 		DropdownModule,
-		NgxChartsModule,
+
+		TreeMapModule,
+		PieChartModule,
+		BarChartModule,
+		// NgxChartsModule,
+
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule,
