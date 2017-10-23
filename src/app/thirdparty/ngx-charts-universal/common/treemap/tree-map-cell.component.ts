@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, SimpleCha
 import {invertColor} from '../../utils/color.helper';
 import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
+import 'd3-transition';
 
 @Directive({
 	selector: '[measure]'

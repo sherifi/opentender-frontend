@@ -1,8 +1,8 @@
 import {Component, Input, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
-import {trimLabel} from '../../utils/label.helper';
 import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
 import {arc} from 'd3-shape';
+import 'd3-transition';
 
 @Component({
 	selector: 'g[ngx-charts-pie-label]',

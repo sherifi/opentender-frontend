@@ -3,6 +3,7 @@ import {UrlId} from '../../utils/id.helper';
 import {PlatformService} from '../../../../services/platform.service';
 import {roundedRect} from '../shapes/shapes.helper';
 import {select} from 'd3-selection';
+import 'd3-transition';
 
 @Component({
 	selector: 'g[ngx-charts-bar]',

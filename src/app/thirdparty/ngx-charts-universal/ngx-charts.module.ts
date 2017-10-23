@@ -9,7 +9,7 @@ import {GaugeModule} from './gauge/gauge.module';
 import {ForceDirectedGraphModule} from './force-directed-graph/force-directed-graph.module';
 import {NumberCardModule} from './number-card/number-card.module';
 import {TreeMapModule} from './tree-map/tree-map.module';
-import {transition} from 'd3-transition'; // this is not unused, aot needs this import
+import 'd3-transition';
 
 @NgModule({
 	exports: [

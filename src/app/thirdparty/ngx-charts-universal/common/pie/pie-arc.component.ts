@@ -4,6 +4,7 @@ import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
 import {arc} from 'd3-shape';
 import {interpolate} from 'd3-interpolate';
+import 'd3-transition';
 
 @Component({
 	selector: 'g[ngx-charts-pie-arc]',

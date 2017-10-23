@@ -2,6 +2,7 @@ import {Component, Input, Output, SimpleChanges, EventEmitter, ElementRef, OnCha
 import {UrlId} from '../../utils/id.helper';
 import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
+import 'd3-transition';
 
 @Component({
 	selector: 'g[ngx-charts-area]',
