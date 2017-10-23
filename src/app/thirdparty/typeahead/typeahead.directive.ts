@@ -96,6 +96,11 @@ export class TypeaheadDirective implements OnInit, OnDestroy {
 				return;
 			}
 
+			// left/right
+			if ((e.keyCode === 37) || (e.keyCode === 39)) {
+				return;
+			}
+
 			// up
 			if (e.keyCode === 38) {
 				this._container.prevActiveMatch();

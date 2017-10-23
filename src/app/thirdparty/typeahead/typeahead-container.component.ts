@@ -5,16 +5,14 @@ import {TypeaheadMatch} from './typeahead-match.class';
 
 @Component({
 	selector: 'typeahead-container',
-	template: `
-<ul class="dropdown-menu">
+	template: `<ul class="dropdown-menu">
   <ng-template ngFor let-match let-i="index" [ngForOf]="matches">
     <li *ngIf="match.isHeader()" class="dropdown-header">{{match}}</li>
     <li *ngIf="!match.isHeader()" [class.active]="isActive(match)" (mouseenter)="selectHover(match)" (mousedown)="selectActive(match)" (click)="selectMatch(match, $event)">
       <a [title]="match" tabindex="-1"><span [innerHtml]="highlight(match, query)"></span></a>
     </li>
   </ng-template>
-</ul>
-`,
+</ul>`,
 	host: {
 		'class': 'dropdown open'
 	},
@@ -61,9 +59,7 @@ export class TypeaheadContainerComponent {
 
 	public prevActiveMatch(): void {
 		let index = this.matches.indexOf(this._active);
-		this._active = this.matches[index - 1 < 0
-			? this.matches.length - 1
-			: index - 1];
+		this._active = this.matches[index - 1 < 0 ? this.matches.length - 1 : index - 1];
 		if (this._active.isHeader()) {
 			this.prevActiveMatch();
 		}
@@ -72,9 +68,7 @@ export class TypeaheadContainerComponent {
 
 	public nextActiveMatch(): void {
 		let index = this.matches.indexOf(this._active);
-		this._active = this.matches[index + 1 > this.matches.length - 1
-			? 0
-			: index + 1];
+		this._active = this.matches[index + 1 > this.matches.length - 1 ? 0 : index + 1];
 		if (this._active.isHeader()) {
 			this.nextActiveMatch();
 		}
