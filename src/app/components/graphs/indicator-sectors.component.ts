@@ -60,7 +60,9 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 			}
 		},
 		select: (event) => {
-			this.router.navigate(['/sector/' + event.id]);
+			if (event.id) {
+				this.router.navigate(['/sector/' + event.id]);
+			}
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -95,7 +97,9 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 			}
 		},
 		select: (event) => {
-			this.router.navigate(['/sector/' + event.id]);
+			if (event.id) {
+				this.router.navigate(['/sector/' + event.id]);
+			}
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -146,8 +150,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				}
 				return 0;
 			});
-
-			let othergroup;
+			let othergroup = null;
 			let othergroupcount = 0;
 			while (this.cpvs_codes_average.data.length - 8 > 2) {
 				if (!othergroup) {
@@ -173,7 +176,6 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				}
 				return 0;
 			});
-
 			othergroup = null;
 			othergroupcount = 0;
 			while (this.cpvs_codes_absolute.data.length - 8 > 2) {
