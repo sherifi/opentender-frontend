@@ -30,18 +30,18 @@ input[type='submit'] {
 
   &:hover,
   &:focus {
-	background-color: $primary-hover-button-bg-color;
-	color: $primary-hover-button-color;
+    background-color: $primary-hover-button-bg-color;
+    color: $primary-hover-button-color;
 
-	a {
-	  border-bottom: none;
-	  color: $primary-button-color;
-	}
+    a {
+      border-bottom: none;
+      color: $primary-button-color;
+    }
   }
 
   a {
-	border-bottom: none;
-	color: $primary-button-color;
+    border-bottom: none;
+    color: $primary-button-color;
   }
 }
 
@@ -57,18 +57,18 @@ input[type='submit'] {
 
   &:hover,
   &:focus {
-	background-color: $secondary-hover-button-bg-color;
-	color: $secondary-hover-button-color;
+    background-color: $secondary-hover-button-bg-color;
+    color: $secondary-hover-button-color;
 
-	a {
-	  border-bottom: none;
-	  color: $secondary-button-color;
-	}
+    a {
+      border-bottom: none;
+      color: $secondary-button-color;
+    }
   }
 
   a {
-	border-bottom: none;
-	color: $secondary-button-color;
+    border-bottom: none;
+    color: $secondary-button-color;
   }
 }
 
@@ -98,10 +98,9 @@ input[type='submit'] {
 }
 
 .button-small-margin {
-	margin: 0;
-	padding: 4px;
+  margin: 0;
+  padding: 4px;
 }
-
 
 .tool-button {
   background-color: $secondary-button-bg-color;
@@ -111,6 +110,7 @@ input[type='submit'] {
 
 .tool-button.down {
   background-color: $secondary-hover-button-bg-color;
+  border: 1px solid darken($secondary-hover-button-bg-color, 50%);
   color: $secondary-hover-button-color;
   cursor: default;
 }
