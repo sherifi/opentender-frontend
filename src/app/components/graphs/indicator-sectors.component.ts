@@ -112,7 +112,20 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: this.title + '-per-sector'};
+		let codes = Object.keys(this.data).map((key) => {
+			return {id: key, name: this.data[key].name, value: this.data[key].value, percent: this.data[key].percent};
+		});
+		let series;
+		if (this.graph === this.cpvs_codes_average) {
+			series = codes.map((code) => {
+				return {id: code.id, name: code.name, value: code.percent};
+			});
+		} else {
+			series = codes.map((code) => {
+				return {id: code.id, name: code.name, value: code.value};
+			});
+		}
+		return {data: series, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: this.title + '-per-sector'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -143,7 +156,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				let item = this.cpvs_codes_average.data.shift();
 				othergroup.value = item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + Utils.formatPercent(item.value) + ')';
+				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + Utils.formatPercent(item.value) + ')';
 			}
 			if (othergroup) {
 				this.cpvs_codes_average.data.unshift(othergroup);
@@ -170,7 +183,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				let item = this.cpvs_codes_absolute.data.shift();
 				othergroup.value = item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + item.value + ')';
+				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + item.value + ')';
 			}
 			if (othergroup) {
 				this.cpvs_codes_absolute.data.unshift(othergroup);

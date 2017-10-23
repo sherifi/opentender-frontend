@@ -72,7 +72,10 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: 'sectors'};
+		let series = Object.keys(this.data).map((key) => {
+			return {id: key, name: this.data[key].name, value: this.data[key].value};
+		});
+		return {data: series, header: {value: this.graph.chart.xAxis.label, name: 'CPV Name', id: 'CPV Nr.'}, filename: 'sectors'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -99,7 +102,7 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 				let item = this.cpvs_codes_absolute.data.shift();
 				othergroup.value += item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other Sectors with less than ' + item.value + ')';
+				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + item.value + ')';
 			}
 			if (othergroup) {
 				this.cpvs_codes_absolute.data.unshift(othergroup);
