@@ -49,14 +49,14 @@
 		<div *ngIf="state.buyer.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-6">
 				<div *ngIf="tender.buyers | defined">
-					<tender-body *ngFor="let authority of tender.buyers; let i = index" [body]="authority" [icon]="'icon-library'" [link]="'/authority/'+authority.groupId"></tender-body>
+					<tender-body *ngFor="let authority of tender.buyers; let i = index" [body]="authority" [icon]="'icon-library'" [link]="'/authority/'+authority.id"></tender-body>
 				</div>
 			</div>
 			<div class="container-left-6">
 				<div *ngIf="tender.onBehalfOf | defined">
 					<h4 i18n>On Behalf Of</h4>
 					<div *ngFor="let body of tender.onBehalfOf">
-						<tender-body-line [body]="body" [icon]="'icon-library'" [link]="'/authority/'+body.groupId"></tender-body-line>
+						<tender-body-line [body]="body" [icon]="'icon-library'" [link]="'/authority/'+body.id"></tender-body-line>
 					</div>
 				</div>
 				<div *ngIf="tender.furtherInformationProvider | defined">
@@ -208,7 +208,7 @@
 							<div class="container container-padded-top-lite">
 								<div class="container-left-8">
 									<div class="lot-bidder" *ngFor="let bidder of bid.bidders">
-										<tender-body-line [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.groupId"></tender-body-line>
+										<tender-body-line [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.id"></tender-body-line>
 									</div>
 								</div>
 								<div class="container-left-4">
@@ -275,7 +275,7 @@
 									<div class="container-left-8">
 										<div *ngFor="let bidder of bid.bidders">
 											<div *ngIf="bid.bidders | defined">
-												<tender-body [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.groupId"></tender-body>
+												<tender-body [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.id"></tender-body>
 											</div>
 										</div>
 									</div>

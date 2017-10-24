@@ -2,20 +2,19 @@
 	<div class="title" i18n>Similar {{title}}</div>
 	<div class="similars-list">
 		<div class="similar" *ngFor="let body of similar">
-			<a [routerLink]="[link+body.groupId]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>
+			<a [routerLink]="[link+body.id]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>
 			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" (change)="toggleSimilar(body)"/> {{body.name | nameGuard}}</label>
-			<!--<a (click)="toggleSimilar(body)" >{{search_similars[body.groupId]?'-':'+'}} <span>{{body.name | nameGuard}}</span></a>-->
 		</div>
 	</div>
-	<div class="debug_groupids clickable" style="font-size: 0.8em">
-		<div (click)="showDebugGroupIds = !showDebugGroupIds">[Click to show all groupId bodies - this function is only for debugging and will be removed in final portals]</div>
-		<div *ngIf="showDebugGroupIds">
+	<div class="clickable" style="font-size: 0.8em">
+		<div (click)="showDebug = !showDebug">[Click to show all similar JSON bodies - this function is only for debugging and will be removed in final portals]</div>
+		<div *ngIf="showDebug">
 			<div class="similar" *ngIf="current">
-				<a [routerLink]="[link+current.groupId]" i18n-title title="Click to jump to the profile page">Current</a>
+				<a [routerLink]="[link+current.id]" i18n-title title="Click to jump to the profile page">Current</a>
 				<pre>{{plain(current)}}</pre>
 			</div>
 			<div class="similar" *ngFor="let body of similar; let i = index;">
-				<a [routerLink]="[link+body.groupId]" i18n-title title="Click to jump to the profile page">Similar {{i+1}}</a>
+				<a [routerLink]="[link+body.id]" i18n-title title="Click to jump to the profile page">Similar {{i+1}}</a>
 				<pre>{{plain(body)}}</pre>
 			</div>
 		</div>

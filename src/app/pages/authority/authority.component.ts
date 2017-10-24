@@ -77,7 +77,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		if (data && data.authority) {
 			this.authority = data.authority.body;
 			this.titleService.set(this.authority.name);
-			this.getSimilars(this.authority.groupId);
+			this.getSimilars(this.authority.id);
 			this.refresh();
 		}
 	}
@@ -119,7 +119,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		if (!this.authority) {
 			return;
 		}
-		let ids = [this.authority.groupId].concat(this.include_authorities_ids);
+		let ids = [this.authority.id].concat(this.include_authorities_ids);
 		this.getStats(ids);
 		this.search(ids);
 	}
@@ -148,7 +148,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	search(ids: Array<string>) {
 		let search_cmd = new SearchCommand();
 		search_cmd.filters = [{
-			field: 'buyers.groupId',
+			field: 'buyers.id',
 			type: 'term',
 			value: ids
 		}];

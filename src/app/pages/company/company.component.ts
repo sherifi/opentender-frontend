@@ -105,7 +105,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		if (data && data.company && data.company.body) {
 			this.company = data.company.body;
 			this.titleService.set(this.company.name);
-			this.getSimilars(this.company.groupId);
+			this.getSimilars(this.company.id);
 			this.refresh();
 		}
 	}
@@ -114,14 +114,14 @@ export class CompanyPage implements OnInit, OnDestroy {
 		if (!this.company) {
 			return;
 		}
-		let ids = [this.company.groupId].concat(this.include_companies_ids);
+		let ids = [this.company.id].concat(this.include_companies_ids);
 		this.getStats(ids);
 		this.search(ids);
 	}
 
 	search(ids: Array<string>) {
 		let filter = {
-			field: 'lots.bids.bidders.groupId',
+			field: 'lots.bids.bidders.id',
 			type: 'term',
 			value: ids
 		};

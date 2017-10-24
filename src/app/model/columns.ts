@@ -120,7 +120,7 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',
-		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.groupId, align: 'center'}]
+		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, align: 'center'}]
 	}
 ];
 
@@ -169,7 +169,7 @@ export const CompanyColumns: Array<CompanyColumn> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Company',
-		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.groupId, align: 'center'}]
+		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, align: 'center'}]
 	}
 ];
 
@@ -214,8 +214,8 @@ export const TenderColumns: Array<TenderColumn> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Body) => {
-								companies[bidder.groupId] = companies[bidder.name] || {bidder: bidder, lots: [], link: '/company/' + bidder.groupId};
-								companies[bidder.groupId].lots.push(index_l + 1);
+								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], link: '/company/' + bidder.id};
+								companies[bidder.id].lots.push(index_l + 1);
 							});
 						}
 					});
@@ -250,7 +250,7 @@ export const TenderColumns: Array<TenderColumn> = [
 				return [];
 			}
 			return tender.buyers.map((buyer: Buyer) => {
-				return {icon: ICON.authority, content: buyer.name || '[Name not available]', link: '/authority/' + buyer.groupId};
+				return {icon: ICON.authority, content: buyer.name || '[Name not available]', link: '/authority/' + buyer.id};
 			});
 		}
 	},

@@ -21,14 +21,14 @@ export class SelectSimilarListComponent {
 	@Output()
 	selectChange = new EventEmitter();
 
-	public showDebugGroupIds: boolean = false;
+	public showDebug: boolean = false;
 	public search_similars = {};
 
 	constructor(public i18n: I18NService) {
 	}
 
 	toggleSimilar(body: Body): void {
-		this.search_similars[body.groupId] = !this.search_similars[body.groupId];
+		this.search_similars[body.id] = !this.search_similars[body.id];
 		let ids = Object.keys(this.search_similars).filter((key) => {
 			return this.search_similars[key];
 		});
