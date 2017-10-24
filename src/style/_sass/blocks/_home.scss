@@ -95,8 +95,10 @@ home-tabs {
   }
 
   > div:last-of-type {
-    float: right;
     font-size: 0.7em;
+    display: inline;
+    right: 0;
+    position: absolute;
   }
 
   &:hover {
