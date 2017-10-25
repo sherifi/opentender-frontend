@@ -5,14 +5,12 @@ import {ConfigService} from './config.service';
 
 @Injectable()
 export class TitleService {
-	defaultName = 'Opentender Portal';
+	defaultName = 'Opentender';
 
 	constructor(private activatedRoute: ActivatedRoute, private config: ConfigService, private router: Router, private titleService: Title, private meta: Meta) {
 		let c = config.country;
 		if (c.id) {
 			this.defaultName += ' ' + c.name;
-		} else {
-			this.defaultName = 'Opentender Portals';
 		}
 		router.events.subscribe(e => {
 				if (e instanceof NavigationStart) {

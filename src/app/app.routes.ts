@@ -29,7 +29,7 @@ import {RegionPage} from './pages/region/region.component';
 
 export const routes: Routes = [
 	{path: '', component: HomePage},
-	{path: 'start', component: StartPage},
+	{path: 'start', component: StartPage, data: {title: 'Opentender Portals'}},
 
 	{
 		path: 'dashboards',
