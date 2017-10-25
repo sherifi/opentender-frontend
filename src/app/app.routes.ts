@@ -36,10 +36,11 @@ export const routes: Routes = [
 		component: DashboardsPage,
 		data: {title: 'Dashboards'},
 		children: [
-			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Dashboard Market Analysis'}},
-			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Dashboard Transparency Indicators'}},
-			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Dashboard Procurement Integrity Indicators'}},
-			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Dashboard Administrative Capacity Indicators'}}
+			{path: '', redirectTo: 'procurement-integrity', pathMatch: 'full'},
+			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis'}},
+			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators'}},
+			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators'}},
+			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Administrative Capacity Indicators'}}
 		]
 	},
 	{
@@ -65,6 +66,7 @@ export const routes: Routes = [
 		component: AboutPage,
 		data: {title: 'About'},
 		children: [
+			{path: '', redirectTo: 'about-opentender', pathMatch: 'full'},
 			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender'}},
 			{path: 'how-opentender-works', component: AboutHowPage, data: {title: 'How Opentender works'}},
 			{path: 'glossary', component: AboutGlossaryPage, data: {title: 'Glossary'}},
