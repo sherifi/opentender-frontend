@@ -12,7 +12,8 @@ let settings = {
 	},
 	client: {
 		version: '0.0.2', // version of app (is e.g. used for display in footer & "uncaching" resources on app update)
-		backendUrl: 'https://portal.opentender.eu' // full url of the backend
+		backendUrl: 'https://portal.opentender.eu', // full url of the backend
+		devMode: false // e.g. disable page tracking if true
 	},
 	webpack: {
 		analyze: false, // analyze the webpack build (generates .html results in /dist folder)

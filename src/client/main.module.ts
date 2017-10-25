@@ -5,7 +5,8 @@ import {HttpModule} from '@angular/http';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserPrebootModule} from 'preboot/browser';
-import {Angulartics2Module, Angulartics2Piwik} from 'angulartics2';
+import {Angulartics2, Angulartics2Module, Angulartics2Piwik} from 'angulartics2';
+import {ConfigService} from '../app/services/config.service';
 
 @NgModule({
 	bootstrap: [App],
@@ -31,4 +32,8 @@ import {Angulartics2Module, Angulartics2Piwik} from 'angulartics2';
 	]
 })
 export class MainModule {
+	// inject Angulartics2Piwik to initialize it!!!
+	constructor(private angulartics2: Angulartics2, private angulartics2Piwik: Angulartics2Piwik, private config: ConfigService) {
+		angulartics2.developerMode(config.config.devMode);
+	}
 }

@@ -10,7 +10,7 @@ const config = require('./config.js');
 const replacements = {
 	'config.js': () => config,
 	'client.config.js': () => {
-		return {version: config.client.version, backendUrl: config.server.backendUrl}
+		return {version: config.client.version, backendUrl: config.server.backendUrl, devMode: config.client.devMode}
 	}
 };
 

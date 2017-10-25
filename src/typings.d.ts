@@ -17,6 +17,7 @@ interface ServerConfig {
 interface ClientConfig {
 	version: string;
 	backendUrl: string;
+	devMode: boolean;
 }
 
 declare module 'config.js' {

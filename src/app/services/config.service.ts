@@ -30,7 +30,7 @@ export class ConfigService {
 			this.config = config.config;
 			this.country = config.country;
 		} else {
-			this.config = {backendUrl: null, version: 'unknown'};
+			this.config = {backendUrl: null, version: 'unknown', devMode: true};
 			this.country = {id: null, name: 'General', foi: null};
 		}
 	}
