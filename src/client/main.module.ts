@@ -5,7 +5,8 @@ import {HttpModule} from '@angular/http';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserPrebootModule} from 'preboot/browser';
-import {Angulartics2, Angulartics2Module, Angulartics2Piwik} from 'angulartics2';
+import {Angulartics2, Angulartics2Module} from 'angulartics2';
+import {Angulartics2Piwik} from './angulartics2-piwik.fix';
 import {ConfigService} from '../app/services/config.service';
 
 @NgModule({

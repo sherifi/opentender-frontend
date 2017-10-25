@@ -36,7 +36,9 @@ export class TitleService {
 
 	set(value: string) {
 		let result = (value || '').trim();
-		if (result.length > 40) result = result.slice(0, 40) + '…';
+		if (result.length > 60) {
+			result = result.slice(0, 60) + '…';
+		}
 		result = (result.length > 0 ? result + ' - ' : '') + this.defaultName;
 		this.titleService.setTitle(result);
 	}

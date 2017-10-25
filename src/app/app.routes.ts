@@ -54,11 +54,11 @@ export const routes: Routes = [
 		]
 	},
 
-	{path: 'company/:id', component: CompanyPage},
-	{path: 'authority/:id', component: AuthorityPage},
-	{path: 'tender/:id', component: TenderPage},
-	{path: 'sector/:id', component: SectorPage},
-	{path: 'region/:id', component: RegionPage},
+	{path: 'company/:id', component: CompanyPage, data: {title: 'Company'}},
+	{path: 'authority/:id', component: AuthorityPage, data: {title: 'Authority'}},
+	{path: 'tender/:id', component: TenderPage, data: {title: 'Tender'}},
+	{path: 'sector/:id', component: SectorPage, data: {title: 'Sector'}},
+	{path: 'region/:id', component: RegionPage, data: {title: 'Region'}},
 
 	{
 		path: 'about',
