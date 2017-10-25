@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo, SubIndicator} from '../../app.interfaces';
+import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo, SubIndicatorInfo} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
@@ -21,9 +21,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
-	private subindicators: SubIndicator[] = [];
+	private subindicators: SubIndicatorInfo[] = [];
 	private loading: number = 0;
-	private selected: SubIndicator = null;
+	private selected: SubIndicatorInfo = null;
 	private search_cmd: SearchCommand;
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },

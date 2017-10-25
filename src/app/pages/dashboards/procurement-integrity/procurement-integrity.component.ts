@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Consts} from '../../../model/consts';
 import {IndicatorInfo} from '../../../app.interfaces';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -8,6 +9,6 @@ import {IndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'procurement-integrity.template.html'
 })
 export class DashboardsIntegrityPage {
-	public indicator: IndicatorInfo = Consts.indicators.CORRUPTION;
+	public indicator: IndicatorInfo = Utils.indicatorInfo(Consts.indicators.CORRUPTION);
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.pii'];
 }

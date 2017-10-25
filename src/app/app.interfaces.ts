@@ -11,30 +11,14 @@ export interface IndicatorInfo {
 	name: string;
 	plural: string;
 	icon: string;
-	subindicators: {
-		[id: string]: {
-			name: string;
-			desc: string;
-		}
-	};
+	subindicators: Array<SubIndicatorInfo>;
 }
 
-export interface SubIndicator {
+export interface SubIndicatorInfo {
 	id: string;
-	sid: string;
 	name: string;
 	desc: string;
 }
-
-export interface Indicator {
-	id: string;
-	sid: string;
-	name: string;
-	plural: string;
-	icon: string;
-	subindicators: SubIndicator[];
-}
-
 
 export interface ISector {
 	id: string;

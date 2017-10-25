@@ -80,10 +80,6 @@ declare namespace Definitions {
 	export interface Bidder {
 		id?: string;
 		/**
-		 * Organizational ID
-		 */
-		groupId?: string;
-		/**
 		 * Name of body
 		 */
 		name?: string;
@@ -123,10 +119,6 @@ declare namespace Definitions {
 	export interface Body {
 		id?: string;
 		/**
-		 * Organizational ID
-		 */
-		groupId?: string;
-		/**
 		 * Name of body
 		 */
 		name?: string;
@@ -150,32 +142,11 @@ declare namespace Definitions {
 		address?: Address;
 		metaData?: BodyMetadata;
 	}
-	/**
-	 * VAT ID or other unique country ID
-	 */
-	export interface BodyId {
-		/**
-		 * Subject identifier such as VAT ID
-		 */
-		id?: string;
-		/**
-		 * type od identifier such as 'VAT', 'CZ Business registry'
-		 */
-		type?: 'ORGANIZATION_ID' | 'HEADER_ICO' | 'ETALON_ID' | 'TRADE_REGISTER' | 'STATISTICAL' | 'TAX_ID';
-		/**
-		 * scope under which the identifier is unique. typically country code ( ISO 3166-1 alpha-2 = two letter ), or EU for VAT ID, null for global identifiers such as opencorporates or Bureau Van Dijk identifiers.
-		 */
-		scope?: string;
-	}
 	export interface BodyMetadata {
 		foundationDate?: string;
 	}
 	export interface Buyer {
 		id?: string;
-		/**
-		 * Organizational ID
-		 */
-		groupId?: string;
 		isSme?: boolean;
 		/**
 		 * Name of body
@@ -321,27 +292,10 @@ declare namespace Definitions {
 		isEuFund?: boolean;
 	}
 	export interface Indicator {
-		id?: string;
-		relatedEntityId?: string;
 		/**
 		 * Type of indicator
 		 */
 		type?: 'CORRUPTION_SINGLE_BID' | 'CORRUPTION_PRIOR_INFORMATION_NOTICE' | 'CORRUPTION_ADVERTISEMENT_PERIOD' | 'CORRUPTION_PROCEDURE_TYPE' | 'CORRUPTION_DECISION_PERIOD' | 'CORRUPTION_TAX_HAVEN' | 'CORRUPTION_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE';
-		metaData?: {
-		/**
-		 * Array of lotTitles
-		 */
-		lotTitles?: (string | null)[];
-		/**
-		 * Array of bidderGroupIds
-		 */
-		bidderGroupIds?: string[];
-		advertisementPeriodLength?: number;
-		decisionPeriodLEngth?: number;
-		callForTenderDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
-		awardDecisionDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
-		bidDeadline?: DateTime; // ^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d$
-		};
 	}
 	/**
 	 * undocumented language enumeration

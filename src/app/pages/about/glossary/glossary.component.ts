@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Utils} from '../../../model/utils';
-import Indicator = Definitions.Indicator;
+import {IndicatorInfo} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -8,7 +8,7 @@ import Indicator = Definitions.Indicator;
 	templateUrl: 'glossary.template.html'
 })
 export class AboutGlossaryPage {
-	private indicators: Indicator[] = [];
+	private indicators: IndicatorInfo[] = [];
 
 	constructor() {
 		this.indicators = Utils.indicators();

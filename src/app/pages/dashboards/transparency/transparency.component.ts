@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Consts} from '../../../model/consts';
 import {IndicatorInfo} from '../../../app.interfaces';
+import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -8,6 +9,6 @@ import {IndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'transparency.template.html'
 })
 export class DashboardsTransparencyPage {
-	public indicator: IndicatorInfo = Consts.indicators.TRANSPARENCY;
+	public indicator: IndicatorInfo = Utils.indicatorInfo(Consts.indicators.TRANSPARENCY);
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.ti'];
 }

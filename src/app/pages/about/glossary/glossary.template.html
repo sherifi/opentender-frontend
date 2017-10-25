@@ -26,11 +26,11 @@
 
 	<div class="container" *ngFor="let group of indicators">
 		<div class="container-left-3">
-			<h2 class="h4" id="{{group.sid}}">{{group.plural}}</h2>
+			<h2 class="h4" id="{{group.id}}">{{group.plural}}</h2>
 		</div>
 		<div class="container-right-9">
 			<ng-container *ngFor="let sub of group.subindicators">
-				<h2 class="h3" id="{{sub.sid}}">{{sub.name}}</h2>
+				<h2 class="h3" id="{{sub.id}}">{{sub.name}}</h2>
 				<p>{{sub.desc}}</p>
 			</ng-container>
 		</div>
