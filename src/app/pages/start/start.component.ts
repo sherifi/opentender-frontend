@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ConfigService, Country} from '../../services/config.service';
 import {ApiService} from '../../services/api.service';
-import {ICountryStats} from '../../app.interfaces';
+import {IStatsCountry} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 
 @Component({
@@ -11,8 +11,8 @@ import {NotifyService} from '../../services/notify.service';
 })
 export class StartPage {
 	public ip_country: Country;
-	private portals: Array<ICountryStats> = [];
-	private allportal: ICountryStats;
+	private portals: Array<IStatsCountry> = [];
+	private allportal: IStatsCountry;
 	private current: Country;
 	private loading: number = 0;
 
@@ -32,7 +32,7 @@ export class StartPage {
 			});
 	}
 
-	display(data: Array<ICountryStats>): void {
+	display(data: Array<IStatsCountry>): void {
 		if (!data) {
 			return;
 		}

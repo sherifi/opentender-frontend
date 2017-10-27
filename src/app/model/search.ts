@@ -1,64 +1,25 @@
-import {FilterDef, FilterType} from './filters';
-
-export interface SearchCommandFilter {
-	field: string;
-	value: Array<string | boolean | number>;
-	type: string;
-	sort?: string;
-	mode?: string;
-	and?: SearchCommandFilter[];
-}
-
-export interface SearchCommandAggregation {
-	field: string;
-	size?: number;
-	type: string;
-	aggregations?: SearchCommandAggregation[];
-}
-
-export class SearchCommand {
-	filters: Array<SearchCommandFilter> = [];
-	aggregations: Array<SearchCommandAggregation> = [];
-	size?: number;
-	from?: number;
-	sort?: {
-		field: string;
-		ascend: boolean;
-	};
-}
-
-export interface Filter {
-	def: FilterDef;
-	aggregation_id?: string; // auto build field->id (xyz.xzy -> xyz_xyz as made be elastic aggregation result)
-	value?: string; // the actual user search value
-	values?: Array<any>; // the actual user search values, eg. range [year_start,year_end]
-	enabled?: {}; // the additional filter strings based on user choosen aggregation
-	buckets?: any; // the result of aggregation
-	active?: boolean;
-	mode?: string;
-	minmax?: null | [number, number];
-}
+import {ISearchFilterDef, ISearchFilterDefType, ISearchCommand, ISearchCommandFilter, ISearchFilter} from '../app.interfaces';
 
 export class Search {
-	filters: Array<Filter> = [];
-	searches: Array<Filter> = [];
+	filters: Array<ISearchFilter> = [];
+	searches: Array<ISearchFilter> = [];
 	country: string;
 	entity: string;
 
-	constructor(entity: string, filterDefs?: Array<FilterDef>) {
+	constructor(entity: string, filterDefs?: Array<ISearchFilterDef>) {
 		this.entity = entity;
 		this.filters = (filterDefs || []).map(this.buildFilter);
 	}
 
-	public build(filterDefs: Array<FilterDef>) {
+	public build(filterDefs: Array<ISearchFilterDef>) {
 		this.filters = (filterDefs || []).map(this.buildFilter);
 	}
 
-	public getActiveFilterDefs(): Array<FilterDef> {
+	public getActiveFilterDefs(): Array<ISearchFilterDef> {
 		return this.filters.map(f => f.def);
 	}
 
-	public toggleFilter(filterdef: FilterDef): void {
+	public toggleFilter(filterdef: ISearchFilterDef): void {
 		let filter = this.filters.filter(f => {
 			return filterdef === f.def;
 		})[0];
@@ -69,11 +30,11 @@ export class Search {
 		}
 	}
 
-	public addSearch(filterdef: FilterDef): void {
+	public addSearch(filterdef: ISearchFilterDef): void {
 		this.searches.push(this.buildFilter(filterdef));
 	}
 
-	public removeSearch(search: Filter): void {
+	public removeSearch(search: ISearchFilter): void {
 		this.searches = this.searches.filter(s => s !== search);
 	}
 
@@ -104,12 +65,12 @@ export class Search {
 		});
 	}
 
-	public getCommand(): SearchCommand {
-		let cmd = new SearchCommand();
+	public getCommand(): ISearchCommand {
+		let cmd: ISearchCommand = {filters: []};
 		cmd.aggregations = this.filters.filter((f) => {
 			return f.active;
 		}).map((f) => {
-			return {type: FilterType[f.def.aggregation_type || f.def.type], field: f.def.aggregation_field || f.def.field, size: f.def.size};
+			return {type: ISearchFilterDefType[f.def.aggregation_type || f.def.type], field: f.def.aggregation_field || f.def.field, size: f.def.size};
 		});
 		this.filters.forEach((f) => {
 			if (f.active) {
@@ -126,7 +87,7 @@ export class Search {
 						}
 					});
 					if (others.length > 0) {
-						cmd.filters.push({field: f.def.aggregation_field || f.def.field, value: others, type: FilterType[f.def.aggregation_type]});
+						cmd.filters.push({field: f.def.aggregation_field || f.def.field, value: others, type: ISearchFilterDefType[f.def.aggregation_type]});
 					}
 				}
 				if (f.value && f.value.length > 0) {
@@ -136,30 +97,30 @@ export class Search {
 					list = list.concat(f.values);
 				}
 				if (list.length > 0) {
-					cmd.filters.push({field: f.def.field, value: list, type: FilterType[f.def.type]});
+					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type]});
 				}
 			}
 		});
 		this.searches.forEach((f) => {
-			if (f.def.type === FilterType.text) {
+			if (f.def.type === ISearchFilterDefType.text) {
 				if (f.value && f.value !== '') {
-					let s: SearchCommandFilter = cmd.filters.find(item => {
+					let s: ISearchCommandFilter = cmd.filters.find(item => {
 						return (item.field == f.def.field);
 					});
 					if (s) {
 						s.value.push(f.value);
 					} else {
-						cmd.filters.push({field: f.def.field, value: [f.value], type: FilterType[f.def.type]});
+						cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type]});
 					}
 				}
-			} else if (f.def.type === FilterType.value) {
-				cmd.filters.push({field: f.def.field, value: [f.value], type: FilterType[f.def.type], mode: f.mode});
+			} else if (f.def.type === ISearchFilterDefType.value) {
+				cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type], mode: f.mode});
 			}
 		});
 		return cmd;
 	}
 
-	private buildFilter(fd: FilterDef) {
+	private buildFilter(fd: ISearchFilterDef) {
 		return {
 			def: fd,
 			aggregation_id: (fd.aggregation_field || fd.field).replace(/\./g, '_'),

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Filter, Search} from '../../model/search';
-import {FilterType} from '../../model/filters';
+import {Search} from '../../model/search';
 import {I18NService} from '../../services/i18n.service';
+import {ISearchFilter, ISearchFilterDefType} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -12,12 +12,12 @@ export class SearchBoxComponent {
 	@Input()
 	public search: Search;
 	@Input()
-	public filters: Array<Filter>;
+	public filters: Array<ISearchFilter>;
 	@Input()
-	public quick_filters: Array<Filter>;
+	public quick_filters: Array<ISearchFilter>;
 	@Output()
 	public onChange = new EventEmitter();
-	FilterType: typeof FilterType = FilterType;
+	ISearchFilterDefType: typeof ISearchFilterDefType = ISearchFilterDefType;
 
 	constructor(private i18n: I18NService) {
 	}

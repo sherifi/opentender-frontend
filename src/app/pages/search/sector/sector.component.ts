@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
-import {ISector, ISectorsApiResult} from '../../../app.interfaces';
+import {ISector, IApiResultSectors} from '../../../app.interfaces';
 import {NotifyService} from '../../../services/notify.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class SearchSectorPage implements OnInit {
 			});
 	}
 
-	display(result: ISectorsApiResult): void {
+	display(result: IApiResultSectors): void {
 		this.sectors = [];
 		if (result && result.data) {
 			this.sectors = Object.keys(result.data).map(key => {

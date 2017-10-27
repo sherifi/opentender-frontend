@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Consts} from '../../../model/consts';
-import {IndicatorInfo} from '../../../app.interfaces';
+import {IIndicatorInfo} from '../../../app.interfaces';
 import {Utils} from '../../../model/utils';
 
 @Component({
@@ -9,6 +9,6 @@ import {Utils} from '../../../model/utils';
 	templateUrl: 'administrative-capacity.template.html'
 })
 export class DashboardsAdministrativeCapacityPage {
-	public indicator: IndicatorInfo = Utils.indicatorInfo(Consts.indicators.ADMINISTRATIVE);
+	public indicator: IIndicatorInfo = Utils.indicatorInfo(Consts.indicators.ADMINISTRATIVE);
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aci'];
 }

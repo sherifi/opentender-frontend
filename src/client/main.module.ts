@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {App, AppConfig} from '../app/app.config';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserPrebootModule} from 'preboot/browser';
@@ -15,7 +15,7 @@ import {ConfigService} from '../app/services/config.service';
 		...AppConfig.declarations
 	],
 	imports: [
-		HttpModule,
+		HttpClientModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
 		BrowserPrebootModule.replayEvents(),
 		BrowserAnimationsModule,

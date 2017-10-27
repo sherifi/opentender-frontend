@@ -1,11 +1,10 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, IStatsPrices, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
+import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, ISearchCommand, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
@@ -19,7 +18,7 @@ import {NotifyService} from '../../services/notify.service';
 export class CompanyPage implements OnInit, OnDestroy {
 	public company: Body;
 	public country: Country;
-	public search_cmd: SearchCommand;
+	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'finalPrice'];
 	public similar: Array<Body> = [];
 	public include_companies_ids: Array<string> = [];
@@ -120,14 +119,15 @@ export class CompanyPage implements OnInit, OnDestroy {
 	}
 
 	search(ids: Array<string>) {
-		let filter = {
-			field: 'lots.bids.bidders.id',
-			type: 'term',
-			value: ids
+		this.search_cmd = {
+			filters: [
+				{
+					field: 'lots.bids.bidders.id',
+					type: 'term',
+					value: ids
+				}
+			]
 		};
-		let search_cmd = new SearchCommand();
-		search_cmd.filters = [filter];
-		this.search_cmd = search_cmd;
 	}
 
 	displaySimilar(data: { similar: Array<ICompany> }): void {

@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, Output, OnChanges, SimpleChanges} from '@angular/core';
-import {Filter, Search} from '../../model/search';
+import {Search} from '../../model/search';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import {FilterDef, FilterType} from '../../model/filters';
 import {PlatformService} from '../../services/platform.service';
+import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -16,12 +16,12 @@ export class FilterBoxComponent implements OnChanges {
 	@Input()
 	public search: Search;
 	@Input()
-	public filters: Array<Filter>;
+	public filters: Array<ISearchFilter>;
 	@Output()
 	public onChange = new EventEmitter();
 
-	FilterType: typeof FilterType = FilterType;
-	public active_filters: Array<FilterDef> = [];
+	ISearchFilterDefType: typeof ISearchFilterDefType = ISearchFilterDefType;
+	private active_filters: Array<ISearchFilterDef> = [];
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();
 

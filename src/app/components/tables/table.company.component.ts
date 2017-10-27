@@ -1,8 +1,7 @@
 import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {SearchCommand} from '../../model/search';
-import {CompanyColumns, CompanyColumn, Table, ColumnSort} from '../../model/columns';
-import {ICompany, ISearchCompanyData} from '../../app.interfaces';
+import {CompanyColumns} from '../../model/columns';
+import {ICompany, ISearchResultCompany, ISearchCommand, ITableColumnCompany, ITable, ITableColumnSort} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {PlatformService} from '../../services/platform.service';
@@ -13,7 +12,7 @@ import {PlatformService} from '../../services/platform.service';
 })
 export class CompanyTableComponent implements OnChanges, OnInit {
 	@Input()
-	search_cmd: SearchCommand;
+	search_cmd: ISearchCommand;
 	@Input()
 	columnIds: Array<string>;
 	@Input()
@@ -21,11 +20,11 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	@Output()
 	searchChange = new EventEmitter();
 
-	columns: Array<CompanyColumn> = [];
+	columns: Array<ITableColumnCompany> = [];
 	all_columns = CompanyColumns;
 
-	table: Table;
-	sortBy: ColumnSort;
+	table: ITable;
+	sortBy: ITableColumnSort;
 	companies: Array<ICompany> = [];
 
 	loading: number = 0;
@@ -70,7 +69,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
-		let table: Table = {
+		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []
@@ -93,7 +92,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 		this.refresh(true);
 	}
 
-	sortChange(data: { value: ColumnSort }) {
+	sortChange(data: { value: ITableColumnSort }) {
 		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
 		this.refresh();
 	}
@@ -118,7 +117,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 			});
 	}
 
-	display(data: ISearchCompanyData): void {
+	display(data: ISearchResultCompany): void {
 		if (data) {
 			this.total = data.hits.total;
 			this.sortBy = data.sortBy;

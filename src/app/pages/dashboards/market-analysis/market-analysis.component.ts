@@ -1,8 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
-import {ISector, IStats, IStatsNuts} from '../../../app.interfaces';
-import {SearchCommandFilter} from '../../../model/search';
 import {NotifyService} from '../../../services/notify.service';
+import {ISector, IStats, IStatsNuts, ISearchCommandFilter} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -69,7 +68,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	buildFilters() {
 		let filters = [];
 		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
-			let yearFilter: SearchCommandFilter = {
+			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'range',
 				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],

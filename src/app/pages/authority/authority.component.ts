@@ -1,10 +1,9 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {SearchCommand} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, IStatsPrices, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
@@ -20,7 +19,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;
 	public country: Country;
 	public loading: number = 0;
-	public search_cmd: SearchCommand;
+	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'lots.bids.bidders.name', 'finalPrice'];
 	private subscription: any;
 	private include_authorities_ids: Array<string> = [];
@@ -146,13 +145,15 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	search(ids: Array<string>) {
-		let search_cmd = new SearchCommand();
-		search_cmd.filters = [{
-			field: 'buyers.id',
-			type: 'term',
-			value: ids
-		}];
-		this.search_cmd = search_cmd;
+		this.search_cmd = {
+			filters: [
+				{
+					field: 'buyers.id',
+					type: 'term',
+					value: ids
+				}
+			]
+		};
 	}
 
 	similarChange(data) {

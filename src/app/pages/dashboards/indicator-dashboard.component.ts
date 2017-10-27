@@ -1,10 +1,12 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears, IndicatorInfo, SubIndicatorInfo} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
+import {
+	ISearchCommandFilter, IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears,
+	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand
+} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -13,7 +15,7 @@ import {NotifyService} from '../../services/notify.service';
 })
 export class DashboardsIndicatorComponent implements OnChanges {
 	@Input()
-	indicator: IndicatorInfo;
+	indicator: IIndicatorInfo;
 	@Input()
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
@@ -21,10 +23,10 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private indicatorTitle: string;
-	private subindicators: SubIndicatorInfo[] = [];
+	private subindicators: ISubIndicatorInfo[] = [];
 	private loading: number = 0;
-	private selected: SubIndicatorInfo = null;
-	private search_cmd: SearchCommand;
+	private selected: ISubIndicatorInfo = null;
+	private search_cmd: ISearchCommand;
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
@@ -155,14 +157,14 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	buildFilters() {
-		let filter: SearchCommandFilter = {
+		let filter: ISearchCommandFilter = {
 			field: 'indicators.type',
 			type: 'text',
 			value: [this.searchPrefix]
 		};
 		let filters = [filter];
 		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
-			let yearFilter: SearchCommandFilter = {
+			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'range',
 				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
@@ -173,9 +175,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	search() {
-		let search_cmd = new SearchCommand();
-		search_cmd.filters = this.buildFilters();
-		this.search_cmd = search_cmd;
+		this.search_cmd = {
+			filters: this.buildFilters()
+		};
 	}
 
 	searchChange(data) {

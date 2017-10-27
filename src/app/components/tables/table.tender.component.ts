@@ -1,15 +1,13 @@
-import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
-import {ApiService} from '../../services/api.service';
-import {SearchCommand} from '../../model/search';
-import {TenderColumns, TenderColumn, Table, ColumnSort} from '../../model/columns';
-import {ISearchTenderData} from '../../app.interfaces';
-
 /// <reference path="../../model/tender.d.ts" />
 import Tender = Definitions.Tender;
+import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
+import {ApiService} from '../../services/api.service';
+import {TenderColumns} from '../../model/columns';
 import {NotifyService} from '../../services/notify.service';
-import {Utils} from '../../model/utils';
 import {I18NService} from '../../services/i18n.service';
 import {PlatformService} from '../../services/platform.service';
+import {Utils} from '../../model/utils';
+import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort} from '../../app.interfaces';
 
 @Component({
 	selector: 'tender-table',
@@ -17,18 +15,18 @@ import {PlatformService} from '../../services/platform.service';
 })
 export class TenderTableComponent implements OnChanges, OnInit {
 	@Input()
-	search_cmd: SearchCommand;
+	search_cmd: ISearchCommand;
 	@Input()
 	columnIds: Array<string>;
 	@Output()
 	searchChange = new EventEmitter();
 
-	columns: Array<TenderColumn> = [];
+	columns: Array<ITableColumnTender> = [];
 	all_columns = TenderColumns;
 
 	tenders: Array<Tender> = [];
-	table: Table;
-	sortBy: ColumnSort;
+	table: ITable;
+	sortBy: ITableColumnSort;
 	showDownloadDialog: boolean = false;
 
 	title: string;
@@ -101,7 +99,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.refresh(true);
 	}
 
-	sortChange(data: { value: ColumnSort }) {
+	sortChange(data: { value: ITableColumnSort }) {
 		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
 		this.refresh();
 	}
@@ -127,7 +125,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
-		let table: Table = {
+		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []
@@ -148,7 +146,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
 	}
 
-	display(data: ISearchTenderData): void {
+	display(data: ISearchResultTender): void {
 		if (data) {
 			this.setTableTitle(data.hits && data.hits.total ? data.hits.total : 0);
 			this.total = data.hits.total;

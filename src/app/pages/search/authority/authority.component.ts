@@ -1,8 +1,8 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {SearchCommand, Search} from '../../../model/search';
+import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {AuthorityFilterDefs, FilterType} from '../../../model/filters';
-import {ISearchAuthorityData} from '../../../app.interfaces';
+import {AuthorityFilterDefs} from '../../../model/filters';
+import {ISearchResultAuthority, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {I18NService} from '../../../services/i18n.service';
 import {Utils} from '../../../model/utils';
 
@@ -14,12 +14,12 @@ import {Utils} from '../../../model/utils';
 export class SearchAuthorityPage implements OnInit, OnDestroy {
 	title = '';
 	search = new Search('authority');
-	search_cmd: SearchCommand;
+	search_cmd: ISearchCommand;
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
 	filterIds = ['body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
 	quick_filters = [];
 	check_filters = AuthorityFilterDefs;
-	search_filters = AuthorityFilterDefs.filter(f => f.type !== FilterType.select);
+	search_filters = AuthorityFilterDefs.filter(f => f.type !== ISearchFilterDefType.select);
 
 	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.build(this.check_filters.filter(def => {
@@ -54,7 +54,7 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 		this.title = this.i18n.get('Authorities') + (total !== null ? ': ' + Utils.formatValue(total) : '');
 	}
 
-	searchChange(data: ISearchAuthorityData) {
+	searchChange(data: ISearchResultAuthority) {
 		let total = data.hits && data.hits.total ? data.hits.total : 0;
 		this.setTitle(total);
 		this.search.fillAggregationResults(data.aggregations);

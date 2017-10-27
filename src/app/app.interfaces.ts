@@ -1,24 +1,11 @@
 /// <reference path="./model/tender.d.ts" />
-import Buyer = Definitions.Buyer;
 import Bidder = Definitions.Bidder;
 import Tender = Definitions.Tender;
-import {ColumnSort} from './model/columns';
+import Buyer = Definitions.Buyer;
 import {Country} from './services/config.service';
 import {IChartData} from './thirdparty/ngx-charts-universal/chart.interface';
 
-export interface IndicatorInfo {
-	id: string;
-	name: string;
-	plural: string;
-	icon: string;
-	subindicators: Array<SubIndicatorInfo>;
-}
-
-export interface SubIndicatorInfo {
-	id: string;
-	name: string;
-	desc: string;
-}
+/* data objects from api */
 
 export interface ISector {
 	id: string;
@@ -32,12 +19,6 @@ export interface IRegion {
 	name: string;
 	level: number;
 	value?: number;
-}
-
-export interface ICountryStats {
-	id: string;
-	name: string;
-	value: number;
 }
 
 export interface IUsageEntry {
@@ -68,6 +49,14 @@ export interface ICompany {
 	body: Bidder;
 	sources: ICompanySources[];
 	value?: number;
+}
+
+/* stats objects from api */
+
+export interface IStatsCountry {
+	id: string;
+	name: string;
+	value: number;
 }
 
 export interface IStatsLotsInYears {
@@ -135,6 +124,18 @@ export interface IStatsCompanies {
 	top10: Array<ICompany>;
 }
 
+export interface IStatsSector {
+	sector: ISector;
+	parents?: Array<ISector>;
+	stats: IStats;
+}
+
+export interface IStatsRegion {
+	region: IRegion;
+	parents?: Array<IRegion>;
+	stats: IStats;
+}
+
 export interface IStats {
 	terms_authority_nuts: IStatsNuts;
 	terms_company_nuts: IStatsNuts;
@@ -161,144 +162,159 @@ export interface IStats {
 	region_stats: Array<{ id: string; value: number, stats: IStats }>;
 }
 
-export interface ISectorStats {
-	sector: ISector;
-	parents?: Array<ISector>;
-	stats: IStats;
-}
-
-export interface IRegionStats {
-	region: IRegion;
-	parents?: Array<IRegion>;
-	stats: IStats;
-}
-
 /* search-result-packages */
 
-export interface ISearchTenderData {
+export interface ISearchResultBucket {
+	name?: string;
+	key: string;
+	doc_count: number;
+}
+
+export interface ISearchResultAggregation {
+	[name: string]: {
+		doc_count?: number;
+		buckets: Array<ISearchResultBucket>;
+	};
+}
+
+export interface ISearchResultTender {
 	hits: {
 		total: number;
 		hits: Array<Tender>;
 	};
-	sortBy: ColumnSort;
-	aggregations: any;
+	sortBy: ITableColumnSort;
+	aggregations: ISearchResultAggregation;
 }
 
-export interface ISearchAuthorityData {
+export interface ISearchResultAuthority {
 	hits: {
 		total: number;
 		hits: Array<IAuthority>;
 	};
-	sortBy: ColumnSort;
-	aggregations: any;
+	sortBy: ITableColumnSort;
+	aggregations: ISearchResultAggregation;
 }
 
-export interface ISearchCompanyData {
+export interface ISearchResultCompany {
 	hits: {
 		total: number;
 		hits: Array<ICompany>;
 	};
-	sortBy: ColumnSort;
-	aggregations: any;
+	sortBy: ITableColumnSort;
+	aggregations: ISearchResultAggregation;
 }
 
 /* api-transfer-packages */
 
-export interface ITenderApiResult {
+export interface IApiResultTender {
 	data: Tender;
 }
 
-export interface ISectorsApiResult {
+export interface IApiResultSectors {
 	data: {
 		[cpvcode: string]: { name: string; value: number; level: string }
 	};
 }
 
-export interface IPortalsApiResult {
+export interface IApiResultPortals {
 	data: Array<Country>;
 }
 
-export interface IPortalsStatsApiResult {
-	data: Array<ICountryStats>;
+export interface IApiResultPortalsStats {
+	data: Array<IStatsCountry>;
 }
 
-export interface IUsageApiResult {
+export interface IApiResultUsage {
 	data: Array<IUsageEntry>;
 }
 
-export interface ICompanyApiResult {
+export interface IApiResultCompany {
 	data: {
 		company: ICompany;
 	};
 }
 
-export interface ICompanySimilarApiResult {
+export interface IApiResultCompanySimilar {
 	data: {
 		similar: Array<ICompany>;
 	};
 }
 
-export interface IAuthorityApiResult {
+export interface IApiResultAuthority {
 	data: {
 		authority: IAuthority;
 	};
 }
 
-export interface INutsApiResult {
+export interface IApiResultNuts {
 	data: IStatsNuts;
 }
 
-export interface IAuthoritySimilarApiResult {
+export interface IApiResultAuthoritySimilar {
 	data: {
 		similar: Array<IAuthority>;
 	};
 }
 
-export interface ISectorApiResult {
-	data: ISectorStats;
+export interface IApiResultSector {
+	data: IStatsSector;
 }
 
-export interface IRegionApiResult {
-	data: IRegionStats;
+export interface IApiResultRegion {
+	data: IStatsRegion;
 }
 
-export interface ISchemaApiResult {
-	data: any;
+export interface IApiResultSearchCompany {
+	data: ISearchResultCompany;
 }
 
-export interface ISearchCompanyApiResult {
-	data: ISearchCompanyData;
+export interface IApiResultSearchAuthority {
+	data: ISearchResultAuthority;
 }
 
-export interface ISearchAuthorityApiResult {
-	data: ISearchAuthorityData;
+export interface IApiResultSearchTender {
+	data: ISearchResultTender;
 }
 
-export interface ISearchTenderApiResult {
-	data: ISearchTenderData;
-}
-
-export interface IDownloadTenderApiResult {
+export interface IApiResultDownloadTenderSearch {
 	data: {
 		id: string;
 	};
 }
 
-export interface IStatApiResult {
+export interface IApiResultStat {
 	data: IStats;
 }
 
-export interface IStatStatsApiResult {
+export interface IApiResultStatStats {
 	data: {
 		stats: IStats;
 	};
+}
+
+export interface IApiResultAutoComplete {
+	data: Array<{
+		key: string;
+		value: number;
+	}>;
+}
+
+export interface IApiResultDownloads {
+	data: Array<{
+		country: string;
+		count: number;
+		formats: {
+			json: { filename: string; size: number },
+			ndjson: { filename: string; size: number }
+		}
+	}>;
 }
 
 export interface IApiResult {
 	data: any;
 }
 
-export interface IApiGeoJSONResult {
+export interface IApiResultGeoJSON {
 	type: string;
 	features: Array<{
 		properties: {
@@ -307,6 +323,8 @@ export interface IApiGeoJSONResult {
 		}
 	}>;
 }
+
+/* graph & map data export */
 
 export interface ISeries {
 	data: Array<IChartData>;
@@ -317,3 +335,139 @@ export interface ISeries {
 export interface ISeriesProvider {
 	getSeriesInfo: () => ISeries;
 }
+
+/* search object helper */
+
+export enum ISearchFilterDefType {
+	text = 1,
+	select = 2,
+	value = 3,
+	range = 4,
+	term = 5,
+	none = 0
+}
+
+export interface ISearchFilterDef {
+	id: string;
+	name: string;
+	field: string;
+	type: ISearchFilterDefType;
+	group?: string;
+	size?: number;
+	aggregation_field?: string; // if empty "field" is used for aggregation, too
+	aggregation_type?: ISearchFilterDefType; // if empty "type" is used for aggregation, too
+	valueFormatter?: (string) => string;
+	valuesFilter?: (buckets: Array<ISearchResultBucket>) => Array<ISearchResultBucket>;
+}
+
+export interface ISearchFilter {
+	def: ISearchFilterDef;
+	aggregation_id?: string; // auto build field->id (xyz.xzy -> xyz_xyz as made be elastic aggregation result)
+	value?: string; // the actual user search value
+	values?: Array<any>; // the actual user search values, eg. range [year_start,year_end]
+	enabled?: {}; // the additional filter strings based on user choosen aggregation
+	buckets?: Array<ISearchResultBucket>; // the result of aggregation
+	active?: boolean;
+	mode?: string;
+	minmax?: null | [number, number];
+}
+
+/* search commands */
+
+export interface ISearchCommandAggregation {
+	field: string;
+	size?: number;
+	type: string;
+	aggregations?: ISearchCommandAggregation[];
+}
+
+export interface ISearchCommandFilter {
+	field: string;
+	value: Array<string | boolean | number>;
+	type: string;
+	sort?: string;
+	mode?: string;
+	and?: ISearchCommandFilter[];
+}
+
+export interface ISearchCommand {
+	filters: Array<ISearchCommandFilter>;
+	aggregations?: Array<ISearchCommandAggregation>;
+	size?: number;
+	from?: number;
+	sort?: {
+		field: string;
+		ascend: boolean;
+	};
+}
+
+export interface IGetByIdCommand {
+	ids: Array<string>;
+	filters?: Array<ISearchCommandFilter>;
+}
+
+/* Indicator Info Helpers */
+
+export interface IIndicatorInfo {
+	id: string;
+	name: string;
+	plural: string;
+	icon: string;
+	subindicators: Array<ISubIndicatorInfo>;
+}
+
+export interface ISubIndicatorInfo {
+	id: string;
+	name: string;
+	desc: string;
+}
+
+/* table model */
+
+export interface ITableCell {
+	align?: string;
+	lines: Array<ITableCellLine>;
+}
+
+export interface ITableRow {
+	cells: Array<ITableCell>;
+}
+
+export interface ITable {
+	columns: Array<ITableColumn>;
+	rows: Array<ITableRow>;
+	sortBy: ITableColumnSort;
+}
+
+export interface ITableColumnSort {
+	id: string;
+	ascend: boolean;
+}
+
+export interface ITableColumn {
+	name: string;
+	id: string;
+	group: string;
+	sortBy?: ITableColumnSort;
+}
+
+export interface ITableCellLine {
+	content: string;
+	link?: string;
+	prefix?: string;
+	list?: boolean;
+	icon?: string;
+}
+
+export interface ITableColumnAuthority extends ITableColumn {
+	format: (authority: IAuthority) => Array<ITableCellLine>;
+}
+
+export interface ITableColumnCompany extends ITableColumn {
+	format: (company: ICompany) => Array<ITableCellLine>;
+}
+
+export interface ITableColumnTender extends ITableColumn {
+	format: (tender: Tender) => Array<ITableCellLine>;
+}
+

@@ -1,11 +1,10 @@
 import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {AuthorityColumns, AuthorityColumn, Table, ColumnSort} from '../../model/columns';
-import {SearchCommand} from '../../model/search';
-import {IAuthority, ISearchAuthorityData} from '../../app.interfaces';
+import {AuthorityColumns} from '../../model/columns';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {PlatformService} from '../../services/platform.service';
+import {IAuthority, ISearchResultAuthority, ISearchCommand, ITableColumnAuthority, ITable, ITableColumnSort} from '../../app.interfaces';
 
 @Component({
 	selector: 'authority-table',
@@ -13,7 +12,7 @@ import {PlatformService} from '../../services/platform.service';
 })
 export class AuthorityTableComponent implements OnChanges, OnInit {
 	@Input()
-	search_cmd: SearchCommand;
+	search_cmd: ISearchCommand;
 	@Input()
 	columnIds: Array<string>;
 	@Input()
@@ -21,9 +20,9 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	@Output()
 	searchChange = new EventEmitter();
 
-	columns: Array<AuthorityColumn> = [];
-	table: Table;
-	sortBy: ColumnSort;
+	columns: Array<ITableColumnAuthority> = [];
+	table: ITable;
+	sortBy: ITableColumnSort;
 	authorities: Array<IAuthority> = [];
 
 	loading: number = 0;
@@ -69,7 +68,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
-		let table: Table = {
+		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
 			rows: []
@@ -92,7 +91,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 		this.refresh(true);
 	}
 
-	sortChange(data: { value: ColumnSort }) {
+	sortChange(data: { value: ITableColumnSort }) {
 		this.search_cmd.sort = {field: data.value.id, ascend: data.value.ascend};
 		this.refresh();
 	}
@@ -117,7 +116,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 			});
 	}
 
-	display(data: ISearchAuthorityData): void {
+	display(data: ISearchResultAuthority): void {
 		if (data) {
 			this.total = data.hits.total;
 			this.sortBy = data.sortBy;

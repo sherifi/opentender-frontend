@@ -1,11 +1,10 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {SearchCommand} from '../../model/search';
 import {StateService} from '../../services/state.service';
-import {IStats, IRegion, IRegionStats, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -16,7 +15,7 @@ export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;
 	public parent_regions: Array<IRegion> = [];
 	private loading: number = 0;
-	public search_cmd: SearchCommand;
+	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
 	private subscription: any;
 
@@ -41,7 +40,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getRegionStats({id: id}).subscribe(
+			this.api.getRegionStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
@@ -61,7 +60,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		});
 	}
 
-	display(data: IRegionStats): void {
+	display(data: IStatsRegion): void {
 		this.region = null;
 		this.parent_regions = [];
 		if (!data) {
@@ -91,21 +90,22 @@ export class RegionPage implements OnInit, OnDestroy {
 			return;
 		}
 		let field = (this.region.id.length >= 2) ? '.nuts' + (this.region.id.length - 2) : '';
-		let search_cmd = new SearchCommand();
-		search_cmd.filters = [
-			{
-				field: 'buyers.address.nuts' + field,
-				type: 'term',
-				value: [this.region.id]
-			},
-			// TODO: implement OR parameter ?
-			// {
-			// 	field: 'lots.bids.bidders.address.nuts' + field,
-			// 	type: 'term',
-			// 	value: [this.region.id]
-			// }
-			];
-		this.search_cmd = search_cmd;
+
+		this.search_cmd = {
+			filters: [
+				{
+					field: 'buyers.address.nuts' + field,
+					type: 'term',
+					value: [this.region.id]
+				},
+				// TODO: implement OR parameter ?
+				// {
+				// 	field: 'lots.bids.bidders.address.nuts' + field,
+				// 	type: 'term',
+				// 	value: [this.region.id]
+				// }
+			]
+		};
 	}
 
 	searchChange(data) {

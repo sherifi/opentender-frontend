@@ -1,13 +1,12 @@
 /// <reference path="./tender.d.ts" />
-import Tender = Definitions.Tender;
+import Bidder = Definitions.Bidder;
 import Buyer = Definitions.Buyer;
-import Body = Definitions.Body;
+import Price = Definitions.Price;
 import Lot = Definitions.Lot;
 import Bid = Definitions.Bid;
-import {Utils} from './utils';
-import {IAuthority, ICompany} from '../app.interfaces';
-import Price = Definitions.Price;
+import {ITableColumnAuthority, ITableColumnCompany, ITableColumnTender, ITableCellLine} from '../app.interfaces';
 import {Consts} from './consts';
+import {Utils} from './utils';
 
 const ICON = {
 	tender: 'icon-newspaper',
@@ -16,46 +15,7 @@ const ICON = {
 	company: 'icon-office'
 };
 
-export interface Column {
-	name: string;
-	id: string;
-	group: string;
-	sortBy?: ColumnSort;
-}
-
-export interface TableLine {
-	content: string;
-	link?: string;
-	prefix?: string;
-	list?: boolean;
-	icon?: string;
-}
-
-export interface TableCell {
-	align?: string;
-	lines: Array<TableLine>;
-}
-
-export interface TableRow {
-	cells: Array<TableCell>;
-}
-
-export interface Table {
-	columns: Array<Column>;
-	rows: Array<TableRow>;
-	sortBy: ColumnSort;
-}
-
-export interface ColumnSort {
-	id: string;
-	ascend: boolean;
-}
-
-export interface AuthorityColumn extends Column {
-	format: (authority: IAuthority) => Array<TableLine>;
-}
-
-export const AuthorityColumns: Array<AuthorityColumn> = [
+export const AuthorityColumns: Array<ITableColumnAuthority> = [
 	{
 		name: 'Name',
 		id: 'body.name',
@@ -124,11 +84,7 @@ export const AuthorityColumns: Array<AuthorityColumn> = [
 	}
 ];
 
-export interface CompanyColumn extends Column {
-	format: (company: ICompany) => Array<TableLine>;
-}
-
-export const CompanyColumns: Array<CompanyColumn> = [
+export const CompanyColumns: Array<ITableColumnCompany> = [
 	{
 		name: 'Name',
 		group: 'Company',
@@ -173,10 +129,6 @@ export const CompanyColumns: Array<CompanyColumn> = [
 	}
 ];
 
-export interface TenderColumn extends Column {
-	format: (tender: Tender) => Array<TableLine>;
-}
-
 const FormatUtils = {
 	formatPriceEURValue: (value: number) => {
 		return Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(value).replace(/ /g, '\u00a0');
@@ -189,7 +141,7 @@ const FormatUtils = {
 	}
 };
 
-export const TenderColumns: Array<TenderColumn> = [
+export const TenderColumns: Array<ITableColumnTender> = [
 	{
 		name: 'Tender Link',
 		id: 'id',
@@ -213,7 +165,7 @@ export const TenderColumns: Array<TenderColumn> = [
 				if (lot.bids) {
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
-							bid.bidders.forEach((bidder: Body) => {
+							bid.bidders.forEach((bidder: Bidder) => {
 								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], link: '/company/' + bidder.id};
 								companies[bidder.id].lots.push(index_l + 1);
 							});
@@ -266,7 +218,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			if (!tender.buyers) {
 				return [];
 			}
-			let result: Array<TableLine> = [];
+			let result: Array<ITableCellLine> = [];
 			tender.buyers.forEach((buyer: Buyer) => {
 				if (buyer.address && buyer.address.nuts) {
 					buyer.address.nuts.forEach(nut => {
@@ -291,7 +243,7 @@ export const TenderColumns: Array<TenderColumn> = [
 			if (!tender.administrators) {
 				return [];
 			}
-			return tender.administrators.map((admin: Body) => {
+			return tender.administrators.map((admin: Buyer) => {
 				return {content: admin.name};
 			});
 		}

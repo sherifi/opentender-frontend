@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {
-	IApiGeoJSONResult, IApiResult, IAuthorityApiResult, IAuthoritySimilarApiResult, ICompanyApiResult, ICompanySimilarApiResult, IDownloadTenderApiResult, INutsApiResult, IPortalsApiResult,
-	IPortalsStatsApiResult, IRegionApiResult, ISchemaApiResult, ISearchAuthorityApiResult, ISearchCompanyApiResult, ISearchTenderApiResult,
-	ISectorApiResult, ISectorsApiResult, IStatApiResult, IStatStatsApiResult, ITenderApiResult, IUsageApiResult
+	IApiResultGeoJSON, IApiResult, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar, IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
+	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
+	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
+	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads
 } from '../app.interfaces';
 
 @Injectable()
@@ -15,150 +16,146 @@ export class ApiService {
 	private absUrl = '';
 	private actionUrl = '';
 	private actionCountryUrl = '';
-	private headers: Headers;
+	private headers: HttpHeaders;
 
-	constructor(private http: Http, private config: ConfigService) {
+	constructor(private http: HttpClient, private config: ConfigService) {
 		this.absUrl = config.absUrl;
 		this.actionUrl = (config.config.backendUrl || '') + '/api/';
 		this.actionCountryUrl = this.actionUrl + (config.country.id || 'eu' ) + '/';
-		this.headers = new Headers();
+		this.headers = new HttpHeaders();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');
 	}
 
-	post(url, params: any) {
+	post<T>(url: string, params: Object): Observable<T> {
 		if (this.config.locale) {
 			params['lang'] = this.config.locale;
 		}
-		return this.http.post(this.actionCountryUrl + url, JSON.stringify(params), {headers: this.headers});
+		return this.http.post<T>(this.actionCountryUrl + url, params, {headers: this.headers});
 	}
 
-	getIndicatorStats(params: any): Observable<IStatApiResult> {
-		return this.post('indicators/stats', params).map(res => <IStatApiResult>res.json());
+	getIndicatorStats(params: ISearchCommand): Observable<IApiResultStat> {
+		return this.post<IApiResultStat>('indicators/stats', params);
 	}
 
-	getSectorStats(params: any): Observable<ISectorApiResult> {
-		return this.post('sector/stats', params).map(res => <ISectorApiResult>res.json());
+	getSectorStats(params: IGetByIdCommand): Observable<IApiResultSector> {
+		return this.post<IApiResultSector>('sector/stats', params);
 	}
 
-	getRegionStats(params: any): Observable<IRegionApiResult> {
-		return this.post('region/stats', params).map(res => <IRegionApiResult>res.json());
+	getRegionStats(params: IGetByIdCommand): Observable<IApiResultRegion> {
+		return this.post<IApiResultRegion>('region/stats', params);
 	}
 
-	getCompanyStats(params: any): Observable<IStatStatsApiResult> {
-		return this.post('company/stats', params).map(res => <IStatStatsApiResult>res.json());
+	getCompanyStats(params: IGetByIdCommand): Observable<IApiResultStatStats> {
+		return this.post<IApiResultStatStats>('company/stats', params);
 	}
 
-	getAuthorityStats(params: any): Observable<IStatStatsApiResult> {
-		return this.post('authority/stats', params).map(res => <IStatStatsApiResult>res.json());
+	getAuthorityStats(params: IGetByIdCommand): Observable<IApiResultStatStats> {
+		return this.post<IApiResultStatStats>('authority/stats', params);
 	}
 
-	getMarketAnalysisStats(params: any): Observable<IStatApiResult> {
-		return this.post('market/stats', params).map(res => <IStatApiResult>res.json());
+	getMarketAnalysisStats(params: ISearchCommand): Observable<IApiResultStat> {
+		return this.post<IApiResultStat>('market/stats', params);
 	}
 
-	getHomeStats(params: any): Observable<IStatApiResult> {
-		return this.post('home/stats', params).map(res => <IStatApiResult>res.json());
+	getHomeStats(): Observable<IApiResultStat> {
+		return this.post<IApiResultStat>('home/stats', {});
 	}
 
-	searchAuthority(params: any): Observable<ISearchAuthorityApiResult> {
-		return this.post('authority/search', params).map(res => <ISearchAuthorityApiResult>res.json());
+	searchAuthority(params: ISearchCommand): Observable<IApiResultSearchAuthority> {
+		return this.post<IApiResultSearchAuthority>('authority/search', params);
 	}
 
-	searchCompany(params: any): Observable<ISearchCompanyApiResult> {
-		return this.post('company/search', params).map(res => <ISearchCompanyApiResult>res.json());
+	searchCompany(params: ISearchCommand): Observable<IApiResultSearchCompany> {
+		return this.post <IApiResultSearchCompany>('company/search', params);
 	}
 
-	searchTender(params: any): Observable<ISearchTenderApiResult> {
-		return this.post('tender/search', params).map(res => <ISearchTenderApiResult>res.json());
+	searchTender(params: ISearchCommand): Observable<IApiResultSearchTender> {
+		return this.post<IApiResultSearchTender>('tender/search', params);
 	}
 
-	startDownload(params: IDownloadTenderApiResult): void {
+	startDownload(params: IApiResultDownloadTenderSearch): void {
 		window.location.href = this.actionCountryUrl + 'download/id/' + params.data.id;
 	}
 
-	requestDownload(params: any): Observable<IDownloadTenderApiResult> {
-		return this.post('tender/download', params).map(res => <IDownloadTenderApiResult>res.json());
+	requestDownload(params: ISearchCommand): Observable<IApiResultDownloadTenderSearch> {
+		return this.post<IApiResultDownloadTenderSearch>('tender/download', params);
 	}
 
-	autocomplete(entity: string, field: string, search: string): Observable<IApiResult> {
-		return this.post('autocomplete', {entity, field, search}).map(res => <IApiResult>res.json());
+	autocomplete(entity: string, field: string, search: string): Observable<IApiResultAutoComplete> {
+		return this.post<IApiResultAutoComplete>('autocomplete', {entity, field, search});
 	}
 
-	get(url: string) {
+	get<T>(url: string) {
 		let query = '';
 		if (this.config.locale) {
 			query = '?lang=' + this.config.locale;
 		}
-		return this.http.get(this.actionCountryUrl + url + query);
+		return this.http.get<T>(this.actionCountryUrl + url + query);
 	}
 
-	getFieldsUsage(): Observable<IUsageApiResult> {
-		return this.get('quality/usage').map(res => <IUsageApiResult>res.json());
+	getFieldsUsage(): Observable<IApiResultUsage> {
+		return this.get<IApiResultUsage>('quality/usage');
 	}
 
-	getSectors(): Observable<ISectorsApiResult> {
-		return this.get('sector/list/main').map(res => <ISectorsApiResult>res.json());
+	getSectors(): Observable<IApiResultSectors> {
+		return this.get<IApiResultSectors>('sector/list/main');
 	}
 
-	getTender(id: string): Observable<ITenderApiResult> {
-		return this.get('tender/id/' + id).map(res => <ITenderApiResult>res.json());
+	getTender(id: string): Observable<IApiResultTender> {
+		return this.get<IApiResultTender>('tender/id/' + id);
 	}
 
-	getCompany(id: string): Observable<ICompanyApiResult> {
-		return this.get('company/id/' + id).map(res => <ICompanyApiResult>res.json());
+	getCompany(id: string): Observable<IApiResultCompany> {
+		return this.get<IApiResultCompany>('company/id/' + id);
 	}
 
-	getSector(id: string): Observable<ISectorApiResult> {
-		return this.get('sector/id/' + id).map(res => <ISectorApiResult>res.json());
+	getSector(id: string): Observable<IApiResultSector> {
+		return this.get<IApiResultSector>('sector/id/' + id);
 	}
 
-	getCompanyNutsStats(): Observable<INutsApiResult> {
-		return this.get('company/nuts').map(res => <INutsApiResult>res.json());
+	getCompanyNutsStats(): Observable<IApiResultNuts> {
+		return this.get<IApiResultNuts>('company/nuts');
 	}
 
-	getCompanySimilar(id: string): Observable<ICompanySimilarApiResult> {
-		return this.get('company/similar/' + id).map(res => <ICompanySimilarApiResult>res.json());
+	getCompanySimilar(id: string): Observable<IApiResultCompanySimilar> {
+		return this.get<IApiResultCompanySimilar>('company/similar/' + id);
 	}
 
-	getAuthority(id: string): Observable<IAuthorityApiResult> {
-		return this.get('authority/id/' + id).map(res => <IAuthorityApiResult>res.json());
+	getAuthority(id: string): Observable<IApiResultAuthority> {
+		return this.get<IApiResultAuthority>('authority/id/' + id);
 	}
 
-	getAuthorityNutsStats(): Observable<INutsApiResult> {
-		return this.get('authority/nuts').map(res => <INutsApiResult>res.json());
+	getAuthorityNutsStats(): Observable<IApiResultNuts> {
+		return this.get<IApiResultNuts>('authority/nuts');
 	}
 
-	getAuthoritySimilar(id: string): Observable<IAuthoritySimilarApiResult> {
-		return this.get('authority/similar/' + id).map(res => <IAuthoritySimilarApiResult>res.json());
+	getAuthoritySimilar(id: string): Observable<IApiResultAuthoritySimilar> {
+		return this.get<IApiResultAuthoritySimilar>('authority/similar/' + id);
 	}
 
 	// country unspecific api gets from backend
 
-	getPortalsStats(): Observable<IPortalsStatsApiResult> {
-		return this.http.get(this.actionUrl + 'portals/stats').map(res => <IPortalsStatsApiResult>res.json());
+	getPortalsStats(): Observable<IApiResultPortalsStats> {
+		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats');
 	}
 
-	getPortals(): Observable<IPortalsApiResult> {
-		return this.http.get(this.actionUrl + 'portals/list').map(res => <IPortalsApiResult>res.json());
+	getPortals(): Observable<IApiResultPortals> {
+		return this.http.get<IApiResultPortals>(this.actionUrl + 'portals/list');
 	}
 
 	// country unspecific gets from frontend
 
-	getDownloads(): Observable<IApiResult> {
-		return this.http.get(this.absUrl + '/data/files/downloads.json').map(res => <IApiResult>res.json());
+	getDownloads(): Observable<IApiResultDownloads> {
+		return this.http.get<IApiResultDownloads>(this.absUrl + '/data/files/downloads.json');
 	}
 
-	getSchema(): Observable<ISchemaApiResult> {
-		return this.http.get(this.absUrl + '/data/schema.json').map(res => <ISchemaApiResult>res.json());
-	}
-
-	getNutsMap(level: number): Observable<IApiGeoJSONResult> {
-		return this.http.get(this.absUrl + '/data/nuts' + level + '.geo.json').map(res => <IApiGeoJSONResult>res.json());
+	getNutsMap(level: number): Observable<IApiResultGeoJSON> {
+		return this.http.get<IApiResultGeoJSON>(this.absUrl + '/data/nuts' + level + '.geo.json');
 	}
 
 	getPortalMapData(): Observable<IApiResult> {
-		return this.http.get(this.absUrl + '/assets/data/portal-map.svg.json').map(res => <IApiResult>res.json());
+		return this.http.get<IApiResult>(this.absUrl + '/assets/data/portal-map.svg.json');
 	}
 
 }

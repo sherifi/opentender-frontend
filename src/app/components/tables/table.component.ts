@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {Table, Column} from '../../model/columns';
+import {ITable, ITableColumn} from '../../app.interfaces';
 
 @Component({
 	selector: 'doc-table',
@@ -7,14 +7,14 @@ import {Table, Column} from '../../model/columns';
 })
 export class TableComponent {
 	@Input()
-	table: Table;
+	table: ITable;
 	@Output()
 	sortChange = new EventEmitter();
 
 	constructor() {
 	}
 
-	setSort(col: Column): void {
+	setSort(col: ITableColumn): void {
 		if (col.sortBy) {
 			if (this.table.sortBy && this.table.sortBy.id === col.sortBy.id) {
 				this.sortChange.emit({

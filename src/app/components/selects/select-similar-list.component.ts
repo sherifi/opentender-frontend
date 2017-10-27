@@ -21,7 +21,6 @@ export class SelectSimilarListComponent {
 	@Output()
 	selectChange = new EventEmitter();
 
-	public showDebug: boolean = false;
 	public search_similars = {};
 
 	constructor(public i18n: I18NService) {

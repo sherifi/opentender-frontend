@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Router} from '@angular/router';
-import {IApiGeoJSONResult, ISeriesProvider, IStatsNuts} from '../../app.interfaces';
+import {IApiResultGeoJSON, ISeriesProvider, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
 import {ApiService} from '../../services/api.service';
 import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
@@ -263,7 +263,7 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 		return {data: this.data_list, header: {id: 'NUTS' + this.level, value: 'Amount', name: 'Name'}, filename: this.title};
 	}
 
-	displayNuts(geo: IApiGeoJSONResult) {
+	displayNuts(geo: IApiResultGeoJSON) {
 		let nuts = {};
 		Object.keys(this.data).forEach(key => {
 			let nutskey = Utils.validateNutsCode(key, this.level);

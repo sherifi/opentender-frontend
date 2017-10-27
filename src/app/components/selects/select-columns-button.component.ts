@@ -1,6 +1,6 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
-import {Column} from '../../model/columns';
 import {I18NService} from '../../services/i18n.service';
+import {ITableColumn} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -9,9 +9,9 @@ import {I18NService} from '../../services/i18n.service';
 })
 export class SelectColumnsButtonComponent {
 	@Input()
-	columns_all: Array<Column>;
+	columns_all: Array<ITableColumn>;
 	@Input()
-	columns_active: Array<Column>;
+	columns_active: Array<ITableColumn>;
 	@Output()
 	selectChange = new EventEmitter();
 	showDialog = false;

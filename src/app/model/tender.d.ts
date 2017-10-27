@@ -293,9 +293,13 @@ declare namespace Definitions {
 	}
 	export interface Indicator {
 		/**
+		 * Score of indicator
+		 */
+		value?: number;
+		/**
 		 * Type of indicator
 		 */
-		type?: 'CORRUPTION_SINGLE_BID' | 'CORRUPTION_PRIOR_INFORMATION_NOTICE' | 'CORRUPTION_ADVERTISEMENT_PERIOD' | 'CORRUPTION_PROCEDURE_TYPE' | 'CORRUPTION_DECISION_PERIOD' | 'CORRUPTION_TAX_HAVEN' | 'CORRUPTION_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE';
+		type?: 'CORRUPTION_SINGLE_BID' | 'CORRUPTION_PRIOR_INFORMATION_NOTICE' | 'CORRUPTION_CALL_FOR_TENDER_PUBLICATION' | 'CORRUPTION_ADVERTISEMENT_PERIOD' | 'CORRUPTION_PROCEDURE_TYPE' | 'CORRUPTION_DECISION_PERIOD' | 'CORRUPTION_TAX_HAVEN' | 'CORRUPTION_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE';
 	}
 	/**
 	 * undocumented language enumeration
@@ -521,6 +525,20 @@ declare namespace Definitions {
 		 * isParentTender
 		 */
 		isParentTender?: boolean;
+	}
+	export interface Score {
+		/**
+		 * Type of indicator score
+		 */
+		type?: 'CORRUPTION' | 'ADMINISTRATIVE' | 'TRANSPARENCY' | 'TENDER';
+		/**
+		 * Status of indicator score
+		 */
+		status?: 'CALCULATED' | 'INSUFFICIENT_DATA' | 'UNDEFINED';
+		/**
+		 * Calculated indicator score
+		 */
+		value?: number;
 	}
 	/**
 	 * method used for bids evaluation - one of the LOWEST_PRICE or MEAT (most economically advantageous tender), individual MEAT criteria are in awardCriteria
@@ -748,6 +766,10 @@ declare namespace Definitions {
 		 * Array of Indicators
 		 */
 		indicators?: Indicator[];
+		/**
+		 * Array of indicator scores
+		 */
+		scores?: Score[];
 		/**
 		 * If the purchase is being made for someone else. e.g. city purchases on behalf of one of its schools...
 		 */

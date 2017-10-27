@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges, Output, EventEmitter} from '@angular/core';
-import {Column} from '../../model/columns';
+import {ITableColumn} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -8,10 +8,10 @@ import {Column} from '../../model/columns';
 })
 export class SelectColumnsComponent implements OnChanges {
 	@Input()
-	columns_all: Array<Column>;
+	columns_all: Array<ITableColumn>;
 	@Input()
-	columns_active: Array<Column>;
-	groups: Array<{name: string; columns: Array<{active: boolean;column: Column;}>;}> = [];
+	columns_active: Array<ITableColumn>;
+	groups: Array<{name: string; columns: Array<{active: boolean;column: ITableColumn;}>;}> = [];
 	@Output()
 	selectChange = new EventEmitter();
 

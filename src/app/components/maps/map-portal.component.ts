@@ -1,6 +1,6 @@
 import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {ICountryStats} from '../../app.interfaces';
+import {IStatsCountry} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 import {Router} from '@angular/router';
@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 @Directive({selector: 'g.country'})
 export class SVGCountryGroupDirective {
 	@Input() id: string;
-	portal: ICountryStats;
+	portal: IStatsCountry;
 	current: boolean;
 
 	constructor(private el: ElementRef, private config: ConfigService, private renderer: Renderer2, private router: Router) {
@@ -23,7 +23,7 @@ export class SVGCountryGroupDirective {
 		});
 	}
 
-	public setData(portal: ICountryStats, isCurrent: boolean) {
+	public setData(portal: IStatsCountry, isCurrent: boolean) {
 		this.portal = portal;
 		this.current = isCurrent;
 		if (this.current) {
@@ -39,7 +39,7 @@ export class SVGCountryGroupDirective {
 	templateUrl: 'map-portal.template.html'
 })
 export class PortalMapComponent implements AfterViewInit, OnChanges {
-	@Input() portals: Array<ICountryStats>;
+	@Input() portals: Array<IStatsCountry>;
 	@ViewChildren(SVGCountryGroupDirective) items: QueryList<SVGCountryGroupDirective>;
 	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
 	public current: Country;

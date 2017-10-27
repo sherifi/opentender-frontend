@@ -1,13 +1,14 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {SearchCommand, SearchCommandFilter} from '../../model/search';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {ISector, IStats, IStatsCounts, IStatsPcCpvs, IStatsLotsInYears, IStatsPrices, IStatsAuthorities, IStatsCompanies, ISectorStats, IStatsPcPricesLotsInYears, IStatsProcedureType, IStatsNuts} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {I18NService} from '../../services/i18n.service';
-import {Utils} from '../../model/utils';
+import {
+	ISector, IStats, IStatsPcCpvs, IStatsAuthorities, IStatsCompanies, IStatsSector, IStatsPcPricesLotsInYears, IStatsProcedureType,
+	IStatsNuts, ISearchCommandFilter, ISearchCommand
+} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -18,7 +19,7 @@ export class SectorPage implements OnInit, OnDestroy {
 	private sector: ISector;
 	private parent_sectors: Array<ISector> = [];
 	private loading: number = 0;
-	private search_cmd: SearchCommand;
+	private search_cmd: ISearchCommand;
 	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	private subscription: any;
 	private viz: {
@@ -64,7 +65,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getSectorStats({id: id}).subscribe(
+			this.api.getSectorStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
@@ -97,7 +98,7 @@ export class SectorPage implements OnInit, OnDestroy {
 	buildFilters() {
 		let filters = [];
 		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
-			let yearFilter: SearchCommandFilter = {
+			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'range',
 				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
@@ -113,7 +114,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		}
 		let filters = this.buildFilters();
 		this.loading++;
-		this.api.getSectorStats({id: this.sector.id, filters: filters}).subscribe(
+		this.api.getSectorStats({ids: [this.sector.id], filters: filters}).subscribe(
 			(result) => this.displayStats(result.data.stats),
 			(error) => {
 				this.notify.error(error);
@@ -123,7 +124,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			});
 	}
 
-	display(data: ISectorStats): void {
+	display(data: IStatsSector): void {
 		this.sector = null;
 		this.parent_sectors = [];
 		if (!data) {
@@ -183,21 +184,19 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		let filters = this.buildFilters();
-		let subfilter: SearchCommandFilter = {
+		let subfilter: ISearchCommandFilter = {
 			field: 'cpvs.isMain',
 			type: 'term',
 			value: [true]
 		};
-		let filter: SearchCommandFilter = {
+		let filter: ISearchCommandFilter = {
 			field: this.sector.level ? 'cpvs.code.' + this.sector.level : 'cpvs.code',
 			type: 'term',
 			value: [this.sector.id],
 			and: [subfilter]
 		};
 		filters.push(filter);
-		let search_cmd = new SearchCommand();
-		search_cmd.filters = filters;
-		this.search_cmd = search_cmd;
+		this.search_cmd = {filters: filters};
 	}
 
 	searchChange(data) {

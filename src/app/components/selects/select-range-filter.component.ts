@@ -1,5 +1,5 @@
 import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
-import {Filter} from '../../model/search';
+import {ISearchFilter} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -8,7 +8,7 @@ import {Filter} from '../../model/search';
 })
 export class SelectRangeFilterComponent implements OnChanges {
 	@Input()
-	filter: Filter;
+	filter: ISearchFilter;
 
 	@Input()
 	buckets: Array<{ key: number, doc_count: number }>;
@@ -20,7 +20,7 @@ export class SelectRangeFilterComponent implements OnChanges {
 	private startYear: number = 2009;
 	private endYear: number = 2017;
 
-	restoreFilter(filter: Filter) {
+	restoreFilter(filter: ISearchFilter) {
 		if (filter.values) {
 			this.startYear = filter.values[0];
 			this.endYear = filter.values[1] - 1;

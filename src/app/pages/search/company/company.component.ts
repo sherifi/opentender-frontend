@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Search, SearchCommand} from '../../../model/search';
+import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {CompanyFilterDefs, FilterType} from '../../../model/filters';
-import {ISearchCompanyData} from '../../../app.interfaces';
+import {CompanyFilterDefs} from '../../../model/filters';
+import {ISearchResultCompany, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {Utils} from '../../../model/utils';
 import {I18NService} from '../../../services/i18n.service';
 
@@ -14,11 +14,11 @@ import {I18NService} from '../../../services/i18n.service';
 export class SearchCompanyPage implements OnInit, OnDestroy {
 	title = '';
 	search = new Search('company', CompanyFilterDefs);
-	search_cmd: SearchCommand;
+	search_cmd: ISearchCommand;
 	columns = ['id', 'body.name', 'body.address.city', 'body.address.country'];
 	quick_filters = [];
 	check_filters = CompanyFilterDefs;
-	search_filters = CompanyFilterDefs.filter(f => f.type !== FilterType.select);
+	search_filters = CompanyFilterDefs.filter(f => f.type !== ISearchFilterDefType.select);
 
 	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.filters.forEach(filter => {
@@ -53,7 +53,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 		this.title = this.i18n.get('Companies') + (total !== null ? ': ' + Utils.formatValue(total) : '');
 	}
 
-	searchChange(data: ISearchCompanyData) {
+	searchChange(data: ISearchResultCompany) {
 		this.setTitle(data.hits && data.hits.total ? data.hits.total : 0);
 		this.search.fillAggregationResults(data.aggregations);
 	}

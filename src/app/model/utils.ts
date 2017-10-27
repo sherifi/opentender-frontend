@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 import {Consts} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
-import {IndicatorInfo, SubIndicatorInfo} from '../app.interfaces';
+import {IIndicatorInfo, ISubIndicatorInfo} from '../app.interfaces';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
@@ -81,7 +81,7 @@ export const Utils = {
 			return part[0].toUpperCase();
 		}).join('');
 	},
-	subindicators(indicatorId: string): Array<SubIndicatorInfo> {
+	subindicators(indicatorId: string): Array<ISubIndicatorInfo> {
 		return Object.keys(Consts.indicators[indicatorId].subindicators).map(subkey => {
 			let sub = Consts.indicators[indicatorId].subindicators[subkey];
 			return {
@@ -92,7 +92,7 @@ export const Utils = {
 			};
 		});
 	},
-	indicatorInfo(ii): IndicatorInfo {
+	indicatorInfo(ii): IIndicatorInfo {
 		return {
 			id: ii.id,
 			name: ii.name,
@@ -101,7 +101,7 @@ export const Utils = {
 			subindicators: Utils.subindicators(ii.id)
 		};
 	},
-	indicators(): Array<IndicatorInfo> {
+	indicators(): Array<IIndicatorInfo> {
 		return Object.keys(Consts.indicators).map(key => {
 			return Utils.indicatorInfo(Consts.indicators[key]);
 		});

@@ -1,5 +1,5 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
-import {FilterDef} from '../../model/filters';
+import {ISearchFilterDef} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
@@ -9,9 +9,9 @@ import {I18NService} from '../../services/i18n.service';
 })
 export class SelectSearchesButtonComponent {
 	@Input()
-	filters_all: Array<FilterDef>;
+	filters_all: Array<ISearchFilterDef>;
 	@Input()
-	filters_active: Array<FilterDef>;
+	filters_active: Array<ISearchFilterDef>;
 	@Output()
 	selectChange = new EventEmitter();
 	showDialog = false;

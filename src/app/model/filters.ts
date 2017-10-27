@@ -1,50 +1,23 @@
 import {Utils} from './utils';
 import {Consts} from './consts';
+import {ISearchFilterDef, ISearchFilterDefType} from '../app.interfaces';
 
-export enum FilterType {
-	text = 1,
-	select = 2,
-	value = 3,
-	range = 4,
-	term = 5,
-	none = 0
-}
-
-export interface Bucket {
-	name?: string;
-	key: string;
-	doc_count: number;
-}
-
-export interface FilterDef {
-	id: string;
-	name: string;
-	field: string;
-	type: FilterType;
-	group?: string;
-	size?: number;
-	aggregation_field?: string; // if empty "field" is used for aggregation, too
-	aggregation_type?: FilterType; // if empty "type" is used for aggregation, too
-	valueFormatter?: (string) => string;
-	valuesFilter?: (buckets: Array<Bucket>) => Array<Bucket>;
-}
-
-export const TenderFilterDefs: Array<FilterDef> = [
+export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'buyers.name',
 		name: 'Name',
 		group: 'Buyer',
 		field: 'buyers.name',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		aggregation_field: 'buyers.name.raw',
-		aggregation_type: FilterType.term
+		aggregation_type: ISearchFilterDefType.term
 	},
 	{
 		id: 'buyers.address.city',
 		name: 'City',
 		group: 'Buyer',
 		field: 'buyers.address.city',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -52,7 +25,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Country',
 		group: 'Buyer',
 		field: 'buyers.address.country',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandCountry,
 		size: 30
 	},
@@ -61,7 +34,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Main Activities',
 		group: 'Buyer',
 		field: 'buyers.mainActivities',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
 	},
@@ -70,7 +43,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Type',
 		group: 'Buyer',
 		field: 'buyers.buyerType',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined
 	},
 
@@ -79,16 +52,16 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Name',
 		group: 'Supplier',
 		field: 'lots.bids.bidders.name',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		aggregation_field: 'lots.bids.bidders.name.raw',
-		aggregation_type: FilterType.term
+		aggregation_type: ISearchFilterDefType.term
 	},
 	{
 		id: 'lots.bids.bidders.address.city',
 		name: 'City',
 		group: 'Supplier',
 		field: 'lots.bids.bidders.address.city',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -96,7 +69,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Country',
 		group: 'Supplier',
 		field: 'lots.bids.bidders.address.country',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandCountry,
 		size: 30
 	},
@@ -106,9 +79,9 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Title',
 		group: 'Tender',
 		field: 'title',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		aggregation_field: 'title.stopped',
-		aggregation_type: FilterType.term,
+		aggregation_type: ISearchFilterDefType.term,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -116,7 +89,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Title English',
 		group: 'Tender',
 		field: 'titleEnglish',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -124,7 +97,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Country',
 		group: 'Tender',
 		field: 'country',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandCountry,
 		size: 30
 	},
@@ -134,7 +107,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Procedure Type',
 		group: 'Tender',
 		field: 'procedureType',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
 	},
@@ -143,7 +116,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Supply Type',
 		group: 'Tender',
 		field: 'supplyType',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined
 	},
 
@@ -152,28 +125,28 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'CPV (Divisions)',
 		group: 'Sector',
 		field: 'cpvs.code.divisions',
-		type: FilterType.select
+		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'cpvs.code.groups',
 		name: 'CPV (Groups)',
 		group: 'Sector',
 		field: 'cpvs.code.groups',
-		type: FilterType.select
+		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'cpvs.code.categories',
 		name: 'CPV (Categories)',
 		group: 'Sector',
 		field: 'cpvs.code.categories',
-		type: FilterType.select
+		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'cpvs.code',
 		name: 'CPV (Full)',
 		group: 'Sector',
 		field: 'cpvs.code',
-		type: FilterType.select
+		type: ISearchFilterDefType.select
 	},
 
 	{
@@ -181,7 +154,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'All',
 		group: 'Indicators',
 		field: 'indicators.type',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.formatIndicatorName
 	},
 	{
@@ -189,7 +162,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Procurement Integrity',
 		group: 'Indicators',
 		field: 'indicators.type',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
@@ -203,7 +176,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Administrative Capacity',
 		group: 'Indicators',
 		field: 'indicators.type',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
@@ -217,7 +190,7 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Transparency',
 		group: 'Indicators',
 		field: 'indicators.type',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		size: 30, // TODO: make request and do not filter in client
 		valueFormatter: Utils.formatIndicatorName,
 		valuesFilter: (buckets) => {
@@ -232,68 +205,68 @@ export const TenderFilterDefs: Array<FilterDef> = [
 		name: 'Final Price EUR',
 		group: 'Prices',
 		field: 'finalPrice.netAmountEur',
-		type: FilterType.value
+		type: ISearchFilterDefType.value
 	},
 	{
 		id: 'documentsPrice.netAmountEur',
 		name: 'Document Price EUR',
 		group: 'Prices',
 		field: 'documentsPrice.netAmountEur',
-		type: FilterType.value
+		type: ISearchFilterDefType.value
 	},
 	{
 		id: 'estimatedPrice.netAmountEur',
 		name: 'Estimated Price EUR',
 		group: 'Prices',
 		field: 'estimatedPrice.netAmountEur',
-		type: FilterType.value
+		type: ISearchFilterDefType.value
 	},
 	{
 		id: 'lots.bids.price.netAmountEur',
 		name: 'Bid Price EUR',
 		group: 'Prices',
 		field: 'lots.bids.price.netAmountEur',
-		type: FilterType.value
+		type: ISearchFilterDefType.value
 	},
 	{
 		id: 'lots.awardDecisionDate',
 		name: 'Award Decision Year',
 		group: 'Dates',
 		field: 'lots.awardDecisionDate',
-		type: FilterType.range,
+		type: ISearchFilterDefType.range,
 	},
 	{
 		id: 'estimatedCompletionDate',
 		name: 'Estimated Completion Year',
 		group: 'Dates',
 		field: 'estimatedCompletionDate',
-		type: FilterType.range,
+		type: ISearchFilterDefType.range,
 	},
 	{
 		id: 'estimatedStartDate',
 		name: 'Estimated Start Year',
 		group: 'Dates',
 		field: 'estimatedStartDate',
-		type: FilterType.range,
+		type: ISearchFilterDefType.range,
 	}
 ];
 
-export const CompanyFilterDefs: Array<FilterDef> = [
+export const CompanyFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'body.name',
 		name: 'Name',
 		field: 'body.name',
 		group: 'Company',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		aggregation_field: 'body.name.raw',
-		aggregation_type: FilterType.term
+		aggregation_type: ISearchFilterDefType.term
 	},
 	{
 		id: 'body.address.city',
 		name: 'City',
 		group: 'Company',
 		field: 'body.address.city',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -301,27 +274,27 @@ export const CompanyFilterDefs: Array<FilterDef> = [
 		name: 'Country',
 		group: 'Company',
 		field: 'body.address.country',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandCountry,
 		size: 30
 	}];
 
-export const AuthorityFilterDefs: Array<FilterDef> = [
+export const AuthorityFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'body.name',
 		name: 'Name',
 		group: 'Authority',
 		field: 'body.name',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		aggregation_field: 'body.name.raw',
-		aggregation_type: FilterType.term
+		aggregation_type: ISearchFilterDefType.term
 	},
 	{
 		id: 'body.address.city',
 		name: 'City',
 		group: 'Authority',
 		field: 'body.address.city',
-		type: FilterType.text,
+		type: ISearchFilterDefType.text,
 		valueFormatter: Utils.capitalize
 	},
 	{
@@ -330,7 +303,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 		group: 'Authority',
 		field: 'body.address.country',
 		valueFormatter: Utils.expandCountry,
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		size: 30
 	},
 	{
@@ -338,7 +311,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 		name: 'Main Activities',
 		group: 'Authority',
 		field: 'body.mainActivities',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
 	},
@@ -347,7 +320,7 @@ export const AuthorityFilterDefs: Array<FilterDef> = [
 		name: 'Buyer Type',
 		group: 'Authority',
 		field: 'body.buyerType',
-		type: FilterType.select,
+		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined,
 		size: 30
 	}

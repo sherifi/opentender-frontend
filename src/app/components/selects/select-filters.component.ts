@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges, Output, EventEmitter} from '@angular/core';
-import {FilterDef} from '../../model/filters';
+import {ISearchFilterDef} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -8,12 +8,12 @@ import {FilterDef} from '../../model/filters';
 })
 export class SelectFiltersComponent implements OnChanges {
 	@Input()
-	filters_all: Array<FilterDef>;
+	filters_all: Array<ISearchFilterDef>;
 	@Input()
-	filters_active: Array<FilterDef>;
+	filters_active: Array<ISearchFilterDef>;
 	@Input()
 	mode: string;
-	groups: Array<{name: string; columns: Array<{active: boolean; filter: FilterDef}> }> = [];
+	groups: Array<{name: string; columns: Array<{active: boolean; filter: ISearchFilterDef}> }> = [];
 	@Output()
 	selectChange = new EventEmitter();
 
