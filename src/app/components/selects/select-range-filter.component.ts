@@ -1,5 +1,5 @@
 import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
-import {ISearchFilter} from '../../app.interfaces';
+import {ISearchFilter, ISearchResultBucket} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -11,7 +11,7 @@ export class SelectRangeFilterComponent implements OnChanges {
 	filter: ISearchFilter;
 
 	@Input()
-	buckets: Array<{ key: number, doc_count: number }>;
+	buckets: Array<ISearchResultBucket>;
 
 	@Output('onRangeChange') onRangeChange = new EventEmitter();
 

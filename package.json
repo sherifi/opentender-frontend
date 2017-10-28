@@ -86,6 +86,7 @@
     "leaflet-fullscreen": "1.0.2",
     "memory-cache": "=0.2.0",
     "moment": "=2.18.1",
+    "mydatepicker": "^2.0.32",
     "ng2-toasty": "=4.0.3",
     "node-sass": "=4.5.3",
     "postcss-loader": "2.0.8",

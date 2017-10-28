@@ -344,6 +344,7 @@ export enum ISearchFilterDefType {
 	value = 3,
 	range = 4,
 	term = 5,
+	date = 6,
 	none = 0
 }
 

@@ -9,6 +9,7 @@ import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tool
 import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
 import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
 import {BarChartModule} from './thirdparty/ngx-charts-universal/bar-chart/bar-chart.module';
+import {MyDatePickerModule} from 'mydatepicker';
 
 import {App} from './app.component';
 
@@ -90,6 +91,7 @@ import {SelectColumnsComponent} from './components/selects/select-columns.compon
 import {SelectDownloadSeriesComponent} from './components/selects/select-download-series.component';
 import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
+import {SelectDateFilterComponent} from './components/selects/select-date-filter-component';
 import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
@@ -131,6 +133,7 @@ const AppConfig = {
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
 		SelectRangeFilterComponent,
+		SelectDateFilterComponent,
 		SelectSimilarListComponent,
 		TableComponent,
 		TenderBodyAddressComponent,
@@ -217,6 +220,7 @@ const AppConfig = {
 		SliderModule,
 		TypeaheadModule,
 		ToastyModule,
+		MyDatePickerModule,
 		AppRoutingModule
 	],
 	providers: [

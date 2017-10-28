@@ -97,7 +97,7 @@ export class Search {
 					list = list.concat(f.values);
 				}
 				if (list.length > 0) {
-					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type]});
+					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type], mode: f.mode});
 				}
 			}
 		});

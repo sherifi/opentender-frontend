@@ -36,6 +36,9 @@
 			<div class="range" *ngSwitchCase="ISearchFilterDefType.range">
 				<select-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-range-filter>
 			</div>
+			<div class="range" *ngSwitchCase="ISearchFilterDefType.date">
+				<select-date-filter [filter]="filter" [buckets]="filter.buckets" (onChange)="refresh()"></select-date-filter>
+			</div>
 		</div>
 	</div>
 </div>

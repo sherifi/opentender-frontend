@@ -16,6 +16,9 @@ export const Utils = {
 		}
 		return moment(value).format('DD.MM.YYYY');
 	},
+	dateToUnix: (jsdate: Date) => {
+		return moment(jsdate).utc().valueOf();
+	},
 	formatCurrency: (value: string): string => {
 		if (value === undefined || value === null) {
 			return '';

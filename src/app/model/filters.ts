@@ -229,25 +229,46 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		type: ISearchFilterDefType.value
 	},
 	{
-		id: 'lots.awardDecisionDate',
+		id: 'lots.awardDecisionDate.year',
 		name: 'Award Decision Year',
 		group: 'Dates',
 		field: 'lots.awardDecisionDate',
 		type: ISearchFilterDefType.range,
 	},
 	{
-		id: 'estimatedCompletionDate',
+		id: 'lots.awardDecisionDate',
+		name: 'Award Decision Date',
+		group: 'Dates',
+		field: 'lots.awardDecisionDate',
+		type: ISearchFilterDefType.date,
+	},
+	{
+		id: 'estimatedCompletionDate.year',
 		name: 'Estimated Completion Year',
 		group: 'Dates',
 		field: 'estimatedCompletionDate',
 		type: ISearchFilterDefType.range,
 	},
 	{
-		id: 'estimatedStartDate',
+		id: 'estimatedCompletionDate',
+		name: 'Estimated Completion Date',
+		group: 'Dates',
+		field: 'estimatedCompletionDate',
+		type: ISearchFilterDefType.date,
+	},
+	{
+		id: 'estimatedStartDate.year',
 		name: 'Estimated Start Year',
 		group: 'Dates',
 		field: 'estimatedStartDate',
 		type: ISearchFilterDefType.range,
+	},
+	{
+		id: 'estimatedStartDate',
+		name: 'Estimated Start Date',
+		group: 'Dates',
+		field: 'estimatedStartDate',
+		type: ISearchFilterDefType.date,
 	}
 ];
 

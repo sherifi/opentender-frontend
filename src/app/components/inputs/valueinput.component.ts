@@ -31,13 +31,9 @@ export class ValueInputComponent {
 	}
 
 	public toggleMode(): void {
-		if (this.mode === '>') {
-			this.mode = '<';
-		} else if (this.mode === '<') {
-			this.mode = '=';
-		} else if (this.mode === '=') {
-			this.mode = '>';
-		}
+		let modes = ['<', '>', '='];
+		let i = (modes.indexOf(this.mode) + 1) % modes.length;
+		this.mode = modes[i];
 		if (this.value.length > 0) {
 			this.emit();
 		}
