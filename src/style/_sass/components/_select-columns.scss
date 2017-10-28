@@ -1,15 +1,42 @@
+@include respond-to(small-up) {
+  select-columns, select-filters {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+  }
+}
+
 .select-columns-group {
-	font-size: 0.9em;
-	padding-bottom: 10px;
+  font-size: 0.9em;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  @include respond-to(small-up) {
+    width: 49%;
+  }
 
-	.select-columns-group-title {
-		font-weight: bold;
-		border-bottom: 1px solid $neutral-gray;
-		margin-bottom: 8px;
-	}
+  .select-columns-group-title {
+    font-weight: bold;
+    border-bottom: 1px solid $neutral-gray;
+    margin-bottom: 8px;
+  }
 
-	.select-columns-item {
-		display: inline-block;
-		margin-right: 10px;
-	}
+  .select-columns-item {
+    display: block;
+
+    label {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    label:before {
+      margin-left: -23px;
+    }
+
+    .checkbox input {
+      margin-top: 5px;
+      display: inline-block;
+      margin-left: -20px;
+    }
+  }
 }
