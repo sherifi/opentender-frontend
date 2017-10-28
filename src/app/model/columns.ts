@@ -173,7 +173,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					});
 				}
 			});
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			Object.keys(companies).forEach(key => {
 					let c = companies[key];
 					if (tender.lots.length > 1) {
@@ -186,6 +186,39 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					result.push({icon: ICON.company, content: c.bidder.name || '[Name not available]', link: c.link});
 				}
 			);
+			return result;
+		}
+	},
+	{
+		name: 'Supplier Region',
+		id: 'lots.bids.bidder.address.nuts',
+		group: 'Supplier',
+		sortBy: {
+			id: 'lots.bids.bidder.address.nuts',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.lots) {
+				return [];
+			}
+			let result: Array<ITableCellLine> = [];
+			tender.lots.forEach((lot: Lot) => {
+				if (lot.bids) {
+					lot.bids.forEach((bid: Bid) => {
+						if (bid.bidders) {
+							bid.bidders.forEach((bidder: Bidder) => {
+								if (bidder.address && bidder.address.nuts) {
+									bidder.address.nuts.forEach(nut => {
+										if (nut) {
+											result.push({icon: ICON.region, content: nut, link: '/region/' + nut});
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
 			return result;
 		}
 	},
@@ -286,7 +319,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					collect[info.group.id].push(info);
 				}
 			});
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			Object.keys(collect).forEach(key => {
 				let infos = collect[key];
 				result.push({prefix: infos[0].group.name});
@@ -305,7 +338,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.indicators) {
 				return [];
 			}
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.CORRUPTION.id) {
@@ -326,7 +359,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.indicators) {
 				return [];
 			}
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.TRANSPARENCY.id) {
@@ -347,7 +380,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.indicators) {
 				return [];
 			}
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
 				if (group === Consts.indicators.ADMINISTRATIVE.id) {
@@ -523,7 +556,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.lots) {
 				return [];
 			}
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			tender.lots.forEach((lot: Lot, index_l: number) => {
 				if (lot.bids) {
 					lot.bids.forEach((bid: Bid, index_b: number) => {
@@ -596,7 +629,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					dates[lot.awardDecisionDate].lots.push(index_l + 1);
 				}
 			});
-			let result = [];
+			let result: Array<ITableCellLine> = [];
 			let datekeys = Object.keys(dates);
 			datekeys.forEach(key => {
 					let c = dates[key];

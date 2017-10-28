@@ -452,11 +452,12 @@ export interface ITableColumn {
 }
 
 export interface ITableCellLine {
-	content: string;
+	content?: string;
 	link?: string;
 	prefix?: string;
-	list?: boolean;
+	hint?: string;
 	icon?: string;
+	styleClass?: string;
 }
 
 export interface ITableColumnAuthority extends ITableColumn {
