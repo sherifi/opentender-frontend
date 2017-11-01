@@ -58,7 +58,6 @@
     "angular2-template-loader": "=0.6.2",
     "angulartics2": "3.2.0",
     "awesome-typescript-loader": "=3.2.3",
-    "babili-webpack-plugin": "=0.1.2",
     "body-parser": "=1.18.2",
     "classlist.js": "1.1.20150312",
     "cookie-parser": "=1.4.3",

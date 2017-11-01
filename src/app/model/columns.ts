@@ -344,7 +344,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				if (group === Consts.indicators.CORRUPTION.id) {
 					let def = Consts.indicators.CORRUPTION.subindicators[indicator.type];
 					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.CORRUPTION.id, content: def.name, hint: def.desc});
+						result.push({styleClass: 'badge-' + Consts.indicators.CORRUPTION.id, content: def.name + ': ' + indicator.value, hint: def.desc});
 					}
 				}
 			});
@@ -365,7 +365,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				if (group === Consts.indicators.TRANSPARENCY.id) {
 					let def = Consts.indicators.TRANSPARENCY.subindicators[indicator.type];
 					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.TRANSPARENCY.id, content: def.name, hint: def.desc});
+						result.push({styleClass: 'badge-' + Consts.indicators.TRANSPARENCY.id, content: def.name + ': ' + indicator.value, hint: def.desc});
 					}
 				}
 			});
@@ -386,7 +386,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				if (group === Consts.indicators.ADMINISTRATIVE.id) {
 					let def = Consts.indicators.ADMINISTRATIVE.subindicators[indicator.type];
 					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.ADMINISTRATIVE.id, content: def.name, hint: def.desc});
+						result.push({styleClass: 'badge-' + Consts.indicators.ADMINISTRATIVE.id, content: def.name + ': ' + indicator.value, hint: def.desc});
 					}
 				}
 			});

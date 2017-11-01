@@ -97,7 +97,9 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			}
 		},
 		select: (event) => {
-			this.router.navigate(['/authority/' + event.id]);
+			if (event.id) {
+				this.router.navigate(['/authority/' + event.id]);
+			}
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -115,12 +117,12 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 
 	ngOnChanges(changes: SimpleChanges): void {
 		let absolute: Array<IAuthority> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
-		this.authorities_absolute.data = absolute.map((authority) => {
-			return {id: authority.body.id, name: authority.body.name, value: authority.value};
+		this.authorities_absolute.data = absolute.filter(authority => authority.body.id).map((authority) => {
+			return {id: authority.body.id, name: authority.body.name || '[Name not available]', value: authority.value};
 		}).reverse();
 		let volume = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
-		this.authorities_volume.data = volume.map((authority) => {
-			return {id: authority.body.id, name: authority.body.name, value: authority.value};
+		this.authorities_volume.data = volume.filter(authority => authority.body.id).map((authority) => {
+			return {id: authority.body.id, name: authority.body.name || '[Name not available]', value: authority.value};
 		}).reverse();
 	}
 

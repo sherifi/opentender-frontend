@@ -99,7 +99,7 @@ export class RadarPieSeriesComponent implements OnChanges {
 	@Output() activate = new EventEmitter();
 	@Output() deactivate = new EventEmitter();
 
-	max: number = 100;
+	max: number = 1;
 	arcs: Array<PieArc>;
 
 	ngOnChanges(changes: SimpleChanges): void {

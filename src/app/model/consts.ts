@@ -24,7 +24,7 @@ export const Consts = {
 			plural: 'Procurement Integrity Indicators',
 			subindicators: {
 				CORRUPTION_SINGLE_BID: {name: 'Single bidder contract', desc: 'Single bid signals a risk when only one bid is submitted in a tender in a competitive market.'},
-				CORRUPTION_PRIOR_INFORMATION_NOTICE: {
+				CORRUPTION_CALL_FOR_TENDER_PUBLICATION: {
 					name: 'Call for tenders publication',
 					desc: 'Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.'
 				},

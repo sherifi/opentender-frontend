@@ -22,6 +22,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private title: string = '';
 	private icon: string = '';
 	private searchPrefix: string = '';
+	private searchScore: number = 0.5;
 	private indicatorTitle: string;
 	private subindicators: ISubIndicatorInfo[] = [];
 	private loading: number = 0;
@@ -157,11 +158,32 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	buildFilters() {
-		let filter: ISearchCommandFilter = {
-			field: 'indicators.type',
-			type: 'text',
-			value: [this.searchPrefix]
-		};
+		let filter: ISearchCommandFilter;
+		if (!this.selected) {
+			filter = {
+				field: 'scores.type',
+				type: 'term',
+				value: [this.searchPrefix],
+				and: [{
+					field: 'scores.value',
+					type: 'value',
+					mode: '>',
+					value: [this.searchScore]
+				}]
+			};
+		} else {
+			filter = {
+				field: 'indicators.type',
+				type: 'term',
+				value: [this.searchPrefix],
+				and: [{
+					field: 'indicators.value',
+					type: 'value',
+					mode: '>',
+					value: [this.searchScore]
+				}]
+			};
+		}
 		let filters = [filter];
 		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
 			let yearFilter: ISearchCommandFilter = {
