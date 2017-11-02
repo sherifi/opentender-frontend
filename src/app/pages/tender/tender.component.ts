@@ -87,14 +87,13 @@ export class TenderPage implements OnInit, OnDestroy {
 
 	display(tender: Definitions.Tender): void {
 		this.tender = tender;
-
 		this.indicators.ADMINISTRATIVE = [];
 		this.indicators.CORRUPTION = [];
 		this.indicators.TRANSPARENCY = [];
 		if (tender.indicators) {
 			tender.indicators.forEach(indicator => {
 				Object.keys(Consts.indicators).forEach(key => {
-					if (indicator.type.indexOf(key) === 0) {
+					if (indicator.status === 'CALCULATED' && indicator.type.indexOf(key) === 0) {
 						this.indicators[key].push(indicator);
 					}
 				});
