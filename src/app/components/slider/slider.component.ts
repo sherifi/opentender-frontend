@@ -14,6 +14,12 @@ import {IEventSlideAble, IEventKeyDownAble} from './slider-handle.directive';
 
 export class SliderComponent implements OnChanges {
 
+	@Input('singleHandle')
+	singleHandle: boolean = false;
+
+	@Input('formatTick')
+	formatTick: (value: number) => string;
+
 	@Input('startValue')
 	get startValue(): any {
 		return this._startValue;
@@ -150,6 +156,13 @@ export class SliderComponent implements OnChanges {
 		return (this.tickWidth * val) + this._min;
 	}
 
+	getTickLabel(val: number): string {
+		if (this.formatTick) {
+			return this.formatTick(val);
+		}
+		return val.toString();
+	}
+
 	@HostListener('window:resize')
 	onWindowResize(): void {
 		this.resize();
@@ -166,15 +179,19 @@ export class SliderComponent implements OnChanges {
 		}
 		value = Math.min(value, this._max);
 		value = Math.max(value, this._min);
-		if (value > this._endValue) {
+		if (this.singleHandle) {
 			this._endValue = value;
-		} else if (value < this._startValue) {
-			this._startValue = value;
 		} else {
-			if (value - this._startValue > this._endValue - value) {
+			if (value > this._endValue) {
 				this._endValue = value;
-			} else {
+			} else if (value < this._startValue) {
 				this._startValue = value;
+			} else {
+				if (value - this._startValue > this._endValue - value) {
+					this._endValue = value;
+				} else {
+					this._startValue = value;
+				}
 			}
 		}
 		this.applyPositions();
