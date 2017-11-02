@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class FooterComponent {
 	public country: string;
 	public version: string;
-	public contactmail: string = 'info@opentender.eu';
+	public contactmail: string = 'digiwhist@okfn.de';
 
 	constructor(public router: Router, private config: ConfigService) {
 		this.country = config.country.name;
