@@ -3,7 +3,7 @@
 <div class="container-outer tender entity" *ngIf="tender">
 	<div class="container">
 		<h1 class="container-title">{{tender.title}}</h1>
-			<h3>{{tender.titleEnglish}}</h3>
+		<h3>{{tender.titleEnglish}}</h3>
 	</div>
 
 	<div class="container" *ngIf="tender.description | defined">
@@ -143,9 +143,11 @@
 						<span>{{tender.estimatedDurationInYears}} Year(s)</span><br/>
 					</div>
 				</div>
-				<h4 i18n>Sectors</h4>
-				<div *ngFor="let val of tender.cpvs"><a [routerLink]="'/sector/'+val.code">{{val.name}}</a>
-					<small> (CPV {{val.code}})</small>
+				<div *ngIf="tender.cpvs | defined">
+					<h4 i18n>Sectors</h4>
+					<div *ngFor="let val of tender.cpvs"><a [routerLink]="'/sector/'+val.code">{{val.name}}</a>
+						<small> (CPV {{val.code}})</small>
+					</div>
 				</div>
 			</div>
 			<div class="container-left-6">
@@ -480,8 +482,28 @@
 	<div class="graph-footer">
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar">
-				<button class="tool-button" (click)="this.download('json')" i18n-title title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+				<button class="tool-button" (click)="this.showDownloadDialog=true" i18n-title title="Download Data"><i class="icon-cloud-download"></i>
+					<ng-container i18n>Download</ng-container>
+				</button>
 			</div>
 		</div>
 	</div>
+
+	<app-dialog [title]="'Download Data'" [(visible)]="showDownloadDialog">
+		<div class="tables-fixed-height">
+			<pre>{{getTenderJSONString()}}</pre>
+		</div>
+		<br>
+		<div class="tables-buttons">
+			<button class="tool-button" (click)="this.download('json')" i18n-title title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
+		</div>
+	</app-dialog>
+
+	<!--<div class="graph-footer">-->
+		<!--<div class="graph-toolbar-container">-->
+			<!--<div class="graph-toolbar">-->
+				<!--<button class="tool-button" (click)="this.download('json')" i18n-title title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
 </div>

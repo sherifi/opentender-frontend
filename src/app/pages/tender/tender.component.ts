@@ -17,6 +17,7 @@ export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
 	private loading: number = 0;
 	private sub: any;
+	private showDownloadDialog: boolean = false;
 	public portal: Country;
 	public state: { [name: string]: { open: boolean, label?: string } } = {
 		lots: {open: true},
@@ -99,6 +100,10 @@ export class TenderPage implements OnInit, OnDestroy {
 				});
 			});
 		}
+	}
+
+	getTenderJSONString(): string {
+		return JSON.stringify(this.tender, null, '\t');
 	}
 
 	download(format): void {
