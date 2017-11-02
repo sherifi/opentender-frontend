@@ -26,8 +26,8 @@ let settings = {
 		},
 		disableCache: false, // html is cached, disable here for debugging purposes
 		backendUrl: 'http://127.0.0.1:3001', // full url of the backend for the server
-	    fullUrl: 'https://portal.opentender.eu' // full url of the frontend for the server app (e.g. for absolute OpenGraph Share Image URLs)
-    },
+		fullUrl: 'https://portal.opentender.eu' // full url of the frontend for the server app (e.g. for absolute OpenGraph Share Image URLs)
+	},
 	client: {
 		version: '0.0.2', // version of app (is e.g. used for display in footer & "uncaching" resources on app update)
 		backendUrl: 'https://portal.opentender.eu' // full url of the backend for the client app
