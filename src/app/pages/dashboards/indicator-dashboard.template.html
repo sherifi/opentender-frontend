@@ -5,23 +5,38 @@
 	</div>
 
 	<div class="container container-margin">
-		<div>
+		<div class="container-left-12">
 			<slider
 					[min]="filter.time.startYear"
 					[max]="filter.time.endYear"
 					[startValue]="filter.time.startYear"
 					[endValue]="filter.time.endYear"
 					stepValue="1" defaultWidth="934"
-					(onSliderChange)="onSliderChange($event)"></slider>
+					(onSliderChange)="onYearRangeSliderChange($event)"></slider>
+		</div>
+		<div class="container-left-3">
+			<div class="form-group">
+				<label for="subindicator" i18n>Sub-Indicators</label>
+				<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
+					<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]</option>
+					<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="container-left-9">
+			<label for="subindicator" i18n>Minimal score</label>
+			<slider
+					[singleHandle]="true"
+					[min]="0"
+					[max]="10"
+					[startValue]="0"
+					[endValue]="5"
+					stepValue="1"
+					defaultWidth="934"
+					[formatTick]="formatScoreTick"
+					(onSliderChange)="onScoreSliderChange($event)"></slider>
 		</div>
 
-		<div class="form-group">
-			<label for="subindicator" i18n>Choose a subindicator</label>
-			<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
-				<option [ngValue]="null">[ <ng-container i18n>All subindicators</ng-container> ]</option>
-				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
-			</select>
-		</div>
 	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">

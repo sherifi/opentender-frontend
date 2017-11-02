@@ -132,7 +132,17 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		}
 	}
 
-	onSliderChange(event) {
+	onScoreSliderChange(event) {
+		this.searchScore = event.endValue / 10;
+		this.visualize();
+		this.search();
+	}
+
+	formatScoreTick(value) {
+		return value / 10;
+	}
+
+	onYearRangeSliderChange(event) {
 		if (!this.filter.time) {
 			return;
 		}
@@ -167,7 +177,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 				and: [{
 					field: 'scores.value',
 					type: 'value',
-					mode: '>',
+					mode: '>=',
 					value: [this.searchScore]
 				}]
 			};
@@ -179,7 +189,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 				and: [{
 					field: 'indicators.value',
 					type: 'value',
-					mode: '>',
+					mode: '>=',
 					value: [this.searchScore]
 				}]
 			};
