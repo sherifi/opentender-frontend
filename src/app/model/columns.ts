@@ -341,7 +341,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === Consts.indicators.CORRUPTION.id) {
+				if (indicator.status === 'CALCULATED' && group === Consts.indicators.CORRUPTION.id) {
 					let def = Consts.indicators.CORRUPTION.subindicators[indicator.type];
 					if (def) {
 						result.push({styleClass: 'badge-' + Consts.indicators.CORRUPTION.id, content: def.name + ': ' + indicator.value, hint: def.desc});
@@ -362,7 +362,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === Consts.indicators.TRANSPARENCY.id) {
+				if (indicator.status === 'CALCULATED' && group === Consts.indicators.TRANSPARENCY.id) {
 					let def = Consts.indicators.TRANSPARENCY.subindicators[indicator.type];
 					if (def) {
 						result.push({styleClass: 'badge-' + Consts.indicators.TRANSPARENCY.id, content: def.name + ': ' + indicator.value, hint: def.desc});
@@ -383,7 +383,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let result: Array<ITableCellLine> = [];
 			tender.indicators.forEach(indicator => {
 				let group = indicator.type.split('_')[0];
-				if (group === Consts.indicators.ADMINISTRATIVE.id) {
+				if (indicator.status === 'CALCULATED' && group === Consts.indicators.ADMINISTRATIVE.id) {
 					let def = Consts.indicators.ADMINISTRATIVE.subindicators[indicator.type];
 					if (def) {
 						result.push({styleClass: 'badge-' + Consts.indicators.ADMINISTRATIVE.id, content: def.name + ': ' + indicator.value, hint: def.desc});
