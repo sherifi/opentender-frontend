@@ -11,7 +11,6 @@ let settings = {
 		backendUrl: 'http://127.0.0.1:3001'
 	},
 	client: {
-		version: '0.0.2', // version of app (is e.g. used for display in footer & "uncaching" resources on app update)
 		backendUrl: 'https://portal.opentender.eu', // full url of the backend
 		devMode: false // e.g. disable page tracking if true
 	},

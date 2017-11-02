@@ -6,11 +6,13 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const SemverWebpackPlugin = require('semver-extended-webpack-plugin');
 
 const config = require('./config.js');
+const version = require('./version.js');
+config.client.version = version.version;
 
 const replacements = {
 	'config.js': () => config,
 	'client.config.js': () => {
-		return {version: config.client.version, backendUrl: config.server.backendUrl, devMode: config.client.devMode}
+		return {version: version.version, backendUrl: config.server.backendUrl, devMode: config.client.devMode}
 	}
 };
 
