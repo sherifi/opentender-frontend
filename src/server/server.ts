@@ -135,6 +135,7 @@ let render = function(req, res, language, country) {
 			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
 				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? country.name : '')
 				.replace(/\{\{HTML_LANG\}\}/g, language.lang)
+				.replace(/\{\{FULL_URL\}\}/g, Config.server.fullUrl)
 				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
 				.replace(/\{\{OPENTENDER\}\}/g, JSON.stringify({locale: language.lang, config: Config.client, country: country}));
 		}

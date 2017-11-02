@@ -8,7 +8,8 @@ let settings = {
 			path: '/var/www/opentender/data/shared'
 		},
 		disableCache: false, // html is cached, disable here for debugging purposes
-		backendUrl: 'http://127.0.0.1:3001'
+		backendUrl: 'http://127.0.0.1:3001',
+		fullUrl: 'https://portal.opentender.eu'
 	},
 	client: {
 		backendUrl: 'https://portal.opentender.eu', // full url of the backend

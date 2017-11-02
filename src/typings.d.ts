@@ -12,6 +12,7 @@ interface ServerConfig {
 		shared: string;
 	};
 	backendUrl: string;
+	fullUrl: string;
 }
 
 interface ClientConfig {
