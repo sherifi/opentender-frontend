@@ -151,7 +151,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'indicators.score_co',
 		name: 'Composite Score',
-		group: 'Scores',
+		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
 			'scores.type': 'TENDER'
@@ -161,7 +161,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'indicators.score_pi',
 		name: 'Procurement Integrity',
-		group: 'Scores',
+		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
 			'scores.type': Consts.indicators.CORRUPTION.id
@@ -171,7 +171,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'indicators.score_ac',
 		name: 'Administrative Capacity',
-		group: 'Scores',
+		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
 			'scores.type': Consts.indicators.ADMINISTRATIVE.id
@@ -181,7 +181,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	{
 		id: 'indicators.score_ti',
 		name: 'Transparency Score',
-		group: 'Scores',
+		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
 			'scores.type': Consts.indicators.TRANSPARENCY.id
