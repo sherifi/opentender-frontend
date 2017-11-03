@@ -5,7 +5,7 @@ import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
 import {
 	ISearchCommandFilter, IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears,
-	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears
+	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears, IStatsCpvs
 } from '../../app.interfaces';
 
 @Component({
@@ -34,13 +34,15 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		scores_in_years: IStatsInYears,
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
-		terms_indicators_score: IStatsIndicators
+		terms_indicators_score: IStatsIndicators,
+		scores_in_sectors: IStatsCpvs
 	} = {
 		top_companies: null,
 		top_authorities: null,
 		scores_in_years: null,
 		lots_in_years: null,
 		cpvs_codes: null,
+		scores_in_sectors: null,
 		terms_indicators_score: null
 	};
 	private filter: {
@@ -103,6 +105,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			lots_in_years: null,
 			scores_in_years: null,
 			cpvs_codes: null,
+			scores_in_sectors: null,
 			terms_indicators_score: null
 		};
 		if (!stats) {
@@ -110,6 +113,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			return;
 		}
 
+		viz.scores_in_sectors = stats.terms_main_cpv_divisions_avg_scores;
 		viz.scores_in_years = stats.histogram_lots_awardDecisionDate_avg_scores[this.searchPrefix];
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;

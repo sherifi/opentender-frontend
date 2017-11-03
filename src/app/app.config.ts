@@ -81,6 +81,7 @@ import {GraphSumPricesComponent} from './components/graphs/sums_price.component'
 import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
 import {GraphProcedureTypesComponent} from './components/graphs/procedure-types.component';
 import {GraphIndicatorScoreHistogramComponent} from './components/graphs/score-histogram.component';
+import {GraphScoreSectorsComponent} from './components/graphs/score-sectors.component';
 import {HeaderComponent} from './components/header.component';
 import {HomeMapComponent} from './components/maps/nuts-map-home.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
@@ -157,6 +158,7 @@ const AppConfig = {
 		GraphProcedureTypesComponent,
 		GraphHomeHistogramComponent,
 		GraphIndicatorScoreHistogramComponent,
+		GraphScoreSectorsComponent,
 		GraphSupplierNutsMapComponent,
 		GraphBuyerNutsMapComponent,
 		GraphVolumeNutsMapComponent,

@@ -8,6 +8,7 @@ import {Consts} from '../../model/consts';
 	selector: 'graph[indicator-structure]',
 	template: `
 		<div class="graph-title" i18n>Average Score of {{title}}</div>
+		<div class="graph-toolbar-container"></div>
 		<ngx-charts-radar-chart
 				class="chart-container"
 				[chart]="graph.chart"
@@ -27,7 +28,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 360},
+				def: {width: 1024, height: 360},
 				min: {height: 360},
 				max: {height: 360}
 			},

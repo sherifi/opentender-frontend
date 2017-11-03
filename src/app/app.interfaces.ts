@@ -147,6 +147,7 @@ export interface IStats {
 	terms_main_cpv_groups: IStatsCpvs;
 	terms_main_cpv_divisions: IStatsCpvs;
 	terms_main_cpv_full: IStatsCpvs;
+	terms_main_cpv_divisions_avg_scores: IStatsCpvs;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	sums_finalPrice: IStatsPrices;
 	sum_finalPriceEUR: IStatsPriceEUR;

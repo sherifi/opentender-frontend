@@ -15,6 +15,14 @@
 					(onSliderChange)="onYearRangeSliderChange($event)"></slider>
 		</div>
 		<br/>
+		<div class="form-group">
+			<label for="subindicator" i18n>Sub-Indicators</label>
+			<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
+				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]</option>
+				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
+			</select>
+		</div>
+		<br/>
 		<div class="container">
 			<div class="container-left-12">
 				<graph indicator-structure [data]="viz.terms_indicators_score" [title]="indicatorTitle"></graph>
@@ -22,23 +30,14 @@
 			<div class="container-left-6">
 				<graph score-histogram [data]="viz.scores_in_years" [title]="indicatorTitle"></graph>
 			</div>
+			<div class="container-left-6">
+				<graph score-sectors [data]="viz.scores_in_sectors" [title]="indicatorTitle"></graph>
+			</div>
 		</div>
 	</div>
 	<div class="container container-margin">
-		<div class="container-left-3">
-			<div class="form-group">
-				<label for="subindicator" i18n>Sub-Indicators</label>
-				<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
-					<option [ngValue]="null">[
-						<ng-container i18n>All sub-indicators</ng-container>
-						]
-					</option>
-					<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
-				</select>
-			</div>
-		</div>
-		<div class="container-left-9">
-			<label for="subindicator" i18n>Minimal score</label>
+		<div class="container-left-12">
+			<label i18n>Minimal score</label>
 			<slider
 					[singleHandle]="true"
 					[min]="0"

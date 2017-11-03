@@ -9,7 +9,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[indicator-sectors]',
 	template: `
-		<div class="graph-title" i18n>Tenders with {{title}} per Sector</div>
+		<div class="graph-title" i18n>{{title}} per Sector</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-right">
 				<button class="tool-button" [ngClass]="{down:this.graph==this.cpvs_codes_average}" (click)="this.graph=this.cpvs_codes_average" i18n>Average</button>
