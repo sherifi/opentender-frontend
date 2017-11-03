@@ -14,11 +14,25 @@
 					stepValue="1" defaultWidth="934"
 					(onSliderChange)="onYearRangeSliderChange($event)"></slider>
 		</div>
+		<br/>
+		<div class="container">
+			<div class="container-left-12">
+				<graph indicator-structure [data]="viz.terms_indicators_score" [title]="indicatorTitle"></graph>
+			</div>
+			<div class="container-left-6">
+				<graph score-histogram [data]="viz.scores_in_years" [title]="indicatorTitle"></graph>
+			</div>
+		</div>
+	</div>
+	<div class="container container-margin">
 		<div class="container-left-3">
 			<div class="form-group">
 				<label for="subindicator" i18n>Sub-Indicators</label>
 				<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
-					<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]</option>
+					<option [ngValue]="null">[
+						<ng-container i18n>All sub-indicators</ng-container>
+						]
+					</option>
 					<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
 				</select>
 			</div>
@@ -36,7 +50,6 @@
 					[formatTick]="formatScoreTick"
 					(onSliderChange)="onScoreSliderChange($event)"></slider>
 		</div>
-
 	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
@@ -59,12 +72,7 @@
 					<graph authorities [data]="viz.top_authorities"></graph>
 				</div>
 			</div>
-			<br/>
-			<div class="container">
-				<div class="container-left-12">
-					<graph indicator-structure [data]="viz.terms_indicators_score" [title]="indicatorTitle"></graph>
-				</div>
-			</div>
+
 		</div>
 
 		<div class="container">

@@ -5,7 +5,7 @@ import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
 import {
 	ISearchCommandFilter, IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears,
-	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand
+	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears
 } from '../../app.interfaces';
 
 @Component({
@@ -31,12 +31,14 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
+		scores_in_years: IStatsInYears,
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
 		terms_indicators_score: IStatsIndicators
 	} = {
 		top_companies: null,
 		top_authorities: null,
+		scores_in_years: null,
 		lots_in_years: null,
 		cpvs_codes: null,
 		terms_indicators_score: null
@@ -99,6 +101,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			top_companies: null,
 			top_authorities: null,
 			lots_in_years: null,
+			scores_in_years: null,
 			cpvs_codes: null,
 			terms_indicators_score: null
 		};
@@ -107,6 +110,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			return;
 		}
 
+		viz.scores_in_years = stats.histogram_lots_awardDecisionDate_avg_scores[this.searchPrefix];
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		viz.terms_indicators_score = stats.terms_indicators_score;

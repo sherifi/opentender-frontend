@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {ISeriesProvider, IStatsLotsInYears} from '../../app.interfaces';
+import {ISeriesProvider, IStatsInYears} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
@@ -20,7 +20,7 @@ import {I18NService} from '../../services/i18n.service';
 })
 export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
-	data: IStatsLotsInYears;
+	data: IStatsInYears;
 
 	lots_in_years: IChartBar = {
 		chart: {

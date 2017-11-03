@@ -59,8 +59,12 @@ export interface IStatsCountry {
 	value: number;
 }
 
-export interface IStatsLotsInYears {
+export interface IStatsInYears {
 	[year: string]: number;
+}
+
+export interface IStatsScoresInYears {
+	[id: string]: IStatsInYears;
 }
 
 export interface IStatsPcCpvs {
@@ -155,7 +159,8 @@ export interface IStats {
 	terms_indicators: IStatsIndicators;
 	terms_procedure_type: IStatsProcedureType;
 	terms_indicators_score: IStatsIndicators;
-	histogram_lots_awardDecisionDate: IStatsLotsInYears;
+	histogram_lots_awardDecisionDate_avg_scores: IStatsScoresInYears;
+	histogram_lots_awardDecisionDate: IStatsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;

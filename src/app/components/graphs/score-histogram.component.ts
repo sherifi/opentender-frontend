@@ -1,14 +1,16 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {ISeriesProvider, IStatsInYears} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
+import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {ISeriesProvider, IStatsInYears} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
-	selector: 'graph[home-histogram]',
+	selector: 'graph[score-histogram]',
 	template: `
-		<div class="graph-title" i18n>Contracts (Lots) per Year</div>
+		<div class="graph-title" i18n>Average Score of {{title}} over Time</div>
+		<div class="graph-toolbar-container">
+		</div>
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"
@@ -18,17 +20,19 @@ import {I18NService} from '../../services/i18n.service';
 		</ngx-charts-bar-vertical>
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
-export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
+export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsInYears;
+	@Input()
+	title: string = '';
 
-	lots_in_years: IChartBar = {
+	avg_score_in_years: IChartBar = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 1024, height: 320},
-				min: {height: 320},
-				max: {height: 320}
+				def: {width: 500, height: 360},
+				min: {height: 360},
+				max: {height: 360}
 			},
 			xAxis: {
 				show: true,
@@ -39,10 +43,11 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 			yAxis: {
 				show: true,
 				showLabel: true,
-				defaultWidth: 44,
-				minInterval: 1,
+				defaultWidth: 30,
+				minInterval: 0.1,
 				tickFormatting: Utils.formatValue
 			},
+			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
@@ -56,21 +61,22 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 		data: null
 	};
 
-	graph: IChartBar = this.lots_in_years;
+	graph: IChartBar = this.avg_score_in_years;
 
 	constructor(private i18n: I18NService) {
-		this.lots_in_years.chart.xAxis.label = this.i18n.get('Year');
-		this.lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts (Lots)');
+		let year = this.i18n.get('Year');
+		this.avg_score_in_years.chart.xAxis.label = year;
+		this.avg_score_in_years.chart.yAxis.label = this.i18n.get('Average Indicator Score');
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: 'Year'}, filename: 'histogram'};
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label + ' ' + this.title, name: 'Year'}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.lots_in_years.data = null;
+		this.avg_score_in_years.data = null;
 		if (this.data) {
-			this.lots_in_years.data = Object.keys(this.data).map((key) => {
+			this.avg_score_in_years.data = Object.keys(this.data).map((key) => {
 				return {name: key, value: this.data[key]};
 			});
 		}

@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsLotsInYears, IStatsCpvs, IStatsCounts, ISearchCommand, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
+import {IStats, ICompany, IStatsInYears, IStatsCpvs, IStatsCounts, ISearchCommand, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
@@ -30,7 +30,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
-		lots_in_years: IStatsLotsInYears
+		lots_in_years: IStatsInYears
 	} = {
 		authority_nuts: null,
 		top_authorities: null,

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {IStats, IStatsLotsInYears} from '../../app.interfaces';
+import {IStats, IStatsInYears} from '../../app.interfaces';
 import {ConfigService} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 
@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
 	public country: string;
 	public loading: number = 0;
 	public viz: {
-		lots_in_years: IStatsLotsInYears;
+		lots_in_years: IStatsInYears;
 	} = {
 		lots_in_years: null
 	};

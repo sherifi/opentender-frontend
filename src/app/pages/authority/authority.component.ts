@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsLotsInYears, IStatsNuts} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsInYears, IStatsNuts} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
@@ -30,7 +30,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
 		company_nuts: IStatsNuts,
-		lots_in_years: IStatsLotsInYears
+		lots_in_years: IStatsInYears
 	} = {
 		top_companies: null,
 		cpvs_codes: null,
