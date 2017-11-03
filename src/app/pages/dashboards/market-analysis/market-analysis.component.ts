@@ -70,7 +70,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
 			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
-				type: 'range',
+				type: 'years',
 				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
 			};
 			filters.push(yearFilter);

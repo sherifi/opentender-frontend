@@ -1,0 +1,12 @@
+<slider
+		[min]="minScore"
+		[max]="maxScore"
+		[startValue]="startScore"
+		[endValue]="endScore"
+		stepValue="1"
+		defaultWidth="200"
+		compact="true"
+		[formatTick]="formatScoreTick"
+		(onSliderChange)="onSliderChange($event, filter)">
+</slider>
+<div class="select-range-values">{{formatScoreTick(startScore)}} - {{formatScoreTick(endScore)}}</div>

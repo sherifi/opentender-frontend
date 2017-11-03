@@ -57,6 +57,14 @@ import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
 
+import {ApiService} from './services/api.service';
+import {ConfigService} from './services/config.service';
+import {PlatformService} from './services/platform.service';
+import {StateService} from './services/state.service';
+import {TitleService} from './services/title.service';
+import {I18NService} from './services/i18n.service';
+import {NotifyService} from './services/notify.service';
+
 import {AuthorityTableComponent} from './components/tables/table.authority.component';
 import {AutoCompleteComponent} from './components/inputs/autocomplete.component';
 import {CompanyTableComponent} from './components/tables/table.company.component';
@@ -94,23 +102,16 @@ import {SelectDownloadSeriesComponent} from './components/selects/select-downloa
 import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
 import {SelectDateFilterComponent} from './components/selects/select-date-filter-component';
-import {SelectRangeFilterComponent} from './components/selects/select-range-filter.component';
+import {SelectYearRangeFilterComponent} from './components/selects/select-year-range-filter.component';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
+import {SelectScoreRangeFilterComponent} from './components/selects/select-score-range-filter.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
 import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
 import {I18NComponent} from './components/i18n.component';
-
-import {ApiService} from './services/api.service';
-import {ConfigService} from './services/config.service';
-import {PlatformService} from './services/platform.service';
-import {StateService} from './services/state.service';
-import {TitleService} from './services/title.service';
-import {I18NService} from './services/i18n.service';
-import {NotifyService} from './services/notify.service';
 
 const AppConfig = {
 	declarations: [
@@ -134,7 +135,8 @@ const AppConfig = {
 		SelectSearchesButtonComponent,
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
-		SelectRangeFilterComponent,
+		SelectYearRangeFilterComponent,
+		SelectScoreRangeFilterComponent,
 		SelectDateFilterComponent,
 		SelectSimilarListComponent,
 		TableComponent,

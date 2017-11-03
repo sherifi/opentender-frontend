@@ -148,58 +148,46 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		field: 'cpvs.code',
 		type: ISearchFilterDefType.select
 	},
-
 	{
-		id: 'indicators.type',
-		name: 'All',
-		group: 'Indicators',
-		field: 'indicators.type',
-		type: ISearchFilterDefType.select,
-		valueFormatter: Utils.formatIndicatorName
+		id: 'indicators.score_co',
+		name: 'Composite Score',
+		group: 'Scores',
+		field: 'scores.value',
+		subrequest: {
+			'scores.type': 'TENDER'
+		},
+		type: ISearchFilterDefType.range,
 	},
 	{
-		id: 'indicators.type_pii',
+		id: 'indicators.score_pi',
 		name: 'Procurement Integrity',
-		group: 'Indicators',
-		field: 'indicators.type',
-		type: ISearchFilterDefType.select,
-		size: 30, // TODO: make request and do not filter in client
-		valueFormatter: Utils.formatIndicatorName,
-		valuesFilter: (buckets) => {
-			return buckets.filter(bucket => {
-				return bucket.key.indexOf(Consts.indicators.CORRUPTION.id) === 0;
-			});
-		}
+		group: 'Scores',
+		field: 'scores.value',
+		subrequest: {
+			'scores.type': Consts.indicators.CORRUPTION.id
+		},
+		type: ISearchFilterDefType.range,
 	},
 	{
-		id: 'indicators.type_aci',
+		id: 'indicators.score_ac',
 		name: 'Administrative Capacity',
-		group: 'Indicators',
-		field: 'indicators.type',
-		type: ISearchFilterDefType.select,
-		size: 30, // TODO: make request and do not filter in client
-		valueFormatter: Utils.formatIndicatorName,
-		valuesFilter: (buckets) => {
-			return buckets.filter(bucket => {
-				return bucket.key.indexOf(Consts.indicators.ADMINISTRATIVE.id) === 0;
-			});
-		}
+		group: 'Scores',
+		field: 'scores.value',
+		subrequest: {
+			'scores.type': Consts.indicators.ADMINISTRATIVE.id
+		},
+		type: ISearchFilterDefType.range,
 	},
 	{
-		id: 'indicators.type_ti',
-		name: 'Transparency',
-		group: 'Indicators',
-		field: 'indicators.type',
-		type: ISearchFilterDefType.select,
-		size: 30, // TODO: make request and do not filter in client
-		valueFormatter: Utils.formatIndicatorName,
-		valuesFilter: (buckets) => {
-			return buckets.filter(bucket => {
-				return bucket.key.indexOf(Consts.indicators.TRANSPARENCY.id) === 0;
-			});
-		}
+		id: 'indicators.score_ti',
+		name: 'Transparency Score',
+		group: 'Scores',
+		field: 'scores.value',
+		subrequest: {
+			'scores.type': Consts.indicators.TRANSPARENCY.id
+		},
+		type: ISearchFilterDefType.range,
 	},
-
 	{
 		id: 'finalPrice.netAmountEur',
 		name: 'Final Price EUR',
@@ -233,7 +221,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		name: 'Award Decision Year',
 		group: 'Dates',
 		field: 'lots.awardDecisionDate',
-		type: ISearchFilterDefType.range,
+		type: ISearchFilterDefType.years,
 	},
 	{
 		id: 'lots.awardDecisionDate',
@@ -247,7 +235,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		name: 'Estimated Completion Year',
 		group: 'Dates',
 		field: 'estimatedCompletionDate',
-		type: ISearchFilterDefType.range,
+		type: ISearchFilterDefType.years,
 	},
 	{
 		id: 'estimatedCompletionDate',
@@ -261,7 +249,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		name: 'Estimated Start Year',
 		group: 'Dates',
 		field: 'estimatedStartDate',
-		type: ISearchFilterDefType.range,
+		type: ISearchFilterDefType.years,
 	},
 	{
 		id: 'estimatedStartDate',

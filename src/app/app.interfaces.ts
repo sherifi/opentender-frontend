@@ -351,6 +351,7 @@ export enum ISearchFilterDefType {
 	range = 4,
 	term = 5,
 	date = 6,
+	years = 7,
 	none = 0
 }
 
@@ -365,6 +366,9 @@ export interface ISearchFilterDef {
 	aggregation_type?: ISearchFilterDefType; // if empty "type" is used for aggregation, too
 	valueFormatter?: (string) => string;
 	valuesFilter?: (buckets: Array<ISearchResultBucket>) => Array<ISearchResultBucket>;
+	subrequest?: {
+		[fieldname: string]: string | boolean | number
+	};
 }
 
 export interface ISearchFilter {
@@ -395,6 +399,9 @@ export interface ISearchCommandFilter {
 	sort?: string;
 	mode?: string;
 	and?: ISearchCommandFilter[];
+	subrequest?: {
+		[fieldname: string]: string | boolean | number
+	};
 }
 
 export interface ISearchCommand {

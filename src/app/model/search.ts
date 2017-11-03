@@ -48,15 +48,17 @@ export class Search {
 				let agg = aggregations[filter.aggregation_id];
 				if (agg) {
 					filter.buckets = agg.buckets;
-					if (filter.def.valuesFilter) {
-						filter.buckets = filter.def.valuesFilter(agg.buckets);
-					}
-					agg.buckets.forEach(bucket => {
-						let i = missing.indexOf(bucket.key);
-						if (i >= 0) {
-							missing.splice(i, 1);
+					if (agg.buckets) {
+						if (filter.def.valuesFilter) {
+							filter.buckets = filter.def.valuesFilter(agg.buckets);
 						}
-					});
+						agg.buckets.forEach(bucket => {
+							let i = missing.indexOf(bucket.key);
+							if (i >= 0) {
+								missing.splice(i, 1);
+							}
+						});
+					}
 				}
 			}
 			missing.forEach((key) => {
@@ -68,7 +70,7 @@ export class Search {
 	public getCommand(): ISearchCommand {
 		let cmd: ISearchCommand = {filters: []};
 		cmd.aggregations = this.filters.filter((f) => {
-			return f.active;
+			return f.active && f.def.type !== ISearchFilterDefType.range;
 		}).map((f) => {
 			return {type: ISearchFilterDefType[f.def.aggregation_type || f.def.type], field: f.def.aggregation_field || f.def.field, size: f.def.size};
 		});
@@ -97,7 +99,7 @@ export class Search {
 					list = list.concat(f.values);
 				}
 				if (list.length > 0) {
-					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type], mode: f.mode});
+					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type], mode: f.mode, subrequest: f.def.subrequest});
 				}
 			}
 		});
@@ -110,11 +112,11 @@ export class Search {
 					if (s) {
 						s.value.push(f.value);
 					} else {
-						cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type]});
+						cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type], subrequest: f.def.subrequest});
 					}
 				}
 			} else if (f.def.type === ISearchFilterDefType.value) {
-				cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type], mode: f.mode});
+				cmd.filters.push({field: f.def.field, value: [f.value], type: ISearchFilterDefType[f.def.type], mode: f.mode, subrequest: f.def.subrequest});
 			}
 		});
 		return cmd;

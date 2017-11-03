@@ -33,8 +33,11 @@
 					</label>
 				</div>
 			</div>
+			<div class="range" *ngSwitchCase="ISearchFilterDefType.years">
+				<select-year-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-year-range-filter>
+			</div>
 			<div class="range" *ngSwitchCase="ISearchFilterDefType.range">
-				<select-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-range-filter>
+				<select-score-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-score-range-filter>
 			</div>
 			<div class="range" *ngSwitchCase="ISearchFilterDefType.date">
 				<select-date-filter [filter]="filter" [buckets]="filter.buckets" (onChange)="refresh()"></select-date-filter>

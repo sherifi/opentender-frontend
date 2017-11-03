@@ -3,10 +3,10 @@ import {ISearchFilter, ISearchResultBucket} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
-	selector: 'select-range-filter',
-	templateUrl: 'select-range-filter.component.html'
+	selector: 'select-year-range-filter',
+	templateUrl: 'select-year-range-filter.component.html'
 })
-export class SelectRangeFilterComponent implements OnChanges {
+export class SelectYearRangeFilterComponent implements OnChanges {
 	@Input()
 	filter: ISearchFilter;
 
