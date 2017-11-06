@@ -180,7 +180,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	},
 	{
 		id: 'indicators.score_ti',
-		name: 'Transparency Score',
+		name: 'Transparency',
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {

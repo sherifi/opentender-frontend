@@ -13,9 +13,9 @@
 <pagination class="pagination" [total]="total" [defaultPageSize]="defaultPageSize" [defaultPage]="defaultPage" (paginationChange)="paginationChange($event)"></pagination>
 <app-dialog [title]="'Large Download'" [(visible)]="showDownloadDialog">
 	<br/>
-	<ng-container i18n>The download contains <b>{{total}} entries</b> and the compressed file size will be approximately over <b>{{total/1000*1200000 | formatFileSize}}</b>.</ng-container>
+	<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
 	<br/>
 	<br/>
 	<button class="button" (click)="this.download('json.gz')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> <ng-container i18n>Download Large File</ng-container></button>
-	<button class="button" (click)="showDownloadDialog=false;">Cancel</button>
+	<button class="button" (click)="showDownloadDialog=false;" i18n>Cancel</button>
 </app-dialog>

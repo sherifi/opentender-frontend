@@ -106,5 +106,10 @@
   "Document Price EUR",
   "Estimated Price EUR",
   "Bid Price EUR",
-  "Indicator"
+  "Indicator",
+  "Average Score",
+  "Supplier Region",
+  "Score",
+  "Composite",
+  "Composite Score"
 ]

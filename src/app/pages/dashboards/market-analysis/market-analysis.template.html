@@ -35,11 +35,11 @@
 		<br>
 		<table class="tables">
 			<tr>
-				<th>Sector Profile</th>
-				<th>CPV</th>
-				<th>Name</th>
-				<th>Tender Count</th>
-				<th>Volume (€)</th>
+				<th i18n>Sector Profile</th>
+				<th i18n>CPV</th>
+				<th i18n>Name</th>
+				<th i18n>Nr. of Contracts</th>
+				<th i18n>Volume of Contracts (€)</th>
 			</tr>
 			<tr *ngFor="let sectorInfo of sectors_stats">
 				<td><a routerLink="/sector/{{sectorInfo.sector.id}}"><i class="icon-hammer icon-large"></i></a></td>
