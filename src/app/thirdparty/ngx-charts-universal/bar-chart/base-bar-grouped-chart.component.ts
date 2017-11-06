@@ -103,7 +103,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 		});
 	}
 
-	onClick(data, group) {
+	onClick(data, group?) {
 		if (group) {
 			data.series = group.name;
 		}

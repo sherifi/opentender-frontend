@@ -63,7 +63,8 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 		.force('collide', forceCollide(5))
 		.force('x', forceX())
 		.force('y', forceY());
-
+	@Input() nodes: any[] = [];
+	@Input() links: Array<{ source: any, target: any }> = [];
 	@Input() forceLink = forceLink<IChartNode, IChartLink>().id(node => node.value.toString());
 	@Input() groupResultsBy: (node: any) => string = node => node.value;
 	@Input() legend: boolean;
@@ -106,7 +107,7 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 		});
 	}
 
-	onClick(data, node): void {
+	onClick(data): void {
 		this.select.emit(data);
 	}
 

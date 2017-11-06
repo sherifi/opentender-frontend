@@ -16,7 +16,7 @@ import {
 	templateUrl: 'sector.template.html'
 })
 export class SectorPage implements OnInit, OnDestroy {
-	private sector: ISector;
+	public sector: ISector;
 	private parent_sectors: Array<ISector> = [];
 	private loading: number = 0;
 	private search_cmd: ISearchCommand;

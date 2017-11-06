@@ -8,7 +8,7 @@ import {IIndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'glossary.template.html'
 })
 export class AboutGlossaryPage {
-	private indicators: IIndicatorInfo[] = [];
+	public indicators: IIndicatorInfo[] = [];
 
 	constructor() {
 		this.indicators = Utils.indicators();

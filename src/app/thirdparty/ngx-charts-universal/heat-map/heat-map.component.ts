@@ -28,19 +28,19 @@ interface IRect {
 				(legendLabelClick)="onClick($event)">
 			<svg:g [attr.transform]="transform" class="heat-map chart">
 				<svg:g ngx-charts-x-axis
-					   *ngIf="xAxis"
+					   *ngIf="chart.xAxis.show"
 					   [xScale]="xScale"
 					   [dims]="viewDim"
-					   [showLabel]="showXAxisLabel"
-					   [labelText]="xAxisLabel"
+					   [showLabel]="chart.xAxis.showLabel"
+					   [labelText]="chart.xAxis.label"
 					   (dimensionsChanged)="updateXAxisHeight($event)">
 				</svg:g>
 				<svg:g ngx-charts-y-axis
-					   *ngIf="yAxis"
+					   *ngIf="chart.yAxis.show"
 					   [yScale]="yScale"
 					   [dims]="viewDim"
-					   [showLabel]="showYAxisLabel"
-					   [labelText]="yAxisLabel"
+					   [showLabel]="chart.yAxis.showLabel"
+					   [labelText]="chart.yAxis.label"
 					   (dimensionsChanged)="updateYAxisWidth($event)">
 				</svg:g>
 				<svg:rect *ngFor="let rect of rects"
@@ -55,7 +55,7 @@ interface IRect {
 					   [xScale]="xScale"
 					   [yScale]="yScale"
 					   [colors]="colors"
-					   [data]="results"
+					   [data]="data"
 					   [gradient]="gradient"
 					   (select)="onClick($event)"
 				/>
@@ -68,6 +68,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 	@Input() chart: IChartHeatmapSettings;
 	@Input() data: Array<IChartData>;
 	@Input() activeEntries: any[];
+	@Input() gradient: boolean;
 	@Output() select: EventEmitter<any>;
 	@Output() activate: EventEmitter<any>;
 	@Output() deactivate: EventEmitter<any>;

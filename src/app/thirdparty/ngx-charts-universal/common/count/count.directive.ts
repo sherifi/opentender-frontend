@@ -56,9 +56,10 @@ export class CountUpDirective implements OnDestroy {
 	@Output() countChange = new EventEmitter();
 	@Output() countFinish = new EventEmitter();
 
-	nativeElement: any;
+	private nativeElement: any;
 
-	private value: string = '';
+	public value: string = '';
+
 	private animationReq: any;
 
 	private _countDecimals = 0;

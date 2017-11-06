@@ -1,6 +1,11 @@
 import {Component, Input, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {line} from 'd3-shape';
 
+interface Ticks {
+	big: any[];
+	small: any[];
+}
+
 @Component({
 	selector: 'g[ngx-charts-gauge-axis]',
 	template: `
@@ -28,7 +33,7 @@ export class GaugeAxisComponent implements OnChanges {
 	@Input() radius: number;
 	@Input() valueScale: any;
 
-	ticks: any[];
+	ticks: Ticks;
 	rotationAngle: number;
 	rotate = '';
 
@@ -42,7 +47,7 @@ export class GaugeAxisComponent implements OnChanges {
 		this.ticks = this.getTicks();
 	}
 
-	getTicks(): any {
+	getTicks(): Ticks {
 		let bigTickSegment = this.angleSpan / this.bigSegments;
 		let smallTickSegment = bigTickSegment / (this.smallSegments);
 		let tickLength = 20;

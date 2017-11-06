@@ -103,7 +103,7 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 		});
 	}
 
-	onClick(data, series): void {
+	onClick(data, series?): void {
 		if (series) {
 			data.series = series.name;
 		}

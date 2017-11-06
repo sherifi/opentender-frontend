@@ -25,12 +25,12 @@ import {I18NService} from '../../services/i18n.service';
 `
 })
 export class HomeMapComponent {
-	private map_level: number = 2;
-	private map_companies: boolean = false;
-	private map_data: IStatsNuts = null;
-	private formatTooltip: (featureProperties: any) => string;
-	private loading: number = 0;
-	private title: string = '';
+	public map_level: number = 2;
+	public map_companies: boolean = false;
+	public map_data: IStatsNuts = null;
+	public formatTooltip: (featureProperties: any) => string;
+	public loading: number = 0;
+	public title: string = '';
 
 	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);

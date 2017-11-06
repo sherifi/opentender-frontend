@@ -208,7 +208,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 		this.hoveredVertical = null;
 	}
 
-	onClick(data, series): void {
+	onClick(data, series?): void {
 		if (series) {
 			data.series = series.name;
 		}

@@ -75,7 +75,7 @@ export class AutoCompleteComponent implements OnChanges {
 		this.focused = e;
 	}
 
-	public typeaheadOnBlur() {
+	public typeaheadOnBlur(e: boolean) {
 	}
 
 	public typeaheadOnSelect(e: TypeaheadMatch) {

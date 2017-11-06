@@ -6,8 +6,8 @@ import {IChartPieSettings, IChartData} from '../chart.interface';
 @Component({
 	selector: 'ngx-charts-advanced-pie-chart',
 	template: `<div
-		[style.width.px]="width"
-		[style.height.px]="height">
+		[style.width.px]="viewDim.width"
+		[style.height.px]="viewDim.height">
 	<div class="advanced-pie chart"
 		 [style.width.px]="viewDim.width"
 		 [style.height.px]="viewDim.height">
@@ -17,23 +17,23 @@ import {IChartPieSettings, IChartData} from '../chart.interface';
 					class="pie chart">
 				<svg:g ngx-charts-pie-series
 					   [colors]="colors"
-					   [showLabels]="labels"
-					   [series]="results"
+					   [showLabels]="chart.labels"
+					   [series]="data"
 					   [innerRadius]="innerRadius"
 					   [activeEntries]="activeEntries"
 					   [outerRadius]="outerRadius"
-					   [gradient]="gradient"
+					   [gradient]="chart.gradient"
 					   (select)="onClick($event)">
 				</svg:g>
 			</svg:g>
 		</ngx-charts-chart>
 	</div>
 	<div class="advanced-pie-legend-wrapper"
-		 [style.width.px]="width - viewDim.width">
+		 [style.width.px]="legendWidth - viewDim.width">
 		<ngx-charts-advanced-legend
-				[data]="results"
+				[data]="data"
 				[colors]="colors"
-				[width]="width - viewDim.width - margin[1]"
+				[width]="legendWidth - viewDim.width - margin[1]"
 				(select)="onClick($event)"
 				(activate)="onActivate($event)"
 				(deactivate)="onDeactivate($event)">

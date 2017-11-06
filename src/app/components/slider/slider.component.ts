@@ -74,7 +74,7 @@ export class SliderComponent implements OnChanges {
 
 	@Output('onSliderChange') onSliderChangeEvent = new EventEmitter();
 
-	private ticks = [];
+	public ticks = [];
 	private tickWidth = 1;
 	private border = 18;
 	private _stepValue = 1;
@@ -83,7 +83,7 @@ export class SliderComponent implements OnChanges {
 	private _startValue = 0;
 	private _endValue = 10;
 
-	private position = {
+	public position = {
 		range1: 0,
 		range1min: 0,
 		range1max: 0,

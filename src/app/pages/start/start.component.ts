@@ -11,7 +11,7 @@ import {NotifyService} from '../../services/notify.service';
 })
 export class StartPage {
 	public ip_country: Country;
-	private portals: Array<IStatsCountry> = [];
+	public portals: Array<IStatsCountry> = [];
 	private allportal: IStatsCountry;
 	private current: Country;
 	private loading: number = 0;

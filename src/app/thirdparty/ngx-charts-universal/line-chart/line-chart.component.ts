@@ -83,7 +83,7 @@ import {curveLinear} from 'd3-shape';
 				</svg:g>
 			</svg:g>
 			<svg:g ngx-charts-timeline
-				   *ngIf="timeline && scaleType === 'time'"
+				   *ngIf="data && scaleType === 'time'"
 				   [attr.transform]="timelineTransform"
 				   [results]="data"
 				   [view]="[timelineWidth, height]"

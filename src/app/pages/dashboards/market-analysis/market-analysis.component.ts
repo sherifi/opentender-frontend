@@ -9,16 +9,16 @@ import {ISector, IStats, IStatsNuts, ISearchCommandFilter} from '../../../app.in
 	templateUrl: 'market-analysis.template.html'
 })
 export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
-	private sectors_stats: Array<{ sector: ISector, stats: IStats }> = [];
-	private loading: number = 0;
-	private viz: {
+	public sectors_stats: Array<{ sector: ISector, stats: IStats }> = [];
+	public loading: number = 0;
+	public viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 		volume_regions: IStatsNuts;
 	} = {
 		sectors_stats: null,
 		volume_regions: null
 	};
-	private filter: {
+	public filter: {
 		time?: {
 			startYear: number;
 			endYear: number;

@@ -4,19 +4,19 @@
 </div>
 <div>
 	<label class="checkbox">
-		<input [value]="'<'" type="radio" [(ngModel)]="mode" (change)="handleModeChange($event)">
+		<input [value]="'<'" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
 		<div class="checkbox-columns"><span class="checkbox-column"><span class="value">before</span></span></div>
 	</label>
 </div>
 <div>
 	<label class="checkbox">
-		<input [value]="'>'" type="radio" [(ngModel)]="mode" (change)="handleModeChange($event)">
+		<input [value]="'>'" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
 		<div class="checkbox-columns"><span class="checkbox-column"><span class="value">after</span></span></div>
 	</label>
 </div>
 <div>
 	<label class="checkbox">
-		<input [value]="'='" type="radio" [(ngModel)]="mode" (change)="handleModeChange($event)">
+		<input [value]="'='" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
 		<div class="checkbox-columns"><span class="checkbox-column"><span class="value">same day</span></span></div>
 	</label>
 </div>

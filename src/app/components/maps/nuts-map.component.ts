@@ -52,8 +52,8 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 	private loading: number = 0;
 	private map: any;
 	private geolayer: L.GeoJSON;
-	private leaflet_options = {};
-	private data_list = [];
+	public leaflet_options = {};
+	public data_list = [];
 
 	constructor(private api: ApiService, private platform: PlatformService, private router: Router, private notify: NotifyService) {
 		this.initMap();

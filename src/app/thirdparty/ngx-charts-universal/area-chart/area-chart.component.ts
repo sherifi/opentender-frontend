@@ -33,7 +33,7 @@ import {PlatformService} from '../../../services/platform.service';
 					   (dimensionsChanged)="updateXAxisHeight($event)">
 				</svg:g>
 				<svg:g ngx-charts-y-axis
-					   *ngIf="yAxis"
+					   *ngIf="chart.yAxis.show"
 					   [yScale]="yScale"
 					   [dims]="viewDim"
 					   [showGridLines]="chart.showGridLines"
@@ -80,7 +80,7 @@ import {PlatformService} from '../../../services/platform.service';
 				</svg:g>
 			</svg:g>
 			<svg:g ngx-charts-timeline
-				   *ngIf="timeline && scaleType === 'time'"
+				   *ngIf="data && scaleType === 'time'"
 				   [attr.transform]="timelineTransform"
 				   [results]="areaData"
 				   [view]="[timelineWidth, dim.height]"

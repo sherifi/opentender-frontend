@@ -13,12 +13,13 @@ export class SelectYearRangeFilterComponent implements OnChanges {
 	@Input()
 	buckets: Array<ISearchResultBucket>;
 
-	@Output('onRangeChange') onRangeChange = new EventEmitter();
+	@Output('onRangeChange')
+	onRangeChange = new EventEmitter();
 
-	private minYear: number = 2009;
-	private maxYear: number = 2017;
-	private startYear: number = 2009;
-	private endYear: number = 2017;
+	public minYear: number = 2009;
+	public maxYear: number = 2017;
+	public startYear: number = 2009;
+	public endYear: number = 2017;
 
 	restoreFilter(filter: ISearchFilter) {
 		if (filter.values) {

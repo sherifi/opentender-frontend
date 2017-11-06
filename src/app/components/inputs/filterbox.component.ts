@@ -21,7 +21,7 @@ export class FilterBoxComponent implements OnChanges {
 	public onChange = new EventEmitter();
 
 	ISearchFilterDefType: typeof ISearchFilterDefType = ISearchFilterDefType;
-	private active_filters: Array<ISearchFilterDef> = [];
+	public active_filters: Array<ISearchFilterDef> = [];
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();
 

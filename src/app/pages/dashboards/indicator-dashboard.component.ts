@@ -19,16 +19,16 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	@Input()
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
-	private title: string = '';
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private searchScore: number = 0.5;
-	private indicatorTitle: string;
-	private subindicators: ISubIndicatorInfo[] = [];
-	private loading: number = 0;
-	private selected: ISubIndicatorInfo = null;
-	private search_cmd: ISearchCommand;
-	private viz: {
+	public title: string = '';
+	public subindicators: ISubIndicatorInfo[] = [];
+	public selected: ISubIndicatorInfo = null;
+	public search_cmd: ISearchCommand;
+	public indicatorTitle: string;
+	public loading: number = 0;
+	public viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		scores_in_years: IStatsInYears,
@@ -45,7 +45,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		scores_in_sectors: null,
 		terms_indicators_score: null
 	};
-	private filter: {
+	public filter: {
 		time?: {
 			isSet: boolean;
 			startYear: number;
