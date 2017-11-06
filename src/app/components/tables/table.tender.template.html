@@ -11,7 +11,7 @@
 	</div>
 </div>
 <pagination class="pagination" [total]="total" [defaultPageSize]="defaultPageSize" [defaultPage]="defaultPage" (paginationChange)="paginationChange($event)"></pagination>
-<app-dialog [title]="'Large Download'" [(visible)]="showDownloadDialog">
+<app-dialog i18n-title title="Download Data" [(visible)]="showDownloadDialog">
 	<br/>
 	<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
 	<br/>

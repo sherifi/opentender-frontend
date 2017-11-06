@@ -488,8 +488,7 @@
 			</div>
 		</div>
 	</div>
-
-	<app-dialog [title]="'Download Data'" [(visible)]="showDownloadDialog">
+	<app-dialog i18n-title title="Download Data" [(visible)]="showDownloadDialog">
 		<div class="tables-fixed-height">
 			<pre>{{getTenderJSONString()}}</pre>
 		</div>
@@ -498,12 +497,4 @@
 			<button class="tool-button" (click)="this.download('json')" i18n-title title="Download data as JSON"><i class="icon-cloud-download"></i> JSON</button>
 		</div>
 	</app-dialog>
-
-	<!--<div class="graph-footer">-->
-		<!--<div class="graph-toolbar-container">-->
-			<!--<div class="graph-toolbar">-->
-				<!--<button class="tool-button" (click)="this.download('json')" i18n-title title="Download tender data as JSON"><i class="icon-cloud-download"></i> JSON</button>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
 </div>

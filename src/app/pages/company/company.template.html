@@ -31,7 +31,7 @@
 		</div>
 		<tender-body-address [address]="company.address"></tender-body-address>
 		<br/>
-		<select-similar-list [title]="'Companies'" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
+		<select-similar-list i18n-title title="Similar Companies" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
 	</div>
 
 

@@ -65,7 +65,7 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: 'Year'}, filename: 'histogram'};
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name:  this.graph.chart.xAxis.label}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

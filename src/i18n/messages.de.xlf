@@ -191,6 +191,14 @@
             4
           </context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/region/region.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
         <target>
           Laden…
         </target>
@@ -251,6 +259,22 @@
           Diese Behörde suchen bei
         </target>
       </trans-unit>
+      <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
+        <source>
+          Similar Authorities
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/authority/authority.component.ts
+          </context>
+          <context context-type="linenumber">
+            30
+          </context>
+        </context-group>
+        <target>
+          Ähnliche Behörden
+        </target>
+      </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
         <source>
           Find Freedom of Information requests at
@@ -281,6 +305,22 @@
         </context-group>
         <target>
           Diese Firma suchen bei
+        </target>
+      </trans-unit>
+      <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
+        <source>
+          Similar Companies
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/company/company.component.ts
+          </context>
+          <context context-type="linenumber">
+            34
+          </context>
+        </context-group>
+        <target>
+          Ähnliche Firmen
         </target>
       </trans-unit>
       <trans-unit id="6edd1a650db2af580ebe746813024c45f1d854b1" datatype="html">
@@ -346,6 +386,14 @@
           </context>
           <context context-type="linenumber">
             18
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            39
           </context>
         </context-group>
         <target>
@@ -765,6 +813,102 @@
         </context-group>
         <target>
           Die Struktur der Daten ist einem &lt;x ctype="x-a" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; umrissen.
+        </target>
+      </trans-unit>
+      <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
+        <source>
+          Sector Profile
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            38
+          </context>
+        </context-group>
+        <target>
+          Branchenprofil
+        </target>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>
+          Name
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            40
+          </context>
+        </context-group>
+        <target>
+          Name
+        </target>
+      </trans-unit>
+      <trans-unit id="f96809e0048ee35474396953007272349dfe3713" datatype="html">
+        <source>
+          Nr. of Contracts
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/graphs/authorities.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/graphs/companies.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/graphs/indicator-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/graphs/sector-treemap.component.ts
+          </context>
+          <context context-type="linenumber">
+            7
+          </context>
+        </context-group>
+        <target>
+          Anzahl Verträge
+        </target>
+      </trans-unit>
+      <trans-unit id="e0e179364508121cc478783d25d003e4d2febb00" datatype="html">
+        <source>
+          Volume of Contracts (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <target>
+          Umfang der Verträge (€)
         </target>
       </trans-unit>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
@@ -2587,10 +2731,34 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
+            src/app/pages/tender/tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            491
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
             src/app/components/selects/select-download-series.component.ts
           </context>
           <context context-type="linenumber">
             4
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-download-series.component.ts
+          </context>
+          <context context-type="linenumber">
+            11
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/tables/table.tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            14
           </context>
         </context-group>
         <target>
@@ -2606,7 +2774,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            498
+            497
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2947,46 +3115,6 @@
         </context-group>
         <target>
           Hauptkäufer
-        </target>
-      </trans-unit>
-      <trans-unit id="f96809e0048ee35474396953007272349dfe3713" datatype="html">
-        <source>
-          Nr. of Contracts
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/authorities.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/companies.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/indicator-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/sector-treemap.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <target>
-          Anzahl Verträge
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -3613,6 +3741,14 @@
             7
           </context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-filters-button.component.ts
+          </context>
+          <context context-type="linenumber">
+            7
+          </context>
+        </context-group>
         <target>
           Auswählen
         </target>
@@ -3655,14 +3791,6 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/components/selects/select-filters-button.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
             src/app/components/selects/select-search-button.component.ts
           </context>
           <context context-type="linenumber">
@@ -3673,9 +3801,8 @@
           Hinzufügen
         </target>
       </trans-unit>
-      <trans-unit id="f8b3b9bdb7bca4d36161b5c4d1ee9924cac93640" datatype="html">
+      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
         <source>
-          Similar
           <x id="INTERPOLATION" equiv-text="{{title}}">
           </x>
         </source>
@@ -3687,9 +3814,6 @@
             2
           </context>
         </context-group>
-        <target>
-          Ähnliche &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;
-        </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
         <source>
@@ -3763,22 +3887,13 @@
           Daten herunterladen als gzip-komprimiertes JSON
         </target>
       </trans-unit>
-      <trans-unit id="0933d762d22bf47b05bc04f2b6dd21fcb37c11b1" datatype="html">
+      <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
         <source>
           The download contains
-          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;">
-          </x>
           <x id="INTERPOLATION" equiv-text="{{total}}">
           </x>
-          entries
-          <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;">
-          </x>
-          and the compressed file size will be approximately over
-          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;">
-          </x>
+          entries and the compressed file size will be approximately over
           <x id="INTERPOLATION_1" equiv-text="{{total/1000*1200000 | formatFileSize}}">
-          </x>
-          <x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;">
           </x>
           .
         </source>
@@ -3791,7 +3906,7 @@
           </context>
         </context-group>
         <target>
-          Der Download enthält &lt;x ctype="x-b" equiv-text="&amp;lt;b&amp;gt;" id="START_BOLD_TEXT"/&gt;&lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt;Einträge&lt;x ctype="x-b" equiv-text="&amp;lt;/b&amp;gt;" id="CLOSE_BOLD_TEXT"/&gt; und die komprimierte Dateigröße mindestens &lt;x ctype="x-b" equiv-text="&amp;lt;b&amp;gt;" id="START_BOLD_TEXT"/&gt;&lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;&lt;x ctype="x-b" equiv-text="&amp;lt;/b&amp;gt;" id="CLOSE_BOLD_TEXT"/&gt; betragen.
+          Der Download enthält &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; Einträge und die komprimierte Dateigröße mindestens &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt; betragen.
         </target>
       </trans-unit>
       <trans-unit id="cfd39bdbb00f08b89fb84a395dead269a72e8787" datatype="html">
@@ -3808,6 +3923,22 @@
         </context-group>
         <target>
           Großer Datei-Download
+        </target>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>
+          Cancel
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/tables/table.tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            20
+          </context>
+        </context-group>
+        <target>
+          Abbruch
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
@@ -3978,7 +4109,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Indikatorwert
+          Durchschnittlicher Indikator-Score
         </target>
       </trans-unit>
       <trans-unit id="AverageVolumeofContracts(€)" datatype="html">
@@ -5115,7 +5246,7 @@
           runtime
         </note>
         <target>
-          Summierter Indikatorwert
+          Summierter Indikator-Score
         </target>
       </trans-unit>
       <trans-unit id="Supplier" datatype="html">
@@ -5876,6 +6007,63 @@
         </note>
         <target>
           Zuliefererregion
+        </target>
+      </trans-unit>
+      <trans-unit id="Score" datatype="html">
+        <source>
+          Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            111
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Score
+        </target>
+      </trans-unit>
+      <trans-unit id="Composite" datatype="html">
+        <source>
+          Composite
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            112
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Gesamt
+        </target>
+      </trans-unit>
+      <trans-unit id="CompositeScore" datatype="html">
+        <source>
+          Composite Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            113
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Gesamt-Score
         </target>
       </trans-unit>
     </body>

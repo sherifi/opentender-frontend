@@ -1,5 +1,5 @@
 <div class="similars" *ngIf="similar.length > 0">
-	<div class="title" i18n>Similar {{title}}</div>
+	<div class="title" i18n>{{title}}</div>
 	<div class="similars-list">
 		<div class="similar" *ngFor="let body of similar">
 			<a [routerLink]="[link+body.id]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>

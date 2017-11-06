@@ -1,5 +1,4 @@
-import {Component, Input, EventEmitter, Output} from '@angular/core';
-import {I18NService} from '../../services/i18n.service';
+import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
 import Body = Definitions.Body;
 
 @Component({
@@ -23,7 +22,7 @@ export class SelectSimilarListComponent {
 
 	public search_similars = {};
 
-	constructor(public i18n: I18NService) {
+	constructor() {
 	}
 
 	toggleSimilar(body: Body): void {
@@ -32,9 +31,5 @@ export class SelectSimilarListComponent {
 			return this.search_similars[key];
 		});
 		this.selectChange.emit({value: ids});
-	}
-
-	plain(o) {
-		return JSON.stringify(o, null, '\t');
 	}
 }
