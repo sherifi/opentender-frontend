@@ -14,9 +14,9 @@
 */
 
 require('reflect-metadata');
-const compiler = require('@angular/compiler');
-const tsc = require('@angular/tsc-wrapped');
-const extractor_1 = require('@angular/compiler-cli/src/extractor');
+// const compiler = require('@angular/compiler');
+// const tsc = require('@angular/tsc-wrapped');
+// const extractor_1 = require('@angular/compiler-cli/src/extractor');
 const fs = require('fs-extra');
 const async = require('async');
 const path = require('path');
@@ -43,8 +43,7 @@ let removeDest = function () {
 	}
 };
 
-let runNGi18n = function (cb) {
-	removeDest();
+let prepareProject = function () {
 	console.log('copy project files to', dest);
 	// fs.copySync(path.join(source, 'node_modules'), path.join(dest, 'node_modules'));
 	fs.copySync(path.join(source, 'src'), path.join(dest, 'src'));
@@ -55,29 +54,39 @@ let runNGi18n = function (cb) {
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
 	fillI18nTemplate(path.join(dest, 'src/app/components/i18n.template.html'));
+};
 
-	function extract(ngOptions, cliOptions, program, host) {
-		return extractor_1.Extractor.create(ngOptions, program, host, cliOptions.locale).extract(cliOptions.i18nFormat, cliOptions.outFile);
+var __assign = (this && this.__assign) || Object.assign || function (t) {
+	for (var s, i = 1, n = arguments.length; i < n; i++) {
+		s = arguments[i];
+		for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+			t[p] = s[p];
 	}
+	return t;
+};
 
+let runNGi18n = function (cb) {
+	removeDest();
+	prepareProject();
 	console.log('run ng-xi18n');
-	let cliOptions = new tsc.I18nExtractionCliOptions({i18nFormat: 'xlf', outFile: 'out.xlf', locale: 'en'});
-
-	tsc.main(dest, cliOptions, extract, {noEmit: true}).then(function (exitCode) {
-		if (exitCode) {
-			console.log(exitCode);
-		}
-		fs.copySync(path.join(dest, 'out.xlf'), source_message);
-		removeDest();
-		console.log(source_message, 'written');
-		fs.readFile(source_message, (err, data) => {
-			if (err) return cb(err);
-			cb(null, data);
-		});
-	}).catch((e) => {
-		console.log('error', e);
-		removeDest();
-		cb(e);
+	process.chdir(dest);
+	let api = require("@angular/compiler-cli/src/transformers/api");
+	let main_1 = require("@angular/compiler-cli/src/main");
+	let args = [];
+	let options = {};
+	let config = main_1.readCommandLineAndConfiguration(args, options, ['outFile', 'i18nFormat', 'locale']);
+	let cmd = __assign({}, config, {emitFlags: api.EmitFlags.I18nBundle});
+	main_1.main(args, console.error, cmd);
+	console.log('processing ng-xi18n result');
+	if (!fs.existsSync(path.join(dest, 'messages.xlf'))){
+		return cb('Error: result messages.xlf does not exists, can not continue');
+	}
+	fs.copySync(path.join(dest, 'messages.xlf'), source_message);
+	removeDest();
+	console.log(source_message, 'written');
+	fs.readFile(source_message, (err, data) => {
+		if (err) return cb(err);
+		cb(null, data);
 	});
 };
 
