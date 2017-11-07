@@ -9,11 +9,9 @@
     "url": "https://github.com/digiwhist/opentender-frontend.git"
   },
   "scripts": {
-    "watch": "webpack --watch --display-error-details",
+    "watch": "webpack --progress --watch --display-error-details",
     "prebuild": "rimraf dist",
-    "build": "webpack",
-    "build:prod": "webpack --progress -p",
-    "---prestart": "npm run build",
+    "build": "webpack --progress -p",
     "develop": "nodemon dist/server/index.js",
     "server": "node dist/server/index.js",
     "start": "npm run server",
@@ -21,12 +19,13 @@
     "schema": "cd bin && node schema2ts.js",
     "langs": "cd bin && node languages2files.js",
     "debug": "node --debug-brk dist/server/index.js",
-    "docs": "node_modules/.bin/compodoc -p tsconfig.json -d ./dist/docs/",
+    "docs": "node_modules/.bin/compodoc -p tsconfig.client.json -d ./dist/docs/",
     "serve-docs": "node_modules/.bin/compodoc -s -d ./dist/docs/",
     "typedoc-docs": "npm run typedoc -- --options typedoc.json --inlineSourceMap --exclude '**/*.spec.ts' ./src/",
     "typedoc": "typedoc"
   },
   "dependencies": {
+    "@angular-devkit/build-optimizer": "0.0.32",
     "@angular/animations": "5.0.0",
     "@angular/common": "5.0.0",
     "@angular/compiler": "5.0.0",
@@ -60,6 +59,7 @@
     "awesome-typescript-loader": "=3.3.0",
     "body-parser": "=1.18.2",
     "classlist.js": "1.1.20150312",
+    "compression-webpack-plugin": "^1.0.1",
     "cookie-parser": "=1.4.3",
     "core-js": "=2.5.1",
     "css-loader": "=0.28.7",

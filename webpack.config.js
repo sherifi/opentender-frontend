@@ -3,7 +3,8 @@ const path = require('path');
 const webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const SemverWebpackPlugin = require('semver-extended-webpack-plugin');
+const PurifyPlugin = require('@angular-devkit/build-optimizer').PurifyPlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const config = require('./config.js');
 const version = require('./version.js');
@@ -62,13 +63,6 @@ const defaultConfig = () => {
 
 const clientConfig = () => {
 	let plugins = [
-		// new SemverWebpackPlugin({
-		// 	files: [path.resolve(__dirname, 'version.json')],
-		// 	incArgs: ['patch'],
-		// 	console: true,
-		// 	buildDate: true,
-		// 	// version: '1.8'  // optional if you want to set the desired version
-		// }),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'polyfills',
 			chunks: ['polyfills']
@@ -92,6 +86,8 @@ const clientConfig = () => {
 		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de.js|it/)
 	];
 	if (config.webpack.minimize) {
+		plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
+		plugins.push(new PurifyPlugin());
 		plugins.push(new webpack.optimize.UglifyJsPlugin({
 			beautify: false,
 			comments: false,
@@ -117,15 +113,24 @@ const clientConfig = () => {
 			},
 			sourceMap: config.webpack.sourcemaps
 		}));
+		plugins.push(
+			new CompressionPlugin({
+				asset: '[path].gz[query]',
+				algorithm: 'gzip',
+				test: /\.(js|html)$/,
+				threshold: 10240,
+				minRatio: 0.8
+			})
+		);
 	}
 
 	if (config.webpack.analyze) {
 		plugins.push(new BundleAnalyzerPlugin({
 			analyzerMode: 'static', // server|disabled|static
-			reportFilename: 'report.html',
+			reportFilename: '../reports/report.html',
 			openAnalyzer: false,
 			generateStatsFile: true,
-			statsFilename: 'stats.json',
+			statsFilename: '../reports/stats.json',
 		}));
 	}
 
