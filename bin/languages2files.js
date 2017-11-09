@@ -23,6 +23,7 @@ const path = require('path');
 const clone = require('clone');
 const XMLLite = require('xml-lite');
 const runtimestrings = require('./runtime-strings.json');
+const indicators = require('../src/app/model/indicators.json');
 
 /*************************************
  * Constants
@@ -56,10 +57,10 @@ let prepareProject = function () {
 	fillI18nTemplate(path.join(dest, 'src/app/components/i18n.template.html'));
 };
 
-var __assign = (this && this.__assign) || Object.assign || function (t) {
-	for (var s, i = 1, n = arguments.length; i < n; i++) {
+let __assign = (this && this.__assign) || Object.assign || function (t) {
+	for (let s, i = 1, n = arguments.length; i < n; i++) {
 		s = arguments[i];
-		for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+		for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
 			t[p] = s[p];
 	}
 	return t;
@@ -78,7 +79,7 @@ let runNGi18n = function (cb) {
 	let cmd = __assign({}, config, {emitFlags: api.EmitFlags.I18nBundle});
 	main_1.main(args, console.error, cmd);
 	console.log('processing ng-xi18n result');
-	if (!fs.existsSync(path.join(dest, 'messages.xlf'))){
+	if (!fs.existsSync(path.join(dest, 'messages.xlf'))) {
 		return cb('Error: result messages.xlf does not exists, can not continue');
 	}
 	fs.copySync(path.join(dest, 'messages.xlf'), source_message);
@@ -124,6 +125,16 @@ let packageLanguage = function (lang, content, cb) {
 let fillI18nTemplate = function (filename) {
 	let list = runtimestrings.map(s => {
 		return '<span i18n="runtime@@' + s.replace(/ /g, '') + '">' + s + '</span>';
+	});
+	Object.keys(indicators).forEach(ikey => {
+		let indicator = indicators[ikey];
+		list.push('<span i18n="runtime@@' + ikey + '.name">' + indicator.name + '</span>');
+		list.push('<span i18n="runtime@@' + ikey + '.plural">' + indicator.plural + '</span>');
+		Object.keys(indicator.subindicators).forEach(skey => {
+			let sub = indicator.subindicators[skey];
+			list.push('<span i18n="runtime@@' + skey + '.name">' + sub.name + '</span>');
+			list.push('<span i18n="runtime@@' + skey + '.desc">' + sub.desc + '</span>');
+		});
 	});
 	fs.writeFileSync(filename, list.join('\n'));
 };

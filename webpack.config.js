@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const fs = require('fs');
 const path = require('path');
 const webpackMerge = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -147,6 +148,17 @@ const clientConfig = () => {
 			filename: '[name].js'
 		},
 		plugins: plugins,
+		externals: (context, request, cb) => {
+			if (request.indexOf('.json') >= 0 && request.charAt(0) === '.') {
+				console.log(context, request);
+				return fs.readFile(context + request.slice(1), (err, result) => {
+					result = JSON.parse(result.toString());
+					return cb(null, 'var ' + JSON.stringify(result));
+				});
+			}
+			cb();
+		},
+
 		node: {
 			global: true,
 			crypto: 'empty',
@@ -172,6 +184,12 @@ const serverConfig = () => {
 			let replacement = replacements[request];
 			if (replacement) {
 				return cb(null, 'var ' + JSON.stringify(replacement()));
+			}
+			if (request.indexOf('.json') >= 0 && request.charAt(0) === '.') {
+				return fs.readFile(context + request.slice(1), (err, result) => {
+					result = JSON.parse(result.toString());
+					return cb(null, 'var ' + JSON.stringify(result));
+				});
 			}
 			if (!path.isAbsolute(request) && request.charAt(0) !== '.') {
 				return cb(null, 'commonjs ' + request);

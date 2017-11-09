@@ -25,7 +25,7 @@ export const Utils = {
 		}
 		value = value.toUpperCase();
 		if (Consts.currencies[value]) {
-			return Consts.currencies[value].symbol;
+			return Consts.currencies[value];
 		}
 		return value;
 	},
@@ -85,15 +85,17 @@ export const Utils = {
 		}).join('');
 	},
 	subindicators(indicatorId: string): Array<ISubIndicatorInfo> {
-		return Object.keys(Consts.indicators[indicatorId].subindicators).map(subkey => {
-			let sub = Consts.indicators[indicatorId].subindicators[subkey];
-			return {
-				id: subkey,
-				sid: Utils.indicatorShortID(subkey),
-				name: sub.name,
-				desc: sub.desc
-			};
-		});
+		return Object.keys(Consts.indicators[indicatorId].subindicators)
+			.filter(subkey => !Consts.indicators[indicatorId].subindicators[subkey].notused)
+			.map(subkey => {
+				let sub = Consts.indicators[indicatorId].subindicators[subkey];
+				return {
+					id: subkey,
+					sid: Utils.indicatorShortID(subkey),
+					name: sub.name,
+					desc: sub.desc
+				};
+			});
 	},
 	indicatorInfo(ii): IIndicatorInfo {
 		return {

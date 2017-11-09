@@ -21,6 +21,11 @@ interface ClientConfig {
 	devMode: boolean;
 }
 
+declare module '*.json' {
+	const value: any;
+	export default value;
+}
+
 declare module 'config.js' {
 	export var server: ServerConfig;
 	export var client: ClientConfig;
