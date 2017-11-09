@@ -74,7 +74,6 @@ import {FilterBoxComponent} from './components/inputs/filterbox.component';
 import {FooterComponent} from './components/footer.component';
 import {GraphAuthoritiesComponent} from './components/graphs/authorities.component';
 import {GraphCompaniesComponent} from './components/graphs/companies.component';
-import {GraphCountsComponent} from './components/graphs/counts.component';
 import {GraphHistogramComponent} from './components/graphs/histogram.component';
 import {GraphHomeHistogramComponent} from './components/graphs/home-histogram.component';
 import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
@@ -151,7 +150,6 @@ const AppConfig = {
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
 		GraphSectorsComponent,
-		GraphCountsComponent,
 		GraphHistogramComponent,
 		GraphSumPricesComponent,
 		GraphAuthoritiesComponent,

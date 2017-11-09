@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
