@@ -7,10 +7,5 @@ import {Consts} from '../../../model/consts';
 	templateUrl: 'how.template.html'
 })
 export class AboutHowPage {
-	dummies = [1, 2, 3].map(nr => {
-		return {
-			title: 'Lorem Ipsum',
-			text: Consts.IPSUM + ' ' + Consts.IPSUM + ' ' + Consts.IPSUM + ' ' + Consts.IPSUM
-		};
-	});
+	lorem = Consts.IPSUM;
 }
