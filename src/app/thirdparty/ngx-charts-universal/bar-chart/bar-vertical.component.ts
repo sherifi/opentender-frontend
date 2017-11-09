@@ -20,7 +20,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 			   [offset]="margin[1]+10"
 			   [orient]="'left-left'"
 			   [height]="viewDim.height"
-			   [width]="viewDim.height">
+			   [width]="viewDim.width">
 		</svg:g>
 	<svg:g [attr.transform]="transform" class="bar-chart chart">
 		<svg:g ngx-charts-x-axis
