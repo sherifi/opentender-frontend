@@ -34,7 +34,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.address.city',
 			ascend: true
 		},
-		format: authority => [{content: authority.body.address.city}]
+		format: authority => authority.body && authority.body.address ? [{content: authority.body.address.city}] : []
 	},
 	{
 		name: 'Country',
@@ -44,7 +44,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: authority => [{content: Utils.expandCountry(authority.body.address.country)}]
+		format: authority => authority.body && authority.body.address ? [{content: Utils.expandCountry(authority.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
@@ -103,7 +103,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.address.city',
 			ascend: true
 		},
-		format: company => [{content: company.body.address.city}]
+		format: company => company.body && company.body.address ? [{content: company.body.address.city}] : []
 	},
 	{
 		name: 'Country',
@@ -113,7 +113,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: company => [{content: Utils.expandCountry(company.body.address.country)}]
+		format: company => company.body && company.body.address ? [{content: Utils.expandCountry(company.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
