@@ -30,7 +30,6 @@ import {YAxisTicksComponent} from './y-axis-ticks.component';
 				   [minInterval]="minInterval"
 				   (dimensionsChanged)="emitTicksWidth($event)"
 			/>
-
 			<svg:g ngx-charts-axis-label
 				   *ngIf="showLabel"
 				   [label]="labelText"

@@ -8,7 +8,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 @Component({
 	selector: 'ngx-charts-bar-horizontal',
 	template: `<ngx-charts-chart
-        [dim]="dim" [chart]="chart" [data]="data"
+		[dim]="dim" [chart]="chart" [data]="data"
 		[legendOptions]="legendOptions"
 		[activeEntries]="activeEntries"
 		(legendLabelClick)="onClick($event)"
@@ -55,7 +55,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 		/>
 	</svg:g>
 </ngx-charts-chart>
-  `,
+`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BarHorizontalComponent extends BaseXYAxisComponent {

@@ -69,6 +69,11 @@ export class AxisLabelComponent implements OnChanges {
 				this.y = this.offset;
 				this.x = this.width / 2;
 				break;
+			case 'left-left':
+				this.y = this.margin + this.offset;
+				this.x = -this.height / 2;
+				this.transform = 'rotate(270)';
+				break;
 			case 'left':
 				this.y = -(this.offset + this.textHeight + this.margin);
 				this.x = -this.height / 2;
