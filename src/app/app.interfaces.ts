@@ -75,13 +75,6 @@ export interface IStatsCpvs {
 	[id: string]: { name: string; value: number };
 }
 
-export interface IStatsCounts {
-	bids_awarded: number;
-	bids: number;
-	lots: number;
-	tenders: number;
-}
-
 export interface IStatsProcedureType {
 	[name: string]: number;
 }
@@ -107,6 +100,14 @@ export interface IStatsPcLotsInYears {
 		total: number;
 		value: number;
 		percent: number;
+	};
+}
+
+export interface IStatsPricesLotsInYears {
+	[year: string]: {
+		value: number;
+		sum_finalPriceEUR: IStatsPriceEUR;
+		avg_finalPriceEUR: IStatsPriceEUR;
 	};
 }
 
@@ -156,7 +157,6 @@ export interface IStats {
 	top_terms_companies: IStatsCompanies;
 	top_sum_finalPrice_companies: IStatsCompanies;
 	top_terms_authorities: IStatsAuthorities;
-	count_lots_bids: IStatsCounts;
 	terms_indicators: IStatsIndicators;
 	terms_procedure_type: IStatsProcedureType;
 	terms_indicators_score: IStatsIndicators;
@@ -164,6 +164,7 @@ export interface IStats {
 	histogram_lots_awardDecisionDate: IStatsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
+	histogram_lots_awardDecisionDate_finalPrices: IStatsPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	region_stats: Array<{ id: string; value: number, stats: IStats }>;
 }

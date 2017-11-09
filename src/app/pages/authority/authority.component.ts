@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsInYears, IStatsNuts} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCounts, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
@@ -27,14 +27,12 @@ export class AuthorityPage implements OnInit, OnDestroy {
 
 	private viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
-		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
 		company_nuts: IStatsNuts,
-		lots_in_years: IStatsInYears
+		lots_in_years: IStatsPricesLotsInYears
 	} = {
 		top_companies: null,
 		cpvs_codes: null,
-		counts: null,
 		company_nuts: null,
 		lots_in_years: null
 	};
@@ -127,7 +125,6 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		let viz = {
 			top_companies: null,
 			cpvs_codes: null,
-			counts: null,
 			lots_in_years: null,
 			company_nuts: null
 		};
@@ -136,9 +133,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
+		viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
-		viz.counts = stats.count_lots_bids;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.company_nuts = stats.terms_company_nuts;
 		this.viz = viz;

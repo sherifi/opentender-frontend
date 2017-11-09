@@ -122,8 +122,8 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 			this.sortBy = data.sortBy;
 			this.authorities = data.hits.hits;
 			this.buildTable();
+			this.searchChange.emit(data);
 		}
-		this.searchChange.emit(data);
 	}
 
 }

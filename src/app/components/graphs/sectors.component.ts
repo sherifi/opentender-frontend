@@ -10,10 +10,7 @@ import {I18NService} from '../../services/i18n.service';
 	selector: 'graph[sectors]',
 	template: `
 		<div class="title">{{title}}</div>
-		<div class="graph-toolbar-container">
-			<div class="graph-toolbar graph-toolbar-right">
-			</div>
-		</div>
+		<div class="graph-toolbar-container"></div>
 		<ngx-charts-bar-horizontal-labeled
 				class="chart-container"
 				[chart]="graph.chart"

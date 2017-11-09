@@ -13,7 +13,6 @@ import {I18NService} from '../../services/i18n.service';
 			<div class="graph-toolbar graph-toolbar-left">
 				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>
 				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')" i18n>Volume (€)</button>
-				<!--<button class="tool-button" [ngClass]="{down:mode==='score'}" (click)="toggleValue('score')" i18n>Score</button>-->
 			</div>
 			<div class="graph-toolbar graph-toolbar-right">
 				<button class="tool-button" [ngClass]="{down:!absolute}" (click)="toggleAbsolute(false)" i18n>Average</button>
@@ -73,41 +72,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 		data: null
 	};
 
-	avg_scores_in_years: IChartBar = {
-		chart: {
-			schemeType: 'ordinal',
-			view: {
-				def: {width: 500, height: 360},
-				min: {height: 360},
-				max: {height: 360}
-			},
-			xAxis: {
-				show: true,
-				showLabel: true,
-				defaultHeight: 20,
-				tickFormatting: Utils.formatYear
-			},
-			yAxis: {
-				show: true,
-				showLabel: true,
-				defaultWidth: 30,
-				minInterval: 5,
-				tickFormatting: Utils.formatTrunc
-			},
-			valueFormatting: Utils.formatPercent,
-			showGridLines: true,
-			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
-		},
-		data: []
-	};
-
 	sum_lots_in_years: IChartBar = {
 		chart: {
 			schemeType: 'ordinal',
@@ -141,41 +105,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 		onLegendLabelClick: (event) => {
 		},
 		data: null
-	};
-
-	sum_scores_in_years: IChartBar = {
-		chart: {
-			schemeType: 'ordinal',
-			view: {
-				def: {width: 500, height: 360},
-				min: {height: 360},
-				max: {height: 360}
-			},
-			xAxis: {
-				show: true,
-				showLabel: true,
-				defaultHeight: 20,
-				tickFormatting: Utils.formatYear
-			},
-			yAxis: {
-				show: true,
-				showLabel: true,
-				defaultWidth: 30,
-				minInterval: 1,
-				tickFormatting: Utils.formatTrunc
-			},
-			valueFormatting: Utils.formatTrunc,
-			showGridLines: true,
-			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
-		},
-		data: []
 	};
 
 	sum_prices_in_years: IChartBar = {
@@ -254,12 +183,8 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 		let year = this.i18n.get('Year');
 		this.avg_lots_in_years.chart.xAxis.label = year;
 		this.avg_lots_in_years.chart.yAxis.label = this.i18n.get('Average % of Contracts (Lots)');
-		this.avg_scores_in_years.chart.xAxis.label = year;
-		this.avg_scores_in_years.chart.yAxis.label = this.i18n.get('Average Indicator Score');
 		this.sum_lots_in_years.chart.xAxis.label = year;
 		this.sum_lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts (Lots)');
-		this.sum_scores_in_years.chart.xAxis.label = year;
-		this.sum_scores_in_years.chart.yAxis.label = this.i18n.get('Sum of Indicator Score');
 		this.sum_prices_in_years.chart.xAxis.label = year;
 		this.sum_prices_in_years.chart.yAxis.label = this.i18n.get('Volume of Contracts (€)');
 		this.avg_prices_in_years.chart.xAxis.label = year;
@@ -282,8 +207,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			this.graph = this.absolute ? this.sum_lots_in_years : this.avg_lots_in_years;
 		} else if (this.mode === 'vol') {
 			this.graph = this.absolute ? this.sum_prices_in_years : this.avg_prices_in_years;
-		} else if (this.mode === 'score') {
-			this.graph = this.absolute ? this.sum_scores_in_years : this.avg_scores_in_years;
 		}
 	}
 

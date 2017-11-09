@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsInYears, IStatsCpvs, IStatsCounts, ISearchCommand, IStatsAuthorities, IStatsNuts} from '../../app.interfaces';
+import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
@@ -28,14 +28,12 @@ export class CompanyPage implements OnInit, OnDestroy {
 	private viz: {
 		authority_nuts: IStatsNuts,
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		counts: IStatsCounts,
 		cpvs_codes: IStatsCpvs,
-		lots_in_years: IStatsInYears
+		lots_in_years: IStatsPricesLotsInYears
 	} = {
 		authority_nuts: null,
 		top_authorities: null,
 		cpvs_codes: null,
-		counts: null,
 		lots_in_years: null
 	};
 
@@ -142,7 +140,6 @@ export class CompanyPage implements OnInit, OnDestroy {
 			authority_nuts: null,
 			top_authorities: null,
 			cpvs_codes: null,
-			counts: null,
 			lots_in_years: null
 		};
 		if (!data || !data.stats) {
@@ -150,8 +147,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
-		viz.counts = stats.count_lots_bids;
+		viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_main_cpv_divisions;
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.authority_nuts = stats.terms_authority_nuts;
@@ -165,6 +161,5 @@ export class CompanyPage implements OnInit, OnDestroy {
 
 	searchChange(data) {
 	}
-
 
 }
