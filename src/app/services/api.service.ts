@@ -29,7 +29,7 @@ export class ApiService {
 
 	post<T>(url: string, params: Object): Observable<T> {
 		if (this.config.locale) {
-			params['lang'] = this.config.locale;
+			params['lang'] = this.config.locale.slice(0, 2);
 		}
 		return this.http.post<T>(this.actionCountryUrl + url, params, {headers: this.headers});
 	}
@@ -89,7 +89,7 @@ export class ApiService {
 	get<T>(url: string) {
 		let query = '';
 		if (this.config.locale) {
-			query = '?lang=' + this.config.locale;
+			query = '?lang=' + this.config.locale.slice(0, 2);
 		}
 		return this.http.get<T>(this.actionCountryUrl + url + query);
 	}
