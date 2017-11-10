@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {NotifyService} from '../../../services/notify.service';
-import {ISector, IStats, IStatsNuts, ISearchCommandFilter} from '../../../app.interfaces';
+import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -13,9 +13,13 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	public loading: number = 0;
 	public viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
+		scores_in_years: IStatsInYears;
+		scores_in_sectors: IStatsCpvs;
 		volume_regions: IStatsNuts;
 	} = {
 		sectors_stats: null,
+		scores_in_sectors: null,
+		scores_in_years: null,
 		volume_regions: null
 	};
 	public filter: {
@@ -82,6 +86,8 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		this.sectors_stats = [];
 		this.viz.sectors_stats = null;
 		this.viz.volume_regions = null;
+		this.viz.scores_in_years = null;
+		this.viz.scores_in_sectors = null;
 		if (data) {
 			this.viz.sectors_stats = data.sectors_stats;
 			this.sectors_stats = data.sectors_stats;
@@ -90,6 +96,8 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 				nuts[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 			});
 			this.viz.volume_regions = nuts;
+			this.viz.scores_in_years = data.histogram_lots_awardDecisionDate_avg_scores['TENDER'];
+			this.viz.scores_in_sectors = data.terms_main_cpv_divisions_avg_scores;
 		}
 		if (!this.filter.time && data.histogram_lots_awardDecisionDate) {
 			let startYear = 0;

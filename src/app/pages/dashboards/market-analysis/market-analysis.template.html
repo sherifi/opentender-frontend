@@ -23,10 +23,12 @@
 				<div class="container-left-12">
 					<graph sector-treemap [data]="viz.sectors_stats"></graph>
 				</div>
-			</div>
-		</div>
-		<div class="container container-margin">
-			<div class="container">
+				<div class="container-left-6">
+					<graph score-histogram [data]="viz.scores_in_years" [title]="'Composite Indicator'"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph score-sectors [data]="viz.scores_in_sectors" [title]="'Composite Indicator'"></graph>
+				</div>
 				<div class="container-left-12">
 					<graph volume-nutsmap [data]="viz.volume_regions"></graph>
 				</div>
