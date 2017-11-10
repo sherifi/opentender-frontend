@@ -38,7 +38,7 @@ export class SVGCountryGroupDirective {
 	selector: 'portal-map',
 	templateUrl: 'map-portal.template.html'
 })
-export class PortalMapComponent implements AfterViewInit, OnChanges {
+export class MapPortalComponent implements AfterViewInit, OnChanges {
 	@Input() portals: Array<IStatsCountry>;
 	@ViewChildren(SVGCountryGroupDirective) items: QueryList<SVGCountryGroupDirective>;
 	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;

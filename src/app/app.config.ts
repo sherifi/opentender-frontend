@@ -65,6 +65,7 @@ import {TitleService} from './services/title.service';
 import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
 
+import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
 import {AuthorityTableComponent} from './components/tables/table.authority.component';
 import {AutoCompleteComponent} from './components/inputs/autocomplete.component';
 import {CompanyTableComponent} from './components/tables/table.company.component';
@@ -77,40 +78,40 @@ import {GraphCompaniesComponent} from './components/graphs/companies.component';
 import {GraphHistogramComponent} from './components/graphs/histogram.component';
 import {GraphHomeHistogramComponent} from './components/graphs/home-histogram.component';
 import {GraphIndicatorHistogramComponent} from './components/graphs/indicator-histogram.component';
+import {GraphIndicatorScoreHistogramComponent} from './components/graphs/score-histogram.component';
 import {GraphIndicatorSectorsComponent} from './components/graphs/indicator-sectors.component';
 import {GraphIndicatorStructureComponent} from './components/graphs/indicator-structure.component';
-import {GraphNutsMapComponent} from './components/maps/nuts-map.component';
-import {GraphSupplierNutsMapComponent} from './components/maps/nuts-map-supplier.component';
-import {GraphBuyerNutsMapComponent} from './components/maps/nuts-map-buyer.component';
+import {GraphProcedureTypesComponent} from './components/graphs/procedure-types.component';
+import {GraphScoreSectorsComponent} from './components/graphs/score-sectors.component';
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
-import {GraphVolumeNutsMapComponent} from './components/maps/nuts-map-volume.component';
-import {GraphProcedureTypesComponent} from './components/graphs/procedure-types.component';
-import {GraphIndicatorScoreHistogramComponent} from './components/graphs/score-histogram.component';
-import {GraphScoreSectorsComponent} from './components/graphs/score-sectors.component';
 import {HeaderComponent} from './components/header.component';
-import {HomeMapComponent} from './components/maps/nuts-map-home.component';
+import {I18NComponent} from './components/i18n.component';
+import {MapBuyersComponent} from './components/maps/nuts-map-buyer.component';
+import {MapComponent} from './components/maps/nuts-map.component';
+import {MapHomeComponent} from './components/maps/nuts-map-home.component';
+import {MapPortalComponent, SVGCountryGroupDirective} from './components/maps/map-portal.component';
+import {MapRegionComponent} from './components/maps/nuts-map-region.component';
+import {MapSuppliersComponent} from './components/maps/nuts-map-supplier.component';
+import {MapVolumeComponent} from './components/maps/nuts-map-volume.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
 import {PaginationComponent} from './components/tables/pagination.component';
-import {PortalMapComponent, SVGCountryGroupDirective} from './components/maps/map-portal.component';
 import {SearchBoxComponent} from './components/inputs/searchbox.component';
 import {SelectColumnsButtonComponent} from './components/selects/select-columns-button.component';
 import {SelectColumnsComponent} from './components/selects/select-columns.component';
+import {SelectDateFilterComponent} from './components/selects/select-date-filter-component';
 import {SelectDownloadSeriesComponent} from './components/selects/select-download-series.component';
 import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
 import {SelectFiltersComponent} from './components/selects/select-filters.component';
-import {SelectDateFilterComponent} from './components/selects/select-date-filter-component';
-import {SelectYearRangeFilterComponent} from './components/selects/select-year-range-filter.component';
+import {SelectScoreRangeFilterComponent} from './components/selects/select-score-range-filter.component';
 import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
 import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
-import {SelectScoreRangeFilterComponent} from './components/selects/select-score-range-filter.component';
+import {SelectYearRangeFilterComponent} from './components/selects/select-year-range-filter.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
-import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
-import {I18NComponent} from './components/i18n.component';
 
 const AppConfig = {
 	declarations: [
@@ -125,8 +126,13 @@ const AppConfig = {
 		FooterComponent,
 		HeaderComponent,
 		PaginationComponent,
-		HomeMapComponent,
-		PortalMapComponent,
+		MapComponent,
+		MapHomeComponent,
+		MapPortalComponent,
+		MapRegionComponent,
+		MapSuppliersComponent,
+		MapBuyersComponent,
+		MapVolumeComponent,
 		SearchBoxComponent,
 		SelectColumnsButtonComponent,
 		SelectColumnsComponent,
@@ -154,17 +160,12 @@ const AppConfig = {
 		GraphSumPricesComponent,
 		GraphAuthoritiesComponent,
 		GraphCompaniesComponent,
-		GraphNutsMapComponent,
 		GraphProcedureTypesComponent,
 		GraphHomeHistogramComponent,
 		GraphIndicatorScoreHistogramComponent,
 		GraphScoreSectorsComponent,
-		GraphSupplierNutsMapComponent,
-		GraphBuyerNutsMapComponent,
-		GraphVolumeNutsMapComponent,
 		GraphSectorTreemap,
 		I18NComponent,
-
 		DefinedPipe,
 		EuropamLinkPipe,
 		ExpandCountryPipe,

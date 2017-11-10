@@ -15,7 +15,7 @@ import {I18NService} from '../../services/i18n.service';
 		</div>
 		<graph nutsmap [data]="data" [level]="map_level" [title]="title"></graph>`
 })
-export class GraphSupplierNutsMapComponent {
+export class MapSuppliersComponent {
 	@Input()
 	data: IStatsNuts;
 	title: string;

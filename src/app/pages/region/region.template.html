@@ -1,18 +1,28 @@
 <div class="header-sub-container"></div>
-
 <div class="container-outer authority entity" *ngIf="!region">
 	<div class="container">
 		<div i18n>Loading…</div>
 	</div>
 </div>
-
 <div class="container-outer sector entity" *ngIf="region">
 	<div class="container">
-		<h1 class="container-title">{{region.name}}</h1>
+		<h1 class="container-title">{{region.name}} (NUTS {{region.id}})</h1>
 	</div>
-
+	<div class="container container-padded-top" *ngIf="parent_regions.length>0">
+		<div class="title"><ng-container i18n>Parent Regions</ng-container>:</div>
+		<div *ngFor="let val of parent_regions"><a [routerLink]="'/region/'+val.id">{{val.name}} (NUTS {{val.id}})</a></div>
+	</div>
 	<div [ngClass]="{'is-loading': loading>0}">
 		<div class="container container-margin">
+			<div class="container">
+				<div class="container-left-12" *ngIf="region.level>=3">
+					<graph region-nutsmap [data]="region.id" [level]="region.level"></graph>
+				</div>
+				<div class="container-left-12" *ngIf="region.level<3">
+					<div class="graph-title" i18n>Nr. of Tenders in Subregions</div>
+					<graph nutsmap [data]="viz.child_regions" [level]="region.level+1"></graph>
+				</div>
+			</div>
 			<div class="container">
 				<div class="container-left-6">
 					<graph companies [data]="viz.top_companies"></graph>

@@ -16,7 +16,7 @@ import {Utils} from '../../model/utils';
 		</div>
 		<graph nutsmap [data]="data" [level]="map_level" [title]="title" [formatTooltip]="this.formatTooltip"></graph>`
 })
-export class GraphVolumeNutsMapComponent {
+export class MapVolumeComponent {
 	@Input()
 	data: IStatsNuts;
 	title: string;

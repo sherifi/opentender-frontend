@@ -24,7 +24,7 @@ import {I18NService} from '../../services/i18n.service';
 <graph nutsmap [data]="map_data" [level]="map_level" [formatTooltip]="formatTooltip" [title]="title"></graph>
 `
 })
-export class HomeMapComponent {
+export class MapHomeComponent {
 	public map_level: number = 2;
 	public map_companies: boolean = false;
 	public map_data: IStatsNuts = null;

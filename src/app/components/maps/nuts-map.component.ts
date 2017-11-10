@@ -18,7 +18,7 @@ declare let L;
 			<div leaflet class="nutsmap_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
 			<div *ngIf="data_list.length===0" class="nutsmap_placeholder" style="line-height: 376px">NO DATA</div>
 		</div>
-		<div class="nutsmap_legend" *ngIf="data_list.length>0">
+		<div class="nutsmap_legend" *ngIf="!hideLegend && data_list.length>0">
 			<span>{{valueLow | formatNumber}}</span>
 			<svg width="200" height="16">
 				<defs>
@@ -32,9 +32,9 @@ declare let L;
 			<span>{{valueHigh | formatNumber}}</span>
 		</div>
 		<div class="nutsmap_subtitle">Administrative boundaries: © GISCO - Eurostat © EuroGeographics © UN-FAO © Turkstat</div>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<select-series-download-button *ngIf="!hideLegend && data_list.length>0" [sender]="this"></select-series-download-button>`
 })
-export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
+export class MapComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsNuts;
 	@Input()
@@ -43,6 +43,8 @@ export class GraphNutsMapComponent implements OnChanges, ISeriesProvider {
 	formatTooltip: (properties: any) => string;
 	@Input()
 	title: string;
+	@Input()
+	hideLegend: boolean = false;
 
 	private colorLow: string = '';
 	private valueLow: number;

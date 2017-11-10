@@ -142,12 +142,14 @@ export interface IStatsSector {
 export interface IStatsRegion {
 	region: IRegion;
 	parents?: Array<IRegion>;
+	children?: Array<IRegion>;
 	stats: IStats;
 }
 
 export interface IStats {
 	terms_authority_nuts: IStatsNuts;
 	terms_company_nuts: IStatsNuts;
+	terms_subregions_nuts: IStatsNuts;
 	terms_main_cpv_categories: IStatsCpvs;
 	terms_main_cpv_groups: IStatsCpvs;
 	terms_main_cpv_divisions: IStatsCpvs;

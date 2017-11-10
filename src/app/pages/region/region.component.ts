@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
-import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand} from '../../app.interfaces';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand, IStatsNuts} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -14,6 +14,7 @@ import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStat
 export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;
 	public parent_regions: Array<IRegion> = [];
+	public child_regions: Array<IRegion> = [];
 	private loading: number = 0;
 	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
@@ -23,9 +24,11 @@ export class RegionPage implements OnInit, OnDestroy {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
+		child_regions: IStatsNuts
 	} = {
 		top_companies: null,
 		top_authorities: null,
+		child_regions: null,
 		histogram: {data: null},
 	};
 
@@ -39,6 +42,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
+
 			this.loading++;
 			this.api.getRegionStats({ids: [id]}).subscribe(
 				(result) => {
@@ -63,12 +67,14 @@ export class RegionPage implements OnInit, OnDestroy {
 	display(data: IStatsRegion): void {
 		this.region = null;
 		this.parent_regions = [];
+		this.child_regions = [];
 		if (!data) {
 			return;
 		}
 		this.titleService.set(data.region.name);
 		this.region = data.region;
 		this.parent_regions = data.parents || [];
+		this.child_regions = data.children || [];
 		this.displayStats(data.stats);
 		this.search();
 	}
@@ -81,7 +87,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-
+		viz.child_regions = stats.terms_subregions_nuts;
 		this.viz = viz;
 	}
 
