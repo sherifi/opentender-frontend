@@ -145,7 +145,7 @@ let render = function(req, res, language, country) {
 		console.timeEnd(`GET: ${req.originalUrl}`);
 		if (err !== null || !html) {
 			console.log('err', err, html);
-			return res.status(500).send('There is an error in error land…');
+			return res.status(500).send('<html><body>Software Failure. Guru Meditation.<br/>Please reload the page.' + (Config.client.devMode ? '<br/><br/><pre>' + err.stack + '</pre>' : '') + '</body></html>');
 		}
 		return sendAndAddToCache(req, res, html);
 	});
