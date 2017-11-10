@@ -31,18 +31,18 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	public viz: {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		scores_in_years: IStatsInYears,
+		score_in_years: IStatsInYears,
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
 		terms_indicators_score: IStatsIndicators,
-		scores_in_sectors: IStatsCpvs
+		score_in_sectors: IStatsCpvs
 	} = {
 		top_companies: null,
 		top_authorities: null,
-		scores_in_years: null,
+		score_in_years: null,
 		lots_in_years: null,
 		cpvs_codes: null,
-		scores_in_sectors: null,
+		score_in_sectors: null,
 		terms_indicators_score: null
 	};
 	public filter: {
@@ -103,9 +103,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			top_companies: null,
 			top_authorities: null,
 			lots_in_years: null,
-			scores_in_years: null,
+			score_in_years: null,
 			cpvs_codes: null,
-			scores_in_sectors: null,
+			score_in_sectors: null,
 			terms_indicators_score: null
 		};
 		if (!stats) {
@@ -113,8 +113,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			return;
 		}
 
-		viz.scores_in_sectors = stats.terms_main_cpv_divisions_avg_scores;
-		viz.scores_in_years = stats.histogram_lots_awardDecisionDate_avg_scores[this.searchPrefix];
+		viz.score_in_sectors = stats.terms_main_cpv_divisions_score;
+		viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores[this.searchPrefix] : null;
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		viz.terms_indicators_score = stats.terms_indicators_score;

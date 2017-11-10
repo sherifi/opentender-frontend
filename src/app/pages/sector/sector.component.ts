@@ -7,7 +7,7 @@ import {NotifyService} from '../../services/notify.service';
 import {I18NService} from '../../services/i18n.service';
 import {
 	ISector, IStats, IStatsPcCpvs, IStatsAuthorities, IStatsCompanies, IStatsSector, IStatsPcPricesLotsInYears, IStatsProcedureType,
-	IStatsNuts, ISearchCommandFilter, ISearchCommand
+	IStatsNuts, ISearchCommandFilter, ISearchCommand, IStatsCpvs, IStatsInYears
 } from '../../app.interfaces';
 
 @Component({
@@ -24,18 +24,20 @@ export class SectorPage implements OnInit, OnDestroy {
 	private subscription: any;
 	private viz: {
 		authority_nuts: IStatsNuts,
-		cpvs_codes: { data: IStatsPcCpvs, title?: string },
 		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
 		procedure_types: IStatsProcedureType,
+		score_in_years: IStatsInYears;
+		score_in_sectors: IStatsCpvs;
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 	} = {
 		authority_nuts: {data: null},
-		cpvs_codes: {data: null},
 		histogram: {data: null},
 		procedure_types: null,
 		subsectors: [],
+		score_in_years: null,
+		score_in_sectors: null,
 		top_authorities: null,
 		top_companies: null,
 	};
@@ -52,7 +54,6 @@ export class SectorPage implements OnInit, OnDestroy {
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
 				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
-		this.viz.cpvs_codes.title = i18n.get('Sector');
 		this.viz.histogram.title = i18n.get('Sector');
 	}
 
@@ -158,24 +159,27 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		let viz = this.viz;
-		viz.cpvs_codes.data = null;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.procedure_types = stats.terms_procedure_type;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors = stats.sectors_stats;
 		viz.authority_nuts = stats.terms_authority_nuts;
-
-		if (viz.subsectors) {
-			viz.cpvs_codes.data = {};
-			viz.subsectors.forEach(sub => {
-				viz.cpvs_codes.data[sub.sector.id] = {
-					name: sub.sector.name, value: sub.sector.value, percent: 5, total: 100
-				};
+		viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores['TENDER'] : null;
+		let sub_scores = stats.terms_main_cpv_divisions_scores || stats.terms_main_cpv_groups_scores || stats.terms_main_cpv_categories_scores || stats.terms_main_cpv_full_scores;
+		viz.score_in_sectors = null;
+		if (sub_scores) {
+			viz.score_in_sectors = {};
+			Object.keys(sub_scores).forEach(key => {
+				let part = sub_scores[key];
+				if (part.scores['TENDER'] !== null) {
+					viz.score_in_sectors[key] = {
+						name:  part.name,
+						value: part.scores['TENDER']
+					};
+				}
 			});
 		}
-
-		this.viz = viz;
 	}
 
 	search() {

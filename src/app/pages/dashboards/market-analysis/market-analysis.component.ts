@@ -13,8 +13,8 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	public loading: number = 0;
 	public viz: {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
-		scores_in_years: IStatsInYears;
-		scores_in_sectors: IStatsCpvs;
+		score_in_years: IStatsInYears;
+		score_in_sectors: IStatsCpvs;
 		procedure_types: IStatsProcedureType,
 		volume_regions: IStatsNuts;
 		lots_in_years: IStatsPricesLotsInYears;
@@ -22,8 +22,8 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 	} = {
 		sectors_stats: null,
-		scores_in_sectors: null,
-		scores_in_years: null,
+		score_in_sectors: null,
+		score_in_years: null,
 		procedure_types: null,
 		lots_in_years: null,
 		volume_regions: null,
@@ -95,9 +95,9 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		let viz = this.viz;
 		viz.sectors_stats = null;
 		viz.volume_regions = null;
-		viz.scores_in_years = null;
+		viz.score_in_years = null;
 		viz.lots_in_years = null;
-		viz.scores_in_sectors = null;
+		viz.score_in_sectors = null;
 		viz.top_authorities = null;
 		viz.top_companies = null;
 		if (stats) {
@@ -108,8 +108,8 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 				nuts[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 			});
 			viz.volume_regions = nuts;
-			viz.scores_in_years = stats.histogram_lots_awardDecisionDate_avg_scores['TENDER'];
-			viz.scores_in_sectors = stats.terms_main_cpv_divisions_avg_scores;
+			viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores['TENDER'];
+			viz.score_in_sectors = stats.terms_main_cpv_divisions_score;
 			viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
 			viz.procedure_types = stats.terms_procedure_type;
 			viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};

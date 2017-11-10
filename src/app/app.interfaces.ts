@@ -75,6 +75,10 @@ export interface IStatsCpvs {
 	[id: string]: { name: string; value: number };
 }
 
+export interface IStatsCpvsScores {
+	[id: string]: { name: string; scores: IStatsIndicators };
+}
+
 export interface IStatsProcedureType {
 	[name: string]: number;
 }
@@ -148,7 +152,11 @@ export interface IStats {
 	terms_main_cpv_groups: IStatsCpvs;
 	terms_main_cpv_divisions: IStatsCpvs;
 	terms_main_cpv_full: IStatsCpvs;
-	terms_main_cpv_divisions_avg_scores: IStatsCpvs;
+	terms_main_cpv_divisions_score: IStatsCpvs;
+	terms_main_cpv_divisions_scores: IStatsCpvsScores;
+	terms_main_cpv_groups_scores: IStatsCpvsScores;
+	terms_main_cpv_categories_scores: IStatsCpvsScores;
+	terms_main_cpv_full_scores: IStatsCpvsScores;
 	terms_pc_main_cpv_divisions: IStatsPcCpvs;
 	sums_finalPrice: IStatsPrices;
 	sum_finalPriceEUR: IStatsPriceEUR;
@@ -160,7 +168,7 @@ export interface IStats {
 	terms_indicators: IStatsIndicators;
 	terms_procedure_type: IStatsProcedureType;
 	terms_indicators_score: IStatsIndicators;
-	histogram_lots_awardDecisionDate_avg_scores: IStatsScoresInYears;
+	histogram_lots_awardDecisionDate_scores: IStatsScoresInYears;
 	histogram_lots_awardDecisionDate: IStatsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
 	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
