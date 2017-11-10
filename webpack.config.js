@@ -6,6 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const PurifyPlugin = require('@angular-devkit/build-optimizer').PurifyPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const config = require('./config.js');
 const version = require('./version.js');
@@ -86,6 +87,14 @@ const clientConfig = () => {
 		new webpack.ContextReplacementPlugin(/rxjs[\/\\]testing/, /nope/),
 		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de.js|it/)
 	];
+	if (config.client.devMode) {
+		plugins.push(new WebpackBuildNotifierPlugin({
+			title: "Opentender Client Build",
+			sound: false
+			// logo: path.resolve("./img/favicon.png"),
+			// suppressSuccess: true
+		}));
+	}
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
 		plugins.push(new PurifyPlugin());
