@@ -43,7 +43,7 @@ interface PieArc {
 					[endAngle]="arc.endAngle"
 					[innerRadius]="innerRadius"
 					[outerRadius]="outerRadius"
-					[border]="arc.color"
+					[border]="borderColor"
 					[value]="arc.data.value"
 					[gradient]="gradient"
 					[data]="arc.data"
@@ -92,6 +92,7 @@ export class RadarPieSeriesComponent implements OnChanges {
 	@Input() radar: boolean = true;
 	@Input() showLabels;
 	@Input() gradient: boolean;
+	@Input() borderColor: string = '#969696';
 	@Input() activeEntries: any[];
 	@Input() valueFormatting: (value) => string;
 
