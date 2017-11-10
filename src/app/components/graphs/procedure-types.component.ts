@@ -8,11 +8,8 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[procedure-types]',
 	template: `
-		<div class="title">{{title}}</div>
-		<div class="graph-toolbar-container">
-			<div class="graph-toolbar graph-toolbar-right">
-			</div>
-		</div>
+		<div class="graph-title">{{title}}</div>
+		<div class="graph-toolbar-container"></div>
 		<ngx-charts-bar-horizontal-labeled
 				class="chart-container"
 				[chart]="graph.chart"
@@ -25,7 +22,6 @@ import {I18NService} from '../../services/i18n.service';
 export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsProcedureType;
-	@Input()
 	title: string = '';
 
 	procedure_types_absolute: IChartBar = {

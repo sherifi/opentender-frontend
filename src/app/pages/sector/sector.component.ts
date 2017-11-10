@@ -26,7 +26,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		authority_nuts: IStatsNuts,
 		cpvs_codes: { data: IStatsPcCpvs, title?: string },
 		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
-		procedure_types: { data: IStatsProcedureType, title?: string },
+		procedure_types: IStatsProcedureType,
 		subsectors: Array<{ sector: ISector; stats: IStats }>,
 		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
 		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
@@ -34,7 +34,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		authority_nuts: {data: null},
 		cpvs_codes: {data: null},
 		histogram: {data: null},
-		procedure_types: {data: null},
+		procedure_types: null,
 		subsectors: [],
 		top_authorities: null,
 		top_companies: null,
@@ -53,8 +53,7 @@ export class SectorPage implements OnInit, OnDestroy {
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
 				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
 		this.viz.cpvs_codes.title = i18n.get('Sector');
-		this.viz.histogram.title = i18n.get('Subsectors');
-		this.viz.procedure_types.title = i18n.get('Procedure Type');
+		this.viz.histogram.title = i18n.get('Sector');
 	}
 
 	ngOnInit(): void {
@@ -140,7 +139,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.search();
 	}
 
-	displayStats(stats: IStats): void {
+	private displayStats(stats: IStats): void {
 		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
 			let startYear = 0;
 			let endYear = 0;
@@ -161,7 +160,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		let viz = this.viz;
 		viz.cpvs_codes.data = null;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
-		viz.procedure_types.data = stats.terms_procedure_type;
+		viz.procedure_types = stats.terms_procedure_type;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors = stats.sectors_stats;

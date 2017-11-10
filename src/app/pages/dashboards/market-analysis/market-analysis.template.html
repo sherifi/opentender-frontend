@@ -1,40 +1,54 @@
 <div class="container-outer dashboards">
-
 	<div class="container">
 		<h1 class="container-title">Market Analysis</h1>
 	</div>
-
 	<div class="container container-margin">
 		<div *ngIf="filter.time">
-			<slider
-					[min]="filter.time.startYear"
-					[max]="filter.time.endYear"
-					[startValue]="filter.time.startYear"
-					[endValue]="filter.time.endYear"
-					stepValue="1"
-					defaultWidth="934"
-					(onSliderChange)="onSliderChange($event)"></slider>
+			<slider [min]="filter.time.startYear" [max]="filter.time.endYear" [startValue]="filter.time.startYear" [endValue]="filter.time.endYear"
+					stepValue="1" defaultWidth="934" (onSliderChange)="onSliderChange($event)"></slider>
 		</div>
 	</div>
-
 	<div [ngClass]="{'is-loading': loading>0}">
 		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-12">
 					<graph sector-treemap [data]="viz.sectors_stats"></graph>
 				</div>
+			</div>
+			<div class="container">
 				<div class="container-left-6">
 					<graph score-histogram [data]="viz.scores_in_years" [title]="'Composite Indicator'"></graph>
 				</div>
 				<div class="container-left-6">
 					<graph score-sectors [data]="viz.scores_in_sectors" [title]="'Composite Indicator'"></graph>
 				</div>
+			</div>
+			<div class="container">
+				<div class="container-left-6">
+					<graph histogram [data]="viz.lots_in_years"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph procedure-types [data]="viz.procedure_types"></graph>
+				</div>
+			</div>
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph authorities [data]="viz.top_authorities"></graph>
+				</div>
+			</div>
+			<div class="container">
 				<div class="container-left-12">
 					<graph volume-nutsmap [data]="viz.volume_regions"></graph>
 				</div>
 			</div>
 		</div>
 		<br>
+		<div>
+			<h2 class="table-title"><ng-container i18n>Sectors</ng-container>: {{sectors_stats.length}}</h2>
+		</div>
 		<table class="tables">
 			<tr>
 				<th i18n>Sector Profile</th>
@@ -51,6 +65,5 @@
 				<td>€ {{sectorInfo.stats.sum_finalPriceEUR.value | formatCurrencyValue}}</td>
 			</tr>
 		</table>
-
 	</div>
 </div>

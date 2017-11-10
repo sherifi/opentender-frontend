@@ -26,27 +26,20 @@
 	</div>
 
 	<div [ngClass]="{'is-loading': loading>0}">
-
-		<div class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
-			<div class="container">
+		<div class="container container-margin">
+			<div class="container" *ngIf="viz.subsectors && viz.subsectors.length>0">
 				<div class="container-left-12">
 					<graph sector-treemap [data]="viz.subsectors"></graph>
 				</div>
 			</div>
-		</div>
-		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph indicator-histogram [data]="viz.histogram.data" [title]="viz.histogram.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<div *ngIf="viz.cpvs_codes.data">
-						<graph sectors [data]="viz.cpvs_codes.data" [title]="viz.cpvs_codes.title"></graph>
-					</div>
+					<graph procedure-types [data]="viz.procedure_types"></graph>
 				</div>
 			</div>
-		</div>
-		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
 					<graph companies [data]="viz.top_companies"></graph>
@@ -55,13 +48,8 @@
 					<graph authorities [data]="viz.top_authorities"></graph>
 				</div>
 			</div>
-		</div>
-		<div class="container container-margin">
 			<div class="container">
-				<div class="container-left-6">
-					<graph procedure-types [data]="viz.procedure_types.data"></graph>
-				</div>
-				<div class="container-left-6">
+				<div class="container-left-12">
 					<graph buyer-nutsmap [data]="viz.authority_nuts"></graph>
 				</div>
 			</div>

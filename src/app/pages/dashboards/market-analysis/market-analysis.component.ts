@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {NotifyService} from '../../../services/notify.service';
-import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs} from '../../../app.interfaces';
+import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs, IStatsPricesLotsInYears, IStatsProcedureType, IStatsAuthorities, IStatsCompanies} from '../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -15,12 +15,20 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 		scores_in_years: IStatsInYears;
 		scores_in_sectors: IStatsCpvs;
+		procedure_types: IStatsProcedureType,
 		volume_regions: IStatsNuts;
+		lots_in_years: IStatsPricesLotsInYears;
+		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
+		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
 	} = {
 		sectors_stats: null,
 		scores_in_sectors: null,
 		scores_in_years: null,
-		volume_regions: null
+		procedure_types: null,
+		lots_in_years: null,
+		volume_regions: null,
+		top_authorities: null,
+		top_companies: null,
 	};
 	public filter: {
 		time?: {
@@ -51,7 +59,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		this.loading++;
 		this.api.getMarketAnalysisStats({filters: filters}).subscribe(
 			(result) => {
-				this.display(result.data);
+				this.displayStats(result.data);
 			},
 			(error) => {
 				this.notify.error(error);
@@ -82,27 +90,35 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		return filters;
 	}
 
-	display(data: IStats): void {
+	private displayStats(stats: IStats): void {
 		this.sectors_stats = [];
-		this.viz.sectors_stats = null;
-		this.viz.volume_regions = null;
-		this.viz.scores_in_years = null;
-		this.viz.scores_in_sectors = null;
-		if (data) {
-			this.viz.sectors_stats = data.sectors_stats;
-			this.sectors_stats = data.sectors_stats;
+		let viz = this.viz;
+		viz.sectors_stats = null;
+		viz.volume_regions = null;
+		viz.scores_in_years = null;
+		viz.lots_in_years = null;
+		viz.scores_in_sectors = null;
+		viz.top_authorities = null;
+		viz.top_companies = null;
+		if (stats) {
+			viz.sectors_stats = stats.sectors_stats;
+			this.sectors_stats = stats.sectors_stats;
 			let nuts = {};
-			data.region_stats.forEach(region => {
+			stats.region_stats.forEach(region => {
 				nuts[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 			});
-			this.viz.volume_regions = nuts;
-			this.viz.scores_in_years = data.histogram_lots_awardDecisionDate_avg_scores['TENDER'];
-			this.viz.scores_in_sectors = data.terms_main_cpv_divisions_avg_scores;
+			viz.volume_regions = nuts;
+			viz.scores_in_years = stats.histogram_lots_awardDecisionDate_avg_scores['TENDER'];
+			viz.scores_in_sectors = stats.terms_main_cpv_divisions_avg_scores;
+			viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
+			viz.procedure_types = stats.terms_procedure_type;
+			viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+			viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		}
-		if (!this.filter.time && data.histogram_lots_awardDecisionDate) {
+		if (!this.filter.time && stats.histogram_lots_awardDecisionDate) {
 			let startYear = 0;
 			let endYear = 0;
-			Object.keys(data.histogram_lots_awardDecisionDate).forEach((key) => {
+			Object.keys(stats.histogram_lots_awardDecisionDate).forEach((key) => {
 				let year = parseInt(key, 10);
 				startYear = startYear == 0 ? year : Math.min(year, startYear);
 				endYear = endYear == 0 ? year : Math.max(year, endYear);

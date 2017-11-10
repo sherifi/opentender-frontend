@@ -73,7 +73,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		this.search();
 	}
 
-	displayStats(stats: IStats): void {
+	private displayStats(stats: IStats): void {
 		if (!stats) {
 			return;
 		}

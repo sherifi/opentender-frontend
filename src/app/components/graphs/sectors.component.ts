@@ -9,7 +9,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[sectors]',
 	template: `
-		<div class="title">{{title}}</div>
+		<div class="graph-title">{{title}}</div>
 		<div class="graph-toolbar-container"></div>
 		<ngx-charts-bar-horizontal-labeled
 				class="chart-container"

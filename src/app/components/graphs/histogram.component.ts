@@ -8,7 +8,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[histogram]',
 	template: `
-		<div class="title" i18n>Contracts (Lots) over Time</div>
+		<div class="graph-title" i18n>Contracts (Lots) over Time</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
 				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>

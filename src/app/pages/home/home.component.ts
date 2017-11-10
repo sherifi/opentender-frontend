@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
 		this.loading++;
 		this.api.getHomeStats().subscribe(
 			(result) => {
-				this.display(result.data);
+				this.displayStats(result.data);
 			},
 			(error) => {
 				this.notify.error(error);
@@ -37,11 +37,11 @@ export class HomePage implements OnInit {
 			});
 	}
 
-	private display(data: IStats) {
-		if (!data) {
+	private displayStats(stats: IStats) {
+		if (!stats) {
 			this.viz = {lots_in_years: null};
 		} else {
-			this.viz.lots_in_years = data.histogram_lots_awardDecisionDate;
+			this.viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
 		}
 	}
 }

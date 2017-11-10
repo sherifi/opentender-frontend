@@ -98,7 +98,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.search();
 	}
 
-	display(stats: IStats): void {
+	private displayStats(stats: IStats): void {
 		let viz = {
 			top_companies: null,
 			top_authorities: null,
@@ -165,7 +165,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.loading++;
 		this.api.getIndicatorStats({filters: filters}).subscribe(
 			(result) => {
-				this.display(result.data);
+				this.displayStats(result.data);
 			},
 			(error) => {
 				this.notify.error(error);
