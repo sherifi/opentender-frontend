@@ -24,7 +24,10 @@ let settings = {
 		data: { // absolute paths to the data folders (see https://github.com/digiwhist/opentender-data)
 			path: '/var/www/opentender/data/shared'
 		},
-		disableCache: false, // html is cached, disable here for debugging purposes
+		cache: {
+        		type: 'disabled', // disabled | internal | memcached
+        		memcached: ['127.0.0.1:11211'] // if type == memcached, server address(es)
+		},
 		backendUrl: 'http://127.0.0.1:3001', // full url of the backend for the server
 		fullUrl: 'https://portal.opentender.eu' // full url of the frontend for the server app (e.g. for absolute OpenGraph Share Image URLs)
 	},

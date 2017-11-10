@@ -8,13 +8,12 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as request from 'request';
-import * as cache from 'memory-cache';
 import * as geoip from 'geoip-ultralight';
 import * as helmet from 'helmet';
 
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from './express-engine/main';
-
+import {initCache} from './cache';
 import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
 import {TRANSLATION_DE} from '../i18n/messages.de';
 import {TRANSLATION_ES} from '../i18n/messages.es';
@@ -33,34 +32,28 @@ import {routes} from '../app/app.routes';
 
 let portals = JSON.parse(fs.readFileSync(path.join(Config.server.data.path, 'portals.json')).toString());
 
-let useCache = !Config.server.disableCache;
+const cache = initCache(Config.server.cache);
 let addToCache = (req, data) => {
-	if (!useCache) {
-		return;
-	}
 	let url = req.originalUrl + '|' + JSON.stringify(req.body);
-	let c = cache.get(url);
-	if (!c) {
-		cache.put(url, {url: url, data: data}, 60 * 60 * 1000);
-	}
+	cache.upsert(url, data, err => {
+		if (err) {
+			console.log(err);
+		}
+	});
 };
 let sendAndAddToCache = (req, res, data) => {
 	addToCache(req, data);
 	return res.send(data);
 };
 let checkCache = (req, res, cb) => {
-	if (!useCache) {
-		return cb();
-	}
 	let url = req.originalUrl + '|' + JSON.stringify(req.body);
-	let c = cache.get(url);
-	if (c) {
-		// console.log('request found in cache', url);
-		res.send(c.data);
-	} else {
-		// console.log('request NOT found in cache', url);
-		cb();
-	}
+	cache.get(url, (err, data) => {
+		if (data) {
+			res.send(data);
+		} else {
+			cb();
+		}
+	});
 };
 
 enableProdMode();

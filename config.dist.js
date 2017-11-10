@@ -7,9 +7,12 @@ let settings = {
 		data: { // absolute paths to the data folders (see https://github.com/digiwhist/opentender-data)
 			path: '/var/www/opentender/data/shared'
 		},
-		disableCache: false, // html is cached, disable here for debugging purposes
 		backendUrl: 'http://127.0.0.1:3001',
-		fullUrl: 'https://portal.opentender.eu'
+		fullUrl: 'https://portal.opentender.eu',
+		cache: {
+			type: 'disabled', // disabled | internal | memcached
+			memcached: ['127.0.0.1:11211'] // if type == memcached, server address(es)
+		}
 	},
 	client: {
 		backendUrl: 'https://portal.opentender.eu', // full url of the backend
