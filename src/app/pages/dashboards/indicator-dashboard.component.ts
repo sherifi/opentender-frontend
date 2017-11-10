@@ -86,6 +86,11 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.displayIndicator();
 	}
 
+	selectIndicatorChange(event) {
+		this.selected = this.subindicators.find(sub => sub.id === event.id);
+		this.displayIndicator();
+	}
+
 	displayIndicator() {
 		if (!this.selected) {
 			this.indicatorTitle = this.i18n.get(this.indicator.plural);

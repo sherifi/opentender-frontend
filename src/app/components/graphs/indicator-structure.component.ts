@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
@@ -23,6 +23,8 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	data: IStatsIndicators;
 	@Input()
 	title: string = '';
+	@Output()
+	onSelect = new EventEmitter();
 
 	indicators: IChartPie = {
 		chart: {
@@ -42,6 +44,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			}
 		},
 		select: (event) => {
+			this.onSelect.emit(event);
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -60,7 +63,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		this.indicators.data = null;
 		if (this.data) {
 			this.indicators.data = Object.keys(this.data).map(key => {
-				return {name: Utils.formatIndicatorName(key), value: this.data[key]};
+				return {name: Utils.formatIndicatorName(key), value: this.data[key], id: key};
 			});
 		}
 	}
