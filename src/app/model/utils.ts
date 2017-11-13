@@ -1,5 +1,5 @@
 import * as moment from 'moment';
-import {Consts} from './consts';
+import {Consts, ISubIndicatorInfoConst} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
 import {IIndicatorInfo, ISubIndicatorInfo} from '../app.interfaces';
 
@@ -56,8 +56,11 @@ export const Utils = {
 		}
 		return null;
 	},
+	getIndicator(value: string) {
+		return Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
+	},
 	formatIndicatorName(value: string): string {
-		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
+		let sub = Utils.getIndicator(value);
 		if (!sub) {
 			return value;
 		}

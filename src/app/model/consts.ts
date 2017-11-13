@@ -6,6 +6,7 @@ export interface ISubIndicatorInfoConst {
 	id: string;
 	name: string;
 	desc: string;
+	order: number;
 	notused?: boolean;
 }
 
