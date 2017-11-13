@@ -56,28 +56,12 @@ export const Utils = {
 		}
 		return null;
 	},
-	formatIndicatorGroupName(value: string): string {
-		let group = Object.keys(Consts.indicators).find(key => {
-			return key === Consts.indicators[key].prefix;
-		});
-		if (Consts.indicators[group]) {
-			return Consts.indicators[group].name;
-		}
-		return value;
-	},
 	formatIndicatorName(value: string): string {
 		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
 		if (!sub) {
 			return value;
 		}
 		return sub.name;
-	},
-	getIndicatorDesc(value: string): string {
-		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
-		if (!sub) {
-			return '';
-		}
-		return sub.desc;
 	},
 	indicatorShortID(key: string): string {
 		return key.split('_').map(part => {
@@ -142,9 +126,6 @@ export const Utils = {
 		value = Math.round(value * 100) / 100;
 		return value.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2}) + '%';
 	},
-	formatPercentTrunc(value): string {
-		return value.toFixed(0) + '%';
-	},
 
 	validateNutsCode(code, level) {
 		if (code.length > 1 && code.length < 6) {
@@ -162,22 +143,35 @@ export const Utils = {
 	formatYear(value): string {
 		return value.toString();
 	},
-	formatValue(n: number) {
+	formatValue(n: number): string {
+
 		if (n === null || n === undefined) {
 			return '';
 		}
 		if (n >= 1e6) {
 			// http://bmanolov.free.fr/numbers_names.php
-			let units =
-				['Million', 'Billion', 'Trillion', 'Quadrillion', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
-					'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion', 'Quattuordecillion', 'Quindecillion',
-					'Sexdecillion', 'Septdecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion'];
-			let real_si = Math.round(Math.log(n) * Math.LOG10E);
-			let base_si = real_si - (real_si % 3);
-			let unit = units[Math.floor(base_si / 3) - 2];
-			let r = n / parseFloat('1e' + base_si);
-			let r_string = r.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1});
-			return r_string + ' ' + unit;
+			const SI_PREFIXES = ['', 'Thousandth', 'Million', 'Billion', 'Trillion', 'Quadrillion', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
+				'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion', 'Quattuordecillion', 'Quindecillion',
+				'Sexdecillion', 'Septdecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion'];
+
+			// https://stackoverflow.com/a/40724354
+			// what tier? (determines SI prefix)
+			let tier = Math.log10(n) / 3 | 0;
+
+			// if zero, we don't need a prefix
+			if (tier === 0) {
+				return n.toLocaleString();
+			}
+
+			// get prefix and determine scale
+			let prefix = SI_PREFIXES[tier];
+			let scale = Math.pow(10, tier * 3);
+
+			// scale the number
+			let scaled = n / scale;
+
+			// format number and add prefix as suffix
+			return scaled.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' ' + prefix;
 		}
 		return n.toLocaleString();
 	},
