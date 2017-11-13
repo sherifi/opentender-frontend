@@ -33,6 +33,19 @@
 					</label>
 				</div>
 			</div>
+			<div class="select" *ngSwitchCase="ISearchFilterDefType.bool">
+				<div *ngFor="let state of [1,0]">
+					<label class="checkbox">
+						<input type="radio" [value]="state" [(ngModel)]="filter.value" (ngModelChange)="refresh()">
+						<div class="checkbox-columns">
+							<span class="checkbox-column">
+								<span class="value" title="{{getValueTitle({key:state},filter)}}">{{getValueTitle({key:state},filter)}}</span>
+								<!--<span class="count">{{filter.buckets&&filter.buckets[state]?filter.buckets[state].doc_count:0 | formatNumber}}</span>-->
+							</span>
+						</div>
+					</label>
+				</div>
+			</div>
 			<div class="range" *ngSwitchCase="ISearchFilterDefType.years">
 				<select-year-range-filter [filter]="filter" [buckets]="filter.buckets" (onRangeChange)="refresh()"></select-year-range-filter>
 			</div>

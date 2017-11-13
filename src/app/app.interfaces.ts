@@ -363,6 +363,7 @@ export enum ISearchFilterDefType {
 	term = 5,
 	date = 6,
 	years = 7,
+	bool = 8,
 	none = 0
 }
 

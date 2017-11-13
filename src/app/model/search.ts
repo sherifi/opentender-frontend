@@ -40,9 +40,12 @@ export class Search {
 
 	public fillAggregationResults(aggregations): void {
 		this.filters.forEach(filter => {
-			let missing = Object.keys(filter.enabled).filter(key => {
-				return filter.enabled[key];
-			});
+			let missing = [];
+			if (filter.def.type !== ISearchFilterDefType.bool) {
+				missing = Object.keys(filter.enabled).filter(key => {
+					return filter.enabled[key];
+				});
+			}
 			filter.buckets = [];
 			if (aggregations) {
 				let agg = aggregations[filter.aggregation_id];
@@ -76,30 +79,43 @@ export class Search {
 		});
 		this.filters.forEach((f) => {
 			if (f.active) {
-				let list = [];
-				if (f.enabled) {
-					let others = [];
-					Object.keys(f.enabled).forEach((key) => {
-						if (f.enabled[key]) {
-							if (f.def.aggregation_type && (f.def.aggregation_type !== f.def.type)) {
-								others.push(key);
-							} else {
-								list.push(key);
-							}
-						}
-					});
-					if (others.length > 0) {
-						cmd.filters.push({field: f.def.aggregation_field || f.def.field, value: others, type: ISearchFilterDefType[f.def.aggregation_type]});
+				if (f.def.type === ISearchFilterDefType.bool) {
+					let b;
+					if (f.value.toString() === '1') {
+						b = true;
+					} else if (f.value.toString() === '0') {
+						b = false;
+					} else {
+						return;
 					}
-				}
-				if (f.value && f.value.length > 0) {
-					list.push(f.value);
-				}
-				if (f.values) {
-					list = list.concat(f.values);
-				}
-				if (list.length > 0) {
-					cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type], mode: f.mode, subrequest: f.def.subrequest});
+					cmd.filters.push({field: f.def.field, value: b, type: ISearchFilterDefType[f.def.type], mode: f.mode, subrequest: f.def.subrequest});
+				} else {
+					let list = [];
+					if (f.enabled) {
+						let others = [];
+						Object.keys(f.enabled).forEach((key) => {
+
+							if (f.enabled[key]) {
+								if (f.def.aggregation_type && (f.def.aggregation_type !== f.def.type)) {
+									others.push(key);
+								} else {
+									list.push(key);
+								}
+							}
+						});
+						if (others.length > 0) {
+							cmd.filters.push({field: f.def.aggregation_field || f.def.field, value: others, type: ISearchFilterDefType[f.def.aggregation_type]});
+						}
+					}
+					if (f.value && f.value.length > 0) {
+						list.push(f.value);
+					}
+					if (f.values) {
+						list = list.concat(f.values);
+					}
+					if (list.length > 0) {
+						cmd.filters.push({field: f.def.field, value: list, type: ISearchFilterDefType[f.def.type], mode: f.mode, subrequest: f.def.subrequest});
+					}
 				}
 			}
 		});

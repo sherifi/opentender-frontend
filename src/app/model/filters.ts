@@ -119,7 +119,24 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined
 	},
-
+	{
+		id: 'fundings.isEuFund',
+		name: 'EU-Fund',
+		group: 'Funding',
+		field: 'fundings.isEuFund',
+		type: ISearchFilterDefType.bool,
+		valueFormatter: (val) => {
+			return val ? 'EU funded' : 'Not EU funded';
+		}
+	},
+	{
+		id: 'funding.programme',
+		name: 'Programme',
+		group: 'Funding',
+		field: 'fundings.programme',
+		type: ISearchFilterDefType.text,
+		size: 30
+	},
 	{
 		id: 'cpvs.code.divisions',
 		name: 'CPV (Divisions)',

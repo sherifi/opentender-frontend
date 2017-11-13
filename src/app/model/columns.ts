@@ -462,7 +462,42 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			});
 		}
 	},
-
+	{
+		name: 'EU-Fund',
+		id: 'fundings.isEuFund',
+		group: 'Funding',
+		sortBy: {
+			id: 'fundings.isEuFund',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.fundings) {
+				return [];
+			}
+			let list = tender.fundings.filter(funding => funding.isEuFund);
+			return list.map(funding => {
+				return {list: list.length > 1, content: 'EU-Fund', hint: funding.programme};
+			});
+		}
+	},
+	{
+		name: 'Programme',
+		id: 'fundings.programme',
+		group: 'Funding',
+		sortBy: {
+			id: 'fundings.programme',
+			ascend: true
+		},
+		format: tender => {
+			if (!tender.fundings) {
+				return [];
+			}
+			let list = tender.fundings.filter(funding => funding.programme);
+			return list.map(funding => {
+				return {list: list.length > 1, prefix: funding.isEuFund ? 'EU-Fund' : null, content: funding.programme};
+			});
+		}
+	},
 	{
 		name: 'Title',
 		id: 'title',
