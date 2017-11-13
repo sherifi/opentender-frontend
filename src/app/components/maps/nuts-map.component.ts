@@ -51,8 +51,10 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 	private colorHigh: string = '';
 	private valueHigh: number;
 
-	private loading: number = 0;
+	public loading: number = 0;
+	public resetZoom: boolean = true;
 	private map: any;
+	private resetControl: any;
 	private geolayer: L.GeoJSON;
 	public leaflet_options = {};
 	public data_list = [];
@@ -66,6 +68,49 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 			return;
 		}
 
+		if (!L.Control.Reset) {
+			L.Control.Reset = L.Control.extend({
+				options: {
+					position: 'topright',
+					title: 'Reset Map',
+					onClick: null
+				},
+
+				onAdd: function(map) {
+					let container = L.DomUtil.create('div', 'leaflet-control-reset leaflet-bar leaflet-control');
+
+					this.link = L.DomUtil.create('a', 'leaflet-control-reset-button leaflet-bar-part', container);
+					L.DomUtil.create('i', 'icon-target', this.link);
+					this.link.href = '#';
+					this.link.title = this.options.title;
+					this._map = map;
+					L.DomEvent.on(this.link, 'click', this._click, this);
+					return container;
+				},
+				_click: function(e) {
+					L.DomEvent.stopPropagation(e);
+					L.DomEvent.preventDefault(e);
+					if (this.options.onClick) {
+						this.options.onClick();
+					}
+				}
+			});
+
+			L.Map.mergeOptions({
+				resetControl: false
+			});
+
+			L.Map.addInitHook(function() {
+				if (this.options.resetControl) {
+					this.resetControl = new L.Control.Reset(this.options.resetControl);
+					this.addControl(this.resetControl);
+				}
+			});
+
+			L.control.reset = function(options) {
+				return new L.Control.Reset(options);
+			};
+		}
 		// source: https://github.com/Leaflet/Leaflet.fullscreen
 		// included here since webpack treeshaking is removing the import as unused
 		if (!L.Control.Fullscreen) {
@@ -223,30 +268,29 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 			};
 		}
 
-		this.geolayer =
-			L.geoJSON(null, {
-				onEachFeature: ((feature, layer) => {
-					let tooltip;
-					if (this.formatTooltip) {
-						tooltip = this.formatTooltip(feature.properties);
-					} else {
-						tooltip = feature.properties['name'] + ': ' + feature.properties['value'];
-					}
-					let popup = layer.bindPopup(tooltip, {closeButton: false, autoPan: false, className: 'nutsmap_popup'});
-					layer.on('mouseover', (e) => {
-						popup.openPopup();
-					});
-					layer.on('mouseout', (e) => {
-						popup.closePopup();
-					});
-					layer.on('click', (e) => {
-						this.router.navigate(['/region/' + feature.properties['id']]);
-					});
-				}),
-				style: (feature) => {
-					return {weight: 1, color: '#a4a4a4', fillColor: feature.properties['color'], opacity: 0.9, fillOpacity: 0.55};
+		this.geolayer = L.geoJSON(null, {
+			onEachFeature: ((feature, layer) => {
+				let tooltip;
+				if (this.formatTooltip) {
+					tooltip = this.formatTooltip(feature.properties);
+				} else {
+					tooltip = feature.properties['name'] + ': ' + feature.properties['value'];
 				}
-			});
+				let popup = layer.bindPopup(tooltip, {closeButton: false, autoPan: false, className: 'nutsmap_popup'});
+				layer.on('mouseover', (e) => {
+					popup.openPopup();
+				});
+				layer.on('mouseout', (e) => {
+					popup.closePopup();
+				});
+				layer.on('click', (e) => {
+					this.router.navigate(['/region/' + feature.properties['id']]);
+				});
+			}),
+			style: (feature) => {
+				return {weight: 1, color: '#a4a4a4', fillColor: feature.properties['color'], opacity: 0.9, fillOpacity: 0.55};
+			}
+		});
 		this.leaflet_options = {
 			layers: [
 				L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'}),
@@ -256,6 +300,7 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 			minZoom: 2,
 			maxZoom: 10,
 			fullscreenControl: true,
+			resetControl: false,
 			scrollWheelZoom: false,
 			center: L.latLng({lat: 52.520645, lng: 13.409779})
 		};
@@ -307,7 +352,25 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 		this.geolayer.clearLayers();
 		if (geo.features.length > 0) {
 			this.geolayer.addData(geo);
-			this.map.fitBounds(this.geolayer.getBounds());
+			if (this.resetZoom) {
+				this.map.fitBounds(this.geolayer.getBounds());
+			}
+		}
+	}
+
+	resetView() {
+		this.resetZoom = true;
+		this.map.fitBounds(this.geolayer.getBounds());
+	}
+
+	initResetViewButton() {
+		if (!this.resetControl) {
+			this.resetControl = new L.Control.Reset({
+				position: 'topright',
+				title: 'Reset Map',
+				onClick: this.resetView.bind(this)
+			});
+			this.map.addControl(this.resetControl);
 		}
 	}
 
@@ -329,6 +392,11 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 		this.map = map;
 		map.once('focus', () => {
 			map.scrollWheelZoom.enable();
+			this.resetZoom = false;
+			this.initResetViewButton();
+		});
+		map.on('mousedown', () => {
+			this.resetZoom = false;
 		});
 	}
 
