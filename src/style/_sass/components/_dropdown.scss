@@ -7,7 +7,7 @@
 	$large-screen: em(860) !default;
 	$base-font-color: $dark-gray !default;
 	$dropdown-color: $base-font-color;
-	$dropdown-description-color: lighten($dropdown-color, 25%);
+	$dropdown-description-color: lighten($dropdown-color, 10%);
 	$dropdown-border: 1px solid $secondary-button-border-color;
 	$dropdown-background: $base-background-color;
 	$dropdown-background-hover: darken($dropdown-background, 1%);
