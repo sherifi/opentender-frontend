@@ -159,7 +159,7 @@ const clientConfig = () => {
 		plugins: plugins,
 		externals: (context, request, cb) => {
 			if (request.indexOf('.json') >= 0 && request.charAt(0) === '.') {
-				console.log(context, request);
+				// console.log(context, request);
 				return fs.readFile(context + request.slice(1), (err, result) => {
 					result = JSON.parse(result.toString());
 					return cb(null, 'var ' + JSON.stringify(result));
