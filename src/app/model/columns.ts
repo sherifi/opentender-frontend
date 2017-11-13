@@ -476,7 +476,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			let list = tender.fundings.filter(funding => funding.isEuFund);
 			return list.map(funding => {
-				return {list: list.length > 1, content: 'EU-Fund', hint: funding.programme};
+				return {list: list.length > 1, prefix: 'EU-Fund', content: funding.programme || '[Name not available]'};
 			});
 		}
 	},
