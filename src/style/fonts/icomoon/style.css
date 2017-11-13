@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?8l8xw6');
-  src:  url('fonts/icomoon.eot?8l8xw6#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?8l8xw6') format('truetype'),
-    url('fonts/icomoon.woff?8l8xw6') format('woff'),
-    url('fonts/icomoon.svg?8l8xw6#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?kvjgh2');
+  src:  url('fonts/icomoon.eot?kvjgh2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kvjgh2') format('truetype'),
+    url('fonts/icomoon.woff?kvjgh2') format('woff'),
+    url('fonts/icomoon.svg?kvjgh2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,50 +24,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-thin-up:before {
-  content: "\e900";
-}
-.icon-chevron-thin-right:before {
-  content: "\e902";
-}
-.icon-chevron-thin-left:before {
-  content: "\e903";
-}
-.icon-chevron-thin-down:before {
-  content: "\e904";
-}
-.icon-chevron-small-up:before {
-  content: "\e906";
-}
-.icon-chevron-small-right:before {
-  content: "\e90a";
-}
-.icon-chevron-small-left:before {
-  content: "\e90c";
-}
-.icon-chevron-small-down:before {
-  content: "\e90e";
-}
-.icon-chevron-right:before {
-  content: "\e910";
-}
-.icon-chevron-down:before {
-  content: "\e912";
-}
-.icon-chevron-up:before {
-  content: "\e914";
-}
-.icon-chevron-left:before {
-  content: "\e916";
-}
-.icon-minus-circle:before {
-  content: "\e92f";
-}
-.icon-plus-circle:before {
-  content: "\e930";
-}
-.icon-circle:before {
-  content: "\e929";
+.icon-target:before {
+  content: "\e935";
 }
 .icon-office:before {
   content: "\e922";
@@ -182,4 +140,49 @@
 }
 .icon-twitter:before {
   content: "\e92c";
+}
+.icon-chevron-thin-up:before {
+  content: "\e900";
+}
+.icon-chevron-thin-right:before {
+  content: "\e902";
+}
+.icon-chevron-thin-left:before {
+  content: "\e903";
+}
+.icon-chevron-thin-down:before {
+  content: "\e904";
+}
+.icon-chevron-small-up:before {
+  content: "\e906";
+}
+.icon-chevron-small-right:before {
+  content: "\e90a";
+}
+.icon-chevron-small-left:before {
+  content: "\e90c";
+}
+.icon-chevron-small-down:before {
+  content: "\e90e";
+}
+.icon-chevron-right:before {
+  content: "\e910";
+}
+.icon-chevron-down:before {
+  content: "\e912";
+}
+.icon-chevron-up:before {
+  content: "\e914";
+}
+.icon-chevron-left:before {
+  content: "\e916";
+}
+.icon-minus-circle:before {
+  content: "\e92f";
+}
+.icon-plus-circle:before {
+  content: "\e930";
+}
+.icon-circle:before {
+  content: "\e929";
 }
