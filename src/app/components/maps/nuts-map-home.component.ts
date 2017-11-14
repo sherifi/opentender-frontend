@@ -15,7 +15,7 @@ import {I18NService} from '../../services/i18n.service';
 			<button class="tool-button" [ngClass]="{down:map_companies}" (click)="toggle()" i18n>Suppliers</button>
 		</div>
 		<div class="graph-toolbar graph-toolbar-right">
-			<button class="tool-button" [ngClass]="{down:map_level==0}" (click)="setLevel(0)" i18n>NUTS 0</button>
+			<button class="tool-button" [ngClass]="{down:map_level==0}" (click)="setLevel(0)" i18n>Countries</button>
 			<button class="tool-button" [ngClass]="{down:map_level==1}" (click)="setLevel(1)" i18n>NUTS 1</button>
 			<button class="tool-button" [ngClass]="{down:map_level==2}" (click)="setLevel(2)" i18n>NUTS 2</button>
 			<button class="tool-button" [ngClass]="{down:map_level==3}" (click)="setLevel(3)" i18n>NUTS 3</button>
