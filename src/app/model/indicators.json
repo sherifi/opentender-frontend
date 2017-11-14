@@ -20,20 +20,14 @@
         "order": 1
       },
       "ADMINISTRATIVE_COVERED_BY_GPA": {
-        "name": "Covered by GPA",
-        "desc": "",
+        "name": "Use of WTO framework",
+        "desc": "Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.",
         "order": 3
       },
       "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {
         "name": "English as foreign language",
         "desc": "English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.",
         "order": 4
-      },
-      "ADMINISTRATIVE_USE_OF_WTO_FRAMEWORK": {
-        "notused": true,
-        "name": "Use of WTO framework",
-        "desc": "Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.",
-        "order": 0
       },
       "ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD": {
         "notused": true,
