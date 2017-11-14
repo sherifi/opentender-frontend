@@ -21,7 +21,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 
 	private icon: string = '';
 	private searchPrefix: string = '';
-	private searchScore: number = 0.5;
+	private searchScore: [number, number] = [0, 0.5];
 	public title: string = '';
 	public subindicators: ISubIndicatorInfo[] = [];
 	public selected: ISubIndicatorInfo = null;
@@ -119,7 +119,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		}
 
 		viz.score_in_sectors = stats.terms_main_cpv_divisions_score;
-		viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores[this.searchPrefix] : null;
+		viz.score_in_years = (stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores[this.searchPrefix] : {}) || {};
 		viz.lots_in_years = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
 		viz.cpvs_codes = stats.terms_pc_main_cpv_divisions;
 		viz.terms_indicators_score = stats.terms_indicators_score;
@@ -146,7 +146,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	onScoreSliderChange(event) {
-		this.searchScore = event.endValue / 10;
+		this.searchScore = [event.startValue / 10, event.endValue / 10];
 		this.visualize();
 		this.search();
 	}
@@ -189,9 +189,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 				value: [this.searchPrefix],
 				and: [{
 					field: 'scores.value',
-					type: 'value',
-					mode: '>=',
-					value: [this.searchScore]
+					type: 'range',
+					value: this.searchScore
 				}]
 			};
 		} else {
@@ -201,14 +200,15 @@ export class DashboardsIndicatorComponent implements OnChanges {
 				value: [this.searchPrefix],
 				and: [{
 					field: 'indicators.value',
-					type: 'value',
-					mode: '>=',
-					value: [this.searchScore]
+					type: 'range',
+					value: this.searchScore
 				}]
 			};
 		}
 		let filters = [filter];
-		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
+		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0 &&
+			(this.filter.time.selectedStartYear !== this.filter.time.startYear || this.filter.time.selectedEndYear !== this.filter.time.endYear)
+		) {
 			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'years',
