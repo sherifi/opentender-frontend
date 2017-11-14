@@ -9,13 +9,14 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const config = require('./config.js');
-const version = require('./version.js');
-config.client.version = version.version;
+const pck = require('./package.json');
+
+config.client.version = pck.version;
 
 const replacements = {
 	'config.js': () => config,
 	'client.config.js': () => {
-		return {version: version.version, backendUrl: config.server.backendUrl, devMode: config.client.devMode}
+		return {version: pck.version, backendUrl: config.server.backendUrl, devMode: config.client.devMode}
 	}
 };
 
