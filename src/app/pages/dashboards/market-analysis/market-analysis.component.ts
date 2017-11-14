@@ -79,7 +79,9 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 
 	buildFilters() {
 		let filters = [];
-		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
+		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0 &&
+			(this.filter.time.selectedStartYear !== this.filter.time.startYear || this.filter.time.selectedEndYear !== this.filter.time.endYear)
+		) {
 			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'years',

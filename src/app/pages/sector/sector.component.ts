@@ -97,7 +97,9 @@ export class SectorPage implements OnInit, OnDestroy {
 
 	buildFilters() {
 		let filters = [];
-		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0) {
+		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0 &&
+			(this.filter.time.selectedStartYear !== this.filter.time.startYear || this.filter.time.selectedEndYear !== this.filter.time.endYear)
+		) {
 			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'years',
@@ -174,7 +176,7 @@ export class SectorPage implements OnInit, OnDestroy {
 				let part = sub_scores[key];
 				if (part.scores['TENDER'] !== null) {
 					viz.score_in_sectors[key] = {
-						name:  part.name,
+						name: part.name,
 						value: part.scores['TENDER']
 					};
 				}
