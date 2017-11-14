@@ -4,46 +4,46 @@ import {trimLabel, formatLabel} from '../../utils/label.helper';
 @Component({
 	selector: 'ngx-charts-advanced-legend',
 	template: `
-    <div class="advanced-pie-legend"
-      [style.width.px]="width">
-      <div
-        class="total-value"
-        ngx-charts-count-up
-        [countTo]="roundedTotal">
-      </div>
-      <div class="total-label">
-        {{totalLabel}}
-      </div>
-      <div class="legend-items-container">
-        <div class="legend-items">
-          <div
-            *ngFor="let legendItem of legendItems; trackBy:trackBy"
-            tabindex="-1"
-            class="legend-item"
-            (mouseenter)="activate.emit(legendItem.label)"
-            (mouseleave)="deactivate.emit(legendItem.label)"
-            (click)="select.emit({ name: legendItem.label, value: legendItem.value })">
-            <div
-              class="item-color"
-              [style.background]="legendItem.color">
-            </div>
-            <div
-              class="item-value"
-              ngx-charts-count-up
-              [countTo]="legendItem.value">
-            </div>
-            <div class="item-label">{{legendItem.label}}</div>
-            <div
-              class="item-percent"
-              ngx-charts-count-up
-              [countTo]="legendItem.percentage"
-              [countSuffix]="'%'">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
+		<div class="advanced-pie-legend"
+			 [style.width.px]="width">
+			<div
+					class="total-value"
+					ngx-charts-count-up
+					[countTo]="roundedTotal">
+			</div>
+			<div class="total-label">
+				{{totalLabel}}
+			</div>
+			<div class="legend-items-container">
+				<div class="legend-items">
+					<div
+							*ngFor="let legendItem of legendItems; trackBy:trackBy"
+							tabindex="-1"
+							class="legend-item"
+							(mouseenter)="activate.emit(legendItem.label)"
+							(mouseleave)="deactivate.emit(legendItem.label)"
+							(click)="select.emit({ name: legendItem.label, value: legendItem.value })">
+						<div
+								class="item-color"
+								[style.background]="legendItem.color">
+						</div>
+						<div
+								class="item-value"
+								ngx-charts-count-up
+								[countTo]="legendItem.value">
+						</div>
+						<div class="item-label">{{legendItem.label}}</div>
+						<div
+								class="item-percent"
+								ngx-charts-count-up
+								[countTo]="legendItem.percentage"
+								[countSuffix]="'%'">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdvancedLegendComponent implements OnChanges {

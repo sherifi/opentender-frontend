@@ -84,11 +84,12 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 			});
 		}
 		this.table = table;
-	};
+	}
 
 	paginationChange(data): void {
-		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
-		this.search_cmd.size = data.value.pageSize;
+		let pageSize = parseInt(data.value.pageSize, 10);
+		this.search_cmd.from = (data.value.page || 0) * pageSize;
+		this.search_cmd.size = pageSize;
 		this.refresh(true);
 	}
 

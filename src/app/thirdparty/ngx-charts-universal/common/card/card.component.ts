@@ -6,53 +6,53 @@ import {count, decimalChecker} from '../count/count.helper';
 @Component({
 	selector: 'g[ngx-charts-card]',
 	template: `
-    <svg:g
-      [attr.transform]="transform"
-      class="cell"
-      (click)="onClick()">
-      <svg:rect
-        class="card"
-        [style.fill]="color"
-        style="cursor: pointer;"
-        [attr.width]="cardWidth"
-        [attr.height]="cardHeight"
-        rx="3"
-        ry="3"
-      />
-      <title>{{label}}</title>
-      <svg:foreignObject
-        x="5"
-        [attr.y]="height * 0.7"
-        [attr.width]="textWidth"
-        [attr.height]="height * 0.3"
-        style="font-size: 12px;
+		<svg:g
+				[attr.transform]="transform"
+				class="cell"
+				(click)="onClick()">
+			<svg:rect
+					class="card"
+					[style.fill]="color"
+					style="cursor: pointer;"
+					[attr.width]="cardWidth"
+					[attr.height]="cardHeight"
+					rx="3"
+					ry="3"
+			/>
+			<title>{{label}}</title>
+			<svg:foreignObject
+					x="5"
+					[attr.y]="height * 0.7"
+					[attr.width]="textWidth"
+					[attr.height]="height * 0.3"
+					style="font-size: 12px;
                pointer-events: none;
                text-transform: uppercase;
                overflow: hidden;
                text-align: center;
                line-height: 1em;">
-        <xhtml:p
-          [style.color]="getTextColor(color)"
-          style="overflow: hidden;
+				<xhtml:p
+						[style.color]="getTextColor(color)"
+						style="overflow: hidden;
                  white-space: nowrap;
                  text-overflow: ellipsis;
                  width: 100%;">
-          {{trimmedLabel}}
-        </xhtml:p>
-      </svg:foreignObject>
-      <svg:text #textEl
-        [attr.x]="cardWidth / 2"
-        [attr.y]="height * 0.30"
-        dy=".35em"
-        class="value-text"
-        [style.fill]="getTextColor(color)"
-        text-anchor="middle"
-        [style.font-size.pt]="textFontSize"
-        style="pointer-events: none;">
-        {{value}}
-      </svg:text>
-    </svg:g>
-  `,
+					{{trimmedLabel}}
+				</xhtml:p>
+			</svg:foreignObject>
+			<svg:text #textEl
+					  [attr.x]="cardWidth / 2"
+					  [attr.y]="height * 0.30"
+					  dy=".35em"
+					  class="value-text"
+					  [style.fill]="getTextColor(color)"
+					  text-anchor="middle"
+					  [style.font-size.pt]="textFontSize"
+					  style="pointer-events: none;">
+				{{value}}
+			</svg:text>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardComponent implements OnChanges, OnDestroy {
@@ -123,8 +123,8 @@ export class CardComponent implements OnChanges, OnDestroy {
 		if (!this.initialized) {
 			cancelAnimationFrame(this.animationReq);
 
-			const value = this.data.value;
-			const decs = decimalChecker(value);
+			const val = this.data.value;
+			const decs = decimalChecker(val);
 
 			const callback = ({value}) => {
 				this.zone.run(() => {
@@ -133,7 +133,7 @@ export class CardComponent implements OnChanges, OnDestroy {
 				});
 			};
 
-			this.animationReq = count(0, value, decs, 1, callback);
+			this.animationReq = count(0, val, decs, 1, callback);
 			this.initialized = true;
 		}
 	}

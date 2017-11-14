@@ -13,26 +13,27 @@ interface ICell {
 	series: string;
 	source: IChartData;
 }
+
 @Component({
 	selector: 'g[ngx-charts-heat-map-cell-series]',
 	template: `
-    <svg:g 
-      ngx-charts-heat-map-cell 
-      *ngFor="let c of cells; trackBy:trackBy"
-      [x]="c.x"
-      [y]="c.y"
-      [width]="c.width"
-      [height]="c.height"
-      [fill]="c.fill"
-      [data]="c.data"
-      (select)="onClick($event, c)"
-      [gradient]="gradient"
-      ngx-tooltip
-      [tooltipPlacement]="'top'"
-      [tooltipType]="'tooltip'"
-      [tooltipTitle]="getTooltipText(c)"
-    />
-  `,
+		<svg:g
+				ngx-charts-heat-map-cell
+				*ngFor="let c of cells; trackBy:trackBy"
+				[x]="c.x"
+				[y]="c.y"
+				[width]="c.width"
+				[height]="c.height"
+				[fill]="c.fill"
+				[data]="c.data"
+				(select)="onClick($event, c)"
+				[gradient]="gradient"
+				ngx-tooltip
+				[tooltipPlacement]="'top'"
+				[tooltipType]="'tooltip'"
+				[tooltipTitle]="getTooltipText(c)"
+		/>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeatCellSeriesComponent implements OnChanges {

@@ -15,7 +15,7 @@
     "develop": "nodemon dist/server/index.js",
     "server": "node dist/server/index.js",
     "start": "npm run server",
-    "lint": "tslint \"src/**/*.ts\"",
+    "lint": "tslint --project tsconfig.json \"src/**/*.ts\"",
     "schema": "cd bin && node schema2ts.js",
     "langs": "cd bin && node languages2files.js",
     "debug": "node --debug-brk dist/server/index.js",

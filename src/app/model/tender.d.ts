@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 declare namespace Definitions {
 	export interface Address {
 		/**

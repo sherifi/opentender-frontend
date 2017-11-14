@@ -1,6 +1,6 @@
 <div class="row" *ngIf="pagination">
   <div class="col-12">
-    <div class="page-btn page-prev" ng-class="{disabled:pagination.page <= 0}"><a (click)="prev()" i18n>Previous</a></div>
+    <div class="page-btn page-prev" ng-class="{disabled:pagination.page <= 0}"><a (click)="previous()" i18n>Previous</a></div>
     <div class="page-btn page-next" ng-class="{disabled:pagination.pageCount <= pagination.page}"><a (click)="next()" i18n>Next</a></div>
     <label class="page-label" for="entriesonpage" i18n>Entries per Page</label>
     <span class="select">

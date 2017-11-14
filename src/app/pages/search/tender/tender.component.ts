@@ -61,5 +61,5 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 
 	refresh() {
 		this.search_cmd = this.search.getCommand();
-	};
+	}
 }

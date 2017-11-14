@@ -14,9 +14,6 @@
 */
 
 require('reflect-metadata');
-// const compiler = require('@angular/compiler');
-// const tsc = require('@angular/tsc-wrapped');
-// const extractor_1 = require('@angular/compiler-cli/src/extractor');
 const fs = require('fs-extra');
 const async = require('async');
 const path = require('path');
@@ -46,7 +43,6 @@ let removeDest = function () {
 
 let prepareProject = function () {
 	console.log('copy project files to', dest);
-	// fs.copySync(path.join(source, 'node_modules'), path.join(dest, 'node_modules'));
 	fs.copySync(path.join(source, 'src'), path.join(dest, 'src'));
 	fs.copySync(path.join(source, 'tsconfig.json'), path.join(dest, 'tsconfig.json'));
 	fs.copySync(path.join(source, 'tslint.json'), path.join(dest, 'tslint.json'));
@@ -118,7 +114,7 @@ let packageLanguage = function (lang, content, cb) {
 	});
 	xmljson.children[0].children[0].children[0].children = nodes;
 	let s = XMLLite.js2xml(xmljson).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-	let ts = "export const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;";
+	let ts = "/* tslint:disable:max-line-length */\nexport const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;\n";
 	fs.writeFile(filename, ts, cb)
 };
 

@@ -61,7 +61,7 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 	}
 
 	updateScales(): void {
-	};
+	}
 
 	updateViewDim(): void {
 		this.viewDim = calculateViewDimensions({
@@ -77,7 +77,7 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 			showLegend: this.chart.legend && this.chart.legend.show,
 			legendType: this.chart.schemeType
 		});
-	};
+	}
 
 	update(): void {
 		super.update();

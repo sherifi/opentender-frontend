@@ -8,13 +8,13 @@ class MemcachedAdapter {
 		this.memcached = new Memcached(hosts);
 	}
 
-	get(key, cb) {
+	get(key: string, cb): void {
 		this.memcached.get(key, (err, result) => {
 			cb(err, result ? result.data : null);
 		});
 	}
 
-	upsert(key, data, cb) {
+	upsert(key, data, cb): void {
 		this.memcached.get(key, (err, result) => {
 			if (err) {
 				return cb(err);

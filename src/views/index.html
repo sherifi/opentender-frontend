@@ -30,17 +30,21 @@
 	<meta name="og:type" content="website" />
 
 	<base href="{{BASE_HREF}}">
+
+	<link rel=“preload” href=“/assets/style/res/Lato-Regular.woff2” type="font/woff2" as=“font”>
+	<link rel=“preload” href=“/assets/style/res/spacemono-bold-webfont.woff2” type="font/woff2" as=“font”>
+
 	<link rel="stylesheet" type="text/css" href="/assets/style/style.css?{{RES_VERSION}}">
 	<script>document.opentender = {{OPENTENDER}};</script>
 	<script type="text/javascript">
 		if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
 			document.write('<script src="/assets/js/polyfills_ie.js?{{RES_VERSION}}"><\/script>');
 	</script>
-	<script src="/assets/js/polyfills.js?{{RES_VERSION}}"></script>
-	<script src="/assets/js/vendor.js?{{RES_VERSION}}"></script>
 </head>
 <body>
 <app id="app" i18n>Loading Opentender…</app>
+<script src="/assets/js/polyfills.js?{{RES_VERSION}}"></script>
+<script src="/assets/js/vendor.js?{{RES_VERSION}}"></script>
 <script src="/assets/js/app.js?{{RES_VERSION}}"></script>
 <!-- Piwik -->
 <script type="text/javascript">

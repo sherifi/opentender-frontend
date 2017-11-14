@@ -6,7 +6,7 @@
 <div class="graph-footer">
 	<div class="graph-toolbar-container">
 		<div class="graph-toolbar">
-			<button class="tool-button" (click)="this.download('json.gz')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> JSON.GZ</button>
+			<button class="tool-button" (click)="this.download()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> JSON.GZ</button>
 		</div>
 	</div>
 </div>
@@ -16,6 +16,6 @@
 	<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
 	<br/>
 	<br/>
-	<button class="button" (click)="this.download('json.gz')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> <ng-container i18n>Download Large File</ng-container></button>
+	<button class="button" (click)="this.download()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> <ng-container i18n>Download Large File</ng-container></button>
 	<button class="button" (click)="showDownloadDialog=false;" i18n>Cancel</button>
 </app-dialog>

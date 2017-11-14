@@ -87,7 +87,9 @@ export class TooltipDirective implements OnDestroy {
 			if (this.component) {
 				const contentDom = this.component.instance.element.nativeElement;
 				const contains = contentDom.contains(target);
-				if (contains) return;
+				if (contains) {
+					return;
+				}
 			}
 
 			this.hideTooltip(this.tooltipImmediateExit);
@@ -102,7 +104,9 @@ export class TooltipDirective implements OnDestroy {
 	}
 
 	showTooltip(immediate?: boolean): void {
-		if (this.component || this.tooltipDisabled) return;
+		if (this.component || this.tooltipDisabled) {
+			return;
+		}
 
 		const time = immediate ? 0 : this.tooltipShowTimeout;
 
@@ -141,19 +145,29 @@ export class TooltipDirective implements OnDestroy {
 		if (this.tooltipCloseOnClickOutside) {
 			this.documentClickEvent = this.renderer.listen(document, 'click', (event) => {
 				const contains = tooltip.contains(event.target);
-				if (!contains) this.hideTooltip();
+				if (!contains) {
+					this.hideTooltip();
+				}
 			});
 		}
 	}
 
 	hideTooltip(immediate: boolean = false): void {
-		if (!this.component) return;
+		if (!this.component) {
+			return;
+		}
 
 		const destroyFn = () => {
 			// remove events
-			if (this.mouseLeaveContentEvent) this.mouseLeaveContentEvent();
-			if (this.mouseEnterContentEvent) this.mouseEnterContentEvent();
-			if (this.documentClickEvent) this.documentClickEvent();
+			if (this.mouseLeaveContentEvent) {
+				this.mouseLeaveContentEvent();
+			}
+			if (this.mouseEnterContentEvent) {
+				this.mouseEnterContentEvent();
+			}
+			if (this.documentClickEvent) {
+				this.documentClickEvent();
+			}
 
 			// emit events
 			this.hide.emit(true);

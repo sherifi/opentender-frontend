@@ -42,8 +42,12 @@ export class DownloadPage implements OnInit {
 					return (this.current !== download) && (download.count > 0);
 				});
 				data = data.sort((a, b) => {
-					if (a.name < b.name) return -1;
-					if (a.name > b.name) return 1;
+					if (a.name < b.name) {
+						return -1;
+					}
+					if (a.name > b.name) {
+						return 1;
+					}
 					return 0;
 				});
 				this.downloads = data;

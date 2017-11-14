@@ -14,32 +14,32 @@ import {XAxisTicksComponent} from './x-axis-ticks.component';
 @Component({
 	selector: 'g[ngx-charts-x-axis]',
 	template: `
-    <svg:g
-      [attr.class]="xAxisClassName"
-      [attr.transform]="transform">
-      <svg:g ngx-charts-x-axis-ticks
-        [tickFormatting]="tickFormatting"
-        [tickArguments]="tickArguments"
-        [tickStroke]="tickStroke"
-        [scale]="xScale"
-        [orient]="xOrient"
-        [showGridLines]="showGridLines"
-        [gridLineHeight]="dims.height"
-        [width]="dims.width"
-        [defaultHeight]="defaultHeight"
-        [minInterval]="minInterval"
-        (dimensionsChanged)="emitTicksHeight($event)"
-      />
-      <svg:g ngx-charts-axis-label
-        *ngIf="showLabel"
-        [label]="labelText"
-        [offset]="labelOffset"
-        [orient]="'bottom'"
-        [height]="dims.height"
-        [width]="dims.width">
-      </svg:g>
-    </svg:g>
-  `,
+		<svg:g
+				[attr.class]="xAxisClassName"
+				[attr.transform]="transform">
+			<svg:g ngx-charts-x-axis-ticks
+				   [tickFormatting]="tickFormatting"
+				   [tickArguments]="tickArguments"
+				   [tickStroke]="tickStroke"
+				   [scale]="xScale"
+				   [orient]="xOrient"
+				   [showGridLines]="showGridLines"
+				   [gridLineHeight]="dims.height"
+				   [width]="dims.width"
+				   [defaultHeight]="defaultHeight"
+				   [minInterval]="minInterval"
+				   (dimensionsChanged)="emitTicksHeight($event)"
+			/>
+			<svg:g ngx-charts-axis-label
+				   *ngIf="showLabel"
+				   [label]="labelText"
+				   [offset]="labelOffset"
+				   [orient]="'bottom'"
+				   [height]="dims.height"
+				   [width]="dims.width">
+			</svg:g>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class XAxisComponent implements OnChanges {

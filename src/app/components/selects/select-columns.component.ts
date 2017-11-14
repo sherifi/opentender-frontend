@@ -11,7 +11,7 @@ export class SelectColumnsComponent implements OnChanges {
 	columns_all: Array<ITableColumn>;
 	@Input()
 	columns_active: Array<ITableColumn>;
-	groups: Array<{name: string; columns: Array<{active: boolean;column: ITableColumn;}>;}> = [];
+	groups: Array<{ name: string; columns: Array<{ active: boolean; column: ITableColumn; }>; }> = [];
 	@Output()
 	selectChange = new EventEmitter();
 

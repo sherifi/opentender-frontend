@@ -32,12 +32,20 @@ export function sortByTime(data, property, direction = 'asc') {
 		let bDate = moment(b[property]);
 
 		if (direction === 'asc') {
-			if (aDate.isAfter(bDate)) return 1;
-			if (bDate.isAfter(aDate)) return -1;
+			if (aDate.isAfter(bDate)) {
+				return 1;
+			}
+			if (bDate.isAfter(aDate)) {
+				return -1;
+			}
 			return 0;
 		} else {
-			if (aDate.isAfter(bDate)) return -1;
-			if (bDate.isAfter(aDate)) return 1;
+			if (aDate.isAfter(bDate)) {
+				return -1;
+			}
+			if (bDate.isAfter(aDate)) {
+				return 1;
+			}
 			return 0;
 		}
 	});

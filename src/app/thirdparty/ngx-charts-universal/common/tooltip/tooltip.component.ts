@@ -54,7 +54,9 @@ export class TooltipContentComponent implements AfterViewInit {
 		const hostDim = this.host.nativeElement.getBoundingClientRect();
 
 		// if no dims were found, never show
-		if (!hostDim.height && !hostDim.width) return;
+		if (!hostDim.height && !hostDim.width) {
+			return;
+		}
 
 		const elmDim = nativeElm.getBoundingClientRect();
 		this.checkFlip(hostDim, elmDim);

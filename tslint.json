@@ -1,5 +1,6 @@
 {
   "rules": {
+    "no-unsafe-any": false,
     "max-line-length": [true, 400],
     "no-inferrable-types": false,
     "class-name": true,

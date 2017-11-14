@@ -1,5 +1,5 @@
-import { ComponentRef } from '@angular/core';
-import { InjectionService } from './injection.service';
+import {ComponentRef} from '@angular/core';
+import {InjectionService} from './injection.service';
 
 export abstract class InjectionRegistery {
 
@@ -8,7 +8,8 @@ export abstract class InjectionRegistery {
 	protected defaults: any = {};
 	protected components: Map<any, any> = new Map();
 
-	constructor(public injectionService: InjectionService) { }
+	constructor(public injectionService: InjectionService) {
+	}
 
 	getByType(type: any = this.type) {
 		return this.components.get(type);
@@ -30,10 +31,10 @@ export abstract class InjectionRegistery {
 	destroy(instance): void {
 		const compsByType = this.components.get(instance.componentType);
 
-		if(compsByType) {
+		if (compsByType) {
 			const idx = compsByType.indexOf(instance);
 
-			if(idx > -1) {
+			if (idx > -1) {
 				const component = compsByType[idx];
 				component.destroy();
 				compsByType.splice(idx, 1);
@@ -48,25 +49,25 @@ export abstract class InjectionRegistery {
 	destroyByType(type): void {
 		const comps = this.components.get(type);
 
-		if(comps) {
-			for(const comp of comps) {
+		if (comps) {
+			for (const comp of comps) {
 				this.destroy(comp);
 			}
 		}
 	}
 
 	protected assignDefaults(bindings): any {
-		const { inputs, outputs } = this.defaults;
+		const {inputs, outputs} = this.defaults;
 
-		if(!bindings.inputs && !bindings.outputs) {
-			bindings = { inputs: bindings };
+		if (!bindings.inputs && !bindings.outputs) {
+			bindings = {inputs: bindings};
 		}
 
-		if(inputs) {
+		if (inputs) {
 			bindings.inputs = Object.assign(inputs, bindings.inputs);
 		}
 
-		if(outputs) {
+		if (outputs) {
 			bindings.outputs = Object.assign(outputs, bindings.outputs);
 		}
 
@@ -78,7 +79,7 @@ export abstract class InjectionRegistery {
 	}
 
 	protected register(type, component): void {
-		if(!this.components.has(type)) {
+		if (!this.components.has(type)) {
 			this.components.set(type, []);
 		}
 

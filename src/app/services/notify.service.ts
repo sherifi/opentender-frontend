@@ -5,8 +5,8 @@ import {PlatformService} from './platform.service';
 @Injectable()
 export class NotifyService {
 
-	last: number = 0;
-	timeout: number = 10000;
+	private lastNotify: number = 0;
+	private timeout: number = 10000;
 
 	constructor(private toastyService: ToastyService, private platform: PlatformService) {
 
@@ -19,10 +19,10 @@ export class NotifyService {
 		}
 
 		let now = (new Date()).valueOf();
-		if (now - this.last > this.timeout) {
+		if (now - this.lastNotify > this.timeout) {
 			return;
 		}
-		this.last = now;
+		this.lastNotify = now;
 
 		const toastOptions: ToastOptions = {
 			title: 'Error',

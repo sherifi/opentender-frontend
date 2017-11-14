@@ -13,6 +13,7 @@ export class DropdownMenuDirective implements OnInit {
 	/* tslint:disable:noUnusedLocals */
 	@HostBinding('class.dropdown-menu')
 	public addClass: boolean = true;
+
 	/* tslint:enable:noUnusedLocals */
 
 	public constructor(@Host() dropdown: DropdownDirective, el: ElementRef) {

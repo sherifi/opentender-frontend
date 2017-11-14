@@ -53,7 +53,7 @@ export class ComponentLoader<T> {
 
 	public get isShown(): boolean {
 		return !!this._componentRef;
-	};
+	}
 
 	/**
 	 * Placement of a component. Accepts: "top", "bottom", "left", "right"
@@ -191,8 +191,8 @@ export class ComponentLoader<T> {
 		listenOpts.show = listenOpts.show || (() => this.show());
 		listenOpts.hide = listenOpts.hide || (() => this.hide());
 		listenOpts.toggle = listenOpts.toggle || (() => this.isShown
-				? listenOpts.hide()
-				: listenOpts.show());
+			? listenOpts.hide()
+			: listenOpts.show());
 
 		this._unregisterListenersFn = listenToTriggers(
 			this._renderer,

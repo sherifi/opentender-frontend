@@ -14,7 +14,7 @@ export class PaginationComponent implements OnChanges, OnInit {
 	@Output()
 	paginationChange = new EventEmitter();
 
-	pagination = {
+	public pagination = {
 		pageCount: 0,
 		pageSize: 10,
 		page: 0,
@@ -25,12 +25,12 @@ export class PaginationComponent implements OnChanges, OnInit {
 	constructor() {
 	}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		this.pagination.pageSize = this.defaultPageSize || 10;
 		this.pagination.page = this.defaultPage || 0;
 	}
 
-	ngOnChanges(changes: SimpleChanges): void {
+	public ngOnChanges(changes: SimpleChanges): void {
 		if (changes['total']) {
 			this.display(changes['total'].currentValue);
 		} else if (changes['defaultPageSize']) {
@@ -40,35 +40,35 @@ export class PaginationComponent implements OnChanges, OnInit {
 		}
 	}
 
-	next() {
+	public next() {
 		if (this.pagination.page < this.pagination.pageCount - 1) {
 			this.pagination.page += 1;
-			this.refresh();
+			this.triggerChange();
 		}
-	};
+	}
 
-	prev() {
+	public previous() {
 		if (this.pagination.page > 0) {
 			this.pagination.page -= 1;
-			this.refresh();
+			this.triggerChange();
 		}
-	};
+	}
 
-	page(page: number) {
+	public page(page: number) {
 		this.pagination.page = page;
-		this.refresh();
-	};
+		this.triggerChange();
+	}
 
-	refresh() {
+	private triggerChange() {
 		this.paginationChange.emit({value: this.pagination});
 	}
 
-	onPageSizeChange(newValue: number) {
+	public onPageSizeChange() {
 		this.display(this.pagination.total);
-		this.refresh();
+		this.triggerChange();
 	}
 
-	display(total: number): void {
+	private display(total: number): void {
 		this.pagination.total = total;
 		this.pagination.pageCount = Math.ceil(this.pagination.total / this.pagination.pageSize);
 		this.pagination.quick = [];

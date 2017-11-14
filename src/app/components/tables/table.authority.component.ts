@@ -34,13 +34,13 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService) {
 	}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		if (this.columnIds) {
 			this.setColumns();
 		}
 	}
 
-	ngOnChanges(changes: SimpleChanges): void {
+	public ngOnChanges(changes: SimpleChanges): void {
 		if (changes['search_cmd'] && changes['search_cmd'].currentValue) {
 			this.defaultPageSize = this.search_cmd.size || 10;
 			this.defaultPage = Math.round((this.search_cmd.from || 0) / this.defaultPageSize);
@@ -50,7 +50,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 		}
 	}
 
-	setColumns(): void {
+	private setColumns(): void {
 		this.columns = [];
 		this.columnIds.forEach(c => {
 			this.all_columns.forEach(col => {
@@ -62,12 +62,12 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 		this.buildTable();
 	}
 
-	onSelectColumns(event) {
+	public onSelectColumns(event: { value: Array<ITableColumnAuthority> }): void {
 		this.columns = event.value;
 		this.buildTable();
 	}
 
-	buildTable(): void {
+	private buildTable(): void {
 		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
@@ -83,11 +83,12 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 			});
 		}
 		this.table = table;
-	};
+	}
 
-	paginationChange(data): void {
-		this.search_cmd.from = (data.value.page || 0) * parseInt(data.value.pageSize, 10);
-		this.search_cmd.size = data.value.pageSize;
+	paginationChange(data: { value: { page: number, pageSize: string } }): void {
+		let pageSize = parseInt(data.value.pageSize, 10);
+		this.search_cmd.from = (data.value.page || 0) * pageSize;
+		this.search_cmd.size = pageSize;
 		this.refresh(true);
 	}
 

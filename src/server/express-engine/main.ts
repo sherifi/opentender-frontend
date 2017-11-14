@@ -1,12 +1,12 @@
 import * as fs from 'fs';
-import { Request, Response } from 'express';
+import {Request, Response} from 'express';
 
-import { NgModuleFactory, Type, CompilerFactory, Compiler, StaticProvider } from '@angular/core';
-import { ResourceLoader } from '@angular/compiler';
-import { INITIAL_CONFIG, renderModuleFactory, platformDynamicServer } from '@angular/platform-server';
+import {NgModuleFactory, Type, CompilerFactory, Compiler, StaticProvider} from '@angular/core';
+import {ResourceLoader} from '@angular/compiler';
+import {INITIAL_CONFIG, renderModuleFactory, platformDynamicServer} from '@angular/platform-server';
 
-import { FileLoader } from './file-loader';
-import { REQUEST, RESPONSE } from './tokens';
+import {FileLoader} from './file-loader';
+import {REQUEST, RESPONSE} from './tokens';
 
 /**
  * These are the allowed options for the engine
@@ -47,12 +47,12 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 		{
 			providers: [
 				...(setupOptions.languageProviders || []),
-				{ provide: ResourceLoader, useClass: FileLoader, deps: [] }
+				{provide: ResourceLoader, useClass: FileLoader, deps: []}
 			]
 		}
 	]);
 
-	return function (filePath: string, options: RenderOptions, callback: (err?: Error | null, html?: string) => void) {
+	return function(filePath: string, options: RenderOptions, callback: (err?: Error | null, html?: string) => void) {
 
 		options.providers = options.providers || [];
 
@@ -99,9 +99,7 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 /**
  * Get a factory from a bootstrapped module/ module factory
  */
-function getFactory(
-	moduleOrFactory: Type<{}> | NgModuleFactory<{}>, compiler: Compiler
-): Promise<NgModuleFactory<{}>> {
+function getFactory(moduleOrFactory: Type<{}> | NgModuleFactory<{}>, compiler: Compiler): Promise<NgModuleFactory<{}>> {
 	return new Promise<NgModuleFactory<{}>>((resolve, reject) => {
 		// If module has been compiled AoT
 		if (moduleOrFactory instanceof NgModuleFactory) {

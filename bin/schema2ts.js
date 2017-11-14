@@ -15,7 +15,7 @@ const schema = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', config.s
 const schemas = [{definitions: schema.definitions, id: 'opentender', $schema: schema.$schema}];
 const prefix = null;
 dtsgen.default(schemas, prefix).then((result) => {
-	var sl = result.split('\n');
+	let sl = result.split('\n');
 	sl.shift();
 	sl.shift();
 	sl.shift();
@@ -25,6 +25,7 @@ dtsgen.default(schemas, prefix).then((result) => {
 	sl.pop();
 	sl.push('}');
 	sl.push('');
+	sl.unshift('/* tslint:disable:max-line-length */');
 	fs.writeFileSync('../src/app/model/tender.d.ts', sl.join('\n')
 			.replace(/string;\s*\| number/, 'string | number') //fix format bug "string; | number" => "string | number"
 			// .replace(/_id: string;/g, 'id: string;')

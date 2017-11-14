@@ -8,7 +8,7 @@ import {CommonAxisModule} from '../common/axis/common-axis.module';
 import {CommonTimelineModule} from '../common/timeline/common-timeline.module';
 import {CommonCircleModule} from '../common/circle/common-circle.module';
 
-export {AreaChartComponent, AreaChartNormalizedComponent, AreaChartStackedComponent}
+export {AreaChartComponent, AreaChartNormalizedComponent, AreaChartStackedComponent};
 
 const COMPONENTS = [AreaChartComponent, AreaChartNormalizedComponent, AreaChartStackedComponent];
 

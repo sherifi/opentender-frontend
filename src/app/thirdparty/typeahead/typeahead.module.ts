@@ -18,5 +18,5 @@ export class TypeaheadModule {
 		return {
 			ngModule: TypeaheadModule
 		};
-	};
+	}
 }

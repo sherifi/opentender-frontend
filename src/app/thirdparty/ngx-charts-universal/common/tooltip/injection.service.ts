@@ -26,12 +26,14 @@ export class InjectionService {
 	 * @memberOf InjectionService
 	 */
 	getRootViewContainer(): ComponentRef<any> {
-		if (this._container) return this._container;
+		if (this._container) {
+			return this._container;
+		}
 
 		const rootComponents = this.applicationRef.components;
-		if (rootComponents.length) return rootComponents[0];
-		// const rootComponents = this.applicationRef['_rootComponents'];
-		// return this.applicationRef.components[0];
+		if (rootComponents.length) {
+			return rootComponents[0];
+		}
 
 		throw new Error('View Container not found! ngUpgrade needs to manually set this via setRootViewContainer.');
 	}
@@ -58,7 +60,9 @@ export class InjectionService {
 	 */
 	getComponentRootNode(componentRef: any): HTMLElement {
 		// the top most component root node has no `hostView`
-		if (!componentRef.hostView) return componentRef.element.nativeElement;
+		if (!componentRef.hostView) {
+			return componentRef.element.nativeElement;
+		}
 
 		return (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 	}

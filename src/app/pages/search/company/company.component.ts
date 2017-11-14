@@ -60,5 +60,5 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 
 	refresh() {
 		this.search_cmd = this.search.getCommand();
-	};
+	}
 }

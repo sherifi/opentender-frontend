@@ -39,8 +39,13 @@ export class SVGCountryGroupDirective {
 	templateUrl: 'map-portal.template.html'
 })
 export class MapPortalComponent implements AfterViewInit, OnChanges {
-	@Input() portals: Array<IStatsCountry>;
-	@ViewChildren(SVGCountryGroupDirective) items: QueryList<SVGCountryGroupDirective>;
+
+	@Input()
+	portals: Array<IStatsCountry>;
+
+	@ViewChildren(SVGCountryGroupDirective)
+	items: QueryList<SVGCountryGroupDirective>;
+
 	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
 	public current: Country;
 	public loading: number = 0;
@@ -55,7 +60,11 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 		}, 0);
 	}
 
-	load() {
+	public ngOnChanges(changes: SimpleChanges): void {
+		this.apply();
+	}
+
+	private load() {
 		this.loading++;
 		this.api.getPortalMapData().subscribe(
 			(result) => {
@@ -70,15 +79,14 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 		);
 	}
 
-
-	display(svg) {
+	private display(svg) {
 		this.svg = svg;
 		setTimeout(() => {
 			this.apply();
 		}, 0);
-	};
+	}
 
-	apply() {
+	private apply() {
 		if (this.portals && this.items && this.svg) {
 			this.items.forEach((item) => {
 				let portal = this.portals.filter(p => p.id == item.id)[0];
@@ -87,10 +95,6 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 				}
 			});
 		}
-	}
-
-	public ngOnChanges(changes: SimpleChanges): void {
-		this.apply();
 	}
 
 }

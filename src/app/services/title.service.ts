@@ -5,7 +5,7 @@ import {ConfigService} from './config.service';
 
 @Injectable()
 export class TitleService {
-	defaultName = 'Opentender';
+	private defaultName: string = 'Opentender';
 
 	constructor(private activatedRoute: ActivatedRoute, private config: ConfigService, private router: Router, private titleService: Title, private meta: Meta) {
 		let c = config.country;
@@ -13,28 +13,27 @@ export class TitleService {
 			this.defaultName += ' ' + c.name;
 		}
 		router.events.subscribe(e => {
-				if (e instanceof NavigationStart) {
+			if (e instanceof NavigationStart) {
+				this.setDefault();
+			} else if (e instanceof NavigationEnd) {
+				let route = this.activatedRoute;
+				while (route.firstChild) {
+					route = route.firstChild;
+				}
+				if (route.data && route.data['value'] && route.data['value'].title) {
+					this.set(route.data['value'].title);
+				} else {
 					this.setDefault();
-				} else if (e instanceof NavigationEnd) {
-					let route = this.activatedRoute;
-					while (route.firstChild) {
-						route = route.firstChild;
-					}
-					if (route.data && route.data['value'] && route.data['value'].title) {
-						this.set(route.data['value'].title);
-					} else {
-						this.setDefault();
-					}
 				}
 			}
-		);
+		});
 	}
 
-	setDefault() {
+	public setDefault(): void {
 		this.set('');
 	}
 
-	set(value: string) {
+	public set(value: string): void {
 		let result = (value || '').trim();
 		if (result.length > 60) {
 			result = result.slice(0, 60) + '…';

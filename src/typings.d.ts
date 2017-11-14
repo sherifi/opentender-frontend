@@ -13,7 +13,7 @@ interface ServerConfig {
 	cache: {
 		type: string; // disabled | internal | memcached
 		memcached: Array<string>; // if type == memcached, server address(es)
-	},
+	};
 	backendUrl: string;
 	fullUrl: string;
 }

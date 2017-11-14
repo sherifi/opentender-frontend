@@ -29,7 +29,9 @@ export class CountUpDirective implements OnDestroy {
 	}
 
 	get countDecimals(): number {
-		if (this._countDecimals) return this._countDecimals;
+		if (this._countDecimals) {
+			return this._countDecimals;
+		}
 		return decimalChecker(this.countTo);
 	}
 

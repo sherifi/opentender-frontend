@@ -7,26 +7,26 @@ import 'd3-transition';
 @Component({
 	selector: 'g[ngx-charts-heat-map-cell]',
 	template: `
-    <svg:g [attr.transform]="transform" class="cell">
-      <defs *ngIf="gradient">
-        <svg:g ngx-charts-svg-linear-gradient
-          [color]="fill"
-          orientation="vertical"
-          [name]="gradId.id"
-          [stops]="gradientStops"
-        />
-      </defs>
-      <svg:rect
-        [attr.fill]="gradient ? gradId.url : fill"
-        rx="3"
-        [attr.width]="width"
-        [attr.height]="height"
-        class="cell"
-        style="cursor: pointer"
-        (click)="onClick()"
-      />
-    </svg:g>
-  `,
+		<svg:g [attr.transform]="transform" class="cell">
+			<defs *ngIf="gradient">
+				<svg:g ngx-charts-svg-linear-gradient
+					   [color]="fill"
+					   orientation="vertical"
+					   [name]="gradId.id"
+					   [stops]="gradientStops"
+				/>
+			</defs>
+			<svg:rect
+					[attr.fill]="gradient ? gradId.url : fill"
+					rx="3"
+					[attr.width]="width"
+					[attr.height]="height"
+					class="cell"
+					style="cursor: pointer"
+					(click)="onClick()"
+			/>
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeatMapCellComponent implements OnChanges {

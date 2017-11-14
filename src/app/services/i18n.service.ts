@@ -7,14 +7,14 @@ export class I18NService {
 	private _translations: { [name: string]: any };
 
 	constructor(@Inject(TRANSLATIONS) source: string) {
-		let xliff = new Xliff();
 		this._source = source;
 		if (this._source) {
+			const xliff = new Xliff();
 			this._translations = xliff.load(this._source, '').i18nNodesByMsgId;
 		}
 	}
 
-	get(key: string, interpolation: any[] = []) {
+	public get(key: string, interpolation: any[] = []): string {
 		if (!this._translations) {
 			return key;
 		}
@@ -41,15 +41,13 @@ export class I18NService {
 
 	private _interpolationWithName(placeholders: string[], interpolation: any[]): { [name: string]: any } {
 		let asObj = {};
-
 		placeholders.forEach((name, index) => {
 			asObj[name] = interpolation[index];
 		});
-
 		return asObj;
 	}
 
-	private _interpolate(pattern: string, interpolation: { [name: string]: any }) {
+	private _interpolate(pattern: string, interpolation: { [name: string]: any }): string {
 		let compiled = '';
 		compiled += pattern.replace(/{{(\w+)}}/g, function(match, key) {
 			if (interpolation[key] && typeof interpolation[key] === 'string') {

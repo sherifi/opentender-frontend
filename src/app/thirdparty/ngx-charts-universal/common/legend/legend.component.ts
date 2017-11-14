@@ -4,31 +4,31 @@ import {formatLabel} from '../../utils/label.helper';
 @Component({
 	selector: 'ngx-charts-legend',
 	template: `
-    <div [style.width.px]="width">
-      <div class="legend-title">
-        <span class="legend-icon icon-eye"></span>
-        <span class="legend-title-text">{{title}}</span>
-      </div>
-      <div class="legend-wrap">
-        <ul class="legend-labels"
-          [style.max-height.px]="height - 45">
-          <li
-            *ngFor="let entry of legendEntries; trackBy: trackBy"
-            class="legend-label">
-            <ngx-charts-legend-entry
-              [label]="entry.label"
-              [formattedLabel]="entry.formattedLabel"
-              [color]="entry.color"
-              [isActive]="isActive(entry)"
-              (select)="labelClick.emit($event)"
-              (activate)="activate($event)"
-              (deactivate)="deactivate($event)">
-            </ngx-charts-legend-entry>
-          </li>
-        </ul>
-      </div>
-    </div>
-  `,
+		<div [style.width.px]="width">
+			<div class="legend-title">
+				<span class="legend-icon icon-eye"></span>
+				<span class="legend-title-text">{{title}}</span>
+			</div>
+			<div class="legend-wrap">
+				<ul class="legend-labels"
+					[style.max-height.px]="height - 45">
+					<li
+							*ngFor="let entry of legendEntries; trackBy: trackBy"
+							class="legend-label">
+						<ngx-charts-legend-entry
+								[label]="entry.label"
+								[formattedLabel]="entry.formattedLabel"
+								[color]="entry.color"
+								[isActive]="isActive(entry)"
+								(select)="labelClick.emit($event)"
+								(activate)="activate($event)"
+								(deactivate)="deactivate($event)">
+						</ngx-charts-legend-entry>
+					</li>
+				</ul>
+			</div>
+		</div>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LegendComponent implements OnChanges {
@@ -83,7 +83,9 @@ export class LegendComponent implements OnChanges {
 	}
 
 	isActive(entry): boolean {
-		if (!this.activeEntries) return false;
+		if (!this.activeEntries) {
+			return false;
+		}
 		let item = this.activeEntries.find(d => {
 			return entry.label === d.name;
 		});

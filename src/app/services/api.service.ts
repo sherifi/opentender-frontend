@@ -4,7 +4,8 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {
-	IApiResultGeoJSON, IApiResult, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar, IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
+	IApiResultGeoJSON, IApiResult, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar,
+	IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
 	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads

@@ -55,7 +55,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		}
 	}
 
-	download(format): void {
+	download(): void {
 		if (this.total > 1000) {
 			if (!this.showDownloadDialog) {
 				this.showDownloadDialog = true;
@@ -88,7 +88,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.buildTable();
 	}
 
-	onSelectColumns(event) {
+	onSelectColumns(event: { value: Array<ITableColumnTender> }): void {
 		this.columns = event.value;
 		this.buildTable();
 	}
@@ -140,7 +140,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 			});
 		}
 		this.table = table;
-	};
+	}
 
 	setTableTitle(total?) {
 		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
