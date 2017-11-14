@@ -1,25 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {Country} from '../../../services/config.service';
+
+/**
+ * The /about/foi component displays information on all known foi portals that can be connection with opentender
+ */
 
 @Component({
 	moduleId: __filename,
 	selector: 'foi',
 	templateUrl: 'foi.template.html'
 })
-export class AboutFOIPage {
+export class AboutFOIPage implements OnInit {
+
 	portals: Array<Country>;
 
 	constructor(private api: ApiService) {
-		this.api.getPortals().subscribe(
-			(result) => this.display(result.data),
-			(error) => console.error(error),
-			() => {
-				// console.log('getPortals complete');
-			});
 	}
 
-	private display(data: Array<Country>) {
-		this.portals = data;
+	/**
+	 * request the list of countries with foi portals informations
+	 */
+	public ngOnInit(): void {
+		this.api.getPortals().subscribe(
+			(result) => this.portals = result.data,
+			(error) => console.error(error),
+			() => {
+			});
 	}
 }

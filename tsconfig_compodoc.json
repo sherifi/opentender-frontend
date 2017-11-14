@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"module": "es6",
+		"target": "es5",
+		"lib": ["es6", "es2016", "dom"],
+		"sourceMap": true,
+		"sourceRoot": "src",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"declaration": false,
+		"noImplicitAny": false,
+		"removeComments": true,
+		"noEmitHelpers": false,
+		"noLib": false,
+		"preserveConstEnums": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"typeRoots": [
+			"node_modules/@types"
+		]
+	},
+	"angularCompilerOptions": {
+		"genDir": "./src/i18n"
+	},
+	"exclude": [
+		"node_modules",
+		"dist",
+		"bin",
+		"assets",
+		"src/app/thirdparty/**/*",
+		"src/server/**/*",
+		".git"
+	],
+	"compileOnSave": false,
+	"buildOnSave": false,
+	"atom": { "rewriteTsconfig": false }
+}
