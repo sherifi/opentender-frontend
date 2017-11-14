@@ -53,6 +53,7 @@ import {SearchPage} from './pages/search/search.component';
 import {SearchSectorPage} from './pages/search/sector/sector.component';
 import {SearchTenderPage} from './pages/search/tender/tender.component';
 import {SectorPage} from './pages/sector/sector.component';
+import {SharePage} from './pages/share/share.component';
 import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
@@ -208,6 +209,7 @@ const AppConfig = {
 		SearchSectorPage,
 		SearchTenderPage,
 		SectorPage,
+		SharePage,
 		StartPage,
 		TenderPage,
 		TestPage,

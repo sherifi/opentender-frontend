@@ -1,4 +1,4 @@
-<header></header>
+<header *ngIf="!isShare"></header>
 <router-outlet></router-outlet>
-<footer></footer>
+<footer *ngIf="!isShare"></footer>
 <ng2-toasty></ng2-toasty>

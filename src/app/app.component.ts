@@ -8,6 +8,7 @@ import {PlatformService} from './services/platform.service';
 	templateUrl: 'app.template.html'
 })
 export class App implements OnInit {
+	public isShare: boolean = false;
 
 	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService) {
 		titleService.setDefault();
@@ -17,6 +18,7 @@ export class App implements OnInit {
 	}
 
 	checkURL(url) {
+		this.isShare = (url === '/share');
 		if ((location.pathname == '/' && (url !== '/start')) || (location.pathname == '' && (url !== 'start'))) {
 			this.router.navigate(['/start']);
 		}
