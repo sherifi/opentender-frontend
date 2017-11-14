@@ -4,7 +4,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 	name: 'defined'
 })
 export class DefinedPipe implements PipeTransform {
-	transform(value: any, args: any[]): boolean {
+
+	transform(value: any): boolean {
 		if (value === undefined || value === null) {
 			return false;
 		}
@@ -13,4 +14,5 @@ export class DefinedPipe implements PipeTransform {
 		}
 		return true;
 	}
+
 }

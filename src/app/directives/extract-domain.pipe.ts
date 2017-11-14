@@ -1,17 +1,14 @@
-import {Pipe, PipeTransform} from '@angular/core'
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-	name: 'extractdomain'
-})
+@Pipe({name: 'extractDomain'})
 export class ExtractDomainPipe implements PipeTransform {
-	transform(value: string, args): string {
+
+	transform(value: string): string {
 		let domain = value;
-		if (value.indexOf('://') > -1) {
-			domain = value.split('/')[2];
-		} else {
-			domain = value.split('/')[0];
-		}
+		let pos = (domain.indexOf('://') > -1) ? 2 : 0;
+		domain = domain.split('/')[pos] || '';
 		domain = domain.split(':')[0];
-		return domain;
+		return domain || '';
 	}
+
 }

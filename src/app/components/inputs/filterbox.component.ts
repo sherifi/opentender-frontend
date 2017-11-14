@@ -4,7 +4,8 @@ import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import {PlatformService} from '../../services/platform.service';
-import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType} from '../../app.interfaces';
+import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType, ISearchResultBucket} from '../../app.interfaces';
+import {Utils} from '../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -12,7 +13,6 @@ import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType} from '../../app.i
 	templateUrl: 'filterbox.component.html'
 })
 export class FilterBoxComponent implements OnChanges {
-
 	@Input()
 	public search: Search;
 	@Input()
@@ -20,7 +20,7 @@ export class FilterBoxComponent implements OnChanges {
 	@Output()
 	public onChange = new EventEmitter();
 
-	ISearchFilterDefType: typeof ISearchFilterDefType = ISearchFilterDefType;
+	public ISearchFilterDefType: typeof ISearchFilterDefType = ISearchFilterDefType;
 	public active_filters: Array<ISearchFilterDef> = [];
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();
@@ -36,16 +36,16 @@ export class FilterBoxComponent implements OnChanges {
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.active_filters = this.search.getActiveFilterDefs();
-		this.refresh(true);
+		this.triggerChange(true);
 	}
 
-	onSelectFilters(data) {
+	public onSelectFilters(data: { value: { filter: ISearchFilterDef } }): void {
 		this.search.toggleFilter(data.value.filter);
 		this.active_filters = this.search.getActiveFilterDefs();
-		this.refresh(true);
+		this.triggerChange(true);
 	}
 
-	getValueTitle(bucket, filter) {
+	public getValueTitle(bucket: ISearchResultBucket, filter: ISearchFilter): string {
 		if (bucket.name) {
 			return bucket.name;
 		}
@@ -55,7 +55,7 @@ export class FilterBoxComponent implements OnChanges {
 		return bucket.key;
 	}
 
-	getFilterClass(index) {
+	public getFilterClass(index: number): string {
 		let count = this.active_filters.length;
 		let col = 4;
 		if (count < 3) {
@@ -72,30 +72,16 @@ export class FilterBoxComponent implements OnChanges {
 		return 'filter-col-' + col;
 	}
 
-	closeFilter(filter) {
+	public closeFilter(filter: ISearchFilter) {
 		this.search.toggleFilter(filter.def);
 		this.active_filters = this.search.getActiveFilterDefs();
-		this.refresh(true);
+		this.triggerChange(true);
 	}
 
-	clearFilter(filter) {
-		filter.value = '';
-		this.refresh();
-	}
-
-	refreshDelay(value) {
-		this.searchUpdated.next(value);
-	}
-
-	refresh(resize?: boolean) {
+	public triggerChange(resize?: boolean) {
 		this.onChange.next('');
 		if (resize && this.platform.isBrowser) {
-			setTimeout(() => {
-				// console.log('trigger resizes');
-				let evt = window.document.createEvent('UIEvents');
-				evt.initUIEvent('resize', true, false, window, 0);
-				window.dispatchEvent(evt);
-			}, 0);
+			Utils.triggerResize();
 		}
 	}
 }

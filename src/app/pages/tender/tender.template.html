@@ -347,7 +347,7 @@
 					<h4>Nr. {{index_p + 1}}</h4>
 					<div class="inline-info" *ngIf="pub.humanReadableUrl | defined">
 						<h4 i18n>URL</h4>
-						<a href="{{pub.humanReadableUrl}}">{{pub.humanReadableUrl | extractdomain}}</a>
+						<a href="{{pub.humanReadableUrl}}">{{pub.humanReadableUrl | extractDomain}}</a>
 					</div>
 					<div class="inline-info" *ngIf="pub.publicationDate | defined">
 						<h4 i18n>Publication Date</h4>
@@ -395,7 +395,7 @@
 				<h4>Nr. {{index_d}}</h4>
 				<div class="inline-info" *ngIf="doc.url | defined">
 					<h4 i18n>URL</h4>
-					<a href="{{doc.url}}">{{doc.url | extractdomain}}</a>
+					<a href="{{doc.url}}">{{doc.url | extractDomain}}</a>
 				</div>
 			</div>
 		</div>

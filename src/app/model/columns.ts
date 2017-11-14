@@ -15,6 +15,18 @@ const ICON = {
 	company: 'icon-office'
 };
 
+const ColumnsFormatUtils = {
+	formatPriceEURValue: (value: number) => {
+		return Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(value).replace(/ /g, '\u00a0');
+	},
+	formatPriceEUR: (price: Price) => {
+		if (price && price.hasOwnProperty('netAmountEur')) {
+			return [{content: ColumnsFormatUtils.formatPriceEURValue(price.netAmountEur)}];
+		}
+		return [];
+	}
+};
+
 export const AuthorityColumns: Array<ITableColumnAuthority> = [
 	{
 		name: 'Name',
@@ -24,7 +36,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: authority => [{content: authority.body.name || '[Name not available]'}]
+		format: authority => [{content: Utils.nameGuard(authority.body.name)}]
 	},
 	{
 		name: 'City',
@@ -80,7 +92,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',
-		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, hint: ('Profile Page ' + authority.body.name || '[Name not available]'), align: 'center'}]
+		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, hint: ('Profile Page ' + Utils.nameGuard(authority.body.name)), align: 'center'}]
 	}
 ];
 
@@ -93,7 +105,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: company => [{content: company.body.name || '[Name not available]'}]
+		format: company => [{content: Utils.nameGuard(company.body.name)}]
 	},
 	{
 		name: 'City',
@@ -125,21 +137,9 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Company',
-		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: ('Profile Page ' + company.body.name || '[Name not available]'), align: 'center'}]
+		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: ('Profile Page ' + Utils.nameGuard(company.body.name)), align: 'center'}]
 	}
 ];
-
-const FormatUtils = {
-	formatPriceEURValue: (value: number) => {
-		return Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(value).replace(/ /g, '\u00a0');
-	},
-	formatPriceEUR: (price: Price) => {
-		if (price && price.hasOwnProperty('netAmountEur')) {
-			return [{content: FormatUtils.formatPriceEURValue(price.netAmountEur)}];
-		}
-		return [];
-	}
-};
 
 export const TenderColumns: Array<ITableColumnTender> = [
 	{
@@ -166,7 +166,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Bidder) => {
-								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: ('Profile Page ' + bidder.name || '[Name not available]'), link: '/company/' + bidder.id};
+								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: ('Profile Page ' + Utils.nameGuard(bidder.name)), link: '/company/' + bidder.id};
 								companies[bidder.id].lots.push(index_l + 1);
 							});
 						}
@@ -183,7 +183,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 						}
 						result.push({prefix: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
 					}
-					result.push({icon: ICON.company, content: c.bidder.name || '[Name not available]', hint: ('Profile Page ' + c.bidder.name || '[Name not available]'), link: c.link});
+					result.push({icon: ICON.company, content: Utils.nameGuard(c.bidder.name), hint: ('Profile Page ' + Utils.nameGuard(c.bidder.name)), link: c.link});
 				}
 			);
 			return result;
@@ -235,7 +235,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			return tender.buyers.map((buyer: Buyer) => {
-				return {icon: ICON.authority, content: buyer.name || '[Name not available]', hint: ('Profile Page ' + buyer.name || '[Name not available]'), link: '/authority/' + buyer.id};
+				return {icon: ICON.authority, content: Utils.nameGuard(buyer.name), hint: ('Profile Page ' + buyer.name || '[Name not available]'), link: '/authority/' + buyer.id};
 			});
 		}
 	},
@@ -476,7 +476,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			let list = tender.fundings.filter(funding => funding.isEuFund);
 			return list.map(funding => {
-				return {list: list.length > 1, prefix: 'EU-Fund', content: funding.programme || '[Name not available]'};
+				return {list: list.length > 1, prefix: 'EU-Fund', content: Utils.nameGuard(funding.programme)};
 			});
 		}
 	},
@@ -557,7 +557,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'finalPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPriceEUR(tender.finalPrice)
+		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.finalPrice)
 	},
 	{
 		name: 'Estimated Price',
@@ -567,7 +567,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'estimatedPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPriceEUR(tender.estimatedPrice)
+		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.estimatedPrice)
 	},
 	{
 		name: 'Documents Price',
@@ -577,7 +577,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'documentsPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => FormatUtils.formatPriceEUR(tender.documentsPrice)
+		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.documentsPrice)
 	},
 	{
 		name: 'Bid Price',
@@ -598,7 +598,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 						if (bid.price && bid.price.netAmountEur) {
 							result.push({
 								prefix: (tender.lots.length ? 'Lot ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' Bid ' + (index_b + 1) : ''),
-								content: FormatUtils.formatPriceEURValue(bid.price.netAmountEur)
+								content: ColumnsFormatUtils.formatPriceEURValue(bid.price.netAmountEur)
 							});
 						}
 					});

@@ -25,9 +25,7 @@ import {FormatDatePipe} from './directives/format-date.pipe';
 import {FormatDatetimePipe} from './directives/format-datetime.pipe';
 import {FormatFileSizePipe} from './directives/format-filesize.pipe';
 import {FormatNumberPipe} from './directives/format-number';
-import {KeyValuesPipe} from './directives/key-values.pipe';
 import {NameGuardPipe} from './directives/name-guard.pipe';
-import {TruncatePipe} from './directives/truncate.pipe';
 import {I18nPipe} from './directives/i18n.pipe';
 import {FormatIndicatorNamePipe} from './directives/format-indicator.pipe';
 
@@ -180,8 +178,6 @@ const AppConfig = {
 		FormatDatetimePipe,
 		FormatFileSizePipe,
 		FormatIndicatorNamePipe,
-		KeyValuesPipe,
-		TruncatePipe,
 		FOISearchLinkPipe,
 		FormatNumberPipe,
 		I18nPipe,

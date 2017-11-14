@@ -1,10 +1,11 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import {Utils} from '../model/utils';
 
-@Pipe({
-	name: 'nameGuard'
-})
+@Pipe({name: 'nameGuard'})
 export class NameGuardPipe implements PipeTransform {
-	transform(value: string, args: any[]): string {
-		return value || '[Name not available]';
+
+	transform(value: string): string {
+		return Utils.nameGuard(value);
 	}
+
 }

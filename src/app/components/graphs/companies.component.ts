@@ -117,17 +117,17 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 	ngOnChanges(changes: SimpleChanges): void {
 		let companies: Array<ICompany> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
 		this.companies_absolute.data = companies.filter(company => company.body.id).map((company) => {
-			return {id: company.body.id, name: company.body.name || '[Name not available]', value: company.value};
+			return {id: company.body.id, name: Utils.nameGuard(company.body.name), value: company.value};
 		}).reverse();
 
 		companies = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
 		this.companies_volume.data = companies.filter(company => company.body.id).map((company) => {
-			return {id: company.body.id, name: company.body.name || '[Name not available]', value: company.value};
+			return {id: company.body.id, name: Utils.nameGuard(company.body.name), value: company.value};
 		}).reverse();
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: 'Name'}, filename: 'suppliers'};
+		return {data: this.graph.data, header: {value: this.graph.chart.xAxis.label, name: this.i18n.get('Name')}, filename: 'suppliers'};
 	}
 
 	toggleValue(mode: string) {

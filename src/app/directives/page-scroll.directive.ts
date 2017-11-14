@@ -1,14 +1,13 @@
 import {Directive, ElementRef, Input, HostListener} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
+import {PlatformService} from '../services/platform.service';
 
-@Directive({
-	selector: '[pageScroll]'
-})
+@Directive({selector: '[pageScroll]'})
 export class PageScrollDirective {
 
 	@Input()
-	public routerLink: any;
+	public routerLink: string;
 
 	@Input('pageScroll')
 	public href: string;
@@ -16,10 +15,12 @@ export class PageScrollDirective {
 	private document: Document;
 	private body: HTMLBodyElement;
 
-	constructor(private el: ElementRef, private router: Router) {
-		this.document = el.nativeElement.ownerDocument;
-		if (this.document) {
-			this.body = el.nativeElement.ownerDocument.body;
+	constructor(private el: ElementRef, private router: Router, private platform: PlatformService) {
+		if (platform.isBrowser) {
+			this.document = el.nativeElement.ownerDocument;
+			if (this.document) {
+				this.body = el.nativeElement.ownerDocument.body;
+			}
 		}
 	}
 

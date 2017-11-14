@@ -255,11 +255,30 @@ export const Utils = {
 	roundValueTwoDecimals: (value) => {
 		return Math.round(value * 100) / 100;
 	},
+	nameGuard: (value: string) => {
+		return value || '[Name not available]';
+	},
+	formatFileSize: (value: number) => {
+		let i = -1;
+		const byteUnits = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		do {
+			value = value / 1024;
+			i++;
+		} while (value > 1024);
+		return Math.max(value, 0.1).toFixed(1) + ' ' + byteUnits[i];
+	},
 	scrollToFirst: (className: string) => {
 		let elements = document.getElementsByClassName(className);
 		if (elements.length == 0) {
 			return;
 		}
 		elements[0].scrollIntoView();
+	},
+	triggerResize: () => {
+		setTimeout(() => {
+			let evt = window.document.createEvent('UIEvents');
+			evt.initUIEvent('resize', true, false, window, 0);
+			window.dispatchEvent(evt);
+		}, 0);
 	}
 };
