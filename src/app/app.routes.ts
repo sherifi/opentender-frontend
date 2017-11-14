@@ -36,7 +36,7 @@ export const routes: Routes = [
 		component: DashboardsPage,
 		data: {title: 'Dashboards'},
 		children: [
-			{path: '', redirectTo: 'procurement-integrity', pathMatch: 'full'},
+			{path: '', redirectTo: 'administrative-capacity', pathMatch: 'full'},
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis'}},
 			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators'}},
 			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators'}},
