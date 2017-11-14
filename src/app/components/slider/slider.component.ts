@@ -76,7 +76,7 @@ export class SliderComponent implements OnChanges {
 
 	public ticks = [];
 	private tickWidth = 1;
-	private border = 18;
+	private border = 13;
 	private _stepValue = 1;
 	private _min = 0;
 	private _max = 10;
