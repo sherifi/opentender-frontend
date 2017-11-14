@@ -74,7 +74,7 @@ run `npm run develop` and `npm run watch` in two separate terminals to build you
 
 * [NodeJS](https://nodejs.org/)
 * [NPM](https://www.npmjs.com/)
-* [Angular 4](https://angular.io/) Universal
+* [Angular 5](https://angular.io/) Universal
 * [Webpack](https://webpack.github.io)
 * [Typescript](https://www.typescriptlang.org/)
 
