@@ -484,6 +484,7 @@ export interface ITableCellLine {
 	hint?: string;
 	icon?: string;
 	styleClass?: string;
+	collapseLines?: Array<ITableCellLine>;
 }
 
 export interface ITableColumnAuthority extends ITableColumn {
