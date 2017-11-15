@@ -44,6 +44,8 @@ let settings = {
 };
 ```
 
+Note: The config file is backed into the js bundle, if you change anything you must rebuild the bundle.
+
 ## Commands
 
 ### Serve
@@ -68,7 +70,7 @@ run `npm run develop` and `npm run watch` in two separate terminals to build you
 
 ### Update Language files for Translation
 
-`npm run langs` to extract all translation strings into the language files in /src/i18n/
+`npm run langs` to extract all translation strings into the language files in /src/i18n/ and updates the runtime files messages.[lang].ts
 
 ## Uses
 
