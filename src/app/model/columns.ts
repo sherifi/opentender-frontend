@@ -24,6 +24,27 @@ const ColumnsFormatUtils = {
 			return [{content: ColumnsFormatUtils.formatPriceEURValue(price.netAmountEur)}];
 		}
 		return [];
+	},
+	formatTenderIndicatorGroup: (tender, group) => {
+		if (!tender.indicators) {
+			return [];
+		}
+		let result: Array<ITableCellLine> = [];
+		tender.scores.forEach(score => {
+			if (score.status === 'CALCULATED' && score.type === group.id) {
+				result.push({content: 'Score: ' + Utils.formatValue(score.value), hint: group.name});
+			}
+		});
+		tender.indicators.forEach(indicator => {
+			let group_id = indicator.type.split('_')[0];
+			if (indicator.status === 'CALCULATED' && group_id === group.id) {
+				let def = group.subindicators[indicator.type];
+				if (def) {
+					result.push({styleClass: 'badge-' + group.id, content: def.name + ': ' + Utils.formatValue(indicator.value), hint: def.desc});
+				}
+			}
+		});
+		return result;
 	}
 };
 
@@ -310,22 +331,19 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.indicators) {
 				return [];
 			}
-			let collect = {};
-
-			tender.indicators.forEach(indicator => {
-				let info = Utils.getIndicatorInfo(indicator.type);
-				if (info) {
-					collect[info.group.id] = collect[info.group.id] || [];
-					collect[info.group.id].push(info);
+			let result: Array<ITableCellLine> = [];
+			tender.scores.forEach(score => {
+				if (score.status === 'CALCULATED' && score.type === 'TENDER') {
+					result.push({content: 'Composite Score: ' + Utils.formatValue(score.value)});
 				}
 			});
-			let result: Array<ITableCellLine> = [];
-			Object.keys(collect).forEach(key => {
-				let infos = collect[key];
-				result.push({prefix: infos[0].group.name});
-				infos.forEach(info => {
-					result.push({styleClass: 'badge-' + info.group.id, content: info.indicator.name, hint: info.indicator.desc});
-				});
+			Object.keys(Consts.indicators).forEach(key => {
+				let group = Consts.indicators[key];
+				let list = ColumnsFormatUtils.formatTenderIndicatorGroup(tender, group);
+				if (list.length > 0) {
+					result.push({prefix: group.name});
+					result = result.concat(list);
+				}
 			});
 			return result;
 		}
@@ -335,20 +353,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		id: 'indicators.pii',
 		group: 'Indicators',
 		format: tender => {
-			if (!tender.indicators) {
-				return [];
-			}
-			let result: Array<ITableCellLine> = [];
-			tender.indicators.forEach(indicator => {
-				let group = indicator.type.split('_')[0];
-				if (indicator.status === 'CALCULATED' && group === Consts.indicators.CORRUPTION.id) {
-					let def = Consts.indicators.CORRUPTION.subindicators[indicator.type];
-					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.CORRUPTION.id, content: def.name + ': ' + indicator.value, hint: def.desc});
-					}
-				}
-			});
-			return result;
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.CORRUPTION);
 		}
 	},
 	{
@@ -356,20 +361,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		id: 'indicators.ti',
 		group: 'Indicators',
 		format: tender => {
-			if (!tender.indicators) {
-				return [];
-			}
-			let result: Array<ITableCellLine> = [];
-			tender.indicators.forEach(indicator => {
-				let group = indicator.type.split('_')[0];
-				if (indicator.status === 'CALCULATED' && group === Consts.indicators.TRANSPARENCY.id) {
-					let def = Consts.indicators.TRANSPARENCY.subindicators[indicator.type];
-					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.TRANSPARENCY.id, content: def.name + ': ' + indicator.value, hint: def.desc});
-					}
-				}
-			});
-			return result;
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.TRANSPARENCY);
 		}
 	},
 	{
@@ -377,23 +369,9 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		id: 'indicators.aci',
 		group: 'Indicators',
 		format: tender => {
-			if (!tender.indicators) {
-				return [];
-			}
-			let result: Array<ITableCellLine> = [];
-			tender.indicators.forEach(indicator => {
-				let group = indicator.type.split('_')[0];
-				if (indicator.status === 'CALCULATED' && group === Consts.indicators.ADMINISTRATIVE.id) {
-					let def = Consts.indicators.ADMINISTRATIVE.subindicators[indicator.type];
-					if (def) {
-						result.push({styleClass: 'badge-' + Consts.indicators.ADMINISTRATIVE.id, content: def.name + ': ' + indicator.value, hint: def.desc});
-					}
-				}
-			});
-			return result;
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.ADMINISTRATIVE);
 		}
 	},
-
 	{
 		name: 'Main Sector',
 		id: 'cpvs.main.names',
