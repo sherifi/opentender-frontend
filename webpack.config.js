@@ -6,7 +6,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const PurifyPlugin = require('@angular-devkit/build-optimizer').PurifyPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
-const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const config = require('./config.js');
 const pck = require('./package.json');
@@ -89,6 +88,7 @@ const clientConfig = () => {
 		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de.js|it/)
 	];
 	if (config.client.devMode) {
+		const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 		plugins.push(new WebpackBuildNotifierPlugin({
 			title: "Opentender Client Build",
 			sound: false
