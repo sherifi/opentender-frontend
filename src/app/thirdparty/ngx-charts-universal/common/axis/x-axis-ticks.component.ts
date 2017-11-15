@@ -103,6 +103,7 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 		} else {
 			this.tickFormat = d => isDate(d) ? d.toLocaleDateString() : d.toLocaleString();
 		}
+		this.maxTicksLength = 0;
 
 		let angle = this.getRotationAngle(this.ticks);
 
@@ -110,12 +111,12 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 			return this.scale(d) + this.scale.bandwidth() * 0.5;
 		} : this.scale;
 
-		this.textTransform = '';
 		if (angle !== 0) {
 			this.textTransform = `rotate(${angle})`;
 			this.textAnchor = 'end';
 			this.verticalSpacing = 5;
 		} else {
+			this.textTransform = '';
 			this.textAnchor = 'middle';
 			this.verticalSpacing = 10;
 		}
