@@ -9,7 +9,7 @@
     "url": "https://github.com/digiwhist/opentender-frontend.git"
   },
   "scripts": {
-    "watch": "webpack --progress --watch --display-error-details",
+    "watch": "webpack --watch --display-error-details",
     "prebuild": "rimraf dist",
     "build": "webpack --progress -p",
     "develop": "nodemon dist/server/index.js",
@@ -105,11 +105,11 @@
     "zone.js": "=0.8.18"
   },
   "devDependencies": {
-    "webpack-build-notifier": "https://github.com/RoccoC/webpack-build-notifier.git",
     "@compodoc/compodoc": "=1.0.4",
     "dtsgenerator": "=0.9.6",
     "nodemon": "=1.12.1",
     "ts-node": "=3.3.0",
+    "webpack-build-notifier": "https://github.com/RoccoC/webpack-build-notifier.git",
     "xml-lite": "=0.8.1"
   }
 }

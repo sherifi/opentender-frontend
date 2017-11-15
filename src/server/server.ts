@@ -10,6 +10,8 @@ import * as cookieParser from 'cookie-parser';
 import * as request from 'request';
 import * as geoip from 'geoip-ultralight';
 import * as helmet from 'helmet';
+import * as morgan from 'morgan';
+import * as crypto from 'crypto';
 
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from './express-engine/main';
@@ -32,10 +34,18 @@ import {routes} from '../app/app.routes';
 
 let portals = JSON.parse(fs.readFileSync(path.join(Config.server.data.path, 'portals.json')).toString());
 
+let md5hash = (value: string) => {
+	return crypto.createHash('md5').update(value).digest('hex');
+};
+
+let getCacheKey = (req) => {
+	let key = JSON.stringify({u: req.originalUrl, b: req.body, p: req.params});
+	return md5hash(key);
+};
+
 const cache = initCache(Config.server.cache);
 let addToCache = (req, data) => {
-	let url = req.originalUrl + '|' + JSON.stringify(req.body);
-	cache.upsert(url, data, err => {
+	cache.upsert(getCacheKey(req), data, err => {
 		if (err) {
 			console.log(err);
 		}
@@ -46,9 +56,9 @@ let sendAndAddToCache = (req, res, data) => {
 	return res.send(data);
 };
 let checkCache = (req, res, cb) => {
-	let url = req.originalUrl + '|' + JSON.stringify(req.body);
-	cache.get(url, (err, data) => {
+	cache.get(getCacheKey(req), (err, data) => {
 		if (data) {
+			req.cached = true;
 			res.send(data);
 		} else {
 			cb();
@@ -70,6 +80,17 @@ const RES_VERSION = Config.client.version.replace(/\./g, '');
 let errorResponse = (req, res) => {
 	return res.status(404).type('txt').send('Not found ' + req.url);
 };
+
+morgan.token('cached', (req) => {
+	return req.cached ? 'true' : 'false';
+});
+app.use(morgan('[:date[clf]] - cached: :cached - :method :url - :res[content-length] - :response-time ms',
+	{
+		skip: (req, res) => {
+			return (req.originalUrl.indexOf('/assets') === 0);
+		}
+	}
+));
 
 app.use(helmet());
 app.engine('.html', ngExpressEngine({}));
@@ -133,9 +154,7 @@ let render = function(req, res, language, country) {
 				.replace(/\{\{OPENTENDER\}\}/g, JSON.stringify({locale: language.lang, config: Config.client, country: country}));
 		}
 	});
-	console.time(`GET: ${req.originalUrl}`);
 	return engine(VIEW, {req: req, res: res}, (err?: Error | null, html?: string) => {
-		console.timeEnd(`GET: ${req.originalUrl}`);
 		if (err !== null || !html) {
 			console.log('err', err, html);
 			return res.status(500).send('<html><body>Software Failure. Guru Meditation.<br/>Please reload the page.' + (Config.client.devMode ? '<br/><br/><pre>' + err.stack + '</pre>' : '') + '</body></html>');
