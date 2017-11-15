@@ -35,6 +35,12 @@ export class TenderPage implements OnInit, OnDestroy {
 		TRANSPARENCY: [],
 		ADMINISTRATIVE: []
 	};
+	public scores = {
+		TENDER: [],
+		CORRUPTION: [],
+		TRANSPARENCY: [],
+		ADMINISTRATIVE: []
+	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService, private i18n: I18NService) {
 		if (!this.platform.isBrowser) {
@@ -91,13 +97,31 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.indicators.ADMINISTRATIVE = [];
 		this.indicators.CORRUPTION = [];
 		this.indicators.TRANSPARENCY = [];
+		this.scores.TENDER = [];
+		this.scores.ADMINISTRATIVE = [];
+		this.scores.CORRUPTION = [];
+		this.scores.TRANSPARENCY = [];
 		if (tender.indicators) {
 			tender.indicators.forEach(indicator => {
-				Object.keys(Consts.indicators).forEach(key => {
-					if (indicator.status === 'CALCULATED' && indicator.type.indexOf(key) === 0) {
-						this.indicators[key].push(indicator);
-					}
-				});
+				if (indicator.status === 'CALCULATED') {
+					Object.keys(Consts.indicators).forEach(key => {
+						if (indicator.type.indexOf(key) === 0) {
+							let groupkey = key.split('_')[0];
+							this.indicators[key].push({id: indicator.type, name: Utils.formatIndicatorName(indicator.type), value: indicator.value, color: Consts.colors.indicators[groupkey]});
+						}
+					});
+				}
+			});
+		}
+		if (tender.scores) {
+			tender.scores.forEach(score => {
+				if (score.status === 'CALCULATED') {
+					Object.keys(this.scores).forEach(key => {
+						if (score.type === key) {
+							this.scores[key].push({id: score.type, name: Utils.formatIndicatorGroupName(score.type), value: score.value, color: Consts.colors.indicators[score.type]});
+						}
+					});
+				}
 			});
 		}
 	}

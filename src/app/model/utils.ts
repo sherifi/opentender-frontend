@@ -66,6 +66,17 @@ export const Utils = {
 		}
 		return sub.name;
 	},
+	formatIndicatorGroupName(value: string): string {
+		let groupkey = Object.keys(Consts.indicators).find(key => {
+			return value === Consts.indicators[key].id;
+		});
+		if (Consts.indicators[groupkey]) {
+			return Consts.indicators[groupkey].name;
+		} else if (value === 'TENDER') {
+			return 'Composite Score';
+		}
+		return value;
+	},
 	indicatorShortID(key: string): string {
 		return key.split('_').map(part => {
 			return part[0].toUpperCase();

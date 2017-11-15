@@ -21,6 +21,7 @@ export interface IChartData {
 	value: number;
 	series?: Array<IChartData>;
 	id?: string;
+	color?: string;
 }
 
 export interface IChartDimension {
@@ -130,6 +131,17 @@ export interface IChartPieSettings extends IChartBaseSettings {
 	gradient: boolean;
 }
 
+export interface IChartPieSeriesSettings extends IChartBaseSettings {
+	view: IChartView;
+	schemeType: string;
+	colorScheme: IColorSet;
+	customColors?: any;
+	legend?: IChartLegendSettings;
+
+	labels: boolean;
+	maxRadius?: number;
+}
+
 export interface IChartLineSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	schemeType: string;
@@ -195,6 +207,13 @@ export interface IChartBar {
 export interface IChartPie {
 	data: Array<IChartData>;
 	chart: IChartPieSettings;
+	select?: (event) => void;
+	onLegendLabelClick?: (event) => void;
+}
+
+export interface IChartPieSeries {
+	data: Array<IChartData>;
+	chart: IChartPieSeriesSettings;
 	select?: (event) => void;
 	onLegendLabelClick?: (event) => void;
 }

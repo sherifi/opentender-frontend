@@ -6,6 +6,44 @@
 		<h3>{{tender.titleEnglish}}</h3>
 	</div>
 
+	<div class="container" *ngIf="tender.indicators | defined">
+		<h3>
+			<collapse-expand [o]="state.indi"></collapse-expand>
+		</h3>
+		<div *ngIf="state.indi.open" class="container">
+			<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
+			<!--<div class="container">-->
+				<!--<div class="container-left-3">-->
+					<!--<graph score-grid [caption]="'Composite Score'" [data]="scores.TENDER"></graph>-->
+				<!--</div>-->
+			<!--</div>-->
+			<div class="container">
+				<div class="container-left-3">
+					<graph score-grid [caption]="'Administrative Capacity Indicator'" [data]="scores.ADMINISTRATIVE"></graph>
+				</div>
+				<div class="container-left-9">
+					<graph score-grid [data]="indicators.ADMINISTRATIVE" [isIndicators]="true"></graph>
+				</div>
+			</div>
+			<div class="container">
+				<div class="container-left-3">
+					<graph score-grid [caption]="'Procurement Integrity Indicator'" [data]="scores.CORRUPTION"></graph>
+				</div>
+				<div class="container-left-9">
+					<graph score-grid [data]="indicators.CORRUPTION" [isIndicators]="true"></graph>
+				</div>
+			</div>
+			<div class="container">
+				<div class="container-left-3">
+					<graph score-grid [caption]="'Transparency Indicator'" [data]="scores.TRANSPARENCY"></graph>
+				</div>
+				<div class="container-left-9">
+					<graph score-grid [data]="indicators.TRANSPARENCY" [isIndicators]="true"></graph>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="container" *ngIf="tender.description | defined">
 		<h3>
 			<collapse-expand [o]="state.desc"></collapse-expand>
@@ -13,31 +51,6 @@
 		<div *ngIf="state.desc.open" class="container slab-beta-light container-padded-large">
 			<div class="container justify">
 				<span>{{tender.description}}</span>
-			</div>
-		</div>
-	</div>
-
-	<div class="container" *ngIf="tender.indicators | defined">
-		<h3>
-			<collapse-expand [o]="state.indi"></collapse-expand>
-		</h3>
-		<div *ngIf="state.indi.open" class="container slab-beta-light container-padded-large">
-			<div class="container justify">
-				<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
-				<div class="grid">
-					<div class="grid-item-3" *ngIf="indicators.CORRUPTION.length>0">
-						<small i18n>Procurement Integrity Indicators</small>
-						<div *ngFor="let indi of indicators.CORRUPTION">{{indi.type | formatIndicatorName}}: {{indi.value}}</div>
-					</div>
-					<div class="grid-item-3" *ngIf="indicators.ADMINISTRATIVE.length>0">
-						<small i18n>Administrative Capacity Indicators</small>
-						<div *ngFor="let indi of indicators.ADMINISTRATIVE">{{indi.type | formatIndicatorName}}: {{indi.value}}</div>
-					</div>
-					<div class="grid-item-3" *ngIf="indicators.TRANSPARENCY.length>0">
-						<small i18n>Transparency Indicators</small>
-						<div *ngFor="let indi of indicators.TRANSPARENCY">{{indi.type | formatIndicatorName}}: {{indi.value}}</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

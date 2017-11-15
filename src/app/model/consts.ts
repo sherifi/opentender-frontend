@@ -147,6 +147,12 @@ export const Consts = {
 		single: ['#4e99ca'],
 		single2: ['#2b908f'],
 		single3: ['#dfc27d'],
-		single4: ['#e99450']
+		single4: ['#e99450'],
+		indicators: {
+			'ADMINISTRATIVE': '#80aa6a',
+			'CORRUPTION': '#4c959d',
+			'TRANSPARENCY': '#8e9d63',
+			'TENDER': '#0e9720'
+		}
 	}
 };

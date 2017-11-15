@@ -37,11 +37,10 @@ export function gridLayout(dims, data, minWidth) {
 	let cardHeight = yScale.bandwidth();
 
 	for (let i = 0; i < data.length; i++) {
-		res[i] = {};
-		res[i].data = {
-			name: data[i].name,
-			value: data[i].value
-		};
+		res[i] = {data: {}};
+		Object.keys(data[i]).forEach(key => {
+			res[i].data[key] = data[i][key];
+		});
 		res[i].x = xScale(i % columns);
 		res[i].y = yScale(Math.floor(i / columns));
 		res[i].width = cardWidth;

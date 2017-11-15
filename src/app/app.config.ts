@@ -111,6 +111,7 @@ import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
 import {TenderTableComponent} from './components/tables/table.tender.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
+import {GraphScoreGridComponent} from './components/graphs/score-grid.component';
 
 const AppConfig = {
 	declarations: [
@@ -162,6 +163,7 @@ const AppConfig = {
 		GraphProcedureTypesComponent,
 		GraphHomeHistogramComponent,
 		GraphIndicatorScoreHistogramComponent,
+		GraphScoreGridComponent,
 		GraphScoreSectorsComponent,
 		GraphSectorTreemap,
 		I18NComponent,

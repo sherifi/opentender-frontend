@@ -24,7 +24,7 @@ import {min} from 'd3-array';
 						   ngx-tooltip
 						   [tooltipPlacement]="'top'"
 						   [tooltipType]="'tooltip'"
-						   [tooltipTitle]="getTooltipLabeledText(series.label, series.value.toLocaleString())"
+						   [tooltipTitle]="getTooltipText(series.label, series.value.toLocaleString())"
 					/>
 					<svg:text
 							class="label percent-label"
@@ -68,6 +68,7 @@ export class PieGridComponent extends BasePieChartComponent {
 
 	series: any[] = [];
 	data: any[];
+	getTooltipText = getTooltipLabeledText;
 
 	update(): void {
 		super.update();

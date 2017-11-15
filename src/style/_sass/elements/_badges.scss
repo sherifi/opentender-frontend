@@ -6,8 +6,9 @@ $badges: (
         "notice": #e5edf8,
         "success": #e6efc2,
         "ADMINISTRATIVE": #80aa6a,
-        "CORRUPTION": #facf9c,
+        "CORRUPTION": #4c959d,
         "TRANSPARENCY": #8e9d63,
+        "TENDER": #0e9720,
 ) !default;
 
 @each $badge-type, $color in $badges {
