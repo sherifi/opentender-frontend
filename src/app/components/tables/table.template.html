@@ -16,6 +16,13 @@
 					<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
 					<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
 				</div>
+				<div *ngFor="let line of line.collapseLines">
+					<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+					<div [ngClass]="line.styleClass">
+						<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
+						<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
+					</div>
+				</div>
 			</div>
 		</td>
 	</tr>
