@@ -1,6 +1,7 @@
 .info-links {
-  float: right;
-
+  @include respond-to(medium-up) {
+    float: right;
+  }
   .info-link-box {
     margin-top: 10px;
     margin-bottom: 10px;

@@ -10,28 +10,32 @@
 		<h1 class="container-title">{{company.name | nameGuard}}</h1>
 	</div>
 	<div class="container">
-		<div class="info-links">
-			<div class="info-link-box">
-				<ng-container i18n>Read more about tender legislation</ng-container>
-				<br>
-				<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
-			</div>
-			<div class="info-link-box" *ngIf="country.foi">
-				<ng-container i18n>Find Freedom of Information requests at</ng-container>
-				<br>
-				<a target="_blank" rel="noopener" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
-			</div>
-			<div class="info-link-box">
-				<ng-container i18n>Search this company at</ng-container>
-				<br>
-				<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
-				<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
-				<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
+		<div class="container-left-9">
+			<tender-body-address [address]="company.address"></tender-body-address>
+			<br/>
+			<select-similar-list caption="Similar Companies" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
+		</div>
+		<div class="container-left-3">
+			<div class="info-links">
+				<div class="info-link-box">
+					<ng-container i18n>Read more about tender legislation</ng-container>
+					<br>
+					<a target="_blank" rel="noopener" href="{{ country.name | europamLink}}"><i class="icon-new-tab"></i> EuroPAM</a>
+				</div>
+				<div class="info-link-box" *ngIf="country.foi">
+					<ng-container i18n>Find Freedom of Information requests at</ng-container>
+					<br>
+					<a target="_blank" rel="noopener" href="{{ company.name | foiSearchLink: country }}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
+				</div>
+				<div class="info-link-box">
+					<ng-container i18n>Search this company at</ng-container>
+					<br>
+					<a target="_blank" rel="noopener" href="http://openinterests.eu/entities?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenInterests.eu</a><br>
+					<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
+					<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
+				</div>
 			</div>
 		</div>
-		<tender-body-address [address]="company.address"></tender-body-address>
-		<br/>
-		<select-similar-list i18n-title title="Similar Companies" icon="icon-office" link="/company/" [current]="this.company" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
 	</div>
 
 

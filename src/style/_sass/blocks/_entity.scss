@@ -13,20 +13,40 @@
   }
 
   .similars {
+    vertical-align: top;
+    margin-bottom: 10px;
 
     .similars-list {
       max-height: 200px;
       overflow: auto;
-      margin-bottom: 10px;
+      vertical-align: top;
+      line-height: 1.1em;
+      border: 1px solid #ebebeb;
+    }
+
+    .similars-tools {
+      font-size: 0.7em;
     }
 
     .similar {
       display: inline-block;
-      margin-right: 18px;
+      margin-right: 8px;
+      //margin-right: 18px;
+      vertical-align: top;
+      @include respond-to(medium-up) {
+        width: 45%;
+      }
+      @include respond-to(large-up) {
+        width: 30%;
+      }
       label {
-        display: inline-block;
+        display: inline;
         font-size: 0.8em;
         margin-bottom: 0;
+        input {
+          float: inherit;
+          display: inline-block;
+        }
       }
       a {
         display: inline-block;
@@ -35,10 +55,9 @@
     }
   }
 
-	.description-extract {
-		font-size: 0.9em;
-		margin-bottom: 10px;
-	}
-
+  .description-extract {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
 
 }

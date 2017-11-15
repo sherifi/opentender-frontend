@@ -12,7 +12,7 @@ export class SelectSimilarListComponent {
 	@Input()
 	current: Body;
 	@Input()
-	title: string;
+	caption: string;
 	@Input()
 	link: string;
 	@Input()
@@ -25,11 +25,19 @@ export class SelectSimilarListComponent {
 	constructor() {
 	}
 
-	toggleSimilar(body: Body): void {
-		this.search_similars[body.id] = !this.search_similars[body.id];
-		let ids = Object.keys(this.search_similars).filter((key) => {
-			return this.search_similars[key];
-		});
+	public triggerChange(): void {
+		let ids = Object.keys(this.search_similars).filter((key) => this.search_similars[key]);
 		this.selectChange.emit({value: ids});
 	}
+
+	public markNone(): void {
+		this.search_similars = {};
+		this.triggerChange();
+	}
+
+	public markAll(): void {
+		this.similar.forEach(body => this.search_similars[body.id] = true);
+		this.triggerChange();
+	}
+
 }

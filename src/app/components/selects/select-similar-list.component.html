@@ -1,9 +1,10 @@
 <div class="similars" *ngIf="similar.length > 0">
-	<div class="title" i18n>{{title}}</div>
+	<div class="title" i18n>{{caption}}</div>
 	<div class="similars-list">
 		<div class="similar" *ngFor="let body of similar">
 			<a [routerLink]="[link+body.id]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>
-			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" (change)="toggleSimilar(body)"/> {{body.name | nameGuard}}</label>
+			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" [(ngModel)]="search_similars[body.id]" (ngModelChange)="triggerChange()" /> {{body.name | nameGuard}}</label>
 		</div>
 	</div>
+	<div class="similars-tools" *ngIf="similar.length>1"><a (click)="markAll()" i18n>Select all</a> | <a (click)="markNone()" i18n>Deselect all</a></div>
 </div>
