@@ -32,16 +32,17 @@ const ColumnsFormatUtils = {
 		let result: Array<ITableCellLine> = [];
 		tender.scores.forEach(score => {
 			if (score.status === 'CALCULATED' && score.type === group.id) {
-				result.push({content: 'Score: ' + Utils.formatValue(score.value), hint: group.name});
-			}
-		});
-		tender.indicators.forEach(indicator => {
-			let group_id = indicator.type.split('_')[0];
-			if (indicator.status === 'CALCULATED' && group_id === group.id) {
-				let def = group.subindicators[indicator.type];
-				if (def) {
-					result.push({styleClass: 'badge-' + group.id, content: def.name + ': ' + Utils.formatValue(indicator.value), hint: def.desc});
-				}
+				let collapseLines: Array<ITableCellLine> = [];
+				tender.indicators.forEach(indicator => {
+					let group_id = indicator.type.split('_')[0];
+					if (indicator.status === 'CALCULATED' && group_id === group.id) {
+						let def = group.subindicators[indicator.type];
+						if (def) {
+							collapseLines.push({styleClass: 'badge-' + group.id, content: def.name + ': ' + Utils.formatValue(indicator.value), hint: def.desc});
+						}
+					}
+				});
+				result.push({content: 'Score: ' + Utils.formatValue(score.value), hint: group.name, collapseLines: collapseLines});
 			}
 		});
 		return result;
@@ -334,7 +335,8 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let result: Array<ITableCellLine> = [];
 			tender.scores.forEach(score => {
 				if (score.status === 'CALCULATED' && score.type === 'TENDER') {
-					result.push({content: 'Composite Score: ' + Utils.formatValue(score.value)});
+					result.push({prefix: 'Composite'});
+					result.push({content: 'Score: ' + Utils.formatValue(score.value)});
 				}
 			});
 			Object.keys(Consts.indicators).forEach(key => {
