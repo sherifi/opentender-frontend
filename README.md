@@ -44,7 +44,7 @@ let settings = {
 };
 ```
 
-Note: The config file is backed into the js bundle, if you change anything you must rebuild the bundle.
+Note: The config file is baked into the js bundle, if you change anything you must rebuild the bundle.
 
 ## Commands
 
