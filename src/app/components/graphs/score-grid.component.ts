@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
-import {IChartPieSeries} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {IChartData, IChartPieSeries} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider} from '../../app.interfaces';
 import {Router} from '@angular/router';
 import {I18NService} from '../../services/i18n.service';
@@ -22,7 +22,7 @@ import {I18NService} from '../../services/i18n.service';
 })
 export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	@Input()
-	data: Array<{ id: string; name: string, value: number, color: string }>;
+	data: Array<IChartData>;
 	@Input()
 	caption: string = '';
 	@Input()
@@ -43,9 +43,6 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 			}
 		},
 		select: (event) => {
-			// if (event.id) {
-			// 	this.router.navigate(['/sector/' + event.id]);
-			// }
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -62,7 +59,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.scores.data = [];
+		this.scores.data = null;
 		if (this.data) {
 			this.scores.data = this.data;
 		}

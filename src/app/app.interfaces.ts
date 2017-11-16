@@ -170,6 +170,7 @@ export interface IStats {
 	terms_indicators: IStatsIndicators;
 	terms_procedure_type: IStatsProcedureType;
 	terms_indicators_score: IStatsIndicators;
+	terms_score: IStatsIndicators;
 	histogram_lots_awardDecisionDate_scores: IStatsScoresInYears;
 	histogram_lots_awardDecisionDate: IStatsInYears;
 	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;

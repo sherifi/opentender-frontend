@@ -7,6 +7,8 @@ import {
 	ISearchCommandFilter, IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears,
 	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears, IStatsCpvs
 } from '../../app.interfaces';
+import {IChartData} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {Consts} from '../../model/consts';
 
 @Component({
 	moduleId: __filename,
@@ -35,11 +37,13 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		lots_in_years: IStatsPcPricesLotsInYears,
 		cpvs_codes: IStatsPcCpvs
 		terms_indicators_score: IStatsIndicators,
-		score_in_sectors: IStatsCpvs
+		score_in_sectors: IStatsCpvs,
+		score: Array<IChartData>
 	} = {
 		top_companies: null,
 		top_authorities: null,
 		score_in_years: null,
+		score: null,
 		lots_in_years: null,
 		cpvs_codes: null,
 		score_in_sectors: null,
@@ -111,7 +115,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			score_in_years: null,
 			cpvs_codes: null,
 			score_in_sectors: null,
-			terms_indicators_score: null
+			terms_indicators_score: null,
+			score: null
 		};
 		if (!stats) {
 			this.viz = viz;
@@ -125,6 +130,21 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		viz.terms_indicators_score = stats.terms_indicators_score;
 		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
+		if (stats.terms_score && stats.terms_score.hasOwnProperty(this.searchPrefix)) {
+			viz.score = [{
+				name: this.indicatorTitle,
+				value: stats.terms_score[this.searchPrefix],
+				id: this.searchPrefix,
+				color: Consts.colors.indicators[this.searchPrefix]
+			}];
+		} else if (stats.terms_indicators_score && stats.terms_indicators_score.hasOwnProperty(this.searchPrefix)) {
+			viz.score = [{
+				name: this.indicatorTitle,
+				value: stats.terms_indicators_score[this.searchPrefix],
+				id: this.searchPrefix,
+				color: Consts.colors.indicators[this.searchPrefix.split('_')[0]]
+			}];
+		}
 
 		this.viz = viz;
 

@@ -18,15 +18,25 @@
 		<div class="form-group">
 			<label for="subindicator" i18n>Sub-Indicators</label>
 			<select class="form-control" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
-				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]</option>
+				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]
+				</option>
 				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
 			</select>
 		</div>
 		<br/>
 		<div class="container">
 			<div class="container-left-12">
-				<graph indicator-structure [data]="viz.terms_indicators_score" [title]="indicatorTitle" (onSelect)="selectIndicatorChange($event)"></graph>
+				<div class="graph-title" i18n>Average Score of {{indicatorTitle}}</div>
 			</div>
+			<div class="container-left-3">
+				<graph score-grid [data]="viz.score"></graph>
+			</div>
+			<div class="container-left-9">
+				<graph indicator-structure [data]="viz.terms_indicators_score" (onSelect)="selectIndicatorChange($event)"></graph>
+			</div>
+
+		</div>
+		<div class="container">
 			<div class="container-left-6">
 				<graph score-histogram [data]="viz.score_in_years" [title]="indicatorTitle"></graph>
 			</div>
