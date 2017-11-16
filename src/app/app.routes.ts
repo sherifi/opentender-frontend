@@ -29,31 +29,34 @@ import {RegionPage} from './pages/region/region.component';
 import {SharePage} from './pages/share/share.component';
 
 export const routes: Routes = [
-	{path: '', component: HomePage},
+	{
+		path: '', component: HomePage,
+		data: {menu: true, menu_title: 'Home'}
+	},
 	{path: 'start', component: StartPage, data: {title: 'Opentender Portals'}},
 	{path: 'share', component: SharePage},
 
 	{
 		path: 'dashboards',
 		component: DashboardsPage,
-		data: {title: 'Dashboards'},
+		data: {title: 'Dashboards', menu: true, routerLink: ['/dashboards/administrative-capacity']},
 		children: [
 			{path: '', redirectTo: 'administrative-capacity', pathMatch: 'full'},
-			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis'}},
-			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators'}},
-			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators'}},
-			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Administrative Capacity Indicators'}}
+			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Administrative Capacity Indicators', menu: true, menu_title: 'Administrative Capacity'}},
+			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators', menu: true, menu_title: 'Transparency'}},
+			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators', menu: true, menu_title: 'Procurement Integrity'}},
+			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis', menu: true}}
 		]
 	},
 	{
 		path: 'search',
 		component: SearchPage,
-		data: {title: 'Search'},
+		data: {title: 'Search', menu: true, routerLink: ['/search/tender']},
 		children: [
 			{path: '', redirectTo: 'tender', pathMatch: 'full'},
-			{path: 'tender', component: SearchTenderPage, data: {title: 'Search Tender'}},
-			{path: 'company', component: SearchCompanyPage, data: {title: 'Search Company'}},
-			{path: 'authority', component: SearchAuthorityPage, data: {title: 'Search Authority'}}
+			{path: 'tender', component: SearchTenderPage, data: {title: 'Search Tender', menu: true, menu_title: 'Tender'}},
+			{path: 'company', component: SearchCompanyPage, data: {title: 'Search Company', menu: true, menu_title: 'Company'}},
+			{path: 'authority', component: SearchAuthorityPage, data: {title: 'Search Authority', menu: true, menu_title: 'Authority'}}
 		]
 	},
 
@@ -62,21 +65,20 @@ export const routes: Routes = [
 	{path: 'tender/:id', component: TenderPage, data: {title: 'Tender'}},
 	{path: 'sector/:id', component: SectorPage, data: {title: 'Sector'}},
 	{path: 'region/:id', component: RegionPage, data: {title: 'Region'}},
-
+	{path: 'download', component: DownloadPage, data: {title: 'Download', menu: true}},
 	{
 		path: 'about',
 		component: AboutPage,
-		data: {title: 'About'},
+		data: {title: 'About', menu: true, routerLink: ['/about/about-opentender']},
 		children: [
 			{path: '', redirectTo: 'about-opentender', pathMatch: 'full'},
-			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender'}},
-			{path: 'how-opentender-works', component: AboutHowPage, data: {title: 'How Opentender works'}},
-			{path: 'glossary', component: AboutGlossaryPage, data: {title: 'Glossary'}},
+			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender', menu: true}},
+			{path: 'how-opentender-works', component: AboutHowPage, data: {title: 'How Opentender works', menu: true}},
+			{path: 'glossary', component: AboutGlossaryPage, data: {title: 'Glossary', menu: true}},
 			{path: 'foi', component: AboutFOIPage, data: {title: 'FOI Overview'}},
 			{path: 'quality', component: AboutDataQualityPage, data: {title: 'Data Quality'}}
 		]
 	},
-	{path: 'download', component: DownloadPage, data: {title: 'Download'}},
 	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
 
 	{path: 'test', component: TestPage, data: {title: 'Test'}},

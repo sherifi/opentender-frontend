@@ -1,23 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {I18NService} from '../../services/i18n.service';
+import {Component} from '@angular/core';
 
 @Component({
 	moduleId: __filename,
-	selector: 'explore',
+	selector: 'dashboards',
 	templateUrl: 'dashboards.template.html'
 })
-export class DashboardsPage implements OnInit {
-	public cards = [];
+export class DashboardsPage {
 
-	constructor(i18n: I18NService) {
-		this.cards = [
-			{icon: 'icon-library', url: '/dashboards/administrative-capacity', title: i18n.get('Administrative Capacity')},
-			{icon: 'icon-checkmark', url: '/dashboards/transparency', title: i18n.get('Transparency')},
-			{icon: 'icon-flag', url: '/dashboards/procurement-integrity', title: i18n.get('Procurement Integrity')},
-			{icon: 'icon-hammer', url: '/dashboards/market-analysis', title: i18n.get('Market Analysis')}
-		];
+	constructor() {
 	}
 
-	ngOnInit(): void {
-	}
 }

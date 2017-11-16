@@ -1,5 +1,8 @@
-<div class="header-sub-container"></div>
-
+<div class="container-outer sector entity" *ngIf="!tender">
+	<div class="container">
+		<div i18n>Loading…</div>
+	</div>
+</div>
 <div class="container-outer tender entity" *ngIf="tender">
 	<div class="container">
 		<h1 class="container-title">{{tender.title}}</h1>
