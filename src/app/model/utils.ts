@@ -187,7 +187,7 @@ export const Utils = {
 			// format number and add prefix as suffix
 			return scaled.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' ' + prefix;
 		}
-		return n.toLocaleString();
+		return n.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
 	},
 	seriesToTable(data: IChartData[], header) {
 		let hasID = header.hasOwnProperty('id');
