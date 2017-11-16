@@ -6,7 +6,7 @@ written in Typescript and SCSS
 
 ## Installation
 
-- install [NodeJS](https://nodejs.org/) 6.x and [NPM](https://www.npmjs.com/)
+- install [NodeJS](https://nodejs.org/) 8.x and [NPM](https://www.npmjs.com/)
 
 - run command `npm install` in the root folder of this repository
 
