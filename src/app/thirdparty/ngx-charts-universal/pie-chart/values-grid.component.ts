@@ -35,10 +35,7 @@ import {IDomain} from '../common/common.interface';
 							dy="-0.5em"
 							x="0"
 							y="28"
-							ngx-charts-count-up
-							[countTo]="series.value"
-							[formatCountUpNumber]="formatLabelNumber"
-							text-anchor="middle">
+							text-anchor="middle">{{formatLabelNumber(series.value)}}
 					</svg:text>
 					<svg:text *ngIf="chart.labels"
 							  class="label"
@@ -92,13 +89,18 @@ export class PieValuesGridComponent extends BaseChartComponent {
 				margins: this.margin
 			});
 
-			this.domain = this.getDomain();
+			this.layout_data = [];
+			this.series = [];
 
-			this.layout_data = gridLayout(this.viewDim, this.data, 150);
-			this.transform = `translate(${this.margin[3]} , ${this.margin[0]})`;
+			if (this.data) {
+				this.domain = this.getDomain();
 
-			this.series = this.getSeries();
-			this.setColors();
+				this.layout_data = gridLayout(this.viewDim, this.data, 150);
+				this.transform = `translate(${this.margin[3]} , ${this.margin[0]})`;
+
+				this.series = this.getSeries();
+				this.setColors();
+			}
 		});
 	}
 
