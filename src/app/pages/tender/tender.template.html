@@ -16,9 +16,9 @@
 		<div *ngIf="state.indi.open" class="container">
 			<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
 			<!--<div class="container">-->
-				<!--<div class="container-left-3">-->
-					<!--<graph score-grid [caption]="'Composite Score'" [data]="scores.TENDER"></graph>-->
-				<!--</div>-->
+			<!--<div class="container-left-3">-->
+			<!--<graph score-grid [caption]="'Composite Score'" [data]="scores.TENDER"></graph>-->
+			<!--</div>-->
 			<!--</div>-->
 			<div class="container">
 				<div class="container-left-3">
@@ -118,21 +118,15 @@
 				<h4 i18n>Prices</h4>
 				<div class="inline-info" *ngIf="tender.estimatedPrice | defined">
 					<h4 i18n>Estimated Price</h4>
-					<div>
-						<tender-price [price]="tender.estimatedPrice"></tender-price>
-					</div>
+					<tender-price [price]="tender.estimatedPrice"></tender-price>
 				</div>
 				<div class="inline-info" *ngIf="tender.finalPrice | defined">
 					<h4 i18n>Final Price</h4>
-					<div>
-						<tender-price [price]="tender.finalPrice"></tender-price>
-					</div>
+					<tender-price [price]="tender.finalPrice"></tender-price>
 				</div>
 				<div class="inline-info" *ngIf="tender.documentsPrice | defined">
 					<h4 i18n>Documents Price</h4>
-					<div>
-						<tender-price [price]="tender.documentsPrice"></tender-price>
-					</div>
+					<tender-price [price]="tender.documentsPrice"></tender-price>
 				</div>
 				<div *ngIf="(tender.estimatedStartDate || tender.estimatedCompletionDate || tender.bidDeadline || tender.documentsDeadline) | defined">
 					<h4 i18n>Dates</h4>
@@ -154,9 +148,9 @@
 					</div>
 					<div class="inline-info" *ngIf="(tender.estimatedDurationInDays || tender.estimatedDurationInMonths || tender.estimatedDurationInYears) | defined">
 						<h4 i18n>Estimated Duration</h4>
-						<span>{{tender.estimatedDurationInDays}} Day(s)</span><br/>
-						<span>{{tender.estimatedDurationInMonths}} Month(s)</span><br/>
-						<span>{{tender.estimatedDurationInYears}} Year(s)</span><br/>
+						<div *ngIf="tender.estimatedDurationInDays">{{tender.estimatedDurationInDays}} Day(s)</div>
+						<div *ngIf="tender.estimatedDurationInMonths">{{tender.estimatedDurationInMonths}} Month(s)</div>
+						<div *ngIf="tender.estimatedDurationInYears">{{tender.estimatedDurationInYears}} Year(s)</div>
 					</div>
 				</div>
 				<div *ngIf="tender.cpvs | defined">
@@ -196,11 +190,8 @@
 					<h4 i18n>Award Criteria</h4>
 					<div *ngFor="let aw of tender.awardCriteria; let index_aw = index">
 						<div class="inline-info">
-							<h4>
-								Nr. {{index_aw+1}} <span *ngIf="aw.weight | defined">: {{aw.weight}}%</span>
-							</h4>
+							<h4>Nr. {{index_aw+1}} <span *ngIf="aw.weight | defined">: {{aw.weight}}%</span></h4>
 							{{aw.name}}
-							<!--<span class="smaller" *ngIf="aw.isPriceRelated">(Price Related)</span>-->
 						</div>
 						<div>{{aw.description}}</div>
 					</div>
@@ -224,12 +215,12 @@
 						<div [ngClass]="{'grid-item-2':lot.bids.length>1,'grid-item-1':lot.bids.length<=1}" *ngFor="let bid of lot.bids">
 							<div class="margined-text" *ngIf="!lot.title && lot.description">{{lot.description}}</div>
 							<div class="container container-padded-top-lite">
-								<div class="container-left-8">
+								<div class="container-left-10">
 									<div class="lot-bidder" *ngFor="let bidder of bid.bidders">
 										<tender-body-line [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.id"></tender-body-line>
 									</div>
 								</div>
-								<div class="container-left-4">
+								<div class="container-left-1">
 									<div class="inline-info" *ngIf="bid.price | defined">
 										<h4 i18n>Price</h4>
 										<tender-price [price]="bid.price"></tender-price>
