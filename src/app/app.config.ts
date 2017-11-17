@@ -90,7 +90,7 @@ import {I18NComponent} from './components/i18n.component';
 import {MapBuyersComponent} from './components/maps/nuts-map-buyer.component';
 import {MapComponent} from './components/maps/nuts-map.component';
 import {MapHomeComponent} from './components/maps/nuts-map-home.component';
-import {MapPortalComponent, SVGCountryGroupDirective} from './components/maps/map-portal.component';
+import {MapPortalComponent} from './components/maps/map-portal.component';
 import {MapRegionComponent} from './components/maps/nuts-map-region.component';
 import {MapSuppliersComponent} from './components/maps/nuts-map-supplier.component';
 import {MapVolumeComponent} from './components/maps/nuts-map-volume.component';
@@ -212,8 +212,7 @@ const AppConfig = {
 		TenderPage,
 		TestPage,
 
-		PageScrollDirective,
-		SVGCountryGroupDirective
+		PageScrollDirective
 	],
 	imports: [
 		FormsModule,

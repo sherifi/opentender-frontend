@@ -145,6 +145,10 @@ export class ApiService {
 		return this.http.get<IApiResultPortals>(this.actionUrl + 'portals/list');
 	}
 
+	getPortalMapData(): Observable<IApiResultGeoJSON> {
+		return this.http.get<IApiResultGeoJSON>(this.actionUrl + 'portals/geo.json');
+	}
+
 	// country unspecific gets from frontend
 
 	getDownloads(): Observable<IApiResultDownloads> {
@@ -155,9 +159,6 @@ export class ApiService {
 		return this.http.get<IApiResultGeoJSON>(this.absUrl + '/data/nuts' + level + '.geo.json');
 	}
 
-	getPortalMapData(): Observable<IApiResult> {
-		return this.http.get<IApiResult>(this.absUrl + '/assets/data/portal-map.svg.json');
-	}
 
 }
 

@@ -107,14 +107,14 @@ graph {
   text-align: right;
 }
 
-.nutsmap_leaflet {
+.nutsmap_leaflet, .map_leaflet {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 1;
 }
 
-.nutsmap_placeholder {
+.nutsmap_placeholder, .map_placeholder {
   top: -100%;
   width: 100%;
   height: 100%;
@@ -141,7 +141,7 @@ graph {
   }
 }
 
-.nutsmap_containers {
+.nutsmap_containers, .map_containers {
   width: 100%;
   border: 1px solid #ececec;
   overflow: hidden;

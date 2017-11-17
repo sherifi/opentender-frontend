@@ -1,64 +1,103 @@
-import {Component, Directive, QueryList, ElementRef, Input, ViewChildren, AfterViewInit, OnChanges, SimpleChanges, Renderer2} from '@angular/core';
+import {Component, Input, AfterViewInit, OnChanges, SimpleChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {IStatsCountry} from '../../app.interfaces';
+import {IApiResultGeoJSON, IStatsCountry} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
+import {initLeafletPlugins} from './leaflet.helper';
+import {PlatformService} from '../../services/platform.service';
 import {Router} from '@angular/router';
 
-@Directive({selector: 'g.country'})
-export class SVGCountryGroupDirective {
-	@Input() id: string;
-	portal: IStatsCountry;
-	current: boolean;
-
-	constructor(private el: ElementRef, private config: ConfigService, private renderer: Renderer2, private router: Router) {
-		renderer.listen(el.nativeElement, 'click', (event) => {
-			if (this.portal) {
-				if (this.portal.id === this.config.country.id) {
-					router.navigate(['/']);
-				} else {
-					window.location.href = '/' + (this.portal.id || '');
-				}
-			}
-		});
-	}
-
-	public setData(portal: IStatsCountry, isCurrent: boolean) {
-		this.portal = portal;
-		this.current = isCurrent;
-		if (this.current) {
-			this.renderer.addClass(this.el.nativeElement, 'current');
-		} else if (portal.value > 0) {
-			this.renderer.addClass(this.el.nativeElement, 'active');
-		}
-	}
-}
+/// <reference path="../../../../node_modules/@types/leaflet/index.d.ts" />
+declare let L;
 
 @Component({
 	selector: 'portal-map',
-	templateUrl: 'map-portal.template.html'
+	template: `
+		<div class="map_containers" style="height: 475px">
+			<div leaflet class="map_leaflet" [leafletOptions]="leaflet_options" (leafletMapReady)="onMapReady($event)"></div>
+			<div *ngIf="portals && portals.length===0" class="map_placeholder" style="line-height: 475px">NO DATA</div>
+		</div>`
 })
 export class MapPortalComponent implements AfterViewInit, OnChanges {
-
+	//
 	@Input()
 	portals: Array<IStatsCountry>;
+	@Input()
+	formatTooltip: (properties: any) => string;
 
-	@ViewChildren(SVGCountryGroupDirective)
-	items: QueryList<SVGCountryGroupDirective>;
-
-	public svg: Array<{ id: string; p: Array<string>; c?: Array<{ cx: number; cy: number; r: number }> }>;
+	private geolayer: L.GeoJSON;
+	public leaflet_options = {};
 	public current: Country;
 	public loading: number = 0;
+	public geojson: IApiResultGeoJSON;
+	private map: any;
 
-	constructor(private api: ApiService, private config: ConfigService, private notify: NotifyService) {
+	constructor(private api: ApiService, private platform: PlatformService, private config: ConfigService, private notify: NotifyService, private router: Router) {
 		this.current = config.country;
+		this.initMap();
+	}
+
+	private initMap(): void {
+		if (!this.platform.isBrowser) {
+			return;
+		}
+		initLeafletPlugins();
+		this.geolayer = L.geoJSON(null, {
+			onEachFeature: ((feature, layer) => {
+				let tooltip;
+				if (this.formatTooltip) {
+					tooltip = this.formatTooltip(feature.properties);
+				} else {
+					tooltip = feature.properties['name'] + ': ' + feature.properties['value'];
+				}
+				let popup = layer.bindPopup(tooltip, {closeButton: false, autoPan: false, className: 'nutsmap_popup'});
+				layer.on('mouseover', (e) => {
+					popup.openPopup();
+				});
+				layer.on('mouseout', (e) => {
+					popup.closePopup();
+				});
+				layer.on('click', (e) => {
+					let id = feature.properties['id'];
+					if (id === this.current.id) {
+						this.router.navigate(['/']);
+					} else {
+						window.location.href = '/' + (id || '');
+					}
+				});
+			}),
+			style: (feature) => {
+				return {weight: 1, color: '#fff', fillColor: feature.properties['color'], opacity: 0.9, fillOpacity: 0.55};
+			}
+		});
+		this.leaflet_options = {
+			layers: [
+				L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {maxZoom: 18, attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'}),
+				this.geolayer
+			],
+			zoom: 3,
+			minZoom: 2,
+			maxZoom: 10,
+			fullscreenControl: true,
+			resetControl: false,
+			scrollWheelZoom: false,
+			center: L.latLng({lat: 56.17002298293205, lng: 9.404296875000002})
+		};
+	}
+
+	onMapReady(map) {
+		this.map = map;
+		map.once('focus', () => {
+			map.scrollWheelZoom.enable();
+		});
 	}
 
 	public ngAfterViewInit(): void {
 		setTimeout(() => {
 			this.load();
-		}, 0);
+		}, 10);
 	}
+
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.apply();
@@ -79,22 +118,30 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 		);
 	}
 
-	private display(svg) {
-		this.svg = svg;
+	private display(geojson: IApiResultGeoJSON) {
+		this.geojson = geojson;
 		setTimeout(() => {
 			this.apply();
 		}, 0);
 	}
 
 	private apply() {
-		if (this.portals && this.items && this.svg) {
-			this.items.forEach((item) => {
-				let portal = this.portals.filter(p => p.id == item.id)[0];
+		if (this.platform.isBrowser && this.portals && this.geojson && this.geojson.features) {
+			this.geojson.features.forEach(feature => {
+				let portal = this.portals.find(p => feature.properties.id == p.id);
 				if (portal) {
-					item.setData(portal, item.id === this.current.id);
+					feature.properties.name = portal.name;
+					feature.properties['value'] = portal.value;
+					feature.properties['color'] = portal.id === this.current.id ?
+						'#6fd978' :
+						'#08306b';
 				}
 			});
+			this.geolayer.clearLayers();
+			if (this.geojson.features.length > 0) {
+				this.geolayer.addData(this.geojson);
+				// this.map.fitBounds(this.geolayer.getBounds());
+			}
 		}
 	}
-
 }
