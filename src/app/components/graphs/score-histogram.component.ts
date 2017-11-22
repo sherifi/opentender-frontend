@@ -8,7 +8,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[score-histogram]',
 	template: `
-		<div class="graph-title" i18n>Average Score of {{title}} over Time</div>
+		<div class="graph-title">{{title}}</div>
 		<div class="graph-toolbar-container"></div>
 		<ngx-charts-bar-vertical
 				class="chart-container"

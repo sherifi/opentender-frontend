@@ -110,7 +110,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 				nuts[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 			});
 			viz.volume_regions = nuts;
-			viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores['TENDER'];
+			viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores['TENDER'] || {};
 			viz.score_in_sectors = stats.terms_main_cpv_divisions_score;
 			viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
 			viz.procedure_types = stats.terms_procedure_type;
