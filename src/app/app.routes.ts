@@ -39,13 +39,13 @@ export const routes: Routes = [
 	{
 		path: 'dashboards',
 		component: DashboardsPage,
-		data: {title: 'Dashboards', menu: true, routerLink: ['/dashboards/administrative-capacity']},
+		data: {title: 'Dashboards', menu: true, routerLink: ['/dashboards/market-analysis']},
 		children: [
 			{path: '', redirectTo: 'administrative-capacity', pathMatch: 'full'},
+			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis', menu: true}},
 			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage, data: {title: 'Administrative Capacity Indicators', menu: true, menu_title: 'Administrative Capacity'}},
 			{path: 'transparency', component: DashboardsTransparencyPage, data: {title: 'Transparency Indicators', menu: true, menu_title: 'Transparency'}},
-			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators', menu: true, menu_title: 'Procurement Integrity'}},
-			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis', menu: true}}
+			{path: 'procurement-integrity', component: DashboardsIntegrityPage, data: {title: 'Procurement Integrity Indicators', menu: true, menu_title: 'Procurement Integrity'}}
 		]
 	},
 	{
