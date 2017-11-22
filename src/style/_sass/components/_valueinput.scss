@@ -5,13 +5,13 @@ valueinput {
   }
 
   label {
-    margin-left: 26px !important;
+    margin-left: 18px !important;
   }
 
   .value-input-wrapper {
 
     .value-input {
-      margin-left: 26px;
+      margin-left: 18px;
     }
 
     .value-mode-button {
@@ -24,4 +24,11 @@ valueinput {
 
   }
 
+
+  .labeled-input-container.empty label {
+    width: calc(100% - 70px);
+    display: inline-block;
+  }
+
 }
+
