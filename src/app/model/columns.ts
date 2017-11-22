@@ -335,7 +335,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let result: Array<ITableCellLine> = [];
 			tender.scores.forEach(score => {
 				if (score.status === 'CALCULATED' && score.type === 'TENDER') {
-					result.push({prefix: 'Composite'});
+					result.push({prefix: 'Good Procurement'});
 					result.push({content: 'Score: ' + Utils.formatValue(score.value)});
 				}
 			});

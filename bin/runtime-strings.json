@@ -7,7 +7,7 @@
   "Appeal Body Name",
   "Authority",
   "Average % of Contracts (Lots)",
-  "Average Indicator Score",
+  "Average Score",
   "Average Volume of Contracts (€)",
   "Award Decision Date",
   "Award Decision Year",
@@ -111,5 +111,11 @@
   "Supplier Region",
   "Score",
   "Composite",
-  "Composite Score"
+  "Composite Score",
+  "Good Procurement Score",
+  "Good Procurement",
+  "Main Suppliers",
+  "Main Buyers",
+  "Main Suppliers in Score Range",
+  "Main Buyers in Score Range"
 ]

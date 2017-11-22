@@ -66,24 +66,22 @@
 		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
-					<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle"></graph>
+					<graph indicator-histogram [data]="viz.lots_in_years" [title]="indicatorTitle+' in Range'"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle"></graph>
+					<graph indicator-sectors [data]="viz.cpvs_codes" [title]="indicatorTitle+' in Range'"></graph>
 				</div>
 			</div>
 			<br/>
 			<div class="container">
 				<div class="container-left-6">
-					<graph companies [data]="viz.top_companies"></graph>
+					<graph companies [data]="viz.top_companies" [title]="'Main Suppliers in Score Range'"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph authorities [data]="viz.top_authorities"></graph>
+					<graph authorities [data]="viz.top_authorities" [title]="'Main Buyers in Score Range'"></graph>
 				</div>
 			</div>
-
 		</div>
-
 		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
 		</div>

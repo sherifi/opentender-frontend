@@ -167,7 +167,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	},
 	{
 		id: 'indicators.score_co',
-		name: 'Composite Score',
+		name: 'Good Procurement',
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {

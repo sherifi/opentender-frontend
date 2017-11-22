@@ -40,8 +40,8 @@
   },
   "CORRUPTION": {
     "id": "CORRUPTION",
-    "name": "Procurement Integrity Indicator",
-    "plural": "Procurement Integrity Indicators",
+    "name": "Integrity Indicator",
+    "plural": "Integrity Indicators",
     "subindicators": {
       "CORRUPTION_SINGLE_BID": {
         "name": "Single bidder contract",

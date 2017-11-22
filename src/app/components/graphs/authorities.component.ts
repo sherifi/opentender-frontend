@@ -9,7 +9,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[authorities]',
 	template: `
-		<div class="graph-title" i18n>Main buyers</div>
+		<div class="graph-title">{{title}}</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
 				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>
@@ -26,6 +26,8 @@ import {I18NService} from '../../services/i18n.service';
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
+	@Input()
+	title: string;
 	@Input()
 	data: {
 		absolute: IStatsAuthorities,

@@ -73,7 +73,7 @@ export const Utils = {
 		if (Consts.indicators[groupkey]) {
 			return Consts.indicators[groupkey].name;
 		} else if (value === 'TENDER') {
-			return 'Composite Score';
+			return 'Good Procurement Score';
 		}
 		return value;
 	},
