@@ -146,7 +146,7 @@ header {
     text-align: center;
 
     @include respond-to(medium-up) {
-      width: 280px;
+      width: 320px;
       text-align: left;
     }
   }
