@@ -3,10 +3,9 @@
 		[max]="maxScore"
 		[startValue]="startScore"
 		[endValue]="endScore"
-		stepValue="1"
+		stepValue="10"
 		defaultWidth="200"
 		compact="true"
-		[formatTick]="formatScoreTick"
 		(onSliderChange)="onSliderChange($event)">
 </slider>
-<div class="select-range-values">{{formatScoreTick(startScore)}} - {{formatScoreTick(endScore)}}</div>
+<div class="select-range-values">{{startScore}} - {{endScore}}</div>

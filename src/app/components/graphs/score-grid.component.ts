@@ -37,6 +37,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 				max: {height: 200}
 			},
 			labels: true,
+			maxValue: 100,
 			valueFormatting: Utils.formatValue,
 			colorScheme: {
 				domain: Consts.colors.single2

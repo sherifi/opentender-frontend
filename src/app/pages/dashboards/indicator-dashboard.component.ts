@@ -23,7 +23,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 
 	private icon: string = '';
 	private searchPrefix: string = '';
-	private searchScore: [number, number] = [0, 0.5];
+	private searchScore: [number, number] = [0, 50];
 	public title: string = '';
 	public subindicators: ISubIndicatorInfo[] = [];
 	public selected: ISubIndicatorInfo = null;
@@ -166,13 +166,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	onScoreSliderChange(event) {
-		this.searchScore = [event.startValue / 10, event.endValue / 10];
+		this.searchScore = [event.startValue, event.endValue];
 		this.visualize();
 		this.search();
-	}
-
-	formatScoreTick(value) {
-		return value / 10;
 	}
 
 	onYearRangeSliderChange(event) {

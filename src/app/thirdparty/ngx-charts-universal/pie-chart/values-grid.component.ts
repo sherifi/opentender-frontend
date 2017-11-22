@@ -34,7 +34,8 @@ import {IDomain} from '../common/common.interface';
 							class="label value-label"
 							dy="-0.5em"
 							x="0"
-							y="28"
+							[attr.y]="series.labelTop"
+							[style.font-size.pt]="series.fontSize"
 							text-anchor="middle">{{formatLabelNumber(series.value)}}
 					</svg:text>
 					<svg:text *ngIf="chart.labels"
@@ -62,7 +63,6 @@ export class PieValuesGridComponent extends BaseChartComponent {
 	viewDim: ViewDimensions;
 	transform: string;
 	margin = [10, 10, 10, 10];
-
 	layout_data: any[] = [];
 	series: any[] = [];
 	getTooltipText = getTooltipLabeledText;
@@ -128,22 +128,22 @@ export class PieValuesGridComponent extends BaseChartComponent {
 					return d.data.color || this.colors.getColor(label);
 				}
 			};
-
 			const xPos = d.x + (d.width - padding) / 2;
 			const yPos = d.y + (d.height - baselineLabelHeight) / 2;
-
 			return {
 				transform: `translate(${xPos}, ${yPos})`,
 				colors,
 				innerRadius,
 				outerRadius: radius,
 				label: label,
-				total: 1,
+				total: this.chart.maxValue,
 				value,
+				fontSize: radius > 40 ? 24 : 18,
+				labelTop: radius > 40 ? 28 : 21,
 				data: [d, {
 					data: {
 						other: true,
-						value: 1 - value,
+						value: this.chart.maxValue - value,
 						name: d.data.name
 					}
 				}]

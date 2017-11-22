@@ -52,12 +52,11 @@
 			<label i18n>Score Range</label>
 			<slider
 					[min]="0"
-					[max]="10"
+					[max]="100"
 					[startValue]="0"
-					[endValue]="5"
-					stepValue="1"
+					[endValue]="50"
+					stepValue="10"
 					defaultWidth="934"
-					[formatTick]="formatScoreTick"
 					(onSliderChange)="onScoreSliderChange($event)"></slider>
 		</div>
 	</div>

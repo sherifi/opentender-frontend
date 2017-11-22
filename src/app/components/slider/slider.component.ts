@@ -129,7 +129,9 @@ export class SliderComponent implements OnChanges {
 				mod = 100;
 			}
 		}
-		this.tickWidth = Math.max(this.position.range2max / valueSpan, 1);
+
+		let nrOfTicks = valueSpan / this._stepValue;
+		this.tickWidth = Math.max((this.position.range2max / nrOfTicks), 1);
 		this.ticks = [];
 		for (let i = 0; i <= valueSpan; i = i + this._stepValue) {
 			this.ticks.push({value: this._min + i, width: this.tickWidth, show: i % mod === 0});
@@ -142,18 +144,18 @@ export class SliderComponent implements OnChanges {
 	}
 
 	applyPositions(): void {
-		this.position.range1 = this.tickWidth * (this._startValue - this._min);
+		this.position.range1 = this.tickWidth * ((this._startValue - this._min) / this._stepValue);
 		this.position.range2min = this.position.range1;
-		this.position.range2 = this.tickWidth * (this._endValue - this._min);
+		this.position.range2 = this.tickWidth * ((this._endValue - this._min) / this._stepValue);
 		this.position.range1max = this.position.range2;
 	}
 
 	valueFromPosition(x: number): number {
-		return (x / this.tickWidth) + this._min;
+		return ((x / this.tickWidth) * this._stepValue) + this._min;
 	}
 
 	positionFromValue(val: number): number {
-		return (this.tickWidth * val) + this._min;
+		return ((this.tickWidth * val) * this._stepValue) + this._min;
 	}
 
 	getTickLabel(val: number): string {
@@ -175,6 +177,7 @@ export class SliderComponent implements OnChanges {
 	ribbonClick(event) {
 		let value = this.valueFromPosition(event.value);
 		if (this.snap) {
+			// TODO: snap for _stepValue > 1
 			value = Math.floor(value);
 		}
 		value = Math.min(value, this._max);

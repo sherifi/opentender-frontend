@@ -140,6 +140,7 @@ export interface IChartPieSeriesSettings extends IChartBaseSettings {
 
 	labels: boolean;
 	maxRadius?: number;
+	maxValue?: number;
 }
 
 export interface IChartLineSettings extends IChartXYAxisSettings {

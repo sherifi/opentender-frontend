@@ -16,18 +16,15 @@ export class SelectScoreRangeFilterComponent implements OnChanges {
 	@Output('onRangeChange') onRangeChange = new EventEmitter();
 
 	public minScore: number = 0;
-	public maxScore: number = 10;
+	public maxScore: number = 100;
 	public startScore: number = 0;
-	public endScore: number = 10;
+	public endScore: number = 100;
 
-	formatScoreTick(value) {
-		return value / 10;
-	}
 
 	restoreFilter(filter: ISearchFilter) {
 		if (filter.values) {
-			this.startScore = filter.values[0] * 10;
-			this.endScore = filter.values[1] * 10;
+			this.startScore = filter.values[0];
+			this.endScore = filter.values[1];
 		}
 	}
 
@@ -46,7 +43,7 @@ export class SelectScoreRangeFilterComponent implements OnChanges {
 	onSliderChange(event) {
 		this.startScore = event.startValue;
 		this.endScore = event.endValue;
-		this.filter.values = [this.startScore / 10, this.endScore / 10];
+		this.filter.values = [this.startScore, this.endScore];
 		this.onRangeChange.emit();
 	}
 

@@ -1,8 +1,10 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
-import {calculateViewDimensions} from '../utils/view-dimensions.helper';
-import {IChartPieSettings, IChartData} from '../chart.interface';
+import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
+import {IChartPieSettings, IChartData, IChartPieSeriesSettings} from '../chart.interface';
 import {BasePieChartComponent} from './pie-chart-base.component';
-import {ILegendOptions} from '../common/common.interface';
+import {IDomain, ILegendOptions} from '../common/common.interface';
+import {BaseChartComponent} from '../common/chart/base-chart.component';
+import {ColorHelper} from '../utils/color.helper';
 
 @Component({
 	selector: 'ngx-charts-radar-chart',
@@ -22,8 +24,9 @@ import {ILegendOptions} from '../common/common.interface';
 					   [activeEntries]="activeEntries"
 					   [innerRadius]="innerRadius"
 					   [outerRadius]="outerRadius"
-					   [explodeSlices]="chart.explodeSlices"
-					   [gradient]="chart.gradient"
+					   [maxValue]="chart.maxValue"
+					   [explodeSlices]="false"
+					   [gradient]="false"
 					   [valueFormatting]="chart.valueFormatting"
 					   (select)="onClick($event)"
 					   (activate)="onActivate($event)"
@@ -34,8 +37,8 @@ import {ILegendOptions} from '../common/common.interface';
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RadarChartComponent extends BasePieChartComponent {
-	@Input() chart: IChartPieSettings;
+export class RadarChartComponent extends BaseChartComponent {
+	@Input() chart: IChartPieSeriesSettings;
 	@Input() data: Array<IChartData>;
 	@Input() activeEntries: any[];
 	@Output() select: EventEmitter<any>;
@@ -50,6 +53,20 @@ export class RadarChartComponent extends BasePieChartComponent {
 
 	mintextwidth: number = 120;
 	minradius: number = 28;
+
+	colors: ColorHelper;
+	domain: IDomain;
+	viewDim: ViewDimensions;
+	transform: string;
+	margin = [20, 20, 20, 20];
+
+	onClick(data): void {
+		this.select.emit(data);
+	}
+
+	setColors(): void {
+		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.domain, this.chart.customColors);
+	}
 
 	update(): void {
 		super.update();
@@ -76,9 +93,9 @@ export class RadarChartComponent extends BasePieChartComponent {
 				this.outerRadius /= 2;
 			}
 			this.innerRadius = 0;
-			if (this.chart.doughnut) {
-				this.innerRadius = this.outerRadius * 0.75;
-			}
+			// if (this.chart.doughnut) {
+			// 	this.innerRadius = this.outerRadius * 0.75;
+			// }
 
 			if (this.data) {
 				this.domain = this.getDomain();

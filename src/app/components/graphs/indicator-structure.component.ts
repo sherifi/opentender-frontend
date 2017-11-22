@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {IChartPie} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {IChartPie, IChartPieSeries} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
@@ -25,7 +25,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	@Output()
 	onSelect = new EventEmitter();
 
-	indicators: IChartPie = {
+	indicators: IChartPieSeries = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -34,9 +34,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 				max: {height: 360}
 			},
 			labels: true,
-			explodeSlices: false,
-			doughnut: false,
-			gradient: false,
+			maxValue: 100,
 			valueFormatting: Utils.formatValue,
 			colorScheme: {
 				domain: Consts.colors.diverging
@@ -49,7 +47,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		},
 		data: null
 	};
-	graph: IChartPie = this.indicators;
+	graph: IChartPieSeries = this.indicators;
 
 	constructor() {
 	}

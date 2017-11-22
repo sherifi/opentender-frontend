@@ -88,6 +88,7 @@ export class RadarPieSeriesComponent implements OnChanges {
 	@Input() dims;
 	@Input() innerRadius = 60;
 	@Input() outerRadius = 80;
+	@Input() maxValue = 100;
 	@Input() explodeSlices;
 	@Input() radar: boolean = true;
 	@Input() showLabels;
@@ -100,7 +101,6 @@ export class RadarPieSeriesComponent implements OnChanges {
 	@Output() activate = new EventEmitter();
 	@Output() deactivate = new EventEmitter();
 
-	max: number = 1;
 	arcs: Array<PieArc>;
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -126,7 +126,7 @@ export class RadarPieSeriesComponent implements OnChanges {
 			d.pos[0] = this.outerRadius * (d.isLeft ? 1 : -1);
 			d.color = this.colors.getColor(index);
 			d.label = formatLabel(d.data.name);
-			d.outerRadius = this.radar ? (this.outerRadius * d.data.value / this.max) : this.outerRadius;
+			d.outerRadius = this.radar ? (this.outerRadius * d.data.value / this.maxValue) : this.outerRadius;
 		});
 
 		this.orderLabels(arcData);
