@@ -38,7 +38,7 @@ export class StartPage {
 		}
 		this.portals = [];
 		data.forEach(p => {
-			if (p.id !== 'eu') {
+			if (p.id !== 'all') {
 				this.portals.push(p);
 			} else {
 				this.allportal = p;

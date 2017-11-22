@@ -127,7 +127,7 @@ export const Utils = {
 		if (value === undefined || value === null) {
 			return '';
 		}
-		if (value === 'eu') {
+		if (value === 'all') {
 			return 'All Countries';
 		}
 		value = value.toUpperCase();

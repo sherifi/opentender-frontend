@@ -22,7 +22,7 @@ export class ApiService {
 	constructor(private http: HttpClient, private config: ConfigService) {
 		this.absUrl = config.absUrl;
 		this.actionUrl = (config.config.backendUrl || '') + '/api/';
-		this.actionCountryUrl = this.actionUrl + (config.country.id || 'eu' ) + '/';
+		this.actionCountryUrl = this.actionUrl + (config.country.id || 'all' ) + '/';
 		this.headers = new HttpHeaders();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');

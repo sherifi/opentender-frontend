@@ -29,7 +29,7 @@ export class DownloadPage implements OnInit {
 	}
 
 	refresh() {
-		let current_id = this.config.country.id || 'eu';
+		let current_id = this.config.country.id || 'all';
 		this.api.getDownloads().subscribe(
 			(data: any) => {
 				data.forEach(download => {
