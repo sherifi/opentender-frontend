@@ -5,7 +5,7 @@
     "plural": "Administrative Capacity Indicators",
     "subindicators": {
       "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {
-        "name": "Joint of centralized procurement",
+        "name": "Joint or centralized procurement",
         "desc": "Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.",
         "order": 1
       },
