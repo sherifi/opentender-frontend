@@ -14,16 +14,21 @@ export class SliderRibbonDirective {
 	constructor(private el: ElementRef, private renderer: Renderer2) {
 	}
 
-	@HostListener('mousedown', ['$event'])
-	@HostListener('touchstart', ['$event'])
-	clickRibbon(event) {
+	triggerChange(clientX) {
 		// Cross-browser mouse positioning http://www.jacklmoore.com/notes/mouse-position/
 		let target = this.el.nativeElement.parentNode;
 		let style = target.currentStyle || window.getComputedStyle(target, null);
 		let borderLeftWidth = parseInt(style['borderLeftWidth'], 10);
 		let rect = target.getBoundingClientRect();
-		let offsetX = event.clientX - borderLeftWidth - rect.left;
-		this.onChanged.emit({value: offsetX});
+		let offsetX = clientX - borderLeftWidth - rect.left;
+		if (!isNaN(offsetX)) {
+			this.onChanged.emit({value: offsetX});
+		}
+	}
+
+	@HostListener('mousedown', ['$event'])
+	clickRibbon(event) {
+		this.triggerChange(event.clientX);
 	}
 
 }
