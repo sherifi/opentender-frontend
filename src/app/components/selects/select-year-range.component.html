@@ -1,0 +1,12 @@
+<label><ng-container i18n>Date Range</ng-container> <i class="icon-info" ngx-tooltip i18n-tooltipTitle tooltipTitle="Choose years to filter the data on this page"></i></label>
+<slider
+		[min]="minYear"
+		[max]="maxYear"
+		[startValue]="startYear"
+		[endValue]="endYear"
+		stepValue="1"
+		defaultWidth="934"
+		(onSliderChange)="onSliderChange($event)">
+</slider>
+<div class="select-range-values" *ngIf="!empty && startYear>0">{{startYear}} - {{endYear}}</div>
+<div class="select-range-values" *ngIf="empty" i18n>No Dates available</div>
