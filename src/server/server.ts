@@ -146,6 +146,11 @@ let render = function(req, res, language, country) {
 			{provide: LOCALE_ID, useValue: language.lang}
 		],
 		prepareHTML: (html) => {
+			if (Config.client.devMode) {
+				let pos1 = html.indexOf('<!-- Piwik -->');
+				let pos2 = html.indexOf('<!-- End Piwik Code -->');
+				html = html.slice(0, pos1) + html.slice(pos2);
+			}
 			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
 				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? country.name : '')
 				.replace(/\{\{HTML_LANG\}\}/g, language.lang)
