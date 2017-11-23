@@ -19,6 +19,7 @@ export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 	@Output() deactivate: EventEmitter<any> = new EventEmitter();
 
 	public dim: IChartDimension;
+	public lastdim: IChartDimension;
 	private resizeSubscription: Subscription;
 
 	constructor(protected chartElement: ElementRef, protected zone: NgZone, protected cd: ChangeDetectorRef, protected platform: PlatformService) {
@@ -129,10 +130,14 @@ export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 		this.zone.run(() => {
 			let source = Observable.fromEvent(window, 'resize', null, null);
 			let subscription = source.debounceTime(200).subscribe(e => {
-				this.update();
-				if (this.cd) {
-					this.cd.markForCheck();
+				let newdims = this.getContainerDims();
+				if (!this.lastdim || this.lastdim.height !== newdims.height || this.lastdim.width !== newdims.width) {
+					this.update();
+					if (this.cd) {
+						this.cd.markForCheck();
+					}
 				}
+				this.lastdim = newdims;
 			});
 			this.resizeSubscription = subscription;
 		});
