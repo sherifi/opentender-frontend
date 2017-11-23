@@ -9,7 +9,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	selector: 'graph[score-grid]',
 	template: `
-		<div class="graph-title">{{caption}}</div>
+		<div class="graph-title">{{title}}</div>
 		<!--<div class="graph-toolbar-container"></div>-->
 		<ngx-charts-values-grid
 				class="chart-container"
@@ -24,7 +24,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: Array<IChartData>;
 	@Input()
-	caption: string = '';
+	title: string = '';
 	@Input()
 	isIndicators: boolean = false;
 

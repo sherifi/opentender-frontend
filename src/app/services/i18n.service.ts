@@ -1,5 +1,7 @@
 import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
+import {routes} from '../app.routes';
+import {Consts} from '../model/consts';
 
 @Injectable()
 export class I18NService {
@@ -14,19 +16,55 @@ export class I18NService {
 		}
 	}
 
-	public get(key: string, interpolation: any[] = []): string {
+	private translateRoute(route): void {
+		if (route.data) {
+			if (route.data.title) {
+				route.data.title = this.get(route.data.title);
+			}
+			if (route.data.menu_title) {
+				route.data.menu_title = this.get(route.data.menu_title);
+			}
+		}
+		if (route.children) {
+			route.children.forEach(sub => this.translateRoute(sub));
+		}
+	}
+
+	public init() {
 		if (!this._translations) {
-			return key;
+			console.log('no translation');
+		}
+		routes.forEach(route => this.translateRoute(route));
+		Object.keys(Consts.indicators).forEach(key => {
+			Consts.indicators[key].name = this.getStrict(key + '.name') || Consts.indicators[key].name;
+			Consts.indicators[key].plural = this.getStrict(key + '.plural') || Consts.indicators[key].plural;
+			let subs = Consts.indicators[key].subindicators;
+			Object.keys(subs).forEach(subkey => {
+				subs[subkey].name = this.getStrict(subkey + '.name') || subs[subkey].name;
+				subs[subkey].desc = this.getStrict(subkey + '.desc') || subs[subkey].desc;
+			});
+		});
+		console.log('translation start');
+	}
+
+	public get(key: string, interpolation: any[] = []): string {
+		return this.getStrict(key, interpolation) || key;
+	}
+
+	public getStrict(key: string, interpolation: any[] = []) {
+		if (!this._translations) {
+			return null;
 		}
 		let id = key.replace(/ /g, '');
 		if (!this._translations[id]) {
 			console.log('i18n, untranslated text', key);
-			return key;
+			return null;
 		}
 		let parser = new I18NHtmlParser(new HtmlParser(), this._source);
 		let placeholders = this._getPlaceholders(this._translations[id]);
 		let parseTree = parser.parse(`<div i18n="@@${id}">content ${this._wrapPlaceholders(placeholders).join(' ')}</div>`, 'someI18NUrl');
 		return this._interpolate(parseTree.rootNodes[0]['children'][0].value, this._interpolationWithName(placeholders, interpolation));
+
 	}
 
 	private _getPlaceholders(nodes: any[]): string[] {

@@ -117,7 +117,7 @@ export class SliderComponent implements OnChanges {
 	}
 
 	calculateTicks() {
-		let valueSpan = Math.max(1, this._max - this._min);
+		let valueSpan = Math.max(0, this._max - this._min);
 		let mod = 0;
 		if (!this.compact) {
 			// TODO: better tick show/hide heuristic
@@ -133,8 +133,10 @@ export class SliderComponent implements OnChanges {
 		let nrOfTicks = valueSpan / this._stepValue;
 		this.tickWidth = Math.max((this.position.range2max / nrOfTicks), 1);
 		this.ticks = [];
-		for (let i = 0; i <= valueSpan; i = i + this._stepValue) {
-			this.ticks.push({value: this._min + i, width: this.tickWidth, show: i % mod === 0});
+		if (valueSpan > 0) {
+			for (let i = 0; i <= valueSpan; i = i + this._stepValue) {
+				this.ticks.push({value: this._min + i, width: this.tickWidth, show: i % mod === 0});
+			}
 		}
 		if (this.ticks.length > 0) {
 			this.ticks[0].show = true;

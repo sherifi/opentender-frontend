@@ -10,7 +10,7 @@ import {I18NService} from '../../services/i18n.service';
 	selector: 'graph[sector-treemap]',
 	template: `
 		<div class="graph-header">
-			<div class="graph-title" i18n>Sector Overview</div>
+			<div class="graph-title">{{title}}</div>
 			<div class="graph-toolbar-container">
 				<div class="graph-toolbar">
 					<button class="tool-button" [ngClass]="{down:this.graph==this.cpv_codes_prices}" (click)="this.graph=this.cpv_codes_prices" i18n>Volume (€)</button>
@@ -28,6 +28,8 @@ import {I18NService} from '../../services/i18n.service';
 		<select-series-download-button [sender]="this"></select-series-download-button>`
 })
 export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
+	@Input()
+	title: string;
 	@Input()
 	data: Array<{ sector: ISector; stats: IStats }>;
 

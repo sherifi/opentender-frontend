@@ -5,10 +5,11 @@ import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
 import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
+import {NotifyService} from '../../services/notify.service';
 
 /// <reference path="./model/tender.d.ts" />
 import Body = Definitions.Body;
-import {NotifyService} from '../../services/notify.service';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -26,20 +27,21 @@ export class CompanyPage implements OnInit, OnDestroy {
 	private subscription: any;
 
 	private viz: {
-		authority_nuts: IStatsNuts,
-		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		cpvs_codes: IStatsCpvs,
-		lots_in_years: IStatsPricesLotsInYears
+		authority_nuts: { data: IStatsNuts, title?: string };
+		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
+		cpvs_codes: { data: IStatsCpvs, title?: string };
+		lots_in_years: { data: IStatsPricesLotsInYears, title?: string };
 	} = {
-		authority_nuts: null,
-		top_authorities: null,
-		cpvs_codes: null,
-		lots_in_years: null
+		authority_nuts: {data: null},
+		top_authorities: {data: null},
+		cpvs_codes: {data: null},
+		lots_in_years: {data: null}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
-				private state: StateService, private config: ConfigService, private notify: NotifyService) {
+				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
+		this.viz.top_authorities.title = i18n.get('Main Buyers');
 	}
 
 	ngOnInit(): void {
@@ -136,22 +138,18 @@ export class CompanyPage implements OnInit, OnDestroy {
 	}
 
 	displayStats(data: { stats: IStats }): void {
-		let viz = {
-			authority_nuts: null,
-			top_authorities: null,
-			cpvs_codes: null,
-			lots_in_years: null
-		};
+		let viz = this.viz;
+		Object.keys(viz).forEach(key => {
+			viz[key].data = null;
+		});
 		if (!data || !data.stats) {
-			this.viz = viz;
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
-		viz.cpvs_codes = stats.terms_main_cpv_divisions;
-		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-		viz.authority_nuts = stats.terms_authority_nuts;
-		this.viz = viz;
+		viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate_finalPrices;
+		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
+		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
+		viz.authority_nuts.data = stats.terms_authority_nuts;
 	}
 
 	similarChange(data) {

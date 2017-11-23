@@ -22,6 +22,7 @@ import {I18NService} from '../../services/i18n.service';
 export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsProcedureType;
+	@Input()
 	title: string = '';
 
 	procedure_types_absolute: IChartBar = {
@@ -62,7 +63,6 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 	graph: IChartBar = this.procedure_types_absolute;
 
 	constructor(private i18n: I18NService) {
-		this.title = this.i18n.get('Procedure Type');
 		this.procedure_types_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
 		this.procedure_types_absolute.chart.yAxis.label = this.i18n.get('Procedure Type');
 	}

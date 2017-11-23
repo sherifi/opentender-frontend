@@ -1,47 +1,44 @@
 <div class="container-outer dashboards">
 	<div class="container">
-		<h1 class="container-title">Market Analysis</h1>
+		<h1 class="container-title" i18n>Market Analysis</h1>
 	</div>
 	<div class="container container-margin">
-		<div *ngIf="filter.time">
-			<slider [min]="filter.time.startYear" [max]="filter.time.endYear" [startValue]="filter.time.startYear" [endValue]="filter.time.endYear"
-					stepValue="1" defaultWidth="934" (onSliderChange)="onSliderChange($event)"></slider>
-		</div>
+		<select-year-range [years]="viz.years.data" (onRangeChange)="onYearRangeSliderChange($event)"></select-year-range>
 	</div>
 	<div [ngClass]="{'is-loading': loading>0}">
 		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-12">
-					<graph sector-treemap [data]="viz.sectors_stats"></graph>
+					<graph sector-treemap [data]="viz.sectors_stats.data" [title]="viz.sectors_stats.title"></graph>
 				</div>
 			</div>
 			<div class="container">
 				<div class="container-left-6">
-					<graph score-histogram [data]="viz.score_in_years" [title]="'Average Good Procurement Score over Time'"></graph>
+					<graph score-histogram [data]="viz.score_in_years.data" [title]="viz.score_in_years.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph score-sectors [data]="viz.score_in_sectors" [title]="'Average Good Procurement Score per Sector'"></graph>
-				</div>
-			</div>
-			<div class="container">
-				<div class="container-left-6">
-					<graph histogram [data]="viz.lots_in_years"></graph>
-				</div>
-				<div class="container-left-6">
-					<graph procedure-types [data]="viz.procedure_types"></graph>
+					<graph score-sectors [data]="viz.score_in_sectors.data" [title]="viz.score_in_sectors.title"></graph>
 				</div>
 			</div>
 			<div class="container">
 				<div class="container-left-6">
-					<graph companies [data]="viz.top_companies" [title]="'Main Suppliers'"></graph>
+					<graph histogram [data]="viz.lots_in_years.data" [title]="viz.lots_in_years.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph authorities [data]="viz.top_authorities" [title]="'Main Buyers'"></graph>
+					<graph procedure-types [data]="viz.procedure_types.data" [title]="viz.procedure_types.title"></graph>
+				</div>
+			</div>
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies.data" [title]="viz.top_companies.title"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph authorities [data]="viz.top_authorities.data" [title]="viz.top_authorities.title"></graph>
 				</div>
 			</div>
 			<div class="container">
 				<div class="container-left-12">
-					<graph volume-nutsmap [data]="viz.volume_regions"></graph>
+					<graph volume-nutsmap [data]="viz.volume_regions.data"></graph>
 				</div>
 			</div>
 		</div>

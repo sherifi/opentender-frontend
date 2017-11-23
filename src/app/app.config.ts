@@ -112,6 +112,7 @@ import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, T
 import {TenderTableComponent} from './components/tables/table.tender.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
 import {GraphScoreGridComponent} from './components/graphs/score-grid.component';
+import {SelectYearRangeComponent} from './components/selects/select-year-range.component';
 
 const AppConfig = {
 	declarations: [
@@ -140,6 +141,7 @@ const AppConfig = {
 		SelectSearchesButtonComponent,
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
+		SelectYearRangeComponent,
 		SelectYearRangeFilterComponent,
 		SelectScoreRangeFilterComponent,
 		SelectDateFilterComponent,

@@ -2,6 +2,7 @@ import {Component, OnInit, ElementRef} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {TitleService} from './services/title.service';
 import {PlatformService} from './services/platform.service';
+import {I18NService} from './services/i18n.service';
 
 /**
  * The root component for the opentender that is bootstrapped by angular
@@ -18,7 +19,8 @@ export class App implements OnInit {
 	 */
 	public isSharePage: boolean = false;
 
-	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService) {
+	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService, private i18n: I18NService) {
+		i18n.init();
 		titleService.setDefault();
 		if (this.platform.isBrowser) {
 			this.checkURL(router.url);

@@ -37,19 +37,19 @@
 		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
-					<graph histogram [data]="viz.lots_in_years"></graph>
+					<graph histogram [data]="viz.lots_in_years.data"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph sectors [data]="viz.cpvs_codes"></graph>
+					<graph sectors [data]="viz.cpvs_codes.data"></graph>
 				</div>
 			</div>
 			<br>
 			<div class="container">
 				<div class="container-left-6">
-					<graph companies [data]="viz.top_companies" [title]="'Main Suppliers'"></graph>
+					<graph companies [data]="viz.top_companies.data" [title]="viz.top_companies.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph supplier-nutsmap [data]="viz.company_nuts"></graph>
+					<graph supplier-nutsmap [data]="viz.company_nuts.data"></graph>
 				</div>
 			</div>
 			<br>

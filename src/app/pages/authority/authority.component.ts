@@ -4,11 +4,12 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
+import {ConfigService, Country} from '../../services/config.service';
+import {NotifyService} from '../../services/notify.service';
 
 /// <reference path="./model/tender.d.ts" />
 import Buyer = Definitions.Buyer;
-import {ConfigService, Country} from '../../services/config.service';
-import {NotifyService} from '../../services/notify.service';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -26,20 +27,21 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public similar: Array<Body> = [];
 
 	private viz: {
-		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
-		cpvs_codes: IStatsCpvs,
-		company_nuts: IStatsNuts,
-		lots_in_years: IStatsPricesLotsInYears
+		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
+		cpvs_codes: { data: IStatsCpvs, title?: string };
+		company_nuts: { data: IStatsNuts, title?: string };
+		lots_in_years: { data: IStatsPricesLotsInYears, title?: string };
 	} = {
-		top_companies: null,
-		cpvs_codes: null,
-		company_nuts: null,
-		lots_in_years: null
+		top_companies: {data: null},
+		cpvs_codes: {data: null},
+		company_nuts: {data: null},
+		lots_in_years: {data: null}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
-				private state: StateService, private config: ConfigService, private notify: NotifyService) {
+				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
+		this.viz.top_companies.title = i18n.get('Main Suppliers');
 	}
 
 	ngOnInit(): void {
@@ -122,22 +124,18 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	displayStats(data: { stats: IStats }): void {
-		let viz = {
-			top_companies: null,
-			cpvs_codes: null,
-			lots_in_years: null,
-			company_nuts: null
-		};
+		let viz = this.viz;
+		Object.keys(viz).forEach(key => {
+			viz[key].data = null;
+		});
 		if (!data || !data.stats) {
-			this.viz = viz;
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years = stats.histogram_lots_awardDecisionDate_finalPrices;
-		viz.cpvs_codes = stats.terms_main_cpv_divisions;
-		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
-		viz.company_nuts = stats.terms_company_nuts;
-		this.viz = viz;
+		viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate_finalPrices;
+		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
+		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+		viz.company_nuts.data = stats.terms_company_nuts;
 	}
 
 	search(ids: Array<string>) {

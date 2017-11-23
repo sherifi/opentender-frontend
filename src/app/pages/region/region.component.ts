@@ -5,6 +5,7 @@ import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
 import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand, IStatsNuts} from '../../app.interfaces';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -21,18 +22,21 @@ export class RegionPage implements OnInit, OnDestroy {
 	private subscription: any;
 
 	private viz: {
-		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
-		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
-		child_regions: IStatsNuts
+		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
+		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
+		histogram: { data: IStatsPcPricesLotsInYears, title?: string };
+		child_regions: { data: IStatsNuts, title?: string };
 	} = {
-		top_companies: null,
-		top_authorities: null,
-		child_regions: null,
+		top_companies: {data: null},
+		top_authorities: {data: null},
+		child_regions: {data: null},
 		histogram: {data: null},
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private notify: NotifyService, private titleService: TitleService, private state: StateService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private notify: NotifyService,
+				private titleService: TitleService, private i18n: I18NService, private state: StateService) {
+		this.viz.top_companies.title = i18n.get('Main Suppliers');
+		this.viz.top_authorities.title = i18n.get('Main Buyers');
 	}
 
 	ngOnInit(): void {
@@ -80,15 +84,17 @@ export class RegionPage implements OnInit, OnDestroy {
 	}
 
 	private displayStats(stats: IStats): void {
+		let viz = this.viz;
+		Object.keys(viz).forEach(key => {
+			viz[key].data = null;
+		});
 		if (!stats) {
 			return;
 		}
-		let viz = this.viz;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
-		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
-		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-		viz.child_regions = stats.terms_subregions_nuts;
-		this.viz = viz;
+		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
+		viz.child_regions.data = stats.terms_subregions_nuts;
 	}
 
 	search() {

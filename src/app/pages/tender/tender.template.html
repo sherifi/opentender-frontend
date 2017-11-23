@@ -15,33 +15,37 @@
 		</h3>
 		<div *ngIf="state.indi.open" class="container">
 			<div *ngIf="tender.indicators.length===0" i18n>There are no Indicators for this Tender</div>
+			<!--<div class="graph-title">{{viz.scores.TENDER.title}}</div>-->
 			<!--<div class="container">-->
 			<!--<div class="container-left-3">-->
-			<!--<graph score-grid [caption]="'Good Procurement Score'" [data]="scores.TENDER"></graph>-->
+			<!--<graph score-grid [data]="viz.scores.TENDER.data" [title]="viz.scores.TENDER.title"></graph>-->
 			<!--</div>-->
 			<!--</div>-->
+			<div class="graph-title">{{viz.scores.ADMINISTRATIVE.title}}</div>
 			<div class="container">
 				<div class="container-left-3">
-					<graph score-grid [caption]="'Administrative Capacity Indicator'" [data]="scores.ADMINISTRATIVE"></graph>
+					<graph score-grid [data]="viz.scores.ADMINISTRATIVE.data"></graph>
 				</div>
 				<div class="container-left-9">
-					<graph score-grid [data]="indicators.ADMINISTRATIVE" [isIndicators]="true"></graph>
+					<graph score-grid [data]="viz.indicators.ADMINISTRATIVE.data" [isIndicators]="true"></graph>
 				</div>
 			</div>
+			<div class="graph-title">{{viz.scores.CORRUPTION.title}}</div>
 			<div class="container">
 				<div class="container-left-3">
-					<graph score-grid [caption]="'Procurement Integrity Indicator'" [data]="scores.CORRUPTION"></graph>
+					<graph score-grid [data]="viz.scores.CORRUPTION.data"></graph>
 				</div>
 				<div class="container-left-9">
-					<graph score-grid [data]="indicators.CORRUPTION" [isIndicators]="true"></graph>
+					<graph score-grid [data]="viz.indicators.CORRUPTION.data" [isIndicators]="true"></graph>
 				</div>
 			</div>
+			<div class="graph-title">{{viz.scores.TRANSPARENCY.title}}</div>
 			<div class="container">
 				<div class="container-left-3">
-					<graph score-grid [caption]="'Transparency Indicator'" [data]="scores.TRANSPARENCY"></graph>
+					<graph score-grid [data]="viz.scores.TRANSPARENCY.data"></graph>
 				</div>
 				<div class="container-left-9">
-					<graph score-grid [data]="indicators.TRANSPARENCY" [isIndicators]="true"></graph>
+					<graph score-grid [data]="viz.indicators.TRANSPARENCY.data" [isIndicators]="true"></graph>
 				</div>
 			</div>
 		</div>

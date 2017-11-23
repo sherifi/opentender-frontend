@@ -19,15 +19,15 @@
 				</div>
 				<div class="container-left-12" *ngIf="region.level<3">
 					<div class="graph-title" i18n>Nr. of Tenders in Subregions</div>
-					<graph nutsmap [data]="viz.child_regions" [level]="region.level+1"></graph>
+					<graph nutsmap [data]="viz.child_regions.data" [level]="region.level+1"></graph>
 				</div>
 			</div>
 			<div class="container">
 				<div class="container-left-6">
-					<graph companies [data]="viz.top_companies" [title]="'Main Suppliers'"></graph>
+					<graph companies [data]="viz.top_companies.data" [title]="viz.top_companies.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph authorities [data]="viz.top_authorities" [title]="'Main Buyers'"></graph>
+					<graph authorities [data]="viz.top_authorities.data" [title]="viz.top_authorities.title"></graph>
 				</div>
 			</div>
 		</div>

@@ -14,9 +14,9 @@ export class HomePage implements OnInit {
 	public country: string;
 	public loading: number = 0;
 	public viz: {
-		lots_in_years: IStatsInYears;
+		lots_in_years: { data: IStatsInYears };
 	} = {
-		lots_in_years: null
+		lots_in_years: {data: null}
 	};
 
 	constructor(public router: Router, private api: ApiService, private config: ConfigService, private notify: NotifyService) {
@@ -38,10 +38,13 @@ export class HomePage implements OnInit {
 	}
 
 	private displayStats(stats: IStats) {
+		let viz = this.viz;
+		Object.keys(viz).forEach(key => {
+			viz[key].data = null;
+		});
 		if (!stats) {
-			this.viz = {lots_in_years: null};
-		} else {
-			this.viz.lots_in_years = stats.histogram_lots_awardDecisionDate;
+			return;
 		}
+		this.viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate;
 	}
 }

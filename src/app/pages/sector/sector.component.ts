@@ -17,47 +17,48 @@ import {
 })
 export class SectorPage implements OnInit, OnDestroy {
 	public sector: ISector;
-	private parent_sectors: Array<ISector> = [];
-	private loading: number = 0;
-	private search_cmd: ISearchCommand;
-	private columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
-	private subscription: any;
-	private viz: {
-		authority_nuts: IStatsNuts,
-		histogram: { data: IStatsPcPricesLotsInYears, title?: string },
-		procedure_types: IStatsProcedureType,
-		score_in_years: IStatsInYears;
-		score_in_sectors: IStatsCpvs;
-		subsectors: Array<{ sector: ISector; stats: IStats }>,
-		top_authorities: { absolute: IStatsAuthorities, volume: IStatsAuthorities },
-		top_companies: { absolute: IStatsCompanies, volume: IStatsCompanies },
+	public parent_sectors: Array<ISector> = [];
+	public loading: number = 0;
+	public search_cmd: ISearchCommand;
+	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
+	public viz: {
+		histogram: { data: IStatsPcPricesLotsInYears, title?: string };
+		score_in_years: { data: IStatsInYears, title?: string };
+		score_in_sectors: { data: IStatsCpvs, title?: string };
+		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
+		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
+		authority_nuts: { data: IStatsNuts, title?: string };
+		procedure_types: { data: IStatsProcedureType, title?: string };
+		subsectors: { data: Array<{ sector: ISector; stats: IStats }>, title?: string };
+		years: { data: Array<number>, title?: string };
 	} = {
 		authority_nuts: {data: null},
 		histogram: {data: null},
-		procedure_types: null,
-		subsectors: [],
-		score_in_years: null,
-		score_in_sectors: null,
-		top_authorities: null,
-		top_companies: null,
+		procedure_types: {data: null},
+		subsectors: {data: null},
+		score_in_years: {data: null},
+		score_in_sectors: {data: null},
+		top_authorities: {data: null},
+		top_companies: {data: null},
+		years: {data: null},
 	};
-	private filter: {
-		time?: {
-			startYear: number;
-			endYear: number;
-			selectedStartYear: number;
-			selectedEndYear: number;
-		}
-	} = {
-		time: null
-	};
+	public filter: {
+		years?: { startValue: number, endValue: number };
+	} = {};
+	private subscription: any;
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
 				private state: StateService, private notify: NotifyService, private i18n: I18NService) {
 		this.viz.histogram.title = i18n.get('Sector');
+		this.viz.subsectors.title = i18n.get('Sector Overview');
+		this.viz.score_in_years.title = i18n.get('Average Good Procurement Score over Time');
+		this.viz.score_in_sectors.title = i18n.get('Average Good Procurement Score per Sector');
+		this.viz.top_authorities.title = i18n.get('Main Buyers');
+		this.viz.top_companies.title = i18n.get('Main Suppliers');
+		this.viz.procedure_types.title = this.i18n.get('Procedure Type');
 	}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		let state = this.state.get('sector');
 		if (state) {
 			this.columnIds = state.columnIds;
@@ -78,39 +79,36 @@ export class SectorPage implements OnInit, OnDestroy {
 		});
 	}
 
-	ngOnDestroy() {
+	public ngOnDestroy(): void {
 		this.subscription.unsubscribe();
 		this.state.put('sector', {
 			columnIds: this.columnIds
 		});
 	}
 
-	onSliderChange(event) {
-		if (!this.filter.time) {
+	public onYearRangeSliderChange(event): void {
+		if (!this.viz.years.data) {
 			return;
 		}
-		this.filter.time.selectedStartYear = event.startValue;
-		this.filter.time.selectedEndYear = event.endValue;
+		this.filter.years = event.data;
 		this.visualize();
 		this.search();
 	}
 
-	buildFilters() {
+	private buildFilters() {
 		let filters = [];
-		if (this.filter.time && this.filter.time.selectedStartYear > 0 && this.filter.time.selectedEndYear > 0 &&
-			(this.filter.time.selectedStartYear !== this.filter.time.startYear || this.filter.time.selectedEndYear !== this.filter.time.endYear)
-		) {
+		if (this.filter.years) {
 			let yearFilter: ISearchCommandFilter = {
 				field: 'lots.awardDecisionDate',
 				type: 'years',
-				value: [this.filter.time.selectedStartYear, this.filter.time.selectedEndYear + 1],
+				value: [this.filter.years.startValue, this.filter.years.endValue + 1],
 			};
 			filters.push(yearFilter);
 		}
 		return filters;
 	}
 
-	visualize() {
+	private visualize() {
 		if (!this.sector) {
 			return;
 		}
@@ -126,7 +124,7 @@ export class SectorPage implements OnInit, OnDestroy {
 			});
 	}
 
-	display(data: IStatsSector): void {
+	private display(data: IStatsSector): void {
 		this.sector = null;
 		this.parent_sectors = [];
 		if (!data) {
@@ -143,39 +141,30 @@ export class SectorPage implements OnInit, OnDestroy {
 	}
 
 	private displayStats(stats: IStats): void {
-		if (!this.filter.time && stats.histogram_pc_lots_awardDecisionDate_finalPrices) {
-			let startYear = 0;
-			let endYear = 0;
-			Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices).forEach((key) => {
-				let year = parseInt(key, 10);
-				startYear = startYear === 0 ? year : Math.min(year, startYear);
-				endYear = endYear === 0 ? year : Math.max(year, endYear);
-			});
-			this.filter.time = {
-				startYear, endYear,
-				selectedStartYear: startYear,
-				selectedEndYear: endYear
-			};
-		}
+		let viz = this.viz;
+		Object.keys(viz).forEach(key => {
+			viz[key].data = null;
+		});
 		if (!stats) {
 			return;
 		}
-		let viz = this.viz;
 		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
-		viz.procedure_types = stats.terms_procedure_type;
-		viz.top_companies = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
-		viz.top_authorities = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-		viz.subsectors = stats.sectors_stats;
-		viz.authority_nuts = stats.terms_authority_nuts;
-		viz.score_in_years = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores['TENDER'] : null;
+		viz.procedure_types.data = stats.terms_procedure_type;
+		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
+		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
+		viz.subsectors.data = stats.sectors_stats;
+		viz.authority_nuts.data = stats.terms_authority_nuts;
+		viz.score_in_years.data = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores['TENDER'] : null;
+		viz.years.data = Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices || {}).map(key => parseInt(key, 10));
+
 		let sub_scores = stats.terms_main_cpv_divisions_scores || stats.terms_main_cpv_groups_scores || stats.terms_main_cpv_categories_scores || stats.terms_main_cpv_full_scores;
-		viz.score_in_sectors = null;
+		viz.score_in_sectors.data = null;
 		if (sub_scores) {
-			viz.score_in_sectors = {};
+			viz.score_in_sectors.data = {};
 			Object.keys(sub_scores).forEach(key => {
 				let part = sub_scores[key];
 				if (part.scores['TENDER'] !== null) {
-					viz.score_in_sectors[key] = {
+					viz.score_in_sectors.data[key] = {
 						name: part.name,
 						value: part.scores['TENDER']
 					};
