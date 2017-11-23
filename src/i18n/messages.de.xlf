@@ -15,18 +15,10 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/pages/about/about.component.ts
-          </context>
-          <context context-type="linenumber">
-            4
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            114
+            112
           </context>
         </context-group>
         <context-group purpose="location">
@@ -53,6 +45,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Etwa 15 % des Bruttoinlandsprodukts der EU werden jedes Jahr für die Beschaffung von Waren und Dienstleistungen ausgegeben, und einige Schätzungen gehen davon aus, dass Korruption die Kosten für staatliche Aufträge um 20 bis 25 % erhöht. Noch besorgniserregender ist, dass die Korruption im öffentlichen Beschaffungswesen weit verbreitete öffentliche Ziele gefährdet, wie den Bau sicherer Autobahnen, qualitativ hochwertiger Schulgebäude oder die rechtzeitige Lieferung von Medikamenten.
+        </target>
       </trans-unit>
       <trans-unit id="9dd624a60198301ed4ee85c40cbf879782f979dc" datatype="html">
         <source>
@@ -66,6 +61,9 @@
             8
           </context>
         </context-group>
+        <target>
+          Durch die kostenlose Bereitstellung umfassender Informationen über das öffentliche Beschaffungswesen in einem benutzerfreundlichen Format für alle interessierten Parteien soll die Markttransparenz erhöht, Transaktionskosten gesenkt und die Rechenschaftspflicht der Regierung erleichtert werden. Daher wurde opentender.eu, eine zentrale, öffentliche und offene Beschaffungsplattform eingerichtet, die dazu beitragen soll, ein gutes Preis-Leistungs-Verhältnis im öffentlichen Beschaffungswesen zu erzielen und die Integrität im gesamten öffentlichen Sektor zu erhöhen.
+        </target>
       </trans-unit>
       <trans-unit id="b5ff828d47f8aea76c4174fecf3c180f92366800" datatype="html">
         <source>
@@ -80,7 +78,7 @@
           </context>
         </context-group>
         <target>
-          Wer ist Opentender?
+          Was ist Opentender?
         </target>
       </trans-unit>
       <trans-unit id="75ac84cfeb7ee1d570978f08e87da5c4d440d1d6" datatype="html">
@@ -95,6 +93,9 @@
             16
           </context>
         </context-group>
+        <target>
+          DIGIWHIST, ein von der EU gefördertes Projekt im Rahmen des Horizont-2020-Programms, vereint sechs europäische Forschungsinstitute mit dem Ziel, die Gesellschaft in die Lage zu versetzen, Korruption im öffentlichen Sektor zu bekämpfen. Gleichzeitig wird es das Vertrauen in die Regierungen stärken und die Effizienz der öffentlichen Ausgaben in ganz Europa durch die systematische Sammlung, Strukturierung, Analyse und Verbreitung von Informationen über das öffentliche Beschaffungswesen und über Mechanismen, die die Rechenschaftspflicht von Amtsträgern in der gesamten EU und einigen Nachbarländern erhöhen, verbessern.
+        </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
         <source>
@@ -108,6 +109,9 @@
             25
           </context>
         </context-group>
+        <target>
+          Das 'Department of Sociology' in Cambridge hat ein ausgeprägtes Profil als Exzellenzzentrum für herausragende Arbeiten in der Sozialtheorie und der empirischen soziologischen Forschung. Die Soziologie in Cambridge wird ebenfalls in einem interdisziplinären Kontext praktiziert und gelehrt, mit besonders starken Verbindungen zu Politik, Psychologie, Anthropologie, Ökonomie und Geschichte.
+        </target>
       </trans-unit>
       <trans-unit id="feefffc590f4a0607d1a2e97f6db8e4f72578c0e" datatype="html">
         <source>
@@ -121,6 +125,9 @@
             34
           </context>
         </context-group>
+        <target>
+          Die Hertie School of Governance bereitet herausragende Studierende auf Führungspositionen in Regierung, Wirtschaft und Zivilgesellschaft vor. Die Schule bietet auch erfahrenen Fachleuten die Möglichkeit, ihre Fähigkeiten im Bereich des öffentlichen Managements zu vertiefen. Als eine renommierte internationale Fakultät mit Expertise in Wirtschafts-, Wirtschafts-, Rechts-, Politik- und Sozialwissenschaften verfolgt sie einen interdisziplinären, politikorientierten Ansatz für die Lehr- und Forschungsagenda der Hochschule.
+        </target>
       </trans-unit>
       <trans-unit id="747b114de34de8097882ea700e545e8fa21ec7a6" datatype="html">
         <source>
@@ -134,6 +141,9 @@
             43
           </context>
         </context-group>
+        <target>
+          Die Gründung des Government Transparency Institute im Jahr 2015 wurde durch das wachsende Bedürfnis und die Möglichkeit motiviert, unabhängige Forschung und Befürwortung zu Transparenz, Korruption und Qualität von Regierungen in Europa und darüber hinaus zu betreiben. Das Institut ist ein überparteilicher Think Tank, der unabhängig von Regierungen, politischen Parteien oder Interessengruppen ist. Ziel des Instituts ist die systematische Erforschung der Ursachen, Charakteristika und Folgen einer schlechten Regierungsqualität in einem interdisziplinären Ansatz, der sich auf Politikwissenschaft, Ökonomie, Recht und Datenwissenschaft stützt. Das Institut will den Bürgern helfen, Regierungen durch die Veröffentlichung großer Datenmengen und aussagekräftiger Analysen zur Rechenschaft zu ziehen.
+        </target>
       </trans-unit>
       <trans-unit id="f8ecdb1e36c8b982bb54606ace91b24cbf483488" datatype="html">
         <source>
@@ -159,6 +169,9 @@
             52
           </context>
         </context-group>
+        <target>
+          Datlab ist ein tschechisches IT-Unternehmen, das sich auf die Datenextraktion und -verarbeitung spezialisiert hat. Ab 2015 verarbeitet sie regelmäßig Daten von 30 verschiedenen Websites und Systemen. Sie arbeitet eng mit dem NRO-Sektor zusammen und betreibt mehrere große OpenData-Dienste, wie z.B. &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (Beschaffungsdatenbank), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (Monitor für die Finanzierung politischer Parteien).
+        </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
         <source>
@@ -172,6 +185,9 @@
             61
           </context>
         </context-group>
+        <target>
+          Transcrime ist die Gemeinsame Forschungsstelle für grenzüberschreitende Kriminalität der Università Cattolica del Sacro Cuore in Mailand und der Universität Trient. Es analysiert Strategien zur Prävention und Bekämpfung von Kriminalität mit einem integrierten Ansatz (Kriminologie, Recht, Statistik, Wirtschaft, forensische Rechnungslegung). Transcrime analysiert insbesondere Kriminalitätsphänomene im Bereich der organisierten Kriminalität, der Finanzkriminalität, der Geldwäsche und der Korruption.
+        </target>
       </trans-unit>
       <trans-unit id="6c9413918f44d867ccd39ead5b0f8eb8af3431d2" datatype="html">
         <source>
@@ -195,7 +211,7 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
           </context>
         </context-group>
         <context-group purpose="location">
@@ -203,7 +219,7 @@
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
           </context>
         </context-group>
         <context-group purpose="location">
@@ -211,7 +227,15 @@
             src/app/pages/sector/sector.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/tender/tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            3
           </context>
         </context-group>
         <context-group purpose="location">
@@ -219,11 +243,11 @@
             src/app/pages/region/region.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
           </context>
         </context-group>
         <target>
-          Laden…
+          Lädt…
         </target>
       </trans-unit>
       <trans-unit id="0d3bd9656962cdf02b182fc14d4c86d1421218fe" datatype="html">
@@ -235,7 +259,7 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            15
+            20
           </context>
         </context-group>
         <context-group purpose="location">
@@ -243,7 +267,7 @@
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            15
+            20
           </context>
         </context-group>
         <target>
@@ -259,11 +283,11 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            19
+            24
           </context>
         </context-group>
         <target>
-          FOI-Anfragen bei
+          IFG-Anfragen finden
         </target>
       </trans-unit>
       <trans-unit id="32382c783e53d04c11023e4963cbba3359284203" datatype="html">
@@ -275,27 +299,11 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            23
+            28
           </context>
         </context-group>
         <target>
           Diese Behörde suchen bei
-        </target>
-      </trans-unit>
-      <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
-        <source>
-          Similar Authorities
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/authority/authority.component.ts
-          </context>
-          <context context-type="linenumber">
-            30
-          </context>
-        </context-group>
-        <target>
-          Ähnliche Behörden
         </target>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
@@ -307,11 +315,11 @@
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            25
           </context>
         </context-group>
         <target>
-          FOI-Anfragen bei
+          IFG-Anfragen finden bei
         </target>
       </trans-unit>
       <trans-unit id="10ca3b39d610b4266c4e9cee482bec2f62b1ac65" datatype="html">
@@ -323,27 +331,11 @@
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            30
           </context>
         </context-group>
         <target>
           Diese Firma suchen bei
-        </target>
-      </trans-unit>
-      <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
-        <source>
-          Similar Companies
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/company/company.component.ts
-          </context>
-          <context context-type="linenumber">
-            34
-          </context>
-        </context-group>
-        <target>
-          Ähnliche Firmen
         </target>
       </trans-unit>
       <trans-unit id="6edd1a650db2af580ebe746813024c45f1d854b1" datatype="html">
@@ -356,14 +348,6 @@
           </context>
           <context context-type="linenumber">
             3
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/about.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
           </context>
         </context-group>
         <target>
@@ -398,6 +382,9 @@
             13
           </context>
         </context-group>
+        <target>
+          Die Nomenklatur der Gebietseinheiten für die Statistik (NUTS) ist ein Geocode-Norm, die eine Untergliederung des Wirtschaftsgebiets der Europäischen Union in Gebietseinheiten für die Erstellung von Regionalstatistiken und für gezielte politische Interventionen auf regionaler Ebene vorsieht. Lesen Sie mehr unter
+        </target>
       </trans-unit>
       <trans-unit id="d7a05d2dcbbc43e6d28a3b0ec0c7c4dea2479d5d" datatype="html">
         <source>
@@ -416,7 +403,7 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            55
+            52
           </context>
         </context-group>
         <target>
@@ -435,6 +422,9 @@
             20
           </context>
         </context-group>
+        <target>
+          Das Common Procurement Vocabulary (CPV) zielt darauf ab, durch ein einheitliches Klassifizierungssystem für das öffentliche Beschaffungswesen die Begriffe zu vereinheitlichen, die von öffentlichen Auftraggebern und Auftraggebern zur Beschreibung des Auftragsgegenstandes verwendet werden. Lesen Sie mehr unter
+        </target>
       </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
         <source>
@@ -488,6 +478,9 @@
             8
           </context>
         </context-group>
+        <target>
+          Hinter Opentender verbirgt sich eine robuste Datenerfassungs- und -verarbeitungssoftware, die Beschaffungsdaten aus rund 20 verschiedenen Quellen sammelt. Normalerweise gibt es keine offenen Daten, wir extrahieren die Informationen aus Tausenden von Webseiten, um eine strukturierte Datenbank zu erhalten. Danach fassen wir alle Publikationen zusammen, die jede Ausschreibung beschreiben, und schließlich erstellen wir ein endgültiges, möglichst genaues Bild der jeweiligen Ausschreibung. Quellsysteme und Daten sind von Land zu Land sehr unterschiedlich, so dass für jede Quelle eine maßgeschneiderte Software erstellt wird.
+        </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
         <source>
@@ -506,7 +499,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            73
+            71
           </context>
         </context-group>
         <context-group purpose="location">
@@ -514,7 +507,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            79
+            77
           </context>
         </context-group>
         <context-group purpose="location">
@@ -522,7 +515,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            80
+            78
           </context>
         </context-group>
         <context-group purpose="location">
@@ -530,7 +523,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            91
+            89
           </context>
         </context-group>
         <context-group purpose="location">
@@ -538,34 +531,34 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            103
+            101
           </context>
         </context-group>
         <target>
           Indikatoren
         </target>
       </trans-unit>
-      <trans-unit id="189aa1abb220718afd617b4c30b986f52ec573d8" datatype="html">
+      <trans-unit id="665b1a891395df9434553ca7d9b7e8fb62d60e15" datatype="html">
         <source>
-          Opentender uses public procurement performance indicators based on a broad set of scientific analyses, synthesized and taken further in our own research: for transparency indicators see
+          Opentender uses public procurement performance indicators based on a broad set of scientific analyses, synthesized and taken further in our own research: for administrative capacity indicators see
           <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
-          </x>
-          Methods Paper on Fiscal Transparency
-          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
-          </x>
-          , for integrity risk indicators see
-          <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;">
-          </x>
-          Methods Paper on Corruption Risk Indicators
-          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
-          </x>
-          , for administrative capacity indicators see
-          <x id="START_LINK_2" ctype="x-a" equiv-text="&lt;a&gt;">
           </x>
           Methods Paper on Administrative Quality Indicators
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
           </x>
-          . All of these indicators are based on objective data, are directly actionable by public and private actors, and they are transparently and unambiguously calculated. If you find any error in the
+          , for transparency indicators see
+          <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;">
+          </x>
+          Methods Paper on Fiscal Transparency
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
+          </x>
+          , for integrity indicators see
+          <x id="START_LINK_2" ctype="x-a" equiv-text="&lt;a&gt;">
+          </x>
+          Methods Paper on Corruption Risk Indicators
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
+          </x>
+          . The overarching good procurement score is the simple average of the three composite scores. All of these indicators are based on objective data, are directly actionable by public and private actors, and they are transparently and unambiguously calculated. If you find any error in the
           <x id="START_LINK_3" ctype="x-a" equiv-text="&lt;a&gt;">
           </x>
           formulas
@@ -608,14 +601,6 @@
             34
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            24
-          </context>
-        </context-group>
         <target>
           Dashboards
         </target>
@@ -637,7 +622,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            37
+            47
           </context>
         </context-group>
         <context-group purpose="location">
@@ -645,7 +630,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            54
           </context>
         </context-group>
         <context-group purpose="location">
@@ -653,7 +638,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            54
           </context>
         </context-group>
         <context-group purpose="location">
@@ -662,14 +647,6 @@
           </context>
           <context context-type="linenumber">
             33
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            25
           </context>
         </context-group>
         <context-group purpose="location">
@@ -698,30 +675,6 @@
         </context-group>
         <target>
           Profile
-        </target>
-      </trans-unit>
-      <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
-        <source>
-          How Opentender works
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/about/about.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/footer.component.ts
-          </context>
-          <context context-type="linenumber">
-            27
-          </context>
-        </context-group>
-        <target>
-          Wie Opentender funktioniert
         </target>
       </trans-unit>
       <trans-unit id="203669909f4f54336b8208aa175000457f4db6af" datatype="html">
@@ -829,7 +782,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
           </context>
         </context-group>
         <context-group purpose="location">
@@ -837,7 +790,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            61
+            59
           </context>
         </context-group>
         <context-group purpose="location">
@@ -845,7 +798,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            66
           </context>
         </context-group>
         <context-group purpose="location">
@@ -853,7 +806,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            66
           </context>
         </context-group>
         <context-group purpose="location">
@@ -861,7 +814,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            486
+            497
           </context>
         </context-group>
         <context-group purpose="location">
@@ -870,14 +823,6 @@
           </context>
           <context context-type="linenumber">
             35
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            26
           </context>
         </context-group>
         <context-group purpose="location">
@@ -901,7 +846,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            7
+            6
           </context>
         </context-group>
         <target>
@@ -917,7 +862,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            10
+            9
           </context>
         </context-group>
         <target>
@@ -933,7 +878,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            13
           </context>
         </context-group>
         <target>
@@ -949,7 +894,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            18
+            17
           </context>
         </context-group>
         <target>
@@ -965,7 +910,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            19
           </context>
         </context-group>
         <context-group purpose="location">
@@ -973,7 +918,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            30
           </context>
         </context-group>
         <context-group purpose="location">
@@ -981,7 +926,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            22
+            21
           </context>
         </context-group>
         <target>
@@ -997,7 +942,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            30
+            29
           </context>
         </context-group>
         <target>
@@ -1013,7 +958,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            32
+            31
           </context>
         </context-group>
         <target>
@@ -1029,7 +974,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            32
           </context>
         </context-group>
         <target>
@@ -1051,7 +996,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            45
+            44
           </context>
         </context-group>
         <target>
@@ -1073,7 +1018,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            46
+            45
           </context>
         </context-group>
         <target>
@@ -1095,11 +1040,51 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            46
           </context>
         </context-group>
         <target>
           Die Struktur der Daten ist einem &lt;x ctype="x-a" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; umrissen.
+        </target>
+      </trans-unit>
+      <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
+        <source>
+          Market Analysis
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            3
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <target>
+          Marktüberblick
         </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
@@ -1111,7 +1096,7 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            50
+            47
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1119,7 +1104,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            147
+            161
           </context>
         </context-group>
         <target>
@@ -1135,7 +1120,7 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            54
+            51
           </context>
         </context-group>
         <target>
@@ -1151,7 +1136,7 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            56
+            53
           </context>
         </context-group>
         <target>
@@ -1167,7 +1152,7 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            54
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1223,11 +1208,11 @@
             src/app/pages/dashboards/market-analysis/market-analysis.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            55
           </context>
         </context-group>
         <target>
-          Umfang der Verträge (€)
+          Volumen der Verträge (€)
         </target>
       </trans-unit>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
@@ -1239,7 +1224,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            6
+            4
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1264,7 +1249,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            8
+            6
           </context>
         </context-group>
         <target>
@@ -1285,7 +1270,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            10
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1293,7 +1278,7 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            32
+            63
           </context>
         </context-group>
         <target>
@@ -1309,75 +1294,11 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            31
           </context>
         </context-group>
         <target>
           Mit dem Klick auf diese Kacheln haben Sie verschiedenen Möglichkeiten mit den Daten zu interagieren. Die Bereiche sind miteinander verbunden und verfügen über die gleiche Datentiefe.
-        </target>
-      </trans-unit>
-      <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
-        <source>
-          Search and Find
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            43
-          </context>
-        </context-group>
-        <target>
-          Suchen und Finden
-        </target>
-      </trans-unit>
-      <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
-        <source>
-          In this section you can search in the data by criteria of your interest. The results are downloadable for detailed examination.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            45
-          </context>
-        </context-group>
-        <target>
-          In diesem Abschnitt können Sie nach ihren Kriterien in den Daten suchen. Die Suchergebnisse können für weitere Untersuchung heruntergeladen werden.
-        </target>
-      </trans-unit>
-      <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
-        <source>
-          Market Analysis
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            49
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            56
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            56
-          </context>
-        </context-group>
-        <target>
-          Marktüberblick
         </target>
       </trans-unit>
       <trans-unit id="4fb1c019f7b2bc0aeb553bfa7719dde5aa299c1b" datatype="html">
@@ -1389,7 +1310,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            55
+            41
           </context>
         </context-group>
         <target>
@@ -1405,11 +1326,43 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            43
           </context>
         </context-group>
         <target>
           Dieses Dashboard bietet einen Überblick über die öffentlichen Beschaffungsmärkte und hilft Käufern und Bietern effektiver auszuschreiben.
+        </target>
+      </trans-unit>
+      <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
+        <source>
+          Search and Find
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            53
+          </context>
+        </context-group>
+        <target>
+          Suchen und Finden
+        </target>
+      </trans-unit>
+      <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
+        <source>
+          In this section you can search in the data by criteria of your interest. The results are downloadable for detailed examination.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            55
+          </context>
+        </context-group>
+        <target>
+          In diesem Abschnitt können Sie nach ihren Kriterien in den Daten suchen. Die Suchergebnisse können für weitere Untersuchung heruntergeladen werden.
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -1421,7 +1374,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            67
+            65
           </context>
         </context-group>
         <target>
@@ -1437,7 +1390,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            69
+            67
           </context>
         </context-group>
         <target>
@@ -1453,7 +1406,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            80
+            78
           </context>
         </context-group>
         <target>
@@ -1469,7 +1422,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            81
+            79
           </context>
         </context-group>
         <target>
@@ -1485,7 +1438,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            85
+            83
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1493,7 +1446,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            92
+            90
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1501,7 +1454,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            92
+            90
           </context>
         </context-group>
         <target>
@@ -1517,7 +1470,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            93
+            91
           </context>
         </context-group>
         <target>
@@ -1533,7 +1486,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            97
+            95
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1541,7 +1494,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            102
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1549,7 +1502,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            102
           </context>
         </context-group>
         <target>
@@ -1565,7 +1518,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            105
+            103
           </context>
         </context-group>
         <target>
@@ -1581,7 +1534,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            111
           </context>
         </context-group>
         <target>
@@ -1597,7 +1550,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            115
+            113
           </context>
         </context-group>
         <target>
@@ -1613,7 +1566,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            13
+            3
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1660,54 +1613,6 @@
           Firma suchen
         </target>
       </trans-unit>
-      <trans-unit id="91b38e0f1106939b5a44536ba7dc9a432855add6" datatype="html">
-        <source>
-          Tender
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/search.component.ts
-          </context>
-          <context context-type="linenumber">
-            4
-          </context>
-        </context-group>
-        <target>
-          Aussschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="6ef0619a37140118b9e640c6cc36ee4e9fb4372a" datatype="html">
-        <source>
-          Company
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/search.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <target>
-          Firma
-        </target>
-      </trans-unit>
-      <trans-unit id="b0d23d6ebf965718e595c77b85e92c07aa19c470" datatype="html">
-        <source>
-          Authority
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/search.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <target>
-          Behörde
-        </target>
-      </trans-unit>
       <trans-unit id="6cec3565e21ae209bd028809ac44f2abcae5a7b2" datatype="html">
         <source>
           Search Tender
@@ -1733,7 +1638,7 @@
             src/app/pages/sector/sector.component.ts
           </context>
           <context context-type="linenumber">
-            12
+            11
           </context>
         </context-group>
         <target>
@@ -1752,7 +1657,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            5
+            4
           </context>
         </context-group>
         <target>
@@ -1776,7 +1681,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            7
+            6
           </context>
         </context-group>
         <target>
@@ -1797,7 +1702,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            13
+            12
           </context>
         </context-group>
         <target>
@@ -1813,59 +1718,11 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            26
+            17
           </context>
         </context-group>
         <target>
           Keine Indikatoren für diese Ausschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="067e56c9b40de4c816493e1a09e317d6a81c5778" datatype="html">
-        <source>
-          Procurement Integrity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            29
-          </context>
-        </context-group>
-        <target>
-          Beschaffungsintegrität-Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="2fc75f6b3cc4ed75a6e26837c1e4f0dcb2c23e90" datatype="html">
-        <source>
-          Administrative Capacity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            33
-          </context>
-        </context-group>
-        <target>
-          Administrative Kapazität-Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="aede79cd677c6090f85a07d445d1b898ba73cda9" datatype="html">
-        <source>
-          Transparency Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            37
-          </context>
-        </context-group>
-        <target>
-          Transparenz-Indikatoren
         </target>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
@@ -1877,7 +1734,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            77
           </context>
         </context-group>
         <target>
@@ -1893,7 +1750,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            63
+            83
           </context>
         </context-group>
         <target>
@@ -1909,7 +1766,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            67
+            87
           </context>
         </context-group>
         <target>
@@ -1925,7 +1782,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            91
           </context>
         </context-group>
         <target>
@@ -1941,7 +1798,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            75
+            95
           </context>
         </context-group>
         <target>
@@ -1957,7 +1814,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            79
+            99
           </context>
         </context-group>
         <target>
@@ -1973,7 +1830,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            103
           </context>
         </context-group>
         <target>
@@ -1989,7 +1846,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            102
+            122
           </context>
         </context-group>
         <target>
@@ -2005,7 +1862,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            124
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2013,7 +1870,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            245
+            256
           </context>
         </context-group>
         <target>
@@ -2029,7 +1886,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            110
+            128
           </context>
         </context-group>
         <target>
@@ -2045,7 +1902,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            116
+            132
           </context>
         </context-group>
         <target>
@@ -2061,7 +1918,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            122
+            136
           </context>
         </context-group>
         <target>
@@ -2077,7 +1934,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            124
+            138
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2085,7 +1942,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            237
+            248
           </context>
         </context-group>
         <target>
@@ -2101,7 +1958,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            128
+            142
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2109,7 +1966,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            241
+            252
           </context>
         </context-group>
         <target>
@@ -2125,7 +1982,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            132
+            146
           </context>
         </context-group>
         <target>
@@ -2141,7 +1998,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            136
+            150
           </context>
         </context-group>
         <target>
@@ -2157,7 +2014,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            154
           </context>
         </context-group>
         <target>
@@ -2173,7 +2030,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            154
+            168
           </context>
         </context-group>
         <target>
@@ -2189,7 +2046,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            156
+            170
           </context>
         </context-group>
         <target>
@@ -2205,7 +2062,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            160
+            174
           </context>
         </context-group>
         <target>
@@ -2221,7 +2078,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            164
+            178
           </context>
         </context-group>
         <target>
@@ -2237,7 +2094,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            168
+            182
           </context>
         </context-group>
         <target>
@@ -2253,7 +2110,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            172
+            186
           </context>
         </context-group>
         <target>
@@ -2269,7 +2126,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            190
           </context>
         </context-group>
         <target>
@@ -2285,7 +2142,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            194
           </context>
         </context-group>
         <target>
@@ -2301,7 +2158,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            218
+            229
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2309,7 +2166,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            286
+            297
           </context>
         </context-group>
         <target>
@@ -2325,7 +2182,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            231
+            242
           </context>
         </context-group>
         <target>
@@ -2341,7 +2198,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            233
+            244
           </context>
         </context-group>
         <target>
@@ -2357,7 +2214,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            249
+            260
           </context>
         </context-group>
         <target>
@@ -2373,7 +2230,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            253
+            264
           </context>
         </context-group>
         <target>
@@ -2389,7 +2246,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            257
+            268
           </context>
         </context-group>
         <target>
@@ -2405,7 +2262,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            261
+            272
           </context>
         </context-group>
         <target>
@@ -2421,7 +2278,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            265
+            276
           </context>
         </context-group>
         <target>
@@ -2437,7 +2294,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            269
+            280
           </context>
         </context-group>
         <target>
@@ -2453,7 +2310,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            274
+            285
           </context>
         </context-group>
         <target>
@@ -2469,7 +2326,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            290
+            301
           </context>
         </context-group>
         <target>
@@ -2485,7 +2342,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            294
+            305
           </context>
         </context-group>
         <target>
@@ -2501,7 +2358,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            298
+            309
           </context>
         </context-group>
         <target>
@@ -2517,7 +2374,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            302
+            313
           </context>
         </context-group>
         <target>
@@ -2533,7 +2390,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            321
+            332
           </context>
         </context-group>
         <target>
@@ -2549,7 +2406,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            325
+            336
           </context>
         </context-group>
         <target>
@@ -2565,7 +2422,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            329
+            340
           </context>
         </context-group>
         <target>
@@ -2581,7 +2438,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            333
+            344
           </context>
         </context-group>
         <target>
@@ -2597,7 +2454,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            349
+            360
           </context>
         </context-group>
         <context-group purpose="location">
@@ -2605,7 +2462,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            397
+            408
           </context>
         </context-group>
         <target>
@@ -2621,7 +2478,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            353
+            364
           </context>
         </context-group>
         <target>
@@ -2637,7 +2494,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            357
+            368
           </context>
         </context-group>
         <target>
@@ -2653,7 +2510,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            361
+            372
           </context>
         </context-group>
         <target>
@@ -2669,7 +2526,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            365
+            376
           </context>
         </context-group>
         <target>
@@ -2685,7 +2542,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            369
+            380
           </context>
         </context-group>
         <target>
@@ -2701,7 +2558,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            373
+            384
           </context>
         </context-group>
         <target>
@@ -2717,7 +2574,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            377
+            388
           </context>
         </context-group>
         <target>
@@ -2733,7 +2590,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            381
+            392
           </context>
         </context-group>
         <target>
@@ -2749,7 +2606,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            410
+            421
           </context>
         </context-group>
         <target>
@@ -2765,7 +2622,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            412
+            423
           </context>
         </context-group>
         <target>
@@ -2781,7 +2638,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            416
+            427
           </context>
         </context-group>
         <target>
@@ -2797,7 +2654,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            420
+            431
           </context>
         </context-group>
         <target>
@@ -2813,7 +2670,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            424
+            435
           </context>
         </context-group>
         <target>
@@ -2829,7 +2686,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            428
+            439
           </context>
         </context-group>
         <target>
@@ -2845,7 +2702,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            432
+            443
           </context>
         </context-group>
         <target>
@@ -2861,7 +2718,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            436
+            447
           </context>
         </context-group>
         <target>
@@ -2877,7 +2734,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            440
+            451
           </context>
         </context-group>
         <target>
@@ -2893,7 +2750,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            444
+            455
           </context>
         </context-group>
         <target>
@@ -2909,7 +2766,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            448
+            459
           </context>
         </context-group>
         <target>
@@ -2925,7 +2782,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            452
+            463
           </context>
         </context-group>
         <target>
@@ -2941,7 +2798,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            458
+            469
           </context>
         </context-group>
         <target>
@@ -2957,7 +2814,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            470
+            481
           </context>
         </context-group>
         <target>
@@ -2973,7 +2830,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            472
+            483
           </context>
         </context-group>
         <target>
@@ -2989,7 +2846,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            476
+            487
           </context>
         </context-group>
         <target>
@@ -3005,7 +2862,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            485
+            496
           </context>
         </context-group>
         <context-group purpose="location">
@@ -3013,7 +2870,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            491
+            502
           </context>
         </context-group>
         <context-group purpose="location">
@@ -3053,7 +2910,7 @@
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            497
+            508
           </context>
         </context-group>
         <context-group purpose="location">
@@ -3077,9 +2934,12 @@
             src/app/pages/region/region.component.ts
           </context>
           <context context-type="linenumber">
-            12
+            11
           </context>
         </context-group>
+        <target>
+          Übergeordnete Regionen
+        </target>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
         <source>
@@ -3090,9 +2950,12 @@
             src/app/pages/region/region.component.ts
           </context>
           <context context-type="linenumber">
-            22
+            21
           </context>
         </context-group>
+        <target>
+          Anzahl der Ausschreibbungen in den Unterregionen
+        </target>
       </trans-unit>
       <trans-unit id="293ab8acb61c97af9dfba991ce681bf173debabc" datatype="html">
         <source>
@@ -3119,7 +2982,7 @@
             src/app/pages/dashboards/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            19
+            12
           </context>
         </context-group>
         <target>
@@ -3135,11 +2998,29 @@
             src/app/pages/dashboards/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            21
+            14
           </context>
         </context-group>
         <target>
           Alle Unterindikatoren
+        </target>
+      </trans-unit>
+      <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
+        <source>
+          Average Score of
+          <x id="INTERPOLATION" equiv-text="{{indicatorTitle}}">
+          </x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            23
+          </context>
+        </context-group>
+        <target>
+          Durchschnittlicher Score von &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
@@ -3151,9 +3032,12 @@
             src/app/pages/dashboards/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            44
           </context>
         </context-group>
+        <target>
+          Score-Bereich
+        </target>
       </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
         <source>
@@ -3169,6 +3053,22 @@
         </context-group>
         <target>
           Was ist Opentender?
+        </target>
+      </trans-unit>
+      <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
+        <source>
+          How Opentender works
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            27
+          </context>
+        </context-group>
+        <target>
+          Wie Opentender funktioniert
         </target>
       </trans-unit>
       <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
@@ -3379,22 +3279,6 @@
           Dieses Projekt erhält Fördermittel aus dem &lt;x ctype="x-a" id="START_LINK"/&gt;EU-Forschungsrahmenprogramm Horizon 2020&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; unter der dem Förderkennzeichen &lt;x ctype="x-a" id="START_LINK_1"/&gt;645852&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
-      <trans-unit id="4a6519045cee308fac724d6bfd7a0e927b2ba4d3" datatype="html">
-        <source>
-          Main buyers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/authorities.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Hauptkäufer
-        </target>
-      </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
         <source>
           Volume (€)
@@ -3435,22 +3319,6 @@
           Volumen (€)
         </target>
       </trans-unit>
-      <trans-unit id="486502ed65612db0438062635d5fe7fa28930119" datatype="html">
-        <source>
-          Main suppliers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/companies.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Hauptzulieferer
-        </target>
-      </trans-unit>
       <trans-unit id="5a09326a1ac31f2972a37f114abbb22ae1559093" datatype="html">
         <source>
           Contracts (Lots) over Time
@@ -3463,6 +3331,9 @@
             2
           </context>
         </context-group>
+        <target>
+          Verträge (Lots) über die Zeit
+        </target>
       </trans-unit>
       <trans-unit id="8700afbd9703e190b3d675a06b96a159518fa81c" datatype="html">
         <source>
@@ -3476,6 +3347,9 @@
             6
           </context>
         </context-group>
+        <target>
+          Absolutes Volumen (€)
+        </target>
       </trans-unit>
       <trans-unit id="27575017642b02439056216f88dde0263ca001cf" datatype="html">
         <source>
@@ -3489,6 +3363,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Durchschnittliches Volumen (€)
+        </target>
       </trans-unit>
       <trans-unit id="e6706e3f8fe60e315a4b4cc214debec357293456" datatype="html">
         <source>
@@ -3572,25 +3449,6 @@
           Absolut
         </target>
       </trans-unit>
-      <trans-unit id="8752b5e2965379276fc75557b40d77276653b01a" datatype="html">
-        <source>
-          Average Score of
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-          over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/score-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Durchschnittlicher Score von &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; über Zeit
-        </target>
-      </trans-unit>
       <trans-unit id="d07981f293c51226089eccef6d39124f8196d6f8" datatype="html">
         <source>
           <x id="INTERPOLATION" equiv-text="{{title}}">
@@ -3609,9 +3467,8 @@
           &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; pro Branche
         </target>
       </trans-unit>
-      <trans-unit id="31f3a95dfcc5fc2437f8c9a7f2a556176ec04a88" datatype="html">
+      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
         <source>
-          Average Score of
           <x id="INTERPOLATION" equiv-text="{{title}}">
           </x>
         </source>
@@ -3623,44 +3480,6 @@
             2
           </context>
         </context-group>
-        <target>
-          Durchschnittlicher Score von &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;
-        </target>
-      </trans-unit>
-      <trans-unit id="f7ac111711617f32776bd2e39da8f0f961624309" datatype="html">
-        <source>
-          Average Score of
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-          per Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/score-sectors.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Durchschnittlicher Score von &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; pro Branche
-        </target>
-      </trans-unit>
-      <trans-unit id="ed0e0770fe610a415a9b21dc0e95d7a34008a6a2" datatype="html">
-        <source>
-          Sector Overview
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/sector-treemap.component.ts
-          </context>
-          <context context-type="linenumber">
-            3
-          </context>
-        </context-group>
-        <target>
-          Branchenüberblick
-        </target>
       </trans-unit>
       <trans-unit id="6990ad8d6182662e864495ac31c3758cda1c7a28" datatype="html">
         <source>
@@ -3671,51 +3490,11 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            14
+            50
           </context>
         </context-group>
         <target>
           Portale
-        </target>
-      </trans-unit>
-      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
-        <source>
-          Home
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            23
-          </context>
-        </context-group>
-        <target>
-          Start
-        </target>
-      </trans-unit>
-      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
-        <source>
-          About
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/header.component.ts
-          </context>
-          <context context-type="linenumber">
-            27
-          </context>
-        </context-group>
-        <target>
-          Über
         </target>
       </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
@@ -3727,7 +3506,7 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            62
           </context>
         </context-group>
         <target>
@@ -3886,9 +3665,9 @@
           Durchschnittliche % der Verträge (Lots)
         </target>
       </trans-unit>
-      <trans-unit id="AverageIndicatorScore" datatype="html">
+      <trans-unit id="AverageScore" datatype="html">
         <source>
-          Average Indicator Score
+          Average Score
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3921,7 +3700,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Umfang der Verträge (€)
+          Durchschnittliches Volumen der Verträge (€)
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionDate" datatype="html">
@@ -4164,14 +3943,6 @@
             23
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            99
-          </context>
-        </context-group>
         <note priority="1" from="description">
           runtime
         </note>
@@ -4189,14 +3960,6 @@
           </context>
           <context context-type="linenumber">
             24
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            100
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5248,7 +5011,7 @@
           runtime
         </note>
         <target>
-          Absoluter Umfang der Verträge (€)
+          Absolutes Volumen der Verträge (€)
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicator" datatype="html">
@@ -5495,7 +5258,7 @@
           runtime
         </note>
         <target>
-          Umfang der Verträge (€)
+          Volumen der Verträge (€)
         </target>
       </trans-unit>
       <trans-unit id="Average%ofContracts" datatype="html">
@@ -5608,6 +5371,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Unterbranchen
+        </target>
       </trans-unit>
       <trans-unit id="Descriptionlength" datatype="html">
         <source>
@@ -5618,7 +5384,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            101
+            99
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5637,7 +5403,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            102
+            100
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5656,7 +5422,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            103
+            101
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5675,7 +5441,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            102
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5694,7 +5460,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            105
+            103
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5713,7 +5479,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            106
+            104
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5732,7 +5498,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            105
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5751,7 +5517,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            108
+            106
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5759,25 +5525,6 @@
         </note>
         <target>
           Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageScore" datatype="html">
-        <source>
-          Average Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            109
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittlicher Indikator-Score
         </target>
       </trans-unit>
       <trans-unit id="SupplierRegion" datatype="html">
@@ -5789,7 +5536,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            110
+            107
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5808,7 +5555,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            111
+            108
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5827,7 +5574,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            112
+            109
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5846,7 +5593,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            110
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5856,9 +5603,66 @@
           Gesamt-Score
         </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE.name" datatype="html">
+      <trans-unit id="GoodProcurementScore" datatype="html">
         <source>
-          Administrative Capacity Indicator
+          Good Procurement Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            111
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Good Procurement Score
+        </target>
+      </trans-unit>
+      <trans-unit id="GoodProcurement" datatype="html">
+        <source>
+          Good Procurement
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            112
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Good Procurement
+        </target>
+      </trans-unit>
+      <trans-unit id="MainSuppliers" datatype="html">
+        <source>
+          Main Suppliers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            113
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptzulieferer
+        </target>
+      </trans-unit>
+      <trans-unit id="MainBuyers" datatype="html">
+        <source>
+          Main Buyers
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5871,10 +5675,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Hauptkäufer
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
+      <trans-unit id="MainSuppliersinScoreRange" datatype="html">
         <source>
-          Administrative Capacity Indicators
+          Main Suppliers in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5887,10 +5694,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Hauptzulieferer im Score-Bereich
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
+      <trans-unit id="MainBuyersinScoreRange" datatype="html">
         <source>
-          Joint of centralized procurement
+          Main Buyers in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5903,10 +5713,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Hauptkäufer im Score-Bereich
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
+      <trans-unit id="Volume(€)" datatype="html">
         <source>
-          Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.
+          Volume (€)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5919,10 +5732,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Volumen (€)
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
+      <trans-unit id="Contracts(Lots)overTime" datatype="html">
         <source>
-          Use of framework agreements
+          Contracts (Lots) over Time
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5935,10 +5751,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Verträge (Lots) über die Zeit
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.desc" datatype="html">
+      <trans-unit id="SectorOverview" datatype="html">
         <source>
-          Framework agreement suggests good administrative capacity if the tender establishes a framework agreement.
+          Sector Overview
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5951,10 +5770,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Branchenüberblick
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
+      <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
         <source>
-          Electronic auction
+          Average Good Procurement Score per Sector
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5967,10 +5789,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Durchschnittlicher Good Procurement Score pro Branche
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.desc" datatype="html">
+      <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
         <source>
-          Electronic auction points at good administrative capacity if the tender was conducted through an electronic auction.
+          Average Good Procurement Score over Time
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5983,10 +5808,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Durchschnittlicher Good Procurement Score über die Zeit
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.name" datatype="html">
+      <trans-unit id="EU-Fund" datatype="html">
         <source>
-          Use of WTO framework
+          EU-Fund
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5999,10 +5827,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          EU-Mittel
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.desc" datatype="html">
+      <trans-unit id="Funding" datatype="html">
         <source>
-          Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.
+          Funding
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6015,10 +5846,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Finanzierung
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
+      <trans-unit id="Programme" datatype="html">
         <source>
-          English as foreign language
+          Programme
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6031,10 +5865,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Programm
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.desc" datatype="html">
+      <trans-unit id="IntegrityIndicators" datatype="html">
         <source>
-          English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.
+          Integrity Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6047,10 +5884,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Integrität-Indikator
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD.name" datatype="html">
+      <trans-unit id="AverageScoreof" datatype="html">
         <source>
-          Discrepancies between call for tender and contract award notices
+          Average Score of
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6063,10 +5903,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Durchschnittlicher Score von
+        </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD.desc" datatype="html">
+      <trans-unit id="inScoreRange" datatype="html">
         <source>
-          Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
+          in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6079,10 +5922,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          im Score-Bereich
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION.name" datatype="html">
+      <trans-unit id="overTime" datatype="html">
         <source>
-          Procurement Integrity Indicator
+          over Time
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6095,10 +5941,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          über die Zeit
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION.plural" datatype="html">
+      <trans-unit id="perSector" datatype="html">
         <source>
-          Procurement Integrity Indicators
+          per Sector
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6111,10 +5960,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          pro Branche
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_SINGLE_BID.name" datatype="html">
+      <trans-unit id="Home" datatype="html">
         <source>
-          Single bidder contract
+          Home
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6127,10 +5979,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Start
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_SINGLE_BID.desc" datatype="html">
+      <trans-unit id="OpentenderPortals" datatype="html">
         <source>
-          Single bid signals a risk when only one bid is submitted in a tender in a competitive market.
+          Opentender Portals
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6143,10 +5998,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Opentender Portale
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
+      <trans-unit id="Dashboards" datatype="html">
         <source>
-          Call for tenders publication
+          Dashboards
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6159,10 +6017,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Dashboards
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
+      <trans-unit id="Search" datatype="html">
         <source>
-          Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.
+          Search
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6175,10 +6036,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Suche
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_PROCEDURE_TYPE.name" datatype="html">
+      <trans-unit id="SearchTender" datatype="html">
         <source>
-          Procedure type
+          Search Tender
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6191,10 +6055,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Ausschreibung suchen
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_PROCEDURE_TYPE.desc" datatype="html">
+      <trans-unit id="SearchCompany" datatype="html">
         <source>
-          Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).
+          Search Company
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6207,10 +6074,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Firma suchen
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.name" datatype="html">
+      <trans-unit id="SearchAuthority" datatype="html">
         <source>
-          Description length
+          Search Authority
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6223,10 +6093,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Behörde suchen
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.desc" datatype="html">
+      <trans-unit id="Region" datatype="html">
         <source>
-          Product description length signals the risk of product description being tailored to one company, when the description is excessively long.
+          Region
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6239,10 +6112,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Region
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_ADVERTISEMENT_PERIOD.name" datatype="html">
+      <trans-unit id="Download" datatype="html">
         <source>
-          Length of advertisement period
+          Download
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6255,10 +6131,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Download
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_ADVERTISEMENT_PERIOD.desc" datatype="html">
+      <trans-unit id="About" datatype="html">
         <source>
-          Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.
+          About
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6271,10 +6150,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Über
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_DECISION_PERIOD.name" datatype="html">
+      <trans-unit id="AboutOpentender" datatype="html">
         <source>
-          Length of decision period
+          About Opentender
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6287,10 +6169,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Über Opentender
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_DECISION_PERIOD.desc" datatype="html">
+      <trans-unit id="HowOpentenderworks" datatype="html">
         <source>
-          Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.
+          How Opentender works
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6303,10 +6188,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Wie Opentender funktioniert
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_NEW_COMPANY.name" datatype="html">
+      <trans-unit id="Glossary" datatype="html">
         <source>
-          New company
+          Glossary
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6319,10 +6207,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Glossar
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_NEW_COMPANY.desc" datatype="html">
+      <trans-unit id="FOIOverview" datatype="html">
         <source>
-          New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).
+          FOI Overview
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6335,10 +6226,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          FOI Überblick
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_TAX_HAVEN.name" datatype="html">
+      <trans-unit id="DataQuality" datatype="html">
         <source>
-          Tax haven
+          Data Quality
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6351,10 +6245,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Datenqualität
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_TAX_HAVEN.desc" datatype="html">
+      <trans-unit id="Imprint" datatype="html">
         <source>
-          Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).
+          Imprint
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6367,10 +6264,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Impressum
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
+      <trans-unit id="Test" datatype="html">
         <source>
-          Political connections of suppliers
+          Test
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6383,10 +6283,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Test
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE.name" datatype="html">
         <source>
-          Political connection of the supplier captures the risk of at least one owner or manager holding a political office.
+          Administrative Capacity Indicator
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6399,10 +6302,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Indikator für Verwaltungskapazität
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_WINNER_CONTRACT_SHARE.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
         <source>
-          Winner contract share
+          Administrative Capacity Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6415,10 +6321,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Indikator für Verwaltungskapazität
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_WINNER_CONTRACT_SHARE.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
         <source>
-          Winner contract share is the share of contract value won by a given company from a given buyer in a given year.
+          Joint or centralized procurement
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6431,10 +6340,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Gemeinsame oder zentrale Beschaffung
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
         <source>
-          Eligibility criteria length
+          Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6447,10 +6359,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Die zentralisierte Beschaffung bietet gute Verwaltungskapazitäten, wenn die Ausschreibung von einer zentralen Beschaffungsstelle verwaltet wird.
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
         <source>
-          Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.
+          Use of framework agreements
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6463,10 +6378,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Nutzung von Rahmenverträgen
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_EVALUATION_CRITERIA.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.desc" datatype="html">
         <source>
-          Evaluation criteria
+          Framework agreement suggests good administrative capacity if the tender establishes a framework agreement.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6479,10 +6397,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Die Rahmenvereinbarung schlägt eine gute Verwaltungskapazität vor, wenn die Ausschreibung eine Rahmenvereinbarung festlegt.
+        </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_EVALUATION_CRITERIA.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
         <source>
-          Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.
+          Electronic auction
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6495,10 +6416,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Elektronische Auktion
+        </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.desc" datatype="html">
         <source>
-          Transparency Indicator
+          Electronic auction points at good administrative capacity if the tender was conducted through an electronic auction.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6511,10 +6435,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Elektronische Auktionen weisen eine gute Verwaltungskapazität auf, wenn die Ausschreibung über eine elektronische Auktion durchgeführt wurde.
+        </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY.plural" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.name" datatype="html">
         <source>
-          Transparency Indicators
+          Use of WTO framework
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6527,10 +6454,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Nutzung des WTO-Rahmens
+        </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.desc" datatype="html">
         <source>
-          Publication rate
+          Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6543,10 +6473,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Die Nutzung des WTO-Rahmens legt eine gute Verwaltungskapazität nahe, wenn das Ausschreibungsverfahren gemäß dem WTO-Rahmen durchgeführt wird.
+        </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
         <source>
-          Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.
+          English as foreign language
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6559,10 +6492,13 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Englisch als Fremdsprache
+        </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.desc" datatype="html">
         <source>
-          Number of key missing fields in form
+          English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -6575,6 +6511,636 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Englisch als Fremdsprache weist auf eine gute administrative Fähigkeit hin, wenn die Angebote in Englisch als Fremdsprache eingereicht werden können.
+        </target>
+      </trans-unit>
+      <trans-unit id="ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD.name" datatype="html">
+        <source>
+          Discrepancies between call for tender and contract award notices
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            159
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Diskrepanzen zwischen Ausschreibung und Vergabebekanntmachung
+        </target>
+      </trans-unit>
+      <trans-unit id="ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD.desc" datatype="html">
+        <source>
+          Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            160
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Diskrepanz zwischen Ausschreibung und Vergabebekanntmachung ist das Verhältnis von Feldern mit unterschiedlichen Werten in der Ausschreibung und den Bekanntmachungen über die Auftragsvergabe in Bezug auf ein bestimmtes Angebot (basierend auf den zuletzt veröffentlichten Versionen).
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION.name" datatype="html">
+        <source>
+          Integrity Indicator
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            161
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikator für Beschaffungsintegrität
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION.plural" datatype="html">
+        <source>
+          Integrity Indicators
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            162
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Beschaffungsintegrität-Indikatoren
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_SINGLE_BID.name" datatype="html">
+        <source>
+          Single bidder contract
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            163
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Einzelbietervertrag
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_SINGLE_BID.desc" datatype="html">
+        <source>
+          Single bid signals a risk when only one bid is submitted in a tender in a competitive market.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            164
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ein einzelnes Gebot ist ein Risiko, wenn in einem wettbewerbsorientierten Markt nur ein Gebot abgegeben wird.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
+        <source>
+          Call for tenders publication
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            165
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Veröffentlichung der Ausschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
+        <source>
+          Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            166
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Nichtveröffentlichung von Ausschreibungen stellt ein Risiko dar, wenn vor einer Auftragsvergabe keine Ausschreibung veröffentlicht wird, wodurch sich der potenzielle Bieterpool verringert.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_PROCEDURE_TYPE.name" datatype="html">
+        <source>
+          Procedure type
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            167
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Prozessart
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_PROCEDURE_TYPE.desc" datatype="html">
+        <source>
+          Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            168
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Nicht-offene Verfahren signalisieren das Risiko, Verfahrenstypen zu verwenden, die weniger wettbewerbsoffen sind und eher für direkt beauftragte verbundene Unternehmen verwendet werden (z.B. ohne Veröffentlichung ausgehandelt).
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.name" datatype="html">
+        <source>
+          Description length
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            169
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Länge der Beschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.desc" datatype="html">
+        <source>
+          Product description length signals the risk of product description being tailored to one company, when the description is excessively long.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            170
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Länge der Produktbeschreibung signalisiert das Risiko, dass die Produktbeschreibung auf ein Unternehmen zugeschnitten ist, wenn die Beschreibung zu lang ist.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_ADVERTISEMENT_PERIOD.name" datatype="html">
+        <source>
+          Length of advertisement period
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            171
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dauer des Anzeigenzeitraums
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_ADVERTISEMENT_PERIOD.desc" datatype="html">
+        <source>
+          Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            172
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Länge der Ausschreibungsfrist verrät das Risiko von verdächtig engen Ausschreibungsfristen oder einer zu langen Ausschreibungsdauer.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DECISION_PERIOD.name" datatype="html">
+        <source>
+          Length of decision period
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            173
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dauer des Entscheidungszeitraums
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DECISION_PERIOD.desc" datatype="html">
+        <source>
+          Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            174
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Länge des Entscheidungszeitraums signalisiert Risiken, wenn die Länge des Entscheidungszeitraums entweder verdächtig kurz oder verdächtig lang ist.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_NEW_COMPANY.name" datatype="html">
+        <source>
+          New company
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            175
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Neue Firma
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_NEW_COMPANY.desc" datatype="html">
+        <source>
+          New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            176
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ein neues Unternehmen signalisiert das Risiko, dass ein sehr junges Unternehmen eine Ausschreibung gewinnt (zum Zeitpunkt des Gewinnens jünger als 1 Jahr).
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_TAX_HAVEN.name" datatype="html">
+        <source>
+          Tax haven
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            177
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Steueroase
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_TAX_HAVEN.desc" datatype="html">
+        <source>
+          Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            178
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Steueroasen signalisieren ein Risiko, wenn der Lieferant in einem Steueroasenland ansässig ist (basierend auf dem Finanzgeheimnis-Index).
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
+        <source>
+          Political connections of suppliers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            179
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Politische Verbindungen der Lieferanten
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
+        <source>
+          Political connection of the supplier captures the risk of at least one owner or manager holding a political office.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            180
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die politische Verbindung des Anbieters birgt das Risiko, dass mindestens ein Eigentümer oder Manager ein politisches Amt innehat.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_WINNER_CONTRACT_SHARE.name" datatype="html">
+        <source>
+          Winner contract share
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            181
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Vertragsanteil des erfolgreichen Bieters
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_WINNER_CONTRACT_SHARE.desc" datatype="html">
+        <source>
+          Winner contract share is the share of contract value won by a given company from a given buyer in a given year.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            182
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Winner Contract Share ist der Anteil des Auftragswerts, den ein Unternehmen von einem bestimmten Käufer in einem bestimmten Jahr gewonnen hat.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
+        <source>
+          Eligibility criteria length
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            183
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Länge der Zulassungskriterien
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
+        <source>
+          Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            184
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Länge der Zulassungskriterien signalisiert das Risiko, dass die Kriterien auf ein Unternehmen zugeschnitten sind und die Beschreibung der Kriterien zu lang ist.
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_EVALUATION_CRITERIA.name" datatype="html">
+        <source>
+          Evaluation criteria
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            185
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Evaluationskriterien
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_EVALUATION_CRITERIA.desc" datatype="html">
+        <source>
+          Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            186
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Bewertungskriterien signalisieren das Risiko, mit nicht-quantitativen Kriterien, die subjektiv und leicht manipulierbar sind, Bieter zu bewerten.
+        </target>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY.name" datatype="html">
+        <source>
+          Transparency Indicator
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            187
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Transparenz-Indikator
+        </target>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY.plural" datatype="html">
+        <source>
+          Transparency Indicators
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            188
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Transparenz-Indikatoren
+        </target>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
+        <source>
+          Publication rate
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            189
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Veröffentlichungsrate
+        </target>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
+        <source>
+          Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            190
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.
+        </target>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
+        <source>
+          Number of key missing fields in form
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            191
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anzahl wichtiger fehlender Felder im Formular
+        </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.desc" datatype="html">
         <source>
@@ -6585,7 +7151,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            159
+            192
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -6772,6 +7338,9 @@
             9
           </context>
         </context-group>
+        <target>
+          Länder
+        </target>
       </trans-unit>
       <trans-unit id="2ae797460f17fe72086256ec5e2da35ddc6e1614" datatype="html">
         <source>
@@ -6785,6 +7354,9 @@
             2
           </context>
         </context-group>
+        <target>
+          Region
+        </target>
       </trans-unit>
       <trans-unit id="8bc2696cf741ede224966775854e5f5dba1a207e" datatype="html">
         <source>
@@ -6850,22 +7422,6 @@
           Nächste
         </target>
       </trans-unit>
-      <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
-        <source>
-          Entries per Page
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/tables/pagination.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <target>
-          Einträge pro Seite
-        </target>
-      </trans-unit>
       <trans-unit id="02c7747f38014504ddbc5b3b17b329b74db68800" datatype="html">
         <source>
           Page:
@@ -6883,11 +7439,27 @@
             src/app/components/tables/pagination.component.ts
           </context>
           <context context-type="linenumber">
-            11
+            6
           </context>
         </context-group>
         <target>
           Seite: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; von &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Einträge: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+        </target>
+      </trans-unit>
+      <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
+        <source>
+          Entries per Page
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/tables/pagination.component.ts
+          </context>
+          <context context-type="linenumber">
+            13
+          </context>
+        </context-group>
+        <target>
+          Einträge pro Seite
         </target>
       </trans-unit>
       <trans-unit id="ddbef9c00583b054e53c3fd05af57188542aaa7b" datatype="html">
@@ -6994,9 +7566,9 @@
           Hinzufügen
         </target>
       </trans-unit>
-      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
+      <trans-unit id="561a842beab46754848eaff1809e6747e7689ea7" datatype="html">
         <source>
-          <x id="INTERPOLATION" equiv-text="{{title}}">
+          <x id="INTERPOLATION" equiv-text="{{caption}}">
           </x>
         </source>
         <context-group purpose="location">
@@ -7038,6 +7610,38 @@
         </context-group>
         <target>
           Klickem um zur Ansicht hinzufügen/entfernen
+        </target>
+      </trans-unit>
+      <trans-unit id="b463541a7e303aa4d0b1102eaff8afbaf34e7a74" datatype="html">
+        <source>
+          Select all
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-similar-list.component.ts
+          </context>
+          <context context-type="linenumber">
+            9
+          </context>
+        </context-group>
+        <target>
+          Alles auswählen
+        </target>
+      </trans-unit>
+      <trans-unit id="1a83e9e4c9179e62fc020802fc4fc93c42b7734c" datatype="html">
+        <source>
+          Deselect all
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-similar-list.component.ts
+          </context>
+          <context context-type="linenumber">
+            9
+          </context>
+        </context-group>
+        <target>
+          Auswahl aufheben
         </target>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
@@ -7132,6 +7736,51 @@
         </context-group>
         <target>
           Abbruch
+        </target>
+      </trans-unit>
+      <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
+        <source>
+          Date Range
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-year-range.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <target>
+          Zeitbereich
+        </target>
+      </trans-unit>
+      <trans-unit id="e541883c251041b07e82cffd236a97b4e3671424" datatype="html">
+        <source>
+          Choose years to filter the data on this page
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-year-range.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c6d56bff2f3b8ce41c532f2e014579458d2d2813" datatype="html">
+        <source>
+          No Dates available
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/selects/select-year-range.component.ts
+          </context>
+          <context context-type="linenumber">
+            12
+          </context>
+        </context-group>
+        <target>
+          Keine Datum-Daten verfügbar
         </target>
       </trans-unit>
     </body>
