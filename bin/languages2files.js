@@ -43,6 +43,7 @@ let removeDest = function () {
 
 let prepareProject = function () {
 	console.log('copy project files to', dest);
+	fs.copySync(path.join(source, 'node_modules/@types'), path.join(dest, 'node_modules/@types'));
 	fs.copySync(path.join(source, 'src'), path.join(dest, 'src'));
 	fs.copySync(path.join(source, 'tsconfig.json'), path.join(dest, 'tsconfig.json'));
 	fs.copySync(path.join(source, 'tslint.json'), path.join(dest, 'tslint.json'));
@@ -119,8 +120,14 @@ let packageLanguage = function (lang, content, cb) {
 };
 
 let fillI18nTemplate = function (filename) {
+	let used = {};
 	let list = runtimestrings.map(s => {
-		return '<span i18n="runtime@@' + s.replace(/ /g, '') + '">' + s + '</span>';
+		let id = s.replace(/ /g, '');
+		if (used[id]) {
+			console.log('Warning: duplicate runtime string id:', id, 'text:', s);
+		}
+		used[id] = s;
+		return '<span i18n="runtime@@' + id + '">' + s + '</span>';
 	});
 	Object.keys(indicators).forEach(ikey => {
 		let indicator = indicators[ikey];
