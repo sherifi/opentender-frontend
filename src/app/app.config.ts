@@ -4,7 +4,7 @@ import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
 import {AppRoutingModule} from './app.routes';
-import {ToastyModule} from 'ng2-toasty';
+import {ToastrModule} from 'ngx-toastr';
 import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
 import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
@@ -225,7 +225,7 @@ const AppConfig = {
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule,
-		ToastyModule,
+		ToastrModule.forRoot(),
 		MyDatePickerModule,
 		AppRoutingModule
 	],

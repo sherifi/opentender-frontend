@@ -32,7 +32,7 @@ export class I18NService {
 
 	public init() {
 		if (!this._translations) {
-			console.log('no translation');
+			return;
 		}
 		routes.forEach(route => this.translateRoute(route));
 		Object.keys(Consts.indicators).forEach(key => {
@@ -44,7 +44,6 @@ export class I18NService {
 				subs[subkey].desc = this.getStrict(subkey + '.desc') || subs[subkey].desc;
 			});
 		});
-		console.log('translation start');
 	}
 
 	public get(key: string, interpolation: any[] = []): string {

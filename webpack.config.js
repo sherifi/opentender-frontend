@@ -88,13 +88,8 @@ const clientConfig = () => {
 		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de.js|it/)
 	];
 	if (config.client.devMode) {
-		const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
-		plugins.push(new WebpackBuildNotifierPlugin({
-			title: "Opentender Client Build",
-			sound: false
-			// logo: path.resolve("./img/favicon.png"),
-			// suppressSuccess: true
-		}));
+		const WebpackNotifierPlugin = require('webpack-notifier');
+		plugins.push(new WebpackNotifierPlugin({title: "Opentender Client Build"}));
 	}
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
