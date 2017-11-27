@@ -9,7 +9,7 @@ export class Angulartics2Piwik {
 
 	constructor(private angulartics2: Angulartics2) {
 		if (typeof (_paq) === 'undefined') {
-			console.warn('Piwik not found');
+			return;
 		}
 
 		// delay fix: see https://github.com/angulartics/angulartics2/issues/112
