@@ -1,6 +1,6 @@
 {
   "name": "opentender-portal-frontend",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Opentender Portal Frontend (Server/Client)",
   "author": "okfde",
   "license": "MIT",
@@ -85,7 +85,7 @@
     "moment": "=2.18.1",
     "mydatepicker": "=2.5.2",
     "ngx-toastr": "^6.5.0",
-    "node-sass": "=4.7.2",
+    "node-sass": "^4.7.2",
     "postcss-loader": "2.0.9",
     "preboot": "5.1.7",
     "raw-loader": "0.5.1",
