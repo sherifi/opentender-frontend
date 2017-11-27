@@ -12,6 +12,10 @@ declare namespace Definitions {
 		city?: string;
 		postcode?: string;
 		/**
+		 * Cleaned Nuts code
+		 */
+		nutscode?: string;
+		/**
 		 * Country Code: ISO 3166-1 alpha-2 = two letter
 		 */
 		country?: string;

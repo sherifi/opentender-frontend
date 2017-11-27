@@ -213,10 +213,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 	},
 	{
 		name: 'Supplier Region',
-		id: 'lots.bids.bidder.address.nuts',
+		id: 'lots.bids.bidder.address.nutscode',
 		group: 'Supplier',
 		sortBy: {
-			id: 'lots.bids.bidder.address.nuts',
+			id: 'lots.bids.bidder.address.nutscode',
 			ascend: true
 		},
 		format: tender => {
@@ -229,12 +229,9 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Bidder) => {
-								if (bidder.address && bidder.address.nuts) {
-									bidder.address.nuts.forEach(nut => {
-										if (nut) {
-											result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
-										}
-									});
+								if (bidder.address && bidder.address.nutscode) {
+									let nut = bidder.address.nutscode;
+									result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
 								}
 							});
 						}
@@ -263,10 +260,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 	},
 	{
 		name: 'Buyer Region',
-		id: 'buyer.address.nuts',
+		id: 'buyer.address.nutscode',
 		group: 'Buyer',
 		sortBy: {
-			id: 'buyers.address.nuts',
+			id: 'buyers.address.nutscode',
 			ascend: true
 		},
 		format: tender => {
@@ -275,12 +272,9 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			let result: Array<ITableCellLine> = [];
 			tender.buyers.forEach((buyer: Buyer) => {
-				if (buyer.address && buyer.address.nuts) {
-					buyer.address.nuts.forEach(nut => {
-						if (nut) {
-							result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
-						}
-					});
+				if (buyer.address && buyer.address.nutscode) {
+					let nut = buyer.address.nutscode;
+					result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
 				}
 			});
 			return result;

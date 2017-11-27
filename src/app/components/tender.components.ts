@@ -25,6 +25,8 @@ export class CollapseExpandComponent {
 			<div *ngIf="address.street | defined">{{address.street}}</div>
 			<div *ngIf="(address.postcode||address.city) | defined"><span *ngIf="address.postcode | defined">{{address.postcode}}, </span>{{address.city}}</div>
 			<div *ngIf="address.country | defined">{{address.country | expandCountry}}</div>
+			<div *ngIf="address.nutscode | defined"><a routerLink="/region/{{address.nutscode}}">NUTS {{address.nutscode}}</a></div>
+			<div *ngIf="address.nutscode | defined">{{address.nutscode}}</div>
 		</div>
 	`
 })

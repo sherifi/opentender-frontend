@@ -106,13 +106,13 @@ export class RegionPage implements OnInit, OnDestroy {
 		this.search_cmd = {
 			filters: [
 				{
-					field: 'buyers.address.nuts' + field,
+					field: 'buyers.address.nutscode' + field,
 					type: 'term',
 					value: [this.region.id]
 				},
 				// TODO: implement OR parameter ?
 				// {
-				// 	field: 'lots.bids.bidders.address.nuts' + field,
+				// 	field: 'lots.bids.bidders.address.nutscode' + field,
 				// 	type: 'term',
 				// 	value: [this.region.id]
 				// }
