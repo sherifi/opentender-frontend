@@ -4,6 +4,7 @@ import Tender = Definitions.Tender;
 import Buyer = Definitions.Buyer;
 import {Country} from './services/config.service';
 import {IChartData} from './thirdparty/ngx-charts-universal/chart.interface';
+import {FeatureCollection, GeometryObject} from 'geojson';
 
 /* data objects from api */
 
@@ -331,14 +332,7 @@ export interface IApiResult {
 	data: any;
 }
 
-export interface IApiResultGeoJSON {
-	type: string;
-	features: Array<{
-		properties: {
-			id: string;
-			name: string;
-		}
-	}>;
+export interface IApiResultGeoJSON extends FeatureCollection<GeometryObject, { id: string; name: string }> {
 }
 
 /* graph & map data export */

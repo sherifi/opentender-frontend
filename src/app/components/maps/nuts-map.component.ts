@@ -146,14 +146,26 @@ export class MapComponent implements OnChanges, ISeriesProvider {
 		this.data_list = list.map(nut => {
 			return {id: nut.id, name: nut.feature.properties.name, value: nut.value};
 		});
-		geo.features = list.map(nut => {
-			nut.feature.properties['value'] = nut.value;
-			nut.feature.properties['color'] = d3chroma.interpolateBlues(scale(nut.value));
-			return nut.feature;
-		});
+		let newgeo = {
+			crs: geo.crs,
+			type: geo.type,
+			features: list.map(nut => {
+				let feature = {
+					properties: {
+						id: nut.feature.properties.id,
+						name: nut.feature.properties.name,
+						value: nut.value,
+						color: d3chroma.interpolateBlues(scale(nut.value))
+					},
+					type: nut.feature.type,
+					geometry: nut.feature.geometry
+				};
+				return feature;
+			})
+		};
 		this.geolayer.clearLayers();
-		if (geo.features.length > 0) {
-			this.geolayer.addData(geo);
+		if (newgeo.features.length > 0) {
+			this.geolayer.addData(newgeo);
 			if (this.resetZoom) {
 				this.map.fitBounds(this.geolayer.getBounds());
 			}
