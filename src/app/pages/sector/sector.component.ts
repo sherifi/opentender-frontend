@@ -99,7 +99,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		let filters = [];
 		if (this.filter.years) {
 			let yearFilter: ISearchCommandFilter = {
-				field: 'lots.awardDecisionDate',
+				field: 'date',
 				type: 'years',
 				value: [this.filter.years.startValue, this.filter.years.endValue + 1],
 			};
