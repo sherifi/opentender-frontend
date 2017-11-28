@@ -4,13 +4,12 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {
-	IApiResultGeoJSON, IApiResult, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar,
+	IApiResultGeoJSON, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar,
 	IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
 	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads
 } from '../app.interfaces';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 @Injectable()
 export class ApiService {
@@ -19,12 +18,11 @@ export class ApiService {
 	private actionUrl = '';
 	private actionCountryUrl = '';
 	private headers: HttpHeaders;
-	private cachedGeoData: { [level: number]: ReplaySubject<IApiResultGeoJSON> } = {};
 
 	constructor(private http: HttpClient, private config: ConfigService) {
 		this.absUrl = config.absUrl;
 		this.actionUrl = (config.config.backendUrl || '') + '/api/';
-		this.actionCountryUrl = this.actionUrl + (config.country.id || 'all' ) + '/';
+		this.actionCountryUrl = this.actionUrl + (config.country.id || 'all') + '/';
 		this.headers = new HttpHeaders();
 		this.headers.append('Content-Type', 'application/json');
 		this.headers.append('Accept', 'application/json');
@@ -158,20 +156,7 @@ export class ApiService {
 	}
 
 	getNutsMap(level: number): Observable<IApiResultGeoJSON> {
-		if (!this.cachedGeoData[level]) {
-			let replay = new ReplaySubject<IApiResultGeoJSON>(1);
-			this.cachedGeoData[level] = replay;
-			this.http.get<IApiResultGeoJSON>(this.absUrl + '/data/nuts' + level + '.geo.json').subscribe(
-				data => replay.next(data),
-				error => {
-					replay.error(error);
-					// Recreate the Observable as after Error we cannot emit data anymore
-					replay = new ReplaySubject<IApiResultGeoJSON>(1);
-					this.cachedGeoData[level] = replay;
-				}
-			);
-		}
-		return this.cachedGeoData[level];
+		return this.http.get<IApiResultGeoJSON>(this.absUrl + '/data/nuts' + level + '.geo.json');
 	}
 
 
