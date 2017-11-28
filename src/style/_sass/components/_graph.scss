@@ -82,6 +82,10 @@ graph {
   }
   .graph-toolbar {
     float: right;
+    button {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
   clear: both;
 }

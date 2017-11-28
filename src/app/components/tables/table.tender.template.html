@@ -4,18 +4,28 @@
 </div>
 <doc-table [table]="table" (sortChange)="sortChange($event)"></doc-table>
 <div class="graph-footer">
-	<div class="graph-toolbar-container">
-		<div class="graph-toolbar">
-			<button class="tool-button" (click)="this.download()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> JSON.GZ</button>
-		</div>
+	<div class="graph-toolbar">
+		<button class="tool-button" (click)="this.showDownload()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> Download</button>
 	</div>
 </div>
 <pagination class="pagination" [total]="total" [defaultPageSize]="defaultPageSize" [defaultPage]="defaultPage" (paginationChange)="paginationChange($event)"></pagination>
+
 <app-dialog i18n-title title="Download Data" [(visible)]="showDownloadDialog">
-	<br/>
-	<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
-	<br/>
-	<br/>
-	<button class="button" (click)="this.download()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i> <ng-container i18n>Download Large File</ng-container></button>
-	<button class="button" (click)="showDownloadDialog=false;" i18n>Cancel</button>
+	<div *ngIf="!downloadRequested">
+		<br/>
+		<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
+		<br/>
+		<br/>
+		<button class="button" (click)="this.download()" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i>
+			<ng-container i18n>Download JSON.GZ File</ng-container>
+		</button>
+		<button class="button" (click)="showDownloadDialog=false;" i18n>Cancel</button>
+	</div>
+	<div *ngIf="downloadRequested">
+		<br/>
+		<ng-container i18n>Download requested</ng-container> <i class="icon icon-spinner2 icon-rotate"></i>
+		<br/>
+		<br/>
+		<button class="button" (click)="showDownloadDialog=false;" i18n>Cancel</button>
+	</div>
 </app-dialog>

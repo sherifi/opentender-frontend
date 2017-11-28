@@ -28,6 +28,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	table: ITable;
 	sortBy: ITableColumnSort;
 	showDownloadDialog: boolean = false;
+	downloadRequested: boolean = false;
 
 	title: string;
 	total: number = 0;
@@ -55,21 +56,26 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		}
 	}
 
-	download(): void {
-		if (this.total > 1000) {
-			if (!this.showDownloadDialog) {
-				this.showDownloadDialog = true;
-				return;
-			}
+	showDownload(): void {
+		if (this.total > 0) {
+			this.showDownloadDialog = true;
 		}
-		this.showDownloadDialog = false;
+	}
 
+	download(): void {
+		this.downloadRequested = true;
 		let cmd = this.search_cmd;
 		this.api.requestDownload(cmd).subscribe(
 			(result) => {
-				this.api.startDownload(result);
+				this.downloadRequested = false;
+				if (this.showDownloadDialog) {
+					this.api.startDownload(result);
+				}
+				this.showDownloadDialog = false;
 			},
 			(error) => {
+				this.downloadRequested = false;
+				this.showDownloadDialog = false;
 				this.notify.error(error);
 			},
 			() => {
