@@ -89,7 +89,7 @@ const clientConfig = () => {
 	];
 	if (config.client.devMode) {
 		const WebpackNotifierPlugin = require('webpack-notifier');
-		plugins.push(new WebpackNotifierPlugin({title: "Opentender Client Build"}));
+		plugins.push(new WebpackNotifierPlugin({title: "Opentender Client Build", alwaysNotify: true}));
 	}
 	if (config.webpack.minimize) {
 		plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
