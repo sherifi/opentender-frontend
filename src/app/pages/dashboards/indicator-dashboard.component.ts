@@ -113,13 +113,13 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			return;
 		}
 		viz.score_in_sectors.data = stats.terms_main_cpv_divisions_score;
-		viz.score_in_years.data = (stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores[this.searchPrefix] : {}) || {};
+		viz.score_in_years.data = (stats.histogram_indicators ? stats.histogram_indicators[this.searchPrefix] : {}) || {};
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-		viz.lots_in_years.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		viz.lots_in_years.data = stats.histogram_count_finalPrices;
 		viz.cpvs_codes.data = stats.terms_pc_main_cpv_divisions;
 		viz.terms_indicators_score.data = stats.terms_indicators_score;
-		viz.years.data = Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices || {}).map(key => parseInt(key, 10));
+		viz.years.data = Object.keys(stats.histogram_count_finalPrices || {}).map(key => parseInt(key, 10));
 		if (stats.terms_score && stats.terms_score.hasOwnProperty(this.searchPrefix)) {
 			viz.score.data = [{
 				id: this.searchPrefix,

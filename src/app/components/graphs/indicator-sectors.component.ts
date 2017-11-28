@@ -109,9 +109,9 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 	graph: IChartBar = this.cpvs_codes_average;
 
 	constructor(private router: Router, private i18n: I18NService) {
-		this.cpvs_codes_average.chart.xAxis.label = this.i18n.get('Average % of Contracts');
+		this.cpvs_codes_average.chart.xAxis.label = this.i18n.get('Average % of Tenders');
 		this.cpvs_codes_average.chart.yAxis.label = this.i18n.get('Sector (CPV Division)');
-		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
+		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.cpvs_codes_absolute.chart.yAxis.label = this.i18n.get('Sector (CPV Division)');
 	}
 

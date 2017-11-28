@@ -148,14 +148,14 @@ export class SectorPage implements OnInit, OnDestroy {
 		if (!stats) {
 			return;
 		}
-		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		viz.histogram.data = stats.histogram_count_finalPrices;
 		viz.procedure_types.data = stats.terms_procedure_type;
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors.data = stats.sectors_stats;
 		viz.authority_nuts.data = stats.terms_authority_nuts;
-		viz.score_in_years.data = stats.histogram_lots_awardDecisionDate_scores ? stats.histogram_lots_awardDecisionDate_scores['TENDER'] : null;
-		viz.years.data = Object.keys(stats.histogram_pc_lots_awardDecisionDate_finalPrices || {}).map(key => parseInt(key, 10));
+		viz.score_in_years.data = stats.histogram_indicators ? stats.histogram_indicators['TENDER'] : null;
+		viz.years.data = Object.keys(stats.histogram_count_finalPrices || {}).map(key => parseInt(key, 10));
 
 		let sub_scores = stats.terms_main_cpv_divisions_scores || stats.terms_main_cpv_groups_scores || stats.terms_main_cpv_categories_scores || stats.terms_main_cpv_full_scores;
 		viz.score_in_sectors.data = null;

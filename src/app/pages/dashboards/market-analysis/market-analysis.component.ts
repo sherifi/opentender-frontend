@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {NotifyService} from '../../../services/notify.service';
-import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs, IStatsPricesLotsInYears, IStatsProcedureType, IStatsAuthorities, IStatsCompanies} from '../../../app.interfaces';
+import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs, IStatsPricesInYears, IStatsProcedureType, IStatsAuthorities, IStatsCompanies} from '../../../app.interfaces';
 import {I18NService} from '../../../services/i18n.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		score_in_years: { data: IStatsInYears, title?: string };
 		score_in_sectors: { data: IStatsCpvs, title?: string };
 		procedure_types: { data: IStatsProcedureType, title?: string };
-		lots_in_years: { data: IStatsPricesLotsInYears, title?: string };
+		lots_in_years: { data: IStatsPricesInYears, title?: string };
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
 		sectors_stats: { data: Array<{ sector: ISector; stats: IStats }>, title?: string };
@@ -44,7 +44,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.procedure_types.title = i18n.get('Procedure Type');
-		this.viz.lots_in_years.title = i18n.get('Contracts (Lots) over Time');
+		this.viz.lots_in_years.title = i18n.get('Tenders over Time');
 	}
 
 	public onYearRangeSliderChange(event): void {
@@ -106,13 +106,13 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 		stats.region_stats.forEach(region => {
 			viz.volume_regions.data[region.id] = region.stats.sum_finalPriceEUR.value || 0;
 		});
-		viz.score_in_years.data = stats.histogram_lots_awardDecisionDate_scores['TENDER'] || {};
+		viz.score_in_years.data = stats.histogram_indicators['TENDER'] || {};
 		viz.score_in_sectors.data = stats.terms_main_cpv_divisions_score;
-		viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate_finalPrices;
+		viz.lots_in_years.data = stats.histogram_finalPriceEUR;
 		viz.procedure_types.data = stats.terms_procedure_type;
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
-		viz.years.data = Object.keys(stats.histogram_lots_awardDecisionDate || {}).map(key => parseInt(key, 10));
+		viz.years.data = Object.keys(stats.histogram || {}).map(key => parseInt(key, 10));
 	}
 
 }

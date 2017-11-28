@@ -107,7 +107,7 @@ export interface IStatsPcLotsInYears {
 	};
 }
 
-export interface IStatsPricesLotsInYears {
+export interface IStatsPricesInYears {
 	[year: string]: {
 		value: number;
 		sum_finalPriceEUR: IStatsPriceEUR;
@@ -171,11 +171,10 @@ export interface IStats {
 	terms_procedure_type: IStatsProcedureType;
 	terms_indicators_score: IStatsIndicators;
 	terms_score: IStatsIndicators;
-	histogram_lots_awardDecisionDate_scores: IStatsScoresInYears;
-	histogram_lots_awardDecisionDate: IStatsInYears;
-	histogram_pc_lots_awardDecisionDate: IStatsPcLotsInYears;
-	histogram_pc_lots_awardDecisionDate_finalPrices: IStatsPcPricesLotsInYears;
-	histogram_lots_awardDecisionDate_finalPrices: IStatsPricesLotsInYears;
+	histogram: IStatsInYears;
+	histogram_finalPriceEUR: IStatsPricesInYears;
+	histogram_indicators: IStatsScoresInYears;
+	histogram_count_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	region_stats: Array<{ id: string; value: number, stats: IStats }>;
 }

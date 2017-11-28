@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
+import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesInYears} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 
 /// <reference path="./model/tender.d.ts" />
@@ -30,7 +30,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		authority_nuts: { data: IStatsNuts, title?: string };
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		cpvs_codes: { data: IStatsCpvs, title?: string };
-		lots_in_years: { data: IStatsPricesLotsInYears, title?: string };
+		lots_in_years: { data: IStatsPricesInYears, title?: string };
 	} = {
 		authority_nuts: {data: null},
 		top_authorities: {data: null},
@@ -146,7 +146,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate_finalPrices;
+		viz.lots_in_years.data = stats.histogram_finalPriceEUR;
 		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.authority_nuts.data = stats.terms_authority_nuts;

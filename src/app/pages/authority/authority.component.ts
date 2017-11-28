@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesLotsInYears} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 
@@ -30,7 +30,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		company_nuts: { data: IStatsNuts, title?: string };
-		lots_in_years: { data: IStatsPricesLotsInYears, title?: string };
+		lots_in_years: { data: IStatsPricesInYears, title?: string };
 	} = {
 		top_companies: {data: null},
 		cpvs_codes: {data: null},
@@ -132,7 +132,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
-		viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate_finalPrices;
+		viz.lots_in_years.data = stats.histogram_finalPriceEUR;
 		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.company_nuts.data = stats.terms_company_nuts;

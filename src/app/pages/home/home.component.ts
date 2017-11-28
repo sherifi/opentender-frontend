@@ -45,6 +45,6 @@ export class HomePage implements OnInit {
 		if (!stats) {
 			return;
 		}
-		this.viz.lots_in_years.data = stats.histogram_lots_awardDecisionDate;
+		this.viz.lots_in_years.data = stats.histogram;
 	}
 }

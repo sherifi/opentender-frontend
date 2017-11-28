@@ -11,7 +11,7 @@ import {I18NService} from '../../services/i18n.service';
 		<div class="graph-title" i18n>{{title}} over Time</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
-				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>
+				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Tenders</button>
 				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')" i18n>Volume (€)</button>
 			</div>
 			<div class="graph-toolbar graph-toolbar-right">
@@ -182,13 +182,13 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 	constructor(private i18n: I18NService) {
 		let year = this.i18n.get('Year');
 		this.avg_lots_in_years.chart.xAxis.label = year;
-		this.avg_lots_in_years.chart.yAxis.label = this.i18n.get('Average % of Contracts (Lots)');
+		this.avg_lots_in_years.chart.yAxis.label = this.i18n.get('Average % of Tenders');
 		this.sum_lots_in_years.chart.xAxis.label = year;
-		this.sum_lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Contracts (Lots)');
+		this.sum_lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Tenders');
 		this.sum_prices_in_years.chart.xAxis.label = year;
-		this.sum_prices_in_years.chart.yAxis.label = this.i18n.get('Volume of Contracts (€)');
+		this.sum_prices_in_years.chart.yAxis.label = this.i18n.get('Volume of Tenders (€)');
 		this.avg_prices_in_years.chart.xAxis.label = year;
-		this.avg_prices_in_years.chart.yAxis.label = this.i18n.get('Average Volume of Contracts (€)');
+		this.avg_prices_in_years.chart.yAxis.label = this.i18n.get('Average Volume of Tenders (€)');
 	}
 
 

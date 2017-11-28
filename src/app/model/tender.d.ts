@@ -774,10 +774,6 @@ declare namespace Definitions {
 		 */
 		indicators?: Indicator[];
 		/**
-		 * Array of indicator scores
-		 */
-		scores?: Score[];
-		/**
 		 * If the purchase is being made for someone else. e.g. city purchases on behalf of one of its schools...
 		 */
 		onBehalfOf?: Buyer[];
@@ -821,6 +817,14 @@ declare namespace Definitions {
 		 * corrections
 		 */
 		corrections?: Correction[];
+		/**
+		 * Array of indicator scores
+		 */
+		scores?: Score[];
+		/**
+		 * Unified 'Tender' Date based on tender.awardDeadline && tender.lots.awardDecisionDate for Tender Date filtering
+		 */
+		date?: Date; // ^\d{4}-[01]\d-[0-3]\d$
 	}
 	export interface UnitPrice {
 		/**

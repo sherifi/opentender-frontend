@@ -12,7 +12,7 @@ import {I18NService} from '../../services/i18n.service';
 		<div class="graph-title">{{title}}</div>
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar graph-toolbar-left">
-				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Contracts</button>
+				<button class="tool-button" [ngClass]="{down:mode==='nr'}" (click)="toggleValue('nr')" i18n>Nr. of Tenders</button>
 				<button class="tool-button" [ngClass]="{down:mode==='vol'}" (click)="toggleValue('vol')" i18n>Volume (€)</button>
 			</div>
 		</div>
@@ -111,9 +111,9 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 	graph = this.authorities_absolute;
 
 	constructor(private router: Router, private i18n: I18NService) {
-		this.authorities_absolute.chart.xAxis.label = this.i18n.get('Nr. of Contracts');
+		this.authorities_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.authorities_absolute.chart.yAxis.label = this.i18n.get('Buyer');
-		this.authorities_volume.chart.xAxis.label = this.i18n.get('Total Volume of Contracts (€)');
+		this.authorities_volume.chart.xAxis.label = this.i18n.get('Total Volume of Tenders (€)');
 		this.authorities_volume.chart.yAxis.label = this.i18n.get('Buyer');
 	}
 

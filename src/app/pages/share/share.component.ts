@@ -27,7 +27,7 @@ export class SharePage {
 			case 'home-histogram':
 				this.api.getHomeStats().subscribe(
 					(result) => {
-						this.data.home_histogram = result.data.histogram_lots_awardDecisionDate;
+						this.data.home_histogram = result.data.histogram;
 					},
 					(error) => {
 						this.notify.error(error);

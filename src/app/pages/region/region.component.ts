@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
-import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand, IStatsNuts} from '../../app.interfaces';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand, IStatsNuts, IStatsInYears} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class RegionPage implements OnInit, OnDestroy {
 	private viz: {
 		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
-		histogram: { data: IStatsPcPricesLotsInYears, title?: string };
+		histogram: { data: IStatsInYears, title?: string };
 		child_regions: { data: IStatsNuts, title?: string };
 	} = {
 		top_companies: {data: null},
@@ -91,7 +91,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		if (!stats) {
 			return;
 		}
-		viz.histogram.data = stats.histogram_pc_lots_awardDecisionDate_finalPrices;
+		viz.histogram.data = stats.histogram;
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.child_regions.data = stats.terms_subregions_nuts;
