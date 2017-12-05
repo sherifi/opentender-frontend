@@ -8,14 +8,14 @@
 </div>
 <div *ngIf="ip_country">
 	<div class="container-outer">
-		<div class="container-left-12 container-padded slab-info u-centered slab-border-light">
+		<div class="container-left-12 portal-ip-info slab-info slab-border-light">
 			<ng-container i18n>It looks like you are browsing from {{ip_country.name}}.</ng-container>
 			<br/>
 			<ng-container i18n>We invite you to visit <a href="/{{ip_country.id}}">Opentender {{ip_country.name}}</a>.</ng-container>
 		</div>
 	</div>
 </div>
-<div class="slab-alpha container-padded">
+<div class="slab-alpha container-padded-top-lite">
 	<div class="container-outer">
 		<h3 class="start-heading" i18n>You can view the data on individual national portals by selecting a country below or explore <a href="/all">all available data</a> available data.</h3>
 		<div class="container-left-6 portal-map-container">
