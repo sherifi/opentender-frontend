@@ -26,7 +26,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            19
           </context>
         </context-group>
         <target>
@@ -451,7 +451,7 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            6
+            7
           </context>
         </context-group>
         <context-group purpose="location">
@@ -459,7 +459,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            32
+            26
           </context>
         </context-group>
         <target>
@@ -475,7 +475,7 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            8
+            10
           </context>
         </context-group>
         <target>
@@ -491,7 +491,7 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            15
+            16
           </context>
         </context-group>
         <context-group purpose="location">
@@ -577,12 +577,70 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            17
+            19
           </context>
         </context-group>
         <target>
           Opentender verwendet Leistungsindikatoren für das öffentliche Beschaffungswesen auf der Grundlage einer breiten Palette wissenschaftlicher Analysen, die in unserer eigenen Forschung synthetisiert und weiterentwickelt wurden: für administrative Kapazitätsindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Methods Paper on Administrative Quality Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Transparenzindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Methods Paper on Fiscal Transparency&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Integritätsrisikoindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Der "Good Procurement Score" ist der einfache Durchschnitt der drei zugesammengesetzten Indikator Scores. Alle diese Indikatoren basieren auf objektiven Daten, sind von öffentlichen und privaten Akteuren direkt umsetzbar und werden transparent und eindeutig berechnet. Wenn Sie einen Fehler in den &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;Formeln&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; finden, benachrichtigen Sie uns bitte &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;hier&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
+      </trans-unit>
+      <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
+        <source>
+          Maps and NUTS Codes
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            24
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="39a876f7caff60187b5482e728db9585b73de7ce" datatype="html">
+        <source>
+          Opentender displays
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
+          </x>
+          NUTS Codes
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
+          </x>
+          based maps.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            28
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
+        <source>
+          Missing codes in addresses have been assigned with:
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            29
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b66b022fc628366345ae491af4ed98f8b87b33c6" datatype="html">
+        <source>
+          Used Shapes:
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            31
+          </context>
+        </context-group>
       </trans-unit>
       <trans-unit id="be37a41139d137a21483439caa3709cdcea48185" datatype="html">
         <source>
@@ -593,7 +651,7 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            23
+            38
           </context>
         </context-group>
         <context-group purpose="location">
@@ -601,11 +659,259 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            34
+            28
           </context>
         </context-group>
         <target>
           Dashboards
+        </target>
+      </trans-unit>
+      <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
+        <source>
+          Market Analysis
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
+          </context>
+          <context context-type="linenumber">
+            3
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <target>
+          Marktüberblick
+        </target>
+      </trans-unit>
+      <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
+        <source>
+          This dashboard provides overview of public procurement markets, helping buyers and bidders to tender more effectively.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            43
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            43
+          </context>
+        </context-group>
+        <target>
+          Dieses Dashboard bietet einen Überblick über die öffentlichen Beschaffungsmärkte und hilft Käufern und Bietern effektiver auszuschreiben.
+        </target>
+      </trans-unit>
+      <trans-unit id="695caafe46b918dce47fc32933810772fac59cc1" datatype="html">
+        <source>
+          Administrative Capacity
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            44
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            78
+          </context>
+        </context-group>
+        <target>
+          Administrative Kapazität
+        </target>
+      </trans-unit>
+      <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
+        <source>
+          This dashboard allows you to analyse and benchmark buyers' administrative capacity.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            45
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            79
+          </context>
+        </context-group>
+        <target>
+          Mit diesem Dashboard können Sie die administrative Kapazität der Käufer analysieren.
+        </target>
+      </trans-unit>
+      <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
+        <source>
+          Transparency
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            46
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            83
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            90
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            90
+          </context>
+        </context-group>
+        <target>
+          Transparenz
+        </target>
+      </trans-unit>
+      <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
+        <source>
+          This dashboard allows you to analyse and benchmark the degree of transparency in public procurement tenders.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            47
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            91
+          </context>
+        </context-group>
+        <target>
+          Mit diesem Dashboard können Sie den Grad der Transparenz in den öffentlichen Ausschreibungen analysieren.
+        </target>
+      </trans-unit>
+      <trans-unit id="f9eb1436de2a761d67365efe24c426ca17eaa22d" datatype="html">
+        <source>
+          Procurement Integrity
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            48
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            95
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            102
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            102
+          </context>
+        </context-group>
+        <target>
+          Beschaffungsintegrität
+        </target>
+      </trans-unit>
+      <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
+        <source>
+          This dashboard allows you to analyse and benchmark public procurement integrity risks.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            49
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            103
+          </context>
+        </context-group>
+        <target>
+          Mit diesem Dashboard können Sie die Integritätsrisiken von öffentlichen Beschaffung analysieren.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -617,7 +923,7 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            54
           </context>
         </context-group>
         <context-group purpose="location">
@@ -649,7 +955,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            27
           </context>
         </context-group>
         <context-group purpose="location">
@@ -664,6 +970,19 @@
           Suche
         </target>
       </trans-unit>
+      <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
+        <source>
+          The search function is a powerful tool to drill down into the data and find a specific tender, buyer, or supplier you are looking for. You can also create individual custom searches from more than 30 additional parameters, including the indicators.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            57
+          </context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
         <source>
           Profiles
@@ -673,12 +992,25 @@
             src/app/pages/about/how/how.component.ts
           </context>
           <context context-type="linenumber">
-            39
+            62
           </context>
         </context-group>
         <target>
           Profile
         </target>
+      </trans-unit>
+      <trans-unit id="a33618ac50442a0a558cef69f0f4d212b4155712" datatype="html">
+        <source>
+          To enable full access, every component (sectors, branches, regions, companies, authorities, and tenders) in the Opentender database has an individual profile showing detailed information. Depending on its type, the profile shows a variety of visualisations such as graphs, maps, and charts providing you with a deep level of insight into the database. You can view the profiles by simply clicking on the respective name.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            65
+          </context>
+        </context-group>
       </trans-unit>
       <trans-unit id="203669909f4f54336b8208aa175000457f4db6af" datatype="html">
         <source>
@@ -825,7 +1157,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            35
+            29
           </context>
         </context-group>
         <context-group purpose="location">
@@ -929,7 +1261,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            21
+            29
           </context>
         </context-group>
         <target>
@@ -1048,46 +1380,6 @@
         </context-group>
         <target>
           Die Struktur der Daten ist einem &lt;x ctype="x-a" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; umrissen.
-        </target>
-      </trans-unit>
-      <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
-        <source>
-          Market Analysis
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/dashboards/market-analysis/market-analysis.component.ts
-          </context>
-          <context context-type="linenumber">
-            3
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            35
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            42
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            42
-          </context>
-        </context-group>
-        <target>
-          Marktüberblick
         </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
@@ -1281,7 +1573,7 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            63
+            59
           </context>
         </context-group>
         <target>
@@ -1318,22 +1610,6 @@
         </context-group>
         <target>
           Datenüberblick
-        </target>
-      </trans-unit>
-      <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
-        <source>
-          This dashboard provides overview of public procurement markets, helping buyers and bidders to tender more effectively.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            43
-          </context>
-        </context-group>
-        <target>
-          Dieses Dashboard bietet einen Überblick über die öffentlichen Beschaffungsmärkte und hilft Käufern und Bietern effektiver auszuschreiben.
         </target>
       </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
@@ -1400,134 +1676,6 @@
           Möchten Sie selbst mit den Daten arbeiten? Sie können alle Daten dieser Seite herunterladen.
         </target>
       </trans-unit>
-      <trans-unit id="695caafe46b918dce47fc32933810772fac59cc1" datatype="html">
-        <source>
-          Administrative Capacity
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            78
-          </context>
-        </context-group>
-        <target>
-          Administrative Kapazität
-        </target>
-      </trans-unit>
-      <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
-        <source>
-          This dashboard allows you to analyse and benchmark buyers' administrative capacity.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            79
-          </context>
-        </context-group>
-        <target>
-          Mit diesem Dashboard können Sie die administrative Kapazität der Käufer analysieren.
-        </target>
-      </trans-unit>
-      <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
-        <source>
-          Transparency
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            83
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            90
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            90
-          </context>
-        </context-group>
-        <target>
-          Transparenz
-        </target>
-      </trans-unit>
-      <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
-        <source>
-          This dashboard allows you to analyse and benchmark the degree of transparency in public procurement tenders.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            91
-          </context>
-        </context-group>
-        <target>
-          Mit diesem Dashboard können Sie den Grad der Transparenz in den öffentlichen Ausschreibungen analysieren.
-        </target>
-      </trans-unit>
-      <trans-unit id="f9eb1436de2a761d67365efe24c426ca17eaa22d" datatype="html">
-        <source>
-          Procurement Integrity
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            95
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            102
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            102
-          </context>
-        </context-group>
-        <target>
-          Beschaffungsintegrität
-        </target>
-      </trans-unit>
-      <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
-        <source>
-          This dashboard allows you to analyse and benchmark public procurement integrity risks.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            103
-          </context>
-        </context-group>
-        <target>
-          Mit diesem Dashboard können Sie die Integritätsrisiken von öffentlichen Beschaffung analysieren.
-        </target>
-      </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
         <source>
           Not sure where to go? Start here …
@@ -1577,7 +1725,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            34
           </context>
         </context-group>
         <target>
@@ -1648,6 +1796,32 @@
           Übergeordnete Branchen
         </target>
       </trans-unit>
+      <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
+        <source>
+          Welcome to Opentender
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            4
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a60efaf1e6913adb1d0b698c02c03bfbc832a574" datatype="html">
+        <source>
+          This platform allows you to search and analyse tender data from 35 jurisdictions (28 EU member states, Norway, the European Authorities, Iceland, Switzerland, Serbia, Georgia and Armenia).
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
         <source>
           It looks like you are browsing from
@@ -1660,7 +1834,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            12
           </context>
         </context-group>
         <target>
@@ -1684,33 +1858,31 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            6
+            14
           </context>
         </context-group>
         <target>
           Wir laden Sie ein &lt;x ctype="x-a" id="START_LINK"/&gt;Opentender &lt;x id="INTERPOLATION"/&gt;&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; zu besuchen.
         </target>
       </trans-unit>
-      <trans-unit id="bffd5ce4fcc08707d61bd414a4cbb91a9c4e0708" datatype="html">
+      <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
         <source>
-          Please choose a country portal or explore
+          You can view the data on individual national portals by selecting a country below or explore
           <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
           </x>
           all available data
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
           </x>
+          available data.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            12
+            20
           </context>
         </context-group>
-        <target>
-          Bitte wählen Sie ein Länderportal oder durchsuchen sie &lt;x ctype="x-a" id="START_LINK"/&gt;alle verfügbaren Daten&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
-        </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
         <source>
@@ -2897,7 +3069,7 @@
             src/app/components/tables/table.tender.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            13
           </context>
         </context-group>
         <target>
@@ -3042,6 +3214,22 @@
           Score-Bereich
         </target>
       </trans-unit>
+      <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
+        <source>
+          Portal Overview
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            10
+          </context>
+        </context-group>
+        <target>
+          Portaleüberblick
+        </target>
+      </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
         <source>
           What is Opentender?
@@ -3051,7 +3239,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            26
+            20
           </context>
         </context-group>
         <target>
@@ -3067,7 +3255,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            21
           </context>
         </context-group>
         <target>
@@ -3083,7 +3271,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            35
           </context>
         </context-group>
         <target>
@@ -3099,7 +3287,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            42
+            36
           </context>
         </context-group>
         <target>
@@ -3115,7 +3303,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            37
           </context>
         </context-group>
         <target>
@@ -3131,7 +3319,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            49
+            61
           </context>
         </context-group>
         <target>
@@ -3154,7 +3342,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            50
+            62
           </context>
         </context-group>
         <target>
@@ -3177,7 +3365,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            52
+            64
           </context>
         </context-group>
         <target>
@@ -3199,7 +3387,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            53
+            65
           </context>
         </context-group>
         <target>
@@ -3215,7 +3403,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            69
           </context>
         </context-group>
         <target>
@@ -3231,7 +3419,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            71
           </context>
         </context-group>
         <target>
@@ -3247,7 +3435,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            74
           </context>
         </context-group>
         <target>
@@ -3275,7 +3463,7 @@
             src/app/components/footer.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            80
           </context>
         </context-group>
         <target>
@@ -3493,7 +3681,7 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            50
+            46
           </context>
         </context-group>
         <target>
@@ -3509,7 +3697,7 @@
             src/app/components/header.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            58
           </context>
         </context-group>
         <target>
@@ -7364,7 +7552,7 @@
             src/app/components/tables/pagination.component.ts
           </context>
           <context context-type="linenumber">
-            3
+            2
           </context>
         </context-group>
         <target>
@@ -7380,7 +7568,7 @@
             src/app/components/tables/pagination.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            3
           </context>
         </context-group>
         <target>
@@ -7404,7 +7592,7 @@
             src/app/components/tables/pagination.component.ts
           </context>
           <context context-type="linenumber">
-            6
+            5
           </context>
         </context-group>
         <target>
@@ -7420,7 +7608,7 @@
             src/app/components/tables/pagination.component.ts
           </context>
           <context context-type="linenumber">
-            13
+            12
           </context>
         </context-group>
         <target>
@@ -7634,7 +7822,7 @@
             src/app/components/tables/table.tender.component.ts
           </context>
           <context context-type="linenumber">
-            9
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -7671,20 +7859,20 @@
           Der Download enthält &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; Einträge und die komprimierte Dateigröße mindestens &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt; betragen.
         </target>
       </trans-unit>
-      <trans-unit id="cfd39bdbb00f08b89fb84a395dead269a72e8787" datatype="html">
+      <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
         <source>
-          Download Large File
+          Download JSON.GZ File
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/tables/table.tender.component.ts
           </context>
           <context context-type="linenumber">
-            19
+            20
           </context>
         </context-group>
         <target>
-          Großer Datei-Download
+          JSON.GZ Datei herunterladen
         </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -7696,11 +7884,35 @@
             src/app/components/tables/table.tender.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            22
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/tables/table.tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            29
           </context>
         </context-group>
         <target>
           Abbruch
+        </target>
+      </trans-unit>
+      <trans-unit id="599e1282c032f9504328a3763c368f095e39ce78" datatype="html">
+        <source>
+          Download requested
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/tables/table.tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            26
+          </context>
+        </context-group>
+        <target>
+          Download angefragt
         </target>
       </trans-unit>
       <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
