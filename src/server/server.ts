@@ -168,7 +168,7 @@ let render = function(req, res, language, country) {
 	});
 };
 
-let startApp = function(req, res) {
+let startApp = function(req, res, originalUrl) {
 	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 	let c_id = geoip.lookupCountry(ip);
 	let ip_country = null;
@@ -183,7 +183,7 @@ let startApp = function(req, res) {
 		}
 	}
 	let country = {id: null, name: 'Portals', ip: ip_country};
-	req.originalUrl = '/start';
+	req.originalUrl = originalUrl;
 	render(req, res, getLang(req), country);
 };
 
@@ -226,13 +226,18 @@ portals.forEach(portal => {
 	}
 });
 
-app.use('/start*', startApp);
+app.use('/start*', (req, res) => {
+	startApp(req, res, '/start');
+});
+app.use('/imprint*', (req, res) => {
+	startApp(req, res, '/imprint');
+});
 app.use('/', (req, res) => {
 	let url = (req.originalUrl || '').split('?')[0];
 	if (['/', '/index.html'].indexOf(url) < 0) {
 		return errorResponse(req, res);
 	} else {
-		return startApp(req, res);
+		return startApp(req, res, '/start');
 	}
 });
 
