@@ -36,9 +36,6 @@
       @include respond-to(medium-up) {
         width: 45%;
       }
-      @include respond-to(large-up) {
-        width: 30%;
-      }
       label {
         display: inline;
         font-size: 0.8em;
