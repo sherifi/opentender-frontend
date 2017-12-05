@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Consts} from '../../../model/consts';
 
 /**
  * The /about/how-opentender-works component displays a information on the data processing and the usage of the page
@@ -11,5 +10,4 @@ import {Consts} from '../../../model/consts';
 	templateUrl: 'how.template.html'
 })
 export class AboutHowPage {
-	public lorem: string = Consts.IPSUM;
 }

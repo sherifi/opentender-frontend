@@ -30,7 +30,6 @@ export const Consts = {
 	indicators: indicators,
 	countries: countries,
 	currencies: currencies,
-	IPSUM: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 	colors: {
 		diverging: [
 			'#bf9d76',
