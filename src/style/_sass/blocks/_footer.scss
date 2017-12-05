@@ -22,6 +22,12 @@ footer,
 	margin-bottom: 0;
 	padding-bottom: ($base-padding-extra);
 	padding-top: ($base-padding-extra * 1.5);
+	.container {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-bottom: 0;
+		padding-top: 0;
+	}
 }
 
 .footer-para {
@@ -69,11 +75,19 @@ footer,
 
 .footer-col_left {
 	@include span-columns(12);
-	margin-bottom: $base-padding-extra;
 
 	@include respond-to(medium-up) {
 		@include span-columns(4);
 	}
+}
+
+.footer-col_left_margin_top {
+	margin-top: 34px;
+	padding-top: 37px;
+}
+
+.footer-logo_note {
+	padding-left: 33px;
 }
 
 .footer-col_right {
