@@ -31,14 +31,10 @@
 <ng-template #logoBlock>
 	<div class="header-logo-block" [ngSwitch]="isRootPage">
 		<ng-template [ngSwitchCase]="true">
-			<a href="/start">
-				<ng-template *ngIf="false; else imageBlock"></ng-template>
-			</a>
+			<a href="/start"><ng-template *ngIf="false; else imageBlock"></ng-template></a>
 		</ng-template>
 		<ng-template [ngSwitchCase]="false">
-			<a [routerLink]="['/start']">
-				<ng-template *ngIf="false; else imageBlock"></ng-template>
-			</a>
+			<a [routerLink]="['/']"><ng-template *ngIf="false; else imageBlock"></ng-template></a>
 		</ng-template>
 	</div>
 </ng-template>

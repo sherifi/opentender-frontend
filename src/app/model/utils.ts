@@ -1,5 +1,5 @@
 import * as moment from 'moment';
-import {Consts, ISubIndicatorInfoConst} from './consts';
+import {Consts} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
 import {IIndicatorInfo, ISubIndicatorInfo} from '../app.interfaces';
 

@@ -31,7 +31,7 @@ import {SharePage} from './pages/share/share.component';
 export const routes: Routes = [
 	{
 		path: '', component: HomePage,
-		data: {menu: true, menu_title: 'Home'}
+		data: {menu: true, menu_title: 'Home', rootMenu: true}
 	},
 	{path: 'start', component: StartPage, data: {title: 'Opentender Portals'}},
 	{path: 'share', component: SharePage},
@@ -39,7 +39,7 @@ export const routes: Routes = [
 	{
 		path: 'dashboards',
 		component: DashboardsPage,
-		data: {title: 'Dashboards', menu: true, routerLink: ['/dashboards/market-analysis']},
+		data: {title: 'Dashboards', menu: true, routerLink: ['dashboards/market-analysis']},
 		children: [
 			{path: '', redirectTo: 'administrative-capacity', pathMatch: 'full'},
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis', menu: true}},
@@ -51,7 +51,7 @@ export const routes: Routes = [
 	{
 		path: 'search',
 		component: SearchPage,
-		data: {title: 'Search', menu: true, routerLink: ['/search/tender']},
+		data: {title: 'Search', menu: true, routerLink: ['search/tender']},
 		children: [
 			{path: '', redirectTo: 'tender', pathMatch: 'full'},
 			{path: 'tender', component: SearchTenderPage, data: {title: 'Search Tender', menu: true, menu_title: 'Tender'}},
@@ -69,7 +69,7 @@ export const routes: Routes = [
 	{
 		path: 'about',
 		component: AboutPage,
-		data: {title: 'About', menu: true, routerLink: ['/about/about-opentender']},
+		data: {title: 'About', menu: true, routerLink: ['about/about-opentender']},
 		children: [
 			{path: '', redirectTo: 'about-opentender', pathMatch: 'full'},
 			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender', menu: true}},
@@ -79,7 +79,7 @@ export const routes: Routes = [
 			{path: 'quality', component: AboutDataQualityPage, data: {title: 'Data Quality'}}
 		]
 	},
-	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint'}},
+	{path: 'imprint', component: ImprintPage, data: {title: 'Imprint', rootMenu: true}},
 
 	{path: 'test', component: TestPage, data: {title: 'Test'}},
 	{path: '**', redirectTo: 'start'}
@@ -87,7 +87,9 @@ export const routes: Routes = [
 
 @NgModule({
 	declarations: [],
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes
+		// , {enableTracing: true}
+	)],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {

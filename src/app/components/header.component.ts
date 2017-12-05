@@ -40,16 +40,16 @@ export class HeaderComponent {
 	private buildMenu() {
 		this.menu = [];
 		routes.forEach(route => {
-			if (route.data && route.data.menu) {
+			if (route.data && ((!this.isRootPage && route.data.menu) || (this.isRootPage && route.data.rootMenu))) {
 				this.menu.push({
 					path: route.path,
 					title: route.data.menu_title || route.data.title,
-					routerLink: route.data.routerLink ? route.data.routerLink : ['/' + route.path],
+					routerLink: route.data.routerLink ? route.data.routerLink : [route.path],
 					submenu: (route.children || []).filter(sub => sub.data && sub.data.menu).map(sub => {
 						return {
 							path: sub.path,
 							title: sub.data.menu_title || sub.data.title,
-							routerLink: sub.data.routerLink ? sub.data.routerLink : ['/' + route.path + '/' + sub.path],
+							routerLink: sub.data.routerLink ? sub.data.routerLink : [route.path + '/' + sub.path],
 						};
 					})
 				});

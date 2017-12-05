@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
 	};
 
 	constructor(public router: Router, private api: ApiService, private config: ConfigService, private notify: NotifyService) {
-		this.country = config.country.name;
+		this.country = config.country.id ? config.country.name : 'all Digiwhist data';
 	}
 
 	public ngOnInit(): void {

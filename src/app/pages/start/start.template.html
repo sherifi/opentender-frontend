@@ -1,3 +1,11 @@
+<div class="slab-hero slab-top container-padded-bottom">
+	<div class="container-outer">
+		<div class="container-left-10 hero">
+			<h2 class="hero-title_text" i18n>Welcome to Opentender</h2>
+			<p i18n>This platform allows you to search and analyse tender data from 35 jurisdictions (28 EU member states, Norway, the European Authorities, Iceland, Switzerland, Serbia, Georgia and Armenia).</p>
+		</div>
+	</div>
+</div>
 <div *ngIf="ip_country">
 	<div class="container-outer">
 		<div class="container-left-12 container-padded slab-info u-centered slab-border-light">
@@ -7,9 +15,9 @@
 		</div>
 	</div>
 </div>
-<div class="slab-alpha container-padded-bottom">
+<div class="slab-alpha container-padded">
 	<div class="container-outer">
-		<h3 class="start-heading" i18n>Please choose a country portal or explore <a href="/all">all available data</a></h3>
+		<h3 class="start-heading" i18n>You can view the data on individual national portals by selecting a country below or explore <a href="/all">all available data</a> available data.</h3>
 		<div class="container-left-6 portal-map-container">
 			<portal-map [portals]="portals"></portal-map>
 		</div>

@@ -328,11 +328,8 @@ export interface IApiResultDownloads {
 	}>;
 }
 
-export interface IApiResult {
-	data: any;
-}
-
 export interface IApiResultGeoJSON extends FeatureCollection<GeometryObject, { id: string; name: string }> {
+	crs: string;
 }
 
 /* graph & map data export */

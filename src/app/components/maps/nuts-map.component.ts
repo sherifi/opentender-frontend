@@ -32,7 +32,7 @@ declare let L;
 			</svg>
 			<span>{{valueHigh | formatNumber}}</span>
 		</div>
-		<div class="nutsmap_subtitle"><a [routerLink]="['/about/how-opentender-works']" pageScroll="#info-maps">Sources</a></div>
+		<div class="nutsmap_subtitle"><a [routerLink]="['about/how-opentender-works']" pageScroll="#info-maps">Sources</a></div>
 		<select-series-download-button *ngIf="!hideLegend && data_list.length>0" [sender]="this"></select-series-download-button>`
 })
 export class MapComponent implements OnChanges, ISeriesProvider {
