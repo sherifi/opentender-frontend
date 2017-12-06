@@ -215,9 +215,10 @@ ngx-charts-chart {
 }
 
 .chart-legend {
-  display: inline-block;
+  //display: inline-block;
   padding: 0;
-  width: auto !important;
+  //width: auto !important;
+  position: absolute;
 
   .legend-title {
     white-space: nowrap;

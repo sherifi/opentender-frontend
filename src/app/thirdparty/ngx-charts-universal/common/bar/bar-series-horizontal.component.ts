@@ -93,7 +93,6 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 
 			bar.height = this.yScale.bandwidth();
 
-			console.log('hey', bar);
 			if (this.type === 'standard') {
 				bar.width = Math.abs(this.xScale(value) - this.xScale(0));
 				if (value < 0) {

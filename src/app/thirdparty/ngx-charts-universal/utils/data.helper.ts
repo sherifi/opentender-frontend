@@ -17,6 +17,7 @@ export function cloneData(data: Array<IChartData>): Array<IChartData> {
 			value: item.value,
 			id: item.id,
 			color: item.color,
+			invalid: item.invalid,
 			series: item.series ? cloneData(item.series) : undefined
 		};
 	});

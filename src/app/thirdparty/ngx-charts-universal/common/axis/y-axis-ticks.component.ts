@@ -86,25 +86,28 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 		this.update();
 	}
 
+	emitWidth(): void {
+		setTimeout(() => {
+			this.dimensionsChanged.emit({width: this.width});
+		});
+	}
+
 	updateDims(): void {
 		if (!this.ticks || this.ticks.length === 0) {
 			this.width = this.defaultWidth;
 			if (this.platform.isBrowser) {
-				setTimeout(() => {
-					this.dimensionsChanged.emit({width: this.width});
-				});
+				this.emitWidth();
 			}
 			return;
 		}
-		let width = (this.platform.isBrowser && this.ticks && (this.ticks.length > 0)) ? parseInt(this.ticksElement.nativeElement.getBoundingClientRect().width, 10) : this.defaultWidth;
+		let width = (this.platform.isBrowser && this.ticks && (this.ticks.length > 0)) ?
+			parseInt(this.ticksElement.nativeElement.getBoundingClientRect().width, 10) : this.defaultWidth;
 		if (width === 0) {
 			width = this.defaultWidth;
 		}
 		if (width !== this.width) {
 			this.width = width;
-			setTimeout(() => {
-				this.dimensionsChanged.emit({width: this.width});
-			});
+			this.emitWidth();
 			if (this.platform.isBrowser) {
 				setTimeout(() => this.updateDims());
 			}
@@ -173,7 +176,7 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 				this.dy = '.32em';
 				break;
 		}
-		this.updateDims();
+		setTimeout(() => this.updateDims());
 	}
 
 	getTicks(): any {

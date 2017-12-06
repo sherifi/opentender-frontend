@@ -27,6 +27,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 			   *ngIf="chart.yAxis.show"
 			   [yScale]="yScale"
 			   [dims]="viewDim"
+			   [autoSize]="chart.yAxis.autoSize"
 			   [showLabel]="chart.yAxis.showLabel"
 			   [labelText]="chart.yAxis.label"
 			   (dimensionsChanged)="updateYAxisWidth($event)">

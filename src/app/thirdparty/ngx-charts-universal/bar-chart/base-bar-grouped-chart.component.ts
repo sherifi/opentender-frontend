@@ -15,7 +15,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 	@Output() deactivate: EventEmitter<any>;
 
 	viewDim: ViewDimensions;
-	margin: any[] = [10, 20, 10, 20];
+	margin: any[] = [10, 10, 10, 10];
 	xAxisHeight: number = 0;
 	yAxisWidth: number = 0;
 
@@ -28,9 +28,11 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 
 	getGroupDomain(): any[] {
 		let domain = [];
-		for (let group of this.data) {
-			if (domain.indexOf(group.name) < 0) {
-				domain.push(group.name);
+		if (this.data) {
+			for (let group of this.data) {
+				if (domain.indexOf(group.name) < 0) {
+					domain.push(group.name);
+				}
 			}
 		}
 		return domain;
@@ -39,10 +41,12 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 	getInnerDomain(): any[] {
 		let domain = [];
 
-		for (let group of this.data) {
-			for (let d of group.series) {
-				if (domain.indexOf(d.name) < 0) {
-					domain.push(d.name);
+		if (this.data) {
+			for (let group of this.data) {
+				for (let d of group.series) {
+					if (domain.indexOf(d.name) < 0) {
+						domain.push(d.name);
+					}
 				}
 			}
 		}
@@ -52,15 +56,17 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 
 	getValueDomain() {
 		let domain = [];
-		for (let group of this.data) {
-			let sum = 0;
-			for (let d of group.series) {
-				sum += d.value;
+		if (this.data) {
+			for (let group of this.data) {
+				// let sum = 0;
+				let groupdomain = [];
+				for (let d of group.series) {
+					groupdomain.push(d.value);
+					// sum += d.value;
+				}
+				domain.push(Math.max(...groupdomain));
 			}
-
-			domain.push(sum);
 		}
-
 		let min = Math.min(0, ...domain);
 		let max = Math.max(...domain);
 		return [min, max];
@@ -70,26 +76,31 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 
 	}
 
+	updateViewDim(): void {
+		this.viewDim = calculateViewDimensions({
+			width: this.dim.width,
+			height: this.dim.height,
+			margins: this.margin,
+			showXAxis: this.chart.xAxis.show,
+			showYAxis: this.chart.yAxis.show,
+			xAxisHeight: this.xAxisHeight,
+			yAxisWidth: this.yAxisWidth || this.chart.yAxis.defaultWidth,
+			showXLabel: this.chart.xAxis.showLabel,
+			showYLabel: this.chart.yAxis.showLabel,
+			showLegend: this.chart.legend && this.chart.legend.show,
+			legendType: this.chart.schemeType
+		});
+	}
+
 	update(): void {
 		super.update();
 
 		this.zone.run(() => {
-			this.viewDim = calculateViewDimensions({
-				width: this.dim.width,
-				height: this.dim.height,
-				margins: this.margin,
-				showXAxis: this.chart.xAxis.show,
-				showYAxis: this.chart.yAxis.show,
-				xAxisHeight: this.xAxisHeight,
-				yAxisWidth: this.yAxisWidth,
-				showXLabel: this.chart.xAxis.showLabel,
-				showYLabel: this.chart.yAxis.showLabel,
-				showLegend: this.chart.legend && this.chart.legend.show,
-				legendType: this.chart.schemeType
-			});
+			this.updateViewDim();
 
-			formatDates(this.data);
-
+			if (this.data) {
+				formatDates(this.data);
+			}
 			this.groupDomain = this.getGroupDomain();
 			this.innerDomain = this.getInnerDomain();
 			this.valueDomain = this.getValueDomain();

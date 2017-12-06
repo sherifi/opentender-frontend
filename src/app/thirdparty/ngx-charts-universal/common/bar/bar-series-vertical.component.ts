@@ -1,32 +1,34 @@
 import {Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
+
 // import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
 	selector: 'g[ngx-charts-series-vertical]',
 	template: `
-    <svg:g ngx-charts-bar *ngFor="let bar of bars; trackBy:trackBy"
-      [width]="bar.width"
-      [height]="bar.height"
-      [x]="bar.x"
-      [y]="bar.y"
-      [fill]="bar.color"
-      [stops]="bar.gradientStops"
-      [data]="bar.data"
-      [orientation]="'vertical'"
-      [roundEdges]="bar.roundEdges"
-      [gradient]="gradient"
-      [isActive]="isActive(bar.data)"
-      (select)="onClick($event)"
-      (activate)="activate.emit($event)"
-      (deactivate)="deactivate.emit($event)"
-      ngx-tooltip
-      [tooltipPlacement]="'top'"
-      [tooltipType]="'tooltip'"
-      [tooltipTitle]="bar.tooltipText">
-    </svg:g>
-  `,
+		<svg:g ngx-charts-bar *ngFor="let bar of bars; trackBy:trackBy"
+			   [width]="bar.width"
+			   [height]="bar.height"
+			   [x]="bar.x"
+			   [y]="bar.y"
+			   [fill]="bar.color"
+			   [stops]="bar.gradientStops"
+			   [data]="bar.data"
+			   [invalid]="bar.invalid"
+			   [orientation]="'vertical'"
+			   [roundEdges]="bar.roundEdges"
+			   [gradient]="gradient"
+			   [isActive]="isActive(bar.data)"
+			   (select)="onClick($event)"
+			   (activate)="activate.emit($event)"
+			   (deactivate)="deactivate.emit($event)"
+			   ngx-tooltip
+			   [tooltipPlacement]="'top'"
+			   [tooltipType]="'tooltip'"
+			   [tooltipTitle]="bar.tooltipText">
+		</svg:g>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	// animations: [
 	// 	trigger('animationState', [
@@ -96,6 +98,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				height: 0,
 				x: 0,
 				y: 0,
+				invalid: d.invalid,
 				id: d.id
 			};
 
@@ -151,8 +154,11 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				}
 			}
 
-			bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
-
+			if (d.invalid) {
+				bar.tooltipText = 'No data';
+			} else {
+				bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
+			}
 			return bar;
 		});
 	}

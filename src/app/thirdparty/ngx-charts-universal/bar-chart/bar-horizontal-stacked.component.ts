@@ -29,6 +29,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 					   [yScale]="yScale"
 					   [dims]="viewDim"
 					   [showLabel]="chart.yAxis.showLabel"
+					   [autoSize]="chart.yAxis.autoSize"
 					   [labelText]="chart.yAxis.label"
 					   (dimensionsChanged)="updateYAxisWidth($event)">
 				</svg:g>

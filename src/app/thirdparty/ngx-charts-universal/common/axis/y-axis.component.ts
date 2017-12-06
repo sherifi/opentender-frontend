@@ -49,6 +49,7 @@ export class YAxisComponent implements OnChanges {
 	@Input() defaultWidth: number;
 	@Input() tickFormatting;
 	@Input() showGridLines = false;
+	@Input() autoSize = false;
 	@Input() showLabel;
 	@Input() labelText;
 	@Input() minInterval: number;
@@ -72,7 +73,6 @@ export class YAxisComponent implements OnChanges {
 	@ViewChild(YAxisTicksComponent) ticksComponent: YAxisTicksComponent;
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.labelOffset = this.defaultWidth;
 		this.update();
 	}
 
@@ -99,12 +99,12 @@ export class YAxisComponent implements OnChanges {
 	}
 
 	emitTicksWidth({width}): void {
-		this.labelOffset = width;
-		if (width !== this.labelOffset) {
+		if (this.autoSize && width !== this.labelOffset) {
 			setTimeout(() => {
 				this.dimensionsChanged.emit({width});
 			});
 		}
+		this.labelOffset = width;
 	}
 
 }

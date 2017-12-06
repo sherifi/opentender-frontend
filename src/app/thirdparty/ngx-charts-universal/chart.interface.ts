@@ -3,6 +3,7 @@ import {SimulationNodeDatum} from 'd3-force';
 export interface IAxisSettings {
 	show: boolean;
 	showLabel?: boolean;
+	autoSize?: boolean;
 	label?: string;
 	defaultHeight?: number;
 	defaultWidth?: number;
@@ -22,6 +23,7 @@ export interface IChartData {
 	series?: Array<IChartData>;
 	id?: string;
 	color?: string;
+	invalid?: boolean;
 }
 
 export interface IChartDimension {

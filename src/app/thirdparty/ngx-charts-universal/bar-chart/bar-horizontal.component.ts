@@ -32,6 +32,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 			   [yScale]="yScale"
 			   [dims]="viewDim"
 			   [defaultWidth]="chart.yAxis.defaultWidth"
+			   [autoSize]="chart.yAxis.autoSize"
 			   [showLabel]="chart.yAxis.showLabel"
 			   [labelText]="chart.yAxis.label"
 			   [trimLabelLength]="chart.yAxis.maxLength"

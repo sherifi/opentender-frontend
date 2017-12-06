@@ -14,6 +14,14 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)"
 				(legendLabelClick)="onClick($event)">
+			<svg:g ngx-charts-axis-label
+				   *ngIf="chart.yAxis.show && chart.yAxis.showLabel"
+				   [label]="chart.yAxis.label"
+				   [offset]="margin[1]+10"
+				   [orient]="'left-left'"
+				   [height]="viewDim.height"
+				   [width]="viewDim.width">
+			</svg:g>
 			<svg:g [attr.transform]="transform" class="bar-chart chart">
 				<svg:g ngx-charts-grid-panel-series
 					   [xScale]="groupScale"
@@ -40,7 +48,8 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 					   [dims]="viewDim"
 					   [defaultWidth]="chart.yAxis.defaultWidth"
 					   [showGridLines]="chart.showGridLines"
-					   [showLabel]="chart.yAxis.showLabel"
+					   [showLabel]="false"
+					   [autoSize]="chart.yAxis.autoSize"
 					   [labelText]="chart.yAxis.label"
 					   [trimLabelLength]="chart.yAxis.maxLength"
 					   [tickFormatting]="chart.yAxis.tickFormatting"
