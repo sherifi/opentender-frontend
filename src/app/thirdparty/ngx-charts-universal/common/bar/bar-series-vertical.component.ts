@@ -143,10 +143,10 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				bar.color = this.colors.getColor(label);
 			} else {
 				if (this.type === 'standard') {
-					bar.color = this.colors.getColor(value);
+					bar.color = d.color || this.colors.getColor(value);
 					bar.gradientStops = this.colors.getLinearGradientStops(value);
 				} else {
-					bar.color = this.colors.getColor(bar.offset1);
+					bar.color = d.color || this.colors.getColor(bar.offset1);
 					bar.gradientStops = this.colors.getLinearGradientStops(bar.offset1, bar.offset0);
 				}
 			}

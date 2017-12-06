@@ -7,27 +7,14 @@ import {PlatformService} from '../../../../services/platform.service';
 	selector: 'g[ngx-charts-x-axis-ticks]',
 	template: `
 		<svg:g #ticksel>
-			<svg:g *ngFor="let tick of ticks" class="tick"
-				   [attr.transform]="tickTransform(tick)">
+			<svg:g *ngFor="let tick of ticks" class="tick" [attr.transform]="tickTransform(tick)">
 				<title>{{tickFormat(tick)}}</title>
-				<svg:text
-						stroke-width="0.01"
-						[attr.text-anchor]="textAnchor"
-						[attr.transform]="textTransform"
-						[style.font-size]="'11px'">
-					{{tickFormat(tick)}}
-				</svg:text>
+				<svg:text stroke-width="0.01" [attr.text-anchor]="textAnchor" [attr.transform]="textTransform" [style.font-size]="'11px'">{{tickFormat(tick)}}</svg:text>
 			</svg:g>
 		</svg:g>
-
-		<svg:g *ngFor="let tick of ticks"
-			   [attr.transform]="tickTransform(tick)">
-			<svg:g *ngIf="showGridLines"
-				   [attr.transform]="gridLineTransform()">
-				<svg:line
-						class="gridline-path gridline-path-vertical"
-						[attr.y1]="-gridLineHeight"
-						y2="0"/>
+		<svg:g *ngFor="let tick of ticks" [attr.transform]="tickTransform(tick)">
+			<svg:g *ngIf="showGridLines" [attr.transform]="gridLineTransform()">
+				<svg:line class="gridline-path gridline-path-vertical" [attr.y1]="-gridLineHeight" y2="0"/>
 			</svg:g>
 		</svg:g>
 	`,
@@ -56,9 +43,11 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 	textAnchor: string = 'middle';
 	maxTicksLength: number = 0;
 	maxAllowedLength: number = 16;
-	adjustedScale: any;
+	adjustedScale = (d) => {
+		return 0;
+	};
 	tickValues: any;
-	textTransform: any;
+	textTransform: string = '';
 	ticks: any;
 	tickFormat: any;
 	height: number = 0;
@@ -120,7 +109,6 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 			this.textAnchor = 'middle';
 			this.verticalSpacing = 10;
 		}
-
 		setTimeout(() => this.updateDims());
 	}
 

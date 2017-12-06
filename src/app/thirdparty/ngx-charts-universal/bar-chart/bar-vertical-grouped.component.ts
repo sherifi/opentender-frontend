@@ -26,17 +26,25 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 					   *ngIf="chart.xAxis.show"
 					   [xScale]="groupScale"
 					   [dims]="viewDim"
+					   [showGridLines]="false"
 					   [showLabel]="chart.xAxis.showLabel"
+					   [defaultHeight]="chart.xAxis.defaultHeight"
 					   [labelText]="chart.xAxis.label"
+					   [tickFormatting]="chart.xAxis.tickFormatting"
+					   [minInterval]="chart.xAxis.minInterval"
 					   (dimensionsChanged)="updateXAxisHeight($event)">
 				</svg:g>
 				<svg:g ngx-charts-y-axis
 					   *ngIf="chart.yAxis.show"
 					   [yScale]="valueScale"
 					   [dims]="viewDim"
+					   [defaultWidth]="chart.yAxis.defaultWidth"
 					   [showGridLines]="chart.showGridLines"
 					   [showLabel]="chart.yAxis.showLabel"
 					   [labelText]="chart.yAxis.label"
+					   [trimLabelLength]="chart.yAxis.maxLength"
+					   [tickFormatting]="chart.yAxis.tickFormatting"
+					   [minInterval]="chart.yAxis.minInterval"
 					   (dimensionsChanged)="updateYAxisWidth($event)">
 				</svg:g>
 				<svg:g ngx-charts-series-vertical

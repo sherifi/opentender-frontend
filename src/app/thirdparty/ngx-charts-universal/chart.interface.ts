@@ -18,7 +18,7 @@ export interface IColorSet {
 
 export interface IChartData {
 	name: string | Date;
-	value: number;
+	value?: number;
 	series?: Array<IChartData>;
 	id?: string;
 	color?: string;

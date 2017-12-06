@@ -105,7 +105,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 
 	onClick(data, group?) {
 		if (group) {
-			data.series = group.name;
+			data.source_series = group.name;
 		}
 		this.select.emit(data);
 	}
