@@ -189,26 +189,38 @@ export const Utils = {
 		}
 		return n.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
 	},
-	seriesToTable(data: IChartData[], header) {
-		let hasID = header.hasOwnProperty('id');
-		let list = data.map(d => {
-			return hasID ? [d.id, d.name, d.value] : [d.name, d.value];
-		});
-		return {rows: list, head: hasID ? [header.id, header.name, header.value] : [header.name, header.value]};
+	seriesToTable(data: IChartData[], header, multi: boolean) {
+		if (multi) {
+			let list = data.map(d => {
+				let row: Array<string | number | Date> = d.series.map(val => val.invalid ? 'No data' : val.value);
+				row.unshift(d.name);
+				return row;
+			});
+			let head = data && data.length > 0 ? data[0].series.map(d => d.name) : [];
+			head.unshift(header.name);
+			let subhead = data && data.length > 0 ? data[0].series.map(d => header.value) : [];
+			subhead.unshift('Value');
+			list.unshift(subhead);
+			return {rows: list, head: head};
+		} else {
+			let hasID = header.hasOwnProperty('id');
+			let list = data.map(d => {
+				return hasID ? [d.id, d.name, d.value] : [d.name, d.value];
+			});
+			return {rows: list, head: hasID ? [header.id, header.name, header.value] : [header.name, header.value]};
+		}
 	},
-	downloadSeries: function(format, data, header, exportfilename) {
+	downloadSeries: function(format, data, header, multi: boolean, exportfilename) {
 		if (format === 'csv') {
-			Utils.downloadCSVSeries(data, header, exportfilename);
+			Utils.downloadCSVSeries(data, header, multi, exportfilename);
 		} else if (format === 'json') {
 			Utils.downloadJSON({fields: header, data: data}, exportfilename);
 		}
 	},
-	downloadCSVSeries(data: IChartData[], header, exportfilename: string) {
-		let hasID = header.hasOwnProperty('id');
-		let list = data.map(d => {
-			return JSON.stringify(hasID ? [d.id, d.name, d.value] : [d.name, d.value]);
-		});
-		list.unshift(JSON.stringify(hasID ? [header.id, header.name, header.value] : [header.name, header.value]));
+	downloadCSVSeries(data: IChartData[], header, multi: boolean, exportfilename: string) {
+		let table = Utils.seriesToTable(data, header, multi);
+		let list = [JSON.stringify(table.head)];
+		table.rows.forEach(row => list.push(JSON.stringify(row)));
 		let csv = list.join('\n').replace(/(^\[)|(\]$)/mg, ''); // remove opening [ and closing ] brackets from each line
 		Utils.downloadCSV(csv, exportfilename);
 	},

@@ -1,6 +1,5 @@
 import {FormsModule} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
-import {DropdownModule} from './thirdparty/dropdown/dropdown.module';
 import {TypeaheadModule} from './thirdparty/typeahead/typeahead.module';
 import {SliderModule} from './components/slider/silder.module';
 import {AppRoutingModule} from './app.routes';
@@ -113,6 +112,7 @@ import {TenderTableComponent} from './components/tables/table.tender.component';
 import {ValueInputComponent} from './components/inputs/valueinput.component';
 import {GraphScoreGridComponent} from './components/graphs/score-grid.component';
 import {SelectYearRangeComponent} from './components/selects/select-year-range.component';
+import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
 
 const AppConfig = {
 	declarations: [
@@ -154,6 +154,7 @@ const AppConfig = {
 		TenderTableComponent,
 		ValueInputComponent,
 		DashboardsIndicatorComponent,
+		GraphBenchmarksComponent,
 		GraphIndicatorHistogramComponent,
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
@@ -218,7 +219,6 @@ const AppConfig = {
 	],
 	imports: [
 		FormsModule,
-		DropdownModule,
 		TreeMapModule,
 		PieChartModule,
 		BarChartModule,

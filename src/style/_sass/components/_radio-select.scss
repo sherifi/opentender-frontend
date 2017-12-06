@@ -1,0 +1,20 @@
+.select-container {
+  border: #ebebeb solid 1px;
+  border-radius: 3px;
+
+  .select-radios {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    vertical-align: top;
+    max-width: 45%;
+    display: inline-block;
+
+    label {
+      font-size: 0.8em;
+      line-height: 1.5em;
+    }
+  }
+
+}

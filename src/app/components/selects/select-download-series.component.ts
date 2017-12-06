@@ -23,12 +23,12 @@ export class SelectDownloadSeriesComponent {
 
 	show(): void {
 		this.series = this.sender.getSeriesInfo();
-		this.table = Utils.seriesToTable(this.series.data, this.series.header);
+		this.table = Utils.seriesToTable(this.series.data, this.series.header, this.series.multi);
 		this.showDialog = true;
 	}
 
 	download(format): void {
 		this.showDialog = false;
-		Utils.downloadSeries(format, this.series.data, this.series.header, this.series.filename);
+		Utils.downloadSeries(format, this.series.data, this.series.header, this.series.multi, this.series.filename);
 	}
 }

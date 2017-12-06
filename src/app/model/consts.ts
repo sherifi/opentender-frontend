@@ -143,6 +143,7 @@ export const Consts = {
 			'#525c47',
 			'#567681'
 		],
+		dual: ['#4e99ca', '#2b908f'],
 		single: ['#4e99ca'],
 		single2: ['#2b908f'],
 		single3: ['#dfc27d'],

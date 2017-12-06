@@ -31,17 +31,20 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		company_nuts: { data: IStatsNuts, title?: string };
 		lots_in_years: { data: IStatsPricesInYears, title?: string };
+		stats: { data: IStats, title?: string }
 	} = {
 		top_companies: {data: null},
 		cpvs_codes: {data: null},
 		company_nuts: {data: null},
-		lots_in_years: {data: null}
+		lots_in_years: {data: null},
+		stats: {data: null}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
 				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
+		this.viz.stats.title = i18n.get('Benchmark');
 	}
 
 	ngOnInit(): void {
@@ -132,6 +135,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
+		viz.stats.data = stats;
 		viz.lots_in_years.data = stats.histogram_finalPriceEUR;
 		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};

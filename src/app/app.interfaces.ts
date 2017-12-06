@@ -178,6 +178,7 @@ export interface IStats {
 	histogram_count_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	region_stats: Array<{ id: string; value: number, stats: IStats }>;
+	benchmark: IStats;
 }
 
 /* search-result-packages */
@@ -336,6 +337,7 @@ export interface IApiResultGeoJSON extends FeatureCollection<GeometryObject, { i
 
 export interface ISeries {
 	data: Array<IChartData>;
+	multi?: boolean,
 	header: { value: string, name: string };
 	filename: string;
 }
