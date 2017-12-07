@@ -1,8 +1,8 @@
 // Functions
-@import "functions/private";
-@import "functions/new-breakpoint";
+@import "functions/_private.scss";
+@import "functions/_new-breakpoint.scss";
 
 // Settings
-@import "settings/grid";
-@import "settings/visual-grid";
-@import "settings/disable-warnings";
+@import "settings/_grid.scss";
+@import "settings/_visual-grid.scss";
+@import "settings/_disable-warnings.scss";
