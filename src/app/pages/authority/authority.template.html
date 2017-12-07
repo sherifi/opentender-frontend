@@ -11,6 +11,10 @@
 	<div class="container">
 		<div class="container-left-9">
 			<tender-body-address [address]="authority.address"></tender-body-address>
+			<div><ng-container i18n>Authority Type</ng-container>: {{authority.buyerType | expandUnderlined}}</div>
+			<div><ng-container i18n>Main Activities</ng-container>:
+				<span *ngFor="let m of authority.mainActivities; let i = index"><ng-container *ngIf="i!==0">, </ng-container>{{m | expandUnderlined}}</span>
+			</div>
 			<br/>
 			<select-similar-list caption="Similar Authorities" icon="icon-library" link="/authority/" [current]="this.authority" [similar]="this.similar" (selectChange)="similarChange($event)"></select-similar-list>
 		</div>
@@ -55,7 +59,7 @@
 			<br>
 			<div class="container">
 				<div class="container-left-12">
-					<graph benchmarks [data]="viz.stats.data" [title]="viz.stats.title" [entityTitle]="authority.name" [othersTitle]="'Other Authorities in the country'"></graph>
+					<graph benchmarks [data]="viz.stats.data" [title]="viz.stats.title" [entityTitle]="authority.name" [othersTitle]="viz.stats.othersTitle" [filters]="viz.stats.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
 				</div>
 			</div>
 			<br>

@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesInYears} from '../../app.interfaces';
+import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchCommandFilter, ISearchFilterDefType} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 
 /// <reference path="./model/tender.d.ts" />
@@ -31,17 +31,21 @@ export class CompanyPage implements OnInit, OnDestroy {
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		lots_in_years: { data: IStatsPricesInYears, title?: string };
+		stats: { data: IStats, title?: string, othersTitle?: string, filters?: Array<IBenchmarkFilter> };
 	} = {
 		authority_nuts: {data: null},
 		top_authorities: {data: null},
 		cpvs_codes: {data: null},
-		lots_in_years: {data: null}
+		lots_in_years: {data: null},
+		stats: {data: null, filters: [{id: 'sector', name: 'Limit to companies in same sector', active: false}]}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
 				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
+		this.viz.stats.title = i18n.get('Benchmark');
+		this.viz.stats.othersTitle = i18n.get('Average of all Companies');
 	}
 
 	ngOnInit(): void {
@@ -72,9 +76,28 @@ export class CompanyPage implements OnInit, OnDestroy {
 		});
 	}
 
+	benchmarkFilterChange(event) {
+		let ids = this.getCurrentIds();
+		this.getStats(ids);
+	}
+
 	getStats(ids: Array<string>) {
+		let filters: Array<ISearchCommandFilter> = [];
+		if (this.viz.stats.filters[0].active && this.viz.cpvs_codes.data) {
+			let max_cpv: string;
+			Object.keys(this.viz.cpvs_codes.data).forEach(cpv => {
+				max_cpv = !max_cpv || this.viz.cpvs_codes.data[cpv].value > this.viz.cpvs_codes.data[max_cpv].value ? cpv : max_cpv;
+			});
+			if (max_cpv) {
+				filters.push({
+					field: 'cpvs.code.divisions', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [max_cpv], and: [
+						{field: 'cpvs.isMain', type: ISearchFilterDefType[ISearchFilterDefType.bool], value: [true]}
+					]
+				});
+			}
+		}
 		this.loading++;
-		this.api.getCompanyStats({ids: ids}).subscribe(
+		this.api.getCompanyStats({ids, filters}).subscribe(
 			result => {
 				this.displayStats(result.data);
 			},
@@ -109,11 +132,15 @@ export class CompanyPage implements OnInit, OnDestroy {
 		}
 	}
 
+	getCurrentIds(): Array<string> {
+		return [this.company.id].concat(this.include_companies_ids);
+	}
+
 	refresh(): void {
 		if (!this.company) {
 			return;
 		}
-		let ids = [this.company.id].concat(this.include_companies_ids);
+		let ids = this.getCurrentIds();
 		this.getStats(ids);
 		this.search(ids);
 	}
@@ -146,6 +173,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
+		viz.stats.data = stats;
 		viz.lots_in_years.data = stats.histogram_finalPriceEUR;
 		viz.cpvs_codes.data = stats.terms_main_cpv_divisions;
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};

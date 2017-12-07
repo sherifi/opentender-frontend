@@ -346,6 +346,14 @@ export interface ISeriesProvider {
 	getSeriesInfo: () => ISeries;
 }
 
+/* benchmark filter */
+
+export interface IBenchmarkFilter {
+	id: string;
+	name: string;
+	active: boolean;
+}
+
 /* search object helper */
 
 export enum ISearchFilterDefType {

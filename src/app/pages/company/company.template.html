@@ -59,6 +59,12 @@
 				</div>
 			</div>
 			<br/>
+			<div class="container">
+				<div class="container-left-12">
+					<graph benchmarks [data]="viz.stats.data" [title]="viz.stats.title" [entityTitle]="company.name" [othersTitle]="viz.stats.othersTitle" [filters]="viz.stats.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
+				</div>
+			</div>
+			<br>
 		</div>
 		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>

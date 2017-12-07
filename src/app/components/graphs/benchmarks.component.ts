@@ -1,5 +1,5 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {ISeriesProvider, IStats} from '../../app.interfaces';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {IBenchmarkFilter, ISeriesProvider, IStats} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
@@ -9,17 +9,26 @@ import {PlatformService} from '../../services/platform.service';
 	selector: 'graph[benchmarks]',
 	template: `
 		<div class="graph-title">{{title}}</div>
-		<div class="select-container">
+		<div class="benchmark-select">
 			<div class="select-radios">
+				<div>Value Group</div>
 				<label class="checkbox" *ngFor="let group of benchmark_groups">
 					<input [value]="group" name="group" type="radio" [(ngModel)]="active.benchmark_group" (change)="handleGroupChange()">
 					{{group.name}}
 				</label>
 			</div>
 			<div class="select-radios" *ngIf="active.benchmark_group">
+				<div>Value</div>
 				<label class="checkbox" *ngFor="let bench of active.benchmark_group.benchmarks">
 					<input [value]="bench" name="bench" type="radio" [(ngModel)]="active.benchmark" (change)="handleBenchmarkChange()">
 					{{bench.name}}
+				</label>
+			</div>
+			<div class="select-checks">
+				<div>Comparision</div>
+				<label class="checkbox" *ngFor="let filter of filters">
+					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
+					{{filter.name}}
 				</label>
 			</div>
 		</div>
@@ -42,6 +51,10 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 	othersTitle: string;
 	@Input()
 	data: IStats;
+	@Input()
+	filters: Array<IBenchmarkFilter> = [];
+	@Output()
+	filtersChange = new EventEmitter();
 
 	in_years: IChartBar = {
 		chart: {
@@ -92,6 +105,29 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	constructor(private platform: PlatformService) {
 		this.in_years.chart.xAxis.label = 'Year';
+		this.benchmark_groups = [];
+		let goodgroup = {
+			name: 'Overall', benchmarks: [
+				{name: 'Good Procurement Score', id: 'TENDER', build: 'scores'}
+			]
+		};
+		this.benchmark_groups.push(goodgroup);
+		Object.keys(Consts.indicators).forEach(i_key => {
+			let indicator = Consts.indicators[i_key];
+			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' Score', id: i_key, build: 'scores'}]};
+			Object.keys(indicator.subindicators).forEach(key => {
+				group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key, build: 'scores'});
+			});
+			this.benchmark_groups.push(group);
+		});
+		let valuesgroup = {
+			name: 'Contract Values', benchmarks: [
+				{name: 'Average Value (€)', id: 'avg_finalPriceEUR', build: 'values'}
+			]
+		};
+		this.benchmark_groups.push(valuesgroup);
+		this.active.benchmark_group = this.benchmark_groups[0];
+		this.handleGroupChange();
 	}
 
 	collectYears(entity, compare): Array<string> {
@@ -169,7 +205,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	displayBenchmark(benchmark): void {
 		this.in_years.data = null;
-		if (benchmark) {
+		if (benchmark && this.data) {
 			this.graph.chart.yAxis.label = benchmark.name;
 			if (benchmark.build === 'values') {
 				this.graph.chart.yAxis.defaultWidth = 60;
@@ -193,48 +229,16 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		this.handleBenchmarkChange();
 	}
 
+	handleFilterChange(): void {
+		this.filtersChange.emit({});
+	}
+
 	handleBenchmarkChange(): void {
 		this.displayBenchmark(this.active.benchmark);
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		let stats = this.data;
-		this.benchmark_groups = [];
-		if (!stats) {
-			this.handleGroupChange();
-			return;
-		}
-		let goodgroup = {
-			name: 'Overall', benchmarks: [
-				{name: 'Good Procurement Score', id: 'TENDER', build: 'scores'}
-			]
-		};
-		this.benchmark_groups.push(goodgroup);
-
-		Object.keys(Consts.indicators).forEach(i_key => {
-			let indicator = Consts.indicators[i_key];
-			let group = {name: indicator.plural, benchmarks: []};
-			Object.keys(stats.histogram_indicators).forEach(key => {
-				if (key === indicator.id) {
-					group.benchmarks.unshift({name: indicator.name + ' Score', id: key, build: 'scores'});
-				} else if (key.indexOf(indicator.id) === 0) {
-					group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key, build: 'scores'});
-				}
-			});
-			if (group.benchmarks.length > 0) {
-				this.benchmark_groups.push(group);
-			}
-		});
-
-		let valuesgroup = {
-			name: 'Contract Values', benchmarks: [
-				{name: 'Average Value (€)', id: 'avg_finalPriceEUR', build: 'values'}
-			]
-		};
-		this.benchmark_groups.push(valuesgroup);
-
-		this.active.benchmark_group = this.benchmark_groups[0];
-		this.handleGroupChange();
+		this.handleBenchmarkChange();
 	}
 
 }

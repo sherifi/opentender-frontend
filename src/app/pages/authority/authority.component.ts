@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchFilterDefType} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 
@@ -31,13 +31,18 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		company_nuts: { data: IStatsNuts, title?: string };
 		lots_in_years: { data: IStatsPricesInYears, title?: string };
-		stats: { data: IStats, title?: string }
+		stats: { data: IStats, title?: string, othersTitle?: string, filters?: Array<IBenchmarkFilter> };
 	} = {
 		top_companies: {data: null},
 		cpvs_codes: {data: null},
 		company_nuts: {data: null},
 		lots_in_years: {data: null},
-		stats: {data: null}
+		stats: {
+			data: null, filters: [
+				{id: 'buyerType', name: 'Limit to same authority type', active: false},
+				{id: 'mainActivities', name: 'Limit to same main activities', active: false}
+			]
+		}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
@@ -45,6 +50,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.country = config.country;
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.stats.title = i18n.get('Benchmark');
+		this.viz.stats.othersTitle = i18n.get('Average of all Authorities');
 	}
 
 	ngOnInit(): void {
@@ -84,9 +90,21 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		}
 	}
 
+	benchmarkFilterChange(event) {
+		let ids = this.getCurrentIds();
+		this.getStats(ids);
+	}
+
 	getStats(ids: Array<string>) {
+		let filters = [];
+		if (this.viz.stats.filters[0].active) {
+			filters.push({field: 'buyers.buyerType', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [this.authority.buyerType]});
+		}
+		if (this.viz.stats.filters[1].active && this.authority.mainActivities && this.authority.mainActivities.length > 0) {
+			filters.push({field: 'buyers.mainActivities', type: ISearchFilterDefType[ISearchFilterDefType.term], value: this.authority.mainActivities});
+		}
 		this.loading++;
-		this.api.getAuthorityStats({ids: ids}).subscribe(
+		this.api.getAuthorityStats({ids, filters}).subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},
@@ -117,11 +135,15 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.similar = data.similar.map(authority => <Body>authority.body);
 	}
 
+	getCurrentIds(): Array<string> {
+		return [this.authority.id].concat(this.include_authorities_ids);
+	}
+
 	refresh(): void {
 		if (!this.authority) {
 			return;
 		}
-		let ids = [this.authority.id].concat(this.include_authorities_ids);
+		let ids = this.getCurrentIds();
 		this.getStats(ids);
 		this.search(ids);
 	}
