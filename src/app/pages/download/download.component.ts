@@ -14,7 +14,8 @@ interface Download {
 @Component({
 	moduleId: __filename,
 	selector: 'download',
-	templateUrl: 'download.template.html'
+	templateUrl: 'download.component.html',
+	styleUrls: ['download.component.scss']
 })
 export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];

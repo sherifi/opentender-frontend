@@ -7,7 +7,8 @@ import {Component} from '@angular/core';
 @Component({
 	moduleId: __filename,
 	selector: 'opentender-about',
-	templateUrl: 'opentender.template.html'
+	templateUrl: 'opentender.component.html',
+	styleUrls: ['opentender.component.scss']
 })
 export class AboutOpentenderPage {
 }

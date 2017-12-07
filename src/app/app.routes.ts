@@ -26,16 +26,12 @@ import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
 import {RegionPage} from './pages/region/region.component';
-import {SharePage} from './pages/share/share.component';
 
 export const routes: Routes = [
 	{
-		path: '', component: HomePage,
-		data: {menu: true, menu_title: 'Home', rootMenu: true}
+		path: '', component: HomePage, data: {menu: true, menu_title: 'Home', rootMenu: true}
 	},
 	{path: 'start', component: StartPage, data: {title: 'Opentender Portals'}},
-	{path: 'share', component: SharePage},
-
 	{
 		path: 'dashboards',
 		component: DashboardsPage,

@@ -6,7 +6,7 @@ import {Utils} from '../../../model/utils';
 @Component({
 	moduleId: __filename,
 	selector: 'administrative-capacity',
-	templateUrl: 'administrative-capacity.template.html'
+	templateUrl: 'administrative-capacity.component.html'
 })
 export class DashboardsAdministrativeCapacityPage {
 	public indicator: IIndicatorInfo = Utils.indicatorInfo(Consts.indicators.ADMINISTRATIVE);

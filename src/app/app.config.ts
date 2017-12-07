@@ -50,7 +50,6 @@ import {SearchPage} from './pages/search/search.component';
 import {SearchSectorPage} from './pages/search/sector/sector.component';
 import {SearchTenderPage} from './pages/search/tender/tender.component';
 import {SectorPage} from './pages/sector/sector.component';
-import {SharePage} from './pages/share/share.component';
 import {StartPage} from './pages/start/start.component';
 import {TenderPage} from './pages/tender/tender.component';
 import {TestPage} from './pages/test/test.component';
@@ -64,13 +63,13 @@ import {I18NService} from './services/i18n.service';
 import {NotifyService} from './services/notify.service';
 
 import {AboutGlossaryPage} from './pages/about/glossary/glossary.component';
-import {AuthorityTableComponent} from './components/tables/table.authority.component';
-import {AutoCompleteComponent} from './components/inputs/autocomplete.component';
-import {CompanyTableComponent} from './components/tables/table.company.component';
-import {DashboardsIndicatorComponent} from './pages/dashboards/indicator-dashboard.component';
-import {DialogComponent} from './components/dialog.component';
-import {FilterBoxComponent} from './components/inputs/filterbox.component';
-import {FooterComponent} from './components/footer.component';
+import {AuthorityTableComponent} from './components/tables/authority/table-authority.component';
+import {AutoCompleteComponent} from './components/searchbox/components/autocomplete/autocomplete.component';
+import {CompanyTableComponent} from './components/tables/company/table-company.component';
+import {DashboardsIndicatorComponent} from './components/dashboard/indicator-dashboard.component';
+import {DialogComponent} from './components/dialog/dialog.component';
+import {FilterBoxComponent} from './components/filterbox/filterbox.component';
+import {FooterComponent} from './components/footer/footer.component';
 import {GraphAuthoritiesComponent} from './components/graphs/authorities.component';
 import {GraphCompaniesComponent} from './components/graphs/companies.component';
 import {GraphHistogramComponent} from './components/graphs/histogram.component';
@@ -83,35 +82,34 @@ import {GraphProcedureTypesComponent} from './components/graphs/procedure-types.
 import {GraphScoreSectorsComponent} from './components/graphs/score-sectors.component';
 import {GraphSectorsComponent} from './components/graphs/sectors.component';
 import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
-import {GraphSumPricesComponent} from './components/graphs/sums_price.component';
-import {HeaderComponent} from './components/header.component';
+import {HeaderComponent} from './components/header/header.component';
 import {I18NComponent} from './components/i18n.component';
 import {MapBuyersComponent} from './components/maps/nuts-map-buyer.component';
 import {MapComponent} from './components/maps/nuts-map.component';
 import {MapHomeComponent} from './components/maps/nuts-map-home.component';
-import {MapPortalComponent} from './components/maps/map-portal.component';
+import {MapPortalComponent} from './components/maps/nuts-map-portal.component';
 import {MapRegionComponent} from './components/maps/nuts-map-region.component';
 import {MapSuppliersComponent} from './components/maps/nuts-map-supplier.component';
 import {MapVolumeComponent} from './components/maps/nuts-map-volume.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
-import {PaginationComponent} from './components/tables/pagination.component';
-import {SearchBoxComponent} from './components/inputs/searchbox.component';
-import {SelectColumnsButtonComponent} from './components/selects/select-columns-button.component';
-import {SelectColumnsComponent} from './components/selects/select-columns.component';
-import {SelectDateFilterComponent} from './components/selects/select-date-filter-component';
-import {SelectDownloadSeriesComponent} from './components/selects/select-download-series.component';
-import {SelectFiltersButtonComponent} from './components/selects/select-filters-button.component';
-import {SelectFiltersComponent} from './components/selects/select-filters.component';
-import {SelectScoreRangeFilterComponent} from './components/selects/select-score-range-filter.component';
-import {SelectSearchesButtonComponent} from './components/selects/select-search-button.component';
-import {SelectSimilarListComponent} from './components/selects/select-similar-list.component';
-import {SelectYearRangeFilterComponent} from './components/selects/select-year-range-filter.component';
+import {PaginationComponent} from './components/tables/components/pagination/pagination.component';
+import {SearchBoxComponent} from './components/searchbox/searchbox.component';
+import {SelectColumnsButtonComponent} from './components/tables/components/select-columns-button/select-columns-button.component';
+import {SelectColumnsComponent} from './components/tables/components/select-columns/select-columns.component';
+import {SelectDateFilterComponent} from './components/filterbox/components/date/select-date-filter-component';
+import {SelectDownloadSeriesComponent} from './components/selects/download-series/select-download-series.component';
+import {SelectFiltersButtonComponent} from './components/filterbox/components/select-filters-button/select-filters-button.component';
+import {SelectFiltersComponent} from './components/filterbox/components/select-filters/select-filters.component';
+import {SelectScoreRangeFilterComponent} from './components/filterbox/components/score-range/select-score-range-filter.component';
+import {SelectSearchesButtonComponent} from './components/searchbox/components/select-search-button/select-search-button.component';
+import {SelectSimilarListComponent} from './components/selects/similar-list/select-similar-list.component';
+import {SelectYearRangeFilterComponent} from './components/filterbox/components/year-range/select-year-range-filter.component';
 import {TableComponent} from './components/tables/table.component';
 import {TenderBodyComponent, TenderPriceComponent, TenderBodyAddressComponent, TenderBodyLineComponent, CollapseExpandComponent} from './components/tender.components';
-import {TenderTableComponent} from './components/tables/table.tender.component';
-import {ValueInputComponent} from './components/inputs/valueinput.component';
+import {TenderTableComponent} from './components/tables/tender/table-tender.component';
+import {ValueInputComponent} from './components/searchbox/components/value-input/value-input.component';
 import {GraphScoreGridComponent} from './components/graphs/score-grid.component';
-import {SelectYearRangeComponent} from './components/selects/select-year-range.component';
+import {SelectYearRangeComponent} from './components/selects/year-range/select-year-range.component';
 import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
 
 const AppConfig = {
@@ -160,7 +158,6 @@ const AppConfig = {
 		GraphIndicatorStructureComponent,
 		GraphSectorsComponent,
 		GraphHistogramComponent,
-		GraphSumPricesComponent,
 		GraphAuthoritiesComponent,
 		GraphCompaniesComponent,
 		GraphProcedureTypesComponent,
@@ -210,7 +207,6 @@ const AppConfig = {
 		SearchSectorPage,
 		SearchTenderPage,
 		SectorPage,
-		SharePage,
 		StartPage,
 		TenderPage,
 		TestPage,

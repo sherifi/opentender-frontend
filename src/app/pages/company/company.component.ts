@@ -14,7 +14,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'company',
-	templateUrl: 'company.template.html'
+	templateUrl: 'company.component.html'
 })
 export class CompanyPage implements OnInit, OnDestroy {
 	public company: Body;

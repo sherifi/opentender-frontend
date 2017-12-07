@@ -7,7 +7,8 @@ import {NotifyService} from '../../services/notify.service';
 @Component({
 	moduleId: __filename,
 	selector: 'start',
-	templateUrl: 'start.template.html'
+	templateUrl: 'start.component.html',
+	styleUrls: ['start.component.scss']
 })
 export class StartPage {
 	public ip_country: Country;

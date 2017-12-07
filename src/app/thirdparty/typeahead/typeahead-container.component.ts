@@ -14,7 +14,7 @@ import {TypeaheadMatch} from './typeahead-match.class';
   </ng-template>
 </ul>`,
 	host: {
-		'class': 'dropdown open'
+		'class': 'open'
 	},
 	encapsulation: ViewEncapsulation.None
 })

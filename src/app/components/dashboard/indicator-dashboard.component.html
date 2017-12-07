@@ -1,0 +1,81 @@
+<div class="container-outer dashboard">
+
+	<div class="container">
+		<h1 class="container-title">{{title}}</h1>
+	</div>
+
+	<div class="container container-margin">
+		<div class="container-left-12">
+			<select-year-range [years]="viz.years.data" (onRangeChange)="onYearRangeSliderChange($event)"></select-year-range>
+		</div>
+		<div class="form-group">
+			<label for="subindicator" i18n>Sub-Indicators</label>
+			<select class="form-control form-subindicator" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
+				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]
+				</option>
+				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
+			</select>
+		</div>
+	</div>
+	<div [ngClass]="{'is-loading': loading>0}">
+		<div class="container">
+			<div class="container-left-12">
+				<div class="graph-title" i18n>Average Score of {{indicatorTitle}}</div>
+			</div>
+			<div class="container-left-3">
+				<graph score-grid [data]="viz.score.data"></graph>
+			</div>
+			<div class="container-left-9">
+				<graph indicator-structure [data]="viz.terms_indicators_score.data" (onSelect)="selectIndicatorChange($event)"></graph>
+			</div>
+
+		</div>
+		<div class="container">
+			<div class="container-left-6">
+				<graph score-histogram [data]="viz.score_in_years.data" [title]="viz.score_in_years.title"></graph>
+			</div>
+			<div class="container-left-6">
+				<graph score-sectors [data]="viz.score_in_sectors.data" [title]="viz.score_in_sectors.title"></graph>
+			</div>
+		</div>
+	</div>
+	<div class="container container-margin">
+		<div class="container-left-12">
+			<label i18n>Score Range</label>
+			<slider
+					[min]="0"
+					[max]="100"
+					[startValue]="0"
+					[endValue]="50"
+					stepValue="10"
+					defaultWidth="934"
+					(onSliderChange)="onScoreSliderChange($event)"></slider>
+		</div>
+	</div>
+
+	<div [ngClass]="{'is-loading': loading>0}">
+
+		<div class="container container-margin">
+			<div class="container">
+				<div class="container-left-6">
+					<graph indicator-histogram [data]="viz.lots_in_years.data" [title]="viz.lots_in_years.title"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph indicator-sectors [data]="viz.cpvs_codes.data" [title]="viz.cpvs_codes.title"></graph>
+				</div>
+			</div>
+			<br/>
+			<div class="container">
+				<div class="container-left-6">
+					<graph companies [data]="viz.top_companies.data" [title]="viz.top_companies.title"></graph>
+				</div>
+				<div class="container-left-6">
+					<graph authorities [data]="viz.top_authorities.data" [title]="viz.top_authorities.title"></graph>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
+		</div>
+	</div>
+</div>

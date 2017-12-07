@@ -15,7 +15,8 @@ interface QualityEntry {
 @Component({
 	moduleId: __filename,
 	selector: 'quality',
-	templateUrl: 'quality.template.html'
+	templateUrl: 'quality.component.html',
+	styleUrls: ['quality.component.scss']
 })
 export class AboutDataQualityPage implements OnInit {
 	usage: Array<QualityEntry>;

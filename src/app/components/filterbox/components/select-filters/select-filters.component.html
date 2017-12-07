@@ -1,0 +1,10 @@
+<div *ngFor="let group of groups" class="select-filters-group">
+	<div class="select-filters-group-title">{{group.name | i18n}}</div>
+	<div *ngFor="let info of group.filters" class="select-filter-item">
+		<label class="checkbox" *ngIf="mode=='check'">
+			<input type="checkbox" [(ngModel)]="info.active" (ngModelChange)="update(info.filter, $event)">
+			{{info.filter.name | i18n}}
+		</label>
+		<a class="clickable" (click)="update(info.filter,true)" *ngIf="mode=='add'"><i class="icon-plus-circle"></i>{{info.filter.name | i18n}}</a>
+	</div>
+</div>

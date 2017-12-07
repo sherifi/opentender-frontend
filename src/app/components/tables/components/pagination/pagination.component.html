@@ -1,0 +1,13 @@
+<div class="container-left-4">
+	<button class="page-btn page-prev" ng-class="{disabled:pagination.page <= 0}" (click)="previous()" i18n>Previous</button>
+	<button class="page-btn page-next" ng-class="{disabled:pagination.pageCount <= pagination.page}" (click)="next()" i18n>Next</button>
+	<br/>
+	<div i18n>Page: {{pagination.page+1}} of {{pagination.pageCount | formatNumber }} - Entries: {{pagination.total | formatNumber }}</div>
+</div>
+<div class="container-left-3">
+	<select class="entriesonpage" id="entriesonpage" [(ngModel)]="pagination.pageSize" (ngModelChange)="onPageSizeChange()">
+		<option *ngFor="let item of [10, 20, 50, 100]" [ngValue]="item">{{item}}</option>
+	</select>
+	<br/>
+	<div for="entriesonpage" i18n>Entries per Page</div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container-outer">
+	<div class="container container-padded-bottom">
+		<h1 class="container-title" i18n>Data Quality</h1>
+	</div>
+
+	<div class="container">
+		<div>
+			<p i18n>This lists shows how much data per field is available.</p>
+		</div>
+
+		<label class="checkbox">
+			<input type="checkbox" [(ngModel)]="showEmpty" (ngModelChange)="refresh()">
+			<span i18n>Show fields with 100% missing data</span>
+		</label>
+
+		<i class="icon-spinner2 icon-rotate" *ngIf="loading>0"></i>
+
+		<table class="tables">
+			<thead>
+			<tr>
+				<th i18n>Field Name</th>
+				<th i18n>Available</th>
+				<th></th>
+				<th i18n>Missing</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let u of usage">
+				<td>{{u.field}}</td>
+				<td>{{u.available}}
+					<span class="small">({{u.available_percent | number:'1.1-2'}}%)</span>
+				</td>
+				<td>
+					<div class="quality-bar">
+						<div [style.width]="u.available_percent+'%'" class="quality-bar-inner"></div>
+					</div>
+				</td>
+				<td>{{u.missing}}
+					<span class="small">({{u.missing_percent | number:'1.1-2'}}%)</span>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

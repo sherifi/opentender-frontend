@@ -8,7 +8,7 @@ import {I18NService} from '../../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'search_tender',
-	templateUrl: 'tender.template.html'
+	templateUrl: 'tender.component.html'
 })
 export class SearchTenderPage implements OnInit, OnDestroy {
 	search = new Search('tender');

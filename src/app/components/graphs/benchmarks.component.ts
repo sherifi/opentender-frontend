@@ -40,7 +40,8 @@ import {PlatformService} from '../../services/platform.service';
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical-grouped>
 		<select-series-download-button [sender]="this"></select-series-download-button>
-	`
+	`,
+	styleUrls: ['benchmarks.component.scss']
 })
 export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -60,7 +61,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
-				def: {width: 500, height: 360},
+				def: {width: 1024, height: 360},
 				min: {height: 360},
 				max: {height: 360}
 			},

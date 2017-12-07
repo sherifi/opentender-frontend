@@ -1,0 +1,9 @@
+@import "../../../../style/globals";
+
+:host {
+	.partner-img {
+		width: 60%;
+		margin-left: 20%;
+		margin-top: $base-padding;
+	}
+}

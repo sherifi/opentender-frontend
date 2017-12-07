@@ -28,10 +28,6 @@ fieldset {
   }
 }
 
-legend {
-  @extend .sr-only;
-}
-
 input,
 label,
 select {

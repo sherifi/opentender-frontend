@@ -11,7 +11,8 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'tender',
-	templateUrl: 'tender.template.html'
+	templateUrl: 'tender.component.html',
+	styleUrls: ['tender.component.scss']
 })
 export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;

@@ -13,7 +13,7 @@ import {
 @Component({
 	moduleId: __filename,
 	selector: 'sector',
-	templateUrl: 'sector.template.html'
+	templateUrl: 'sector.component.html'
 })
 export class SectorPage implements OnInit, OnDestroy {
 	public sector: ISector;

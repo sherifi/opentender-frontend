@@ -7,7 +7,7 @@ import {I18NService} from '../../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'market-analysis',
-	templateUrl: 'market-analysis.template.html'
+	templateUrl: 'market-analysis.component.html'
 })
 export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	public sectors_stats: Array<{ sector: ISector, stats: IStats }> = [];

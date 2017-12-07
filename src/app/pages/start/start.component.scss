@@ -1,0 +1,65 @@
+@import "../../../style/globals";
+
+:host {
+
+  .portal-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    @include respond-to(small-up) {
+      -webkit-columns: 2;
+      -moz-columns: 2;
+      columns: 2;
+    }
+  }
+
+  .portal-link {
+    border-bottom: 1px solid $base-border-color;
+    font-size: 1.2em;
+    line-height: 2em;
+
+    position: relative;
+    display: block;
+    clear: both;
+
+    a {
+      text-decoration: none;
+    }
+
+    > div:last-of-type {
+      font-size: 0.7em;
+      display: inline;
+      right: 0;
+      position: absolute;
+    }
+
+    &:hover {
+      background-color: $light-gray-light;
+    }
+
+    @include respond-to(small-up) {
+      font-size: 0.9em;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+
+  }
+
+  .start-heading {
+    margin-bottom: 20px;
+  }
+
+  .portal-map-container {
+    text-align: center;
+  }
+
+  .portal-ip-info {
+    text-align: center;
+    padding: 22px 10px;
+    margin-top: 30px;
+  }
+
+
+}

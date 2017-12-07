@@ -6,7 +6,7 @@ import {Utils} from '../../../model/utils';
 @Component({
 	moduleId: __filename,
 	selector: 'procurement-integrity',
-	templateUrl: 'procurement-integrity.template.html'
+	templateUrl: 'procurement-integrity.component.html'
 })
 export class DashboardsIntegrityPage {
 	public indicator: IIndicatorInfo = Utils.indicatorInfo(Consts.indicators.CORRUPTION);

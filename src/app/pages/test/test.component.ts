@@ -5,11 +5,9 @@ import {ApiService} from '../../services/api.service';
 @Component({
 	moduleId: __filename,
 	selector: 'test',
-	templateUrl: 'test.template.html'
+	templateUrl: 'test.component.html'
 })
 export class TestPage {
-
 	constructor(private api: ApiService, private platform: PlatformService) {
 	}
-
 }

@@ -6,7 +6,7 @@ import {NotifyService} from '../../../services/notify.service';
 @Component({
 	moduleId: __filename,
 	selector: 'sector',
-	templateUrl: 'sector.template.html'
+	templateUrl: 'sector.component.html'
 })
 export class SearchSectorPage implements OnInit {
 	private loading: number = 0;

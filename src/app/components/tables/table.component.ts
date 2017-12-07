@@ -3,7 +3,8 @@ import {ITable, ITableColumn} from '../../app.interfaces';
 
 @Component({
 	selector: 'doc-table',
-	templateUrl: 'table.template.html'
+	templateUrl: 'table.component.html',
+	styleUrls: ['table.component.scss']
 })
 export class TableComponent {
 	@Input()

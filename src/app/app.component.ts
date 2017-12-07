@@ -10,14 +10,9 @@ import {I18NService} from './services/i18n.service';
 
 @Component({
 	selector: 'app',
-	templateUrl: 'app.template.html'
+	templateUrl: 'app.component.html'
 })
 export class App implements OnInit {
-
-	/**
-	 * is the current page a share page (to not include header & footer)
-	 */
-	public isSharePage: boolean = false;
 
 	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService, private i18n: I18NService) {
 		i18n.init();
@@ -47,7 +42,6 @@ export class App implements OnInit {
 	 *  check if the current router url is the root page, redirect if true to start page
 	 */
 	checkURL(url: string): void {
-		this.isSharePage = (url === '/share');
 		if ((location.pathname == '/' && (url !== '/start')) || (location.pathname == '' && (url !== 'start'))) {
 			this.router.navigate(['/start']);
 		}
@@ -67,6 +61,5 @@ export class App implements OnInit {
 			}
 		}
 	}
-
 
 }

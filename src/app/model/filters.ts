@@ -135,6 +135,8 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Funding',
 		field: 'fundings.programme',
 		type: ISearchFilterDefType.text,
+		aggregation_field: 'fundings.programme.raw',
+		aggregation_type: ISearchFilterDefType.term,
 		size: 30
 	},
 	{

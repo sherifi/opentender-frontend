@@ -1,0 +1,17 @@
+@import "../../../style/globals";
+
+:host {
+  .container-current-download {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid $base-border-color;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+  a i {
+    font-size: 26px;
+    vertical-align: middle;
+  }
+}

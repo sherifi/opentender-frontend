@@ -1,0 +1,129 @@
+@import "../../../style/globals";
+
+:host {
+  .home-info {
+    text-align: center;
+    padding-left: $base-padding;
+    padding-right: $base-padding;
+  }
+
+  .card {
+    @include span-columns(12);
+
+    background-color: $white;
+    border-radius: 5px;
+    height: auto;
+    margin-bottom: $base-padding;
+    position: relative;
+
+    @include respond-to(small-to-large) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include respond-to(medium-up) {
+      height: 260px;
+    }
+
+    @include respond-to(large-up) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+
+  .card-image-placeholder {
+    display: block;
+    height: 70px;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 10px;
+    i {
+      font-size: 40px;
+      color: white;
+
+    }
+  }
+
+  $colors-list: #166496 #4BC2A5 #b1d9f4 #8e9d63 #facf9c #80aa6a;
+  @for $i from 1 through length($colors-list) {
+    .card-image-placeholder-#{$i} {
+      background-color: nth($colors-list, $i);
+      i {
+        color: lighten(nth($colors-list, $i), 10%);
+      }
+    }
+  }
+
+  img.card-image, .card-image-placeholder {
+    border-bottom: 4px solid $light-gray;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-bottom: 4px solid #0e9720;
+    }
+  }
+
+  .card-image_link {
+    border: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border: none;
+    }
+  }
+
+  .card-content {
+    padding: $base-padding;
+    padding-top: 0;
+    p {
+      @include heading(para-md);
+      color: $dark-gray;
+      line-height: 1.6;
+    }
+
+    .card-content-subhead {
+      color: $dark-gray;
+      font-weight: $weight-light;
+      margin-bottom: ($base-padding-lite / 2);
+    }
+
+    @include respond-to(medium-up) {
+      p {
+        @include heading(para-sm);
+      }
+    }
+  }
+
+  .card-title {
+    @include heading(para-md);
+    color: $blue;
+    font-weight: $weight-bold;
+    line-height: 1.3;
+    margin-bottom: $base-padding-lite;
+  }
+
+  .card-link {
+    bottom: $base-padding;
+    position: absolute;
+  }
+
+  .hero {
+    padding-bottom: $base-padding-giant;
+    padding-right: $base-padding-large;
+    padding-top: $base-padding-giant;
+
+    h3 {
+      @include font-size(1.375);
+      font-weight: $weight-light;
+    }
+  }
+
+  .hero-title_text {
+    @include font-size(2);
+    margin-top: 0;
+  }
+
+}

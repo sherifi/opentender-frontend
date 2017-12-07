@@ -8,7 +8,8 @@ import {NotifyService} from '../../services/notify.service';
 @Component({
 	moduleId: __filename,
 	selector: 'home',
-	templateUrl: 'home.template.html'
+	templateUrl: 'home.component.html',
+	styleUrls: ['home.component.scss']
 })
 export class HomePage implements OnInit {
 	public country: string;

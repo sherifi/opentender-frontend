@@ -6,7 +6,7 @@ import {Utils} from '../../../model/utils';
 @Component({
 	moduleId: __filename,
 	selector: 'transparency',
-	templateUrl: 'transparency.template.html'
+	templateUrl: 'transparency.component.html'
 })
 export class DashboardsTransparencyPage {
 	public indicator: IIndicatorInfo = Utils.indicatorInfo(Consts.indicators.TRANSPARENCY);

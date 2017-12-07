@@ -9,7 +9,7 @@ import {Country} from '../../../services/config.service';
 @Component({
 	moduleId: __filename,
 	selector: 'foi',
-	templateUrl: 'foi.template.html'
+	templateUrl: 'foi.component.html'
 })
 export class AboutFOIPage implements OnInit {
 

@@ -1,0 +1,13 @@
+<div class="search-filter-buttons">
+	<div i18n-title title="Please click to add this search field" *ngFor="let filter of quick_filters" class="button button-secondary" (click)="addSearch(filter)"><i class="icon-plus-circle"></i> {{filter.name}}</div>
+	<select-search-button [filters_all]="filters" [filters_active]="[]" (selectChange)="onSelectSearch($event)"></select-search-button>
+</div>
+<div class="filter-box">
+	<div class="filter" *ngFor="let s of search.searches; let i = index;" [ngClass]="getFilterClass(i)">
+		<span class="filter-close" (click)="closeSearch(s)"><i class="icon-cross"></i></span>
+		<div [ngSwitch]="s.def.type">
+			<autocomplete *ngSwitchCase="ISearchFilterDefType.text" [value]="s.value" [entity]="search.entity" [field]="s.def.field" [placeholder]="getPlaceholder(s)" (onSelect)="onSelectSearchEntry($event, s)"></autocomplete>
+			<valueinput *ngSwitchCase="ISearchFilterDefType.value" [placeholder]="getPlaceholder(s)" (onSelect)="onSelectSearchValueEntry($event, s)"></valueinput>
+		</div>
+	</div>
+</div>

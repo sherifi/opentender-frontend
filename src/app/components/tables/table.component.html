@@ -1,0 +1,30 @@
+<table id="table-top" class="tables" *ngIf="table">
+	<thead>
+	<tr>
+		<th *ngFor="let col of table.columns" (click)="setSort(col)" [class.clickable]="col.sortBy" [ngClass]="{'tables-column-icon':col.id==='id'}">
+			{{col.name | i18n}}
+			<span *ngIf="table.sortBy && col.sortBy && (table.sortBy.id === col.sortBy.id)" style="float:right"><i [ngClass]="{'icon-chevron-small-down':table.sortBy.ascend,'icon-chevron-small-up':!table.sortBy.ascend}"></i></span>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let row of table.rows">
+		<td *ngFor="let cell of row.cells" class="{{cell.lines.length>0 ? cell.lines[0].align :''}}">
+			<div *ngFor="let line of cell.lines">
+				<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+				<div [ngClass]="line.styleClass">
+					<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
+					<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
+				</div>
+				<div *ngFor="let line of line.collapseLines">
+					<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+					<div [ngClass]="line.styleClass">
+						<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
+						<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+	</tbody>
+</table>

@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  .table-line-prefix {
+    font-size: 10px;
+    line-height: 1.5em;
+  }
+}

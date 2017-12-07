@@ -9,7 +9,7 @@ import {Utils} from '../../../model/utils';
 @Component({
 	moduleId: __filename,
 	selector: 'search_authority',
-	templateUrl: 'authority.template.html'
+	templateUrl: 'authority.component.html'
 })
 export class SearchAuthorityPage implements OnInit, OnDestroy {
 	title = '';

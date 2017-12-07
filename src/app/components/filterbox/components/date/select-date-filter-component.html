@@ -1,0 +1,18 @@
+<div class="date-input-wrapper">
+	<div class="date-mode-button button button-secondary" (click)="toggleMode()">{{mode}}</div>
+	<my-date-picker [options]="myDatePickerOptions" [(ngModel)]="model" (dateChanged)="onDateChanged($event)"></my-date-picker>
+</div>
+<div class="radios">
+	<label>
+		<input [value]="'<'" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
+		<span class="label" i18n>before</span>
+	</label>
+	<label>
+		<input [value]="'>'" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
+		<span class="label" i18n>after</span>
+	</label>
+	<label>
+		<input [value]="'='" type="radio" [(ngModel)]="mode" (change)="handleModeChange()">
+		<span class="label" i18n>same day</span>
+	</label>
+</div>

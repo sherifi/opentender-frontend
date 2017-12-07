@@ -4,13 +4,13 @@ import {ApiService} from '../../services/api.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
-import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, IStatsPcPricesLotsInYears, ISearchCommand, IStatsNuts, IStatsInYears} from '../../app.interfaces';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears} from '../../app.interfaces';
 import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
 	selector: 'region',
-	templateUrl: 'region.template.html'
+	templateUrl: 'region.component.html'
 })
 export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;

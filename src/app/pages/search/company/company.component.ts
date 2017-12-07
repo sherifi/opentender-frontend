@@ -9,7 +9,7 @@ import {I18NService} from '../../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'search_company',
-	templateUrl: 'company.template.html'
+	templateUrl: 'company.component.html'
 })
 export class SearchCompanyPage implements OnInit, OnDestroy {
 	title = '';

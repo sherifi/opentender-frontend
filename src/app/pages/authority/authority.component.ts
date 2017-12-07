@@ -14,7 +14,7 @@ import {I18NService} from '../../services/i18n.service';
 @Component({
 	moduleId: __filename,
 	selector: 'authority',
-	templateUrl: 'authority.template.html'
+	templateUrl: 'authority.component.html'
 })
 export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;

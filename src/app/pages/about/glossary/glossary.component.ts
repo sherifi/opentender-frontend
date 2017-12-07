@@ -9,7 +9,7 @@ import {IIndicatorInfo} from '../../../app.interfaces';
 @Component({
 	moduleId: __filename,
 	selector: 'glossary',
-	templateUrl: 'glossary.template.html'
+	templateUrl: 'glossary.component.html'
 })
 export class AboutGlossaryPage {
 	public indicators: IIndicatorInfo[] = [];

@@ -3,8 +3,7 @@ import {Component} from '@angular/core';
 @Component({
 	moduleId: __filename,
 	selector: 'search',
-	templateUrl: 'search.template.html'
+	template: '<router-outlet></router-outlet>'
 })
 export class SearchPage {
-
 }

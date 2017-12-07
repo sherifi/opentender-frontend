@@ -1,0 +1,29 @@
+:host {
+
+  .valueinput-state {
+    font-size: 0.7em;
+  }
+
+  label {
+    margin-left: 18px !important;
+  }
+
+  .value-input-wrapper {
+
+    .value-input {
+      margin-left: 18px;
+    }
+
+    .value-mode-button {
+      position: absolute;
+      margin: -4px 0 0 -4px;
+      padding: 0.4em;
+    }
+
+  }
+
+  .labeled-input-container.empty label {
+    width: calc(100% - 70px);
+    display: inline-block;
+  }
+}

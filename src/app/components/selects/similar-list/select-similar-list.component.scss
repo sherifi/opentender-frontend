@@ -1,0 +1,45 @@
+@import "../../../../style/globals";
+
+:host {
+
+  .similars {
+    vertical-align: top;
+    margin-bottom: 10px;
+
+  }
+
+  .similars-list {
+    max-height: 200px;
+    overflow: auto;
+    vertical-align: top;
+    line-height: 1.1em;
+    border: 1px solid #ebebeb;
+  }
+
+  .similars-tools {
+    font-size: 0.7em;
+  }
+
+  .similar {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: top;
+    @include respond-to(medium-up) {
+      width: 45%;
+    }
+    label {
+      display: inline;
+      font-size: 0.8em;
+      margin-bottom: 0;
+      input {
+        float: inherit;
+        display: inline-block;
+      }
+    }
+    a {
+      display: inline-block;
+      font-size: 0.8em;
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+@import "../../../../../style/globals";
+
+.autocomplete-state {
+  font-size: 0.7em;
+}
+
+typeahead-container {
+  position: absolute;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: 1px solid $base-border-color;
+  border-radius: 3px;
+  margin: 0;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+  z-index: 100;
+
+  .dropdown-menu {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    list-style: none;
+    li {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 2px 6px 4px;
+      cursor: pointer;
+      a {
+        height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-decoration: none;
+        color: $base-font-color;
+      }
+    }
+
+    li.active {
+      background-color: $base-selected-font-background-color;
+    }
+  }
+
+}

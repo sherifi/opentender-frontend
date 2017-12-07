@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 @Component({
 	moduleId: __filename,
 	selector: 'about',
-	templateUrl: 'about.template.html'
+	template: '<router-outlet></router-outlet>'
 })
 export class AboutPage {
 }

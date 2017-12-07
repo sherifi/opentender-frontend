@@ -9,7 +9,8 @@ import {IEventSlideAble, IEventKeyDownAble} from './slider-handle.directive';
 
 @Component({
 	selector: 'slider',
-	templateUrl: 'slider.component.html'
+	templateUrl: 'slider.component.html',
+	styleUrls: ['slider.component.scss']
 })
 
 export class SliderComponent implements OnChanges {

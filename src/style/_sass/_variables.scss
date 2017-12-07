@@ -6,6 +6,7 @@ $weight-light: 300;
 $weight-book: 400;
 $weight-bold: 700;
 
+$headercolor: #f9f9f9;
 
 $logo-font: 'spacemono';
 
@@ -20,25 +21,6 @@ $z-roof: 9000;
 $z-mid: 500;
 $z-negative: -1;
 
-// Colors
-//
-// Markup:
-// <p class="icon-map" style="color: #ffffff;">$white</p>
-// <p class="icon-map" style="color: #040404;">$black</p>
-// <p class="icon-map" style="color: #157bac;">$blue</p>
-// <p class="icon-map" style="color: #096fa0;">$blue-contrast</p>
-// <p class="icon-map" style="color: #e6f9ff;">$light-blue</p>
-// <p class="icon-map" style="color: #f2fcff;">$pale-blue</p>
-// <p class="icon-map" style="color: #c6e9ff;">$mid-blue</p>
-// <p class="icon-map" style="color: #4b9bbf;">$dark-blue</p>
-// <p class="icon-map" style="color: #f7f7f7;">$light-gray</p>
-// <p class="icon-map" style="color: #ebebeb;">$mid-gray</p>
-// <p class="icon-map" style="color: #4a4a4a;">$dark-gray</p>
-// <p class="icon-map" style="color: #303030;">$light-black</p>
-//
-// Styleguide colors
-
-// v3
 $white: #ffffff;
 $black: #040404;
 $green: #96bc7f;
@@ -61,7 +43,6 @@ $dark-gray: #4a4a4a;
 $light-black: #303030;
 $silver: silver;
 
-// As hex codes */
 
 $color-primary-0: #c9e9e7;	// Main Primary color */
 $color-primary-1: #000000;
@@ -81,6 +62,7 @@ $rgba-primary-5: rgb(246, 246, 246);
 
 // Font Colors
 $base-font-color: $dark-gray;
+$base-selected-font-background-color: $light-gray-dark;
 $base-accent-color: $mid-blue;
 
 // Padding

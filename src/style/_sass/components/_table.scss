@@ -1,9 +1,24 @@
 
-doc-table {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
+table {
+  @include font-size(0.9);
+
+  border: 1px solid $mid-gray;
+  border-spacing: 2px;
+  color: $dark-gray;
+  font-weight: $weight-light;
+  margin-bottom: $base-padding;
+}
+
+thead {
+  background-color: $primary-button-bg-color;
+  border-bottom: 2px solid $mid-gray;
+  font-weight: $weight-book;
+  text-align: center;
+}
+
+td {
+  border: 1px solid $mid-gray;
+  padding: 5px;
 }
 
 .tables {
@@ -58,52 +73,19 @@ doc-table {
           margin-right: 3px;
         }
       }
-      //td:hover {
-      //	background-color: $table-hover-background;
-      //}
     }
 
     tr:nth-child(even) {
       background-color: $table-stripe-background;
-      //td:hover {
-      //	background-color: $table-stripe-background-hover;
-      //}
     }
 
     tr.active {
       background-color: $table-active-background;
     }
-
   }
-}
-
-.tables-fixed-height {
-  max-height: 300px;
-  overflow-y: auto;
-  display: block;
-  width: 100%;
-
-  tbody {
-    tr {
-      td {
-        padding: 2px 2px;
-        font-size: 0.8em;
-      }
-      td:last-of-type {
-        text-align: right;
-      }
-    }
-  }
-}
-
-.tables-buttons {
-  display: block;
-  width: 100%;
-  text-align: right;
 }
 
 .tables-condense {
-
   tbody {
     tr {
       td {
@@ -164,9 +146,4 @@ doc-table {
 .table-title {
   margin-top: 0;
   display: inline-block;
-}
-
-.table-line-prefix {
-  font-size: 10px;
-  line-height: 1.5em;
 }

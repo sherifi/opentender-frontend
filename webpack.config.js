@@ -38,7 +38,12 @@ const defaultConfig = () => {
 			loaders: [
 				{test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader']},
 				{test: /\.html$/, loader: 'raw-loader'},
-				{test: /\.json$/, loader: 'raw-loader'}
+				{test: /\.json$/, loader: 'raw-loader'},
+				{
+					test: /\.scss$/,
+					exclude: /node_modules/,
+					loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
+				}
 			]
 		},
 		plugins: [
