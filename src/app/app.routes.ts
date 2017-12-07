@@ -39,7 +39,7 @@ export const routes: Routes = [
 	{
 		path: 'dashboards',
 		component: DashboardsPage,
-		data: {title: 'Dashboards', menu: true, routerLink: ['dashboards/market-analysis']},
+		data: {title: 'Dashboards', menu: true, routerLink: ['/dashboards/market-analysis']},
 		children: [
 			{path: '', redirectTo: 'administrative-capacity', pathMatch: 'full'},
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage, data: {title: 'Market Analysis', menu: true}},
@@ -51,7 +51,7 @@ export const routes: Routes = [
 	{
 		path: 'search',
 		component: SearchPage,
-		data: {title: 'Search', menu: true, routerLink: ['search/tender']},
+		data: {title: 'Search', menu: true, routerLink: ['/search/tender']},
 		children: [
 			{path: '', redirectTo: 'tender', pathMatch: 'full'},
 			{path: 'tender', component: SearchTenderPage, data: {title: 'Search Tender', menu: true, menu_title: 'Tender'}},
@@ -69,7 +69,7 @@ export const routes: Routes = [
 	{
 		path: 'about',
 		component: AboutPage,
-		data: {title: 'About', menu: true, routerLink: ['about/about-opentender']},
+		data: {title: 'About', menu: true, routerLink: ['/about/about-opentender']},
 		children: [
 			{path: '', redirectTo: 'about-opentender', pathMatch: 'full'},
 			{path: 'about-opentender', component: AboutOpentenderPage, data: {title: 'About Opentender', menu: true}},

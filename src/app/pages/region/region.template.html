@@ -9,7 +9,7 @@
 	</div>
 	<div class="container container-padded-top" *ngIf="parent_regions.length>0">
 		<div class="title"><ng-container i18n>Parent Regions</ng-container>:</div>
-		<div *ngFor="let val of parent_regions"><a [routerLink]="'region/'+val.id">{{val.name}} (NUTS {{val.id}})</a></div>
+		<div *ngFor="let val of parent_regions"><a [routerLink]="['/region/'+val.id]">{{val.name}} (NUTS {{val.id}})</a></div>
 	</div>
 	<div [ngClass]="{'is-loading': loading>0}">
 		<div class="container container-margin">
