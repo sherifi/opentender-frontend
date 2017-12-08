@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, ChangeDetectionStrategy, NgZone, ChangeDetectorRef, SimpleChanges} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, ChangeDetectionStrategy, NgZone, ChangeDetectorRef, SimpleChanges, ViewEncapsulation} from '@angular/core';
 import {UrlId} from '../../utils/id.helper';
 import {IDomain} from '../common.interface';
 import {ViewDimensions} from '../../utils/view-dimensions.helper';
@@ -21,7 +21,9 @@ import {brushX} from 'd3-brush';
 			<svg:rect x="0" y="0" class="brush-background" [attr.width]="view[0]" [attr.height]="height"/>
 			<svg:g class="brush"></svg:g>
 		</svg:g>`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['timeline.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class TimelineComponent implements OnChanges {
 

@@ -18,7 +18,8 @@ import {AlignmentTypes} from './alignment.type';
 			</div>
 		</div>
 	`,
-	encapsulation: ViewEncapsulation.None
+	encapsulation: ViewEncapsulation.None,
+	styleUrls: ['tooltip.component.scss']
 })
 export class TooltipContentComponent implements AfterViewInit {
 

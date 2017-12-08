@@ -1,4 +1,4 @@
-import {Component, ContentChild, ElementRef, HostListener, Input, TemplateRef, ViewChild, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ContentChild, ElementRef, HostListener, Input, TemplateRef, ViewChild, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import {ChartComponent} from '../common/chart/chart.component';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
@@ -49,6 +49,8 @@ import {forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY}
 		</ngx-charts-chart>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['force-directed-graph.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class ForceDirectedGraphComponent extends BaseChartComponent {
 	@Input() chart: IChartFlowChartSettings;

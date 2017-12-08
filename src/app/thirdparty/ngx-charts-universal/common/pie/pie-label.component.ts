@@ -1,4 +1,4 @@
-import {Component, Input, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
 import {arc} from 'd3-shape';
@@ -7,21 +7,23 @@ import 'd3-transition';
 @Component({
 	selector: 'g[ngx-charts-pie-label]',
 	template: `
-    <title>{{label}}</title>
-    <svg:text class="pie-label" dy=".35em"
-      [attr.transform]="transform"
-      [style.text-anchor]="textAnc"
-      [style.shape-rendering]="'crispEdges'">
-      {{text}}
-    </svg:text>
-    <svg:path fill="none" class="line"
-      [attr.d]="line"
-      [attr.stroke]="color"
-      [style.stroke-dasharray]="2000"
-      [style.stroke-dashoffset]="0">
-    </svg:path>
-  `,
+		<title>{{label}}</title>
+		<svg:text class="pie-label" dy=".35em"
+				  [attr.transform]="transform"
+				  [style.text-anchor]="textAnc"
+				  [style.shape-rendering]="'crispEdges'">
+			{{text}}
+		</svg:text>
+		<svg:path fill="none" class="line"
+				  [attr.d]="line"
+				  [attr.stroke]="color"
+				  [style.stroke-dasharray]="2000"
+				  [style.stroke-dashoffset]="0">
+		</svg:path>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['pie-label.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class PieLabelComponent implements OnChanges {
 

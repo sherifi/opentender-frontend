@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, OnChanges, ViewChildren, SimpleChanges, ChangeDetectionStrategy, Renderer2} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, ViewChildren, SimpleChanges, ChangeDetectionStrategy, Renderer2, ViewEncapsulation} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
 import {PlatformService} from '../../../../services/platform.service';
 
@@ -48,7 +48,9 @@ import {PlatformService} from '../../../../services/platform.service';
 			/>
 		</svg:g>
 	`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['area-tooltip-component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class AreaTooltipComponent implements OnChanges {
 	tooltipAreas: any[];

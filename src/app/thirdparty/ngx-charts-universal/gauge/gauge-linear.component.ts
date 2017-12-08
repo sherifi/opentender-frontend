@@ -1,4 +1,4 @@
-import {Component, Input, ElementRef, ViewChild, AfterViewInit, ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
+import {Component, Input, ElementRef, ViewChild, AfterViewInit, ChangeDetectionStrategy, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {ColorHelper} from '../utils/color.helper';
@@ -7,55 +7,58 @@ import {scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-linear-gauge',
-	template: `<ngx-charts-chart
-		[dim]="dim" [chart]="chart" [data]="data"
-		(click)="onClick()">
-	<svg:g class="linear-gauge chart">
-		<svg:g ngx-charts-bar
-			   class="background-bar"
-			   [width]="viewDim.width"
-			   [height]="3"
-			   [x]="margin[3]"
-			   [y]="viewDim.height / 2 + margin[0] - 2"
-			   [data]="{}"
-			   [orientation]="'horizontal'"
-			   [roundEdges]="true">
-		</svg:g>
-		<svg:g ngx-charts-bar
-			   [width]="valueScale(value)"
-			   [height]="3"
-			   [x]="margin[3]"
-			   [y]="viewDim.height / 2 + margin[0] - 2"
-			   [fill]="colors.getColor(value)"
-			   [data]="{}" [orientation]="'horizontal'" [roundEdges]="true">
-		</svg:g>
-		<svg:line *ngIf="hasPreviousValue" [attr.transform]="transformLine" x1="0" y1="5" x2="0" y2="15" [attr.stroke]="colors.getColor(value)"/>
-		<svg:line *ngIf="hasPreviousValue" [attr.transform]="transformLine" x1="0" y1="-5" x2="0" y2="-15" [attr.stroke]="colors.getColor(value)"/>
-		<svg:g [attr.transform]="transform">
-			<svg:g [attr.transform]="valueTranslate">
-				<svg:text #valueTextEl
-						  class="value"
-						  [style.text-anchor]="'middle'"
-						  [attr.transform]="valueTextTransform"
-						  alignment-baseline="after-edge">
-					{{displayValue}}
-				</svg:text>
-			</svg:g>
+	template: `
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				(click)="onClick()">
+			<svg:g class="linear-gauge chart">
+				<svg:g ngx-charts-bar
+					   class="background-bar"
+					   [width]="viewDim.width"
+					   [height]="3"
+					   [x]="margin[3]"
+					   [y]="viewDim.height / 2 + margin[0] - 2"
+					   [data]="{}"
+					   [orientation]="'horizontal'"
+					   [roundEdges]="true">
+				</svg:g>
+				<svg:g ngx-charts-bar
+					   [width]="valueScale(value)"
+					   [height]="3"
+					   [x]="margin[3]"
+					   [y]="viewDim.height / 2 + margin[0] - 2"
+					   [fill]="colors.getColor(value)"
+					   [data]="{}" [orientation]="'horizontal'" [roundEdges]="true">
+				</svg:g>
+				<svg:line *ngIf="hasPreviousValue" [attr.transform]="transformLine" x1="0" y1="5" x2="0" y2="15" [attr.stroke]="colors.getColor(value)"/>
+				<svg:line *ngIf="hasPreviousValue" [attr.transform]="transformLine" x1="0" y1="-5" x2="0" y2="-15" [attr.stroke]="colors.getColor(value)"/>
+				<svg:g [attr.transform]="transform">
+					<svg:g [attr.transform]="valueTranslate">
+						<svg:text #valueTextEl
+								  class="value"
+								  [style.text-anchor]="'middle'"
+								  [attr.transform]="valueTextTransform"
+								  alignment-baseline="after-edge">
+							{{displayValue}}
+						</svg:text>
+					</svg:g>
 
-			<svg:g [attr.transform]="unitsTranslate">
-				<svg:text #unitsTextEl
-						  class="units"
-						  [style.text-anchor]="'middle'"
-						  [attr.transform]="unitsTextTransform"
-						  alignment-baseline="before-edge">
-					{{chart.units}}
-				</svg:text>
+					<svg:g [attr.transform]="unitsTranslate">
+						<svg:text #unitsTextEl
+								  class="units"
+								  [style.text-anchor]="'middle'"
+								  [attr.transform]="unitsTextTransform"
+								  alignment-baseline="before-edge">
+							{{chart.units}}
+						</svg:text>
+					</svg:g>
+				</svg:g>
 			</svg:g>
-		</svg:g>
-	</svg:g>
-</ngx-charts-chart>
+		</ngx-charts-chart>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['gauge-linear.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class LinearGaugeComponent extends BaseChartComponent implements AfterViewInit {
 	@Input() data: Array<IChartData>;

@@ -1,46 +1,49 @@
-import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import {calculateViewDimensions} from '../utils/view-dimensions.helper';
 import {BasePieChartComponent} from './pie-chart-base.component';
 import {IChartPieSettings, IChartData} from '../chart.interface';
 
 @Component({
 	selector: 'ngx-charts-advanced-pie-chart',
-	template: `<div
-		[style.width.px]="viewDim.width"
-		[style.height.px]="viewDim.height">
-	<div class="advanced-pie chart"
-		 [style.width.px]="viewDim.width"
-		 [style.height.px]="viewDim.height">
-		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
-			<svg:g
-					[attr.transform]="transform"
-					class="pie chart">
-				<svg:g ngx-charts-pie-series
-					   [colors]="colors"
-					   [showLabels]="chart.labels"
-					   [series]="data"
-					   [innerRadius]="innerRadius"
-					   [activeEntries]="activeEntries"
-					   [outerRadius]="outerRadius"
-					   [gradient]="chart.gradient"
-					   (select)="onClick($event)">
-				</svg:g>
-			</svg:g>
-		</ngx-charts-chart>
-	</div>
-	<div class="advanced-pie-legend-wrapper"
-		 [style.width.px]="legendWidth - viewDim.width">
-		<ngx-charts-advanced-legend
-				[data]="data"
-				[colors]="colors"
-				[width]="legendWidth - viewDim.width - margin[1]"
-				(select)="onClick($event)"
-				(activate)="onActivate($event)"
-				(deactivate)="onDeactivate($event)">
-		</ngx-charts-advanced-legend>
-	</div>
-</div>`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	template: `
+		<div
+				[style.width.px]="viewDim.width"
+				[style.height.px]="viewDim.height">
+			<div class="advanced-pie chart"
+				 [style.width.px]="viewDim.width"
+				 [style.height.px]="viewDim.height">
+				<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
+					<svg:g
+							[attr.transform]="transform"
+							class="pie chart">
+						<svg:g ngx-charts-pie-series
+							   [colors]="colors"
+							   [showLabels]="chart.labels"
+							   [series]="data"
+							   [innerRadius]="innerRadius"
+							   [activeEntries]="activeEntries"
+							   [outerRadius]="outerRadius"
+							   [gradient]="chart.gradient"
+							   (select)="onClick($event)">
+						</svg:g>
+					</svg:g>
+				</ngx-charts-chart>
+			</div>
+			<div class="advanced-pie-legend-wrapper"
+				 [style.width.px]="legendWidth - viewDim.width">
+				<ngx-charts-advanced-legend
+						[data]="data"
+						[colors]="colors"
+						[width]="legendWidth - viewDim.width - margin[1]"
+						(select)="onClick($event)"
+						(activate)="onActivate($event)"
+						(deactivate)="onDeactivate($event)">
+				</ngx-charts-advanced-legend>
+			</div>
+		</div>`,
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['pie-chart-advanced.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class PieChartAdvancedComponent extends BasePieChartComponent {
 	@Input() data: Array<IChartData>;

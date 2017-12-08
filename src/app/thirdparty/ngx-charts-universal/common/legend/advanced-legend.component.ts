@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, SimpleChanges, OnChanges} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, SimpleChanges, OnChanges, ViewEncapsulation} from '@angular/core';
 import {trimLabel, formatLabel} from '../../utils/label.helper';
 
 @Component({
@@ -44,7 +44,9 @@ import {trimLabel, formatLabel} from '../../utils/label.helper';
 			</div>
 		</div>
 	`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['advanced-legend.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class AdvancedLegendComponent implements OnChanges {
 

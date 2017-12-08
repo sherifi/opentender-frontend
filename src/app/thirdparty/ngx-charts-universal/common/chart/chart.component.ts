@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, ViewContainerRef, ChangeDetectionStrategy, EventEmitter, Output, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, ViewContainerRef, ChangeDetectionStrategy, EventEmitter, Output, SimpleChanges, ViewEncapsulation} from '@angular/core';
 // import {animate, style, transition, trigger} from '@angular/animations';
 import {InjectionService} from '../tooltip/injection.service';
 import {IChartDimension, IChartBaseSettings, IChartData} from '../../chart.interface';
@@ -39,6 +39,8 @@ import {ILegendOptions} from '../common.interface';
 		</div>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['chart.component.scss'],
+	encapsulation: ViewEncapsulation.None
 	// animations: [
 	// 	trigger('animationState', [
 	// 		transition('void => *', [

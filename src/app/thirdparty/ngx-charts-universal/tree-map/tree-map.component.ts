@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, ElementRef, ViewEncapsulation} from '@angular/core';
 import {BaseChartComponent, PlatformService} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {ColorHelper} from '../utils/color.helper';
@@ -20,7 +20,9 @@ import {treemap, stratify} from 'd3-hierarchy';
 			</svg:g>
 		</ngx-charts-chart>
 	`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['tree-map.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class TreeMapComponent extends BaseChartComponent {
 	@Input() chart: IChartBaseSettings;

@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter} from '@angular/core';
+import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {gridLayout} from '../utils/grid.helper';
 import {formatLabel} from '../utils/label.helper';
@@ -14,7 +14,7 @@ import {IDomain} from '../common/common.interface';
 	selector: 'ngx-charts-values-grid',
 	template: `
 		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
-			<svg:g [attr.transform]="transform" class="pie-grid chart">
+			<svg:g [attr.transform]="transform" class="values-grid chart">
 				<svg:g *ngFor="let series of series"
 					   class="pie-grid-item"
 					   [attr.transform]="series.transform"
@@ -49,6 +49,8 @@ import {IDomain} from '../common/common.interface';
 			</svg:g>
 		</ngx-charts-chart>`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['values-grid.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class PieValuesGridComponent extends BaseChartComponent {
 	@Input() data: Array<IChartData>;

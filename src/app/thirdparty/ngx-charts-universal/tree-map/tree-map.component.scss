@@ -1,0 +1,44 @@
+
+.tree-map {
+
+	.treemap-box {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 1em;
+		margin: 0;
+		padding: 0;
+		padding-left: 2px;
+		padding-right: 2px;
+		cursor: pointer;
+
+		&.wordwrap {
+			/* Non standard for webkit */
+			word-break: break-word;
+			word-break: keep-all;
+			text-overflow: ellipsis;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			-ms-hyphens: auto;
+			hyphens: auto;
+		}
+	}
+
+	.treemap-label {
+		font-size: 0.7em;
+		text-overflow: ellipsis;
+		display: block;
+		overflow: hidden;
+		max-height: 80%;
+	}
+
+	.treemap-val {
+		line-height: 1em;
+		font-size: 1em;
+		padding-top: 5px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		display: block;
+		white-space: nowrap;
+	}
+}

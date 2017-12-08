@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter} from '@angular/core';
+import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {calculateViewDimensions} from '../utils/view-dimensions.helper';
 import {gridLayout} from '../utils/grid.helper';
 import {trimLabel, formatLabel} from '../utils/label.helper';
@@ -58,6 +58,8 @@ import {min} from 'd3-array';
 			</svg:g>
 		</ngx-charts-chart>`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['pie-chart-grid.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class PieGridComponent extends BasePieChartComponent {
 	@Input() chart: IChartPieSettings;

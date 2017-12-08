@@ -1,7 +1,7 @@
 import {
 	Component,
 	Input,
-	ChangeDetectionStrategy
+	ChangeDetectionStrategy, ViewEncapsulation
 } from '@angular/core';
 
 @Component({
@@ -16,14 +16,13 @@ import {
 				class="gridpanel"
 		/>
 	`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	encapsulation: ViewEncapsulation.None
 })
 export class GridPanelComponent {
-
 	@Input() path;
 	@Input() width;
 	@Input() height;
 	@Input() x;
 	@Input() y;
-
 }

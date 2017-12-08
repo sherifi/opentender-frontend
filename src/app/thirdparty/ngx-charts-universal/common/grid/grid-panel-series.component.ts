@@ -3,7 +3,7 @@ import {
 	SimpleChanges,
 	Input,
 	OnChanges,
-	ChangeDetectionStrategy
+	ChangeDetectionStrategy, ViewEncapsulation
 } from '@angular/core';
 
 @Component({
@@ -19,7 +19,9 @@ import {
 			   [class.even]="gridPanel.class === 'even'">
 		</svg:g>
 	`,
-	changeDetection: ChangeDetectionStrategy.OnPush
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	styleUrls: ['grid-panel-series.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class GridPanelSeriesComponent implements OnChanges {
 	gridPanels: any[];
