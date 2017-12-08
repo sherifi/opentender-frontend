@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserPrebootModule} from 'preboot/browser';
+// import {BrowserPrebootModule} from 'preboot/browser';
 import {Angulartics2, Angulartics2Module} from 'angulartics2';
 import {Angulartics2Piwik} from './angulartics2-piwik.fix';
 import {ConfigService} from '../app/services/config.service';
@@ -17,7 +17,7 @@ import {ConfigService} from '../app/services/config.service';
 	imports: [
 		HttpClientModule,
 		BrowserModule.withServerTransition({appId: 'opentender'}),
-		BrowserPrebootModule.replayEvents(),
+		// BrowserPrebootModule.replayEvents(),
 		BrowserAnimationsModule,
 		LeafletModule.forRoot(),
 		...AppConfig.imports,
