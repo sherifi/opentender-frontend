@@ -85,7 +85,7 @@ import {GraphSectorTreemap} from './components/graphs/sector-treemap.component';
 import {HeaderComponent} from './components/header/header.component';
 import {I18NComponent} from './components/i18n.component';
 import {MapBuyersComponent} from './components/maps/nuts-map-buyer.component';
-import {MapComponent} from './components/maps/nuts-map.component';
+import {NUTSMapComponent} from './components/maps/nuts-map.component';
 import {MapHomeComponent} from './components/maps/nuts-map-home.component';
 import {MapPortalComponent} from './components/maps/nuts-map-portal.component';
 import {MapRegionComponent} from './components/maps/nuts-map-region.component';
@@ -111,6 +111,7 @@ import {ValueInputComponent} from './components/searchbox/components/value-input
 import {GraphScoreGridComponent} from './components/graphs/score-grid.component';
 import {SelectYearRangeComponent} from './components/selects/year-range/select-year-range.component';
 import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
+import {MapComponent} from './components/maps/leaflet.component';
 
 const AppConfig = {
 	declarations: [
@@ -126,6 +127,7 @@ const AppConfig = {
 		HeaderComponent,
 		PaginationComponent,
 		MapComponent,
+		NUTSMapComponent,
 		MapHomeComponent,
 		MapPortalComponent,
 		MapRegionComponent,
