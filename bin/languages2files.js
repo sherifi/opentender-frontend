@@ -48,7 +48,7 @@ let prepareProject = function () {
 	fs.copySync(path.join(source, 'tsconfig.json'), path.join(dest, 'tsconfig.json'));
 	fs.copySync(path.join(source, 'tslint.json'), path.join(dest, 'tslint.json'));
 	fs.copySync(path.join(source, 'config.js'), path.join(dest, 'config.js'));
-	fs.copySync(path.join(source, 'webpack.config.js'), path.join(dest, 'webpack.config.js'));
+	// fs.copySync(path.join(source, 'webpack.config.js'), path.join(dest, 'webpack.config.js'));
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
 	fillI18nTemplate(path.join(dest, 'src/app/components/i18n.template.html'));
@@ -79,10 +79,16 @@ let runNGi18n = function (cb) {
 	if (!fs.existsSync(path.join(dest, 'messages.xlf'))) {
 		return cb('Error: result messages.xlf does not exists, can not continue');
 	}
-	fs.copySync(path.join(dest, 'messages.xlf'), source_message);
-	removeDest();
-	console.log(source_message, 'written');
-	fs.readFile(source_message, (err, data) => {
+	fs.readFile(path.join(dest, 'messages.xlf'), (err, data) => {
+		let l = XMLLite.xml2js(data.toString());
+		let currentNodes = l.children[0].children[0].children[0].children;
+		if (!currentNodes) {
+			console.log('language file is empty? aborting...');
+			return;
+		}
+		fs.copySync(path.join(dest, 'messages.xlf'), source_message);
+		removeDest();
+		console.log(source_message, 'written');
 		if (err) return cb(err);
 		cb(null, data);
 	});
