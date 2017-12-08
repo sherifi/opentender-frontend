@@ -49,7 +49,7 @@ import {PlatformService} from '../../../../services/platform.service';
 		</svg:g>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	styleUrls: ['area-tooltip-component.scss'],
+	styleUrls: ['area-tooltip.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
 export class AreaTooltipComponent implements OnChanges {
