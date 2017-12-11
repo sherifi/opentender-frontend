@@ -88,7 +88,6 @@ import {MapBuyersComponent} from './components/maps/nuts-map-buyer.component';
 import {NUTSMapComponent} from './components/maps/nuts-map.component';
 import {MapHomeComponent} from './components/maps/nuts-map-home.component';
 import {MapPortalComponent} from './components/maps/nuts-map-portal.component';
-import {MapRegionComponent} from './components/maps/nuts-map-region.component';
 import {MapSuppliersComponent} from './components/maps/nuts-map-supplier.component';
 import {MapVolumeComponent} from './components/maps/nuts-map-volume.component';
 import {PageScrollDirective} from './directives/page-scroll.directive';
@@ -130,7 +129,6 @@ const AppConfig = {
 		NUTSMapComponent,
 		MapHomeComponent,
 		MapPortalComponent,
-		MapRegionComponent,
 		MapSuppliersComponent,
 		MapBuyersComponent,
 		MapVolumeComponent,
