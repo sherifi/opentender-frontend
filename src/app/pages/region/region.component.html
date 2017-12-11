@@ -1,9 +1,5 @@
-<div class="container-outer authority entity" *ngIf="!region">
-	<div class="container">
-		<div i18n>Loading…</div>
-	</div>
-</div>
-<div class="container-outer sector entity" *ngIf="region">
+<div class="container-outer" *ngIf="!region" loading></div>
+<div class="container-outer entity" *ngIf="region">
 	<div class="container">
 		<h1 class="container-title">{{region.name}} (NUTS {{region.id}})</h1>
 	</div>

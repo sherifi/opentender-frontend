@@ -1,8 +1,4 @@
-<div class="container-outer entity" *ngIf="!tender">
-	<div class="container">
-		<div i18n>Loading…</div>
-	</div>
-</div>
+<div class="container-outer" *ngIf="!tender" loading></div>
 <div class="container-outer entity" *ngIf="tender">
 	<div class="container">
 		<h1 class="container-title">{{tender.title}}</h1>

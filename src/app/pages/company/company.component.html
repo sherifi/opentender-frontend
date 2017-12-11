@@ -1,10 +1,5 @@
-<div class="container-outer authority entity" *ngIf="!company">
-	<div class="container">
-		<div i18n>Loading…</div>
-	</div>
-</div>
-
-<div class="container-outer company entity" *ngIf="company">
+<div class="container-outer" *ngIf="!company" loading></div>
+<div class="container-outer entity" *ngIf="company">
 	<div class="container container-padded-bottom">
 		<h1 class="container-title">{{company.name | nameGuard}}</h1>
 	</div>

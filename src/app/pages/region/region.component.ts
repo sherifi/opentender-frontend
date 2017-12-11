@@ -48,17 +48,17 @@ export class RegionPage implements OnInit, OnDestroy {
 			let id = params['id'];
 
 			this.loading++;
-			let sub = this.api.getRegionStats({ids: [id]}).subscribe(
-				(result) => {
-					this.display(result.data);
-				},
-				(error) => {
-					this.notify.error(error);
-				},
-				() => {
-					this.loading--;
-					sub.unsubscribe();
-				});
+			// let sub = this.api.getRegionStats({ids: [id]}).subscribe(
+			// 	(result) => {
+			// 		this.display(result.data);
+			// 	},
+			// 	(error) => {
+			// 		this.notify.error(error);
+			// 	},
+			// 	() => {
+			// 		this.loading--;
+			// 		sub.unsubscribe();
+			// 	});
 		});
 	}
 

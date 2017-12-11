@@ -111,6 +111,7 @@ import {GraphScoreGridComponent} from './components/graphs/score-grid.component'
 import {SelectYearRangeComponent} from './components/selects/year-range/select-year-range.component';
 import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
 import {MapComponent} from './components/maps/leaflet.component';
+import {LoadingComponent} from './components/loading/loading.component';
 
 const AppConfig = {
 	declarations: [
@@ -125,6 +126,7 @@ const AppConfig = {
 		FooterComponent,
 		HeaderComponent,
 		PaginationComponent,
+		LoadingComponent,
 		MapComponent,
 		NUTSMapComponent,
 		MapHomeComponent,
