@@ -15,4 +15,3 @@ const init = () => {
 
 enableProdMode();
 init();
-// setTimeout(init, 0);
