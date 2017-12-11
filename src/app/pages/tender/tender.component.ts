@@ -7,6 +7,7 @@ import {Consts} from '../../model/consts';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {I18NService} from '../../services/i18n.service';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
 	moduleId: __filename,
@@ -17,7 +18,7 @@ import {I18NService} from '../../services/i18n.service';
 export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
 	public loading: number = 0;
-	private sub: any;
+	private subscription: Subscription;
 	public showDownloadDialog: boolean = false;
 	public portal: Country;
 	public state: { [name: string]: { open: boolean, label?: string } } = {
@@ -81,22 +82,23 @@ export class TenderPage implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		this.sub = this.route.params.subscribe(params => {
+		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getTender(id).subscribe(
+			let sub = this.api.getTender(id).subscribe(
 				(result) => this.display(result.data),
 				(error) => {
 					this.notify.error(error);
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				});
 		});
 	}
 
 	ngOnDestroy() {
-		this.sub.unsubscribe();
+		this.subscription.unsubscribe();
 	}
 
 	display(tender: Definitions.Tender): void {

@@ -29,7 +29,7 @@ export class AboutDataQualityPage implements OnInit {
 
 	ngOnInit() {
 		this.loading++;
-		this.api.getFieldsUsage().subscribe(
+		let sub = this.api.getFieldsUsage().subscribe(
 			(result) => {
 				this.display(result.data);
 			},
@@ -38,6 +38,7 @@ export class AboutDataQualityPage implements OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

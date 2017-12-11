@@ -61,7 +61,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getAuthority(id).subscribe(
+			let sub = this.api.getAuthority(id).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
@@ -70,15 +70,16 @@ export class AuthorityPage implements OnInit, OnDestroy {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				});
 		});
 	}
 
 	ngOnDestroy() {
-		this.subscription.unsubscribe();
 		this.state.put('authority', {
 			columnIds: this.columnIds
 		});
+		this.subscription.unsubscribe();
 	}
 
 	display(data: { authority: IAuthority }): void {
@@ -104,7 +105,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			filters.push({field: 'buyers.mainActivities', type: ISearchFilterDefType[ISearchFilterDefType.term], value: this.authority.mainActivities});
 		}
 		this.loading++;
-		this.api.getAuthorityStats({ids, filters}).subscribe(
+		let sub = this.api.getAuthorityStats({ids, filters}).subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},
@@ -113,18 +114,20 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 
 	getSimilars(id: string) {
 		this.loading++;
-		this.api.getAuthoritySimilar(id).subscribe(
+		let sub = this.api.getAuthoritySimilar(id).subscribe(
 			result => this.displaySimilar(result.data),
 			error => {
 				this.notify.error(error);
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

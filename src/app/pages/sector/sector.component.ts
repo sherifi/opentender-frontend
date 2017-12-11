@@ -66,7 +66,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getSectorStats({ids: [id]}).subscribe(
+			let sub = this.api.getSectorStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
@@ -75,6 +75,7 @@ export class SectorPage implements OnInit, OnDestroy {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				});
 		});
 	}
@@ -114,13 +115,14 @@ export class SectorPage implements OnInit, OnDestroy {
 		}
 		let filters = this.buildFilters();
 		this.loading++;
-		this.api.getSectorStats({ids: [this.sector.id], filters: filters}).subscribe(
+		let sub = this.api.getSectorStats({ids: [this.sector.id], filters: filters}).subscribe(
 			(result) => this.displayStats(result.data.stats),
 			(error) => {
 				this.notify.error(error);
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

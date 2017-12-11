@@ -45,7 +45,7 @@ export class AutoCompleteComponent implements OnChanges {
 				return observer.next([]);
 			}
 			this.loading++;
-			this.api.autocomplete(this.entity, this.field, query).subscribe(
+			let sub = this.api.autocomplete(this.entity, this.field, query).subscribe(
 				(result: any) => {
 					observer.next(result.data);
 				},
@@ -55,6 +55,7 @@ export class AutoCompleteComponent implements OnChanges {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				}
 			);
 		});

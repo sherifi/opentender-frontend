@@ -129,7 +129,7 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 
 	loadMap() {
 		this.loading++;
-		this.api.getNutsMap(this.level).subscribe(
+		let sub = this.api.getNutsMap(this.level).subscribe(
 			(result) => {
 				this.displayNuts(result);
 			},
@@ -138,6 +138,7 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

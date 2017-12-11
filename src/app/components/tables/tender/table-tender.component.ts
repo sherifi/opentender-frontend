@@ -66,7 +66,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	download(): void {
 		this.downloadRequested = true;
 		let cmd = this.search_cmd;
-		this.api.requestDownload(cmd).subscribe(
+		let sub = this.api.requestDownload(cmd).subscribe(
 			(result) => {
 				this.downloadRequested = false;
 				if (this.showDownloadDialog) {
@@ -80,6 +80,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 				this.notify.error(error);
 			},
 			() => {
+				sub.unsubscribe();
 			});
 	}
 
@@ -114,7 +115,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
-		this.api.searchTender(cmd).subscribe(
+		let sub = this.api.searchTender(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
 					this.display(result.data);
@@ -128,6 +129,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

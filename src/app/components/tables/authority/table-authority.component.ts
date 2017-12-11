@@ -100,7 +100,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
-		this.api.searchAuthority(cmd).subscribe(
+		let sub = this.api.searchAuthority(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
 					this.display(result.data);
@@ -114,6 +114,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

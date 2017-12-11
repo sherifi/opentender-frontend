@@ -101,7 +101,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
-		this.api.searchCompany(cmd).subscribe(
+		let sub = this.api.searchCompany(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
 					this.display(result.data);
@@ -115,6 +115,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

@@ -17,7 +17,7 @@ export class SearchSectorPage implements OnInit {
 
 	ngOnInit(): void {
 		this.loading++;
-		this.api.getSectors().subscribe(
+		let sub = this.api.getSectors().subscribe(
 			result => {
 				this.display(result);
 			},
@@ -26,6 +26,7 @@ export class SearchSectorPage implements OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

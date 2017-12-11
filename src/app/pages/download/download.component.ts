@@ -31,7 +31,7 @@ export class DownloadPage implements OnInit {
 
 	refresh() {
 		let current_id = this.config.country.id || 'all';
-		this.api.getDownloads().subscribe(
+		let sub = this.api.getDownloads().subscribe(
 			(data: any) => {
 				data.forEach(download => {
 					download.name = Utils.expandCountry(download.country);
@@ -55,7 +55,7 @@ export class DownloadPage implements OnInit {
 			},
 			error => console.error(error),
 			() => {
-				// console.log('getDownloads complete');
+				sub.unsubscribe();
 			});
 	}
 }

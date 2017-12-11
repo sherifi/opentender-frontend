@@ -56,7 +56,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
-			this.api.getCompany(id).subscribe(
+			let sub = this.api.getCompany(id).subscribe(
 				result => {
 					this.display(result.data);
 				},
@@ -65,15 +65,16 @@ export class CompanyPage implements OnInit, OnDestroy {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				});
 		});
 	}
 
 	ngOnDestroy() {
-		this.subscription.unsubscribe();
 		this.state.put('company', {
 			columnIds: this.columnIds
 		});
+		this.subscription.unsubscribe();
 	}
 
 	benchmarkFilterChange(event) {
@@ -97,7 +98,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			}
 		}
 		this.loading++;
-		this.api.getCompanyStats({ids, filters}).subscribe(
+		let sub = this.api.getCompanyStats({ids, filters}).subscribe(
 			result => {
 				this.displayStats(result.data);
 			},
@@ -106,12 +107,13 @@ export class CompanyPage implements OnInit, OnDestroy {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 
 	getSimilars(id: string) {
 		this.loading++;
-		this.api.getCompanySimilar(id).subscribe(
+		let sub = this.api.getCompanySimilar(id).subscribe(
 			result => {
 				this.displaySimilar(result.data);
 			},
@@ -120,6 +122,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

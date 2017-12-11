@@ -58,7 +58,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 	private visualize() {
 		let filters = this.buildFilters();
 		this.loading++;
-		this.api.getMarketAnalysisStats({filters: filters}).subscribe(
+		let sub = this.api.getMarketAnalysisStats({filters: filters}).subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},
@@ -67,6 +67,7 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

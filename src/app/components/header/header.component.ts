@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {ConfigService, Country} from '../../services/config.service';
 import {routes} from '../../app.routes';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
 	moduleId: __filename,
@@ -9,24 +10,29 @@ import {routes} from '../../app.routes';
 	templateUrl: 'header.component.html',
 	styleUrls: ['header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
 	public country: Country;
 	public isRootPage = false;
 	public menuActive = false;
 	public current = null;
 	public menu = [];
+	public subscription: Subscription;
 
 	constructor(public router: Router, private config: ConfigService) {
 		this.country = config.country;
 		this.isRootPage = this.country.id === null;
 		this.buildMenu();
-		this.router.events.subscribe(e => {
+		this.subscription = this.router.events.subscribe(e => {
 			if (e instanceof NavigationStart) {
 				this.menuActive = false;
 			} else if (e instanceof NavigationEnd) {
 				this.setSubMenu();
 			}
 		});
+	}
+
+	public ngOnDestroy(): void {
+		this.subscription.unsubscribe();
 	}
 
 	private setSubMenu() {

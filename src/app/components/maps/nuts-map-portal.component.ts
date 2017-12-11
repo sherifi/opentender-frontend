@@ -64,7 +64,7 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 
 	private load() {
 		this.loading++;
-		this.api.getPortalMapData().subscribe(
+		let sub = this.api.getPortalMapData().subscribe(
 			(result) => {
 				this.display(result);
 			},
@@ -73,6 +73,7 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			}
 		);
 	}

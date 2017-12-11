@@ -1,6 +1,5 @@
 import {Directive, ElementRef, Input, HostListener} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
 import {PlatformService} from '../services/platform.service';
 
 @Directive({selector: '[pageScroll]'})
@@ -31,9 +30,9 @@ export class PageScrollDirective {
 			// Navigation is handled by the routerLink directive
 			// so we only need to listen for route change
 			// Note: the change event is also emitted when navigating to the current route again
-			let subscription: Subscription = <Subscription>this.router.events.subscribe((e) => {
+			let sub = this.router.events.subscribe((e) => {
 				if (e instanceof NavigationEnd) {
-					subscription.unsubscribe();
+					sub.unsubscribe();
 					this.scrollView(this.href);
 				}
 			});

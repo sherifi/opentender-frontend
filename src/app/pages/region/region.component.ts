@@ -48,7 +48,7 @@ export class RegionPage implements OnInit, OnDestroy {
 			let id = params['id'];
 
 			this.loading++;
-			this.api.getRegionStats({ids: [id]}).subscribe(
+			let sub = this.api.getRegionStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
@@ -57,6 +57,7 @@ export class RegionPage implements OnInit, OnDestroy {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				});
 		});
 	}

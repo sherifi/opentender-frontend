@@ -26,7 +26,7 @@ export class HomePage implements OnInit {
 
 	public ngOnInit(): void {
 		this.loading++;
-		this.api.getHomeStats().subscribe(
+		let sub = this.api.getHomeStats().subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},
@@ -35,6 +35,7 @@ export class HomePage implements OnInit {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

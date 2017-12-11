@@ -1,18 +1,20 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {Router, NavigationStart, ActivatedRoute, NavigationEnd} from '@angular/router';
 import {Meta, Title} from '@angular/platform-browser';
 import {ConfigService} from './config.service';
+import {Subscription} from 'rxjs/Subscription';
 
 @Injectable()
-export class TitleService {
+export class TitleService implements OnDestroy {
 	private defaultName: string = 'Opentender';
+	private subscription: Subscription;
 
 	constructor(private activatedRoute: ActivatedRoute, private config: ConfigService, private router: Router, private titleService: Title, private meta: Meta) {
 		let c = config.country;
 		if (c.id) {
 			this.defaultName += ' ' + c.name;
 		}
-		router.events.subscribe(e => {
+		this.subscription = router.events.subscribe(e => {
 			if (e instanceof NavigationStart) {
 				this.setDefault();
 			} else if (e instanceof NavigationEnd) {
@@ -27,6 +29,10 @@ export class TitleService {
 				}
 			}
 		});
+	}
+
+	ngOnDestroy() {
+		this.subscription.unsubscribe();
 	}
 
 	public setDefault(): void {

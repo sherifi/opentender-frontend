@@ -22,10 +22,11 @@ export class AboutFOIPage implements OnInit {
 	 * request the list of countries with foi portals informations
 	 */
 	public ngOnInit(): void {
-		this.api.getPortals().subscribe(
+		let sub = this.api.getPortals().subscribe(
 			(result) => this.portals = result.data,
 			(error) => console.error(error),
 			() => {
+				sub.unsubscribe();
 			});
 	}
 }

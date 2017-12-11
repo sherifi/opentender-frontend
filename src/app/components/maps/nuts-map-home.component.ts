@@ -55,7 +55,7 @@ export class MapHomeComponent {
 		this.title = this.getTitle();
 		if (this.map_companies) {
 			this.loading++;
-			this.api.getCompanyNutsStats().subscribe(
+			let sub = this.api.getCompanyNutsStats().subscribe(
 				(result) => {
 					this.map_level = level;
 					this.map_data = result.data;
@@ -65,11 +65,12 @@ export class MapHomeComponent {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				}
 			);
 		} else {
 			this.loading++;
-			this.api.getAuthorityNutsStats().subscribe(
+			let sub = this.api.getAuthorityNutsStats().subscribe(
 				(result) => {
 					this.map_level = level;
 					this.map_data = result.data;
@@ -79,6 +80,7 @@ export class MapHomeComponent {
 				},
 				() => {
 					this.loading--;
+					sub.unsubscribe();
 				}
 			);
 		}

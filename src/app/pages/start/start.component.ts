@@ -21,7 +21,7 @@ export class StartPage {
 		this.ip_country = config.country.ip;
 		this.current = this.config.country;
 		this.loading++;
-		this.api.getPortalsStats().subscribe(
+		let sub = this.api.getPortalsStats().subscribe(
 			(result) => {
 				this.display(result.data);
 			},
@@ -30,6 +30,7 @@ export class StartPage {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 

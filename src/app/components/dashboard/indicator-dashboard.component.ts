@@ -156,7 +156,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	visualize() {
 		let filters = this.buildFilters();
 		this.loading++;
-		this.api.getIndicatorStats({filters: filters}).subscribe(
+		let sub = this.api.getIndicatorStats({filters: filters}).subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},
@@ -165,6 +165,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			},
 			() => {
 				this.loading--;
+				sub.unsubscribe();
 			});
 	}
 
