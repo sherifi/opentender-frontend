@@ -193,6 +193,69 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="10498cb7788dfb689cb7ae44b02c8171cb36aaa3" datatype="html">
+        <source>Composite Scores</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e82e548747be8aa595d8f3df72a90d9e40d4a3ed" datatype="html">
+        <source>Transparency Score</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f6567ad1161a72fe32e32b0c22f4816e33608907" datatype="html">
+        <source>The Transparency score is the average of Transparency Indicators.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7192cab58ce7aa91936a64e5401f2f6e0f0a5157" datatype="html">
+        <source>Procurement Integrity Score</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77f714cf45e052c53b705f95f1e25809b20e3a55" datatype="html">
+        <source>The Procurement Integrity score is the average of Procurement Integrity Indicators.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d6f50cb3ff1e50fc4302cfef784a99ad9b374193" datatype="html">
+        <source>Administrative Capacity Score</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a38958957882e0403d7c765a45a605ba20024627" datatype="html">
+        <source>The Administrative Capacity score is the average of Administrative Capacity Indicators.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a760b1133506b725c66251807a4cb613b1b3718b" datatype="html">
+        <source>Good Procurement Score</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c444086165505c6a44674d6c1b45cfa6c3dca57" datatype="html">
+        <source>The overarching good procurement score is the average of the three composite scores above.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/glossary/glossary.component.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
         <source>How Opentender Works</source>
         <context-group purpose="location">
