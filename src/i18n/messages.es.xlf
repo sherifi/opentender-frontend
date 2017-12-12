@@ -1773,6 +1773,19 @@
           </context>
         </context-group>
       </trans-unit>
+      <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
+        <source>
+          The log files on our web server collect the following data:
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/imprint/imprint.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
         <source>
           IP address
@@ -3663,20 +3676,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/graphs/indicator-sectors.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/indicator-structure.component.ts
           </context>
           <context context-type="linenumber">
             2
@@ -7184,20 +7183,6 @@
           </context>
           <context context-type="linenumber">
             7
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="561a842beab46754848eaff1809e6747e7689ea7" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{caption}}">
-          </x>
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/selects/similar-list/select-similar-list.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
           </context>
         </context-group>
       </trans-unit>

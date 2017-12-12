@@ -249,6 +249,9 @@
             14
           </context>
         </context-group>
+        <target>
+          Ähnliche Behörden
+        </target>
       </trans-unit>
       <trans-unit id="0d3bd9656962cdf02b182fc14d4c86d1421218fe" datatype="html">
         <source>
@@ -318,6 +321,9 @@
             10
           </context>
         </context-group>
+        <target>
+          Ähnliche Firmen
+        </target>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
         <source>
@@ -1720,7 +1726,7 @@
           </context>
         </context-group>
         <target>
-          Nicht sicher wo anzufangen? Fang hier an…
+          Nicht sicher wohin? Fangen Sie hier an…
         </target>
       </trans-unit>
       <trans-unit id="35ff0c7c097243d436faa59dabe85512a571145a" datatype="html">
@@ -1799,6 +1805,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Digiwhist Projektkoordination
+        </target>
       </trans-unit>
       <trans-unit id="01dac0bf3d300f1a1556a5f312c5c69d06499aff" datatype="html">
         <source>
@@ -1836,6 +1845,9 @@
             17
           </context>
         </context-group>
+        <target>
+          Adresse
+        </target>
       </trans-unit>
       <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
         <source>
@@ -1849,6 +1861,9 @@
             26
           </context>
         </context-group>
+        <target>
+          Handelsregister
+        </target>
       </trans-unit>
       <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
         <source>
@@ -1862,6 +1877,9 @@
             27
           </context>
         </context-group>
+        <target>
+          Vereinsregisternummer
+        </target>
       </trans-unit>
       <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
         <source>
@@ -1875,6 +1893,9 @@
             28
           </context>
         </context-group>
+        <target>
+          Mwst.
+        </target>
       </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
         <source>
@@ -1888,6 +1909,9 @@
             29
           </context>
         </context-group>
+        <target>
+          Verweise und Links
+        </target>
       </trans-unit>
       <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
         <source>
@@ -1901,6 +1925,9 @@
             30
           </context>
         </context-group>
+        <target>
+          OKF DE ist nicht verantwortlich für Inhalte, auf die von diesen Seiten aus verwiesen wird. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der gelinkten/verknüpften Seiten hat der Autor keinerlei Einfluss.
+        </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
         <source>
@@ -1914,6 +1941,9 @@
             31
           </context>
         </context-group>
+        <target>
+          Haftungsausschluss
+        </target>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
         <source>
@@ -1927,6 +1957,9 @@
             32
           </context>
         </context-group>
+        <target>
+          Die auf dieser Website dargestellten Informationen und Ansichten sind ausschließlich die des/der Verfasser(s) und spiegeln weder die Meinung des DIGIWHIST-Konsortiums noch die offizielle Meinung der Europäischen Kommission wider. Weder die Europäische Kommission noch eine Person, die im Namen der Europäischen Kommission handelt, ist für die Verwendung der auf dieser Website veröffentlichten Informationen verantwortlich.
+        </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
         <source>
@@ -1945,6 +1978,9 @@
             33
           </context>
         </context-group>
+        <target>
+          Alle Inhalte von Digiwhist auf dieser Website sind unter &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; lizenziert.
+        </target>
       </trans-unit>
       <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
         <source>
@@ -1982,6 +2018,9 @@
             37
           </context>
         </context-group>
+        <target>
+          Die Open Knowledge Foundation Germany freut sich über Ihren Besuch auf unserer Website und Ihr Interesse am Projekt Horizon 2020 DIGIWHIST. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und halten uns strikt an die Regeln der Datenschutzgesetze (z.B. Bundesdatenschutzgesetz (BDSG), Telemediengesetz (TMG) und Gesetz gegen den unlauteren Wettbewerb (UWG)).
+        </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
         <source>
@@ -1995,6 +2034,9 @@
             38
           </context>
         </context-group>
+        <target>
+          Die nachfolgende Erklärung gibt Ihnen einen Überblick darüber, wie wir diesen Schutz gewährleisten und welche Art von Daten zu welchem Zweck erhoben werden.
+        </target>
       </trans-unit>
       <trans-unit id="49dab74a6f204996046f98e886e8160260f58628" datatype="html">
         <source>
@@ -2008,6 +2050,9 @@
             39
           </context>
         </context-group>
+        <target>
+          1. Anonyme Datenerhebung
+        </target>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
         <source>
@@ -2021,6 +2066,25 @@
             40
           </context>
         </context-group>
+        <target>
+          In den meisten Fällen können Sie die Website Opentender.eu besuchen, ohne dass wir persönliche Daten von Ihnen benötigen.
+        </target>
+      </trans-unit>
+      <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
+        <source>
+          The log files on our web server collect the following data:
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/imprint/imprint.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+        <target>
+          Die Log-Dateien unseres Webservers sammeln folgende Daten:
+        </target>
       </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
         <source>
@@ -2034,6 +2098,9 @@
             43
           </context>
         </context-group>
+        <target>
+          IP-Adresse
+        </target>
       </trans-unit>
       <trans-unit id="d376333bd7ba3b3b691d32aabe97366aabdcf644" datatype="html">
         <source>
@@ -2047,6 +2114,9 @@
             44
           </context>
         </context-group>
+        <target>
+          Datum, Zeit
+        </target>
       </trans-unit>
       <trans-unit id="9671e11011b3ebb58ca11fb31c01d1ac3c8704e3" datatype="html">
         <source>
@@ -2060,6 +2130,9 @@
             45
           </context>
         </context-group>
+        <target>
+          besuchte Seite, Referrer
+        </target>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
         <source>
@@ -2073,6 +2146,9 @@
             46
           </context>
         </context-group>
+        <target>
+          Browser
+        </target>
       </trans-unit>
       <trans-unit id="d5907df625e73d7d8c5075428fc21540304603b2" datatype="html">
         <source>
@@ -2086,6 +2162,9 @@
             47
           </context>
         </context-group>
+        <target>
+          Betriebssystem
+        </target>
       </trans-unit>
       <trans-unit id="a8c6d54131c79ef785fc7c2249374a6f25f76ffd" datatype="html">
         <source>
@@ -2099,6 +2178,9 @@
             49
           </context>
         </context-group>
+        <target>
+          Diese Daten stehen für statistische Auswertungen zur Verfügung, die Rohdaten werden von unserem Webhostingunternehmen monatlich gelöscht.
+        </target>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
         <source>
@@ -2112,6 +2194,9 @@
             51
           </context>
         </context-group>
+        <target>
+          2. Erhebung und Verarbeitung personenbezogener Daten
+        </target>
       </trans-unit>
       <trans-unit id="b56fd0fd74eaa2b386434213c4d5e8c632cbcabc" datatype="html">
         <source>
@@ -2125,6 +2210,9 @@
             52
           </context>
         </context-group>
+        <target>
+          Personenbezogene Daten werden nur im Rahmen der jeweils geltenden Vorschriften erhoben. Darüber hinaus erfolgt eine Nutzung Ihrer Daten für Zwecke der Werbung und Marktforschung sowie zur bedarfsgerechten Gestaltung unserer elektronischen Dienste nur, wenn Sie uns zuvor Ihre Einwilligung erteilt haben. Selbstverständlich haben Sie das Recht, eine erteilte Einwilligung mit Wirkung für die Zukunft jederzeit ganz oder teilweise zu widerrufen.
+        </target>
       </trans-unit>
       <trans-unit id="a0a8ca9b0db392405d5299ca16493cd321de4ee0" datatype="html">
         <source>
@@ -2138,6 +2226,9 @@
             54
           </context>
         </context-group>
+        <target>
+          3. Export und Verarbeitung der Daten in Staaten außerhalb des Europäischen Wirtschaftsraums (EWR)
+        </target>
       </trans-unit>
       <trans-unit id="a94a4cb46a4dd5450ca35df978441234f7bbfe8a" datatype="html">
         <source>
@@ -2151,6 +2242,9 @@
             55
           </context>
         </context-group>
+        <target>
+          Es werden keine Daten exportiert und keine Prozesse außerhalb des Europäischen Wirtschaftsraumes durchgeführt.
+        </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
         <source>
@@ -2164,6 +2258,9 @@
             57
           </context>
         </context-group>
+        <target>
+          4. Cookies und Website-Tracking
+        </target>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
         <source>
@@ -2177,6 +2274,9 @@
             58
           </context>
         </context-group>
+        <target>
+          Wir verwenden auf dieser Website Webanalysesysteme, die dazu dienen, die Besuche auf unserer Website zu messen und zu analysieren. Wir verwenden Ihre IP-Adresse zum Zweck der Datenerhebung, u.a. über den Internetverkehr, Ihren Browser und Ihren Computer.
+        </target>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
         <source>
@@ -2190,6 +2290,9 @@
             59
           </context>
         </context-group>
+        <target>
+          Wir verwenden die IP-Adresse oder Cookies nicht, um Sie persönlich zu identifizieren. Wir setzen das Webanalysesystem ein, um die Effizienz unserer Website zu steigern.
+        </target>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
         <source>
@@ -2203,6 +2306,9 @@
             60
           </context>
         </context-group>
+        <target>
+          Die meisten Browser akzeptieren Cookies automatisch. Sie können dies jedoch manuell verhindern, indem Sie die Einstellungen Ihres Browsers so ändern, dass Cookies nicht mehr akzeptiert werden. Einzelheiten hierzu entnehmen Sie bitte der Anleitung des Herstellers Ihres Browsers.
+        </target>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
         <source>
@@ -2216,6 +2322,9 @@
             62
           </context>
         </context-group>
+        <target>
+          5. Permanente Cookies / Drittanbieter-Cookies
+        </target>
       </trans-unit>
       <trans-unit id="21974757a955b5ae8dc8f3cad13b9aacf9e9a3f9" datatype="html">
         <source>
@@ -2229,6 +2338,9 @@
             63
           </context>
         </context-group>
+        <target>
+          Diese Website benutzt Piwik, einen Open-Source-Webanalysedienst. Piwik verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung der Website (einschließlich Ihrer IP-Adresse, die durch das letzte Oktett vor der Speicherung mit der Methode "_anonymizeIp()" abgeschnitten wurde) werden an unsere Server in Deutschland übertragen und dort gespeichert. Wir verwenden diese Informationen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen.
+        </target>
       </trans-unit>
       <trans-unit id="92e4b7e37947a8b945fc965353a1a79c88b0e93d" datatype="html">
         <source>
@@ -2242,6 +2354,9 @@
             65
           </context>
         </context-group>
+        <target>
+          7. Externe Links
+        </target>
       </trans-unit>
       <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
         <source>
@@ -2255,6 +2370,9 @@
             66
           </context>
         </context-group>
+        <target>
+          Wir sind bestrebt, Ihnen die bestmögliche Information zu geben. Deshalb finden Sie auf unserer Website Links, die auf Seiten Dritter verweisen. Soweit dies nicht offensichtlich erkennbar ist, weisen wir Sie darauf hin, dass es sich um externe Links handelt. OKF DE hat keinen Einfluss auf den Inhalt und die Gestaltung dieser Seiten fremder Anbieter und verweist daher auf deren Datenschutzerklärung. Bitte beachten Sie, dass die in dieser Datenschutzerklärung gegebenen Zusicherungen natürlich nicht notwendigerweise auch dort gelten.
+        </target>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
         <source>
@@ -2268,6 +2386,9 @@
             68
           </context>
         </context-group>
+        <target>
+          8. Sicherheit
+        </target>
       </trans-unit>
       <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
         <source>
@@ -2281,6 +2402,9 @@
             69
           </context>
         </context-group>
+        <target>
+          OKF DE setzt technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre an OKF DE übermittelten Daten nach dem derzeitigen Stand der Technik gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen. Wir verbessern kontinuierlich unsere Sicherheitsmaßnahmen im Zuge des technischen Fortschritts.
+        </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
         <source>
@@ -2294,6 +2418,9 @@
             71
           </context>
         </context-group>
+        <target>
+          9. Auskunftsrecht, Fragen zum Datenschutz und Widerrufsrecht
+        </target>
       </trans-unit>
       <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
         <source>
@@ -2307,6 +2434,9 @@
             72
           </context>
         </context-group>
+        <target>
+          Wir legen großen Wert auf Ihr Vertrauen in uns. Deshalb sind wir bestrebt, Ihnen jederzeit zur Verfügung zu stehen, um Sie zu informieren und Ihre Fragen zu beantworten. Wenn Sie Fragen hinsichtlich der Verarbeitung Ihrer persönlichen Daten haben, wenden Sie sich bitte an OKF DE; OKF DE steht Ihnen auch zur Verfügung, wenn Sie Auskünfte wünschen, Anträge stellen oder Beschwerden zum Thema Datenschutz einreichen möchten.
+        </target>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
         <source>
@@ -2320,6 +2450,9 @@
             73
           </context>
         </context-group>
+        <target>
+          Darüber hinaus haben Sie das Recht, eine erteilte Einwilligung mit Wirkung für die Zukunft jederzeit zu widerrufen.
+        </target>
       </trans-unit>
       <trans-unit id="a3b904f0fbef4d55a1ffc0b7809e17162127811e" datatype="html">
         <source>
@@ -2338,6 +2471,9 @@
             74
           </context>
         </context-group>
+        <target>
+          Anfragen hierzu richten Sie bitte an folgende Kontaktadresse: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;digiwhist@okfn.de&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="ad1c1442b4d5009646148af8153fcad20d40c3c2" datatype="html">
         <source>
@@ -3744,6 +3880,9 @@
             14
           </context>
         </context-group>
+        <target>
+          Anzahl der Ausschreibungen in der Region
+        </target>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
         <source>
@@ -4238,20 +4377,6 @@
         <target>
           &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; pro Branche
         </target>
-      </trans-unit>
-      <trans-unit id="045ed332fbb2645493d6955677247db0d1134c2d" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/graphs/indicator-structure.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
       </trans-unit>
       <trans-unit id="6990ad8d6182662e864495ac31c3758cda1c7a28" datatype="html">
         <source>
@@ -7055,6 +7180,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Verwaltungskapazität
+        </target>
       </trans-unit>
       <trans-unit id="TransparencyScore" datatype="html">
         <source>
@@ -7071,6 +7199,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Transparenz-Score
+        </target>
       </trans-unit>
       <trans-unit id="ProcurementIntegrityScore" datatype="html">
         <source>
@@ -7087,6 +7218,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Beschaffungsintegritäts-Score
+        </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
         <source>
@@ -7921,7 +8055,7 @@
           runtime
         </note>
         <target>
-          Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.
+          Die Veröffentlichungsrate ist das Verhältnis der beworbenen öffentlichen Beschaffungsausgaben zu den gesamten öffentlichen Beschaffungsausgaben eines bestimmten öffentlichen Auftraggebers.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
@@ -8401,20 +8535,6 @@
         <target>
           Hinzufügen
         </target>
-      </trans-unit>
-      <trans-unit id="561a842beab46754848eaff1809e6747e7689ea7" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{caption}}">
-          </x>
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/selects/similar-list/select-similar-list.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
         <source>
