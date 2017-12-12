@@ -107,6 +107,10 @@ export class ApiService {
 		return this.get<IApiResultTender>('tender/id/' + id);
 	}
 
+	getTenderStats(params: IGetByIdCommand): Observable<IApiResultStatStats> {
+		return this.post<IApiResultStatStats>('tender/stats', params);
+	}
+
 	getCompany(id: string): Observable<IApiResultCompany> {
 		return this.get<IApiResultCompany>('company/id/' + id);
 	}

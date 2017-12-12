@@ -8,6 +8,7 @@ import {CommonTooltipModule} from './thirdparty/ngx-charts-universal/common/tool
 import {TreeMapModule} from './thirdparty/ngx-charts-universal/tree-map/tree-map.module';
 import {PieChartModule} from './thirdparty/ngx-charts-universal/pie-chart/pie-chart.module';
 import {BarChartModule} from './thirdparty/ngx-charts-universal/bar-chart/bar-chart.module';
+import {HeatMapGridModule} from './thirdparty/ngx-charts-universal/heat-map-grid/heat-map-grid.module';
 import {MyDatePickerModule} from 'mydatepicker';
 
 import {App} from './app.component';
@@ -112,6 +113,7 @@ import {SelectYearRangeComponent} from './components/selects/year-range/select-y
 import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
 import {MapComponent} from './components/maps/leaflet.component';
 import {LoadingComponent} from './components/loading/loading.component';
+import {GraphBenchmarksPercentileComponent} from './components/graphs/benchmarks-percentile.component';
 
 const AppConfig = {
 	declarations: [
@@ -155,6 +157,7 @@ const AppConfig = {
 		ValueInputComponent,
 		DashboardsIndicatorComponent,
 		GraphBenchmarksComponent,
+		GraphBenchmarksPercentileComponent,
 		GraphIndicatorHistogramComponent,
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
@@ -220,6 +223,7 @@ const AppConfig = {
 		TreeMapModule,
 		PieChartModule,
 		BarChartModule,
+		HeatMapGridModule,
 		CommonTooltipModule,
 		SliderModule,
 		TypeaheadModule,

@@ -3,7 +3,6 @@ import {IBenchmarkFilter, ISeriesProvider, IStats} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
-import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	selector: 'graph[benchmarks]',
@@ -104,29 +103,29 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		benchmark: null
 	};
 
-	constructor(private platform: PlatformService) {
+	constructor() {
 		this.in_years.chart.xAxis.label = 'Year';
 		this.benchmark_groups = [];
-		let goodgroup = {
+		this.benchmark_groups.push({
 			name: 'Overall', benchmarks: [
 				{name: 'Good Procurement Score', id: 'TENDER', build: 'scores'}
 			]
-		};
-		this.benchmark_groups.push(goodgroup);
+		});
 		Object.keys(Consts.indicators).forEach(i_key => {
 			let indicator = Consts.indicators[i_key];
 			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' Score', id: i_key, build: 'scores'}]};
 			Object.keys(indicator.subindicators).forEach(key => {
-				group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key, build: 'scores'});
+				if (!indicator.subindicators[key].notused) {
+					group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key, build: 'scores'});
+				}
 			});
 			this.benchmark_groups.push(group);
 		});
-		let valuesgroup = {
+		this.benchmark_groups.push({
 			name: 'Contract Values', benchmarks: [
 				{name: 'Average Value (€)', id: 'avg_finalPriceEUR', build: 'values'}
 			]
-		};
-		this.benchmark_groups.push(valuesgroup);
+		});
 		this.active.benchmark_group = this.benchmark_groups[0];
 		this.handleGroupChange();
 	}
