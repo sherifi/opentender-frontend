@@ -7,7 +7,7 @@ import {Consts} from '../../model/consts';
 @Component({
 	selector: 'graph[indicator-structure]',
 	template: `
-		<div class="graph-title" i18n>{{title}}</div>
+		<div class="graph-title">{{title}}</div>
 		<ngx-charts-radar-chart
 				class="chart-container"
 				[chart]="graph.chart"
