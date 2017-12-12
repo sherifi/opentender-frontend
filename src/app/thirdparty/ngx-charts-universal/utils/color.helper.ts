@@ -41,6 +41,9 @@ export class ColorHelper {
 	}
 
 	getColor(value) {
+		if (value === null) {
+			return 'none';
+		}
 		let result;
 		if (this.scheme && this.scheme.getColor) {
 			result = this.scheme.getColor(value);

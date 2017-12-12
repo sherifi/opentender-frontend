@@ -3,17 +3,17 @@ import {Component, Input, SimpleChanges, Output, EventEmitter, OnChanges, Change
 @Component({
 	selector: 'g[ngx-charts-circle]',
 	template: `
-    <svg:circle
-      [attr.cx]="cx"
-      [attr.cy]="cy"
-      [attr.r]="r"
-      [attr.fill]="fill"
-      [attr.stroke]="stroke"
-      [attr.opacity]="circleOpacity"
-      [attr.class]="classNames"
-      [attr.pointer-events]="pointerEvents"
-    />
-  `,
+		<svg:circle
+				[attr.cx]="cx"
+				[attr.cy]="cy"
+				[attr.r]="r"
+				[attr.fill]="fill"
+				[attr.stroke]="stroke"
+				[attr.opacity]="circleOpacity"
+				[attr.class]="circleClassNames"
+				[attr.pointer-events]="pointerEvents"
+		/>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CircleComponent implements OnChanges {
@@ -32,6 +32,8 @@ export class CircleComponent implements OnChanges {
 	@Output() activate = new EventEmitter();
 	@Output() deactivate = new EventEmitter();
 
+	private circleClassNames = '';
+
 	@HostListener('click')
 	onClick() {
 		this.select.emit(this.data);
@@ -48,7 +50,7 @@ export class CircleComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.classNames = this.classNames.join(' ') + 'circle';
+		this.circleClassNames = (this.classNames ? this.classNames.join(' ') : '') + 'circle';
 	}
 
 }
