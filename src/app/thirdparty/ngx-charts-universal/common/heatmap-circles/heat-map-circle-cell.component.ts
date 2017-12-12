@@ -9,9 +9,9 @@ import 'd3-transition';
 		<svg:g class="cell">
 			<svg:circle *ngIf="data!==null"
 					class="circle"
-					[attr.cx]="x+(width/2)"
-					[attr.cy]="y+(height/2)"
-					[attr.r]="(height*(data/100))/2"
+					[attr.cx]="x"
+					[attr.cy]="y"
+					[attr.r]="r"
 					[attr.fill]="fill"
 					[attr.stroke]="stroke"
 					(click)="onClick()"></svg:circle>
@@ -22,6 +22,7 @@ import 'd3-transition';
 export class HeatMapCircleCellComponent implements OnChanges {
 
 	@Input() fill: string;
+	@Input() r: number;
 	@Input() x: number;
 	@Input() y: number;
 	@Input() width: number;

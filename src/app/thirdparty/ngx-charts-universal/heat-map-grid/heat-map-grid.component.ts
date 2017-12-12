@@ -162,7 +162,6 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 
 	setColors(): void {
 		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.valueDomain, this.chart.customColors);
-		// this.colors = new ColorHelper(this.chart.colorScheme, 'linear', this.valueDomain);
 	}
 
 	getLegendOptions(): ILegendOptions {

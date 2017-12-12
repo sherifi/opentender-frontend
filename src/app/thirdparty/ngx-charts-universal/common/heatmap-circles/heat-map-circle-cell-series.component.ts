@@ -1,10 +1,12 @@
 import {Component, Input, SimpleChanges, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {IChartData} from '../../chart.interface';
+import {scaleLog, scaleLinear} from 'd3-scale';
 
 interface ICell {
 	x: number;
 	y: number;
+	r: number;
 	width: number;
 	height: number;
 	fill: string;
@@ -22,6 +24,7 @@ interface ICell {
 				*ngFor="let c of cells; trackBy:trackBy"
 				[x]="c.x"
 				[y]="c.y"
+				[r]="c.r"
 				[width]="c.width"
 				[height]="c.height"
 				[fill]="c.fill"
@@ -57,14 +60,24 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 		if (!this.data) {
 			return [];
 		}
+		let width = this.xScale.bandwidth();
+		let height = this.yScale.bandwidth();
+		let scale = scaleLinear().domain([0.1, 100]).range([0, height / 2]);
+		let getRadius = (val) => {
+			if ((val === null) || (val < 0.1)) {
+				return 0;
+			}
+			return scale(val);
+		};
 		let cells: Array<ICell> = [];
 		this.data.map((row) => {
 			row.series.map((cell) => {
 				cells.push({
-					x: this.xScale(row.name),
-					y: this.yScale(cell.name),
-					width: this.xScale.bandwidth(),
-					height: this.yScale.bandwidth(),
+					x: this.xScale(row.name) + (width / 2),
+					y: this.yScale(cell.name) + (height / 2),
+					r: getRadius(cell.value),
+					width: width,
+					height: height,
 					fill: this.colors.getColor(cell.value),
 					data: cell.value,
 					label: cell.name,
