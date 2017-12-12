@@ -63,9 +63,9 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.state.documents.label = this.i18n.get('Documents');
 		this.state.publications.label = this.i18n.get('Publications');
 		this.viz.scores.TENDER.title = this.i18n.get('Good Procurement Score');
-		this.viz.scores.ADMINISTRATIVE.title = this.i18n.get('Administrative Capacity Indicator Score');
-		this.viz.scores.TRANSPARENCY.title = this.i18n.get('Transparency Indicator Score');
-		this.viz.scores.CORRUPTION.title = this.i18n.get('Procurement Integrity Indicator Score');
+		this.viz.scores.ADMINISTRATIVE.title = this.i18n.get('Administrative Capacity Score');
+		this.viz.scores.TRANSPARENCY.title = this.i18n.get('Transparency Score');
+		this.viz.scores.CORRUPTION.title = this.i18n.get('Procurement Integrity Score');
 		this.portal = config.country;
 	}
 

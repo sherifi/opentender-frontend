@@ -62,7 +62,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	}
 
 	public ngOnChanges(changes: SimpleChanges): void {
-		this.title = this.i18n.get(this.indicator.plural);
+		this.title = this.indicator.plural;
 		this.icon = this.indicator.icon;
 		this.subindicators = Utils.subindicators(this.indicator.id);
 		this.displayIndicatorTitles();
@@ -87,11 +87,11 @@ export class DashboardsIndicatorComponent implements OnChanges {
 
 	displayIndicatorTitles(): void {
 		if (!this.selected) {
-			this.indicatorTitle = this.i18n.get(this.indicator.plural);
+			this.indicatorTitle = this.indicator.plural;
 			this.searchPrefix = this.indicator.id;
 		} else {
 			this.searchPrefix = this.selected.id;
-			this.indicatorTitle = this.i18n.get(this.selected.name) + ' ' + this.i18n.get('Indicator');
+			this.indicatorTitle = this.selected.name + ' ' + this.i18n.get('Indicator');
 		}
 		this.viz.score_in_years.title = this.i18n.get('Average Score of') + ' ' + this.indicatorTitle + ' ' + this.i18n.get('over Time');
 		this.viz.score_in_sectors.title = this.i18n.get('Average Score of') + ' ' + this.indicatorTitle + ' ' + this.i18n.get('per Sector');
