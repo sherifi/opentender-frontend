@@ -137,9 +137,22 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 			let d = {};
 			Object.keys(o).forEach(year => {
 				let yd = o[year];
+				let val = null;
 				Object.keys(yd).forEach(percentile => {
 					d[percentile] = d[percentile] || {name: 'Percentile ' + percentile, series: []};
-					d[percentile].series.push({name: year, value: yd[percentile]});
+					let pval = yd[percentile];
+					if (pval !== null) {
+						if (val === null) {
+							val = pval;
+						} else {
+							let newval = pval;
+							pval = pval - val;
+							val = newval;
+						}
+					} else {
+						val = null;
+					}
+					d[percentile].series.push({name: year, value: pval});
 				});
 			});
 			this.graph.data = Object.keys(d).map(key => d[key]);
