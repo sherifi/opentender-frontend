@@ -1,7 +1,7 @@
 import {Component, Input, SimpleChanges, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {IChartData} from '../../chart.interface';
-import {scaleLog, scaleLinear} from 'd3-scale';
+import {scaleLog} from 'd3-scale';
 
 interface ICell {
 	x: number;
@@ -43,6 +43,7 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 	@Input() colors;
 	@Input() xScale;
 	@Input() yScale;
+	@Input() valueFormatting?: (val: number | Date | string) => string;
 
 	@Output() select = new EventEmitter();
 
@@ -62,7 +63,16 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 		}
 		let width = this.xScale.bandwidth();
 		let height = this.yScale.bandwidth();
-		let scale = scaleLinear().domain([0.1, 100]).range([0, height / 2]);
+		let max = 0;
+		this.data.forEach((row) => {
+			row.series.forEach((cell) => {
+				if (cell.value !== null) {
+					max = Math.max(cell.value, max);
+				}
+			});
+		});
+
+		let scale = scaleLog().base(5).domain([0.1, max]).range([0, height / 2]);
 		let getRadius = (val) => {
 			if ((val === null) || (val < 0.1)) {
 				return 0;
@@ -78,7 +88,7 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 					r: getRadius(cell.value),
 					width: width,
 					height: height,
-					fill: this.colors.getColor(cell.value),
+					fill: cell.color || this.colors.getColor(cell.value),
 					data: cell.value,
 					label: cell.name,
 					series: row.name,
@@ -90,7 +100,7 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 	}
 
 	getTooltipText(cell: ICell): string {
-		return getTooltipLabeledText(`${cell.series} • ${cell.label}`, cell.data === null ? 'NO DATA' : cell.data.toLocaleString());
+		return getTooltipLabeledText(`${cell.series} • ${cell.label}`, cell.data === null ? 'NO DATA' : (this.valueFormatting ? this.valueFormatting(cell.data) : cell.data.toLocaleString()));
 	}
 
 	trackBy(index: number, item: ICell): string {

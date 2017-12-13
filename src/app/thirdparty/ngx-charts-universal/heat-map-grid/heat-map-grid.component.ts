@@ -58,11 +58,16 @@ interface IRect {
 						  [attr.width]="rect.width"
 						  [attr.height]="rect.height"
 						  [attr.fill]="rect.fill"
+						  ngx-tooltip
+						  [tooltipPlacement]="'top'"
+						  [tooltipType]="'tooltip'"
+						  [tooltipTitle]="getRectTooltipText(rect)"
 				/>
 				<svg:g ngx-charts-heat-map-circle-cell-series
 					   [xScale]="xScale"
 					   [yScale]="yScale"
 					   [colors]="colors"
+					   [valueFormatting]="chart.valueFormatting"
 					   [data]="data"
 					   (select)="onClick($event)"
 				/>
@@ -74,6 +79,12 @@ interface IRect {
 export class HeatMapGridComponent extends BaseXYAxisComponent {
 	@Input() chart: IChartHeatmapSettings;
 	@Input() data: Array<IChartData>;
+	@Input() marker: {
+		group: string;
+		name: string;
+		value: number;
+		toolTipFormat: (marker) => string;
+	};
 	@Input() activeEntries: any[];
 	@Output() select: EventEmitter<any>;
 	@Output() activate: EventEmitter<any>;
@@ -191,19 +202,30 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 		if (this.xDomain) {
 			this.xDomain.map((xVal) => {
 				this.yDomain.map((yVal) => {
-					rects.push({
-						x: this.xScale(xVal),
-						y: this.yScale(yVal),
-						rx: 3,
-						width: this.xScale.bandwidth(),
-						height: this.yScale.bandwidth(),
-						fill: 'rgba(200,200,200,0.03)'
-					});
+					let isMarked = (this.marker && this.marker.name === xVal && this.marker.group === yVal);
+					if (isMarked) {
+						rects.push({
+							x: this.xScale(xVal),
+							y: this.yScale(yVal),
+							rx: 3,
+							width: this.xScale.bandwidth(),
+							height: this.yScale.bandwidth(),
+							fill: 'rgba(200,200,200,0.7)'
+						});
+					}
 				});
 			});
 		}
-
 		return rects;
+	}
+
+	getRectTooltipText(rect) {
+		if (this.marker) {
+			if (this.marker.toolTipFormat) {
+				return this.marker.toolTipFormat(this.marker);
+			}
+		}
+		return '';
 	}
 
 }
