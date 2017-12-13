@@ -216,6 +216,16 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 				});
 			});
 		}
+		if (rects.length === 0 && this.marker && this.marker.name) {
+			rects.push({
+				x: this.xScale(this.marker.name),
+				y: 0,
+				rx: 3,
+				width: this.xScale.bandwidth(),
+				height: this.viewDim.height,
+				fill: 'rgba(200,200,200,0.7)'
+			});
+		}
 		return rects;
 	}
 
