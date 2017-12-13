@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {IBenchmarkFilter, ISeriesProvider, IStatsPercentileInYears} from '../../app.interfaces';
+import {IBenchmarkFilter, ISeriesProvider, IStatsDistributionInYears} from '../../app.interfaces';
 import {IChartHeatmap} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
+import {marker} from 'leaflet';
 
 @Component({
-	selector: 'graph[benchmarks-percentile]',
+	selector: 'graph[benchmarks-distribution]',
 	template: `
 		<div class="graph-title">{{title}}</div>
 		<div class="benchmark-select">
@@ -35,13 +36,14 @@ import {Consts} from '../../model/consts';
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
+				[marker]="marker"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)"></ngx-charts-heat-map-grid>
 		<select-series-download-button [sender]="this"></select-series-download-button>
 	`,
 	styleUrls: ['benchmarks.component.scss']
 })
-export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesProvider {
+export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	title: string;
 	@Input()
@@ -49,13 +51,20 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 	@Input()
 	othersTitle: string;
 	@Input()
-	data: IStatsPercentileInYears;
+	data: IStatsDistributionInYears;
+	@Input()
+	highlight: {
+		year: string;
+		values: {
+			[key: string]: number;
+		};
+	};
 	@Input()
 	filters: Array<IBenchmarkFilter> = [];
 	@Output()
 	filtersChange = new EventEmitter();
 
-	histogramm_percentile: IChartHeatmap = {
+	histogram_distribution: IChartHeatmap = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -67,8 +76,7 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 				show: true,
 				showLabel: true,
 				minInterval: 1,
-				defaultHeight: 20,
-				// tickFormatting: Utils.formatValue
+				defaultHeight: 20
 			},
 			yAxis: {
 				show: true,
@@ -76,7 +84,7 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			// valueFormatting: Utils.formatValue,
+			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
@@ -91,12 +99,25 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 		data: null
 	};
 
-	graph = this.histogramm_percentile;
+	graph = this.histogram_distribution;
 
 	benchmark_groups = [];
 	active = {
 		benchmark_group: null,
 		benchmark: null
+	};
+	marker: {
+		group: string;
+		name: string;
+		value: number;
+		toolTipFormat: (mark) => string;
+	} = {
+		group: null,
+		name: null,
+		value: null,
+		toolTipFormat: (mark) => {
+			return 'Current Tender: ' + Utils.formatValue(mark.value);
+		}
 	};
 
 	constructor() {
@@ -125,9 +146,25 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 		return {data: this.graph.data, multi: true, header: {name: this.graph.chart.xAxis.label, value: this.graph.chart.yAxis.label}, filename: 'benchmark'};
 	}
 
+	getBucket(value: number): number {
+		let offset = 0;
+		let interval = 5;
+		return Math.floor((value - offset) / interval) * interval + offset;
+	}
+
 	displayBenchmark(benchmark): void {
 		this.graph.data = null;
+		this.marker.group = null;
+		this.marker.name = null;
+		this.marker.value = null;
 		if (benchmark && this.data) {
+			if (this.highlight) {
+				this.marker.group = this.highlight.year;
+				if (this.highlight.values && this.highlight.values.hasOwnProperty(benchmark.id)) {
+					this.marker.value = this.highlight.values[benchmark.id];
+					this.marker.name = this.getBucket(this.marker.value).toString();
+				}
+			}
 			this.graph.chart.xAxis.label = benchmark.name;
 			let o = this.data[benchmark.id];
 			if (!o) {
@@ -137,23 +174,10 @@ export class GraphBenchmarksPercentileComponent implements OnChanges, ISeriesPro
 			let d = {};
 			Object.keys(o).forEach(year => {
 				let yd = o[year];
-				let val = null;
-				Object.keys(yd).forEach(percentile => {
-					d[percentile] = d[percentile] || {name: 'Percentile ' + percentile, series: []};
-					let pval = yd[percentile];
-					if (pval !== null) {
-						if (val === null) {
-							val = pval;
-						} else {
-							let newval = pval;
-							pval = pval - val;
-							val = newval;
-						}
-					} else {
-						val = null;
-					}
-					d[percentile].series.push({name: year, value: pval});
-				});
+				for (let val = 0; val <= 100; val += 5) {
+					d[val] = d[val] || {name: val.toString(), series: []};
+					d[val].series.push({name: year, value: yd[val] || 0});
+				}
 			});
 			this.graph.data = Object.keys(d).map(key => d[key]);
 		}

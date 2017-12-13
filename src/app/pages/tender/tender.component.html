@@ -47,6 +47,10 @@
 		</div>
 	</div>
 
+	<div class="container">
+		<graph benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title" [entityTitle]="viz.distribution.name" [othersTitle]="viz.distribution.othersTitle" [filters]="viz.distribution.filters"  (filtersChange)="benchmarkFilterChange($event)"></graph>
+	</div>
+
 	<div class="container" *ngIf="tender.description | defined">
 		<h3>
 			<collapse-expand [o]="state.desc"></collapse-expand>

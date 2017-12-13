@@ -8,6 +8,7 @@ import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {I18NService} from '../../services/i18n.service';
 import {Subscription} from 'rxjs/Subscription';
+import {ISearchFilterDefType, IStats} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -43,6 +44,17 @@ export class TenderPage implements OnInit, OnDestroy {
 			CORRUPTION: {data: [], title: ''},
 			TRANSPARENCY: {data: [], title: ''},
 			ADMINISTRATIVE: {data: [], title: ''}
+		},
+		distribution: {
+			data: null,
+			highlight: {
+				year: null,
+				values: null
+			},
+			filters: [
+				{id: 'cpvs', name: 'Limit to same CPV Division Code', active: false},
+				{id: 'nuts', name: 'Limit to same NUTS2 Region', active: false}
+			]
 		}
 	};
 
@@ -103,11 +115,13 @@ export class TenderPage implements OnInit, OnDestroy {
 
 	display(tender: Definitions.Tender): void {
 		this.tender = tender;
+		let vals = {};
 		Object.keys(this.viz.scores).forEach(key => this.viz.scores[key].data = []);
 		Object.keys(this.viz.indicators).forEach(key => this.viz.indicators[key].data = []);
 		if (tender.indicators) {
 			tender.indicators.forEach(indicator => {
 				if (indicator.status === 'CALCULATED') {
+					vals[indicator.type] = indicator.value;
 					Object.keys(Consts.indicators).forEach(key => {
 						if (indicator.type.indexOf(key) === 0) {
 							let groupkey = key.split('_')[0];
@@ -120,6 +134,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		if (tender.scores) {
 			tender.scores.forEach(score => {
 				if (score.status === 'CALCULATED') {
+					vals[score.type] = score.value;
 					Object.keys(this.viz.scores).forEach(key => {
 						if (score.type === key) {
 							this.viz.scores[key].data.push({id: score.type, name: Utils.formatIndicatorGroupName(score.type), value: score.value, color: Consts.colors.indicators[score.type]});
@@ -128,6 +143,54 @@ export class TenderPage implements OnInit, OnDestroy {
 				}
 			});
 		}
+		this.viz.distribution.highlight.values = vals;
+		if (tender.date) {
+			this.viz.distribution.highlight.year = tender.date.slice(0, 4);
+		}
+		this.refresh();
+	}
+
+	refresh(): void {
+		if (!this.tender) {
+			return;
+		}
+		let filters = [];
+		if (this.viz.distribution.filters[0].active && this.tender.cpvs && this.tender.cpvs.length > 0) {
+			filters.push({
+				field: 'cpvs.code.divisions', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [this.tender.cpvs[0].code.slice(0, 2)], and: [
+					{field: 'cpvs.isMain', type: ISearchFilterDefType[ISearchFilterDefType.bool], value: [true]}
+				]
+			});
+		}
+		if (this.viz.distribution.filters[1].active && this.tender.buyers && this.tender.buyers.length > 0 && this.tender.buyers[0].address && this.tender.buyers[0].address.nutscode) {
+			let level = 3;
+			filters.push({
+				field: 'buyers.address.nutscode.nuts' + level, type: ISearchFilterDefType[ISearchFilterDefType.term],
+				value: [this.tender.buyers[0].address.nutscode.slice(0, 2 + level)]
+			});
+		}
+		let sub = this.api.getTenderStats({ids: [this.tender.id], filters: filters}).subscribe(
+			(result) => this.displayStats(result.data),
+			(error) => {
+				this.notify.error(error);
+			},
+			() => {
+				sub.unsubscribe();
+			});
+	}
+
+	displayStats(data: { stats: IStats }): void {
+		let viz = this.viz;
+		viz.distribution.data = null;
+		if (!data || !data.stats) {
+			return;
+		}
+		let stats = data.stats;
+		viz.distribution.data = stats.histogram_distribution_indicators;
+	}
+
+	benchmarkFilterChange(event) {
+		this.refresh();
 	}
 
 	getTenderJSONString(): string {

@@ -68,11 +68,11 @@ export interface IStatsScoresInYears {
 	[id: string]: IStatsInYears;
 }
 
-export interface IStatsPercentileInYears {
+export interface IStatsDistributionInYears {
 	[id: string]: {
 		[year: string]: {
 			[key: string]: number;
-s		}
+		}
 	};
 }
 
@@ -106,14 +106,6 @@ export interface IStatsPriceEUR {
 
 export interface IStatsPrices {
 	[currency: string]: number;
-}
-
-export interface IStatsPcLotsInYears {
-	[year: string]: {
-		total: number;
-		value: number;
-		percent: number;
-	};
 }
 
 export interface IStatsPricesInYears {
@@ -183,7 +175,7 @@ export interface IStats {
 	histogram: IStatsInYears;
 	histogram_finalPriceEUR: IStatsPricesInYears;
 	histogram_indicators: IStatsScoresInYears;
-	histogramm_percentile_indicators: IStatsPercentileInYears;
+	histogram_distribution_indicators: IStatsDistributionInYears;
 	histogram_count_finalPrices: IStatsPcPricesLotsInYears;
 	sectors_stats: Array<{ sector: ISector; stats: IStats }>;
 	region_stats: Array<{ id: string; value: number, stats: IStats }>;

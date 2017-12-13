@@ -113,7 +113,7 @@ import {SelectYearRangeComponent} from './components/selects/year-range/select-y
 import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component';
 import {MapComponent} from './components/maps/leaflet.component';
 import {LoadingComponent} from './components/loading/loading.component';
-import {GraphBenchmarksPercentileComponent} from './components/graphs/benchmarks-percentile.component';
+import {GraphBenchmarksDistributionComponent} from './components/graphs/benchmarks-distribution.component';
 
 const AppConfig = {
 	declarations: [
@@ -157,7 +157,7 @@ const AppConfig = {
 		ValueInputComponent,
 		DashboardsIndicatorComponent,
 		GraphBenchmarksComponent,
-		GraphBenchmarksPercentileComponent,
+		GraphBenchmarksDistributionComponent,
 		GraphIndicatorHistogramComponent,
 		GraphIndicatorSectorsComponent,
 		GraphIndicatorStructureComponent,
