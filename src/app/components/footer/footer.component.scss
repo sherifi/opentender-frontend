@@ -103,6 +103,13 @@
         padding-right: $base-padding-large;
       }
     }
+
+    img {
+      float: left;
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-top: 1rem;
+    }
   }
 
   .footer-bottom-left {
@@ -117,6 +124,13 @@
     @include respond-to(tiny-up) {
       @include span-columns(4);
     }
+  }
+
+  .footer-languages {
+    text-align: center;
+    font-weight: $weight-book;
+    color: $mid-gray;
+    font-size: 13px;
   }
 
   .footer-social {
@@ -142,7 +156,7 @@
 
       .icon-stack {
         span {
-          color:  $dark-gray;
+          color: $dark-gray;
         }
         span.icon-circle {
           color: $white;

@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {ConfigService} from '../../services/config.service';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
 	moduleId: __filename,
@@ -8,15 +9,31 @@ import {Router} from '@angular/router';
 	templateUrl: 'footer.component.html',
 	styleUrls: ['footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements OnDestroy {
 	public country: string;
 	public version: string;
 	public isRootPage: boolean = false;
-	public contactmail: string = 'digiwhist@okfn.de';
+	public contactmail: string;
+	public languages = [];
+	public url: string = '';
+	public subscription: Subscription;
 
 	constructor(public router: Router, private config: ConfigService) {
+		this.contactmail = config.contactmail;
 		this.country = config.country.name;
 		this.version = config.config.version;
 		this.isRootPage = this.config.country.id === null;
+		const locale = (config.locale.split('-')[0] || 'en').toLowerCase();
+		this.languages = config.languages.filter(lang => lang.id !== locale);
+		this.subscription = this.router.events.subscribe(e => {
+			if (e instanceof NavigationEnd) {
+				this.url = (this.isRootPage ? '' : '/' + this.config.country.id) + this.router.url.split('?')[0];
+			}
+		});
 	}
+
+	public ngOnDestroy(): void {
+		this.subscription.unsubscribe();
+	}
+
 }

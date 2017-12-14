@@ -16,6 +16,8 @@ export class ConfigService {
 	public country: Country;
 	public absUrl: string = '';
 	public locale: string;
+	public contactmail = 'digiwhist@okfn.de';
+	public languages = [{id: 'de', name: 'Deutsch'}, {id: 'en', name: 'English'}];
 
 	constructor(@Inject('opentender') externalConfig, @Inject('absurl') externalAbsUrl, @Inject(LOCALE_ID) externalLocale, private platform: PlatformService) {
 		this.locale = externalLocale;
