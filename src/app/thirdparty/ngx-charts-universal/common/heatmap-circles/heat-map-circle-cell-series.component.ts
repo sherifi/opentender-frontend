@@ -71,8 +71,8 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 				}
 			});
 		});
-
-		let scale = scaleLog().base(5).domain([0.1, max]).range([0, height / 2]);
+		let radius = Math.min(height, width) / 2;
+		let scale = scaleLog().base(5).domain([0.1, max]).range([0, radius]);
 		let getRadius = (val) => {
 			if ((val === null) || (val < 0.1)) {
 				return 0;
