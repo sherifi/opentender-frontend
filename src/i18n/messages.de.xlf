@@ -538,7 +538,7 @@
           </context>
         </context-group>
         <target>
-          Administrative Kapazität-Score
+          Verwaltungskapazität-Score
         </target>
       </trans-unit>
       <trans-unit id="a38958957882e0403d7c765a45a605ba20024627" datatype="html">
@@ -554,7 +554,7 @@
           </context>
         </context-group>
         <target>
-          Der Administrative Kapazität-Score ist ein Durchschnitt der Administrative Kapazität-Indikatoren.
+          Der Verwaltungskapazität-Score ist ein Durchschnitt der Verwaltungskapazität-Indikatoren.
         </target>
       </trans-unit>
       <trans-unit id="a760b1133506b725c66251807a4cb613b1b3718b" datatype="html">
@@ -744,7 +744,7 @@
           </context>
         </context-group>
         <target>
-          Opentender verwendet Leistungsindikatoren für das öffentliche Beschaffungswesen auf der Grundlage einer breiten Palette wissenschaftlicher Analysen, die in unserer eigenen Forschung synthetisiert und weiterentwickelt wurden: für administrative Kapazitätsindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Methods Paper on Administrative Quality Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Transparenzindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Methods Paper on Fiscal Transparency&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Integritätsrisikoindikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Der "Good Procurement Score" ist der einfache Durchschnitt der drei zugesammengesetzten Indikator Scores. Alle diese Indikatoren basieren auf objektiven Daten, sind von öffentlichen und privaten Akteuren direkt umsetzbar und werden transparent und eindeutig berechnet. Wenn Sie einen Fehler in den &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;Formeln&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; finden, benachrichtigen Sie uns bitte &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;hier&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender verwendet Leistungsindikatoren für das öffentliche Beschaffungswesen auf der Grundlage einer breiten Palette wissenschaftlicher Analysen, die in unserer eigenen Forschung synthetisiert und weiterentwickelt wurden: für Verwaltungskapazität-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Methods Paper on Administrative Quality Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Transparenz-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Methods Paper on Fiscal Transparency&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Integritäts-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Der "Good Procurement Score" ist der einfache Durchschnitt der drei zugesammengesetzten Indikator Scores. Alle diese Indikatoren basieren auf objektiven Daten, sind von öffentlichen und privaten Akteuren direkt umsetzbar und werden transparent und eindeutig berechnet. Wenn Sie einen Fehler in den &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;Formeln&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; finden, benachrichtigen Sie uns bitte &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;hier&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -934,7 +934,7 @@
           </context>
         </context-group>
         <target>
-          Administrative Kapazität
+          Verwaltungskapazität
         </target>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
@@ -958,7 +958,7 @@
           </context>
         </context-group>
         <target>
-          Mit diesem Dashboard können Sie die administrative Kapazität der Käufer analysieren.
+          Mit diesem Dashboard können Sie die Verwaltungskapazität der Käufer analysieren.
         </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -4586,7 +4586,7 @@
           runtime
         </note>
         <target>
-          Administrative Kapazität-Indikator
+          Verwaltungskapazität-Indikator
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
@@ -4605,7 +4605,7 @@
           runtime
         </note>
         <target>
-          Administrative Kapazität-Indikatoren
+          Verwaltungskapazität-Indikatoren
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacity" datatype="html">
@@ -4624,7 +4624,7 @@
           runtime
         </note>
         <target>
-          Administrative Kapazität
+          Verwaltungskapazität
         </target>
       </trans-unit>
       <trans-unit id="Administrators" datatype="html">
