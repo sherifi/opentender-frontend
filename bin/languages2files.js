@@ -112,7 +112,7 @@ let getLangs = function (cb) {
 
 let packageLanguage = function (lang, content, cb) {
 	let xmljson = XMLLite.xml2js(content.toString());
-	let filename = path.join(source_messages_path, 'translation.' + lang + '.xlf');
+	let filename = path.join(source_messages_path, 'language.' + lang + '.xlf');
 	console.log('packaging to file', filename);
 	let nodes = xmljson.children[0].children[0].children[0].children;
 	nodes = nodes.filter(node => {
@@ -121,10 +121,6 @@ let packageLanguage = function (lang, content, cb) {
 	});
 	xmljson.children[0].children[0].children[0].children = nodes;
 	let s = XMLLite.js2xml(xmljson).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-	// let ts = "/* tslint:disable:max-line-length */\nexport const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;\n";
-	// fs.writeFileSync(filename, ts);
-	// filename = path.join(source_messages_path, 'messages.' + lang + '.dist.xlf');
-	// console.log('packaging to file', filename);
 	fs.writeFile(filename, s, cb);
 };
 
@@ -199,12 +195,6 @@ let updateLanguage = function (lang, currentNodes, cb) {
 	});
 };
 
-let createLanguage = function (lang, cb) {
-	let filename = path.join(source_messages_path, 'messages.' + lang + '.xlf');
-	console.log("Creating translation file", filename);
-	fs.copy(source_message, filename, cb);
-};
-
 let updateLanguages = function (content, cb) {
 	let l = XMLLite.xml2js(content.toString());
 	let currentNodes = l.children[0].children[0].children[0].children;
@@ -214,6 +204,20 @@ let updateLanguages = function (content, cb) {
 		}, cb);
 	})
 };
+
+let languages = JSON.parse(fs.readFileSync(path.join(source_messages_path, 'languages.json')).toString()).enabled;
+
+languages.forEach(lang => {
+	if (lang.id === 'en') {
+		return;
+	}
+	let filename = path.join(source_messages_path, 'messages.' + lang.id + '.xlf');
+	if (!fs.existsSync(filename)) {
+		console.log("Creating translation file", filename);
+		let s = '<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2"><file datatype="plaintext" original="ng2.template" source-language="en" target-language="' + lang.id + '"><body></body></file></xliff>';
+		fs.writeFileSync(filename, s);
+	}
+});
 
 runNGi18n((e, content) => {
 	if (e) {
