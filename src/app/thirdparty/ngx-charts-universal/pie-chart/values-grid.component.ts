@@ -33,7 +33,7 @@ import {IDomain} from '../common/common.interface';
 					<svg:text
 							class="label value-label"
 							dy="-0.5em"
-							x="0"
+							[attr.x]="series.labelLeft"
 							[attr.y]="series.labelTop"
 							[style.font-size.pt]="series.fontSize"
 							text-anchor="middle">{{formatLabelNumber(series.value)}}
@@ -132,16 +132,20 @@ export class PieValuesGridComponent extends BaseChartComponent {
 			};
 			const xPos = d.x + (d.width - padding) / 2;
 			const yPos = d.y + (d.height - baselineLabelHeight) / 2;
+			const fontSize = Math.max(Math.min(24, radius / 2), 8);
+			const labelTop = (fontSize * 1.1);
+			const labelLeft = innerRadius < 10 ? (radius * 3) : 0;
 			return {
 				transform: `translate(${xPos}, ${yPos})`,
 				colors,
 				innerRadius,
 				outerRadius: radius,
-				label: label,
+				label,
 				total: this.chart.maxValue,
 				value,
-				fontSize: radius > 40 ? 24 : 18,
-				labelTop: radius > 40 ? 28 : 21,
+				fontSize,
+				labelTop,
+				labelLeft,
 				data: [d, {
 					data: {
 						other: true,
