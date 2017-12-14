@@ -32,7 +32,7 @@ export class CircleComponent implements OnChanges {
 	@Output() activate = new EventEmitter();
 	@Output() deactivate = new EventEmitter();
 
-	private circleClassNames = '';
+	public circleClassNames = '';
 
 	@HostListener('click')
 	onClick() {
