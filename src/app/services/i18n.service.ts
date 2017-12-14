@@ -1,6 +1,5 @@
 import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
-import {routes} from '../app.routes';
 import {Consts} from '../model/consts';
 import * as i18nlanguages from '../../i18n/languages.json';
 
@@ -14,36 +13,24 @@ declare module '*languages.json' {
 @Injectable()
 export class I18NService {
 	public languages = i18nlanguages.enabled;
+	private _extra;
 	private _source: string;
 	private _translations: { [name: string]: any };
 
-	constructor(@Inject(TRANSLATIONS) source: string) {
+	constructor(@Inject(TRANSLATIONS) source: string, @Inject('TRANSLATIONS_EXTRA') extra) {
+		this._extra = extra;
 		this._source = source;
 		if (this._source) {
 			const xliff = new Xliff();
 			this._translations = xliff.load(this._source, '').i18nNodesByMsgId;
 		}
-	}
-
-	private translateRoute(route): void {
-		if (route.data) {
-			if (route.data.title) {
-				route.data.title = this.get(route.data.title);
-			}
-			if (route.data.menu_title) {
-				route.data.menu_title = this.get(route.data.menu_title);
-			}
-		}
-		if (route.children) {
-			route.children.forEach(sub => this.translateRoute(sub));
-		}
+		this.init();
 	}
 
 	public init() {
 		if (!this._translations) {
 			return;
 		}
-		routes.forEach(route => this.translateRoute(route));
 		Object.keys(Consts.indicators).forEach(key => {
 			Consts.indicators[key].name = this.getStrict(key + '.name') || Consts.indicators[key].name;
 			Consts.indicators[key].plural = this.getStrict(key + '.plural') || Consts.indicators[key].plural;
@@ -53,6 +40,27 @@ export class I18NService {
 				subs[subkey].desc = this.getStrict(subkey + '.desc') || subs[subkey].desc;
 			});
 		});
+	}
+
+	public getPortalName(key: string, default_name: string): string {
+		if (key && this._extra) {
+			if (this._extra.portals) {
+				let result = this._extra.portals[key.toLowerCase()];
+				if (result) {
+					return result;
+				}
+			}
+			if (this._extra.countries) {
+				if (key == 'uk') {
+					key = 'gb';
+				}
+				let result = this._extra.countries[key.toUpperCase()];
+				if (result) {
+					return result;
+				}
+			}
+		}
+		return default_name;
 	}
 
 	public get(key: string, interpolation: any[] = []): string {

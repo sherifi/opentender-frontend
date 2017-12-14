@@ -2,11 +2,140 @@
   "enabled": [
     {
       "id": "de",
-      "name": "Deutsch"
+      "name": "Deutsch",
+      "eng": "German"
     },
     {
       "id": "en",
-      "name": "English"
+      "name": "English",
+      "eng": "English"
+    }
+  ],
+  "disabled": [
+    {
+      "id": "bg",
+      "name": "български",
+      "eng": "Bulgarian"
+    },
+    {
+      "id": "cs",
+      "name": "Čeština",
+      "eng": "Czech"
+    },
+    {
+      "id": "da",
+      "name": "Dansk",
+      "eng": "Danish"
+    },
+    {
+      "id": "el",
+      "name": "Ελληνικά",
+      "eng": "Greek"
+    },
+    {
+      "id": "es",
+      "name": "Español",
+      "eng": "Spanish"
+    },
+    {
+      "id": "et",
+      "name": "Eesti",
+      "eng": "Estonian"
+    },
+    {
+      "id": "fi",
+      "name": "",
+      "eng": "Finnish"
+    },
+    {
+      "id": "fr",
+      "name": "Suomi",
+      "eng": "French"
+    },
+    {
+      "id": "ga",
+      "name": "Gaeilge",
+      "eng": "Irish"
+    },
+    {
+      "id": "hr",
+      "name": "Hrvatski",
+      "eng": "Croatian"
+    },
+    {
+      "id": "hu",
+      "name": "Magyar",
+      "eng": "Hungarian"
+    },
+    {
+      "id": "it",
+      "name": "Italiano",
+      "eng": "Italian"
+    },
+    {
+      "id": "lt",
+      "name": "Lietuviškai",
+      "eng": "Lithuanian"
+    },
+    {
+      "id": "lv",
+      "name": "Latviešu",
+      "eng": "Latvian"
+    },
+    {
+      "id": "mt",
+      "name": "Malti",
+      "eng": "Maltese"
+    },
+    {
+      "id": "nl",
+      "name": "Nederlands",
+      "eng": "Dutch"
+    },
+    {
+      "id": "pl",
+      "name": "Polski",
+      "eng": "Polish"
+    },
+    {
+      "id": "pt",
+      "name": "Português",
+      "eng": "Portuguese"
+    },
+    {
+      "id": "ro",
+      "name": "Româneşte",
+      "eng": "Romanian"
+    },
+    {
+      "id": "sk",
+      "name": "Slovenčina",
+      "eng": "Slovak"
+    },
+    {
+      "id": "sl",
+      "name": "Slovenščina",
+      "eng": "Slovenian"
+    },
+    {
+      "id": "sv",
+      "name": "Svenska",
+      "eng": "Swedish"
+    },
+    {
+      "id": "hy",
+      "name": "Հայերէն",
+      "eng": "Armenian"
+    },
+    {
+      "id": "ka",
+      "name": "ქართული",
+      "eng": "Georgian"
+    },
+    {
+      "id": "is",
+      "name": "Íslenska",
+      "eng": "Icelandic"
     }
   ]
 }

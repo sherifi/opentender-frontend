@@ -24,7 +24,7 @@ export class FooterComponent implements OnDestroy {
 		this.country = config.country.name;
 		this.version = config.config.version;
 		this.isRootPage = this.config.country.id === null;
-		const locale = (config.locale.split('-')[0] || 'en').toLowerCase();
+		const locale = config.locale || 'en';
 		this.languages = i18n.languages.filter(lang => lang.id !== locale);
 		this.subscription = this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {

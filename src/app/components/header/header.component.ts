@@ -3,6 +3,7 @@ import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {ConfigService, Country} from '../../services/config.service';
 import {routes} from '../../app.routes';
 import {Subscription} from 'rxjs/Subscription';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnDestroy {
 	public menu = [];
 	public subscription: Subscription;
 
-	constructor(public router: Router, private config: ConfigService) {
+	constructor(public router: Router, private config: ConfigService, private i18n: I18NService) {
 		this.country = config.country;
 		this.isRootPage = this.country.id === null;
 		this.buildMenu();
@@ -50,12 +51,12 @@ export class HeaderComponent implements OnDestroy {
 			if (route.data && ((!this.isRootPage && route.data.menu) || (this.isRootPage && route.data.rootMenu))) {
 				this.menu.push({
 					path: route.path,
-					title: route.data.menu_title || route.data.title,
+					title: this.i18n.get(route.data.menu_title || route.data.title),
 					routerLink: route.data.routerLink ? route.data.routerLink : ['/' + route.path],
 					submenu: (route.children || []).filter(sub => sub.data && sub.data.menu).map(sub => {
 						return {
 							path: sub.path,
-							title: sub.data.menu_title || sub.data.title,
+							title: this.i18n.get(sub.data.menu_title || sub.data.title),
 							routerLink: sub.data.routerLink ? sub.data.routerLink : ['/' + route.path + '/' + sub.path],
 						};
 					})

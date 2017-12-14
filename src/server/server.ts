@@ -72,12 +72,25 @@ import {MainModule} from './main.module';
 let languages = JSON.parse(fs.readFileSync(path.resolve(I18N, 'languages.json')).toString()).enabled;
 
 let translations = {
-	'en': {lang: 'en', translation: null, module: MainModule}
+	'en': {lang: 'en', translation: null, extra: {}}
 };
 
 languages.forEach(lang => {
 	if (lang.id !== 'en') {
-		translations[lang.id] = {lang: lang.id, translation: fs.readFileSync(path.resolve(I18N, 'language.' + lang.id + '.xlf')).toString(), module: MainModule};
+		let specials = {};
+		portals.forEach(portal => {
+			if (['all', 'eu'].indexOf(portal.id) >= 0) {
+				specials[portal.id] = portal.names[lang.id];
+			}
+		});
+		translations[lang.id] = {
+			lang: lang.id,
+			translation: fs.readFileSync(path.resolve(I18N, 'language.' + lang.id + '.xlf')).toString(),
+			extra: {
+				countries: JSON.parse(fs.readFileSync(path.resolve(DATA, 'country-names/' + lang.id + '.json')).toString()),
+				portals: specials
+			}
+		};
 	}
 });
 
@@ -109,7 +122,7 @@ app.use('/assets/lang/:id', (req, res) => {
 	if (!translations[req.params.id]) {
 		return res.sendStatus(404);
 	}
-	res.send(translations[req.params.id].translation);
+	res.send({translations: translations[req.params.id].translation, extra: translations[req.params.id].extra});
 });
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
 app.use('/data/nuts0.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl0.geo.json')));
@@ -138,13 +151,15 @@ app.use(bodyParser.json());
 
 let render = function(req, res, language, country) {
 	let engine = ngExpressEngine({
-		bootstrap: language.module,
+		id: language.lang,
+		bootstrap: MainModule,
 		providers: [
 			{provide: 'isBrowser', useValue: false},
 			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
 			{provide: 'opentender', useValue: {locale: language.lang, config: Config.client, country: country}}
 		],
 		languageProviders: [
+			{provide: 'TRANSLATIONS_EXTRA', useValue: language.extra},
 			{provide: TRANSLATIONS, useValue: language.translation || ''},
 			{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
 			{provide: LOCALE_ID, useValue: language.lang}
@@ -155,12 +170,21 @@ let render = function(req, res, language, country) {
 				let pos2 = html.indexOf('<!-- End Piwik Code -->');
 				html = html.slice(0, pos1) + html.slice(pos2);
 			}
+			let name = country.name;
+			if (country.id && language.lang !== 'en') {
+				name = country.names[language.lang] || country.name;
+			}
+			let opts = {
+				locale: language.lang,
+				config: Config.client,
+				country: {id: country.id, name: name, foi: country.foi, ip: country.ip}
+			};
 			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
-				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? country.name : '')
+				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? name : '')
 				.replace(/\{\{HTML_LANG\}\}/g, language.lang)
 				.replace(/\{\{FULL_URL\}\}/g, Config.server.fullUrl)
 				.replace(/\{\{RES_VERSION\}\}/g, RES_VERSION)
-				.replace(/\{\{OPENTENDER\}\}/g, JSON.stringify({locale: language.lang, config: Config.client, country: country}));
+				.replace(/\{\{OPENTENDER\}\}/g, JSON.stringify(opts));
 		}
 	});
 	return engine(VIEW, {req: req, res: res}, (err?: Error | null, html?: string) => {

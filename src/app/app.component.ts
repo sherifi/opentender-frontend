@@ -15,7 +15,6 @@ import {I18NService} from './services/i18n.service';
 export class App implements OnInit {
 
 	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService, private i18n: I18NService) {
-		i18n.init();
 		titleService.setDefault();
 		if (this.platform.isBrowser) {
 			this.checkURL(router.url);

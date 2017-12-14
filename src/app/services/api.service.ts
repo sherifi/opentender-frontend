@@ -30,7 +30,7 @@ export class ApiService {
 
 	post<T>(url: string, params: Object): Observable<T> {
 		if (this.config.locale) {
-			params['lang'] = this.config.locale.slice(0, 2);
+			params['lang'] = this.config.locale;
 		}
 		return this.http.post<T>(this.actionCountryUrl + url, params, {headers: this.headers});
 	}
@@ -90,7 +90,7 @@ export class ApiService {
 	get<T>(url: string) {
 		let query = '';
 		if (this.config.locale) {
-			query = '?lang=' + this.config.locale.slice(0, 2);
+			query = '?lang=' + this.config.locale;
 		}
 		return this.http.get<T>(this.actionCountryUrl + url + query);
 	}
@@ -142,7 +142,11 @@ export class ApiService {
 	// country unspecific api gets from backend
 
 	getPortalsStats(): Observable<IApiResultPortalsStats> {
-		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats');
+		let query = '';
+		if (this.config.locale) {
+			query = '?lang=' + this.config.locale;
+		}
+		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats' + query);
 	}
 
 	getPortals(): Observable<IApiResultPortals> {

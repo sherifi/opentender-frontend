@@ -15,9 +15,10 @@ function getParameterByName(name) {
 }
 
 export function getTranslationProviders(): Promise<StaticProvider[]> {
-	const noProviders: StaticProvider[] = [{
-		provide: TRANSLATIONS, useValue: null
-	}];
+	const noProviders: StaticProvider[] = [
+		{provide: TRANSLATIONS, useValue: null},
+		{provide: 'TRANSLATIONS_EXTRA', useValue: null}
+	];
 	const config = document['opentender'];
 	let locale: string = null;
 	let query_locale = getParameterByName('lang');
@@ -48,9 +49,10 @@ export function getTranslationProviders(): Promise<StaticProvider[]> {
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4) {
 				if (this.status == 200) {
-					let translation = xhr.response;
+					let result = JSON.parse(xhr.response);
 					resolve([
-							{provide: TRANSLATIONS, useValue: translation},
+							{provide: 'TRANSLATIONS_EXTRA', useValue: result.extra},
+							{provide: TRANSLATIONS, useValue: result.translations},
 							{provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
 							{provide: LOCALE_ID, useValue: locale}
 						]

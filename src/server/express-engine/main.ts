@@ -12,6 +12,7 @@ import {REQUEST, RESPONSE} from './tokens';
  * These are the allowed options for the engine
  */
 export interface NgSetupOptions {
+	id?: string;
 	bootstrap?: Type<{}> | NgModuleFactory<{}>;
 	providers?: StaticProvider[];
 	languageProviders?: StaticProvider[];
@@ -34,7 +35,7 @@ const templateCache: { [key: string]: string } = {};
 /**
  * Map of Module Factories
  */
-const factoryCacheMap = new Map<Type<{}>, NgModuleFactory<{}>>();
+const factoryCacheMaps: { [key: string]: Map<Type<{}>, NgModuleFactory<{}>> } = {};
 
 /**
  * This is an express engine for handling Angular Applications
@@ -79,7 +80,7 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 					}
 				]);
 
-			getFactory(moduleOrFactory, compiler)
+			getFactory(setupOptions.id, moduleOrFactory, compiler)
 				.then(factory => {
 					return renderModuleFactory(factory, {
 						extraProviders: extraProviders
@@ -96,17 +97,26 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 	};
 }
 
+
+function getFactoryCache(id: string) {
+	console.log(id, factoryCacheMaps[id]);
+	if (!factoryCacheMaps[id]) {
+		factoryCacheMaps[id] = new Map<Type<{}>, NgModuleFactory<{}>>();
+	}
+	return factoryCacheMaps[id];
+}
+
 /**
  * Get a factory from a bootstrapped module/ module factory
  */
-function getFactory(moduleOrFactory: Type<{}> | NgModuleFactory<{}>, compiler: Compiler): Promise<NgModuleFactory<{}>> {
+function getFactory(id: string, moduleOrFactory: Type<{}> | NgModuleFactory<{}>, compiler: Compiler): Promise<NgModuleFactory<{}>> {
 	return new Promise<NgModuleFactory<{}>>((resolve, reject) => {
 		// If module has been compiled AoT
 		if (moduleOrFactory instanceof NgModuleFactory) {
 			resolve(moduleOrFactory);
 			return;
 		} else {
-			let moduleFactory = factoryCacheMap.get(moduleOrFactory);
+			let moduleFactory = getFactoryCache(id).get(moduleOrFactory);
 
 			// If module factory is cached
 			if (moduleFactory) {
@@ -117,7 +127,7 @@ function getFactory(moduleOrFactory: Type<{}> | NgModuleFactory<{}>, compiler: C
 			// Compile the module and cache it
 			compiler.compileModuleAsync(moduleOrFactory)
 				.then((factory) => {
-					factoryCacheMap.set(moduleOrFactory, factory);
+					getFactoryCache(id).set(moduleOrFactory, factory);
 					resolve(factory);
 				}, (err => {
 					reject(err);

@@ -11,22 +11,23 @@
 		<div class="container-left-12 portal-ip-info slab-info slab-border-light">
 			<ng-container i18n>It looks like you are browsing from {{ip_country.name}}.</ng-container>
 			<br/>
-			<ng-container i18n>We invite you to visit <a href="/{{ip_country.id}}">Opentender {{ip_country.name}}</a>.</ng-container>
+			<ng-container i18n>We invite you to visit <a href="{{'/'+ip_country.id | portalLink}}">Opentender {{ip_country.name}}</a>.</ng-container>
 		</div>
 	</div>
 </div>
 <div class="slab-alpha container-padded-top-lite">
 	<div class="container-outer">
-		<h3 class="start-heading" i18n>You can view the data on individual national portals by selecting a country below or explore <a href="/all">all available data</a> available data.</h3>
+		<h3 class="start-heading" i18n>You can view the data on individual national portals by selecting a country below or explore <a href="{{'/all' | portalLink}}">all available data</a> available data.</h3>
 		<div class="container-left-6 portal-map-container">
 			<portal-map [portals]="portals"></portal-map>
 		</div>
 		<div class="container-left-6">
+			<div class="portal-links-legend" i18n>Nr. of Tenders</div>
 			<ul class="portal-links">
 				<li class="portal-link" *ngFor="let portal of portals" [ngClass]="{active:portal.id===current.id}">
 					<a [routerLink]="['/']" *ngIf="portal.id===current.id">{{portal.name}}</a>
-					<a href="/{{portal.id}}" *ngIf="portal.id!==current.id">{{portal.name}}</a>
-					<div>{{portal.value | formatNumber}}&nbsp;<ng-container i18n>Tenders</ng-container></div>
+					<a href="{{'/'+portal.id  | portalLink}}" *ngIf="portal.id!==current.id">{{portal.name}}</a>
+					<div>{{portal.value | formatNumber}}</div>
 				</li>
 			</ul>
 		</div>

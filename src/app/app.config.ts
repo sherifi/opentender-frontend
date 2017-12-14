@@ -28,6 +28,7 @@ import {FormatNumberPipe} from './directives/format-number';
 import {NameGuardPipe} from './directives/name-guard.pipe';
 import {I18nPipe} from './directives/i18n.pipe';
 import {FormatIndicatorNamePipe} from './directives/format-indicator.pipe';
+import {PortalLinkPipe} from './directives/portal-url.pipe';
 
 import {AuthorityPage} from './pages/authority/authority.component';
 import {CompanyPage} from './pages/company/company.component';
@@ -188,6 +189,7 @@ const AppConfig = {
 		FOISearchLinkPipe,
 		FormatNumberPipe,
 		I18nPipe,
+		PortalLinkPipe,
 
 		AuthorityPage,
 		CompanyPage,
