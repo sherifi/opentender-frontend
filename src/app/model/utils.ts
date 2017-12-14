@@ -192,7 +192,7 @@ export const Utils = {
 	seriesToTable(data: IChartData[], header, multi: boolean) {
 		if (multi) {
 			let list = data.map(d => {
-				let row: Array<string | number | Date> = d.series.map(val => val.invalid ? 'No data' : val.value);
+				let row: Array<string | number | Date> = d.series.map(val => val.invalid ? 'NO DATA' : val.value);
 				row.unshift(d.name);
 				return row;
 			});

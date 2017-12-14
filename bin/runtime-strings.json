@@ -146,5 +146,13 @@
   "Benchmark",
   "Administrative Capacity Score",
   "Transparency Score",
-  "Procurement Integrity Score"
+  "Procurement Integrity Score",
+  "Tender in view",
+  "Overall",
+  "Contract Values",
+  "Average Value (€)",
+  "Limit to same sector",
+  "Limit to same region (NUTS2)",
+  "Limit to same authority type",
+  "Limit to same main activities"
 ]

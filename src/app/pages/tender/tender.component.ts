@@ -51,9 +51,10 @@ export class TenderPage implements OnInit, OnDestroy {
 				year: null,
 				values: null
 			},
+			title: '',
 			filters: [
-				{id: 'cpvs', name: 'Limit to same CPV Division Code', active: false},
-				{id: 'nuts', name: 'Limit to same NUTS2 Region', active: false}
+				{id: 'cpvs', name: '', active: false},
+				{id: 'nuts', name: '', active: false}
 			]
 		}
 	};
@@ -65,6 +66,9 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.publications.open = true;
 			this.state.reqs.open = true;
 		}
+		this.viz.distribution.title = i18n.get('Benchmark');
+		this.viz.distribution.filters[0].name = i18n.get('Limit to same sector');
+		this.viz.distribution.filters[1].name = i18n.get('Limit to same region (NUTS2)');
 		this.state.lots.label = this.i18n.get('Lots');
 		this.state.buyer.label = this.i18n.get('Buyer');
 		this.state.indi.label = this.i18n.get('Indicators');

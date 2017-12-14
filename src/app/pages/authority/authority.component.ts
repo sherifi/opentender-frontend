@@ -39,8 +39,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		lots_in_years: {data: null},
 		stats: {
 			data: null, filters: [
-				{id: 'buyerType', name: 'Limit to same authority type', active: false},
-				{id: 'mainActivities', name: 'Limit to same main activities', active: false}
+				{id: 'buyerType', name: '', active: false},
+				{id: 'mainActivities', name: '', active: false}
 			]
 		}
 	};
@@ -51,6 +51,8 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.stats.title = i18n.get('Benchmark');
 		this.viz.stats.othersTitle = i18n.get('Average of all Authorities');
+		this.viz.stats.filters[0].name = i18n.get('Limit to same authority type');
+		this.viz.stats.filters[1].name = i18n.get('Limit to same main activities');
 	}
 
 	ngOnInit(): void {

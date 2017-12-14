@@ -37,7 +37,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		top_authorities: {data: null},
 		cpvs_codes: {data: null},
 		lots_in_years: {data: null},
-		stats: {data: null, filters: [{id: 'sector', name: 'Limit to companies in same sector', active: false}]}
+		stats: {data: null, filters: [{id: 'sector', name: '', active: false}]}
 	};
 
 	constructor(private route: ActivatedRoute, private api: ApiService, private titleService: TitleService,
@@ -46,6 +46,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
 		this.viz.stats.title = i18n.get('Benchmark');
 		this.viz.stats.othersTitle = i18n.get('Average of all Companies');
+		this.viz.stats.filters[0].name = i18n.get('Limit to same sector');
 	}
 
 	ngOnInit(): void {

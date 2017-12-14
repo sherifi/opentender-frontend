@@ -4,6 +4,7 @@ import {IChartHeatmap} from '../../thirdparty/ngx-charts-universal/chart.interfa
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {marker} from 'leaflet';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	selector: 'graph[benchmarks-distribution]',
@@ -11,21 +12,21 @@ import {marker} from 'leaflet';
 		<div class="graph-title">{{title}}</div>
 		<div class="benchmark-select">
 			<div class="select-radios">
-				<div>Value Group</div>
+				<div i18n>Value Group</div>
 				<label class="checkbox" *ngFor="let group of benchmark_groups">
 					<input [value]="group" name="group" type="radio" [(ngModel)]="active.benchmark_group" (change)="handleGroupChange()">
 					{{group.name}}
 				</label>
 			</div>
 			<div class="select-radios" *ngIf="active.benchmark_group">
-				<div>Value</div>
+				<div i18n>Value</div>
 				<label class="checkbox" *ngFor="let bench of active.benchmark_group.benchmarks">
 					<input [value]="bench" name="bench" type="radio" [(ngModel)]="active.benchmark" (change)="handleBenchmarkChange()">
 					{{bench.name}}
 				</label>
 			</div>
 			<div class="select-checks">
-				<div>Comparision</div>
+				<div i18n>Comparison</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
 					{{filter.name}}
@@ -84,17 +85,16 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: (value: number) => {
-				return 'Tenders: ' + Utils.formatValue(value);
-			},
 			showGridLines: true,
 			gradient: false,
+			valueFormatting: (value: number) => {
+				return this.unit + ': ' + Utils.formatValue(value);
+			},
 			colorScheme: {
 				domain: Consts.colors.single
 			}
 		},
 		select: (event) => {
-			// this.router.navigate(['/company/' + event.id]);
 		},
 		onLegendLabelClick: (event) => {
 		},
@@ -104,6 +104,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 	graph = this.histogram_distribution;
 
 	benchmark_groups = [];
+	unit: string;
 	active = {
 		benchmark_group: null,
 		benchmark: null
@@ -113,25 +114,30 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 		name: string;
 		value: number;
 		toolTipFormat: (mark) => string;
+		title: string;
 	} = {
 		group: null,
 		name: null,
 		value: null,
+		title: '',
 		toolTipFormat: (mark) => {
-			return 'Current Tender: ' + Utils.formatValue(mark.value);
+			return mark.title + ': ' + Utils.formatValue(mark.value);
 		}
 	};
 
-	constructor() {
+	constructor(private i18n: I18NService) {
+		this.histogram_distribution.chart.yAxis.label = i18n.get('Year');
+		this.unit = i18n.get('Tenders');
+		this.marker.title = this.i18n.get('Tender in view');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
-			name: 'Overall', benchmarks: [
-				{name: 'Good Procurement Score', id: 'TENDER'}
+			name: i18n.get('Overall'), benchmarks: [
+				{name: i18n.get('Good Procurement Score'), id: 'TENDER'}
 			]
 		});
 		Object.keys(Consts.indicators).forEach(i_key => {
 			let indicator = Consts.indicators[i_key];
-			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' Score', id: i_key}]};
+			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: i_key}]};
 			Object.keys(indicator.subindicators).forEach(key => {
 				if (!indicator.subindicators[key].notused) {
 					group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key});

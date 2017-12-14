@@ -155,7 +155,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 			}
 
 			if (d.invalid) {
-				bar.tooltipText = 'No data';
+				bar.tooltipText = 'NO DATA';
 			} else {
 				bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
 			}
