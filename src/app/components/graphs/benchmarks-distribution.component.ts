@@ -84,7 +84,9 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value: number) => {
+				return 'Tenders: ' + Utils.formatValue(value);
+			},
 			showGridLines: true,
 			gradient: false,
 			colorScheme: {
