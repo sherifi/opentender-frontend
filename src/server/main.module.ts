@@ -12,7 +12,7 @@ const MockWindow = {
 	isMock: true
 };
 
-const config = {
+@NgModule({
 	bootstrap: [App],
 	declarations: [
 		...AppConfig.declarations
@@ -31,33 +31,6 @@ const config = {
 		{provide: 'isBrowser', useValue: false},
 		{provide: 'globals', useValue: {window: MockWindow, document: {isMock: true}}}
 	]
-};
-
-// Trick the Universal Obj Cache into different instances
-
-@NgModule({
-	bootstrap: config.bootstrap,
-	declarations: config.declarations,
-	imports: config.imports,
-	providers: config.providers
 })
-export class MainModuleEN {
-}
-
-@NgModule({
-	bootstrap: config.bootstrap,
-	declarations: config.declarations,
-	imports: config.imports,
-	providers: config.providers
-})
-export class MainModuleDE {
-}
-
-@NgModule({
-	bootstrap: config.bootstrap,
-	declarations: config.declarations,
-	imports: config.imports,
-	providers: config.providers
-})
-export class MainModuleES {
+export class MainModule {
 }

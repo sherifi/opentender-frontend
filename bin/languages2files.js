@@ -112,7 +112,7 @@ let getLangs = function (cb) {
 
 let packageLanguage = function (lang, content, cb) {
 	let xmljson = XMLLite.xml2js(content.toString());
-	let filename = path.join(source_messages_path, 'messages.' + lang + '.ts');
+	let filename = path.join(source_messages_path, 'translation.' + lang + '.xlf');
 	console.log('packaging to file', filename);
 	let nodes = xmljson.children[0].children[0].children[0].children;
 	nodes = nodes.filter(node => {
@@ -121,8 +121,11 @@ let packageLanguage = function (lang, content, cb) {
 	});
 	xmljson.children[0].children[0].children[0].children = nodes;
 	let s = XMLLite.js2xml(xmljson).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-	let ts = "/* tslint:disable:max-line-length */\nexport const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;\n";
-	fs.writeFile(filename, ts, cb)
+	// let ts = "/* tslint:disable:max-line-length */\nexport const TRANSLATION_" + lang.toUpperCase() + " = `" + s + "`;\n";
+	// fs.writeFileSync(filename, ts);
+	// filename = path.join(source_messages_path, 'messages.' + lang + '.dist.xlf');
+	// console.log('packaging to file', filename);
+	fs.writeFile(filename, s, cb);
 };
 
 let fillI18nTemplate = function (filename) {

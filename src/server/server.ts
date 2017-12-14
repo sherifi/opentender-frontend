@@ -17,17 +17,6 @@ import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from './express-engine/main';
 import {initCache} from './cache';
 import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
-import {TRANSLATION_DE} from '../i18n/messages.de';
-import {TRANSLATION_ES} from '../i18n/messages.es';
-
-import {MainModuleEN, MainModuleDE, MainModuleES} from './main.module';
-
-// Modules are cached by universal, so trick it & and provide "different" modules
-let languages = {
-	'en': {lang: 'en', translation: null, module: MainModuleEN},
-	'de': {lang: 'de', translation: TRANSLATION_DE, module: MainModuleDE},
-	'es': {lang: 'es', translation: TRANSLATION_ES, module: MainModuleES}
-};
 
 import * as Config from 'config.js';
 import {routes} from '../app/app.routes';
@@ -70,12 +59,27 @@ enableProdMode();
 
 const app = express();
 const DATA = (Config.server.data.path[0] === '.') ? path.join(path.resolve(__dirname, '..', '..', Config.server.data.path)) : Config.server.data.path;
+const I18N = path.join(path.resolve(__dirname, '../../src/i18n'));
 const ROOT = path.join(path.resolve(__dirname, '../../assets'));
 const DIST = path.join(path.resolve(__dirname, '../../dist/client'));
 const DIST_STYLE = path.join(path.resolve(__dirname, '../../dist/style'));
 const VIEWS = path.join(path.resolve(__dirname, '../views'));
 const VIEW = path.join(VIEWS, 'index.html');
 const RES_VERSION = Config.client.version.replace(/\./g, '');
+
+import {MainModule} from './main.module';
+
+let languages = JSON.parse(fs.readFileSync(path.resolve(I18N, 'languages.json')).toString()).enabled;
+
+let translations = {
+	'en': {lang: 'en', translation: null, module: MainModule}
+};
+
+languages.forEach(lang => {
+	if (lang.id !== 'en') {
+		translations[lang.id] = {lang: lang.id, translation: fs.readFileSync(path.resolve(I18N, 'language.' + lang.id + '.xlf')).toString(), module: MainModule};
+	}
+});
 
 let errorResponse = (req, res) => {
 	return res.status(404).type('txt').send('Not found ' + req.url);
@@ -102,10 +106,10 @@ app.use('/favicon.ico', express.static(path.join(ROOT, '/favicons/favicon.ico'))
 app.use('/assets/js', express.static(DIST, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
 app.use('/assets/lang/:id', (req, res) => {
-	if (!languages[req.params.id]) {
+	if (!translations[req.params.id]) {
 		return res.sendStatus(404);
 	}
-	res.send(languages[req.params.id].translation);
+	res.send(translations[req.params.id].translation);
 });
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
 app.use('/data/nuts0.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl0.geo.json')));
@@ -188,8 +192,8 @@ let startApp = function(req, res, originalUrl) {
 };
 
 let getLang = function(req) {
-	let lang = languages[req.query.lang];
-	return lang || languages['en'];
+	let lang = translations[req.query.lang];
+	return lang || translations['en'];
 };
 
 let portalApp = function(req, res, country) {

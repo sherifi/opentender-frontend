@@ -2,9 +2,18 @@ import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
 import {routes} from '../app.routes';
 import {Consts} from '../model/consts';
+import * as i18nlanguages from '../../i18n/languages.json';
+
+declare module '*languages.json' {
+	export var enabled: Array<{
+		id: string;
+		name: string;
+	}>;
+}
 
 @Injectable()
 export class I18NService {
+	public languages = i18nlanguages.enabled;
 	private _source: string;
 	private _translations: { [name: string]: any };
 

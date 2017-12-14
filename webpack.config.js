@@ -163,11 +163,7 @@ const clientConfig = () => {
 		plugins: plugins,
 		externals: (context, request, cb) => {
 			if (request.indexOf('.json') >= 0 && request.charAt(0) === '.') {
-				// console.log(context, request);
-				return fs.readFile(context + request.slice(1), (err, result) => {
-					result = JSON.parse(result.toString());
-					return cb(null, 'var ' + JSON.stringify(result));
-				});
+				return loadJSON(context, request, cb);
 			}
 			cb();
 		},
@@ -181,6 +177,19 @@ const clientConfig = () => {
 			Buffer: false
 		}
 	};
+};
+
+const loadJSON = (context, request, cb) => {
+	if (request.charAt(1) === '.') request = './' + request;
+	let filename = path.resolve(context + request.slice(1));
+	fs.readFile(filename, (err, result) => {
+		if (!result) {
+			console.error(filename, result);
+		}
+		if (err) console.error(err);
+		result = JSON.parse(result.toString());
+		cb(null, 'var ' + JSON.stringify(result));
+	});
 };
 
 // config for server app
@@ -199,10 +208,7 @@ const serverConfig = () => {
 				return cb(null, 'var ' + JSON.stringify(replacement()));
 			}
 			if (request.indexOf('.json') >= 0 && request.charAt(0) === '.') {
-				return fs.readFile(context + request.slice(1), (err, result) => {
-					result = JSON.parse(result.toString());
-					return cb(null, 'var ' + JSON.stringify(result));
-				});
+				return loadJSON(context, request, cb);
 			}
 			if (!path.isAbsolute(request) && request.charAt(0) !== '.') {
 				return cb(null, 'commonjs ' + request);

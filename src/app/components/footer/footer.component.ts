@@ -2,6 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {ConfigService} from '../../services/config.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -18,13 +19,13 @@ export class FooterComponent implements OnDestroy {
 	public url: string = '';
 	public subscription: Subscription;
 
-	constructor(public router: Router, private config: ConfigService) {
+	constructor(public router: Router, private config: ConfigService, private i18n: I18NService) {
 		this.contactmail = config.contactmail;
 		this.country = config.country.name;
 		this.version = config.config.version;
 		this.isRootPage = this.config.country.id === null;
 		const locale = (config.locale.split('-')[0] || 'en').toLowerCase();
-		this.languages = config.languages.filter(lang => lang.id !== locale);
+		this.languages = i18n.languages.filter(lang => lang.id !== locale);
 		this.subscription = this.router.events.subscribe(e => {
 			if (e instanceof NavigationEnd) {
 				this.url = (this.isRootPage ? '' : '/' + this.config.country.id) + this.router.url.split('?')[0];
