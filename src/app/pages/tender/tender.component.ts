@@ -130,7 +130,9 @@ export class TenderPage implements OnInit, OnDestroy {
 					vals[indicator.type] = indicator.value;
 					const ig = this.indicators.getGroupOf(indicator.type);
 					const ii = this.indicators.getIndicatorInfo(indicator.type);
-					this.viz.indicators[ig.id].data.push({id: indicator.type, name: ii.name, value: indicator.value, color: Consts.colors.indicators[ig.id]});
+					if (ig && ii) {
+						this.viz.indicators[ig.id].data.push({id: indicator.type, name: ii.name, value: indicator.value, color: Consts.colors.indicators[ig.id]});
+					}
 				}
 			});
 		}
@@ -138,8 +140,10 @@ export class TenderPage implements OnInit, OnDestroy {
 			tender.scores.forEach(score => {
 				if (score.status === 'CALCULATED') {
 					vals[score.type] = score.value;
-					const ig = this.indicators.getGroupOf(score.type);
-					this.viz.scores[ig.id].data.push({id: score.type, name: ig.name, value: score.value, color: Consts.colors.indicators[score.type]});
+					const ig = score.type == 'TENDER' ? this.indicators.TENDER : this.indicators.getGroupOf(score.type);
+					if (ig) {
+						this.viz.scores[ig.id].data.push({id: score.type, name: ig.name, value: score.value, color: Consts.colors.indicators[score.type]});
+					}
 				}
 			});
 		}
