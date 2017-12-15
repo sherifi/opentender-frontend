@@ -64,7 +64,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.title = this.indicator.plural;
 		this.icon = this.indicator.icon;
-		this.subindicators = Utils.subindicators(this.indicator.id);
+		this.subindicators = this.indicator.subindicators;
 		this.displayIndicatorTitles();
 	}
 

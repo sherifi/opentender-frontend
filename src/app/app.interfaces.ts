@@ -448,6 +448,7 @@ export interface ISubIndicatorInfo {
 	id: string;
 	name: string;
 	desc: string;
+	order: number;
 }
 
 /* table model */
@@ -498,6 +499,6 @@ export interface ITableColumnCompany extends ITableColumn {
 }
 
 export interface ITableColumnTender extends ITableColumn {
-	format: (tender: Tender) => Array<ITableCellLine>;
+	format: (tender: Tender, library: { indicators: Array<IIndicatorInfo>, TENDER: IIndicatorInfo }) => Array<ITableCellLine>;
 }
 

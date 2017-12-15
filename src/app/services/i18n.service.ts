@@ -24,23 +24,9 @@ export class I18NService {
 			const xliff = new Xliff();
 			this._translations = xliff.load(this._source, '').i18nNodesByMsgId;
 		}
-		this.init();
 	}
 
-	public init() {
-		if (!this._translations) {
-			return;
-		}
-		Object.keys(Consts.indicators).forEach(key => {
-			Consts.indicators[key].name = this.getStrict(key + '.name') || Consts.indicators[key].name;
-			Consts.indicators[key].plural = this.getStrict(key + '.plural') || Consts.indicators[key].plural;
-			let subs = Consts.indicators[key].subindicators;
-			Object.keys(subs).forEach(subkey => {
-				subs[subkey].name = this.getStrict(subkey + '.name') || subs[subkey].name;
-				subs[subkey].desc = this.getStrict(subkey + '.desc') || subs[subkey].desc;
-			});
-		});
-	}
+
 
 	public getPortalName(key: string, default_name: string): string {
 		if (key && this._extra) {

@@ -8,6 +8,7 @@ import {I18NService} from '../../../services/i18n.service';
 import {PlatformService} from '../../../services/platform.service';
 import {Utils} from '../../../model/utils';
 import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort} from '../../../app.interfaces';
+import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({
 	selector: 'tender-table',
@@ -37,7 +38,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	defaultPage: number = 0;
 	loading: number = 0;
 
-	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private platform: PlatformService) {
+	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private platform: PlatformService, private indicators: IndicatorService) {
 		this.setTableTitle();
 	}
 
@@ -134,6 +135,10 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
+		let library = {
+			indicators: this.indicators.GROUPS,
+			TENDER: this.indicators.TENDER
+		};
 		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
@@ -143,7 +148,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 			this.tenders.forEach(tender => {
 				let row = [];
 				this.columns.forEach(col => {
-					row.push({lines: col.format(tender)});
+					row.push({lines: col.format(tender, library)});
 				});
 				table.rows.push({cells: row});
 			});

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Utils} from '../../../model/utils';
 import {IIndicatorInfo} from '../../../app.interfaces';
+import {IndicatorService} from '../../../services/indicator.service';
 
 /**
  * The /about/glossary component displays information on procurement technical terms
@@ -12,10 +12,10 @@ import {IIndicatorInfo} from '../../../app.interfaces';
 	templateUrl: 'glossary.component.html'
 })
 export class AboutGlossaryPage {
-	public indicators: IIndicatorInfo[] = [];
+	public indicatorInfos: IIndicatorInfo[] = [];
 
-	constructor() {
-		this.indicators = Utils.indicators();
+	constructor(private indicators: IndicatorService) {
+		this.indicatorInfos = indicators.GROUPS;
 	}
 
 }

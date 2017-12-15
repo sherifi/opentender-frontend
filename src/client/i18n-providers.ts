@@ -24,7 +24,9 @@ export function getTranslationProviders(): Promise<StaticProvider[]> {
 	let query_locale = getParameterByName('lang');
 	if (query_locale && query_locale.length == 2) {
 		locale = query_locale;
-		window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
+		if (locale == 'en') {
+			window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
+		}
 		if (window.localStorage) {
 			window.localStorage.setItem('opentender.lang', locale);
 		}

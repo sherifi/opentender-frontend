@@ -1,33 +1,7 @@
 import * as countries from './countries.json';
 import * as currencies from './currencies.json';
-import * as indicators from './indicators.json';
-
-export interface ISubIndicatorInfoConst {
-	id: string;
-	name: string;
-	desc: string;
-	order: number;
-	notused?: boolean;
-}
-
-export interface IIndicatorInfoConst {
-	id: string;
-	name: string;
-	plural: string;
-	icon: string;
-	subindicators: {
-		[name: string]: ISubIndicatorInfoConst
-	};
-}
-
-declare module '*indicators.json' {
-	export var ADMINISTRATIVE: IIndicatorInfoConst;
-	export var CORRUPTION: IIndicatorInfoConst;
-	export var TRANSPARENCY: IIndicatorInfoConst;
-}
 
 export const Consts = {
-	indicators: indicators,
 	countries: countries,
 	currencies: currencies,
 	colors: {

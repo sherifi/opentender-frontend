@@ -9,6 +9,7 @@ import {Utils} from '../../model/utils';
 import {I18NService} from '../../services/i18n.service';
 import {Subscription} from 'rxjs/Subscription';
 import {ISearchFilterDefType, IStats} from '../../app.interfaces';
+import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
 	moduleId: __filename,
@@ -59,7 +60,8 @@ export class TenderPage implements OnInit, OnDestroy {
 		}
 	};
 
-	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService, private notify: NotifyService, private i18n: I18NService) {
+	constructor(private route: ActivatedRoute, private api: ApiService, private config: ConfigService, private platform: PlatformService,
+				private notify: NotifyService, private i18n: I18NService, private indicators: IndicatorService) {
 		if (!this.platform.isBrowser) {
 			this.state.additional.open = true;
 			this.state.documents.open = true;
@@ -126,12 +128,9 @@ export class TenderPage implements OnInit, OnDestroy {
 			tender.indicators.forEach(indicator => {
 				if (indicator.status === 'CALCULATED') {
 					vals[indicator.type] = indicator.value;
-					Object.keys(Consts.indicators).forEach(key => {
-						if (indicator.type.indexOf(key) === 0) {
-							let groupkey = key.split('_')[0];
-							this.viz.indicators[key].data.push({id: indicator.type, name: Utils.formatIndicatorName(indicator.type), value: indicator.value, color: Consts.colors.indicators[groupkey]});
-						}
-					});
+					const ig = this.indicators.getGroupOf(indicator.type);
+					const ii = this.indicators.getIndicatorInfo(indicator.type);
+					this.viz.indicators[ig.id].data.push({id: indicator.type, name: ii.name, value: indicator.value, color: Consts.colors.indicators[ig.id]});
 				}
 			});
 		}
@@ -139,11 +138,8 @@ export class TenderPage implements OnInit, OnDestroy {
 			tender.scores.forEach(score => {
 				if (score.status === 'CALCULATED') {
 					vals[score.type] = score.value;
-					Object.keys(this.viz.scores).forEach(key => {
-						if (score.type === key) {
-							this.viz.scores[key].data.push({id: score.type, name: Utils.formatIndicatorGroupName(score.type), value: score.value, color: Consts.colors.indicators[score.type]});
-						}
-					});
+					const ig = this.indicators.getGroupOf(score.type);
+					this.viz.scores[ig.id].data.push({id: score.type, name: ig.name, value: score.value, color: Consts.colors.indicators[score.type]});
 				}
 			});
 		}

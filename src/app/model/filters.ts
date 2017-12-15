@@ -183,7 +183,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
-			'scores.type': Consts.indicators.CORRUPTION.id
+			'scores.type': 'CORRUPTION'
 		},
 		type: ISearchFilterDefType.range,
 	},
@@ -193,7 +193,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
-			'scores.type': Consts.indicators.ADMINISTRATIVE.id
+			'scores.type': 'ADMINISTRATIVE'
 		},
 		type: ISearchFilterDefType.range,
 	},
@@ -203,7 +203,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
-			'scores.type': Consts.indicators.TRANSPARENCY.id
+			'scores.type': 'TRANSPARENCY'
 		},
 		type: ISearchFilterDefType.range,
 	},

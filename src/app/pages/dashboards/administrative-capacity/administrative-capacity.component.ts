@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Consts} from '../../../model/consts';
 import {IIndicatorInfo} from '../../../app.interfaces';
 import {Utils} from '../../../model/utils';
+import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({
 	moduleId: __filename,
@@ -9,6 +10,10 @@ import {Utils} from '../../../model/utils';
 	templateUrl: 'administrative-capacity.component.html'
 })
 export class DashboardsAdministrativeCapacityPage {
-	public indicator: IIndicatorInfo = Utils.indicatorInfo(Consts.indicators.ADMINISTRATIVE);
+	public indicator: IIndicatorInfo;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.aci'];
+
+	constructor(indicators: IndicatorService) {
+		this.indicator = indicators.ADMINISTRATIVE;
+	}
 }

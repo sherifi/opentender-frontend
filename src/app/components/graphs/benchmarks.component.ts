@@ -4,6 +4,7 @@ import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {I18NService} from '../../services/i18n.service';
+import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
 	selector: 'graph[benchmarks]',
@@ -100,21 +101,19 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		benchmark: null
 	};
 
-	constructor(private i18n: I18NService) {
+	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.in_years.chart.xAxis.label = i18n.get('Year');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [
-				{name: i18n.get('Good Procurement Score'), id: 'TENDER', build: 'scores'}
+				{name: indicators.TENDER.name + ' ' + i18n.get('Score'), id: indicators.TENDER.id, build: 'scores'}
 			]
 		});
-		Object.keys(Consts.indicators).forEach(i_key => {
-			let indicator = Consts.indicators[i_key];
-			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: i_key, build: 'scores'}]};
-			Object.keys(indicator.subindicators).forEach(key => {
-				if (!indicator.subindicators[key].notused) {
-					group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key, build: 'scores'});
-				}
+		indicators.GROUPS.forEach(indicator => {
+			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: indicator.id, build: 'scores'}]};
+			indicator.subindicators.forEach(sub => {
+				group.benchmarks.push({name: sub.name, id: sub.id, build: 'scores'});
+
 			});
 			this.benchmark_groups.push(group);
 		});

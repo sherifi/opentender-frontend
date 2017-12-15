@@ -4,9 +4,9 @@ import Buyer = Definitions.Buyer;
 import Price = Definitions.Price;
 import Lot = Definitions.Lot;
 import Bid = Definitions.Bid;
-import {ITableColumnAuthority, ITableColumnCompany, ITableColumnTender, ITableCellLine} from '../app.interfaces';
-import {Consts} from './consts';
+import {ITableColumnAuthority, ITableColumnCompany, ITableColumnTender, ITableCellLine, IIndicatorInfo} from '../app.interfaces';
 import {Utils} from './utils';
+import Tender = Definitions.Tender;
 
 const ICON = {
 	tender: 'icon-newspaper',
@@ -25,8 +25,8 @@ const ColumnsFormatUtils = {
 		}
 		return [];
 	},
-	formatTenderIndicatorGroup: (tender, group) => {
-		if (!tender.indicators) {
+	formatTenderIndicatorGroup: (tender: Tender, group: IIndicatorInfo) => {
+		if (!tender.indicators || !group) {
 			return [];
 		}
 		let result: Array<ITableCellLine> = [];
@@ -36,7 +36,7 @@ const ColumnsFormatUtils = {
 				tender.indicators.forEach(indicator => {
 					let group_id = indicator.type.split('_')[0];
 					if (indicator.status === 'CALCULATED' && group_id === group.id) {
-						let def = group.subindicators[indicator.type];
+						let def = group.subindicators.find(sub => sub.id === indicator.type);
 						if (def) {
 							collapseLines.push({styleClass: 'badge-' + group.id, content: def.name + ': ' + Utils.formatValue(indicator.value), hint: def.desc});
 						}
@@ -317,27 +317,25 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		},
 		format: tender => [{content: tender.mediationBodyName}]
 	},
-
 	{
 		name: 'Indicators',
 		id: 'indicators',
 		group: 'Indicators',
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.indicators) {
 				return [];
 			}
 			let result: Array<ITableCellLine> = [];
 			tender.scores.forEach(score => {
-				if (score.status === 'CALCULATED' && score.type === 'TENDER') {
-					result.push({prefix: 'Good Procurement'});
+				if (score.status === 'CALCULATED' && score.type === library.TENDER.id) {
+					result.push({prefix: library.TENDER.name});
 					result.push({content: 'Score: ' + Utils.formatValue(score.value)});
 				}
 			});
-			Object.keys(Consts.indicators).forEach(key => {
-				let group = Consts.indicators[key];
-				let list = ColumnsFormatUtils.formatTenderIndicatorGroup(tender, group);
+			library.indicators.forEach(ig => {
+				let list = ColumnsFormatUtils.formatTenderIndicatorGroup(tender, ig);
 				if (list.length > 0) {
-					result.push({prefix: group.name});
+					result.push({prefix: ig.name});
 					result = result.concat(list);
 				}
 			});
@@ -348,24 +346,24 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Procurement Integrity Indicator',
 		id: 'indicators.pii',
 		group: 'Indicators',
-		format: tender => {
-			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.CORRUPTION);
+		format: (tender, library) => {
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'CORRUPTION'));
 		}
 	},
 	{
 		name: 'Transparency Indicator',
 		id: 'indicators.ti',
 		group: 'Indicators',
-		format: tender => {
-			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.TRANSPARENCY);
+		format: (tender, library) => {
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'TRANSPARENCY'));
 		}
 	},
 	{
 		name: 'Administrative Capacity Indicator',
 		id: 'indicators.aci',
 		group: 'Indicators',
-		format: tender => {
-			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, Consts.indicators.ADMINISTRATIVE);
+		format: (tender, library) => {
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'ADMINISTRATIVE'));
 		}
 	},
 	{

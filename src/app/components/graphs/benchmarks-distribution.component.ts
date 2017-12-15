@@ -5,6 +5,7 @@ import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
 import {marker} from 'leaflet';
 import {I18NService} from '../../services/i18n.service';
+import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
 	selector: 'graph[benchmarks-distribution]',
@@ -125,23 +126,21 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 		}
 	};
 
-	constructor(private i18n: I18NService) {
+	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.histogram_distribution.chart.yAxis.label = i18n.get('Year');
 		this.unit = i18n.get('Tenders');
 		this.marker.title = this.i18n.get('Tender in view');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [
-				{name: i18n.get('Good Procurement Score'), id: 'TENDER'}
+				{name: indicators.TENDER.name + ' ' + i18n.get('Score'), id: indicators.TENDER.id}
 			]
 		});
-		Object.keys(Consts.indicators).forEach(i_key => {
-			let indicator = Consts.indicators[i_key];
-			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: i_key}]};
-			Object.keys(indicator.subindicators).forEach(key => {
-				if (!indicator.subindicators[key].notused) {
-					group.benchmarks.push({name: Utils.formatIndicatorName(key), id: key});
-				}
+		indicators.GROUPS.forEach(indicator => {
+			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: indicator.id}]};
+			indicator.subindicators.forEach(sub => {
+				group.benchmarks.push({name: sub.name, id: sub.id});
+
 			});
 			this.benchmark_groups.push(group);
 		});

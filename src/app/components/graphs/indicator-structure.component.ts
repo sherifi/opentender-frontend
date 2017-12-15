@@ -3,6 +3,7 @@ import {IChartPie, IChartPieSeries} from '../../thirdparty/ngx-charts-universal/
 import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
+import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
 	selector: 'graph[indicator-structure]',
@@ -25,7 +26,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	@Output()
 	onSelect = new EventEmitter();
 
-	indicators: IChartPieSeries = {
+	indicators_pie: IChartPieSeries = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -47,9 +48,9 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		},
 		data: null
 	};
-	graph: IChartPieSeries = this.indicators;
+	graph: IChartPieSeries = this.indicators_pie;
 
-	constructor() {
+	constructor(private indicators: IndicatorService) {
 	}
 
 	getSeriesInfo() {
@@ -57,10 +58,10 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.indicators.data = null;
+		this.indicators_pie.data = null;
 		if (this.data) {
-			this.indicators.data = Object.keys(this.data).map(key => {
-				return {info: Utils.getIndicator(key), value: this.data[key], id: key};
+			this.indicators_pie.data = Object.keys(this.data).map(key => {
+				return {info: this.indicators.getIndicatorInfo(key), value: this.data[key], id: key};
 			}).sort((a, b) => {
 				return (a.info ? a.info.order : -1) - (a.info ? b.info.order : -1);
 			}).map(indicator => {

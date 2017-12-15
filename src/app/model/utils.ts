@@ -1,7 +1,6 @@
 import * as moment from 'moment';
 import {Consts} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
-import {IIndicatorInfo, ISubIndicatorInfo} from '../app.interfaces';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
@@ -41,74 +40,6 @@ export const Utils = {
 		}
 		return '€ ' + Utils.formatValue(value);
 	},
-	getIndicatorInfo(value: string) {
-		let sub = Consts.indicators.ADMINISTRATIVE.subindicators[value];
-		if (sub) {
-			return {group: Consts.indicators.ADMINISTRATIVE, indicator: sub};
-		}
-		sub = Consts.indicators.CORRUPTION.subindicators[value];
-		if (sub) {
-			return {group: Consts.indicators.CORRUPTION, indicator: sub};
-		}
-		sub = Consts.indicators.TRANSPARENCY.subindicators[value];
-		if (sub) {
-			return {group: Consts.indicators.TRANSPARENCY, indicator: sub};
-		}
-		return null;
-	},
-	getIndicator(value: string) {
-		return Consts.indicators.ADMINISTRATIVE.subindicators[value] || Consts.indicators.CORRUPTION.subindicators[value] || Consts.indicators.TRANSPARENCY.subindicators[value];
-	},
-	formatIndicatorName(value: string): string {
-		let sub = Utils.getIndicator(value);
-		if (!sub) {
-			return value;
-		}
-		return sub.name;
-	},
-	formatIndicatorGroupName(value: string): string {
-		let groupkey = Object.keys(Consts.indicators).find(key => {
-			return value === Consts.indicators[key].id;
-		});
-		if (Consts.indicators[groupkey]) {
-			return Consts.indicators[groupkey].name;
-		} else if (value === 'TENDER') {
-			return 'Good Procurement Score';
-		}
-		return value;
-	},
-	indicatorShortID(key: string): string {
-		return key.split('_').map(part => {
-			return part[0].toUpperCase();
-		}).join('');
-	},
-	subindicators(indicatorId: string): Array<ISubIndicatorInfo> {
-		return Object.keys(Consts.indicators[indicatorId].subindicators)
-			.filter(subkey => !Consts.indicators[indicatorId].subindicators[subkey].notused)
-			.map(subkey => {
-				let sub = Consts.indicators[indicatorId].subindicators[subkey];
-				return {
-					id: subkey,
-					sid: Utils.indicatorShortID(subkey),
-					name: sub.name,
-					desc: sub.desc
-				};
-			});
-	},
-	indicatorInfo(ii): IIndicatorInfo {
-		return {
-			id: ii.id,
-			name: ii.name,
-			plural: ii.plural,
-			icon: ii.icon,
-			subindicators: Utils.subindicators(ii.id)
-		};
-	},
-	indicators(): Array<IIndicatorInfo> {
-		return Object.keys(Consts.indicators).map(key => {
-			return Utils.indicatorInfo(Consts.indicators[key]);
-		});
-	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {
 			return '';
@@ -140,7 +71,6 @@ export const Utils = {
 		value = Math.round(value * 100) / 100;
 		return value.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2}) + '%';
 	},
-
 	validateNutsCode(code, level) {
 		if (code.length > 1 && code.length < 6) {
 			code = code.toUpperCase();
@@ -150,7 +80,6 @@ export const Utils = {
 		}
 		return 'invalid';
 	},
-
 	formatTrunc(value): string {
 		return value.toFixed(0);
 	},
