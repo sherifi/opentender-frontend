@@ -82,6 +82,9 @@ export class I18NService {
 				}
 			}
 		}
+		if (!key) {
+			return this.get('Portals');
+		}
 		return default_name;
 	}
 

@@ -133,7 +133,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [
-				{name: indicators.TENDER.name + ' ' + i18n.get('Score'), id: indicators.TENDER.id}
+				{name: indicators.TENDER.name, id: indicators.TENDER.id}
 			]
 		});
 		indicators.GROUPS.forEach(indicator => {

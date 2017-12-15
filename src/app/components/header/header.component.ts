@@ -36,12 +36,17 @@ export class HeaderComponent implements OnDestroy {
 		this.subscription.unsubscribe();
 	}
 
+	private getCurrentUrl(): string {
+		return (this.router.url || '').split('?')[0];
+	}
+
 	private setSubMenu() {
+		let url = this.getCurrentUrl();
 		this.current = this.menu.find(item => {
 			if (item.path === '') {
-				return (this.router.url === '/');
+				return (url === '/');
 			}
-			return (this.router.url || '').indexOf('/' + item.path) === 0;
+			return url.indexOf('/' + item.path) === 0;
 		});
 	}
 
@@ -70,7 +75,8 @@ export class HeaderComponent implements OnDestroy {
 	}
 
 	public isActiveStart(): boolean {
-		return (this.router.url === '/start');
+		let url = this.getCurrentUrl();
+		return (url === '/start');
 	}
 
 	public toggleMenu() {

@@ -1958,13 +1958,6 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6990ad8d6182662e864495ac31c3758cda1c7a28" datatype="html">
-        <source>Portals</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/header/header.component.ts</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
         <source>Making Public Tenders More Transparent</source>
         <context-group purpose="location">
@@ -3252,11 +3245,27 @@
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
+      <trans-unit id="Portals" datatype="html">
+        <source>Portals</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="AverageofallCompanies" datatype="html">
+        <source>Average of all Companies</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
         <source>Administrative Capacity Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">163</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3264,7 +3273,7 @@
         <source>Administrative Capacity Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3272,7 +3281,7 @@
         <source>Joint or centralized procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">165</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3280,7 +3289,7 @@
         <source>Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3288,7 +3297,7 @@
         <source>Use of framework agreements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">167</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3296,7 +3305,7 @@
         <source>Framework agreement suggests good administrative capacity if the tender establishes a framework agreement.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3304,7 +3313,7 @@
         <source>Electronic auction</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">169</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3312,7 +3321,7 @@
         <source>Electronic auction points at good administrative capacity if the tender was conducted through an electronic auction.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3320,7 +3329,7 @@
         <source>Use of WTO framework</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">169</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3328,7 +3337,7 @@
         <source>Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">172</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3336,7 +3345,7 @@
         <source>English as foreign language</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">173</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3344,7 +3353,7 @@
         <source>English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">174</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3352,7 +3361,7 @@
         <source>Discrepancies between call for tender and contract award notices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">173</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3360,7 +3369,7 @@
         <source>Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">176</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3368,7 +3377,7 @@
         <source>Integrity Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">177</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3376,7 +3385,7 @@
         <source>Integrity Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">178</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3384,7 +3393,7 @@
         <source>Single bidder contract</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">177</context>
+          <context context-type="linenumber">179</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3392,7 +3401,7 @@
         <source>Single bid signals a risk when only one bid is submitted in a tender in a competitive market.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="linenumber">180</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3400,7 +3409,7 @@
         <source>Call for tenders publication</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">179</context>
+          <context context-type="linenumber">181</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3408,7 +3417,7 @@
         <source>Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">182</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3416,7 +3425,7 @@
         <source>Procedure type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">181</context>
+          <context context-type="linenumber">183</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3424,7 +3433,7 @@
         <source>Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">182</context>
+          <context context-type="linenumber">184</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3432,7 +3441,7 @@
         <source>Description length</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">183</context>
+          <context context-type="linenumber">185</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3440,7 +3449,7 @@
         <source>Product description length signals the risk of product description being tailored to one company, when the description is excessively long.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">184</context>
+          <context context-type="linenumber">186</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3448,7 +3457,7 @@
         <source>Length of advertisement period</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">185</context>
+          <context context-type="linenumber">187</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3456,7 +3465,7 @@
         <source>Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">186</context>
+          <context context-type="linenumber">188</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3464,7 +3473,7 @@
         <source>Length of decision period</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">187</context>
+          <context context-type="linenumber">189</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3472,7 +3481,7 @@
         <source>Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">190</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3480,7 +3489,7 @@
         <source>New company</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">189</context>
+          <context context-type="linenumber">191</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3488,7 +3497,7 @@
         <source>New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">190</context>
+          <context context-type="linenumber">192</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3496,7 +3505,7 @@
         <source>Tax haven</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">191</context>
+          <context context-type="linenumber">193</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3504,7 +3513,7 @@
         <source>Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">194</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3512,7 +3521,7 @@
         <source>Political connections of suppliers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">193</context>
+          <context context-type="linenumber">195</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3520,7 +3529,7 @@
         <source>Political connection of the supplier captures the risk of at least one owner or manager holding a political office.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">194</context>
+          <context context-type="linenumber">196</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3528,7 +3537,7 @@
         <source>Winner contract share</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">195</context>
+          <context context-type="linenumber">197</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3536,7 +3545,7 @@
         <source>Winner contract share is the share of contract value won by a given company from a given buyer in a given year.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">196</context>
+          <context context-type="linenumber">198</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3544,7 +3553,7 @@
         <source>Eligibility criteria length</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">197</context>
+          <context context-type="linenumber">199</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3552,7 +3561,7 @@
         <source>Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">198</context>
+          <context context-type="linenumber">200</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3560,7 +3569,7 @@
         <source>Evaluation criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">199</context>
+          <context context-type="linenumber">201</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3568,7 +3577,7 @@
         <source>Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">200</context>
+          <context context-type="linenumber">202</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3576,7 +3585,7 @@
         <source>Transparency Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">201</context>
+          <context context-type="linenumber">203</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3584,7 +3593,7 @@
         <source>Transparency Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">202</context>
+          <context context-type="linenumber">204</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3592,7 +3601,7 @@
         <source>Publication rate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">203</context>
+          <context context-type="linenumber">205</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3600,7 +3609,7 @@
         <source>Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">204</context>
+          <context context-type="linenumber">206</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3608,7 +3617,7 @@
         <source>Number of key missing fields in form</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">205</context>
+          <context context-type="linenumber">207</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -3616,7 +3625,7 @@
         <source>Number of key missing fields is the ratio of fields with missing values in the call for tender and contract award announcement related to a given tender (based on the most recently published versions).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/i18n.component.ts</context>
-          <context context-type="linenumber">206</context>
+          <context context-type="linenumber">208</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>

@@ -106,14 +106,13 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [
-				{name: indicators.TENDER.name + ' ' + i18n.get('Score'), id: indicators.TENDER.id, build: 'scores'}
+				{name: indicators.TENDER.name, id: indicators.TENDER.id, build: 'scores'}
 			]
 		});
 		indicators.GROUPS.forEach(indicator => {
 			let group = {name: indicator.plural, benchmarks: [{name: indicator.name + ' ' + i18n.get('Score'), id: indicator.id, build: 'scores'}]};
 			indicator.subindicators.forEach(sub => {
 				group.benchmarks.push({name: sub.name, id: sub.id, build: 'scores'});
-
 			});
 			this.benchmark_groups.push(group);
 		});
