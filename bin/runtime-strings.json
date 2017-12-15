@@ -154,5 +154,6 @@
   "Limit to same sector",
   "Limit to same region (NUTS2)",
   "Limit to same authority type",
-  "Limit to same main activities"
+  "Limit to same main activities",
+  "Buyer Type"
 ]

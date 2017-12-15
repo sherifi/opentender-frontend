@@ -26,7 +26,32 @@ export class I18NService {
 		}
 	}
 
-
+	public expandCountry(key: string): string {
+		if (key === undefined || key === null) {
+			return '';
+		}
+		if (this._extra) {
+			if (this._extra.portals) {
+				let result = this._extra.portals[key.toLowerCase()];
+				if (result) {
+					return result;
+				}
+			}
+			if (this._extra.countries) {
+				key = key.toUpperCase();
+				if (key == 'UK') {
+					key = 'GB';
+				}
+				let result = this._extra.countries[key];
+				if (result) {
+					return result;
+				} else {
+					console.log('no country translation', key);
+				}
+			}
+		}
+		return Consts.countries[key.toUpperCase()] || key;
+	}
 
 	public getPortalName(key: string, default_name: string): string {
 		if (key && this._extra) {
@@ -37,10 +62,11 @@ export class I18NService {
 				}
 			}
 			if (this._extra.countries) {
-				if (key == 'uk') {
-					key = 'gb';
+				key = key.toUpperCase();
+				if (key == 'UK') {
+					key = 'GB';
 				}
-				let result = this._extra.countries[key.toUpperCase()];
+				let result = this._extra.countries[key];
 				if (result) {
 					return result;
 				}

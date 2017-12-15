@@ -78,7 +78,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: authority => authority.body && authority.body.address ? [{content: Utils.expandCountry(authority.body.address.country)}] : []
+		format: (authority, library) => authority.body && authority.body.address ? [{content: library.i18n.expandCountry(authority.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
@@ -147,7 +147,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: company => company.body && company.body.address ? [{content: Utils.expandCountry(company.body.address.country)}] : []
+		format: (company, library) => company.body && company.body.address ? [{content: library.i18n.expandCountry(company.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
@@ -718,11 +718,11 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Country',
 		id: 'country',
 		group: 'Tender Meta Data',
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.country) {
 				return [];
 			}
-			return [{content: Utils.expandCountry(tender.country)}];
+			return [{content: library.i18n.expandCountry(tender.country)}];
 		}
 	}
 

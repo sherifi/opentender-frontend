@@ -7,6 +7,7 @@ import {PlatformService} from '../../services/platform.service';
 import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType, ISearchResultBucket} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {bestFilterColCount} from '../../model/helpers';
+import {I18NService} from '../../services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -27,7 +28,7 @@ export class FilterBoxComponent implements OnChanges {
 	private searchChangeEmitter: EventEmitter<any> = new EventEmitter<any>();
 	private searchUpdated: Subject<any> = new Subject<any>();
 
-	constructor(private platform: PlatformService) {
+	constructor(private platform: PlatformService, private i18n: I18NService) {
 		this.searchChangeEmitter = <any>this.searchUpdated.asObservable()
 			.debounceTime(400)
 			.distinctUntilChanged(); // accept only relevant chars
@@ -53,6 +54,9 @@ export class FilterBoxComponent implements OnChanges {
 		}
 		if (filter.def.valueFormatter) {
 			return filter.def.valueFormatter(bucket.key);
+		}
+		if (filter.def.valueTranslater) {
+			return filter.def.valueTranslater(bucket.key, this.i18n);
 		}
 		return bucket.key;
 	}

@@ -7,7 +7,7 @@ import {NotifyService} from '../../../services/notify.service';
 import {I18NService} from '../../../services/i18n.service';
 import {PlatformService} from '../../../services/platform.service';
 import {Utils} from '../../../model/utils';
-import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort} from '../../../app.interfaces';
+import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort, ITableLibrary} from '../../../app.interfaces';
 import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({
@@ -38,7 +38,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	defaultPage: number = 0;
 	loading: number = 0;
 
-	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private platform: PlatformService, private indicators: IndicatorService) {
+	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService, private i18n: I18NService, private indicators: IndicatorService) {
 		this.setTableTitle();
 	}
 
@@ -135,9 +135,10 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
-		let library = {
+		let library: ITableLibrary = {
 			indicators: this.indicators.GROUPS,
-			TENDER: this.indicators.TENDER
+			TENDER: this.indicators.TENDER,
+			i18n: this.i18n
 		};
 		let table: ITable = {
 			columns: this.columns,

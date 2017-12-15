@@ -4,7 +4,9 @@ import {AuthorityColumns} from '../../../model/columns';
 import {NotifyService} from '../../../services/notify.service';
 import {Utils} from '../../../model/utils';
 import {PlatformService} from '../../../services/platform.service';
-import {IAuthority, ISearchResultAuthority, ISearchCommand, ITableColumnAuthority, ITable, ITableColumnSort} from '../../../app.interfaces';
+import {IAuthority, ISearchResultAuthority, ISearchCommand, ITableColumnAuthority, ITable, ITableColumnSort, ITableLibrary} from '../../../app.interfaces';
+import {I18NService} from '../../../services/i18n.service';
+import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({
 	selector: 'authority-table',
@@ -31,7 +33,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	defaultPage = 0;
 	all_columns = AuthorityColumns;
 
-	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService) {
+	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService, private i18n: I18NService, private indicators: IndicatorService) {
 	}
 
 	public ngOnInit(): void {
@@ -68,6 +70,11 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	}
 
 	private buildTable(): void {
+		let library: ITableLibrary = {
+			indicators: this.indicators.GROUPS,
+			TENDER: this.indicators.TENDER,
+			i18n: this.i18n
+		};
 		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
@@ -77,7 +84,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 			this.authorities.forEach(authority => {
 				let row = [];
 				this.columns.forEach(col => {
-					row.push({lines: col.format(authority)});
+					row.push({lines: col.format(authority, library)});
 				});
 				table.rows.push({cells: row});
 			});

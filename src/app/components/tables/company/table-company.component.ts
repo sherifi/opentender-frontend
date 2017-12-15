@@ -1,10 +1,12 @@
 import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {CompanyColumns} from '../../../model/columns';
-import {ICompany, ISearchResultCompany, ISearchCommand, ITableColumnCompany, ITable, ITableColumnSort} from '../../../app.interfaces';
+import {ICompany, ISearchResultCompany, ISearchCommand, ITableColumnCompany, ITable, ITableColumnSort, ITableLibrary} from '../../../app.interfaces';
 import {NotifyService} from '../../../services/notify.service';
 import {Utils} from '../../../model/utils';
 import {PlatformService} from '../../../services/platform.service';
+import {I18NService} from '../../../services/i18n.service';
+import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({
 	selector: 'company-table',
@@ -32,7 +34,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	defaultPageSize: number = 10;
 	defaultPage: number = 0;
 
-	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService) {
+	constructor(private api: ApiService, private notify: NotifyService, private platform: PlatformService, private i18n: I18NService, private indicators: IndicatorService) {
 	}
 
 	ngOnInit(): void {
@@ -69,6 +71,11 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	}
 
 	buildTable(): void {
+		let library: ITableLibrary = {
+			indicators: this.indicators.GROUPS,
+			TENDER: this.indicators.TENDER,
+			i18n: this.i18n
+		};
 		let table: ITable = {
 			columns: this.columns,
 			sortBy: this.sortBy,
@@ -78,7 +85,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 			this.companies.forEach(company => {
 				let row = [];
 				this.columns.forEach(col => {
-					row.push({lines: col.format(company)});
+					row.push({lines: col.format(company, library)});
 				});
 				table.rows.push({cells: row});
 			});

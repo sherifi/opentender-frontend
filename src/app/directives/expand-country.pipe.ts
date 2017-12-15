@@ -1,11 +1,14 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Utils} from '../model/utils';
+import {I18NService} from '../services/i18n.service';
 
 @Pipe({name: 'expandCountry'})
 export class ExpandCountryPipe implements PipeTransform {
 
+	constructor(private i18n: I18NService) {
+	}
+
 	transform(value: string): string {
-		return Utils.expandCountry(value);
+		return this.i18n.expandCountry(value);
 	}
 
 }

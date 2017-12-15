@@ -54,19 +54,6 @@ export const Utils = {
 		}
 		return value[0].toUpperCase() + value.slice(1);
 	},
-	expandCountry(value: string): string {
-		if (value === undefined || value === null) {
-			return '';
-		}
-		if (value === 'all') {
-			return 'All Countries';
-		}
-		value = value.toUpperCase();
-		if (Consts.countries[value]) {
-			return Consts.countries[value];
-		}
-		return value;
-	},
 	formatPercent(value): string {
 		value = Math.round(value * 100) / 100;
 		return value.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2}) + '%';

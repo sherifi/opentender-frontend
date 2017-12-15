@@ -369,6 +369,10 @@ export enum ISearchFilterDefType {
 	none = 0
 }
 
+export interface ISearchFilterValueTranslate {
+	expandCountry: (string) => string;
+}
+
 export interface ISearchFilterDef {
 	id: string;
 	name: string;
@@ -379,6 +383,7 @@ export interface ISearchFilterDef {
 	aggregation_field?: string; // if empty "field" is used for aggregation, too
 	aggregation_type?: ISearchFilterDefType; // if empty "type" is used for aggregation, too
 	valueFormatter?: (string) => string;
+	valueTranslater?: (string, ISearchFilterValueTranslate) => string;
 	valuesFilter?: (buckets: Array<ISearchResultBucket>) => Array<ISearchResultBucket>;
 	subrequest?: {
 		[fieldname: string]: string | boolean | number
@@ -490,15 +495,21 @@ export interface ITableCellLine {
 	collapseLines?: Array<ITableCellLine>;
 }
 
+export interface ITableLibrary {
+	indicators: Array<IIndicatorInfo>;
+	TENDER: IIndicatorInfo;
+	i18n: { expandCountry: (key: string) => string; };
+}
+
 export interface ITableColumnAuthority extends ITableColumn {
-	format: (authority: IAuthority) => Array<ITableCellLine>;
+	format: (authority: IAuthority, library: ITableLibrary) => Array<ITableCellLine>;
 }
 
 export interface ITableColumnCompany extends ITableColumn {
-	format: (company: ICompany) => Array<ITableCellLine>;
+	format: (company: ICompany, library: ITableLibrary) => Array<ITableCellLine>;
 }
 
 export interface ITableColumnTender extends ITableColumn {
-	format: (tender: Tender, library: { indicators: Array<IIndicatorInfo>, TENDER: IIndicatorInfo }) => Array<ITableCellLine>;
+	format: (tender: Tender, library: ITableLibrary) => Array<ITableCellLine>;
 }
 

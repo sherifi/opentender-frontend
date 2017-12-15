@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {Utils} from '../../model/utils';
 import {ConfigService} from '../../services/config.service';
+import {I18NService} from '../../services/i18n.service';
 
 interface Download {
 	country: string;
@@ -21,7 +22,7 @@ export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];
 	current: Download;
 
-	constructor(private api: ApiService, private config: ConfigService) {
+	constructor(private api: ApiService, private config: ConfigService, private i18n: I18NService) {
 
 	}
 
@@ -34,7 +35,7 @@ export class DownloadPage implements OnInit {
 		let sub = this.api.getDownloads().subscribe(
 			(data: any) => {
 				data.forEach(download => {
-					download.name = Utils.expandCountry(download.country);
+					download.name = this.i18n.expandCountry(download.country);
 					if (download.country === current_id && download.count > 0) {
 						this.current = download;
 					}

@@ -26,7 +26,9 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Buyer',
 		field: 'buyers.address.country',
 		type: ISearchFilterDefType.select,
-		valueFormatter: Utils.expandCountry,
+		valueTranslater: (value, i18n) => {
+			return i18n.expandCountry(value);
+		},
 		size: 30
 	},
 	{
@@ -70,7 +72,9 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Supplier',
 		field: 'lots.bids.bidders.address.country',
 		type: ISearchFilterDefType.select,
-		valueFormatter: Utils.expandCountry,
+		valueTranslater: (value, i18n) => {
+			return i18n.expandCountry(value);
+		},
 		size: 30
 	},
 
@@ -98,7 +102,9 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Tender',
 		field: 'country',
 		type: ISearchFilterDefType.select,
-		valueFormatter: Utils.expandCountry,
+		valueTranslater: (value, i18n) => {
+			return i18n.expandCountry(value);
+		},
 		size: 30
 	},
 
@@ -303,7 +309,9 @@ export const CompanyFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Company',
 		field: 'body.address.country',
 		type: ISearchFilterDefType.select,
-		valueFormatter: Utils.expandCountry,
+		valueTranslater: (value, i18n) => {
+			return i18n.expandCountry(value);
+		},
 		size: 30
 	}];
 
@@ -330,7 +338,9 @@ export const AuthorityFilterDefs: Array<ISearchFilterDef> = [
 		name: 'Country',
 		group: 'Authority',
 		field: 'body.address.country',
-		valueFormatter: Utils.expandCountry,
+		valueTranslater: (value, i18n) => {
+			return i18n.expandCountry(value);
+		},
 		type: ISearchFilterDefType.select,
 		size: 30
 	},
