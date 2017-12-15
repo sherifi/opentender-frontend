@@ -115,6 +115,7 @@ import {GraphBenchmarksComponent} from './components/graphs/benchmarks.component
 import {MapComponent} from './components/maps/leaflet.component';
 import {LoadingComponent} from './components/loading/loading.component';
 import {GraphBenchmarksDistributionComponent} from './components/graphs/benchmarks-distribution.component';
+import {IndicatorService} from './services/indicator.service';
 
 const AppConfig = {
 	declarations: [
@@ -239,6 +240,7 @@ const AppConfig = {
 		StateService,
 		PlatformService,
 		I18NService,
+		IndicatorService,
 		NotifyService,
 		Title,
 		ApiService

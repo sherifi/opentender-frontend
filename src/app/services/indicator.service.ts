@@ -40,7 +40,8 @@ export class IndicatorService {
 		this.ADMINISTRATIVE = this.buildIndicatorInfo(this._indicators.ADMINISTRATIVE);
 		this.CORRUPTION = this.buildIndicatorInfo(this._indicators.CORRUPTION);
 		this.TRANSPARENCY = this.buildIndicatorInfo(this._indicators.TRANSPARENCY);
-		this.TENDER = {id: 'TENDER', name: i18n.get('Good Procurement Indicator'), plural: i18n.get('Good Procurement Indicators'), icon: '', subindicators: []};
+		this.TENDER = {id: 'TENDER', name: i18n.get('Good Procurement Score'), plural: i18n.get('Good Procurement Score'), icon: '', subindicators: []};
+		this.GROUPS = [this.ADMINISTRATIVE, this.CORRUPTION, this.TRANSPARENCY];
 	}
 
 	private buildIndicatorInfo(ii: IIndicatorInfoConst): IIndicatorInfo {
@@ -50,7 +51,7 @@ export class IndicatorService {
 			plural: this.i18n.getStrict(ii.id + '.plural') || ii.plural,
 			icon: ii.icon,
 			subindicators: Object.keys(ii.subindicators)
-				.filter(subkey => !ii.subindicators.subindicators[subkey].notused)
+				.filter(subkey => !ii.subindicators[subkey].notused)
 				.map(subkey => {
 					let sub = ii.subindicators[subkey];
 					return {
@@ -65,26 +66,17 @@ export class IndicatorService {
 
 	public getGroupOf(key: string): IIndicatorInfo {
 		let id = key.split('_')[0];
-		this.GROUPS.forEach(group => {
-			if (group.id === id) {
-				return group;
-			}
-		});
-		return {id: '', name: '', plural: '', icon: '', subindicators: []};
+		let group = this.GROUPS.find(g => g.id === id);
+		return group || {id: '', name: '', plural: '', icon: '', subindicators: []};
 	}
 
 	public getIndicatorInfo(key: string): ISubIndicatorInfo {
-		let id = key.split('_')[0];
-		this.GROUPS.forEach(group => {
-			if (group.id === id) {
-				group.subindicators.forEach(sub => {
-					if (sub.id === key) {
-						return sub;
-					}
-				});
-			}
-		});
-		return {id: '', name: '', desc: '', order: -1};
+		let result = null;
+		let group = this.getGroupOf(key);
+		if (group) {
+			result = group.subindicators.find(sub => sub.id === key);
+		}
+		return result || {id: '', name: '', desc: '', order: -1};
 	}
 
 	public formatIndicatorName(value: string): string {
