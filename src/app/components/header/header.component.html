@@ -42,10 +42,10 @@
 <ng-template #imageBlock>
 	<img class="header-logo-image header-logo-image-small" alt="Opentender" src="/assets/img/ot-logo-white.svg"/>
 	<img class="header-logo-image header-logo-image-large" alt="Opentender" src="/assets/img/ot-logo.svg"/>
-	<span class="header-logo-brand"><span class="header-logo-brand_name">opentender</span>
-			<ng-container *ngIf="isActiveStart(router.url);else country_content"><span class="header-logo-brand_country" i18n>Portals</span></ng-container>
-			<ng-template #country_content><span class="header-logo-brand_country">{{country.name}}</span></ng-template>
-		</span>
+	<span class="header-logo-brand">
+		<span class="header-logo-brand_name">opentender</span>
+		<span class="header-logo-brand_country">{{country.name}}</span>
+	</span>
 </ng-template>
 
 <ng-template #menuBlock>

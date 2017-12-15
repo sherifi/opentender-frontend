@@ -158,5 +158,7 @@
   "Buyer Type",
   "Average of all Authorities",
   "[Name not available]",
-  "[{{count}} other sectors with less than {{value}}]"
+  "[{{count}} other sectors with less than {{value}}]",
+  "Portals",
+  "Average of all Companies"
 ]

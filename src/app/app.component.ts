@@ -41,6 +41,7 @@ export class App implements OnInit {
 	 *  check if the current router url is the root page, redirect if true to start page
 	 */
 	checkURL(url: string): void {
+		url = (url || '').split('?')[0];
 		if ((location.pathname == '/' && (url !== '/start')) || (location.pathname == '' && (url !== 'start'))) {
 			this.router.navigate(['/start']);
 		}
