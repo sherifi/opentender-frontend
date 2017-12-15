@@ -39,7 +39,7 @@ export class ConfigService {
 		if (config) {
 			this.config = config.config;
 			this.country = config.country;
-			if (externalLocale !== 'en') {
+			if (this.locale !== 'en') {
 				this.country.name = i18n.getPortalName(config.country.id, config.country.name);
 			}
 		} else {
