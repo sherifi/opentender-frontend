@@ -150,6 +150,11 @@ app.use(cookieParser('OpenTenderPortal'));
 app.use(bodyParser.json());
 
 let render = function(req, res, language, country) {
+	let name = country.name;
+	if (country.id && language.lang !== 'en') {
+		name = country.names[language.lang] || country.name;
+	}
+	country = {id: country.id, name: name, foi: country.foi, ip: country.ip};
 	let engine = ngExpressEngine({
 		id: language.lang,
 		bootstrap: MainModule,
@@ -170,14 +175,10 @@ let render = function(req, res, language, country) {
 				let pos2 = html.indexOf('<!-- End Piwik Code -->');
 				html = html.slice(0, pos1) + html.slice(pos2);
 			}
-			let name = country.name;
-			if (country.id && language.lang !== 'en') {
-				name = country.names[language.lang] || country.name;
-			}
 			let opts = {
 				locale: language.lang,
 				config: Config.client,
-				country: {id: country.id, name: name, foi: country.foi, ip: country.ip}
+				country: country
 			};
 			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
 				.replace(/\{\{COUNTRY_NAME\}\}/g, country.id ? name : '')
