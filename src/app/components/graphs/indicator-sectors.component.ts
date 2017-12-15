@@ -159,7 +159,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				let item = this.cpvs_codes_average.data.shift();
 				othergroup.value = item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + Utils.formatPercent(item.value) + ')';
+				othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: Utils.formatPercent(item.value)}]);
 			}
 			if (othergroup) {
 				this.cpvs_codes_average.data.unshift(othergroup);
@@ -185,7 +185,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 				let item = this.cpvs_codes_absolute.data.shift();
 				othergroup.value = item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + item.value + ')';
+				othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: item.value}]);
 			}
 			if (othergroup) {
 				this.cpvs_codes_absolute.data.unshift(othergroup);

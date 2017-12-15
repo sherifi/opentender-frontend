@@ -103,7 +103,7 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 				let item = this.cpvs_codes_scores.data.shift();
 				othergroup.value = Math.max(item.value, othergroup.value);
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + Utils.roundValueTwoDecimals(item.value) + ')';
+				othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: Utils.roundValueTwoDecimals(item.value)}]);
 			}
 			if (othergroup) {
 				this.cpvs_codes_scores.data.unshift(othergroup);

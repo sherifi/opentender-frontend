@@ -156,14 +156,14 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		years.forEach(year => {
 			let sub = {name: year, series: []};
 			if (entity[year] !== undefined) {
-				sub.series.push({name: this.entityTitle, value: entity[year]});
+				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: entity[year]});
 			} else {
-				sub.series.push({name: this.entityTitle, value: 0, invalid: true});
+				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: 0, invalid: true});
 			}
 			if (compare[year] !== undefined) {
-				sub.series.push({name: this.othersTitle, value: compare[year]});
+				sub.series.push({name: this.othersTitle || '', value: compare[year]});
 			} else {
-				sub.series.push({name: this.othersTitle, value: 0, invalid: true});
+				sub.series.push({name: this.othersTitle || '', value: 0, invalid: true});
 			}
 			series.push(sub);
 		});

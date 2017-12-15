@@ -15,7 +15,9 @@ export class I18NService {
 	public languages = i18nlanguages.enabled;
 	private _extra;
 	private _source: string;
+	private _parser: I18NHtmlParser;
 	private _translations: { [name: string]: any };
+	public NameNotAvailable: string;
 
 	constructor(@Inject(TRANSLATIONS) source: string, @Inject('TRANSLATIONS_EXTRA') extra) {
 		this._extra = extra;
@@ -23,7 +25,15 @@ export class I18NService {
 		if (this._source) {
 			const xliff = new Xliff();
 			this._translations = xliff.load(this._source, '').i18nNodesByMsgId;
+			this._parser = new I18NHtmlParser(new HtmlParser(), this._source);
 		}
+		this.NameNotAvailable = this.get('[Name not available]');
+	}
+
+	// extras based translation
+
+	public nameGuard(value: string) {
+		return value || this.NameNotAvailable;
 	}
 
 	public expandCountry(key: string): string {
@@ -75,11 +85,13 @@ export class I18NService {
 		return default_name;
 	}
 
-	public get(key: string, interpolation: any[] = []): string {
-		return this.getStrict(key, interpolation) || key;
+	// template based translation
+
+	public get(key: string): string {
+		return this.getStrict(key) || key;
 	}
 
-	public getStrict(key: string, interpolation: any[] = []) {
+	public getStrict(key: string): string {
 		if (!this._translations) {
 			return null;
 		}
@@ -88,11 +100,37 @@ export class I18NService {
 			console.log('i18n, untranslated text', key);
 			return null;
 		}
-		let parser = new I18NHtmlParser(new HtmlParser(), this._source);
-		let placeholders = this._getPlaceholders(this._translations[id]);
-		let parseTree = parser.parse(`<div i18n="@@${id}">content ${this._wrapPlaceholders(placeholders).join(' ')}</div>`, 'someI18NUrl');
-		return this._interpolate(parseTree.rootNodes[0]['children'][0].value, this._interpolationWithName(placeholders, interpolation));
+		let results = this._translations[id].filter((node) => node.hasOwnProperty('value')).map(node => node.value);
+		if (results.length === 0) {
+			return null;
+		}
+		return results.join('');
+	}
 
+	public getFormat(key: string, interpolation: Array<{ key: string; value: any }> = []): string {
+		if (!this._translations) {
+			return this._simpleInterpolate(key, interpolation);
+		}
+		let id = key.replace(/ /g, '');
+		if (!this._translations[id]) {
+			console.log('i18n, untranslated text', key);
+			return this._simpleInterpolate(key, interpolation);
+		}
+		let interpol = interpolation.map(i => i.value.toString());
+		let placeholders = this._getPlaceholders(this._translations[id]);
+		let parseTree = this._parser.parse(`<div i18n="@@${id}">content ${this._wrapPlaceholders(placeholders).join(' ')}</div>`, 'someI18NUrl');
+		return this._interpolate(parseTree.rootNodes[0]['children'][0].value, this._interpolationWithName(placeholders, interpol));
+	}
+
+	public _simpleInterpolate(key: string, interpolation: Array<{ key: string; value: any }> = []) {
+		if (interpolation && interpolation.length > 0) {
+			let result = key;
+			interpolation.forEach(i => {
+				result = result.replace('{{' + i.key + '}}', i.value);
+			});
+			return result;
+		}
+		return '';
 	}
 
 	private _getPlaceholders(nodes: any[]): string[] {
@@ -121,7 +159,6 @@ export class I18NService {
 			}
 			return match;
 		});
-
 		return compiled;
 	}
 }

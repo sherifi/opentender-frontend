@@ -58,7 +58,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: authority => [{content: Utils.nameGuard(authority.body.name)}]
+		format: (authority, library) => [{content: library.i18n.nameGuard(authority.body.name)}]
 	},
 	{
 		name: 'City',
@@ -114,7 +114,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',
-		format: authority => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, hint: ('Profile Page ' + Utils.nameGuard(authority.body.name)), align: 'center'}]
+		format: (authority, library) => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, hint: ('Profile Page ' + library.i18n.nameGuard(authority.body.name)), align: 'center'}]
 	}
 ];
 
@@ -127,7 +127,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: company => [{content: Utils.nameGuard(company.body.name)}]
+		format: (company, library) => [{content: library.i18n.nameGuard(company.body.name)}]
 	},
 	{
 		name: 'City',
@@ -159,7 +159,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Company',
-		format: company => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: ('Profile Page ' + Utils.nameGuard(company.body.name)), align: 'center'}]
+		format: (company, library) => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: ('Profile Page ' + library.i18n.nameGuard(company.body.name)), align: 'center'}]
 	}
 ];
 
@@ -178,7 +178,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'lots.bids.bidders.name.slug',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.lots) {
 				return [];
 			}
@@ -188,7 +188,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Bidder) => {
-								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: ('Profile Page ' + Utils.nameGuard(bidder.name)), link: '/company/' + bidder.id};
+								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: ('Profile Page ' + library.i18n.nameGuard(bidder.name)), link: '/company/' + bidder.id};
 								companies[bidder.id].lots.push(index_l + 1);
 							});
 						}
@@ -205,7 +205,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 						}
 						result.push({prefix: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
 					}
-					result.push({icon: ICON.company, content: Utils.nameGuard(c.bidder.name), hint: ('Profile Page ' + Utils.nameGuard(c.bidder.name)), link: c.link});
+					result.push({icon: ICON.company, content: library.i18n.nameGuard(c.bidder.name), hint: ('Profile Page ' + library.i18n.nameGuard(c.bidder.name)), link: c.link});
 				}
 			);
 			return result;
@@ -249,12 +249,12 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'buyers.name.slug',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.buyers) {
 				return [];
 			}
 			return tender.buyers.map((buyer: Buyer) => {
-				return {icon: ICON.authority, content: Utils.nameGuard(buyer.name), hint: ('Profile Page ' + buyer.name || '[Name not available]'), link: '/authority/' + buyer.id};
+				return {icon: ICON.authority, content: library.i18n.nameGuard(buyer.name), hint: ('Profile Page ' + library.i18n.nameGuard(buyer.name)), link: '/authority/' + buyer.id};
 			});
 		}
 	},
@@ -442,13 +442,13 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'fundings.isEuFund',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.fundings) {
 				return [];
 			}
 			let list = tender.fundings.filter(funding => funding.isEuFund);
 			return list.map(funding => {
-				return {list: list.length > 1, prefix: 'EU-Fund', content: Utils.nameGuard(funding.programme)};
+				return {list: list.length > 1, prefix: library.i18n.get('EU-Fund'), content: library.i18n.nameGuard(funding.programme)};
 			});
 		}
 	},

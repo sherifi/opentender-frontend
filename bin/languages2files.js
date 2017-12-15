@@ -51,7 +51,7 @@ let prepareProject = function () {
 	// fs.copySync(path.join(source, 'webpack.config.js'), path.join(dest, 'webpack.config.js'));
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
-	fillI18nTemplate(path.join(dest, 'src/app/components/i18n.template.html'));
+	fillI18nTemplate(path.join(dest, 'src/app/components/'));
 };
 
 let __assign = (this && this.__assign) || Object.assign || function (t) {
@@ -124,14 +124,24 @@ let packageLanguage = function (lang, content, cb) {
 	fs.writeFile(filename, s, cb);
 };
 
-let fillI18nTemplate = function (filename) {
+let fillI18nTemplate = function (folder) {
 	let used = {};
+	let vars = [];
 	let list = runtimestrings.map(s => {
 		let id = s.replace(/ /g, '');
 		if (used[id]) {
 			console.log('Warning: duplicate runtime string id:', id, 'text:', s);
 		}
 		used[id] = s;
+		let vs = s.match(/{{.*?}}/g);
+		if (vs && vs.length > 0) {
+			vs.forEach(v => {
+				v = v.replace(/[{}]/g, '');
+				if (vars.indexOf(v) < 0) {
+					vars.push(v);
+				}
+			});
+		}
 		return '<span i18n="runtime@@' + id + '">' + s + '</span>';
 	});
 	Object.keys(indicators).forEach(ikey => {
@@ -144,7 +154,18 @@ let fillI18nTemplate = function (filename) {
 			list.push('<span i18n="runtime@@' + skey + '.desc">' + sub.desc + '</span>');
 		});
 	});
-	fs.writeFileSync(filename, list.join('\n'));
+	fs.writeFileSync(folder + 'i18n.template.html', list.join('\n'));
+
+	let mod = `import {Component} from '@angular/core';
+	@Component({
+		selector: 'tmpI18NComponent',
+		moduleId: __filename,
+		templateUrl: 'i18n.template.html'})
+	export class I18NComponent {` +
+		vars.map(v => {
+			return v + ':string'
+		}).join(';') + '}';
+	fs.writeFileSync(folder + 'i18n.component.ts', mod);
 };
 
 let updateLanguage = function (lang, currentNodes, cb) {

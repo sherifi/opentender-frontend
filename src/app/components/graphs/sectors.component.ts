@@ -103,7 +103,7 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 				let item = this.cpvs_codes_absolute.data.shift();
 				othergroup.value += item.value;
 				othergroupcount++;
-				othergroup.name = '(' + othergroupcount + ' other sectors with less than ' + item.value + ')';
+				othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: item.value}]);
 			}
 			if (othergroup) {
 				this.cpvs_codes_absolute.data.unshift(othergroup);

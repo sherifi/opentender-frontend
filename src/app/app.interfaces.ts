@@ -498,7 +498,11 @@ export interface ITableCellLine {
 export interface ITableLibrary {
 	indicators: Array<IIndicatorInfo>;
 	TENDER: IIndicatorInfo;
-	i18n: { expandCountry: (key: string) => string; };
+	i18n: {
+		expandCountry: (key: string) => string;
+		nameGuard: (key: string) => string;
+		get: (key: string) => string;
+	};
 }
 
 export interface ITableColumnAuthority extends ITableColumn {

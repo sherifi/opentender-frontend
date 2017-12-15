@@ -194,9 +194,6 @@ export const Utils = {
 	roundValueTwoDecimals: (value) => {
 		return Math.round(value * 100) / 100;
 	},
-	nameGuard: (value: string) => {
-		return value || '[Name not available]';
-	},
 	formatFileSize: (value: number) => {
 		let i = -1;
 		const byteUnits = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
