@@ -99,7 +99,6 @@ export function ngExpressEngine(setupOptions: NgSetupOptions) {
 
 
 function getFactoryCache(id: string) {
-	console.log(id, factoryCacheMaps[id]);
 	if (!factoryCacheMaps[id]) {
 		factoryCacheMaps[id] = new Map<Type<{}>, NgModuleFactory<{}>>();
 	}
