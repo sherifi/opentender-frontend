@@ -44,11 +44,11 @@ export class MapHomeComponent {
 	}
 
 	getTitle() {
-		return this.i18n.get(this.map_companies ? 'Number of Suppliers by Region' : 'Number of Buyers by Region');
+		return this.map_companies ? this.i18n.get('Number of Suppliers by Region') : this.i18n.get('Number of Buyers by Region');
 	}
 
 	formatTooltipCallback(featureProperties) {
-		return featureProperties.name + ': ' + featureProperties.value + ' ' + (this.i18n.get(this.map_companies ? 'Suppliers' : 'Buyers'));
+		return featureProperties.name + ': ' + featureProperties.value + ' ' + (this.map_companies ? this.i18n.get('Suppliers') : this.i18n.get('Buyers'));
 	}
 
 	fillMap(level) {

@@ -107,6 +107,7 @@
   "devDependencies": {
     "@angular/language-service": "^5.1.0",
     "@compodoc/compodoc": "=1.0.5",
+    "ts-simple-ast": "^3.2.0",
     "dtsgenerator": "=0.9.6",
     "nodemon": "=1.12.5",
     "ts-node": "=3.3.0",

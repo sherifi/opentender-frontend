@@ -4554,2590 +4554,6 @@
           Öffentliche Ausschreibungen transparenter machen
         </target>
       </trans-unit>
-      <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
-        <source>
-          Administrative Capacity Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            1
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Verwaltungskapazität-Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
-        <source>
-          Administrative Capacity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Verwaltungskapazität-Indikatoren
-        </target>
-      </trans-unit>
-      <trans-unit id="AdministrativeCapacity" datatype="html">
-        <source>
-          Administrative Capacity
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            3
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Verwaltungskapazität
-        </target>
-      </trans-unit>
-      <trans-unit id="Administrators" datatype="html">
-        <source>
-          Administrators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            4
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Verwalter
-        </target>
-      </trans-unit>
-      <trans-unit id="All" datatype="html">
-        <source>
-          All
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Alle
-        </target>
-      </trans-unit>
-      <trans-unit id="AppealBodyName" datatype="html">
-        <source>
-          Appeal Body Name
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Berufungsinstanz
-        </target>
-      </trans-unit>
-      <trans-unit id="Authority" datatype="html">
-        <source>
-          Authority
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Behörde
-        </target>
-      </trans-unit>
-      <trans-unit id="Average%ofTenders" datatype="html">
-        <source>
-          Average % of Tenders
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            8
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittliche % der Ausschreibungen
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageScore" datatype="html">
-        <source>
-          Average Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            9
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittlicher Indikator-Score
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageVolumeofTenders(€)" datatype="html">
-        <source>
-          Average Volume of Tenders (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            10
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittliches Volumen der Ausschreibungen (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="AwardDecisionDate" datatype="html">
-        <source>
-          Award Decision Date
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            11
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Datum der Zuschlagsentscheidung
-        </target>
-      </trans-unit>
-      <trans-unit id="AwardDecisionYear" datatype="html">
-        <source>
-          Award Decision Year
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            12
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zuschlagsentscheidungsjahr
-        </target>
-      </trans-unit>
-      <trans-unit id="AwardDecision" datatype="html">
-        <source>
-          Award Decision
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            13
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zuschlagsentscheidung
-        </target>
-      </trans-unit>
-      <trans-unit id="BidDeadline" datatype="html">
-        <source>
-          Bid Deadline
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            14
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Gebotsfrist
-        </target>
-      </trans-unit>
-      <trans-unit id="BidPrice" datatype="html">
-        <source>
-          Bid Price
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            15
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Angebotspreis
-        </target>
-      </trans-unit>
-      <trans-unit id="BidsCount" datatype="html">
-        <source>
-          Bids Count
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            16
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Anzahl Angebote
-        </target>
-      </trans-unit>
-      <trans-unit id="BuyerRegion" datatype="html">
-        <source>
-          Buyer Region
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            17
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Käuferregion
-        </target>
-      </trans-unit>
-      <trans-unit id="Buyer" datatype="html">
-        <source>
-          Buyer
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            18
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Käufer
-        </target>
-      </trans-unit>
-      <trans-unit id="Buyers" datatype="html">
-        <source>
-          Buyers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            19
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Käufer
-        </target>
-      </trans-unit>
-      <trans-unit id="City" datatype="html">
-        <source>
-          City
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            20
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Stadt
-        </target>
-      </trans-unit>
-      <trans-unit id="Company" datatype="html">
-        <source>
-          Company
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            21
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Firma
-        </target>
-      </trans-unit>
-      <trans-unit id="ProcurementIntegrityIndicator" datatype="html">
-        <source>
-          Procurement Integrity Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            22
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikator für Beschaffungsintegrität
-        </target>
-      </trans-unit>
-      <trans-unit id="ProcurementIntegrityIndicators" datatype="html">
-        <source>
-          Procurement Integrity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            23
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikatoren für Beschaffungsintegrität
-        </target>
-      </trans-unit>
-      <trans-unit id="ProcurementIntegrity" datatype="html">
-        <source>
-          Procurement Integrity
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            24
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Beschaffungsintegrität
-        </target>
-      </trans-unit>
-      <trans-unit id="Country" datatype="html">
-        <source>
-          Country
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            25
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Land
-        </target>
-      </trans-unit>
-      <trans-unit id="CPV(Categories)" datatype="html">
-        <source>
-          CPV (Categories)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            26
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          CPV (Kategorien)
-        </target>
-      </trans-unit>
-      <trans-unit id="CPV(Divisions)" datatype="html">
-        <source>
-          CPV (Divisions)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            27
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          CPV (Divisionen)
-        </target>
-      </trans-unit>
-      <trans-unit id="CPV(Full)" datatype="html">
-        <source>
-          CPV (Full)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            28
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          CPV (Voll)
-        </target>
-      </trans-unit>
-      <trans-unit id="CPV(Groups)" datatype="html">
-        <source>
-          CPV (Groups)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            29
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          CPV (Gruppen)
-        </target>
-      </trans-unit>
-      <trans-unit id="CreationDate" datatype="html">
-        <source>
-          Creation Date
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            30
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Erstelldatum
-        </target>
-      </trans-unit>
-      <trans-unit id="Dates" datatype="html">
-        <source>
-          Dates
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            31
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Termine
-        </target>
-      </trans-unit>
-      <trans-unit id="Deposits" datatype="html">
-        <source>
-          Deposits
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            32
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Einlagen
-        </target>
-      </trans-unit>
-      <trans-unit id="Description" datatype="html">
-        <source>
-          Description
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            33
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Beschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="DocumentPrice" datatype="html">
-        <source>
-          Document Price
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            34
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Dokumentpreis
-        </target>
-      </trans-unit>
-      <trans-unit id="DocumentsDeadline" datatype="html">
-        <source>
-          Documents Deadline
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            35
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Unterlagenfrist
-        </target>
-      </trans-unit>
-      <trans-unit id="DocumentsPrice" datatype="html">
-        <source>
-          Documents Price
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            36
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Dokumentpreis
-        </target>
-      </trans-unit>
-      <trans-unit id="EconomicRequirements" datatype="html">
-        <source>
-          Economic Requirements
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            37
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Wirtschaftliche Voraussetzungen
-        </target>
-      </trans-unit>
-      <trans-unit id="EligibleBidLanguages" datatype="html">
-        <source>
-          Eligible Bid Languages
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            38
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Gültige Angebotssprachen
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedCompletionDate" datatype="html">
-        <source>
-          Estimated Completion Date
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            39
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Geschätztes Fertigstellungsdatum
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedPrice" datatype="html">
-        <source>
-          Estimated Price
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            40
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Schätzpreis
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedStartDate" datatype="html">
-        <source>
-          Estimated Start Date
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            41
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Geschätztes Startdatum
-        </target>
-      </trans-unit>
-      <trans-unit id="FinalPrice" datatype="html">
-        <source>
-          Final Price
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            42
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Endpreis
-        </target>
-      </trans-unit>
-      <trans-unit id="Indicators" datatype="html">
-        <source>
-          Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            43
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikatoren
-        </target>
-      </trans-unit>
-      <trans-unit id="MainActivities" datatype="html">
-        <source>
-          Main Activities
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            44
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptaktivitäten
-        </target>
-      </trans-unit>
-      <trans-unit id="MainCPVCode" datatype="html">
-        <source>
-          Main CPV Code
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            45
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Haupt-CPV-Code
-        </target>
-      </trans-unit>
-      <trans-unit id="MainSector" datatype="html">
-        <source>
-          Main Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            46
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptbranche
-        </target>
-      </trans-unit>
-      <trans-unit id="MarketAnalysis" datatype="html">
-        <source>
-          Market Analysis
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            47
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Marktüberblick
-        </target>
-      </trans-unit>
-      <trans-unit id="MetaData" datatype="html">
-        <source>
-          Meta Data
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            48
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Metadaten
-        </target>
-      </trans-unit>
-      <trans-unit id="ModificationDate" datatype="html">
-        <source>
-          Modification Date
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            49
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Änderungsdatum
-        </target>
-      </trans-unit>
-      <trans-unit id="AdditionalInformation" datatype="html">
-        <source>
-          Additional Information
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            50
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zusätzliche Informationen
-        </target>
-      </trans-unit>
-      <trans-unit id="Documents" datatype="html">
-        <source>
-          Documents
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            51
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Dokumente
-        </target>
-      </trans-unit>
-      <trans-unit id="Publications" datatype="html">
-        <source>
-          Publications
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            52
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Veröffentlichungen
-        </target>
-      </trans-unit>
-      <trans-unit id="Requirements" datatype="html">
-        <source>
-          Requirements
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            53
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Anforderungen
-        </target>
-      </trans-unit>
-      <trans-unit id="Lots" datatype="html">
-        <source>
-          Lots
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            54
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Vertragsgruppen (Lots)
-        </target>
-      </trans-unit>
-      <trans-unit id="Name" datatype="html">
-        <source>
-          Name
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            55
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Name
-        </target>
-      </trans-unit>
-      <trans-unit id="Nr.ofTenders" datatype="html">
-        <source>
-          Nr. of Tenders
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            56
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Anzahl Ausschreibungen
-        </target>
-      </trans-unit>
-      <trans-unit id="PersonalRequirements" datatype="html">
-        <source>
-          Personal Requirements
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            57
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Persönliche Voraussetzungen
-        </target>
-      </trans-unit>
-      <trans-unit id="Prices" datatype="html">
-        <source>
-          Prices
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            58
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Preise
-        </target>
-      </trans-unit>
-      <trans-unit id="ProcedureType" datatype="html">
-        <source>
-          Procedure Type
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            59
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Verfahrensart
-        </target>
-      </trans-unit>
-      <trans-unit id="ProfileLink" datatype="html">
-        <source>
-          Profile Link
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            60
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Link zu Profil
-        </target>
-      </trans-unit>
-      <trans-unit id="Sector(CPVDivision)" datatype="html">
-        <source>
-          Sector (CPV Division)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            61
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Branche (CPV Divisionen)
-        </target>
-      </trans-unit>
-      <trans-unit id="Sector(CPV)" datatype="html">
-        <source>
-          Sector (CPV)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            62
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Branche (CPV)
-        </target>
-      </trans-unit>
-      <trans-unit id="Sector" datatype="html">
-        <source>
-          Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            63
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Branche
-        </target>
-      </trans-unit>
-      <trans-unit id="Sectors" datatype="html">
-        <source>
-          Sectors
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            64
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Branchen
-        </target>
-      </trans-unit>
-      <trans-unit id="Netamountofthetenderfinalpriceisusedtocalculatethesum" datatype="html">
-        <source>
-          Net amount of the tender final price is used to calculate the sum
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            65
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Für die Summenkalkulation wurde der Netto-Betrag des Ausschreibungs-Endpreis wurde verwendet
-        </target>
-      </trans-unit>
-      <trans-unit id="SelectFilter" datatype="html">
-        <source>
-          Select Filter
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            66
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Filterauswahl
-        </target>
-      </trans-unit>
-      <trans-unit id="SumofIndicatorScore" datatype="html">
-        <source>
-          Sum of Indicator Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            67
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Summierter Indikator-Score
-        </target>
-      </trans-unit>
-      <trans-unit id="Supplier" datatype="html">
-        <source>
-          Supplier
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            68
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zulieferer
-        </target>
-      </trans-unit>
-      <trans-unit id="Suppliers" datatype="html">
-        <source>
-          Suppliers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            69
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zulieferer
-        </target>
-      </trans-unit>
-      <trans-unit id="SupplyType" datatype="html">
-        <source>
-          Supply Type
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            70
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Angebotstyp
-        </target>
-      </trans-unit>
-      <trans-unit id="TechnicalRequirements" datatype="html">
-        <source>
-          Technical Requirements
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            71
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Technische Voraussetzungen
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderInformation" datatype="html">
-        <source>
-          Tender Information
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            72
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibungs-Informationen
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderLink" datatype="html">
-        <source>
-          Tender Link
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            73
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Link zu Ausschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderRequirements" datatype="html">
-        <source>
-          Tender Requirements
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            74
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibungsanforderungen
-        </target>
-      </trans-unit>
-      <trans-unit id="Tender" datatype="html">
-        <source>
-          Tender
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            75
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Aussschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="TitleEnglish" datatype="html">
-        <source>
-          Title English
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            76
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Titel Englisch
-        </target>
-      </trans-unit>
-      <trans-unit id="Title" datatype="html">
-        <source>
-          Title
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            77
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Titel
-        </target>
-      </trans-unit>
-      <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
-        <source>
-          Total Volume of Tenders (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            78
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Absolutes Volumen der Ausschreibungen (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="TransparencyIndicator" datatype="html">
-        <source>
-          Transparency Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            79
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikator für Transparenz
-        </target>
-      </trans-unit>
-      <trans-unit id="TransparencyIndicators" datatype="html">
-        <source>
-          Transparency Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            80
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikatoren für Transparenz
-        </target>
-      </trans-unit>
-      <trans-unit id="Transparency" datatype="html">
-        <source>
-          Transparency
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            81
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Transparenz
-        </target>
-      </trans-unit>
-      <trans-unit id="Type" datatype="html">
-        <source>
-          Type
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            82
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Typ
-        </target>
-      </trans-unit>
-      <trans-unit id="Year" datatype="html">
-        <source>
-          Year
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            83
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Jahr
-        </target>
-      </trans-unit>
-      <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
-        <source>
-          Number of Suppliers by Region
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            84
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Anzahl der Zulieferer pro Region
-        </target>
-      </trans-unit>
-      <trans-unit id="NumberofBuyersbyRegion" datatype="html">
-        <source>
-          Number of Buyers by Region
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            85
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Anzahl der Käufer pro Region
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderMetaData" datatype="html">
-        <source>
-          Tender Meta Data
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            86
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibungs-Metadaten
-        </target>
-      </trans-unit>
-      <trans-unit id="MediationBodyName" datatype="html">
-        <source>
-          Mediation Body Name
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            87
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Vermittlungsinstanz
-        </target>
-      </trans-unit>
-      <trans-unit id="CPVCodes" datatype="html">
-        <source>
-          CPV Codes
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            88
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          CPV Codes
-        </target>
-      </trans-unit>
-      <trans-unit id="Lot" datatype="html">
-        <source>
-          Lot
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            89
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Vertragsgruppe
-        </target>
-      </trans-unit>
-      <trans-unit id="Tenders" datatype="html">
-        <source>
-          Tenders
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            90
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibungen
-        </target>
-      </trans-unit>
-      <trans-unit id="VolumeofTenders(€)" datatype="html">
-        <source>
-          Volume of Tenders (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            91
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Volumen der Ausschreibungen (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="SelectColumn" datatype="html">
-        <source>
-          Select Column
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            92
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Spaltenauswahl
-        </target>
-      </trans-unit>
-      <trans-unit id="AddSearchFields" datatype="html">
-        <source>
-          Add Search Fields
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            93
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Suchfelder hinzufügen
-        </target>
-      </trans-unit>
-      <trans-unit id="Companies" datatype="html">
-        <source>
-          Companies
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            94
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Firmen
-        </target>
-      </trans-unit>
-      <trans-unit id="Authorities" datatype="html">
-        <source>
-          Authorities
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            95
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Behörden
-        </target>
-      </trans-unit>
-      <trans-unit id="Sub-sectors" datatype="html">
-        <source>
-          Sub-sectors
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            96
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Unterbranchen
-        </target>
-      </trans-unit>
-      <trans-unit id="Descriptionlength" datatype="html">
-        <source>
-          Description length
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            97
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Länger der Beschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedStartYear" datatype="html">
-        <source>
-          Estimated Start Year
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            98
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Geschätztes Startjahr
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedCompletionYear" datatype="html">
-        <source>
-          Estimated Completion Year
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            99
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Geschätztes Fertigstellungsjahr
-        </target>
-      </trans-unit>
-      <trans-unit id="FinalPriceEUR" datatype="html">
-        <source>
-          Final Price EUR
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            100
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Endpreis EUR
-        </target>
-      </trans-unit>
-      <trans-unit id="DocumentPriceEUR" datatype="html">
-        <source>
-          Document Price EUR
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            101
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Dokumentpreis EUR
-        </target>
-      </trans-unit>
-      <trans-unit id="EstimatedPriceEUR" datatype="html">
-        <source>
-          Estimated Price EUR
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            102
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Geschätzter Preis EUR
-        </target>
-      </trans-unit>
-      <trans-unit id="BidPriceEUR" datatype="html">
-        <source>
-          Bid Price EUR
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            103
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Angebotspreis EUR
-        </target>
-      </trans-unit>
-      <trans-unit id="Indicator" datatype="html">
-        <source>
-          Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            104
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="SupplierRegion" datatype="html">
-        <source>
-          Supplier Region
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            105
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Zuliefererregion
-        </target>
-      </trans-unit>
-      <trans-unit id="Score" datatype="html">
-        <source>
-          Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            106
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Score
-        </target>
-      </trans-unit>
-      <trans-unit id="Composite" datatype="html">
-        <source>
-          Composite
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            107
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Gesamt
-        </target>
-      </trans-unit>
-      <trans-unit id="CompositeScore" datatype="html">
-        <source>
-          Composite Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            108
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Gesamt-Score
-        </target>
-      </trans-unit>
-      <trans-unit id="GoodProcurementScore" datatype="html">
-        <source>
-          Good Procurement Score
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            109
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Good Procurement Score
-        </target>
-      </trans-unit>
-      <trans-unit id="GoodProcurement" datatype="html">
-        <source>
-          Good Procurement
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            110
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Good Procurement
-        </target>
-      </trans-unit>
-      <trans-unit id="MainSuppliers" datatype="html">
-        <source>
-          Main Suppliers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            111
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptzulieferer
-        </target>
-      </trans-unit>
-      <trans-unit id="MainBuyers" datatype="html">
-        <source>
-          Main Buyers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            112
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptkäufer
-        </target>
-      </trans-unit>
-      <trans-unit id="MainSuppliersinScoreRange" datatype="html">
-        <source>
-          Main Suppliers in Score Range
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            113
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptzulieferer im Score-Bereich
-        </target>
-      </trans-unit>
-      <trans-unit id="MainBuyersinScoreRange" datatype="html">
-        <source>
-          Main Buyers in Score Range
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            114
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Hauptkäufer im Score-Bereich
-        </target>
-      </trans-unit>
-      <trans-unit id="Volume(€)" datatype="html">
-        <source>
-          Volume (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            115
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Volumen (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="TendersoverTime" datatype="html">
-        <source>
-          Tenders over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            116
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibungen über die Zeit
-        </target>
-      </trans-unit>
-      <trans-unit id="SectorOverview" datatype="html">
-        <source>
-          Sector Overview
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            117
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Branchenüberblick
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
-        <source>
-          Average Good Procurement Score per Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            118
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittlicher Good Procurement Score pro Branche
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
-        <source>
-          Average Good Procurement Score over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            119
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittlicher Good Procurement Score über die Zeit
-        </target>
-      </trans-unit>
-      <trans-unit id="EU-Fund" datatype="html">
-        <source>
-          EU-Fund
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            120
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          EU-Mittel
-        </target>
-      </trans-unit>
-      <trans-unit id="Funding" datatype="html">
-        <source>
-          Funding
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            121
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Finanzierung
-        </target>
-      </trans-unit>
-      <trans-unit id="Programme" datatype="html">
-        <source>
-          Programme
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            122
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Programm
-        </target>
-      </trans-unit>
-      <trans-unit id="IntegrityIndicators" datatype="html">
-        <source>
-          Integrity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            123
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Integrität-Indikator
-        </target>
-      </trans-unit>
-      <trans-unit id="AverageScoreof" datatype="html">
-        <source>
-          Average Score of
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            124
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Durchschnittlicher Score von
-        </target>
-      </trans-unit>
-      <trans-unit id="inScoreRange" datatype="html">
-        <source>
-          in Score Range
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            125
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          im Score-Bereich
-        </target>
-      </trans-unit>
-      <trans-unit id="overTime" datatype="html">
-        <source>
-          over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            126
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          über die Zeit
-        </target>
-      </trans-unit>
-      <trans-unit id="perSector" datatype="html">
-        <source>
-          per Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            127
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          pro Branche
-        </target>
-      </trans-unit>
-      <trans-unit id="Home" datatype="html">
-        <source>
-          Home
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            128
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Start
-        </target>
-      </trans-unit>
-      <trans-unit id="OpentenderPortals" datatype="html">
-        <source>
-          Opentender Portals
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            129
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Opentender Portale
-        </target>
-      </trans-unit>
-      <trans-unit id="Dashboards" datatype="html">
-        <source>
-          Dashboards
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            130
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Dashboards
-        </target>
-      </trans-unit>
-      <trans-unit id="Search" datatype="html">
-        <source>
-          Search
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            131
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Suche
-        </target>
-      </trans-unit>
-      <trans-unit id="SearchTender" datatype="html">
-        <source>
-          Search Tender
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            132
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Ausschreibung suchen
-        </target>
-      </trans-unit>
-      <trans-unit id="SearchCompany" datatype="html">
-        <source>
-          Search Company
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            133
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Firma suchen
-        </target>
-      </trans-unit>
-      <trans-unit id="SearchAuthority" datatype="html">
-        <source>
-          Search Authority
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            134
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Behörde suchen
-        </target>
-      </trans-unit>
-      <trans-unit id="Region" datatype="html">
-        <source>
-          Region
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            135
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Region
-        </target>
-      </trans-unit>
-      <trans-unit id="Download" datatype="html">
-        <source>
-          Download
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            136
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Download
-        </target>
-      </trans-unit>
       <trans-unit id="About" datatype="html">
         <source>
           About
@@ -7147,7 +4563,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            137
+            1
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7166,7 +4582,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            138
+            2
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7176,137 +4592,99 @@
           Über Opentender
         </target>
       </trans-unit>
-      <trans-unit id="HowOpentenderworks" datatype="html">
+      <trans-unit id="AddSearchFields" datatype="html">
         <source>
-          How Opentender works
+          Add Search Fields
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            139
+            3
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Wie Opentender funktioniert
+          Suchfelder hinzufügen
         </target>
       </trans-unit>
-      <trans-unit id="Glossary" datatype="html">
+      <trans-unit id="AdditionalInformation" datatype="html">
         <source>
-          Glossary
+          Additional Information
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            4
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Glossar
+          Zusätzliche Informationen
         </target>
       </trans-unit>
-      <trans-unit id="FOIOverview" datatype="html">
+      <trans-unit id="AdministrativeCapacity" datatype="html">
         <source>
-          FOI Overview
+          Administrative Capacity
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            141
+            5
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          FOI Überblick
+          Verwaltungskapazität
         </target>
       </trans-unit>
-      <trans-unit id="DataQuality" datatype="html">
+      <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
         <source>
-          Data Quality
+          Administrative Capacity Indicator
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            142
+            6
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Datenqualität
+          Verwaltungskapazität-Indikator
         </target>
       </trans-unit>
-      <trans-unit id="Imprint" datatype="html">
+      <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
         <source>
-          Imprint
+          Administrative Capacity Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            143
+            7
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Impressum
-        </target>
-      </trans-unit>
-      <trans-unit id="Test" datatype="html">
-        <source>
-          Test
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            144
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Test
-        </target>
-      </trans-unit>
-      <trans-unit id="Benchmark" datatype="html">
-        <source>
-          Benchmark
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            145
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Benchmark
+          Verwaltungskapazität-Indikatoren
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityScore" datatype="html">
@@ -7318,7 +4696,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            146
+            8
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7328,99 +4706,175 @@
           Verwaltungskapazität-Score
         </target>
       </trans-unit>
-      <trans-unit id="TransparencyScore" datatype="html">
+      <trans-unit id="Administrators" datatype="html">
         <source>
-          Transparency Score
+          Administrators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            147
+            9
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Transparenz-Score
+          Verwalter
         </target>
       </trans-unit>
-      <trans-unit id="ProcurementIntegrityScore" datatype="html">
+      <trans-unit id="AppealBodyName" datatype="html">
         <source>
-          Procurement Integrity Score
+          Appeal Body Name
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            148
+            10
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Beschaffungsintegritäts-Score
+          Berufungsinstanz
         </target>
       </trans-unit>
-      <trans-unit id="Tenderinview" datatype="html">
+      <trans-unit id="Authorities" datatype="html">
         <source>
-          Tender in view
+          Authorities
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            149
+            11
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Ausschreibung in Ansicht
+          Behörden
         </target>
       </trans-unit>
-      <trans-unit id="Overall" datatype="html">
+      <trans-unit id="Authority" datatype="html">
         <source>
-          Overall
+          Authority
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            150
+            12
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Gesamt
+          Behörde
         </target>
       </trans-unit>
-      <trans-unit id="ContractValues" datatype="html">
+      <trans-unit id="Average%ofTenders" datatype="html">
         <source>
-          Contract Values
+          Average % of Tenders
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            151
+            13
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Auschreibungspreise
+          Durchschnittliche % der Ausschreibungen
+        </target>
+      </trans-unit>
+      <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
+        <source>
+          Average Good Procurement Score over Time
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            14
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Durchschnittlicher Good Procurement Score über die Zeit
+        </target>
+      </trans-unit>
+      <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
+        <source>
+          Average Good Procurement Score per Sector
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            15
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Durchschnittlicher Good Procurement Score pro Branche
+        </target>
+      </trans-unit>
+      <trans-unit id="AverageScore" datatype="html">
+        <source>
+          Average Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            16
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Durchschnittlicher Indikator-Score
+        </target>
+      </trans-unit>
+      <trans-unit id="AverageScoreof" datatype="html">
+        <source>
+          Average Score of
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            17
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Durchschnittlicher Score von
         </target>
       </trans-unit>
       <trans-unit id="AverageValue(€)" datatype="html">
@@ -7432,7 +4886,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            152
+            18
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7442,42 +4896,1068 @@
           Durchschnittlicher Betrag (€)
         </target>
       </trans-unit>
-      <trans-unit id="Limittosamesector" datatype="html">
+      <trans-unit id="AverageVolumeofTenders(€)" datatype="html">
         <source>
-          Limit to same sector
+          Average Volume of Tenders (€)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            153
+            19
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Auf gleiche Branche limitieren
+          Durchschnittliches Volumen der Ausschreibungen (€)
         </target>
       </trans-unit>
-      <trans-unit id="Limittosameregion(NUTS2)" datatype="html">
+      <trans-unit id="AverageofallAuthorities" datatype="html">
         <source>
-          Limit to same region (NUTS2)
+          Average of all Authorities
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            154
+            20
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Auf gleiche Region (NUTS2) limitieren
+          Durchschnitt aller Behörden
+        </target>
+      </trans-unit>
+      <trans-unit id="AverageofallCompanies" datatype="html">
+        <source>
+          Average of all Companies
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            21
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Durchschnitt aller Firmen
+        </target>
+      </trans-unit>
+      <trans-unit id="AwardDecisionDate" datatype="html">
+        <source>
+          Award Decision Date
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            22
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Datum der Zuschlagsentscheidung
+        </target>
+      </trans-unit>
+      <trans-unit id="AwardDecisionYear" datatype="html">
+        <source>
+          Award Decision Year
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            23
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Zuschlagsentscheidungsjahr
+        </target>
+      </trans-unit>
+      <trans-unit id="Benchmark" datatype="html">
+        <source>
+          Benchmark
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            24
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Benchmark
+        </target>
+      </trans-unit>
+      <trans-unit id="BidDeadline" datatype="html">
+        <source>
+          Bid Deadline
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            25
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Gebotsfrist
+        </target>
+      </trans-unit>
+      <trans-unit id="BidPrice" datatype="html">
+        <source>
+          Bid Price
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            26
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Angebotspreis
+        </target>
+      </trans-unit>
+      <trans-unit id="BidPriceEUR" datatype="html">
+        <source>
+          Bid Price EUR
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            27
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Angebotspreis EUR
+        </target>
+      </trans-unit>
+      <trans-unit id="BidsCount" datatype="html">
+        <source>
+          Bids Count
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            28
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anzahl Angebote
+        </target>
+      </trans-unit>
+      <trans-unit id="Buyer" datatype="html">
+        <source>
+          Buyer
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            29
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Käufer
+        </target>
+      </trans-unit>
+      <trans-unit id="BuyerRegion" datatype="html">
+        <source>
+          Buyer Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            30
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Käuferregion
+        </target>
+      </trans-unit>
+      <trans-unit id="BuyerType" datatype="html">
+        <source>
+          Buyer Type
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            31
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Käufertyp
+        </target>
+      </trans-unit>
+      <trans-unit id="Buyers" datatype="html">
+        <source>
+          Buyers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            32
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Käufer
+        </target>
+      </trans-unit>
+      <trans-unit id="CPV(Categories)" datatype="html">
+        <source>
+          CPV (Categories)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            33
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          CPV (Kategorien)
+        </target>
+      </trans-unit>
+      <trans-unit id="CPV(Divisions)" datatype="html">
+        <source>
+          CPV (Divisions)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            34
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          CPV (Divisionen)
+        </target>
+      </trans-unit>
+      <trans-unit id="CPV(Full)" datatype="html">
+        <source>
+          CPV (Full)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            35
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          CPV (Voll)
+        </target>
+      </trans-unit>
+      <trans-unit id="CPV(Groups)" datatype="html">
+        <source>
+          CPV (Groups)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            36
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          CPV (Gruppen)
+        </target>
+      </trans-unit>
+      <trans-unit id="CPVCodes" datatype="html">
+        <source>
+          CPV Codes
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            37
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          CPV Codes
+        </target>
+      </trans-unit>
+      <trans-unit id="City" datatype="html">
+        <source>
+          City
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            38
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Stadt
+        </target>
+      </trans-unit>
+      <trans-unit id="Companies" datatype="html">
+        <source>
+          Companies
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            39
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Firmen
+        </target>
+      </trans-unit>
+      <trans-unit id="Company" datatype="html">
+        <source>
+          Company
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            40
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Firma
+        </target>
+      </trans-unit>
+      <trans-unit id="ContractValues" datatype="html">
+        <source>
+          Contract Values
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Auschreibungspreise
+        </target>
+      </trans-unit>
+      <trans-unit id="Country" datatype="html">
+        <source>
+          Country
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            42
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Land
+        </target>
+      </trans-unit>
+      <trans-unit id="CreationDate" datatype="html">
+        <source>
+          Creation Date
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            43
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Erstelldatum
+        </target>
+      </trans-unit>
+      <trans-unit id="Dashboards" datatype="html">
+        <source>
+          Dashboards
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            44
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dashboards
+        </target>
+      </trans-unit>
+      <trans-unit id="DataQuality" datatype="html">
+        <source>
+          Data Quality
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            45
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Datenqualität
+        </target>
+      </trans-unit>
+      <trans-unit id="Dates" datatype="html">
+        <source>
+          Dates
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            46
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Termine
+        </target>
+      </trans-unit>
+      <trans-unit id="Deposits" datatype="html">
+        <source>
+          Deposits
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            47
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Einlagen
+        </target>
+      </trans-unit>
+      <trans-unit id="Description" datatype="html">
+        <source>
+          Description
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            48
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Beschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="DocumentPriceEUR" datatype="html">
+        <source>
+          Document Price EUR
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            49
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dokumentpreis EUR
+        </target>
+      </trans-unit>
+      <trans-unit id="Documents" datatype="html">
+        <source>
+          Documents
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            50
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dokumente
+        </target>
+      </trans-unit>
+      <trans-unit id="DocumentsDeadline" datatype="html">
+        <source>
+          Documents Deadline
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            51
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Unterlagenfrist
+        </target>
+      </trans-unit>
+      <trans-unit id="DocumentsPrice" datatype="html">
+        <source>
+          Documents Price
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            52
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Dokumentpreis
+        </target>
+      </trans-unit>
+      <trans-unit id="Download" datatype="html">
+        <source>
+          Download
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            53
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Download
+        </target>
+      </trans-unit>
+      <trans-unit id="EU-Fund" datatype="html">
+        <source>
+          EU-Fund
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            54
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          EU-Mittel
+        </target>
+      </trans-unit>
+      <trans-unit id="EconomicRequirements" datatype="html">
+        <source>
+          Economic Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            55
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Wirtschaftliche Voraussetzungen
+        </target>
+      </trans-unit>
+      <trans-unit id="EligibleBidLanguages" datatype="html">
+        <source>
+          Eligible Bid Languages
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            56
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Gültige Angebotssprachen
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedCompletionDate" datatype="html">
+        <source>
+          Estimated Completion Date
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            57
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Geschätztes Fertigstellungsdatum
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedCompletionYear" datatype="html">
+        <source>
+          Estimated Completion Year
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            58
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Geschätztes Fertigstellungsjahr
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedPrice" datatype="html">
+        <source>
+          Estimated Price
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            59
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Schätzpreis
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedPriceEUR" datatype="html">
+        <source>
+          Estimated Price EUR
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            60
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Geschätzter Preis EUR
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedStartDate" datatype="html">
+        <source>
+          Estimated Start Date
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            61
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Geschätztes Startdatum
+        </target>
+      </trans-unit>
+      <trans-unit id="EstimatedStartYear" datatype="html">
+        <source>
+          Estimated Start Year
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            62
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Geschätztes Startjahr
+        </target>
+      </trans-unit>
+      <trans-unit id="FOIOverview" datatype="html">
+        <source>
+          FOI Overview
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            63
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          FOI Überblick
+        </target>
+      </trans-unit>
+      <trans-unit id="FinalPrice" datatype="html">
+        <source>
+          Final Price
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            64
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Endpreis
+        </target>
+      </trans-unit>
+      <trans-unit id="FinalPriceEUR" datatype="html">
+        <source>
+          Final Price EUR
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            65
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Endpreis EUR
+        </target>
+      </trans-unit>
+      <trans-unit id="Funding" datatype="html">
+        <source>
+          Funding
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            66
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Finanzierung
+        </target>
+      </trans-unit>
+      <trans-unit id="Glossary" datatype="html">
+        <source>
+          Glossary
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            67
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Glossar
+        </target>
+      </trans-unit>
+      <trans-unit id="GoodProcurement" datatype="html">
+        <source>
+          Good Procurement
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            68
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Good Procurement
+        </target>
+      </trans-unit>
+      <trans-unit id="GoodProcurementScore" datatype="html">
+        <source>
+          Good Procurement Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            69
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Good Procurement Score
+        </target>
+      </trans-unit>
+      <trans-unit id="Home" datatype="html">
+        <source>
+          Home
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            70
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Start
+        </target>
+      </trans-unit>
+      <trans-unit id="HowOpentenderworks" datatype="html">
+        <source>
+          How Opentender works
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            71
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Wie Opentender funktioniert
+        </target>
+      </trans-unit>
+      <trans-unit id="Imprint" datatype="html">
+        <source>
+          Imprint
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            72
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Impressum
+        </target>
+      </trans-unit>
+      <trans-unit id="Indicator" datatype="html">
+        <source>
+          Indicator
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            73
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikator
+        </target>
+      </trans-unit>
+      <trans-unit id="Indicators" datatype="html">
+        <source>
+          Indicators
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            74
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikatoren
         </target>
       </trans-unit>
       <trans-unit id="Limittosameauthoritytype" datatype="html">
@@ -7489,7 +5969,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            155
+            75
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7508,7 +5988,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            156
+            76
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7518,42 +5998,1334 @@
           Auf gleiche Hauptaktivitäten limitieren
         </target>
       </trans-unit>
-      <trans-unit id="BuyerType" datatype="html">
+      <trans-unit id="Limittosameregion(NUTS2)" datatype="html">
         <source>
-          Buyer Type
+          Limit to same region (NUTS2)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            157
+            77
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Käufertyp
+          Auf gleiche Region (NUTS2) limitieren
         </target>
       </trans-unit>
-      <trans-unit id="AverageofallAuthorities" datatype="html">
+      <trans-unit id="Limittosamesector" datatype="html">
         <source>
-          Average of all Authorities
+          Limit to same sector
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            158
+            78
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Durchschnitt aller Behörden
+          Auf gleiche Branche limitieren
+        </target>
+      </trans-unit>
+      <trans-unit id="Lot" datatype="html">
+        <source>
+          Lot
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            79
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Vertragsgruppe
+        </target>
+      </trans-unit>
+      <trans-unit id="Lots" datatype="html">
+        <source>
+          Lots
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            80
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Vertragsgruppen (Lots)
+        </target>
+      </trans-unit>
+      <trans-unit id="MainActivities" datatype="html">
+        <source>
+          Main Activities
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            81
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptaktivitäten
+        </target>
+      </trans-unit>
+      <trans-unit id="MainBuyers" datatype="html">
+        <source>
+          Main Buyers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            82
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptkäufer
+        </target>
+      </trans-unit>
+      <trans-unit id="MainBuyersinScoreRange" datatype="html">
+        <source>
+          Main Buyers in Score Range
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            83
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptkäufer im Score-Bereich
+        </target>
+      </trans-unit>
+      <trans-unit id="MainCPVCode" datatype="html">
+        <source>
+          Main CPV Code
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            84
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Haupt-CPV-Code
+        </target>
+      </trans-unit>
+      <trans-unit id="MainSector" datatype="html">
+        <source>
+          Main Sector
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            85
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptbranche
+        </target>
+      </trans-unit>
+      <trans-unit id="MainSuppliers" datatype="html">
+        <source>
+          Main Suppliers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            86
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptzulieferer
+        </target>
+      </trans-unit>
+      <trans-unit id="MainSuppliersinScoreRange" datatype="html">
+        <source>
+          Main Suppliers in Score Range
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            87
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Hauptzulieferer im Score-Bereich
+        </target>
+      </trans-unit>
+      <trans-unit id="MarketAnalysis" datatype="html">
+        <source>
+          Market Analysis
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            88
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Marktüberblick
+        </target>
+      </trans-unit>
+      <trans-unit id="MediationBodyName" datatype="html">
+        <source>
+          Mediation Body Name
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            89
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Vermittlungsinstanz
+        </target>
+      </trans-unit>
+      <trans-unit id="ModificationDate" datatype="html">
+        <source>
+          Modification Date
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            90
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Änderungsdatum
+        </target>
+      </trans-unit>
+      <trans-unit id="Name" datatype="html">
+        <source>
+          Name
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            91
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Name
+        </target>
+      </trans-unit>
+      <trans-unit id="Nr.ofTenders" datatype="html">
+        <source>
+          Nr. of Tenders
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            92
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anzahl Ausschreibungen
+        </target>
+      </trans-unit>
+      <trans-unit id="NumberofBuyersbyRegion" datatype="html">
+        <source>
+          Number of Buyers by Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            93
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anzahl der Käufer pro Region
+        </target>
+      </trans-unit>
+      <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
+        <source>
+          Number of Suppliers by Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            94
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anzahl der Zulieferer pro Region
+        </target>
+      </trans-unit>
+      <trans-unit id="OpentenderPortals" datatype="html">
+        <source>
+          Opentender Portals
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            95
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Opentender Portale
+        </target>
+      </trans-unit>
+      <trans-unit id="Overall" datatype="html">
+        <source>
+          Overall
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            96
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Gesamt
+        </target>
+      </trans-unit>
+      <trans-unit id="PersonalRequirements" datatype="html">
+        <source>
+          Personal Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            97
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Persönliche Voraussetzungen
+        </target>
+      </trans-unit>
+      <trans-unit id="Portals" datatype="html">
+        <source>
+          Portals
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            98
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Portale
+        </target>
+      </trans-unit>
+      <trans-unit id="Prices" datatype="html">
+        <source>
+          Prices
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            99
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Preise
+        </target>
+      </trans-unit>
+      <trans-unit id="ProcedureType" datatype="html">
+        <source>
+          Procedure Type
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            100
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Verfahrensart
+        </target>
+      </trans-unit>
+      <trans-unit id="ProcurementIntegrity" datatype="html">
+        <source>
+          Procurement Integrity
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            101
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Beschaffungsintegrität
+        </target>
+      </trans-unit>
+      <trans-unit id="ProcurementIntegrityIndicator" datatype="html">
+        <source>
+          Procurement Integrity Indicator
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            102
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikator für Beschaffungsintegrität
+        </target>
+      </trans-unit>
+      <trans-unit id="ProcurementIntegrityIndicators" datatype="html">
+        <source>
+          Procurement Integrity Indicators
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            103
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikatoren für Beschaffungsintegrität
+        </target>
+      </trans-unit>
+      <trans-unit id="ProcurementIntegrityScore" datatype="html">
+        <source>
+          Procurement Integrity Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            104
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Beschaffungsintegritäts-Score
+        </target>
+      </trans-unit>
+      <trans-unit id="ProfileLink" datatype="html">
+        <source>
+          Profile Link
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            105
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Link zu Profil
+        </target>
+      </trans-unit>
+      <trans-unit id="Programme" datatype="html">
+        <source>
+          Programme
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            106
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Programm
+        </target>
+      </trans-unit>
+      <trans-unit id="Publications" datatype="html">
+        <source>
+          Publications
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            107
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Veröffentlichungen
+        </target>
+      </trans-unit>
+      <trans-unit id="Region" datatype="html">
+        <source>
+          Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            108
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Region
+        </target>
+      </trans-unit>
+      <trans-unit id="Requirements" datatype="html">
+        <source>
+          Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            109
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Anforderungen
+        </target>
+      </trans-unit>
+      <trans-unit id="Score" datatype="html">
+        <source>
+          Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            110
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Score
+        </target>
+      </trans-unit>
+      <trans-unit id="Search" datatype="html">
+        <source>
+          Search
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            111
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Suche
+        </target>
+      </trans-unit>
+      <trans-unit id="SearchAuthority" datatype="html">
+        <source>
+          Search Authority
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            112
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Behörde suchen
+        </target>
+      </trans-unit>
+      <trans-unit id="SearchCompany" datatype="html">
+        <source>
+          Search Company
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            113
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Firma suchen
+        </target>
+      </trans-unit>
+      <trans-unit id="SearchTender" datatype="html">
+        <source>
+          Search Tender
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            114
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibung suchen
+        </target>
+      </trans-unit>
+      <trans-unit id="Sector" datatype="html">
+        <source>
+          Sector
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            115
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Branche
+        </target>
+      </trans-unit>
+      <trans-unit id="Sector(CPVDivision)" datatype="html">
+        <source>
+          Sector (CPV Division)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            116
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Branche (CPV Divisionen)
+        </target>
+      </trans-unit>
+      <trans-unit id="Sector(CPV)" datatype="html">
+        <source>
+          Sector (CPV)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            117
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Branche (CPV)
+        </target>
+      </trans-unit>
+      <trans-unit id="SectorOverview" datatype="html">
+        <source>
+          Sector Overview
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            118
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Branchenüberblick
+        </target>
+      </trans-unit>
+      <trans-unit id="Sectors" datatype="html">
+        <source>
+          Sectors
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            119
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Branchen
+        </target>
+      </trans-unit>
+      <trans-unit id="SelectColumn" datatype="html">
+        <source>
+          Select Column
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            120
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Spaltenauswahl
+        </target>
+      </trans-unit>
+      <trans-unit id="SelectFilter" datatype="html">
+        <source>
+          Select Filter
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            121
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Filterauswahl
+        </target>
+      </trans-unit>
+      <trans-unit id="Supplier" datatype="html">
+        <source>
+          Supplier
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            122
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Zulieferer
+        </target>
+      </trans-unit>
+      <trans-unit id="SupplierRegion" datatype="html">
+        <source>
+          Supplier Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            123
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Zuliefererregion
+        </target>
+      </trans-unit>
+      <trans-unit id="Suppliers" datatype="html">
+        <source>
+          Suppliers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            124
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Zulieferer
+        </target>
+      </trans-unit>
+      <trans-unit id="SupplyType" datatype="html">
+        <source>
+          Supply Type
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            125
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Angebotstyp
+        </target>
+      </trans-unit>
+      <trans-unit id="TechnicalRequirements" datatype="html">
+        <source>
+          Technical Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            126
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Technische Voraussetzungen
+        </target>
+      </trans-unit>
+      <trans-unit id="Tender" datatype="html">
+        <source>
+          Tender
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            127
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Aussschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderInformation" datatype="html">
+        <source>
+          Tender Information
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            128
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibungs-Informationen
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderLink" datatype="html">
+        <source>
+          Tender Link
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            129
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Link zu Ausschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderMetaData" datatype="html">
+        <source>
+          Tender Meta Data
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            130
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibungs-Metadaten
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderRequirements" datatype="html">
+        <source>
+          Tender Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            131
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibungsanforderungen
+        </target>
+      </trans-unit>
+      <trans-unit id="Tenderinview" datatype="html">
+        <source>
+          Tender in view
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            132
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibung in Ansicht
+        </target>
+      </trans-unit>
+      <trans-unit id="Tenders" datatype="html">
+        <source>
+          Tenders
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            133
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibungen
+        </target>
+      </trans-unit>
+      <trans-unit id="TendersoverTime" datatype="html">
+        <source>
+          Tenders over Time
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            134
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Ausschreibungen über die Zeit
+        </target>
+      </trans-unit>
+      <trans-unit id="Test" datatype="html">
+        <source>
+          Test
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            135
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Test
+        </target>
+      </trans-unit>
+      <trans-unit id="Title" datatype="html">
+        <source>
+          Title
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            136
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Titel
+        </target>
+      </trans-unit>
+      <trans-unit id="TitleEnglish" datatype="html">
+        <source>
+          Title English
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            137
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Titel Englisch
+        </target>
+      </trans-unit>
+      <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
+        <source>
+          Total Volume of Tenders (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            138
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Absolutes Volumen der Ausschreibungen (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="Transparency" datatype="html">
+        <source>
+          Transparency
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            139
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Transparenz
+        </target>
+      </trans-unit>
+      <trans-unit id="TransparencyIndicator" datatype="html">
+        <source>
+          Transparency Indicator
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            140
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikator für Transparenz
+        </target>
+      </trans-unit>
+      <trans-unit id="TransparencyIndicators" datatype="html">
+        <source>
+          Transparency Indicators
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            141
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Indikatoren für Transparenz
+        </target>
+      </trans-unit>
+      <trans-unit id="TransparencyScore" datatype="html">
+        <source>
+          Transparency Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            142
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Transparenz-Score
+        </target>
+      </trans-unit>
+      <trans-unit id="Type" datatype="html">
+        <source>
+          Type
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            143
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Typ
+        </target>
+      </trans-unit>
+      <trans-unit id="Volume(€)" datatype="html">
+        <source>
+          Volume (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            144
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Volumen (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="VolumeofTenders(€)" datatype="html">
+        <source>
+          Volume of Tenders (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            145
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Volumen der Ausschreibungen (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="Year" datatype="html">
+        <source>
+          Year
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            146
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Jahr
         </target>
       </trans-unit>
       <trans-unit id="[Namenotavailable]" datatype="html">
@@ -7565,7 +7337,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            159
+            147
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7590,7 +7362,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            160
+            148
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7600,42 +7372,61 @@
           [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; andere Sektoren mit weniger als &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
-      <trans-unit id="Portals" datatype="html">
+      <trans-unit id="inScoreRange" datatype="html">
         <source>
-          Portals
+          in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            161
+            149
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Portale
+          im Score-Bereich
         </target>
       </trans-unit>
-      <trans-unit id="AverageofallCompanies" datatype="html">
+      <trans-unit id="overTime" datatype="html">
         <source>
-          Average of all Companies
+          over Time
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            162
+            150
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Durchschnitt aller Firmen
+          über die Zeit
+        </target>
+      </trans-unit>
+      <trans-unit id="perSector" datatype="html">
+        <source>
+          per Sector
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            151
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          pro Branche
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
@@ -7647,7 +7438,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            163
+            152
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7666,7 +7457,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            164
+            153
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7685,7 +7476,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            165
+            154
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7704,7 +7495,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            166
+            155
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7723,7 +7514,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            167
+            156
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7742,7 +7533,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            168
+            157
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7761,7 +7552,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            169
+            158
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7780,7 +7571,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            170
+            159
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7799,7 +7590,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            171
+            160
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7818,7 +7609,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            172
+            161
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7837,7 +7628,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            173
+            162
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7856,7 +7647,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            174
+            163
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7875,7 +7666,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            175
+            164
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7894,7 +7685,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            165
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7913,7 +7704,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            166
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7932,7 +7723,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            178
+            167
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7951,7 +7742,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            179
+            168
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7970,7 +7761,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            169
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7989,7 +7780,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            170
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8008,7 +7799,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            182
+            171
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8027,7 +7818,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            183
+            172
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8046,7 +7837,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            184
+            173
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8065,7 +7856,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            185
+            174
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8084,7 +7875,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            186
+            175
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8103,7 +7894,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            187
+            176
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8122,7 +7913,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            188
+            177
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8141,7 +7932,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            189
+            178
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8160,7 +7951,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            190
+            179
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8179,7 +7970,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            191
+            180
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8198,7 +7989,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            192
+            181
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8217,7 +8008,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            193
+            182
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8236,7 +8027,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            194
+            183
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8255,7 +8046,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            195
+            184
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8274,7 +8065,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            196
+            185
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8293,7 +8084,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            197
+            186
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8312,7 +8103,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            198
+            187
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8331,7 +8122,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            199
+            188
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8350,7 +8141,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            200
+            189
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8369,7 +8160,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            201
+            190
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8388,7 +8179,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            202
+            191
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8407,7 +8198,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            203
+            192
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8426,7 +8217,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            204
+            193
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8445,7 +8236,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            205
+            194
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8464,7 +8255,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            206
+            195
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8483,7 +8274,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            207
+            196
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8502,7 +8293,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            208
+            197
           </context>
         </context-group>
         <note priority="1" from="description">

@@ -19,7 +19,8 @@ const async = require('async');
 const path = require('path');
 const clone = require('clone');
 const XMLLite = require('xml-lite');
-const runtimestrings = require('./runtime-strings.json');
+const Ast = require("ts-simple-ast/dist/TsSimpleAst.js").TsSimpleAst;
+const ts = require("typescript");
 const indicators = require('../src/app/model/indicators.json');
 
 /*************************************
@@ -124,7 +125,119 @@ let packageLanguage = function (lang, content, cb) {
 	fs.writeFile(filename, s, cb);
 };
 
+let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
+	const ast = new Ast({tsConfigFilePath});
+	ast.addSourceFiles(path.join(srcFilePath, "**/*.ts"));
+	ast.getDiagnostics();
+	const sourceFiles = ast.getSourceFiles();
+
+	const list = [];
+	const dejavu = [];
+
+	const addText = (obj) => {
+		if (list.indexOf(obj.text) < 0) {
+			list.push(obj.text);
+		}
+	};
+
+	const check = (obj) => {
+		if (obj && obj.text && (obj.kind === 9) && obj.parent) {
+			// is Routes title data?
+			if (obj.parent.name && obj.parent.symbol && (opts.RouteFields.indexOf(obj.parent.symbol.escapedName) >= 0)
+				&& isChildOf(obj, opts.Routes)) {
+				addText(obj);
+			} else
+			// is Constant Lists?
+			if (obj.parent.name && (opts.CollectionFields.indexOf(obj.parent.name.escapedText) >= 0) && isChildOf(obj, opts.Collections)) {
+				addText(obj);
+			} else
+			// is i18n.get('...') call or this.get('...') on I18NService or i18n.getFormat('...', [...]) call or this.getFormat('...',[...]) on I18NService
+			if (isI18NCall(obj)) {
+				if (obj.parent.expression.name && (opts.I18NServiceCalls.indexOf(obj.parent.expression.name.escapedText) >= 0)) {
+					addText(obj);
+				} else if (obj.parent.expression.name && (opts.I18NServiceCalls.indexOf(obj.parent.expression.name.escapedText) >= 0)) {
+					addText(obj);
+				}
+			}
+		}
+	};
+
+	const isI18NCall = (obj) => {
+		if (obj.parent && obj.parent.expression && obj.parent.expression.expression) {
+			if (obj.parent.expression.expression.name && (opts.I18NServiceVariableNames.indexOf(obj.parent.expression.expression.name.escapedText) >= 0)) {
+				return true;
+			} else if (opts.I18NServiceVariableNames.indexOf(obj.parent.expression.expression.escapedText) >= 0) {
+				return true;
+			} else if (!obj.parent.expression.expression.name && isChildOf(obj, opts.I18NServiceNames)) {
+				return true;
+			}
+		}
+		return false;
+	};
+
+	const isChildOf = (obj, localSymbolNames) => {
+		if (obj.localSymbol && localSymbolNames.indexOf(obj.localSymbol.escapedName) >= 0) {
+			return true;
+		}
+		if (obj.parent) return isChildOf(obj.parent, localSymbolNames);
+		return false;
+	};
+
+	const scanNode = (node) => {
+		if (dejavu.indexOf(node) >= 0) {
+			return;
+		}
+		dejavu.push(node);
+		check(node);
+		Object.keys(node).forEach(key => {
+			if ((node[key] === undefined) ||
+				(node[key] === null) ||
+				(['parent', 'nextContainer'].indexOf(key) >= 0) ||
+				(['number', 'string', 'boolean'].indexOf(typeof node[key]) >= 0)) {
+				return;
+			}
+			if (Array.isArray(node[key])) {
+				node[key].forEach((n) => {
+					scanNode(n);
+				})
+			} else if (typeof node[key] === 'object') {
+				let o = node[key].constructor.name;
+				if (o === 'Map') {
+				} else {
+					scanNode(node[key]);
+				}
+			} else {
+				console.log('ignored', typeof node[key]);
+			}
+		})
+	};
+	sourceFiles.forEach(sourceFile => {
+		if (sourceFile.compilerNode.fileName.indexOf(srcFilePath) >= 0) {
+			scanNode(sourceFile.compilerNode);
+		}
+	});
+	return list;
+};
+
 let fillI18nTemplate = function (folder) {
+	console.log('extracting runtime strings with typescript');
+	let opts = {
+		Collections: ['TenderColumns', 'AuthorityColumns', 'CompanyColumns', 'TenderFilterDefs', 'CompanyFilterDefs', 'AuthorityFilterDefs'],
+		CollectionFields: ['name', 'group'],
+		Routes: ['routes'],
+		RouteFields: ['title', 'menu_title'],
+		I18NServiceNames: ['I18NService'],
+		I18NServiceVariableNames: ['i18n'],
+		I18NServiceCalls: ['get', 'getFormat']
+	};
+	const runtimestrings = extractRunTimeStrings(path.join(dest, 'tsconfig.json'), path.join(dest, 'src'), opts);
+	runtimestrings.sort((a, b) => {
+		if (a < b) return -1;
+		if (a > b) return 1;
+		return 0;
+	});
+	console.log('filling template, runtime strings:', runtimestrings.length, folder + 'i18n.template.html');
+
 	let used = {};
 	let vars = [];
 	let list = runtimestrings.map(s => {
