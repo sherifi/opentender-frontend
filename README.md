@@ -56,6 +56,10 @@ Note: The config file is baked into the js bundle, if you change anything you mu
 
 `npm run build` to build the app into a static bundle
 
+### Build
+
+`npm run lint` to check the project with tslint
+
 ### Watch files
 
 `npm run watch` to watch for file changes and restart the server if needed
@@ -70,7 +74,7 @@ run `npm run develop` and `npm run watch` in two separate terminals to build you
 
 ### Update Language files for Translation
 
-`npm run langs` to extract all translation strings into the language files in /src/i18n/ and updates the runtime files messages.[lang].ts
+`npm run langs` to extract all translation strings into the language files in /src/i18n/ and updates the runtime files language.[lang].ts, also all languages according to /src/i18n/languages.json are created if not existing.
 
 ## Uses
 
