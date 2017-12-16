@@ -145,7 +145,7 @@
       text-align: center;
 
       @include respond-to(medium-up) {
-        width: 400px;
+        display: inline;
         text-align: left;
       }
     }
@@ -214,6 +214,7 @@
       @include respond-to(medium-up) {
         text-align: right;
         float: right;
+        width: auto;
       }
 
     }
