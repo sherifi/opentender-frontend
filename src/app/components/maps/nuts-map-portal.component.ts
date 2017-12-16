@@ -3,7 +3,6 @@ import {ApiService} from '../../services/api.service';
 import {IApiResultGeoJSON, IStatsCountry} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
-import {initLeafletPlugins} from './leaflet.helper';
 import {PlatformService} from '../../services/platform.service';
 import {Router} from '@angular/router';
 
@@ -91,8 +90,9 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 				if (portal) {
 					feature.properties.name = portal.name;
 					feature.properties['value'] = portal.value;
-					feature.properties['color'] = portal.id === this.current.id ? '#6fd978' : '#08306b';}
-					feature.properties['border'] = '#fff';
+					feature.properties['color'] = portal.id === this.current.id ? '#6fd978' : '#08306b';
+				}
+				feature.properties['border'] = '#fff';
 			});
 			this.leafletGeo = this.geojson;
 		}
