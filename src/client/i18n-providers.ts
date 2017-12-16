@@ -25,7 +25,10 @@ export function getTranslationProviders(): Promise<StaticProvider[]> {
 	if (query_locale && query_locale.length == 2) {
 		locale = query_locale;
 		if (locale == 'en') {
-			window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
+			if (window.location.href.split('?')[1]) {
+				console.log('split', window.location.href);
+				window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
+			}
 		}
 		if (window.localStorage) {
 			window.localStorage.setItem('opentender.lang', locale);
