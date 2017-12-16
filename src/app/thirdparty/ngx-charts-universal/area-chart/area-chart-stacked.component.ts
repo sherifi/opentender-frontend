@@ -37,7 +37,7 @@ import {PlatformService} from '../../../services/platform.service';
           [yScale]="yScale"
           [dims]="viewDim"
           [showGridLines]="chart.showGridLines"
-		  [autoSize]="chart.yAxis.autoSize" 
+		  [autoSize]="chart.yAxis.autoSize"
 		  [showLabel]="chart.yAxis.showLabel"
           [labelText]="chart.yAxis.label"
           (dimensionsChanged)="updateYAxisWidth($event)">

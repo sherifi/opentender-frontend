@@ -338,7 +338,7 @@ export interface IApiResultGeoJSON extends FeatureCollection<GeometryObject, { i
 
 export interface ISeries {
 	data: Array<IChartData>;
-	multi?: boolean,
+	multi?: boolean;
 	header: { value: string, name: string };
 	filename: string;
 }

@@ -43,14 +43,14 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 	textAnchor: string = 'middle';
 	maxTicksLength: number = 0;
 	maxAllowedLength: number = 16;
-	adjustedScale = (d) => {
-		return 0;
-	};
 	tickValues: any;
 	textTransform: string = '';
 	ticks: any;
 	tickFormat: any;
 	height: number = 0;
+	adjustedScale = (d) => {
+		return 0;
+	}
 
 	@ViewChild('ticksel') ticksElement: ElementRef;
 
