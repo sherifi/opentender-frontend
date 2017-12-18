@@ -26,7 +26,6 @@ export function getTranslationProviders(): Promise<StaticProvider[]> {
 		locale = query_locale;
 		if (locale == 'en') {
 			if (window.location.href.split('?')[1]) {
-				console.log('split', window.location.href);
 				window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
 			}
 		}
