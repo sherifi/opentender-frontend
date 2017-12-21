@@ -419,7 +419,7 @@ export interface ISearchCommandFilter {
 	mode?: string;
 	and?: ISearchCommandFilter[];
 	subrequest?: {
-		[fieldname: string]: string | boolean | number
+		[fieldname: string]: string | boolean | number;
 	};
 }
 
@@ -431,6 +431,9 @@ export interface ISearchCommand {
 	sort?: {
 		field: string;
 		ascend: boolean;
+	};
+	weights?: {
+		[name: string]: number;
 	};
 }
 
