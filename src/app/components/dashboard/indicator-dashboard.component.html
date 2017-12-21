@@ -30,7 +30,7 @@
 				<graph score-grid [data]="viz.score.data"></graph>
 			</div>
 			<div class="container-left-9">
-				<graph indicator-structure [data]="viz.terms_indicators_score.data" (onSelect)="selectIndicatorChange($event)"></graph>
+				<graph indicator-structure [data]="viz.terms_indicators_score.data" [weights]="filterWeights" (onSelect)="selectIndicatorChange($event)"></graph>
 			</div>
 
 		</div>

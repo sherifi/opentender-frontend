@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
-import {IChartPie, IChartPieSeries} from '../../thirdparty/ngx-charts-universal/chart.interface';
+import {IChartRadar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
 import {Consts} from '../../model/consts';
@@ -13,6 +13,7 @@ import {IndicatorService} from '../../services/indicator.service';
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
+				[weights_data]="graph.weights_data"
 				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
 		</ngx-charts-radar-chart>
@@ -22,11 +23,13 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	@Input()
 	data: IStatsIndicators;
 	@Input()
+	weights: { [name: string]: number };
+	@Input()
 	title: string = '';
 	@Output()
 	onSelect = new EventEmitter();
 
-	indicators_pie: IChartPieSeries = {
+	indicators_pie: IChartRadar = {
 		chart: {
 			schemeType: 'ordinal',
 			view: {
@@ -46,9 +49,10 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		},
 		onLegendLabelClick: (event) => {
 		},
-		data: null
+		data: null,
+		weights_data: null
 	};
-	graph: IChartPieSeries = this.indicators_pie;
+	graph: IChartRadar = this.indicators_pie;
 
 	constructor(private indicators: IndicatorService) {
 	}
@@ -59,6 +63,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.indicators_pie.data = null;
+		this.indicators_pie.weights_data = null;
 		if (this.data) {
 			this.indicators_pie.data = Object.keys(this.data).map(key => {
 				return {info: this.indicators.getIndicatorInfo(key), value: this.data[key], id: key};
@@ -67,6 +72,18 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			}).map(indicator => {
 				return {name: indicator.info ? indicator.info.name : indicator.id, value: indicator.value, id: indicator.id};
 			});
+		}
+		if (this.weights) {
+			let list = Object.keys(this.weights).map(key => {
+				return {
+					id: key,
+					name: key,
+					value: this.weights[key]
+				};
+			});
+			if (list.length > 0) {
+				this.indicators_pie.weights_data = list;
+			}
 		}
 	}
 

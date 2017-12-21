@@ -24,9 +24,9 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
 	private icon: string = '';
-	private filterWeights: { [name: string]: number; } = null;
 	private searchPrefix: string = '';
 	private searchScore: [number, number] = [0, 50];
+	public filterWeights: { [name: string]: number; } = null;
 	public showDialog = false;
 	public title: string = '';
 	public subindicators: ISubIndicatorInfo[] = [];
@@ -196,7 +196,6 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		} else {
 			this.filterWeights = null;
 		}
-		console.log(this.filterWeights);
 		this.visualize();
 	}
 
