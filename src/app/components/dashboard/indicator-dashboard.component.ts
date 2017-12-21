@@ -9,6 +9,7 @@ import {
 } from '../../app.interfaces';
 import {IChartData} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Consts} from '../../model/consts';
+import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
 	moduleId: __filename,
@@ -23,10 +24,13 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 
 	private icon: string = '';
+	private filterWeights: { [name: string]: number; } = null;
 	private searchPrefix: string = '';
 	private searchScore: [number, number] = [0, 50];
+	public showDialog = false;
 	public title: string = '';
 	public subindicators: ISubIndicatorInfo[] = [];
+	public weights: Array<{ value: number; indicator: ISubIndicatorInfo; }> = [];
 	public selected: ISubIndicatorInfo = null;
 	public search_cmd: ISearchCommand;
 	public indicatorTitle: string;
@@ -135,6 +139,8 @@ export class DashboardsIndicatorComponent implements OnChanges {
 				value: stats.terms_indicators_score[this.searchPrefix],
 				color: Consts.colors.indicators[this.searchPrefix.split('_')[0]]
 			}];
+		} else {
+			viz.score.data = [];
 		}
 	}
 
@@ -153,10 +159,62 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.search();
 	}
 
+
+	toggleDialog() {
+		this.showDialog = !this.showDialog;
+		if (this.weights.length === 0) {
+			setTimeout(() => {
+				this.weights = this.subindicators.map(subindicator => {
+					return {
+						indicator: subindicator,
+						value: 10
+					};
+				});
+			}, 0);
+		}
+	}
+
+	onWeightSliderChange(event, weight) {
+		weight.value = event.endValue;
+	}
+
+	applyWeights() {
+		let weights = {};
+		let validWeights = false;
+		this.weights.forEach(w => {
+			if (w.value > 0) {
+				weights[w.indicator.id] = w.value / 10;
+				if (w.value !== 10) {
+					validWeights = true;
+				}
+			} else {
+				validWeights = true;
+			}
+		});
+		if (validWeights && Object.keys(weights).length > 0) {
+			this.filterWeights = weights;
+		} else {
+			this.filterWeights = null;
+		}
+		console.log(this.filterWeights);
+		this.visualize();
+	}
+
+	resetWeights() {
+		this.weights.forEach(weight => {
+			weight.value = 10;
+		});
+		this.visualize();
+	}
+
 	visualize() {
 		let filters = this.buildFilters();
 		this.loading++;
-		let sub = this.api.getIndicatorStats({filters: filters}).subscribe(
+		let cmd: ISearchCommand = {filters: filters};
+		if (!this.selected) {
+			cmd.weights = this.filterWeights;
+		}
+		let sub = this.api.getIndicatorStats(cmd).subscribe(
 			(result) => {
 				this.displayStats(result.data);
 			},

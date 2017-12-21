@@ -10,10 +10,15 @@
 		<div class="form-group">
 			<label for="subindicator" i18n>Sub-Indicators</label>
 			<select class="form-control form-subindicator" id="subindicator" [(ngModel)]="selected" (change)="selectChange($event)">
-				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]
-				</option>
+				<option [ngValue]="null">[<ng-container i18n>All sub-indicators</ng-container>]</option>
 				<option *ngFor="let sub of subindicators" [ngValue]="sub">{{sub.name}}</option>
 			</select>
+			<div *ngIf="!selected && subindicators.length>1" class="dialog-button" (click)="toggleDialog()">
+				<div class="dialog-button_inner">
+					<p class="dialog-button_description" i18n>Composite Score</p>
+					<p class="dialog-button_text" i18n>Adjust Weights</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div [ngClass]="{'is-loading': loading>0}">
@@ -78,3 +83,35 @@
 		</div>
 	</div>
 </div>
+
+<app-dialog i18n-title title="Adjust Composite Score Weights" [(visible)]="showDialog">
+	<div class="weight-selects" style="">
+		<div class="weight-select" *ngFor="let weight of weights">
+			<div class="weight-name">{{weight.indicator.name}}</div>
+			<div>
+				<div class="weight-slider">
+					<slider
+							[singleHandle]="true"
+							[min]="0"
+							[max]="10"
+							[startValue]="0"
+							[endValue]="weight.value"
+							[stepValue]="1"
+							[defaultWidth]="200"
+							[compact]="true"
+							[hideTicks]="true"
+							(onSliderChange)="onWeightSliderChange($event, weight)">
+					</slider>
+				</div>
+				<div class="weight-value">
+					{{weight.value/10}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tables-buttons">
+		<button class="tool-button" (click)="this.applyWeights()" i18n-title title="Apply Weights">Apply</button>
+		<button class="tool-button" (click)="this.resetWeights()" i18n-title title="Reset Weights">Reset</button>
+	</div>
+
+</app-dialog>
