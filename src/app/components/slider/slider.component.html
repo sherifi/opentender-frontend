@@ -6,7 +6,7 @@
 		<button type="button" aria-label="Slider Handle Left" *ngIf="!singleHandle" class="slider-handle" sliderhandle [left]="position.range1" [min]="position.range1min" [max]="position.range1max" (onChanged)="slider1Change($event)" (onKeyCommand)="slider1Step($event)"></button>
 		<button type="button" aria-label="Slider Handle Right" *ngIf="!(position.range1==position.range2 && position.range1==position.range2max)" class="slider-handle" sliderhandle [left]="position.range2" [min]="position.range2min" [max]="position.range2max" (onChanged)="slider2Change($event)" (onKeyCommand)="slider2Step($event)"></button>
 	</div>
-	<div class="slider-ticks">
+	<div *ngIf="!hideTicks" class="slider-ticks">
 		<div *ngFor="let tick of ticks" class="slider-tick" [ngStyle]="{width:tick.width+'px'}"><span *ngIf="tick.show">{{getTickLabel(tick.value)}}</span></div>
 	</div>
 </div>

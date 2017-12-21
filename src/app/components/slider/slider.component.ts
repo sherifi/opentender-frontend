@@ -70,6 +70,7 @@ export class SliderComponent implements OnChanges {
 
 	@Input() snap: any = true;
 	@Input() compact: any = false;
+	@Input() hideTicks: any = false;
 
 	@Input() defaultWidth: any = 100;
 
