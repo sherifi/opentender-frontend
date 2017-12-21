@@ -1,7 +1,6 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
-import {IChartPieSettings, IChartData, IChartPieSeriesSettings} from '../chart.interface';
-import {BasePieChartComponent} from './pie-chart-base.component';
+import {IChartData, IChartRadarSettings} from '../chart.interface';
 import {IDomain, ILegendOptions} from '../common/common.interface';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {ColorHelper} from '../utils/color.helper';
@@ -21,6 +20,7 @@ import {ColorHelper} from '../utils/color.helper';
 					   [colors]="colors"
 					   [showLabels]="showLabels"
 					   [series]="piedata"
+					   [weights]="weights_data"
 					   [activeEntries]="activeEntries"
 					   [innerRadius]="innerRadius"
 					   [outerRadius]="outerRadius"
@@ -38,8 +38,9 @@ import {ColorHelper} from '../utils/color.helper';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RadarChartComponent extends BaseChartComponent {
-	@Input() chart: IChartPieSeriesSettings;
+	@Input() chart: IChartRadarSettings;
 	@Input() data: Array<IChartData>;
+	@Input() weights_data: Array<IChartData>;
 	@Input() activeEntries: any[];
 	@Output() select: EventEmitter<any>;
 	@Output() activate: EventEmitter<any>;

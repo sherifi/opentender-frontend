@@ -145,6 +145,18 @@ export interface IChartPieSeriesSettings extends IChartBaseSettings {
 	maxValue?: number;
 }
 
+export interface IChartRadarSettings extends IChartBaseSettings {
+	view: IChartView;
+	schemeType: string;
+	colorScheme: IColorSet;
+	customColors?: any;
+	legend?: IChartLegendSettings;
+
+	labels: boolean;
+	maxRadius?: number;
+	maxValue?: number;
+}
+
 export interface IChartLineSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	schemeType: string;
@@ -210,6 +222,14 @@ export interface IChartBar {
 export interface IChartPie {
 	data: Array<IChartData>;
 	chart: IChartPieSettings;
+	select?: (event) => void;
+	onLegendLabelClick?: (event) => void;
+}
+
+export interface IChartRadar {
+	data: Array<IChartData>;
+	weights_data: Array<IChartData>;
+	chart: IChartRadarSettings;
 	select?: (event) => void;
 	onLegendLabelClick?: (event) => void;
 }

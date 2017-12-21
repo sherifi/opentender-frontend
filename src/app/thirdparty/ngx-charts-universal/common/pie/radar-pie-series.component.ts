@@ -84,7 +84,8 @@ interface PieArc {
 export class RadarPieSeriesComponent implements OnChanges {
 
 	@Input() colors: ColorHelper;
-	@Input() series: any;
+	@Input() series: Array<IChartData>;
+	@Input() weights: Array<IChartData>;
 	@Input() dims;
 	@Input() innerRadius = 60;
 	@Input() outerRadius = 80;
@@ -107,12 +108,23 @@ export class RadarPieSeriesComponent implements OnChanges {
 		this.update();
 	}
 
+	getWeight(d: IChartData) {
+		if (!this.weights) {
+			return 1;
+		} else {
+			let weight = this.weights.find(w => {
+				return (w.id && d.id && w.id === d.id) || (w.name === d.name);
+			});
+			return weight ? weight.value : 0;
+		}
+	}
+
 	update(): void {
 		if (!this.series) {
 			return;
 		}
-		let p = pie<{ value: number }>()
-			.value((d) => this.radar ? 1 : d.value)
+		let p = pie<IChartData>()
+			.value((d) => this.radar ? this.getWeight(d) : d.value)
 			.sort(null);
 
 		const arcData = p(this.series).map(d => {
