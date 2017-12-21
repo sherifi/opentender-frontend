@@ -1873,9 +1873,9 @@
           Nicht sicher wohin? Fangen Sie hier an…
         </target>
       </trans-unit>
-      <trans-unit id="35ff0c7c097243d436faa59dabe85512a571145a" datatype="html">
+      <trans-unit id="b07a7e6f8a93b42c5499b8e0bde24b7260dc8f52" datatype="html">
         <source>
-          Learn what is this about
+          Learn what this is about
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
