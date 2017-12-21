@@ -9,7 +9,7 @@ import {
 } from '../../app.interfaces';
 import {IChartData} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Consts} from '../../model/consts';
-import {IndicatorService} from '../../services/indicator.service';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	moduleId: __filename,
@@ -60,7 +60,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		years?: { startValue: number, endValue: number };
 	} = {};
 
-	constructor(private api: ApiService, private i18n: I18NService, private notify: NotifyService) {
+	constructor(private api: ApiService, private i18n: I18NService, private notify: NotifyService, private platform: PlatformService) {
 		this.viz.top_authorities.title = i18n.get('Main Buyers in Score Range');
 		this.viz.top_companies.title = i18n.get('Main Suppliers in Score Range');
 	}
@@ -159,18 +159,20 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		this.search();
 	}
 
-
 	toggleDialog() {
 		this.showDialog = !this.showDialog;
 		if (this.weights.length === 0) {
+			this.weights = this.subindicators.map(subindicator => {
+				return {
+					indicator: subindicator,
+					value: 10
+				};
+			});
+		}
+		if (this.showDialog && this.platform.isBrowser) {
 			setTimeout(() => {
-				this.weights = this.subindicators.map(subindicator => {
-					return {
-						indicator: subindicator,
-						value: 10
-					};
-				});
-			}, 0);
+				Utils.triggerResize();
+			}, 10);
 		}
 	}
 
