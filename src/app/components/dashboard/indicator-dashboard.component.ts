@@ -199,13 +199,14 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			this.filterWeights = null;
 		}
 		this.visualize();
+		this.search();
 	}
 
 	resetWeights() {
 		this.weights.forEach(weight => {
 			weight.value = 10;
 		});
-		this.visualize();
+		this.applyWeights();
 	}
 
 	visualize() {
@@ -231,16 +232,25 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	buildFilters() {
 		let filter: ISearchCommandFilter;
 		if (!this.selected) {
-			filter = {
-				field: 'scores.type',
-				type: 'term',
-				value: [this.searchPrefix],
-				and: [{
-					field: 'scores.value',
-					type: 'range',
-					value: this.searchScore
-				}]
-			};
+			if (!this.filterWeights) {
+				filter = {
+					field: 'scores.type',
+					type: 'term',
+					value: [this.searchPrefix],
+					and: [{
+						field: 'scores.value',
+						type: 'range',
+						value: this.searchScore
+					}]
+				};
+			} else {
+				filter = {
+					field: this.searchPrefix,
+					type: 'weighted',
+					value: this.searchScore,
+					weights: this.filterWeights
+				};
+			}
 		} else {
 			filter = {
 				field: 'indicators.type',
