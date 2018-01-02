@@ -56,7 +56,7 @@ export class BarComponent implements OnChanges {
 	update(): void {
 		this.textTransform = 'translate(0,0) rotate(270,' + this.x + ',' + this.y + ')';
 		this.gradId.generate('grad', this.platform.isBrowser);
-		if (this.gradient || this.stops) {
+		if (this.gradient && this.stops) {
 			this.gradientStops = this.getGradient();
 			this.hasGradient = true;
 		} else {

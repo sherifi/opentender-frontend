@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, HostListener, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
 import {UrlId} from '../utils/id.helper';
-import {IChartLineSettings, IChartData} from '../chart.interface';
+import {IChartLineSettings, IChartData, IColorScaleType, IScaleType} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {IDomain, ILegendOptions} from '../common/common.interface';
@@ -83,13 +83,12 @@ import {curveLinear} from 'd3-shape';
 				</svg:g>
 			</svg:g>
 			<svg:g ngx-charts-timeline
-				   *ngIf="data && scaleType === 'time'"
+				   *ngIf="data && isTime()"
 				   [attr.transform]="timelineTransform"
 				   [results]="data"
 				   [view]="[timelineWidth, height]"
 				   [height]="timelineHeight"
 				   [scheme]="chart.colorScheme"
-				   [customColors]="chart.customColors"
 				   [scaleType]="scaleType"
 				   [legend]="chart.legend && chart.legend.show"
 				   (onDomainChange)="updateDomain($event)">
@@ -119,7 +118,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 	curve = curveLinear;
 	xSet: IDomain;
 	seriesDomain: IDomain;
-	scaleType: string;
+	scaleType: IScaleType;
 	transform: string;
 	hoveredVertical: any; // the value of the x axis that is hovered over
 	filteredDomain: IDomain;
@@ -152,6 +151,10 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		this.clipId.generate('clip', this.platform.isBrowser);
 	}
 
+	isTime(): boolean {
+		return this.scaleType === IScaleType.Time;
+	}
+
 	getXSet(): IDomain {
 		let values = [];
 		for (let group of this.data) {
@@ -168,17 +171,17 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		this.xSet = this.getXSet();
 		this.scaleType = this.getScaleType(this.xSet);
 		let domain = [];
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			let values = this.xSet.map(v => toDate(v).valueOf());
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [min, max];
-		} else if (this.scaleType === 'linear') {
+		} else if (this.scaleType === IScaleType.Linear) {
 			let values = this.xSet.map(v => Number(v));
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [min, max];
-		} else {
+		} else if (this.scaleType === IScaleType.Ordinal) {
 			domain = this.xSet;
 		}
 		return domain;
@@ -213,23 +216,14 @@ export class LineChartComponent extends BaseXYAxisComponent {
 	}
 
 	getColorDomain(): IDomain {
-		return (this.chart.schemeType === 'ordinal') ? this.seriesDomain : this.yDomain;
+		return (this.chart.colorScheme.scaleType === IColorScaleType.Ordinal) ? this.seriesDomain : this.yDomain;
 	}
 
 	getLegendOptions(): ILegendOptions {
-		if (this.chart.schemeType === 'ordinal') {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors,
-				domain: this.seriesDomain
-			};
-		} else {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors.scale,
-				domain: this.yDomain
-			};
-		}
+		return {
+			colors: this.colors,
+			domain: this.getColorDomain()
+		};
 	}
 
 	updateTimeline(): void {
@@ -252,15 +246,15 @@ export class LineChartComponent extends BaseXYAxisComponent {
 	_getXScale(domain, width) {
 		let scale;
 
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			scale = scaleTime()
 				.range([0, width])
 				.domain(domain);
-		} else if (this.scaleType === 'linear') {
+		} else if (this.scaleType === IScaleType.Linear) {
 			scale = scaleLinear()
 				.range([0, width])
 				.domain(domain);
-		} else if (this.scaleType === 'ordinal') {
+		} else if (this.scaleType === IScaleType.Ordinal) {
 			scale = scalePoint()
 				.range([0, width])
 				.padding(0.1)
@@ -277,7 +271,7 @@ export class LineChartComponent extends BaseXYAxisComponent {
 		return scale;
 	}
 
-	getScaleType(values: IDomain): string {
+	getScaleType(values: IDomain): IScaleType {
 		let date = true;
 		let number = true;
 		for (let value of values) {
@@ -289,12 +283,12 @@ export class LineChartComponent extends BaseXYAxisComponent {
 			}
 		}
 		if (date) {
-			return 'time';
+			return IScaleType.Time;
 		}
 		if (number) {
-			return 'linear';
+			return IScaleType.Linear;
 		}
-		return 'ordinal';
+		return IScaleType.Ordinal;
 	}
 
 	updateDomain(domain: IDomain): void {

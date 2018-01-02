@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
-import {IChartBarsSettings, IChartData} from '../chart.interface';
+import {IChartBarsSettings, IChartData, IColorScaleType} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {ILegendOptions, IDomain} from '../common/common.interface';
@@ -90,22 +90,13 @@ export class BarHorizontalLabeledComponent extends BaseXYAxisComponent {
 	}
 
 	getLegendOptions(): ILegendOptions {
-		if (this.chart.schemeType === 'ordinal') {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors,
-				domain: this.yDomain
-			};
-		} else {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors.scale,
-				domain: this.xDomain
-			};
-		}
+		return {
+			colors: this.colors,
+			domain: this.getColorDomain()
+		};
 	}
 
 	getColorDomain(): IDomain {
-		return (this.chart.schemeType === 'ordinal') ? this.yDomain : this.xDomain;
+		return (this.chart.colorScheme.scaleType === IColorScaleType.Ordinal) ? this.yDomain : this.xDomain;
 	}
 }

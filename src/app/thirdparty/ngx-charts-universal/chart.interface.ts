@@ -1,4 +1,5 @@
 import {SimulationNodeDatum} from 'd3-force';
+import {IDomain} from './common/common.interface';
 
 export interface IAxisSettings {
 	show: boolean;
@@ -12,9 +13,30 @@ export interface IAxisSettings {
 	tickFormatting?: (val: number | Date | string) => string;
 }
 
+export interface IScale {
+	(val: String | Number | Date): string;
+
+	range: () => Array<string>;
+	domain: () => Array<number>;
+}
+
+export enum IColorScaleType {
+	Ordinal = 1,
+	Linear,
+	Quantille
+}
+
+export enum IScaleType {
+	Ordinal = 1,
+	Linear,
+	Time
+}
+
 export interface IColorSet {
-	domain: Array<string>;
-	getColor?: (value: string | number | Date) => string;
+	range: Array<string>;
+	scaleType: IColorScaleType;
+	getColor?: (value: IChartData) => string;
+	fixedDomain?: IDomain;
 }
 
 export interface IChartData {
@@ -57,27 +79,21 @@ export interface IChartLegendSettings {
 
 export interface IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	valueFormatting?: (val: number | Date | string) => string;
 	legend?: IChartLegendSettings;
 }
 
 export interface IChartFlowChartSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	links: Array<IChartLink>;
 }
 
 export interface IChartGaugeSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 
 	min: number;
@@ -93,9 +109,7 @@ export interface IChartGaugeSettings extends IChartBaseSettings {
 
 export interface IChartXYAxisSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	valueFormatting?: (val: number | Date | string) => string;
 
@@ -107,9 +121,7 @@ export interface IChartXYAxisSettings extends IChartBaseSettings {
 
 export interface IChartBarsSettings extends IChartXYAxisSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
@@ -122,9 +134,7 @@ export interface IChartBarsSettings extends IChartXYAxisSettings {
 
 export interface IChartPieSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 
 	labels: boolean;
@@ -135,9 +145,7 @@ export interface IChartPieSettings extends IChartBaseSettings {
 
 export interface IChartPieSeriesSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 
 	labels: boolean;
@@ -147,9 +155,7 @@ export interface IChartPieSeriesSettings extends IChartBaseSettings {
 
 export interface IChartRadarSettings extends IChartBaseSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 
 	labels: boolean;
@@ -159,9 +165,7 @@ export interface IChartRadarSettings extends IChartBaseSettings {
 
 export interface IChartLineSettings extends IChartXYAxisSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
@@ -174,9 +178,7 @@ export interface IChartLineSettings extends IChartXYAxisSettings {
 
 export interface IChartAreaSettings extends IChartXYAxisSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
@@ -188,9 +190,7 @@ export interface IChartAreaSettings extends IChartXYAxisSettings {
 
 export interface IChartHeatmapSettings extends IChartXYAxisSettings {
 	view: IChartView;
-	schemeType: string;
 	colorScheme: IColorSet;
-	customColors?: any;
 	legend?: IChartLegendSettings;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;

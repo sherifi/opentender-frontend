@@ -38,7 +38,6 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 
 	companies_absolute: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -60,9 +59,7 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single4
-			}
+			colorScheme: Consts.colorSchemes.ordinal_4
 		},
 		select: (event) => {
 			this.router.navigate(['/company/' + event.id]);
@@ -74,7 +71,6 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 
 	companies_volume: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -95,9 +91,7 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single4
-			}
+			colorScheme: Consts.colorSchemes.ordinal_4
 		},
 		select: (event) => {
 			this.router.navigate(['/company/' + event.id]);

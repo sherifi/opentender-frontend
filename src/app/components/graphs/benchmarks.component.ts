@@ -60,7 +60,6 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 1024, height: 360},
 				min: {height: 360},
@@ -82,9 +81,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatTrunc,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.dual
-			}
+			colorScheme: Consts.colorSchemes.ordinal_dual
 		},
 		select: (event) => {
 		},

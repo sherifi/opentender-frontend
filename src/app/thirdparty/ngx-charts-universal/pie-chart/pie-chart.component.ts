@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {calculateViewDimensions} from '../utils/view-dimensions.helper';
-import {IChartPieSettings, IChartData} from '../chart.interface';
+import {IChartPieSettings, IChartData, IColorScaleType} from '../chart.interface';
 import {BasePieChartComponent} from './pie-chart-base.component';
 import {ILegendOptions} from '../common/common.interface';
 
@@ -113,7 +113,6 @@ export class PieChartComponent extends BasePieChartComponent {
 
 	getLegendOptions(): ILegendOptions {
 		return {
-			scaleType: 'ordinal',
 			domain: this.domain,
 			colors: this.colors
 		};

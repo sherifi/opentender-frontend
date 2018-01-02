@@ -33,7 +33,6 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 
 	cpvs_codes_average: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -55,9 +54,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 			valueFormatting: Utils.formatPercent,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single2
-			}
+			colorScheme: Consts.colorSchemes.ordinal_2
 		},
 		select: (event) => {
 			if (event.id) {
@@ -70,7 +67,6 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 	};
 	cpvs_codes_absolute: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -92,9 +88,7 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single2
-			}
+			colorScheme: Consts.colorSchemes.ordinal_2
 		},
 		select: (event) => {
 			if (event.id) {

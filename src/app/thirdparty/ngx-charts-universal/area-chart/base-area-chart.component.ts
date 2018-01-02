@@ -1,5 +1,5 @@
 import {Input, Output, EventEmitter, HostListener, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
-import {IChartAreaSettings, IChartData} from '../chart.interface';
+import {IChartAreaSettings, IChartData, IColorScaleType, IScaleType} from '../chart.interface';
 import {UrlId} from '../utils/id.helper';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
@@ -28,7 +28,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 
 	xSet: any[]; // the set of all values on the X Axis
 	seriesDomain: IDomain;
-	scaleType: string;
+	scaleType: IScaleType;
 	hoveredVertical: any; // the value of the x axis that is hovered over
 	filteredDomain: any;
 	timelineWidth: any;
@@ -112,18 +112,18 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 		this.scaleType = this.getScaleType(values);
 		let domain = [];
 
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			values = values.map(v => toDate(v));
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [new Date(min), new Date(max)];
-		} else if (this.scaleType === 'linear') {
+		} else if (this.scaleType === IScaleType.Ordinal) {
+			domain = values;
+		} else if (this.scaleType === IScaleType.Linear) {
 			values = values.map(v => Number(v));
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [min, max];
-		} else {
-			domain = values;
 		}
 
 		this.xSet = values;
@@ -137,22 +137,20 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 
 	_getXScale(domain, width) {
 		let scale;
-
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			scale = scaleTime()
 				.range([0, width])
 				.domain(domain);
-		} else if (this.scaleType === 'linear') {
-			scale = scaleLinear()
-				.range([0, width])
-				.domain(domain);
-		} else if (this.scaleType === 'ordinal') {
+		} else if (this.scaleType === IScaleType.Ordinal) {
 			scale = scalePoint()
 				.range([0, width])
 				.padding(0.1)
 				.domain(domain);
+		} else if (this.scaleType === IScaleType.Linear) {
+			scale = scaleLinear()
+				.range([0, width])
+				.domain(domain);
 		}
-
 		return scale;
 	}
 
@@ -165,7 +163,7 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 		return scale;
 	}
 
-	getScaleType(values): string {
+	getScaleType(values): IScaleType {
 		let date = true;
 		let number = true;
 
@@ -179,14 +177,14 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 		}
 
 		if (date) {
-			return 'time';
+			return IScaleType.Time;
 		}
 
 		if (number) {
-			return 'linear';
+			return IScaleType.Linear;
 		}
 
-		return 'ordinal';
+		return IScaleType.Ordinal;
 	}
 
 	isDate(value): boolean {
@@ -220,22 +218,13 @@ export class BaseAreaChartComponent extends BaseXYAxisComponent {
 	}
 
 	getColorDomain(): IDomain {
-		return (this.chart.schemeType === 'ordinal') ? this.seriesDomain : this.yDomain;
+		return (this.chart.colorScheme.scaleType === IColorScaleType.Ordinal) ? this.seriesDomain : this.yDomain;
 	}
 
 	getLegendOptions(): ILegendOptions {
-		if (this.chart.schemeType === 'ordinal') {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors,
-				domain: this.seriesDomain
-			};
-		} else {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors.scale,
-				domain: this.yDomain
-			};
-		}
+		return {
+			colors: this.colors,
+			domain: this.getColorDomain()
+		};
 	}
 }

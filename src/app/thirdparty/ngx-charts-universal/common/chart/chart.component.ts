@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, ViewContainerRef, ChangeDetectionStrategy, EventEmitter, Output, SimpleChanges, ViewEncapsulation} from '@angular/core';
 // import {animate, style, transition, trigger} from '@angular/animations';
 import {InjectionService} from '../tooltip/injection.service';
-import {IChartDimension, IChartBaseSettings, IChartData} from '../../chart.interface';
+import {IChartDimension, IChartBaseSettings, IChartData, IColorScaleType} from '../../chart.interface';
 import {ILegendOptions} from '../common.interface';
 
 @Component({
@@ -97,7 +97,7 @@ export class ChartComponent implements OnChanges {
 	}
 
 	getLegendType(): string {
-		return (this.legendOptions.scaleType === 'linear') ? 'scaleLegend' : 'legend';
+		return (this.legendOptions.colors.scaleType === IColorScaleType.Linear) ? 'scaleLegend' : 'legend';
 	}
 
 }

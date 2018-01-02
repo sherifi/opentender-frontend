@@ -16,7 +16,6 @@ import {min} from 'd3-array';
 					   class="pie-grid-item"
 					   [attr.transform]="series.transform">
 					<svg:g ngx-charts-pie-grid-series
-						   [colors]="series.colors"
 						   [data]="series.data"
 						   [innerRadius]="series.innerRadius"
 						   [outerRadius]="series.outerRadius"

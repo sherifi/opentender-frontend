@@ -133,14 +133,13 @@ export class ForceDirectedGraphComponent extends BaseChartComponent {
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.seriesDomain, this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.seriesDomain);
 	}
 
 	getLegendOptions(): ILegendOptions {
 		return {
-			scaleType: 'ordinal',
-			domain: this.seriesDomain,
-			colors: this.colors
+			colors: this.colors,
+			domain: this.seriesDomain
 		};
 	}
 

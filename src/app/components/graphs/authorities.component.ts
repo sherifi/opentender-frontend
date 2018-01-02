@@ -37,7 +37,6 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 
 	authorities_absolute: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -59,9 +58,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single3
-			}
+			colorScheme: Consts.colorSchemes.ordinal_3
 		},
 		select: (event) => {
 			this.router.navigate(['/authority/' + event.id]);
@@ -73,7 +70,6 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 
 	authorities_volume: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -94,9 +90,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single3
-			}
+			colorScheme: Consts.colorSchemes.ordinal_3
 		},
 		select: (event) => {
 			if (event.id) {

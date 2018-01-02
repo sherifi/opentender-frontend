@@ -2,6 +2,7 @@ import {Component, Input, SimpleChanges, Output, EventEmitter, OnChanges, Change
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {IChartData} from '../../chart.interface';
 import {scaleLog} from 'd3-scale';
+import {ColorHelper} from '../../utils/color.helper';
 
 interface ICell {
 	x: number;
@@ -42,7 +43,7 @@ interface ICell {
 })
 export class HeatMapCircleCellSeriesComponent implements OnChanges {
 	@Input() data;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() xScale;
 	@Input() yScale;
 	@Input() valueFormatting?: (val: number | Date | string) => string;

@@ -24,7 +24,6 @@ import {IDomain} from '../common/common.interface';
 					   [tooltipTitle]="getTooltipText(series.label, formatLabelNumber(series.value))">
 					<svg:rect style="stroke: none; fill: #fff; opacity:0" [attr.x]="-series.outerRadius" [attr.y]="-series.outerRadius" [attr.height]="series.outerRadius*2" [attr.width]="series.outerRadius*2"/>
 					<svg:g ngx-charts-pie-grid-series
-						   [colors]="series.colors"
 						   [data]="series.data"
 						   [innerRadius]="series.innerRadius"
 						   [outerRadius]="series.outerRadius"
@@ -74,11 +73,15 @@ export class PieValuesGridComponent extends BaseChartComponent {
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'linear', ColorHelper.collectColorDomain(this.chart.maxValue || 100, this.chart.colorScheme.domain.length), this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.getColorDomain());
 	}
 
-	getDomain(): any[] {
+	getDomain(): IDomain {
 		return this.data.map(d => d.name);
+	}
+
+	getColorDomain(): IDomain {
+		return this.getDomain();
 	}
 
 	update(): void {
@@ -100,8 +103,8 @@ export class PieValuesGridComponent extends BaseChartComponent {
 				this.layout_data = gridLayout(this.viewDim, this.data, 150);
 				this.transform = `translate(${this.margin[3]} , ${this.margin[0]})`;
 
-				this.series = this.getSeries();
 				this.setColors();
+				this.series = this.getSeries();
 			}
 		});
 	}
@@ -121,21 +124,14 @@ export class PieValuesGridComponent extends BaseChartComponent {
 				radius = Math.min(radius, this.chart.maxRadius);
 			}
 			const innerRadius = radius * 0.9;
-			const colors = (data) => {
-				if (data.other) {
-					return 'rgba(100,100,100,0.2)';
-				} else {
-					return d.data.color || this.colors.getColor(data.value);
-				}
-			};
 			const xPos = d.x + (d.width - padding) / 2;
 			const yPos = d.y + (d.height - baselineLabelHeight) / 2;
 			const fontSize = Math.max(Math.min(24, radius / 2), 8);
 			const labelTop = (fontSize * 1.1);
 			const labelLeft = innerRadius < 10 ? (radius * 3) : 0;
+			d.data.color = d.data.color || this.colors.getColor(d.data.value);
 			return {
 				transform: `translate(${xPos}, ${yPos})`,
-				colors,
 				innerRadius,
 				outerRadius: radius,
 				label,
@@ -148,6 +144,7 @@ export class PieValuesGridComponent extends BaseChartComponent {
 					data: {
 						other: true,
 						value: this.chart.maxValue - value,
+						color: 'rgba(100,100,100,0.2)',
 						name: d.data.name
 					}
 				}]

@@ -1,9 +1,10 @@
 import {Component, Input, ElementRef, ViewChild, AfterViewInit, ChangeDetectionStrategy, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
-import {IChartGaugeSettings, IChartData} from '../chart.interface';
+import {IChartGaugeSettings, IChartData, IScale} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
 import {scaleLinear} from 'd3-scale';
+import {IDomain} from '../common/common.interface';
 
 @Component({
 	selector: 'ngx-charts-gauge',
@@ -192,15 +193,15 @@ export class GaugeComponent extends BaseChartComponent implements AfterViewInit 
 		return arcs;
 	}
 
-	getDomain(): any[] {
+	getDomain(): IDomain {
 		return this.data.map(d => d.name);
 	}
 
-	getValueDomain(): any[] {
+	getValueDomain(): IDomain {
 		return [this.min, this.max];
 	}
 
-	getValueScale(): any {
+	getValueScale(): IScale {
 		return scaleLinear()
 			.range([0, this.angleSpan])
 			.domain(this.valueDomain);
@@ -237,6 +238,6 @@ export class GaugeComponent extends BaseChartComponent implements AfterViewInit 
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.domain, this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.domain);
 	}
 }

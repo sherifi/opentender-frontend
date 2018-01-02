@@ -1,6 +1,8 @@
 import {Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
+import {IColorScaleType} from '../../chart.interface';
+import {ColorHelper} from '../../utils/color.helper';
 
 // import {animate, style, transition, trigger} from '@angular/animations';
 
@@ -48,8 +50,8 @@ export class BarSeriesVerticalComponent implements OnChanges {
 	@Input() series;
 	@Input() xScale;
 	@Input() yScale;
-	@Input() colors;
-	@Input() gradient: boolean;
+	@Input() colors: ColorHelper;
+	@Input() gradient: boolean = false;
 	@Input() activeEntries: any[];
 	@Input() valueFormatting: (value) => string;
 
@@ -142,15 +144,21 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				value = (offset1 - offset0).toFixed(2) + '%';
 			}
 
-			if (this.colors.scaleType === 'ordinal') {
-				bar.color = this.colors.getColor(label);
+			if (this.colors.scaleType === IColorScaleType.Ordinal) {
+				bar.color = d.color || this.colors.getColor(label);
+			} else if (this.colors.scaleType === IColorScaleType.Linear) {
+				bar.color = d.color || this.colors.getColor(value);
 			} else {
 				if (this.type === 'standard') {
 					bar.color = d.color || this.colors.getColor(value);
-					bar.gradientStops = this.colors.getLinearGradientStops(value);
+					if (this.gradient) {
+						bar.gradientStops = this.colors.getLinearGradientStops(value);
+					}
 				} else {
 					bar.color = d.color || this.colors.getColor(bar.offset1);
-					bar.gradientStops = this.colors.getLinearGradientStops(bar.offset1, bar.offset0);
+					if (this.gradient) {
+						bar.gradientStops = this.colors.getLinearGradientStops(bar.offset1, bar.offset0);
+					}
 				}
 			}
 

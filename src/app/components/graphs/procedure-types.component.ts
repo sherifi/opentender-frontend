@@ -27,7 +27,6 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 
 	procedure_types_absolute: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -49,9 +48,7 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single2
-			}
+			colorScheme: Consts.colorSchemes.ordinal_2
 		},
 		select: (event) => {
 		},

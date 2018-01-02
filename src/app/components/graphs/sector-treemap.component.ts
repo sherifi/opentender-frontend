@@ -35,19 +35,13 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 
 	cpv_codes_nr: IChartTreeMap = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 1024, height: 400},
 				min: {height: 400},
 				max: {height: 400}
 			},
-			colorScheme: {
-				'domain': Consts.colors.diverging,
-				getColor: (value) => {
-					return Utils.cpv2color(value);
-				}
-			},
-			valueFormatting: Utils.formatValue
+			valueFormatting: Utils.formatValue,
+			colorScheme: Consts.colorSchemes.ordinal_cpvs
 		},
 		select: (event) => {
 			this.router.navigate(['/sector/' + event.id]);
@@ -57,21 +51,15 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 
 	cpv_codes_prices: IChartTreeMap = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 1024, height: 400},
 				min: {height: 400},
 				max: {height: 400}
 			},
-			colorScheme: {
-				'domain': Consts.colors.diverging,
-				getColor: (value) => {
-					return Utils.cpv2color(value);
-				}
-			},
 			valueFormatting: (n: number): string => {
 				return '€ ' + Utils.formatValue(n);
-			}
+			},
+			colorScheme: Consts.colorSchemes.ordinal_cpvs
 		},
 		select: (event) => {
 			this.router.navigate(['/sector/' + event.id]);

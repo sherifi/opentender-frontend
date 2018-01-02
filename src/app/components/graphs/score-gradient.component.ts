@@ -3,7 +3,6 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 @Component({
 	selector: 'graph[score-gradient]',
 	template: `
-		<!--<span>{{valueLow | formatNumber}}</span>-->
 		<svg [attr.width]="width" [attr.height]="height">
 			<defs>
 				<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
@@ -13,14 +12,13 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 				</linearGradient>
 			</defs>
 			<rect fill="url(#legendGradient)" [attr.x]="border" y="2" [attr.width]="width-4" [attr.height]="height-border"></rect>
-			<rect stroke="gray" fill="gray" fill-opacity="0.8" [attr.x]="x-3" y="0" [attr.width]="6" [attr.height]="height"
+			<rect stroke="#4a4a4a" fill="#4a4a4a" fill-opacity="0.8" [attr.x]="x-3" y="0" [attr.width]="6" [attr.height]="height"
 				  ngx-tooltip
 				  [tooltipPlacement]="'top'"
 				  [tooltipType]="'tooltip'"
 				  [tooltipTitle]="'Score: ' + value"
 			></rect>
 		</svg>
-		<!--<span>{{valueHigh | formatNumber}}</span>-->
 	`
 })
 export class GraphScoreGradientComponent implements OnChanges {

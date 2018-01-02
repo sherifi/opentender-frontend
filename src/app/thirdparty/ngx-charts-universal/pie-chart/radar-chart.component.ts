@@ -66,7 +66,7 @@ export class RadarChartComponent extends BaseChartComponent {
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.domain, this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.domain);
 	}
 
 	update(): void {
@@ -131,7 +131,6 @@ export class RadarChartComponent extends BaseChartComponent {
 
 	getLegendOptions(): ILegendOptions {
 		return {
-			scaleType: 'ordinal',
 			domain: this.domain,
 			colors: this.colors
 		};

@@ -1,6 +1,7 @@
 import {Component, OnChanges, Input, Output, SimpleChanges, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {IChartDimension} from '../../chart.interface';
+import {ColorHelper} from '../../utils/color.helper';
 
 export interface ITreeMapData {
 	id: string;
@@ -45,7 +46,7 @@ export class TreeMapCellSeriesComponent implements OnChanges {
 	@Input() node: ITreeMapData;
 	@Input() dims: IChartDimension;
 	@Input() formatSeriesNumber: (n: number) => string;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 
 	@Output() select = new EventEmitter();
 

@@ -2,6 +2,7 @@ import {
 	Component, Input, OnChanges, ChangeDetectionStrategy, SimpleChanges
 } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'ngx-charts-scale-legend',
@@ -27,7 +28,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ScaleLegendComponent implements OnChanges {
 
 	@Input() valueRange;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() height;
 	@Input() width;
 
@@ -37,7 +38,7 @@ export class ScaleLegendComponent implements OnChanges {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		const gradientValues = this.gradientString(this.colors.range(), this.colors.domain());
+		const gradientValues = this.gradientString(this.colors.scale.range(), this.colors.scale.domain());
 		this.gradient = this.sanitizer.bypassSecurityTrustStyle(`linear-gradient(to bottom, ${gradientValues})`);
 	}
 

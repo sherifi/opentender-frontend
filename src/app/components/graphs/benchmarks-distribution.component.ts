@@ -6,6 +6,7 @@ import {Consts} from '../../model/consts';
 import {marker} from 'leaflet';
 import {I18NService} from '../../services/i18n.service';
 import {IndicatorService} from '../../services/indicator.service';
+import {ColorHelper} from '../../thirdparty/ngx-charts-universal/utils/color.helper';
 
 @Component({
 	selector: 'graph[benchmarks-distribution]',
@@ -68,7 +69,6 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 
 	histogram_distribution: IChartHeatmap = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 1024, height: 360},
 				min: {height: 360},
@@ -91,9 +91,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 			valueFormatting: (value: number) => {
 				return this.unit + ': ' + Utils.formatValue(value);
 			},
-			colorScheme: {
-				domain: Consts.colors.redgreen
-			}
+			colorScheme: Consts.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

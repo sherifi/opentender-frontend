@@ -7,6 +7,7 @@ import {PlatformService} from '../../../../services/platform.service';
 import {select, selection} from 'd3-selection';
 import {scaleTime, scaleLinear, scalePoint} from 'd3-scale';
 import {brushX} from 'd3-brush';
+import {IScaleType} from '../../chart.interface';
 
 @Component({
 	selector: 'g[ngx-charts-timeline]',
@@ -30,11 +31,10 @@ export class TimelineComponent implements OnChanges {
 	@Input() view;
 	@Input() results;
 	@Input() scheme;
-	@Input() customColors;
 	@Input() legend;
 	// @Input() miniChart;
 	// @Input() autoScale;
-	@Input() scaleType;
+	@Input() scaleType: IScaleType;
 	@Input() height = 50;
 
 	@Output() select = new EventEmitter();
@@ -95,17 +95,17 @@ export class TimelineComponent implements OnChanges {
 		}
 
 		let domain = [];
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			values = values.map(v => toDate(v));
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [min, max];
-		} else if (this.scaleType === 'linear') {
+		} else if (this.scaleType === IScaleType.Linear) {
 			values = values.map(v => Number(v));
 			let min = Math.min(...values);
 			let max = Math.max(...values);
 			domain = [min, max];
-		} else {
+		} else if (this.scaleType === IScaleType.Ordinal) {
 			domain = values;
 		}
 
@@ -117,15 +117,15 @@ export class TimelineComponent implements OnChanges {
 		let domain = this.xDomain.map(d => {
 			return <number>d;
 		});
-		if (this.scaleType === 'time') {
+		if (this.scaleType === IScaleType.Time) {
 			scale = scaleTime()
 				.range([0, this.dims.width])
 				.domain(domain);
-		} else if (this.scaleType === 'linear') {
+		} else if (this.scaleType === IScaleType.Linear) {
 			scale = scaleLinear()
 				.range([0, this.dims.width])
 				.domain(domain);
-		} else if (this.scaleType === 'ordinal') {
+		} else if (this.scaleType === IScaleType.Ordinal) {
 			scale = scalePoint<number>()
 				.range([0, this.dims.width])
 				.padding(0.1)

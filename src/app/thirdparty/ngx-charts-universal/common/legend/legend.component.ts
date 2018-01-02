@@ -1,5 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy, Output, EventEmitter, SimpleChanges, OnChanges, ChangeDetectorRef, NgZone} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'ngx-charts-legend',
@@ -35,7 +36,7 @@ export class LegendComponent implements OnChanges {
 
 	@Input() data;
 	@Input() title;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() height;
 	@Input() width;
 	@Input() activeEntries: any[];

@@ -1,6 +1,8 @@
 import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
 import {sortLinear, sortByTime, sortByDomain} from '../../utils/sort.helper';
 import {area} from 'd3-shape';
+import {ColorHelper} from '../../utils/color.helper';
+import {IColorScaleType} from '../../chart.interface';
 
 @Component({
 	selector: 'g[ngx-charts-area-series]',
@@ -25,7 +27,7 @@ export class AreaSeriesComponent implements OnChanges {
 	@Input() data;
 	@Input() xScale;
 	@Input() yScale;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() scaleType;
 	@Input() stacked = false;
 	@Input() normalized = false;
@@ -98,7 +100,7 @@ export class AreaSeriesComponent implements OnChanges {
 	}
 
 	updateGradient() {
-		if (this.colors.scaleType === 'linear') {
+		if (this.colors.scaleType === IColorScaleType.Linear) {
 			this.hasGradient = true;
 			if (this.stacked || this.normalized) {
 				let d0values = this.data.series.map(d => d.d0);

@@ -1,6 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy, Output, EventEmitter, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
-import {IChartHeatmapSettings, IChartData} from '../chart.interface';
+import {IChartHeatmapSettings, IChartData, IScaleType} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
 import {calculateViewDimensions} from '../utils/view-dimensions.helper';
 import {IDomain, ILegendOptions} from '../common/common.interface';
@@ -96,7 +96,7 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 			showXLabel: this.chart.xAxis.showLabel,
 			showYLabel: this.chart.yAxis.showLabel,
 			showLegend: this.chart.legend && this.chart.legend.show,
-			legendType: 'linear'
+			legendType: this.chart.colorScheme.scaleType
 		});
 	}
 
@@ -153,14 +153,13 @@ export class HeatMapComponent extends BaseXYAxisComponent {
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'linear', this.valueDomain);
+		this.colors = new ColorHelper(this.chart.colorScheme, this.valueDomain);
 	}
 
 	getLegendOptions(): ILegendOptions {
 		return {
-			scaleType: 'linear',
 			domain: this.valueDomain,
-			colors: this.colors.scale
+			colors: this.colors
 		};
 	}
 

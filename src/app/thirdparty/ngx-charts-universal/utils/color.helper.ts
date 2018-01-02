@@ -1,24 +1,23 @@
 import {scaleBand, scaleLinear, scaleOrdinal, scaleQuantile} from 'd3-scale';
 import {range} from 'd3-array';
-import {IColorSet} from '../chart.interface';
+import {IColorSet, IColorScaleType, IScale} from '../chart.interface';
 
 export class ColorHelper {
-	scale: any;
-	scaleType: any;
-	colorDomain: any[];
-	domain: any;
-	customColors: any;
+	scale: IScale;
+	domain: Array<any>;
 	scheme: IColorSet;
+	scaleType: IColorScaleType;
 
-	constructor(scheme: IColorSet, type, domain, customColors?) {
+	constructor(scheme: IColorSet, domain) {
 		this.scheme = scheme;
-		this.colorDomain = scheme.domain;
-		this.scaleType = type;
 		this.domain = domain;
-
-		this.scale = this.generateColorScheme(scheme, type);
+		this.scaleType = scheme.scaleType;
+		this.scale = this.generateColorScale(scheme);
 	}
 
+	static fromColorSet(scheme: IColorSet, domain: Array<any>): ColorHelper {
+		return new ColorHelper(scheme, domain);
+	}
 
 	static collectColorDomain(dataLength, colorsLength) {
 		let domain = [0];
@@ -30,22 +29,22 @@ export class ColorHelper {
 		return domain;
 	}
 
-	generateColorScheme(scheme, type) {
-		let colorScale;
-		if (type === 'quantile') {
+	generateColorScale(scheme: IColorSet) {
+		let colorScale: IScale;
+		if (scheme.scaleType === IColorScaleType.Quantille) {
 			colorScale = scaleQuantile()
-				.range(scheme.domain)
+				.range(scheme.range)
 				.domain(this.domain);
 
-		} else if (type === 'ordinal') {
+		} else if (scheme.scaleType === IColorScaleType.Ordinal) {
 			colorScale = scaleOrdinal()
-				.range(scheme.domain)
+				.range(scheme.range)
 				.domain(this.domain);
 
 		} else {
 			colorScale = scaleLinear()
-				.range(scheme.domain)
-				.domain(this.domain);
+				.range(scheme.range)
+				.domain(this.scheme.fixedDomain || this.domain);
 		}
 
 		return colorScale;
@@ -62,21 +61,10 @@ export class ColorHelper {
 		if (result) {
 			return result;
 		}
-		let found: any = undefined; // todo type customColors
-		if (this.customColors && this.customColors.length > 0) {
-			let formattedValue = value.toString().toLowerCase();
-			found = this.customColors.find((mapping) => {
-				return mapping.name === formattedValue;
-			});
-		}
-		if (found) {
-			return found.value;
-		} else {
-			return this.scale(value);
-		}
+		return this.scale(value);
 	}
 
-	getLinearGradientStops(value, start) {
+	getLinearGradientStops(value, start?) {
 		if (!start) {
 			start = this.domain[0];
 		}
@@ -86,7 +74,7 @@ export class ColorHelper {
 			.range([0, 1]);
 
 		let colorValueScale = scaleBand()
-			.domain(this.colorDomain)
+			.domain(this.scheme.range)
 			.range([0, 1]);
 
 		let endColor = this.getColor(value);
@@ -105,8 +93,8 @@ export class ColorHelper {
 			opacity: 1
 		});
 
-		while (currentVal < endVal && i < this.colorDomain.length) {
-			let color = this.colorDomain[i];
+		while (currentVal < endVal && i < this.scheme.range.length) {
+			let color = this.scheme.range[i];
 			let offset = colorValueScale(color);
 			if (offset <= startVal) {
 				i++;

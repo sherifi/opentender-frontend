@@ -29,7 +29,6 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 
 	scores: IChartPieSeries = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 762, height: 200},
 				min: {height: 200},
@@ -38,9 +37,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 			labels: true,
 			maxValue: 100,
 			valueFormatting: Utils.formatValue,
-			colorScheme: {
-				domain: Consts.colors.redgreen
-			}
+			colorScheme: Consts.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

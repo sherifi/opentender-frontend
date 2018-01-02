@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter, ElementRef, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
 import {pie} from 'd3-shape';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'g[ngx-charts-pie-grid-series]',
@@ -26,7 +27,6 @@ import {pie} from 'd3-shape';
 
 export class PieGridSeriesComponent implements OnChanges {
 
-	@Input() colors;
 	@Input() data;
 	@Input() innerRadius = 70;
 	@Input() outerRadius = 80;
@@ -62,12 +62,10 @@ export class PieGridSeriesComponent implements OnChanges {
 			if (index === 0) {
 				arc.startAngle = 0;
 			}
-
-			let color = this.colors(arc.data.data);
 			return {
 				data: arc.data.data,
 				class: 'arc ' + 'arc' + index,
-				fill: color,
+				fill: arc.data.data.color,
 				startAngle: other ? 0 : arc.startAngle,
 				endAngle: arc.endAngle,
 				animate: !other,

@@ -1,6 +1,8 @@
 import {Component, Input, Output, EventEmitter, OnChanges, ViewChildren, SimpleChanges, ChangeDetectionStrategy, Renderer2, ViewEncapsulation} from '@angular/core';
 import {formatLabel} from '../../utils/label.helper';
 import {PlatformService} from '../../../../services/platform.service';
+import {ColorHelper} from '../../utils/color.helper';
+import {IColorScaleType} from '../../chart.interface';
 
 @Component({
 	selector: 'g[ngx-charts-area-tooltip]',
@@ -61,7 +63,7 @@ export class AreaTooltipComponent implements OnChanges {
 	@Input() yScale;
 	@Input() results;
 	@Input() height;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() showPercentage: boolean = false;
 
 	@Output() hover = new EventEmitter();
@@ -129,7 +131,7 @@ export class AreaTooltipComponent implements OnChanges {
 					val = (item.d1 - item.d0).toFixed(2) + '%';
 				}
 				let color;
-				if (this.colors.scaleType === 'linear') {
+				if (this.colors.scaleType === IColorScaleType.Linear) {
 					let v = val;
 					if (item.d1) {
 						v = item.d1;

@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
 import {BaseAreaChartComponent, IAreaChartData} from './base-area-chart.component';
-import {IChartAreaSettings, IChartData} from '../chart.interface';
+import {IChartAreaSettings, IChartData, IScaleType} from '../chart.interface';
 import {IDomain} from '../common/common.interface';
 import {PlatformService} from '../../../services/platform.service';
 
@@ -83,13 +83,12 @@ import {PlatformService} from '../../../services/platform.service';
         </svg:g>
       </svg:g>
       <svg:g ngx-charts-timeline
-        *ngIf="data && scaleType === 'time'"
+        *ngIf="data && isTime()"
         [attr.transform]="timelineTransform"
         [results]="areaData"
         [view]="[timelineWidth, height]"
         [height]="timelineHeight"
         [scheme]="scheme"
-        [customColors]="customColors"
         [legend]="legend"
         [scaleType]="scaleType"
         (onDomainChange)="updateDomain($event)">
@@ -134,7 +133,7 @@ export class AreaChartStackedComponent extends BaseAreaChartComponent {
 				let d = group.series.find(item => {
 					let a = item.name;
 					let b = val;
-					if (this.scaleType === 'time') {
+					if (this.scaleType === IScaleType.Time) {
 						return a.valueOf() === b.valueOf();
 					}
 					return a === b;
@@ -167,7 +166,7 @@ export class AreaChartStackedComponent extends BaseAreaChartComponent {
 				let d = group.series.find(item => {
 					let a = item.name;
 					let b = val;
-					if (this.scaleType === 'time') {
+					if (this.scaleType === IScaleType.Time) {
 						return a.valueOf() === b.valueOf();
 					}
 					return a === b;
@@ -186,4 +185,7 @@ export class AreaChartStackedComponent extends BaseAreaChartComponent {
 		return [min, max];
 	}
 
+	isTime(): boolean {
+		return this.scaleType === IScaleType.Time;
+	}
 }

@@ -4,6 +4,8 @@ import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {UrlId} from '../../utils/id.helper';
 import {toDate} from '../../utils/date.helper';
 import {PlatformService} from '../../../../services/platform.service';
+import {ColorHelper} from '../../utils/color.helper';
+import {IColorScaleType} from '../../chart.interface';
 
 @Component({
 	selector: 'g[ngx-charts-circle-series]',
@@ -55,7 +57,7 @@ export class CircleSeriesComponent implements OnChanges {
 	@Input() type = 'standard';
 	@Input() xScale;
 	@Input() yScale;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() scaleType;
 	@Input() visibleValue;
 	@Input() activeEntries: any[];
@@ -110,7 +112,7 @@ export class CircleSeriesComponent implements OnChanges {
 				gradId.generate('grad', this.platform.isBrowser);
 
 				let color;
-				if (this.colors.scaleType === 'linear') {
+				if (this.colors.scaleType === IColorScaleType.Linear) {
 					if (this.type === 'standard') {
 						color = this.colors.getColor(value);
 					} else {

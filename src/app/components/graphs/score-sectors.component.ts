@@ -28,7 +28,6 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 
 	cpvs_codes_scores: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -50,9 +49,7 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single2
-			}
+			colorScheme: Consts.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 			if (event.id) {

@@ -1,6 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy, Output, EventEmitter, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
-import {IChartHeatmapSettings, IChartData} from '../chart.interface';
+import {IChartHeatmapSettings, IChartData, IColorScaleType} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
 import {calculateViewDimensions} from '../utils/view-dimensions.helper';
 import {IDomain, ILegendOptions} from '../common/common.interface';
@@ -90,7 +90,6 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 	@Output() activate: EventEmitter<any>;
 	@Output() deactivate: EventEmitter<any>;
 
-	valueDomain: IDomain;
 	rects: Array<IRect>;
 
 	constructor(protected chartElement: ElementRef, protected zone: NgZone, protected cd: ChangeDetectorRef, protected platform: PlatformService) {
@@ -98,7 +97,8 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 	}
 
 	updateDomains(): void {
-		this.valueDomain = this.getValueDomain();
+		// this.valueDomain = this.getValueDomain();
+		// this.seriesDomain = this.getXDomain();
 	}
 
 	updateViewDim(): void {
@@ -113,7 +113,7 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 			showXLabel: this.chart.xAxis.showLabel,
 			showYLabel: this.chart.yAxis.showLabel,
 			showLegend: this.chart.legend && this.chart.legend.show,
-			legendType: 'linear'
+			legendType: this.chart.colorScheme.scaleType
 		});
 	}
 
@@ -147,6 +147,20 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 		return domain;
 	}
 
+	getValueDomain(): IDomain {
+		let domain = [];
+		for (let group of this.data) {
+			for (let d of group.series) {
+				if (domain.indexOf(d.value) < 0) {
+					domain.push(d.value);
+				}
+			}
+		}
+		let min = Math.min(0, ...domain);
+		let max = Math.max(...domain);
+		return [min, max];
+	}
+
 	getXScale() {
 		const scale = scaleBand<number>()
 			.rangeRound([0, this.viewDim.width])
@@ -167,30 +181,19 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 		return scale;
 	}
 
+	getColorDomain(): IDomain {
+		return this.chart.colorScheme.scaleType === IColorScaleType.Ordinal ? this.getYDomain() : this.getXDomain();
+	}
+
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'linear', ColorHelper.collectColorDomain(100, this.chart.colorScheme.domain.length), this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.getColorDomain());
 	}
 
 	getLegendOptions(): ILegendOptions {
 		return {
-			scaleType: 'linear',
-			domain: this.valueDomain,
-			colors: this.colors.scale
+			domain: this.getColorDomain(),
+			colors: this.colors
 		};
-	}
-
-	getValueDomain(): IDomain {
-		let domain = [];
-		for (let group of this.data) {
-			for (let d of group.series) {
-				if (domain.indexOf(d.value) < 0) {
-					domain.push(d.value);
-				}
-			}
-		}
-		let min = Math.min(0, ...domain);
-		let max = Math.max(...domain);
-		return [min, max];
 	}
 
 	getRects(): Array<IRect> {

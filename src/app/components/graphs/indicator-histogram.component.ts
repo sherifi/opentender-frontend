@@ -39,7 +39,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 
 	avg_lots_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -61,9 +60,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatPercent,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -74,7 +71,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 
 	sum_lots_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -96,9 +92,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatTrunc,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -109,7 +103,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 
 	sum_prices_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -130,9 +123,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -143,7 +134,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 
 	avg_prices_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -166,9 +156,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			},
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},

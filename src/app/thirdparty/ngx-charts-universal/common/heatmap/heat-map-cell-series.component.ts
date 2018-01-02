@@ -1,6 +1,7 @@
 import {Component, Input, SimpleChanges, Output, EventEmitter, OnChanges, ChangeDetectionStrategy} from '@angular/core';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {IChartData} from '../../chart.interface';
+import {ColorHelper} from '../../utils/color.helper';
 
 interface ICell {
 	x: number;
@@ -38,7 +39,7 @@ interface ICell {
 })
 export class HeatCellSeriesComponent implements OnChanges {
 	@Input() data;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() xScale;
 	@Input() yScale;
 	@Input() gradient: boolean;

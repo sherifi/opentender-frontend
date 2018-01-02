@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ChangeDetectionStrategy, NgZone} from '@angular/core';
+import {ColorHelper} from '../../utils/color.helper';
 
 export interface ICardModel {
 	x;
@@ -30,7 +31,7 @@ export class CardSeriesComponent implements OnChanges {
 
 	@Input() data;
 	@Input() dims;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 
 	@Output() select = new EventEmitter();
 

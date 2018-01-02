@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
-import {IChartBarsSettings, IChartData} from '../chart.interface';
+import {IChartBarsSettings, IChartData, IColorScaleType} from '../chart.interface';
 import {BaseXYAxisComponent} from '../common/chart/base-axes-chart.component';
 import {PlatformService} from '../common/chart/base-chart.component';
 import {ILegendOptions, IDomain} from '../common/common.interface';
@@ -7,56 +7,57 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 
 @Component({
 	selector: 'ngx-charts-bar-horizontal',
-	template: `<ngx-charts-chart
-		[dim]="dim" [chart]="chart" [data]="data"
-		[legendOptions]="legendOptions"
-		[activeEntries]="activeEntries"
-		(legendLabelClick)="onClick($event)"
-		(legendLabelActivate)="onActivate($event)"
-		(legendLabelDeactivate)="onDeactivate($event)">
-	<svg:g [attr.transform]="transform" class="bar-chart chart">
-		<svg:g ngx-charts-x-axis
-			   *ngIf="chart.xAxis.show"
-			   [xScale]="xScale"
-			   [dims]="viewDim"
-			   [showGridLines]="chart.showGridLines"
-			   [showLabel]="chart.xAxis.showLabel"
-			   [defaultHeight]="chart.xAxis.defaultHeight"
-			   [labelText]="chart.xAxis.label"
-			   [tickFormatting]="chart.xAxis.tickFormatting"
-			   [minInterval]="chart.xAxis.minInterval"
-			   (dimensionsChanged)="updateXAxisHeight($event)">
-		</svg:g>
-		<svg:g ngx-charts-y-axis
-			   *ngIf="chart.yAxis.show"
-			   [yScale]="yScale"
-			   [dims]="viewDim"
-			   [defaultWidth]="chart.yAxis.defaultWidth"
-			   [autoSize]="chart.yAxis.autoSize"
-			   [showLabel]="chart.yAxis.showLabel"
-			   [labelText]="chart.yAxis.label"
-			   [trimLabelLength]="chart.yAxis.maxLength"
-			   [tickFormatting]="chart.yAxis.tickFormatting"
-			   [minInterval]="chart.yAxis.minInterval"
-			   (dimensionsChanged)="updateYAxisWidth($event)">
-		</svg:g>
-		<svg:g ngx-charts-series-horizontal
-			   [type]="chart.chartType||'standard'"
-			   [xScale]="xScale"
-			   [yScale]="yScale"
-			   [colors]="colors"
-			   [series]="data"
-			   [dims]="viewDim"
-			   [gradient]="chart.gradient"
-			   [activeEntries]="activeEntries"
-			   [valueFormatting]="chart.valueFormatting"
-			   (select)="onClick($event)"
-			   (activate)="onActivate($event)"
-			   (deactivate)="onDeactivate($event)"
-		/>
-	</svg:g>
-</ngx-charts-chart>
-`,
+	template: `
+		<ngx-charts-chart
+				[dim]="dim" [chart]="chart" [data]="data"
+				[legendOptions]="legendOptions"
+				[activeEntries]="activeEntries"
+				(legendLabelClick)="onClick($event)"
+				(legendLabelActivate)="onActivate($event)"
+				(legendLabelDeactivate)="onDeactivate($event)">
+			<svg:g [attr.transform]="transform" class="bar-chart chart">
+				<svg:g ngx-charts-x-axis
+					   *ngIf="chart.xAxis.show"
+					   [xScale]="xScale"
+					   [dims]="viewDim"
+					   [showGridLines]="chart.showGridLines"
+					   [showLabel]="chart.xAxis.showLabel"
+					   [defaultHeight]="chart.xAxis.defaultHeight"
+					   [labelText]="chart.xAxis.label"
+					   [tickFormatting]="chart.xAxis.tickFormatting"
+					   [minInterval]="chart.xAxis.minInterval"
+					   (dimensionsChanged)="updateXAxisHeight($event)">
+				</svg:g>
+				<svg:g ngx-charts-y-axis
+					   *ngIf="chart.yAxis.show"
+					   [yScale]="yScale"
+					   [dims]="viewDim"
+					   [defaultWidth]="chart.yAxis.defaultWidth"
+					   [autoSize]="chart.yAxis.autoSize"
+					   [showLabel]="chart.yAxis.showLabel"
+					   [labelText]="chart.yAxis.label"
+					   [trimLabelLength]="chart.yAxis.maxLength"
+					   [tickFormatting]="chart.yAxis.tickFormatting"
+					   [minInterval]="chart.yAxis.minInterval"
+					   (dimensionsChanged)="updateYAxisWidth($event)">
+				</svg:g>
+				<svg:g ngx-charts-series-horizontal
+					   [type]="chart.chartType||'standard'"
+					   [xScale]="xScale"
+					   [yScale]="yScale"
+					   [colors]="colors"
+					   [series]="data"
+					   [dims]="viewDim"
+					   [gradient]="chart.gradient"
+					   [activeEntries]="activeEntries"
+					   [valueFormatting]="chart.valueFormatting"
+					   (select)="onClick($event)"
+					   (activate)="onActivate($event)"
+					   (deactivate)="onDeactivate($event)"
+				/>
+			</svg:g>
+		</ngx-charts-chart>
+	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BarHorizontalComponent extends BaseXYAxisComponent {
@@ -103,22 +104,13 @@ export class BarHorizontalComponent extends BaseXYAxisComponent {
 	}
 
 	getLegendOptions(): ILegendOptions {
-		if (this.chart.schemeType === 'ordinal') {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors,
-				domain: this.yDomain
-			};
-		} else {
-			return {
-				scaleType: this.chart.schemeType,
-				colors: this.colors.scale,
-				domain: this.xDomain
-			};
-		}
+		return {
+			colors: this.colors,
+			domain: this.getColorDomain()
+		};
 	}
 
 	getColorDomain(): IDomain {
-		return (this.chart.schemeType === 'ordinal') ? this.yDomain : this.xDomain;
+		return (this.chart.colorScheme.scaleType === IColorScaleType.Ordinal) ? this.yDomain : this.xDomain;
 	}
 }

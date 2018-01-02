@@ -196,6 +196,6 @@ export class LinearGaugeComponent extends BaseChartComponent implements AfterVie
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', [this.value], this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, [this.value]);
 	}
 }

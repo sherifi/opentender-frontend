@@ -1,3 +1,5 @@
+import {IColorScaleType} from '../chart.interface';
+
 export interface ViewDimensions {
 	width: number;
 	height: number;
@@ -6,14 +8,14 @@ export interface ViewDimensions {
 
 export function calculateViewDimensions({
 	width, height, margins, showXAxis = false, showYAxis = false, xAxisHeight = 0,
-	yAxisWidth = 0, showXLabel = false, showYLabel = false, showLegend = false, legendType = 'ordinal', columns = 12
+	yAxisWidth = 0, showXLabel = false, showYLabel = false, showLegend = false, legendType = IColorScaleType.Ordinal, columns = 12
 }): ViewDimensions {
 	let xOffset = margins[3];
 	let chartWidth = width;
 	let chartHeight = height - margins[0] - margins[2];
 
 	if (showLegend) {
-		if (legendType === 'ordinal') {
+		if (legendType === IColorScaleType.Ordinal) {
 			columns -= 2;
 		} else {
 			columns -= 1;
@@ -30,8 +32,7 @@ export function calculateViewDimensions({
 
 		if (showXLabel) {
 			// text height + spacing between axis label and tick labels
-			let offset = 25 + 5;
-			chartHeight -= offset;
+			chartHeight -= 25 + 5;
 		}
 	}
 

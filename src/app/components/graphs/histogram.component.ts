@@ -33,7 +33,6 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 
 	lots_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -55,9 +54,7 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatTrunc,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -68,7 +65,6 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 
 	sum_prices_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -89,9 +85,7 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -102,7 +96,6 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 
 	avg_prices_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -125,9 +118,7 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 			},
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},

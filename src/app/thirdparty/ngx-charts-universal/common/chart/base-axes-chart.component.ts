@@ -75,7 +75,7 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 			showXLabel: this.chart.xAxis.showLabel,
 			showYLabel: this.chart.yAxis.showLabel,
 			showLegend: this.chart.legend && this.chart.legend.show,
-			legendType: this.chart.schemeType
+			legendType: this.chart.colorScheme.scaleType
 		});
 	}
 
@@ -115,7 +115,7 @@ export class BaseXYAxisComponent extends BaseChartComponent {
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, this.chart.schemeType, this.getColorDomain(), this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.getColorDomain());
 	}
 
 	updateYAxisWidth({width}): void {

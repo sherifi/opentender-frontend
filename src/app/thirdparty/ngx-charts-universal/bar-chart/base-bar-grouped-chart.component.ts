@@ -1,10 +1,10 @@
 import {Input, Output, EventEmitter} from '@angular/core';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
-import {IChartBarsSettings, IChartData} from '../chart.interface';
+import {IChartBarsSettings, IChartData, IColorScaleType} from '../chart.interface';
 import {ColorHelper} from '../utils/color.helper';
 import {formatDates} from '../utils/data.helper';
-import {ILegendOptions} from '../common/common.interface';
+import {IDomain, ILegendOptions} from '../common/common.interface';
 
 export class BaseBarGroupedComponent extends BaseChartComponent {
 	@Input() chart: IChartBarsSettings;
@@ -54,7 +54,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 		return domain;
 	}
 
-	getValueDomain() {
+	getValueDomain(): IDomain {
 		let domain = [];
 		if (this.data) {
 			for (let group of this.data) {
@@ -88,7 +88,7 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 			showXLabel: this.chart.xAxis.showLabel,
 			showYLabel: this.chart.yAxis.showLabel,
 			showLegend: this.chart.legend && this.chart.legend.show,
-			legendType: this.chart.schemeType
+			legendType: this.chart.colorScheme.scaleType
 		});
 	}
 
@@ -126,30 +126,18 @@ export class BaseBarGroupedComponent extends BaseChartComponent {
 	}
 
 	setColors(): void {
-		let domain;
-		if (this.chart.schemeType === 'ordinal') {
-			domain = this.innerDomain;
-		} else {
-			domain = this.valueDomain;
-		}
-		this.colors = new ColorHelper(this.chart.colorScheme, this.chart.schemeType, domain, this.chart.customColors);
+		this.colors = ColorHelper.fromColorSet(this.chart.colorScheme, this.getColorDomain());
+	}
+
+	getColorDomain(): IDomain {
+		return this.chart.colorScheme.scaleType === IColorScaleType.Ordinal ? this.innerDomain : this.valueDomain;
 	}
 
 	getLegendOptions(): ILegendOptions {
-		let opts = {
-			scaleType: this.chart.schemeType,
-			colors: undefined,
-			domain: []
+		return {
+			colors: this.colors,
+			domain: this.getColorDomain()
 		};
-		if (opts.scaleType === 'ordinal') {
-			opts.domain = this.innerDomain;
-			opts.colors = this.colors;
-		} else {
-			opts.domain = this.valueDomain;
-			opts.colors = this.colors.scale;
-		}
-
-		return opts;
 	}
 
 	updateYAxisWidth({width}): void {

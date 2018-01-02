@@ -24,7 +24,6 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 
 	lots_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 1024, height: 320},
 				min: {height: 320},
@@ -45,9 +44,7 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 			},
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},

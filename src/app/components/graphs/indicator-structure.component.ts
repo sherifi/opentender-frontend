@@ -31,7 +31,6 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 
 	indicators_pie: IChartRadar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 762, height: 360},
 				min: {height: 360},
@@ -40,9 +39,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			labels: true,
 			maxValue: 100,
 			valueFormatting: Utils.formatValue,
-			colorScheme: {
-				domain: Consts.colors.diverging
-			}
+			colorScheme: Consts.colorSchemes.ordinal_diverging
 		},
 		select: (event) => {
 			this.onSelect.emit(event);

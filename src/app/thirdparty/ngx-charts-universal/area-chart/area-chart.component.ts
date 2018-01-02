@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ElementRef, NgZone, ChangeDetectorRef} from '@angular/core';
 import {BaseAreaChartComponent, IAreaChartData} from './base-area-chart.component';
-import {IChartAreaSettings, IChartData} from '../chart.interface';
+import {IChartAreaSettings, IChartData, IScaleType} from '../chart.interface';
 import {IDomain} from '../common/common.interface';
 import {PlatformService} from '../../../services/platform.service';
 
@@ -81,13 +81,12 @@ import {PlatformService} from '../../../services/platform.service';
 				</svg:g>
 			</svg:g>
 			<svg:g ngx-charts-timeline
-				   *ngIf="data && scaleType === 'time'"
+				   *ngIf="data && isTime()"
 				   [attr.transform]="timelineTransform"
 				   [results]="areaData"
 				   [view]="[timelineWidth, dim.height]"
 				   [height]="timelineHeight"
 				   [scheme]="chart.colorScheme"
-				   [customColors]="chart.customColors"
 				   [legend]="chart.legend && chart.legend.show"
 				   [scaleType]="scaleType"
 				   (onDomainChange)="updateDomain($event)">
@@ -145,6 +144,10 @@ export class AreaChartComponent extends BaseAreaChartComponent {
 		}
 
 		return [min, max];
+	}
+
+	isTime(): boolean {
+		return this.scaleType === IScaleType.Time;
 	}
 
 }

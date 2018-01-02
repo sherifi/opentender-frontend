@@ -2,6 +2,8 @@ import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, Change
 // import {animate, style, transition, trigger} from '@angular/animations';
 import {formatLabel} from '../../utils/label.helper';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
+import {IColorScaleType} from '../../chart.interface';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'g[ngx-charts-series-horizontal-labeled]',
@@ -60,7 +62,7 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 	@Input() series;
 	@Input() xScale;
 	@Input() yScale;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
 	@Input() valueFormatting: (value) => string;
@@ -150,15 +152,19 @@ export class BarSeriesHorizontalLabeledComponent implements OnChanges {
 				value = (offset1 - offset0).toFixed(2) + '%';
 			}
 
-			if (this.colors.scaleType === 'ordinal') {
+			if (this.colors.scaleType === IColorScaleType.Ordinal) {
 				bar.color = this.colors.getColor(d.id || d.name);
 			} else {
 				if (this.type === 'standard') {
 					bar.color = this.colors.getColor(value);
-					bar.gradientStops = this.colors.getLinearGradientStops(value);
+					if (this.gradient) {
+						bar.gradientStops = this.colors.getLinearGradientStops(value);
+					}
 				} else {
 					bar.color = this.colors.getColor(bar.offset1);
-					bar.gradientStops = this.colors.getLinearGradientStops(bar.offset1, bar.offset0);
+					if (this.gradient) {
+						bar.gradientStops = this.colors.getLinearGradientStops(bar.offset1, bar.offset0);
+					}
 				}
 			}
 

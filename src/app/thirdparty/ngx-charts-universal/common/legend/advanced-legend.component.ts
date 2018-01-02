@@ -1,5 +1,6 @@
 import {Component, Input, Output, EventEmitter, ChangeDetectionStrategy, SimpleChanges, OnChanges, ViewEncapsulation} from '@angular/core';
 import {trimLabel, formatLabel} from '../../utils/label.helper';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'ngx-charts-advanced-legend',
@@ -52,7 +53,7 @@ export class AdvancedLegendComponent implements OnChanges {
 
 	@Input() width: number;
 	@Input() data;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 
 	@Output() select: EventEmitter<any> = new EventEmitter();
 	@Output() activate: EventEmitter<any> = new EventEmitter();

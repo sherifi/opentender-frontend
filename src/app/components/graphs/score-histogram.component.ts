@@ -27,7 +27,6 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 
 	avg_score_in_years: IChartBar = {
 		chart: {
-			schemeType: 'ordinal',
 			view: {
 				def: {width: 500, height: 360},
 				min: {height: 360},
@@ -49,9 +48,7 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: {
-				domain: Consts.colors.single
-			}
+			colorScheme: Consts.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

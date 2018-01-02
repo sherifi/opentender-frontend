@@ -2,6 +2,8 @@ import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, Change
 // import {animate, style, transition, trigger} from '@angular/animations';
 import {formatLabel} from '../../utils/label.helper';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
+import {IColorScaleType} from '../../chart.interface';
+import {ColorHelper} from '../../utils/color.helper';
 
 @Component({
 	selector: 'g[ngx-charts-series-horizontal]',
@@ -51,7 +53,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 	@Input() series;
 	@Input() xScale;
 	@Input() yScale;
-	@Input() colors;
+	@Input() colors: ColorHelper;
 	@Input() gradient: boolean;
 	@Input() activeEntries: any[];
 	@Input() valueFormatting: (value) => string;
@@ -132,7 +134,7 @@ export class BarSeriesHorizontalComponent implements OnChanges {
 				value = (offset1 - offset0).toFixed(2) + '%';
 			}
 
-			if (this.colors.scaleType === 'ordinal') {
+			if (this.colors.scaleType === IColorScaleType.Ordinal) {
 				bar.color = this.colors.getColor(label);
 			} else {
 				if (this.type === 'standard') {
