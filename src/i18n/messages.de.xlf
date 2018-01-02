@@ -4104,6 +4104,9 @@
             18
           </context>
         </context-group>
+        <target>
+          Gesamt-Score
+        </target>
       </trans-unit>
       <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
         <source>
@@ -4117,6 +4120,9 @@
             19
           </context>
         </context-group>
+        <target>
+          Gewichtung ändern
+        </target>
       </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
         <source>
@@ -4164,6 +4170,9 @@
             113
           </context>
         </context-group>
+        <target>
+          Gewichtung anwenden
+        </target>
       </trans-unit>
       <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
         <source>
@@ -4177,6 +4186,9 @@
             114
           </context>
         </context-group>
+        <target>
+          Gewichtung zurücksetzen
+        </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
         <source>
@@ -4190,6 +4202,9 @@
             87
           </context>
         </context-group>
+        <target>
+          Gewichtung in Score Berechnung ändern
+        </target>
       </trans-unit>
       <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
         <source>
