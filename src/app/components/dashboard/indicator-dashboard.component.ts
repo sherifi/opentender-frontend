@@ -129,15 +129,13 @@ export class DashboardsIndicatorComponent implements OnChanges {
 			viz.score.data = [{
 				id: this.searchPrefix,
 				name: this.indicatorTitle,
-				value: stats.terms_score[this.searchPrefix],
-				color: Consts.colors.indicators[this.searchPrefix]
+				value: stats.terms_score[this.searchPrefix]
 			}];
 		} else if (stats.terms_indicators_score && stats.terms_indicators_score.hasOwnProperty(this.searchPrefix)) {
 			viz.score.data = [{
 				id: this.searchPrefix,
 				name: this.indicatorTitle,
-				value: stats.terms_indicators_score[this.searchPrefix],
-				color: Consts.colors.indicators[this.searchPrefix.split('_')[0]]
+				value: stats.terms_indicators_score[this.searchPrefix]
 			}];
 		} else {
 			viz.score.data = [];

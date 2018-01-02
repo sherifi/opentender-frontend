@@ -10,7 +10,6 @@ import {I18NService} from '../../services/i18n.service';
 	selector: 'graph[score-grid]',
 	template: `
 		<div class="graph-title">{{title}}</div>
-		<!--<div class="graph-toolbar-container"></div>-->
 		<ngx-charts-values-grid
 				class="chart-container"
 				[chart]="graph.chart"
@@ -18,7 +17,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-values-grid>
-		<!--<select-series-download-button [sender]="this"></select-series-download-button>-->`
+	`
 })
 export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -40,7 +39,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 			maxValue: 100,
 			valueFormatting: Utils.formatValue,
 			colorScheme: {
-				domain: Consts.colors.single2
+				domain: Consts.colors.redgreen
 			}
 		},
 		select: (event) => {

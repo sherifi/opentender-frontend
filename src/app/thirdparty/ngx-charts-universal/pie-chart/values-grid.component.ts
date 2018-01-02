@@ -73,8 +73,18 @@ export class PieValuesGridComponent extends BaseChartComponent {
 		this.select.emit(data);
 	}
 
+	collectColorDomain(dataLength, colorsLength) {
+		let domain = [0];
+		let toAdd = colorsLength - 2; // 0 and dataLength are a given, so the first and last colors will already be covered
+		for (let i = 1; i <= toAdd; i++) {
+			domain.push(Math.floor(dataLength * (i / (colorsLength - 1))));
+		}
+		domain.push(dataLength - 1); // 1 less than the total so the last color is exactly the hex in the last item of colors
+		return domain;
+	}
+
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.domain, this.chart.customColors);
+		this.colors = new ColorHelper(this.chart.colorScheme, 'linear', this.collectColorDomain(this.chart.maxValue || 100, this.chart.colorScheme.domain.length), this.chart.customColors);
 	}
 
 	getDomain(): any[] {
@@ -121,13 +131,12 @@ export class PieValuesGridComponent extends BaseChartComponent {
 				radius = Math.min(radius, this.chart.maxRadius);
 			}
 			const innerRadius = radius * 0.9;
-			let count = 0;
-			const colors = (val) => {
-				count += 1;
-				if (count === 1) {
+			const colors = (data) => {
+				if (data.other) {
 					return 'rgba(100,100,100,0.2)';
 				} else {
-					return d.data.color || this.colors.getColor(label);
+					console.log('color', data.value, this.colors.getColor(data.value));
+					return d.data.color || this.colors.getColor(data.value);
 				}
 			};
 			const xPos = d.x + (d.width - padding) / 2;

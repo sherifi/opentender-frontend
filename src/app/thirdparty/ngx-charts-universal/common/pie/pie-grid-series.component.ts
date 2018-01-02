@@ -10,7 +10,7 @@ import {pie} from 'd3-shape';
 		   [endAngle]="arc.endAngle"
 		   [innerRadius]="innerRadius"
 		   [outerRadius]="outerRadius"
-		   [fill]="color(arc)"
+		   [fill]="arc.fill"
 		   [value]="arc.data.value"
 		   [data]="arc.data"
 		   [max]="max"
@@ -56,14 +56,14 @@ export class PieGridSeriesComponent implements OnChanges {
 
 	getArcs(): any[] {
 		return this.layout(this.data).map((arc, index) => {
-			let label = arc.data.data.name;
+			// let label = arc.data.data.name;
 			let other = arc.data.data.other;
 
 			if (index === 0) {
 				arc.startAngle = 0;
 			}
 
-			let color = this.colors(label);
+			let color = this.colors(arc.data.data);
 			return {
 				data: arc.data.data,
 				class: 'arc ' + 'arc' + index,
@@ -89,10 +89,6 @@ export class PieGridSeriesComponent implements OnChanges {
 
 	label(arc): string {
 		return arc.data.name;
-	}
-
-	color(arc): any {
-		return this.colors(this.label(arc));
 	}
 
 }

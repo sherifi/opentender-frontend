@@ -16,25 +16,25 @@ export class ColorHelper {
 		this.scaleType = type;
 		this.domain = domain;
 
-		this.scale = this.generateColorScheme(scheme, type, domain);
+		this.scale = this.generateColorScheme(scheme, type);
 	}
 
-	generateColorScheme(scheme, type, domain) {
+	generateColorScheme(scheme, type) {
 		let colorScale;
 		if (type === 'quantile') {
 			colorScale = scaleQuantile()
 				.range(scheme.domain)
-				.domain(domain);
+				.domain(this.domain);
 
 		} else if (type === 'ordinal') {
 			colorScale = scaleOrdinal()
 				.range(scheme.domain)
-				.domain(domain);
+				.domain(this.domain);
 
-		} else { // if (type === 'linear') {
+		} else {
 			colorScale = scaleLinear()
-				.domain(range(0, 1, 1.0 / (scheme.domain.length - 1)))
-				.range(scheme.domain);
+				.range(scheme.domain)
+				.domain(this.domain);
 		}
 
 		return colorScale;
@@ -51,26 +51,17 @@ export class ColorHelper {
 		if (result) {
 			return result;
 		}
-		if (this.scaleType === 'linear') {
-			let valueScale = scaleLinear()
-				.domain(this.domain)
-				.range([0, 1]);
-
-			return (this.scale(valueScale(value)));
+		let found: any = undefined; // todo type customColors
+		if (this.customColors && this.customColors.length > 0) {
+			let formattedValue = value.toString().toLowerCase();
+			found = this.customColors.find((mapping) => {
+				return mapping.name === formattedValue;
+			});
+		}
+		if (found) {
+			return found.value;
 		} else {
-			let formattedValue = value.toString();
-			let found: any = undefined; // todo type customColors
-			if (this.customColors && this.customColors.length > 0) {
-				found = this.customColors.find((mapping) => {
-					return mapping.name === formattedValue.toLowerCase();
-				});
-			}
-
-			if (found) {
-				return found.value;
-			} else {
-				return this.scale(value);
-			}
+			return this.scale(value);
 		}
 	}
 
