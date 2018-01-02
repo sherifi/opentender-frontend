@@ -128,7 +128,6 @@ let packageLanguage = function (lang, content, cb) {
 let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
 	const ast = new Ast({tsConfigFilePath});
 	ast.addExistingSourceFiles(path.join(srcFilePath, "**/*.ts"));
-	// ast.getDiagnostics();
 	const sourceFiles = ast.getSourceFiles();
 
 	const list = [];
@@ -143,8 +142,7 @@ let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
 	const check = (obj) => {
 		if (obj && obj.text && (obj.kind === 9) && obj.parent) {
 			// is Routes title data?
-			if (obj.parent.name && obj.parent.symbol && (opts.RouteFields.indexOf(obj.parent.symbol.escapedName) >= 0)
-				&& isChildOf(obj, opts.Routes)) {
+			if (obj.parent.name && (opts.RouteFields.indexOf(obj.parent.name.escapedText) >= 0) && isChildOf(obj, opts.Routes)) {
 				addText(obj);
 			} else
 			// is Constant Lists?
@@ -176,7 +174,7 @@ let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
 	};
 
 	const isChildOf = (obj, localSymbolNames) => {
-		if (obj.localSymbol && localSymbolNames.indexOf(obj.localSymbol.escapedName) >= 0) {
+		if (obj.name && localSymbolNames.indexOf(obj.name.escapedText) >= 0) {
 			return true;
 		}
 		if (obj.parent) return isChildOf(obj.parent, localSymbolNames);
