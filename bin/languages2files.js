@@ -127,8 +127,8 @@ let packageLanguage = function (lang, content, cb) {
 
 let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
 	const ast = new Ast({tsConfigFilePath});
-	ast.addSourceFiles(path.join(srcFilePath, "**/*.ts"));
-	ast.getDiagnostics();
+	ast.addExistingSourceFiles(path.join(srcFilePath, "**/*.ts"));
+	// ast.getDiagnostics();
 	const sourceFiles = ast.getSourceFiles();
 
 	const list = [];
