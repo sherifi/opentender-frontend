@@ -4092,6 +4092,32 @@
           Alle Unterindikatoren
         </target>
       </trans-unit>
+      <trans-unit id="666ef196e08af4a7292c9e4339154d1527fb5857" datatype="html">
+        <source>
+          Composite Score
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/dashboard/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            18
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
+        <source>
+          Adjust Weights
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/dashboard/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            19
+          </context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
         <source>
           Average Score of
@@ -4103,7 +4129,7 @@
             src/app/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            22
+            27
           </context>
         </context-group>
         <target>
@@ -4119,12 +4145,51 @@
             src/app/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            48
           </context>
         </context-group>
         <target>
           Score-Bereich
         </target>
+      </trans-unit>
+      <trans-unit id="ca4939f58d2dd3f3b511e5275c8d7b4dbd2fe825" datatype="html">
+        <source>
+          Apply Weights
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/dashboard/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            113
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
+        <source>
+          Reset Weights
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/dashboard/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            114
+          </context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
+        <source>
+          Adjust Composite Score Weights
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/dashboard/indicator-dashboard.component.ts
+          </context>
+          <context context-type="linenumber">
+            87
+          </context>
+        </context-group>
       </trans-unit>
       <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
         <source>
@@ -7847,44 +7912,6 @@
           Nicht-offene Verfahren signalisieren das Risiko, Verfahrenstypen zu verwenden, die weniger wettbewerbsoffen sind und eher für direkt beauftragte verbundene Unternehmen verwendet werden (z.B. ohne Veröffentlichung ausgehandelt).
         </target>
       </trans-unit>
-      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.name" datatype="html">
-        <source>
-          Description length
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            174
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Länge der Beschreibung
-        </target>
-      </trans-unit>
-      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.desc" datatype="html">
-        <source>
-          Product description length signals the risk of product description being tailored to one company, when the description is excessively long.
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            175
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Die Länge der Produktbeschreibung signalisiert das Risiko, dass die Produktbeschreibung auf ein Unternehmen zugeschnitten ist, wenn die Beschreibung zu lang ist.
-        </target>
-      </trans-unit>
       <trans-unit id="CORRUPTION_ADVERTISEMENT_PERIOD.name" datatype="html">
         <source>
           Length of advertisement period
@@ -7894,7 +7921,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            174
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7913,7 +7940,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            175
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7932,7 +7959,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            178
+            176
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7951,7 +7978,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            179
+            177
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7970,7 +7997,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            178
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -7989,7 +8016,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            179
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8008,7 +8035,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            182
+            180
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8027,7 +8054,7 @@
             src/app/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            183
+            181
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -8035,6 +8062,44 @@
         </note>
         <target>
           Steueroasen signalisieren ein Risiko, wenn der Lieferant in einem Steueroasenland ansässig ist (basierend auf dem Finanzgeheimnis-Index).
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.name" datatype="html">
+        <source>
+          Description length
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            182
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Länge der Beschreibung
+        </target>
+      </trans-unit>
+      <trans-unit id="CORRUPTION_DESCRIPTION_LENGTH.desc" datatype="html">
+        <source>
+          Product description length signals the risk of product description being tailored to one company, when the description is excessively long.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            183
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Die Länge der Produktbeschreibung signalisiert das Risiko, dass die Produktbeschreibung auf ein Unternehmen zugeschnitten ist, wenn die Beschreibung zu lang ist.
         </target>
       </trans-unit>
       <trans-unit id="CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
