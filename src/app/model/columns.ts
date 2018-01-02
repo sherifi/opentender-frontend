@@ -38,11 +38,11 @@ const ColumnsFormatUtils = {
 					if (indicator.status === 'CALCULATED' && group_id === group.id) {
 						let def = group.subindicators.find(sub => sub.id === indicator.type);
 						if (def) {
-							collapseLines.push({styleClass: 'badge-' + group.id, content: def.name + ': ' + Utils.formatValue(indicator.value), hint: def.desc});
+							collapseLines.push({score: indicator.value, prefix: def.name, hint: def.desc});
 						}
 					}
 				});
-				result.push({content: 'Score: ' + Utils.formatValue(score.value), hint: group.name, collapseLines: collapseLines});
+				result.push({prefix: group.name, score: score.value, hint: group.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
 			}
 		});
 		return result;
@@ -58,7 +58,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: (authority, library) => [{content: library.i18n.nameGuard(authority.body.name)}]
+		format: (authority, library): Array<ITableCellLine> => [{content: library.i18n.nameGuard(authority.body.name)}]
 	},
 	{
 		name: 'City',
@@ -68,7 +68,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.address.city',
 			ascend: true
 		},
-		format: authority => authority.body && authority.body.address ? [{content: authority.body.address.city}] : []
+		format: (authority, library): Array<ITableCellLine> => authority.body && authority.body.address ? [{content: authority.body.address.city}] : []
 	},
 	{
 		name: 'Country',
@@ -78,13 +78,13 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: (authority, library) => authority.body && authority.body.address ? [{content: library.i18n.expandCountry(authority.body.address.country)}] : []
+		format: (authority, library): Array<ITableCellLine> => authority.body && authority.body.address ? [{content: library.i18n.expandCountry(authority.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
 		group: 'Authority',
-		format: authority => [{content: Utils.formatValue(authority.sources.length)}]
+		format: (authority, library): Array<ITableCellLine> => [{content: Utils.formatValue(authority.sources.length)}]
 	},
 	{
 		name: 'Main Activities',
@@ -94,7 +94,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.mainActivities',
 			ascend: true
 		},
-		format: authority => {
+		format: (authority, library): Array<ITableCellLine> => {
 			return (authority.body.mainActivities || []).map(activity => {
 				return {content: Utils.expandUnderlined(activity)};
 			});
@@ -108,13 +108,19 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			id: 'body.buyerType',
 			ascend: true
 		},
-		format: authority => [{content: Utils.expandUnderlined(authority.body.buyerType)}]
+		format: (authority, library): Array<ITableCellLine> => [{content: Utils.expandUnderlined(authority.body.buyerType)}]
 	},
 	{
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Authority',
-		format: (authority, library) => [{icon: ICON.authority + ' icon-large', content: '', link: '/authority/' + authority.body.id, hint: ('Profile Page ' + library.i18n.nameGuard(authority.body.name)), align: 'center'}]
+		format: (authority, library): Array<ITableCellLine> => [{
+			icon: ICON.authority + ' icon-large',
+			content: '',
+			link: '/authority/' + authority.body.id,
+			hint: ('Profile Page ' + library.i18n.nameGuard(authority.body.name)),
+			align: 'center'
+		}]
 	}
 ];
 
@@ -127,7 +133,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.name.raw',
 			ascend: true
 		},
-		format: (company, library) => [{content: library.i18n.nameGuard(company.body.name)}]
+		format: (company, library): Array<ITableCellLine> => [{content: library.i18n.nameGuard(company.body.name)}]
 	},
 	{
 		name: 'City',
@@ -137,7 +143,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.address.city',
 			ascend: true
 		},
-		format: company => company.body && company.body.address ? [{content: company.body.address.city}] : []
+		format: (company, library): Array<ITableCellLine> => company.body && company.body.address ? [{content: company.body.address.city}] : []
 	},
 	{
 		name: 'Country',
@@ -147,13 +153,13 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 			id: 'body.address.country',
 			ascend: true
 		},
-		format: (company, library) => company.body && company.body.address ? [{content: library.i18n.expandCountry(company.body.address.country)}] : []
+		format: (company, library): Array<ITableCellLine> => company.body && company.body.address ? [{content: library.i18n.expandCountry(company.body.address.country)}] : []
 	},
 	{
 		name: 'Bids Count',
 		id: 'count',
 		group: 'Company',
-		format: company => [{content: Utils.formatValue(company.sources.length)}]
+		format: (company, library): Array<ITableCellLine> => [{content: Utils.formatValue(company.sources.length)}]
 	},
 	{
 		name: 'Profile Link',
@@ -318,7 +324,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		format: tender => [{content: tender.mediationBodyName}]
 	},
 	{
-		name: 'Indicators',
+		name: 'Good Procurement Score',
 		id: 'indicators',
 		group: 'Indicators',
 		format: (tender, library) => {
@@ -326,19 +332,19 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			let result: Array<ITableCellLine> = [];
+			let collapseLines: Array<ITableCellLine> = [];
 			tender.scores.forEach(score => {
-				if (score.status === 'CALCULATED' && score.type === library.TENDER.id) {
-					result.push({prefix: library.TENDER.name});
-					result.push({content: 'Score: ' + Utils.formatValue(score.value)});
+				if (score.status === 'CALCULATED' && score.type !== library.TENDER.id) {
+					let group = library.indicators.find(g => g.id == score.type);
+					if (group) {
+						collapseLines.push({score: score.value, prefix: group.name, hint: group.name});
+					}
 				}
 			});
-			library.indicators.forEach(ig => {
-				let list = ColumnsFormatUtils.formatTenderIndicatorGroup(tender, ig);
-				if (list.length > 0) {
-					result.push({prefix: ig.name});
-					result = result.concat(list);
-				}
-			});
+			let tenderscore = tender.scores.find(s => s.type === library.TENDER.id);
+			if (tenderscore) {
+				result.push({prefix: library.TENDER.name, score: tenderscore.value, hint: library.TENDER.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
+			}
 			return result;
 		}
 	},

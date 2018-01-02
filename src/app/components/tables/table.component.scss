@@ -6,6 +6,20 @@
 
   .table-line-prefix {
     font-size: 10px;
-    line-height: 1.5em;
+    line-height: 1.3em;
+  }
+
+  .table-line-collapse {
+    float: right;
+  }
+
+  .table-score-gradient {
+    margin-top: 1px;
+  }
+
+  .table-collapse-lines {
+    margin-top: 2px;
+    padding-top: 2px;
+    border-top: 1px solid gray;
   }
 }

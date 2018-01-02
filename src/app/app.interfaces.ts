@@ -498,7 +498,10 @@ export interface ITableCellLine {
 	hint?: string;
 	icon?: string;
 	styleClass?: string;
+	score?: number;
 	collapseLines?: Array<ITableCellLine>;
+	collapsed?: boolean;
+	align?: string;
 }
 
 export interface ITableLibrary {

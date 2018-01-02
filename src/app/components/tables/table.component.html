@@ -12,15 +12,24 @@
 		<td *ngFor="let cell of row.cells" class="{{cell.lines.length>0 ? cell.lines[0].align :''}}">
 			<div *ngFor="let line of cell.lines">
 				<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+				<div *ngIf="line.collapseLines" (click)="line.collapsed = !line.collapsed" class="table-line-collapse"><i class="icon-chevron-down"></i></div>
+				<div class="table-score-gradient" *ngIf="line.score!==undefined" title="{{line.hint}}">
+					<graph score-gradient [value]="line.score"></graph>
+				</div>
 				<div [ngClass]="line.styleClass">
 					<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
 					<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
 				</div>
-				<div *ngFor="let line of line.collapseLines">
-					<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
-					<div [ngClass]="line.styleClass">
-						<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
-						<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
+				<div class="table-collapse-lines" *ngIf="!line.collapsed && line.collapseLines">
+					<div *ngFor="let line of line.collapseLines">
+						<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
+						<div class="table-score-gradient" *ngIf="line.score!==undefined" title="{{line.hint}}">
+							<graph score-gradient [value]="line.score"></graph>
+						</div>
+						<div [ngClass]="line.styleClass">
+							<span *ngIf="line.list">•&nbsp;</span><a *ngIf="line.link" routerLink="{{line.link}}" title="{{line.hint}}">
+							<i *ngIf="line.icon" [ngClass]="line.icon"></i>{{line.content}}</a><span *ngIf="!line.link" title="{{line.hint}}">{{line.content}}</span>
+						</div>
 					</div>
 				</div>
 			</div>
