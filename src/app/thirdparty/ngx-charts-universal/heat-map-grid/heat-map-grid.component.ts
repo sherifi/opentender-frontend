@@ -147,16 +147,12 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 		return domain;
 	}
 
-	getColorDomain(): IDomain {
-		return this.valueDomain;
-	}
-
 	getXScale() {
 		const scale = scaleBand<number>()
 			.rangeRound([0, this.viewDim.width])
 			.paddingInner(0.1)
 			.domain(this.xDomain.map(i => {
-				return <number>i;
+				return i;
 			}));
 		return scale;
 	}
@@ -166,13 +162,13 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 			.rangeRound([this.viewDim.height, 0])
 			.paddingInner(0.1)
 			.domain(this.yDomain.map(i => {
-				return <number>i;
+				return i;
 			}));
 		return scale;
 	}
 
 	setColors(): void {
-		this.colors = new ColorHelper(this.chart.colorScheme, 'ordinal', this.valueDomain, this.chart.customColors);
+		this.colors = new ColorHelper(this.chart.colorScheme, 'linear', ColorHelper.collectColorDomain(100, this.chart.colorScheme.domain.length), this.chart.customColors);
 	}
 
 	getLegendOptions(): ILegendOptions {
@@ -210,7 +206,7 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 							rx: 3,
 							width: this.xScale.bandwidth(),
 							height: this.yScale.bandwidth(),
-							fill: 'rgba(200,200,200,0.7)'
+							fill: 'rgba(200,200,200,0.8)'
 						});
 					}
 				});
@@ -223,7 +219,7 @@ export class HeatMapGridComponent extends BaseXYAxisComponent {
 				rx: 3,
 				width: this.xScale.bandwidth(),
 				height: this.viewDim.height,
-				fill: 'rgba(200,200,200,0.7)'
+				fill: 'rgba(200,200,200,0.8)'
 			});
 		}
 		return rects;

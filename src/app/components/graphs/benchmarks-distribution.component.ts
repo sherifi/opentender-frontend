@@ -92,7 +92,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 				return this.unit + ': ' + Utils.formatValue(value);
 			},
 			colorScheme: {
-				domain: Consts.colors.single
+				domain: Consts.colors.redgreen
 			}
 		},
 		select: (event) => {

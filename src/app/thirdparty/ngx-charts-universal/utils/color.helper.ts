@@ -19,6 +19,17 @@ export class ColorHelper {
 		this.scale = this.generateColorScheme(scheme, type);
 	}
 
+
+	static collectColorDomain(dataLength, colorsLength) {
+		let domain = [0];
+		let toAdd = colorsLength - 2; // 0 and dataLength are a given, so the first and last colors will already be covered
+		for (let i = 1; i <= toAdd; i++) {
+			domain.push(Math.floor(dataLength * (i / (colorsLength - 1))));
+		}
+		domain.push(dataLength - 1); // 1 less than the total so the last color is exactly the hex in the last item of colors
+		return domain;
+	}
+
 	generateColorScheme(scheme, type) {
 		let colorScale;
 		if (type === 'quantile') {

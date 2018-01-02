@@ -10,6 +10,7 @@ interface ICell {
 	width: number;
 	height: number;
 	fill: string;
+	stroke: string;
 	data: number;
 	label: string;
 	series: string;
@@ -28,6 +29,7 @@ interface ICell {
 				[width]="c.width"
 				[height]="c.height"
 				[fill]="c.fill"
+				[stroke]="c.stroke"
 				[data]="c.data"
 				(select)="onClick($event, c)"
 				ngx-tooltip
@@ -88,7 +90,8 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 					r: getRadius(cell.value),
 					width: width,
 					height: height,
-					fill: cell.color || this.colors.getColor(cell.value),
+					fill: cell.color || this.colors.getColor(parseInt(row.name, 10)),
+					stroke: '#aaaaaa',
 					data: cell.value,
 					label: cell.name,
 					series: row.name,

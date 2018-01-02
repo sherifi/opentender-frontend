@@ -122,7 +122,7 @@ export const Consts = {
 		single2: ['#2b908f'],
 		single3: ['#dfc27d'],
 		single4: ['#e99450'],
-		redgreen: ['#ff0000', '#ffff00', '#008000'],
+		redgreen: ['#ff0000', '#fffa4b', '#008000'],
 		indicators: {
 			'ADMINISTRATIVE': '#80aa6a',
 			'CORRUPTION': '#4c959d',

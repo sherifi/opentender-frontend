@@ -14,6 +14,7 @@ import 'd3-transition';
 					[attr.r]="r"
 					[attr.fill]="fill"
 					[attr.stroke]="stroke"
+					stroke-width="0.5"
 					(click)="onClick()"></svg:circle>
 		</svg:g>
 	`,
@@ -21,6 +22,7 @@ import 'd3-transition';
 })
 export class HeatMapCircleCellComponent implements OnChanges {
 
+	@Input() stroke: string;
 	@Input() fill: string;
 	@Input() r: number;
 	@Input() x: number;
