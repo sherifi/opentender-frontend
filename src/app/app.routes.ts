@@ -61,7 +61,7 @@ export const routes: Routes = [
 	{path: 'tender/:id', component: TenderPage, data: {title: 'Tender'}},
 	{path: 'sector/:id', component: SectorPage, data: {title: 'Sector'}},
 	{path: 'region/:id', component: RegionPage, data: {title: 'Region'}},
-	{path: 'download', component: DownloadPage, data: {title: 'Download', menu: true}},
+	{path: 'download', component: DownloadPage, data: {title: 'Download', menu: true, rootMenu: true}},
 	{
 		path: 'about',
 		component: AboutPage,

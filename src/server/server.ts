@@ -261,6 +261,9 @@ app.use('/start*', (req, res) => {
 app.use('/imprint*', (req, res) => {
 	startApp(req, res, '/imprint');
 });
+app.use('/download*', (req, res) => {
+	startApp(req, res, '/imprint');
+});
 app.use('/', (req, res) => {
 	let url = (req.originalUrl || '').split('?')[0];
 	if (['/', '/index.html'].indexOf(url) < 0) {
