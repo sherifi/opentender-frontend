@@ -5,10 +5,9 @@ import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
 import {
 	ISearchCommandFilter, IStats, IStatsPcCpvs, IStatsIndicators, IStatsCompanies, IStatsAuthorities, IStatsPcPricesLotsInYears,
-	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears, IStatsCpvs
+	IIndicatorInfo, ISubIndicatorInfo, ISearchCommand, IStatsInYears, IStatsCpvs, ISearchCommandWeights, ISearchResultTender
 } from '../../app.interfaces';
 import {IChartData} from '../../thirdparty/ngx-charts-universal/chart.interface';
-import {Consts} from '../../model/consts';
 import {PlatformService} from '../../services/platform.service';
 
 @Component({
@@ -26,7 +25,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 	private icon: string = '';
 	private searchPrefix: string = '';
 	private searchScore: [number, number] = [0, 50];
-	public filterWeights: { [name: string]: number; } = null;
+	public filterWeights: ISearchCommandWeights = null;
 	public showDialog = false;
 	public title: string = '';
 	public subindicators: ISubIndicatorInfo[] = [];
@@ -211,9 +210,6 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		let filters = this.buildFilters();
 		this.loading++;
 		let cmd: ISearchCommand = {filters: filters};
-		if (!this.selected) {
-			cmd.weights = this.filterWeights;
-		}
 		let sub = this.api.getIndicatorStats(cmd).subscribe(
 			(result) => {
 				this.displayStats(result.data);
@@ -279,6 +275,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		};
 	}
 
-	searchChange(data) {
+	searchChange(data: ISearchResultTender) {
+
 	}
 }

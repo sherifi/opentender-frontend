@@ -411,6 +411,10 @@ export interface ISearchCommandAggregation {
 	aggregations?: ISearchCommandAggregation[];
 }
 
+export interface ISearchCommandWeights {
+	[fieldname: string]: number;
+}
+
 export interface ISearchCommandFilter {
 	field: string;
 	value: Array<string | boolean | number>;
@@ -418,9 +422,7 @@ export interface ISearchCommandFilter {
 	sort?: string;
 	mode?: string;
 	and?: ISearchCommandFilter[];
-	weights?: {
-		[fieldname: string]: number;
-	},
+	weights?: ISearchCommandWeights,
 	subrequest?: {
 		[fieldname: string]: string | boolean | number;
 	};
@@ -434,9 +436,6 @@ export interface ISearchCommand {
 	sort?: {
 		field: string;
 		ascend: boolean;
-	};
-	weights?: {
-		[name: string]: number;
 	};
 }
 
