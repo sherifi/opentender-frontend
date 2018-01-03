@@ -625,6 +625,14 @@
             26
           </context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            32
+          </context>
+        </context-group>
         <target>
           Daten
         </target>
@@ -834,7 +842,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            28
+            34
           </context>
         </context-group>
         <target>
@@ -1130,7 +1138,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            33
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1338,7 +1346,15 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            29
+            27
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            35
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1906,7 +1922,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            34
+            40
           </context>
         </context-group>
         <target>
@@ -1930,7 +1946,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            35
+            41
           </context>
         </context-group>
         <target>
@@ -1970,7 +1986,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            36
+            42
           </context>
         </context-group>
         <target>
@@ -2143,7 +2159,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            37
+            43
           </context>
         </context-group>
         <target>
@@ -2777,7 +2793,7 @@
           </context>
         </context-group>
         <target>
-          Bitte wählen Sie ein Länderportal oder durchsuchen sie &lt;x ctype="x-a" id="START_LINK"/&gt;alle verfügbaren Daten&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
+          Bitte wählen Sie ein Länderportal oder durchsuchen Sie &lt;x ctype="x-a" id="START_LINK"/&gt;alle verfügbaren Daten&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
@@ -4263,7 +4279,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            61
+            67
           </context>
         </context-group>
         <target>
@@ -4286,7 +4302,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            68
           </context>
         </context-group>
         <target>
@@ -4309,7 +4325,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            64
+            70
           </context>
         </context-group>
         <target>
@@ -4331,7 +4347,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            65
+            71
           </context>
         </context-group>
         <target>
@@ -4347,7 +4363,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            69
+            75
           </context>
         </context-group>
         <target>
@@ -4363,7 +4379,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            77
           </context>
         </context-group>
         <target>
@@ -4379,7 +4395,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            74
+            80
           </context>
         </context-group>
         <target>
@@ -4395,7 +4411,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            89
           </context>
         </context-group>
         <target>
@@ -4423,7 +4439,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            90
+            96
           </context>
         </context-group>
         <target>
