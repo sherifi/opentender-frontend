@@ -7,8 +7,10 @@ import {NotifyService} from '../../../services/notify.service';
 import {I18NService} from '../../../services/i18n.service';
 import {PlatformService} from '../../../services/platform.service';
 import {Utils} from '../../../model/utils';
-import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort, ITableLibrary} from '../../../app.interfaces';
+import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort, ITableLibrary, ISearchCommandWeights} from '../../../app.interfaces';
 import {IndicatorService} from '../../../services/indicator.service';
+import Score = Definitions.Score;
+import Indicator = Definitions.Indicator;
 
 @Component({
 	selector: 'tender-table',
@@ -113,12 +115,65 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		this.refresh();
 	}
 
+
+	recalculateScore(score: Score, indicators: Array<Indicator>, weights: ISearchCommandWeights) {
+		let sum = 0;
+		let count = 0;
+		indicators.forEach(indicator => {
+			if (indicator.status === 'CALCULATED' && indicator.type.indexOf(score.type) === 0) {
+				let weight = weights[indicator.type];
+				if (!isNaN(weight)) {
+					sum += (indicator.value * weight);
+					count += weight;
+				}
+			}
+		});
+		if (count > 0) {
+			score.value = Utils.roundValueTwoDecimals(sum / count);
+			score.status = 'CALCULATED';
+		} else {
+			score.value = undefined;
+			score.status = 'INSUFFICIENT_DATA';
+		}
+	}
+
+	recalculateTenderScore(score: Score, scores: Array<Score>) {
+		let sum = 0;
+		let count = 0;
+		scores.forEach(s => {
+			if (s.type !== score.type && s.status === 'CALCULATED') {
+				sum += s.value;
+				count++;
+			}
+		});
+		if (count > 0) {
+			score.value = Utils.roundValueTwoDecimals(sum / count);
+			score.status = 'CALCULATED';
+		} else {
+			score.value = undefined;
+			score.status = 'INSUFFICIENT_DATA';
+		}
+	}
+
 	refresh(scrollToTop: boolean = false): void {
 		let cmd = this.search_cmd;
 		this.loading++;
 		let sub = this.api.searchTender(cmd).subscribe(
 			(result) => {
 				if (this.search_cmd === cmd) {
+					let weightsfilter = cmd.filters.find(c => !!c.weights);
+					if (weightsfilter && result && result.data && result.data.hits && result.data.hits.hits) {
+						result.data.hits.hits.forEach(hit => {
+							let score = hit.scores.find(s => s.type === weightsfilter.field);
+							if (score) {
+								this.recalculateScore(score, hit.indicators, weightsfilter.weights);
+								let tenderscore = hit.scores.find(s => s.type === this.indicators.TENDER.id);
+								if (tenderscore) {
+									this.recalculateTenderScore(tenderscore, hit.scores);
+								}
+							}
+						});
+					}
 					this.display(result.data);
 					if (scrollToTop && this.platform.isBrowser) {
 						Utils.scrollToFirst('tables');
