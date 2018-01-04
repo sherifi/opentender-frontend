@@ -15,7 +15,7 @@ written in Typescript and SCSS
 - copy file 'config.dist.js' to 'config.js' and make the changes to reflect your infrastructure
 
 ```javascript
-let settings = {
+module.exports = {
 	server: {
 		listen: {  // where the frontend should be listening
 			host: '127.0.0.1',

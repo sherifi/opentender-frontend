@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsPcPricesLotsInYears} from '../../app.interfaces';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[indicator-histogram]',
@@ -26,7 +26,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -60,7 +60,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatPercent,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_1
+			colorScheme: Colors.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -92,7 +92,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatTrunc,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_1
+			colorScheme: Colors.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -123,7 +123,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_1
+			colorScheme: Colors.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},
@@ -156,7 +156,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			},
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_1
+			colorScheme: Colors.colorSchemes.ordinal_1
 		},
 		select: (event) => {
 		},

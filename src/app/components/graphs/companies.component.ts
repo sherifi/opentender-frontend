@@ -3,8 +3,8 @@ import {ICompany, ISeriesProvider, IStatsCompanies} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Router} from '@angular/router';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[companies]',
@@ -23,7 +23,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<select-series-download-button [sender]="this"></select-series-download-button>
+		<series-download-button [sender]="this"></series-download-button>
 	`
 })
 export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
@@ -59,7 +59,7 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_4
+			colorScheme: Colors.colorSchemes.ordinal_4
 		},
 		select: (event) => {
 			this.router.navigate(['/company/' + event.id]);
@@ -91,7 +91,7 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_4
+			colorScheme: Colors.colorSchemes.ordinal_4
 		},
 		select: (event) => {
 			this.router.navigate(['/company/' + event.id]);

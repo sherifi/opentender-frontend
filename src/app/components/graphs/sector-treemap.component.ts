@@ -1,10 +1,10 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IChartTreeMap} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISector, ISeriesProvider, IStats} from '../../app.interfaces';
 import {Router} from '@angular/router';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[sector-treemap]',
@@ -25,7 +25,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-tree-map>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 	@Input()
@@ -41,7 +41,7 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 				max: {height: 400}
 			},
 			valueFormatting: Utils.formatValue,
-			colorScheme: Consts.colorSchemes.ordinal_cpvs
+			colorScheme: Colors.colorSchemes.ordinal_cpvs
 		},
 		select: (event) => {
 			this.router.navigate(['/sector/' + event.id]);
@@ -59,7 +59,7 @@ export class GraphSectorTreemap implements OnChanges, ISeriesProvider {
 			valueFormatting: (n: number): string => {
 				return '€ ' + Utils.formatValue(n);
 			},
-			colorScheme: Consts.colorSchemes.ordinal_cpvs
+			colorScheme: Colors.colorSchemes.ordinal_cpvs
 		},
 		select: (event) => {
 			this.router.navigate(['/sector/' + event.id]);

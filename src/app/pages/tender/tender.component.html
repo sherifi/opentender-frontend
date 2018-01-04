@@ -240,17 +240,45 @@
 					<div class="container container-padded-top-lite">
 						<div class="container-left-4">
 							<h4 i18n>Lot Details</h4>
+							<div class="inline-info" *ngIf="lot.state | defined">
+								<h4 i18n>Status</h4>
+								<div>{{lot.status | expandUnderlined}}</div>
+							</div>
 							<div class="inline-info" *ngIf="lot.awardDecisionDate | defined">
 								<h4 i18n>Award Decision Date</h4>
 								{{lot.awardDecisionDate | formatDate}}
 							</div>
-							<div class="inline-info" *ngIf="lot.estimatedStartDate | defined">
+							<div class="inline-info" *ngIf="lot.estimatedStartDate | defined">s
 								<h4 i18n>Estimated Start Date</h4>
 								{{lot.estimatedStartDate | formatDate}}
 							</div>
 							<div class="inline-info" *ngIf="lot.estimatedCompletionDate | defined">
 								<h4 i18n>Estimated Completion Date</h4>
 								{{lot.estimatedCompletionDate | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.completionDate | defined">
+								<h4 i18n>Completion Date</h4>
+								{{lot.completionDate | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.awardDeadline | defined">
+								<h4 i18n>Award Deadline</h4>
+								{{lot.awardDeadline | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.contractSignatureDate | defined">
+								<h4 i18n>Contract Signature Date</h4>
+								{{lot.contractSignatureDate | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.bidDeadline | defined">
+								<h4 i18n>Bid Deadline</h4>
+								{{lot.bidDeadline | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.documentsDeadline | defined">
+								<h4 i18n>Documents Deadline</h4>
+								{{lot.documentsDeadline | formatDate}}
+							</div>
+							<div class="inline-info" *ngIf="lot.cancellationDate | defined">
+								<h4 i18n>Cancellation Date</h4>
+								{{lot.cancellationDate | formatDate}}
 							</div>
 							<div class="inline-info" *ngIf="lot.estimatedPrice | defined">
 								<h4 i18n>Estimated Price</h4>
@@ -280,15 +308,25 @@
 								<h4 i18n>Position On Page</h4>
 								{{lot.positionOnPage}}
 							</div>
+							<div class="inline-info" *ngIf="lot.eligibilityCriteria| defined">
+								<h4 i18n>Eligibility Criteria</h4>
+								{{lot.eligibilityCriteria}}
+							</div>
 						</div>
 						<div class="container-left-8">
 							<h4 i18n>Bids</h4>
 							<div *ngIf="lot.bids | defined">
 								<div *ngFor="let bid of lot.bids">
 									<div class="container-left-8">
-										<div *ngFor="let bidder of bid.bidders">
-											<div *ngIf="bid.bidders | defined">
+										<div *ngIf="bid.bidders | defined">
+											<div *ngFor="let bidder of bid.bidders">
 												<tender-body [body]="bidder" [icon]="'icon-office'" [link]="'/company/'+bidder.id"></tender-body>
+											</div>
+										</div>
+										<div *ngIf="bid.subcontractors | defined">
+											<h4 i18n>Subcontractors</h4>
+											<div *ngFor="let bidder of bid.subcontractors">
+												<tender-body [body]="bidder"></tender-body>
 											</div>
 										</div>
 									</div>
@@ -339,6 +377,10 @@
 			<div class="container" *ngIf="tender.technicalRequirements | defined">
 				<h4 i18n>Technical Requirements</h4>
 				<span>{{tender.technicalRequirements}}</span>
+			</div>
+			<div class="container" *ngIf="tender.eligibilityCriteria | defined">
+				<h4 i18n>Eligibility Criteria</h4>
+				<span>{{tender.eligibilityCriteria}}</span>
 			</div>
 			<div class="container" *ngIf="tender.deposits | defined">
 				<h4 i18n>Deposits</h4>
@@ -404,6 +446,14 @@
 		<div *ngIf="state.documents.open" class="container slab-beta-light container-padded-large">
 			<div class="container-left-4" *ngFor="let doc of tender.documents; let index_d=index">
 				<h4>Nr. {{index_d}}</h4>
+				<div class="inline-info" *ngIf="doc.title | defined">
+					<h4 i18n>Title</h4>
+					{{doc.title}}
+				</div>
+				<div class="inline-info" *ngIf="doc.language | defined">
+					<h4 i18n>Language</h4>
+					{{doc.language}}
+				</div>
 				<div class="inline-info" *ngIf="doc.url | defined">
 					<h4 i18n>URL</h4>
 					<a href="{{doc.url}}">{{doc.url | extractDomain}}</a>

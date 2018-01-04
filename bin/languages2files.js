@@ -46,10 +46,9 @@ let prepareProject = function () {
 	console.log('copy project files to', dest);
 	fs.copySync(path.join(source, 'node_modules/@types'), path.join(dest, 'node_modules/@types'));
 	fs.copySync(path.join(source, 'src'), path.join(dest, 'src'));
-	fs.copySync(path.join(source, 'tsconfig.json'), path.join(dest, 'tsconfig.json'));
+	fs.copySync(path.join(source, 'tsconfig.i18n.json'), path.join(dest, 'tsconfig.json'));
 	fs.copySync(path.join(source, 'tslint.json'), path.join(dest, 'tslint.json'));
 	fs.copySync(path.join(source, 'config.js'), path.join(dest, 'config.js'));
-	// fs.copySync(path.join(source, 'webpack.config.js'), path.join(dest, 'webpack.config.js'));
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
 	fillI18nTemplate(path.join(dest, 'src/app/components/'));

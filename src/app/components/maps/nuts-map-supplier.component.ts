@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IStatsNuts} from '../../app.interfaces';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 
 @Component({
 	selector: 'graph[supplier-nutsmap]',

@@ -2,9 +2,9 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {IAuthority, ISeriesProvider, IStatsAuthorities} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Router} from '@angular/router';
-import {Consts} from '../../model/consts';
 import {Utils} from '../../model/utils';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[authorities]',
@@ -23,7 +23,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -58,7 +58,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_3
+			colorScheme: Colors.colorSchemes.ordinal_3
 		},
 		select: (event) => {
 			this.router.navigate(['/authority/' + event.id]);
@@ -90,7 +90,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatCurrencyValueEUR,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_3
+			colorScheme: Colors.colorSchemes.ordinal_3
 		},
 		select: (event) => {
 			if (event.id) {

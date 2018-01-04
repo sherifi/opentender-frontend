@@ -2,11 +2,10 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 import {IBenchmarkFilter, ISeriesProvider, IStatsDistributionInYears} from '../../app.interfaces';
 import {IChartHeatmap} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {marker} from 'leaflet';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 import {IndicatorService} from '../../services/indicator.service';
-import {ColorHelper} from '../../thirdparty/ngx-charts-universal/utils/color.helper';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[benchmarks-distribution]',
@@ -42,7 +41,7 @@ import {ColorHelper} from '../../thirdparty/ngx-charts-universal/utils/color.hel
 				[marker]="marker"
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)"></ngx-charts-heat-map-grid>
-		<select-series-download-button [sender]="this"></select-series-download-button>
+		<series-download-button [sender]="this"></series-download-button>
 	`,
 	styleUrls: ['benchmarks.component.scss']
 })
@@ -91,7 +90,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 			valueFormatting: (value: number) => {
 				return this.unit + ': ' + Utils.formatValue(value);
 			},
-			colorScheme: Consts.colorSchemes.linear_red_green
+			colorScheme: Colors.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

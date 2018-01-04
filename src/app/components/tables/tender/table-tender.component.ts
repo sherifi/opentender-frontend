@@ -4,7 +4,7 @@ import {Component, Input, Output, EventEmitter, SimpleChanges, OnInit, OnChanges
 import {ApiService} from '../../../services/api.service';
 import {TenderColumns} from '../../../model/columns';
 import {NotifyService} from '../../../services/notify.service';
-import {I18NService} from '../../../services/i18n.service';
+import {I18NService} from '../../i18n/services/i18n.service';
 import {PlatformService} from '../../../services/platform.service';
 import {Utils} from '../../../model/utils';
 import {ISearchResultTender, ISearchCommand, ITableColumnTender, ITable, ITableColumnSort, ITableLibrary, ISearchCommandWeights} from '../../../app.interfaces';

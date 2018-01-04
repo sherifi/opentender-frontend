@@ -3,7 +3,7 @@ import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {ConfigService, Country} from '../../services/config.service';
 import {routes} from '../../app.routes';
 import {Subscription} from 'rxjs/Subscription';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -58,7 +58,7 @@ export class HeaderComponent implements OnDestroy {
 					path: route.path,
 					title: this.i18n.get(route.data.menu_title || route.data.title),
 					routerLink: route.data.routerLink ? route.data.routerLink : ['/' + route.path],
-					submenu: (route.children || []).filter(sub => sub.data && sub.data.menu).map(sub => {
+					submenu: (route.children || route.data.submenu || []).filter(sub => sub.data && sub.data.menu).map(sub => {
 						return {
 							path: sub.path,
 							title: this.i18n.get(sub.data.menu_title || sub.data.title),

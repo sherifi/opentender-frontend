@@ -2,7 +2,6 @@ import {Component, OnInit, ElementRef} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {TitleService} from './services/title.service';
 import {PlatformService} from './services/platform.service';
-import {I18NService} from './services/i18n.service';
 
 /**
  * The root component for the opentender that is bootstrapped by angular
@@ -12,7 +11,7 @@ import {I18NService} from './services/i18n.service';
 	selector: 'app',
 	templateUrl: 'app.component.html'
 })
-export class App implements OnInit {
+export class AppComponent implements OnInit {
 
 	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService) {
 		titleService.setDefault();

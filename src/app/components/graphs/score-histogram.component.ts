@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsInYears} from '../../app.interfaces';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[score-histogram]',
@@ -17,7 +17,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -48,7 +48,7 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.linear_red_green
+			colorScheme: Colors.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

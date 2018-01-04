@@ -1,4 +1,4 @@
-let settings = {
+module.exports = {
 	server: {
 		listen: {  // where the frontend should be listening
 			host: '127.0.0.1',
@@ -25,4 +25,3 @@ let settings = {
 		debug: false // tell webpack be more verbose
 	}
 };
-module.exports = settings;

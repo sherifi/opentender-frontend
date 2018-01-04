@@ -31,7 +31,7 @@ import {Utils} from '../../model/utils';
 			<span>{{valueHigh | formatNumber}}</span>
 		</div>
 		<div class="nutsmap_subtitle"><a [routerLink]="['/about/how-opentender-works']" pageScroll="#info-maps" i18n>Sources</a></div>
-		<select-series-download-button *ngIf="!hideLegend && data_list.length>0" [sender]="this"></select-series-download-button>`,
+		<series-download-button *ngIf="!hideLegend && data_list.length>0" [sender]="this"></series-download-button>`,
 	styleUrls: ['nuts-map.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })

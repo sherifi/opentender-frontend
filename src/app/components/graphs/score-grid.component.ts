@@ -1,10 +1,10 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IChartData, IChartPieSeries} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider} from '../../app.interfaces';
 import {Router} from '@angular/router';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[score-grid]',
@@ -37,7 +37,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 			labels: true,
 			maxValue: 100,
 			valueFormatting: Utils.formatValue,
-			colorScheme: Consts.colorSchemes.linear_red_green
+			colorScheme: Colors.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 		},

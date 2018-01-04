@@ -5,7 +5,7 @@ import {ICompany, ISearchResultCompany, ISearchCommand, ITableColumnCompany, ITa
 import {NotifyService} from '../../../services/notify.service';
 import {Utils} from '../../../model/utils';
 import {PlatformService} from '../../../services/platform.service';
-import {I18NService} from '../../../services/i18n.service';
+import {I18NService} from '../../i18n/services/i18n.service';
 import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({

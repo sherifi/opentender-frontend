@@ -2,8 +2,8 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 import {IChartRadar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsIndicators} from '../../app.interfaces';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IndicatorService} from '../../services/indicator.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[indicator-structure]',
@@ -17,7 +17,7 @@ import {IndicatorService} from '../../services/indicator.service';
 				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
 		</ngx-charts-radar-chart>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -39,7 +39,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			labels: true,
 			maxValue: 100,
 			valueFormatting: Utils.formatValue,
-			colorScheme: Consts.colorSchemes.ordinal_diverging
+			colorScheme: Colors.colorSchemes.ordinal_diverging
 		},
 		select: (event) => {
 			this.onSelect.emit(event);

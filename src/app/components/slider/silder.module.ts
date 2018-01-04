@@ -7,9 +7,18 @@ import {SliderComponent} from './slider.component';
 import {SliderRibbonDirective} from './slider-ribbon.directive';
 
 @NgModule({
-	imports: [CommonModule, FormsModule],
-	declarations: [SliderComponent, SliderHandleDirective, SliderRibbonDirective],
-	exports: [SliderComponent]
+	imports: [
+		CommonModule,
+		FormsModule
+	],
+	declarations: [
+		SliderComponent,
+		SliderHandleDirective,
+		SliderRibbonDirective
+	],
+	exports: [
+		SliderComponent
+	]
 })
 export class SliderModule {
 }

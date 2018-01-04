@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {Utils} from '../../model/utils';
 import {ConfigService} from '../../services/config.service';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../../components/i18n/services/i18n.service';
 
 interface Download {
 	country: string;

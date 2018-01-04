@@ -1,5 +1,5 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
-import {I18NService} from '../../../../services/i18n.service';
+import {I18NService} from '../../../i18n/services/i18n.service';
 import {ITableColumn} from '../../../../app.interfaces';
 
 @Component({

@@ -3,7 +3,7 @@ import {Router, NavigationStart, ActivatedRoute, NavigationEnd} from '@angular/r
 import {Meta, Title} from '@angular/platform-browser';
 import {ConfigService} from './config.service';
 import {Subscription} from 'rxjs/Subscription';
-import {I18NService} from './i18n.service';
+import {I18NService} from '../components/i18n/services/i18n.service';
 
 @Injectable()
 export class TitleService implements OnDestroy {

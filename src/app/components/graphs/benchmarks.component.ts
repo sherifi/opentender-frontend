@@ -2,9 +2,9 @@ import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '
 import {IBenchmarkFilter, ISeriesProvider, IStats} from '../../app.interfaces';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 import {IndicatorService} from '../../services/indicator.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[benchmarks]',
@@ -40,7 +40,7 @@ import {IndicatorService} from '../../services/indicator.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-vertical-grouped>
-		<select-series-download-button [sender]="this"></select-series-download-button>
+		<series-download-button [sender]="this"></series-download-button>
 	`,
 	styleUrls: ['benchmarks.component.scss']
 })
@@ -81,7 +81,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatTrunc,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_dual
+			colorScheme: Colors.colorSchemes.ordinal_dual
 		},
 		select: (event) => {
 		},

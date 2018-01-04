@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ApiService} from '../../services/api.service';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 import {Utils} from '../../model/utils';
 import {NotifyService} from '../../services/notify.service';
 import {

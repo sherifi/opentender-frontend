@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {IStatsNuts} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

@@ -1,10 +1,10 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {Consts} from '../../model/consts';
 import {IChartBar} from '../../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesProvider, IStatsPcCpvs} from '../../app.interfaces';
 import {Router} from '@angular/router';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../i18n/services/i18n.service';
+import {Colors} from '../../model/colors';
 
 @Component({
 	selector: 'graph[sectors]',
@@ -18,7 +18,7 @@ import {I18NService} from '../../services/i18n.service';
 				(select)="graph.select($event)"
 				(legendLabelClick)="graph.onLegendLabelClick($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<select-series-download-button [sender]="this"></select-series-download-button>`
+		<series-download-button [sender]="this"></series-download-button>`
 })
 export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -49,7 +49,7 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 			valueFormatting: Utils.formatValue,
 			showGridLines: true,
 			gradient: false,
-			colorScheme: Consts.colorSchemes.ordinal_2
+			colorScheme: Colors.colorSchemes.ordinal_2
 		},
 		select: (event) => {
 			if (event.id) {

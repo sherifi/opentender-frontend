@@ -4,7 +4,7 @@ import {StateService} from '../../../services/state.service';
 import {CompanyFilterDefs} from '../../../model/filters';
 import {ISearchResultCompany, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {Utils} from '../../../model/utils';
-import {I18NService} from '../../../services/i18n.service';
+import {I18NService} from '../../../components/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

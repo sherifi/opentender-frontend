@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
-import {I18NService} from '../../services/i18n.service';
+import {I18NService} from '../../components/i18n/services/i18n.service';
 import {
 	ISector, IStats, IStatsPcCpvs, IStatsAuthorities, IStatsCompanies, IStatsSector, IStatsPcPricesLotsInYears, IStatsProcedureType,
 	IStatsNuts, ISearchCommandFilter, ISearchCommand, IStatsCpvs, IStatsInYears
