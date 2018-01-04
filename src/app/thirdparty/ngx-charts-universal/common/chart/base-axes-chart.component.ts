@@ -1,7 +1,7 @@
-import {Input, Output, EventEmitter, ChangeDetectorRef, NgZone, ElementRef} from '@angular/core';
+import {ChangeDetectorRef, ElementRef, EventEmitter, Input, NgZone, Output} from '@angular/core';
 import {BaseChartComponent, PlatformService} from './base-chart.component';
 import {calculateViewDimensions, ViewDimensions} from '../../utils/view-dimensions.helper';
-import {IChartXYAxisSettings, IChartData} from '../../chart.interface';
+import {IChartData, IChartXYAxisSettings} from '../../chart.interface';
 import {ColorHelper} from '../../utils/color.helper';
 import {IDomain, ILegendOptions} from '../common.interface';
 
