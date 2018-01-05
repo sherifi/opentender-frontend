@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {I18NService} from '../components/i18n/services/i18n.service';
+import {I18NService} from '../modules/i18n/services/i18n.service';
 import {IIndicatorInfo, ISubIndicatorInfo} from '../app.interfaces';
 import * as Indicators from '../model/indicators.json';
 

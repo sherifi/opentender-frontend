@@ -3,7 +3,7 @@ import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
 import {AuthorityFilterDefs} from '../../../model/filters';
 import {ISearchResultAuthority, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
-import {I18NService} from '../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../modules/i18n/services/i18n.service';
 import {Utils} from '../../../model/utils';
 
 @Component({

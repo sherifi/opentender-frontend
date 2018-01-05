@@ -1,9 +1,9 @@
 import {Component, OnDestroy} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {ConfigService, Country} from '../../services/config.service';
-import {routes} from '../../app.routes';
 import {Subscription} from 'rxjs/Subscription';
-import {I18NService} from '../i18n/services/i18n.service';
+import {I18NService} from '../../modules/i18n/services/i18n.service';
+import {Consts} from '../../model/consts';
 
 @Component({
 	moduleId: __filename,
@@ -52,17 +52,17 @@ export class HeaderComponent implements OnDestroy {
 
 	private buildMenu() {
 		this.menu = [];
-		routes.forEach(route => {
-			if (route.data && ((!this.isRootPage && route.data.menu) || (this.isRootPage && route.data.rootMenu))) {
+		Consts.routes.forEach(route => {
+			if ((!this.isRootPage && route.menu) || (this.isRootPage && route.rootMenu)) {
 				this.menu.push({
 					path: route.path,
-					title: this.i18n.get(route.data.menu_title || route.data.title),
-					routerLink: route.data.routerLink ? route.data.routerLink : ['/' + route.path],
-					submenu: (route.children || route.data.submenu || []).filter(sub => sub.data && sub.data.menu).map(sub => {
+					title: this.i18n.get(route.menu_title || route.title),
+					routerLink: route.routerLink ? route.routerLink : ['/' + route.path],
+					submenu: (route.children || []).filter(sub => sub.menu).map(sub => {
 						return {
 							path: sub.path,
-							title: this.i18n.get(sub.data.menu_title || sub.data.title),
-							routerLink: sub.data.routerLink ? sub.data.routerLink : ['/' + route.path + '/' + sub.path],
+							title: this.i18n.get(sub.menu_title || sub.title),
+							routerLink: sub.routerLink ? sub.routerLink : ['/' + route.path + '/' + sub.path],
 						};
 					})
 				});

@@ -5,7 +5,7 @@ import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
 import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears} from '../../app.interfaces';
-import {I18NService} from '../../components/i18n/services/i18n.service';
+import {I18NService} from '../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

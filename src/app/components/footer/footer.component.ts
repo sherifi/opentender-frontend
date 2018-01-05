@@ -2,7 +2,7 @@ import {Component, OnDestroy} from '@angular/core';
 import {ConfigService} from '../../services/config.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-import {I18NService} from '../i18n/services/i18n.service';
+import {I18NService} from '../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

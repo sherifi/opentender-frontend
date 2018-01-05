@@ -5,7 +5,7 @@ import {PlatformService} from '../../services/platform.service';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
-import {I18NService} from '../../components/i18n/services/i18n.service';
+import {I18NService} from '../../modules/i18n/services/i18n.service';
 import {Subscription} from 'rxjs/Subscription';
 import {ISearchFilterDefType, IStats} from '../../app.interfaces';
 import {IndicatorService} from '../../services/indicator.service';

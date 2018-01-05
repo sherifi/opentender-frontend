@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {NotifyService} from '../../../services/notify.service';
 import {ISector, IStats, IStatsNuts, ISearchCommandFilter, IStatsInYears, IStatsCpvs, IStatsPricesInYears, IStatsProcedureType, IStatsAuthorities, IStatsCompanies} from '../../../app.interfaces';
-import {I18NService} from '../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

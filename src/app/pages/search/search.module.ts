@@ -17,11 +17,11 @@ import {SelectScoreRangeFilterComponent} from './components/filterbox/components
 import {SelectYearRangeFilterComponent} from './components/filterbox/components/year-range/select-year-range-filter.component';
 import {FilterBoxComponent} from './components/filterbox/filterbox.component';
 import {MyDatePickerModule} from 'mydatepicker';
-import {TableModule} from '../../components/tables/table.module';
-import {DialogModule} from '../../components/dialog/dialog.module';
-import {I18nModule} from '../../components/i18n/i18n.module';
-import {PipesModule} from '../../components/pipes/pipes.module';
-import {SliderModule} from '../../components/slider/silder.module';
+import {TableModule} from '../../modules/tables/table.module';
+import {DialogModule} from '../../modules/dialog/dialog.module';
+import {I18nModule} from '../../modules/i18n/i18n.module';
+import {PipesModule} from '../../modules/pipes/pipes.module';
+import {SliderModule} from '../../modules/slider/silder.module';
 import {TypeaheadModule} from '../../thirdparty/typeahead/typeahead.module';
 import {SearchSectorPage} from './sector/sector.component';
 

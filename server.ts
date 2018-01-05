@@ -20,13 +20,8 @@ import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
 
 const Config = require('./config.js');
 
-
-declare module 'package.json' {
-	export var version: string;
-}
 import * as pck from './package.json';
-
-import {routes} from './src/app/app.routes';
+import * as routes from './src/app/model/routes.json';
 
 const {provideModuleMap} = require('@nguniversal/module-map-ngfactory-loader');
 const {ServerAppModule, LAZY_MODULE_MAP} = require(`./dist/universal/main.bundle.js`);
@@ -76,6 +71,7 @@ const DIST_STYLE = path.join(path.resolve(ROOT, 'dist/style'));
 const DIST_JS = path.join(path.resolve(ROOT, 'dist/client/assets/js'));
 const VIEWS = path.join(path.resolve(ROOT, 'src/views'));
 const VIEW = path.join(VIEWS, 'index.html');
+const VERSION = pck.version;
 const RES_VERSION = pck.version.replace(/\./g, '');
 
 let languages = JSON.parse(fs.readFileSync(path.resolve(I18N, 'languages.json')).toString()).enabled;
@@ -158,6 +154,7 @@ app.use('/api*', (req, res) => {
 app.use(cookieParser('OpenTenderPortal'));
 app.use(bodyParser.json());
 
+
 let render = function(req, res, language, country) {
 	let name = country.name;
 	if (country.id && language.lang !== 'en') {
@@ -171,7 +168,7 @@ let render = function(req, res, language, country) {
 			{provide: 'isBrowser', useValue: false},
 			{provide: 'absurl', useValue: 'http://' + Config.server.listen.host + ':' + Config.server.listen.port},
 			{provide: 'opentender', useValue: {locale: language.lang, config: Config.client, country: country}},
-			{provide: 'config', useValue: {version: pck.version, backendUrl: Config.server.backendUrl, devMode: Config.client.devMode}},
+			{provide: 'config', useValue: {version: VERSION, backendUrl: Config.server.backendUrl, devMode: Config.client.devMode}},
 			LAZY_MODULE_MAP_POVIDER
 		],
 		languageProviders: [
@@ -188,7 +185,7 @@ let render = function(req, res, language, country) {
 			}
 			let opts = {
 				locale: language.lang,
-				config: Config.client,
+				config: {version: VERSION, backendUrl: Config.client.backendUrl, devMode: Config.client.devMode},
 				country: country
 			};
 			return html.replace(/\{\{BASE_HREF\}\}/g, (country.id ? '/' + country.id : '') + '/')
@@ -244,7 +241,7 @@ let registerPages = country => {
 	};
 
 	// Routes with html5pushstate
-	routes.forEach(route => {
+	routes.routes.forEach(route => {
 		let s = route.path.split('/')[0];
 		if (s && s !== '' && s !== '**') {
 			app.use(country_path + '/' + s + '*', checkCache, ngApp);
@@ -287,5 +284,5 @@ app.use('/', (req, res) => {
 app.use(errorResponse);
 
 const listener = app.listen(Config.server.listen.port, Config.server.listen.host, () => {
-	console.log('Opentender Portal is listening on: http://%s:%d (%s)', listener.address().address, listener.address().port, app.settings.env);
+	console.log('Opentender Portal v' + VERSION + ' is listening on: http://%s:%d (%s)', listener.address().address, listener.address().port, app.settings.env);
 });

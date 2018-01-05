@@ -3,7 +3,7 @@ import {StateService} from '../../../services/state.service';
 import {Search} from '../../../model/search';
 import {TenderFilterDefs} from '../../../model/filters';
 import {ISearchResultTender, ISearchFilterDef, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
-import {I18NService} from '../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

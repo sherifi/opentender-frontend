@@ -1,0 +1,48 @@
+@import "../../../../../style/globals.scss";
+
+:host {
+  .form-subindicator {
+    width: 100%;
+  }
+
+  .dialog-button {
+    float: right;
+  }
+
+  .weight-selects {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+
+    .weight-select {
+      width: 100%;
+      display: inline-block;
+
+      @include respond-to(medium-up) {
+        width: 50%;
+      }
+
+      padding-right: 8px;
+      padding-bottom: 3px;
+    }
+
+    .weight-slider {
+      width: 85%;
+      display: inline-block;
+      height: 18px;
+      slider {
+        margin-top: -8px;
+      }
+    }
+
+    .weight-value {
+      width: 10%;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: -4px;
+    }
+
+  }
+}

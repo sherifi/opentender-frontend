@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ConfigService} from '../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -6,4 +7,9 @@ import {Component} from '@angular/core';
 	templateUrl: 'imprint.component.html'
 })
 export class ImprintPage {
+	public contactmail: string;
+
+	constructor(private config: ConfigService) {
+		this.contactmail = config.contactmail;
+	}
 }

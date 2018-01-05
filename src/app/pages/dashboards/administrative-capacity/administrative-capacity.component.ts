@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {Consts} from '../../../model/consts';
 import {IIndicatorInfo} from '../../../app.interfaces';
-import {Utils} from '../../../model/utils';
 import {IndicatorService} from '../../../services/indicator.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Search} from '../../../../model/search';
-import {I18NService} from '../../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../../modules/i18n/services/i18n.service';
 import {ISearchFilter, ISearchFilterDefType} from '../../../../app.interfaces';
 import {bestFilterColCount} from '../../../../model/helpers';
 

@@ -1,6 +1,6 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {ISearchFilterDef} from '../../../../../../app.interfaces';
-import {I18NService} from '../../../../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../../../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

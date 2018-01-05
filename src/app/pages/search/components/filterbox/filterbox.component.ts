@@ -7,7 +7,7 @@ import {PlatformService} from '../../../../services/platform.service';
 import {ISearchFilterDef, ISearchFilter, ISearchFilterDefType, ISearchResultBucket} from '../../../../app.interfaces';
 import {Utils} from '../../../../model/utils';
 import {bestFilterColCount} from '../../../../model/helpers';
-import {I18NService} from '../../../../components/i18n/services/i18n.service';
+import {I18NService} from '../../../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,

@@ -2,7 +2,7 @@
 
 import {Injectable, Inject, LOCALE_ID} from '@angular/core';
 import {PlatformService} from './platform.service';
-import {I18NService} from '../components/i18n/services/i18n.service';
+import {I18NService} from '../modules/i18n/services/i18n.service';
 
 export interface Country {
 	id: string;

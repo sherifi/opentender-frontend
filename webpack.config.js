@@ -253,6 +253,12 @@ const clientAppConfig = () => {
 			minRatio: 0.8
 		}));
 	}
+	if (config.client.devMode) {
+		if (!WebpackNotifierPlugin) {
+			WebpackNotifierPlugin = require('webpack-notifier');
+		}
+		plugins.push(new WebpackNotifierPlugin({title: "Opentender Client Build", alwaysNotify: true}));
+	}
 	let minifiyplugins = [];
 	if (config.webpack.minimize) {
 		minifiyplugins = [
@@ -374,7 +380,7 @@ const clientAppConfig = () => {
 			new NoEmitOnErrorsPlugin(),
 			config.webpack.progress ? new ProgressPlugin() : new NopePlugin(),
 			new CircularDependencyPlugin({
-				"exclude": /(\\|\/)node_modules(\\|\/)/,
+				exclude: /src\/app\/thirdparty|node_modules/,
 				"failOnError": false,
 				"onDetected": false,
 				"cwd": process.cwd()
@@ -535,7 +541,7 @@ const serverAppConfig = () => {
 			new NoEmitOnErrorsPlugin(),
 			config.webpack.progress ? new ProgressPlugin() : new NopePlugin(),
 			new CircularDependencyPlugin({
-				"exclude": /(\\|\/)node_modules(\\|\/)/,
+				exclude: /src\/app\/thirdparty|node_modules/,
 				"failOnError": false,
 				"onDetected": false,
 				"cwd": process.cwd()
@@ -584,13 +590,6 @@ const serverAppConfig = () => {
 // config for server.js (express app)
 
 const serverConfig = () => {
-	let plugins = [];
-	if (config.client.devMode) {
-		if (!WebpackNotifierPlugin) {
-			WebpackNotifierPlugin = require('webpack-notifier');
-		}
-		plugins.push(new WebpackNotifierPlugin({title: "Opentender Client Build", alwaysNotify: true}));
-	}
 	return {
 		target: 'node',
 		resolve: {extensions: ['*', '.js', '.ts']},
@@ -618,7 +617,6 @@ const serverConfig = () => {
 			cb();
 		},
 		plugins: [
-			...plugins,
 			// Temporary Fix for issue: https://github.com/angular/angular/issues/11580
 			// for "WARNING Critical dependency: the request of a dependency is an expression"
 			new webpack.ContextReplacementPlugin(
