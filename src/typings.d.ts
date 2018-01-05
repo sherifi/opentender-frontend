@@ -24,14 +24,47 @@ interface ClientConfig {
 	devMode: boolean;
 }
 
-declare module '*.json' {
+declare module '*languages.json' {
 	const value: any;
 	export default value;
 }
 
-declare module 'config.js' {
+declare module '*indicators.json' {
+	const value: any;
+	export default value;
+}
+
+declare module '*countries.json' {
+	const value: any;
+	export default value;
+}
+
+declare module '*currencies.json' {
+	const value: any;
+	export default value;
+}
+
+interface IRouterInfo {
+	path: string;
+	title?: string;
+	menu_title?: string;
+	menu?: boolean;
+	rootMenu?: boolean;
+	routerLink?: Array<string>;
+	children?: Array<IRouterInfo>;
+}
+
+declare module '*routes.json' {
+	export var routes: Array<IRouterInfo>;
+}
+
+declare module '*config.js' {
 	export var server: ServerConfig;
 	export var client: ClientConfig;
+}
+
+declare module '*package.json' {
+	export var version: string;
 }
 
 declare module 'geoip-ultralight' {

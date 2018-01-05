@@ -22,6 +22,7 @@ const XMLLite = require('xml-lite');
 const Ast = require("ts-simple-ast/dist/TsSimpleAst.js").TsSimpleAst;
 const ts = require("typescript");
 const indicators = require('../src/app/model/indicators.json');
+const routes = require('../src/app/model/routes.json');
 
 /*************************************
  * Constants
@@ -51,7 +52,7 @@ let prepareProject = function () {
 	fs.copySync(path.join(source, 'config.js'), path.join(dest, 'config.js'));
 	fs.removeSync(path.join(dest, 'src/app.module.ts'));
 	fs.removeSync(path.join(dest, 'src/server'));
-	fillI18nTemplate(path.join(dest, 'src/app/components/'));
+	fillI18nTemplate(path.join(dest, 'src/app/modules/i18n/components'));
 };
 
 let __assign = (this && this.__assign) || Object.assign || function (t) {
@@ -141,9 +142,9 @@ let extractRunTimeStrings = (tsConfigFilePath, srcFilePath, opts) => {
 	const check = (obj) => {
 		if (obj && obj.text && (obj.kind === 9) && obj.parent) {
 			// is Routes title data?
-			if (obj.parent.name && (opts.RouteFields.indexOf(obj.parent.name.escapedText) >= 0) && isChildOf(obj, opts.Routes)) {
-				addText(obj);
-			} else
+			// if (obj.parent.name && (opts.RouteFields.indexOf(obj.parent.name.escapedText) >= 0) && isChildOf(obj, opts.Routes)) {
+			// 	addText(obj);
+			// } else
 			// is Constant Lists?
 			if (obj.parent.name && (opts.CollectionFields.indexOf(obj.parent.name.escapedText) >= 0) && isChildOf(obj, opts.Collections)) {
 				addText(obj);
@@ -221,19 +222,34 @@ let fillI18nTemplate = function (folder) {
 	let opts = {
 		Collections: ['TenderColumns', 'AuthorityColumns', 'CompanyColumns', 'TenderFilterDefs', 'CompanyFilterDefs', 'AuthorityFilterDefs'],
 		CollectionFields: ['name', 'group'],
-		Routes: ['routes'],
-		RouteFields: ['title', 'menu_title'],
+		// Routes: ['routes'],
+		// RouteFields: ['title', 'menu_title'],
 		I18NServiceNames: ['I18NService'],
 		I18NServiceVariableNames: ['i18n'],
 		I18NServiceCalls: ['get', 'getFormat']
 	};
 	const runtimestrings = extractRunTimeStrings(path.join(dest, 'tsconfig.json'), path.join(dest, 'src'), opts);
+
+	const scanRoute = (route) => {
+		if (route.title && runtimestrings.indexOf(route.title) < 0) {
+			runtimestrings.push(route.title)
+		}
+		if (route.menu_title && runtimestrings.indexOf(route.menu_title) < 0) {
+			runtimestrings.push(route.menu_title)
+		}
+		if (route.children) {
+			route.children.forEach(route => scanRoute(route));
+		}
+	};
+
+	routes.routes.forEach(route => scanRoute(route));
+
 	runtimestrings.sort((a, b) => {
 		if (a < b) return -1;
 		if (a > b) return 1;
 		return 0;
 	});
-	console.log('filling template, runtime strings:', runtimestrings.length, folder + 'i18n.template.html');
+	console.log('filling template, runtime strings:', runtimestrings.length, path.join(folder, 'i18n.template.html'));
 
 	let used = {};
 	let vars = [];
@@ -264,7 +280,7 @@ let fillI18nTemplate = function (folder) {
 			list.push('<span i18n="runtime@@' + skey + '.desc">' + sub.desc + '</span>');
 		});
 	});
-	fs.writeFileSync(folder + 'i18n.template.html', list.join('\n'));
+	fs.writeFileSync(path.join(folder, 'i18n.template.html'), list.join('\n'));
 
 	let mod = `import {Component} from '@angular/core';
 	@Component({
@@ -275,7 +291,7 @@ let fillI18nTemplate = function (folder) {
 		vars.map(v => {
 			return v + ':string'
 		}).join(';') + '}';
-	fs.writeFileSync(folder + 'i18n.component.ts', mod);
+	fs.writeFileSync(path.join(folder, 'i18n.component.ts'), mod);
 };
 
 let updateLanguage = function (lang, currentNodes, cb) {
