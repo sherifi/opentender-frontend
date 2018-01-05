@@ -3,7 +3,6 @@ import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.
 import {gridLayout} from '../utils/grid.helper';
 import {formatLabel} from '../utils/label.helper';
 import {IChartData, IChartPieSeriesSettings} from '../chart.interface';
-import {BasePieChartComponent} from './pie-chart-base.component';
 import {getTooltipLabeledText} from '../common/tooltip/tooltip.helper';
 import {min} from 'd3-array';
 import {BaseChartComponent} from '../common/chart/base-chart.component';
@@ -51,7 +50,7 @@ import {IDomain} from '../common/common.interface';
 	styleUrls: ['values-grid.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
-export class PieValuesGridComponent extends BaseChartComponent {
+export class ValuesGridComponent extends BaseChartComponent {
 	@Input() data: Array<IChartData>;
 	@Input() chart: IChartPieSeriesSettings;
 	@Input() activeEntries: any[];

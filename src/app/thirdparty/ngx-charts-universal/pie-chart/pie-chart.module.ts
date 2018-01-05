@@ -8,12 +8,10 @@ import {CommonLegendModule} from '../common/legend/common-legend.module';
 import {CommonCountModule} from '../common/count/common-count.module';
 import {CommonTooltipModule} from '../common/tooltip/common-tooltip.module';
 import {BasePieChartComponent} from './pie-chart-base.component';
-import {RadarChartComponent} from './radar-chart.component';
-import {PieValuesGridComponent} from './values-grid.component';
 
 export {PieChartAdvancedComponent, PieChartComponent, PieGridComponent};
 
-const COMPONENTS = [PieChartAdvancedComponent, PieChartComponent, PieGridComponent, BasePieChartComponent, RadarChartComponent, PieValuesGridComponent];
+const COMPONENTS = [PieChartAdvancedComponent, PieChartComponent, PieGridComponent, BasePieChartComponent];
 
 @NgModule({
 	imports: [ChartCommonModule, CommonPieModule, CommonLegendModule, CommonCountModule, CommonTooltipModule],

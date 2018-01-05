@@ -7,9 +7,8 @@ import {CommonGradientModule} from '../gradient/common-gradient.module';
 import {CommonModule} from '@angular/common';
 import {CommonTooltipModule} from '../tooltip/common-tooltip.module';
 import {CommonLegendModule} from '../legend/common-legend.module';
-import {RadarPieSeriesComponent} from './radar-pie-series.component';
 
-const COMPONENTS = [PieArcComponent, PieGridSeriesComponent, PieLabelComponent, PieSeriesComponent, RadarPieSeriesComponent];
+const COMPONENTS = [PieArcComponent, PieGridSeriesComponent, PieLabelComponent, PieSeriesComponent];
 
 @NgModule({
 	imports: [CommonModule, CommonGradientModule, CommonTooltipModule, CommonLegendModule],

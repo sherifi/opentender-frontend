@@ -6,7 +6,7 @@ import {BaseChartComponent} from '../common/chart/base-chart.component';
 import {ColorHelper} from '../utils/color.helper';
 
 @Component({
-	selector: 'ngx-charts-radar-chart',
+	selector: 'ngx-charts-radar-pie-chart',
 	template: `
 		<ngx-charts-chart
 				[dim]="dim" [chart]="chart" [data]="data"
@@ -37,7 +37,7 @@ import {ColorHelper} from '../utils/color.helper';
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RadarChartComponent extends BaseChartComponent {
+export class RadarPieChartComponent extends BaseChartComponent {
 	@Input() chart: IChartRadarSettings;
 	@Input() data: Array<IChartData>;
 	@Input() weights_data: Array<IChartData>;
