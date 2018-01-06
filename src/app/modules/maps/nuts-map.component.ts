@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {IApiResultGeoJSON, ISeriesProvider, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
