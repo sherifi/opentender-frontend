@@ -11,7 +11,7 @@ export var LeafletResetControl = Control.extend({
 	},
 
 	onAdd: function(map) {
-		let container = DomUtil.create('div', 'leaflet-control-reset leaflet-bar leaflet-control');
+		var container = DomUtil.create('div', 'leaflet-control-reset leaflet-bar leaflet-control');
 
 		this.link = DomUtil.create('a', 'leaflet-control-reset-button leaflet-bar-part', container);
 		DomUtil.create('i', 'icon-target', this.link);

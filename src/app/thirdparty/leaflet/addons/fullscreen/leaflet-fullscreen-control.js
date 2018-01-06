@@ -14,7 +14,7 @@ export var LeafletFullscreenControl = Control.extend({
 	},
 
 	onAdd: function(map) {
-		let container = DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
+		var container = DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
 
 		this.link = DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
 		this.link.href = '#';
@@ -45,7 +45,7 @@ Map.include({
 	},
 
 	toggleFullscreen: function(options) {
-		let container = this.getContainer();
+		var container = this.getContainer();
 		if (this.isFullscreen()) {
 			if (options && options.pseudoFullscreen) {
 				this._disablePseudoFullscreen(container);
@@ -92,7 +92,7 @@ Map.include({
 
 	_setFullscreen: function(fullscreen) {
 		this._isFullscreen = fullscreen;
-		let container = this.getContainer();
+		var container = this.getContainer();
 		if (fullscreen) {
 			DomUtil.addClass(container, 'leaflet-fullscreen-on');
 		} else {
@@ -102,7 +102,7 @@ Map.include({
 	},
 
 	_onFullscreenChange: function(e) {
-		let fullscreenElement =
+		var fullscreenElement =
 			document.fullscreenElement ||
 			document['mozFullScreenElement'] ||
 			document.webkitFullscreenElement ||
@@ -128,7 +128,7 @@ Map.addInitHook(function() {
 		this.addControl(this.fullscreenControl);
 	}
 
-	let fullscreenchange;
+	var fullscreenchange;
 
 	if ('onfullscreenchange' in document) {
 		fullscreenchange = 'fullscreenchange';
@@ -141,7 +141,7 @@ Map.addInitHook(function() {
 	}
 
 	if (fullscreenchange) {
-		let onFullscreenChange = Util.bind(this._onFullscreenChange, this);
+		var onFullscreenChange = Util.bind(this._onFullscreenChange, this);
 
 		this.whenReady(function() {
 			DomEvent.on(document, fullscreenchange, onFullscreenChange);
