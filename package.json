@@ -1,6 +1,6 @@
 {
   "name": "opentender-portal-frontend",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "Opentender Portal Frontend (Server/Client)",
   "author": "okfde",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "schema": "cd bin && node schema2ts.js",
     "langs": "cd bin && node languages2files.js",
     "docs": "compodoc -p tsconfig.compodoc.json -n 'Opentender Portal Frontend' -d ./dist/docs/",
-    "develop": "concurrently --kill-others \"npm run app-server\" \"npm run watch:universal\" \"npm run watch:styles\" \"npm run watch:server\" \"npm run run:nodemon\"",
+    "develop": "concurrently --kill-others \"npm run watch:app-server\" \"npm run watch:universal\" \"npm run watch:styles\" \"npm run watch:server\" \"npm run run:nodemon\"",
     "run:nodemon": "nodemon dist/server/index.js",
     "watch:app-client": "webpack --watch --display-error-details --config webpack.app-client.js",
     "watch:app-server": "webpack --watch --display-error-details --config webpack.app-server.js",
