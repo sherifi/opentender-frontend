@@ -34,12 +34,6 @@ module.exports = {
 	client: {
 		version: '0.0.2', // version of app (is e.g. used for display in footer & "uncaching" resources on app update)
 		backendUrl: 'https://portal.opentender.eu' // full url of the backend for the client app
-	},
-	webpack: {
-		analyze: false, // analyze the webpack build (generates .html results in /dist folder)
-		sourcemaps: false, // generate .map files for .js & .css
-		minimize: true, // minimize & uglify the client code js
-		debug: false // tell webpack be more verbose
 	}
 };
 ```
@@ -54,11 +48,15 @@ Note: The config file is baked into the js bundle, if you change anything you mu
 
 ### Build
 
-`npm run build` to build the app into a static bundle
+`npm run build` to build the apps (browser.app, server.app, server.ts) into a static bundles
 
 ### Build
 
 `npm run lint` to check the project with tslint
+
+### Analyse
+
+`npm run bundle-report` to see sizes of javascript bundle file sizes for browser.app
 
 ### Watch files
 

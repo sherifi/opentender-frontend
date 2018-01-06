@@ -7,7 +7,13 @@
     {
       "root": "src",
       "outDir": "dist/standalone",
-      "index": "views/index.html",
+      "assets": [
+        "../assets"
+      ],
+      "styles": [
+        "style/style.scss"
+      ],
+      "index": "index.html",
       "main": "client/client.ts",
       "polyfills": "client/polyfills.ts",
       "test": "test.ts",
@@ -24,12 +30,18 @@
       "root": "src",
       "outDir": "dist/universal",
       "platform": "server",
-      "index": "views/index.html",
+      "index": "index.html",
       "main": "server/server.main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.server.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+      "assets": [
+        "../assets"
+      ],
+      "styles": [
+        "style/style.scss"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
