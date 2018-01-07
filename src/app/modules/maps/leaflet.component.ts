@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, ViewEncapsulation, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, Output, EventEmitter, ViewEncapsulation, OnChanges, SimpleChanges, OnDestroy, NgZone} from '@angular/core';
 import {PlatformService} from '../../services/platform.service';
 import {geoJSON, GeoJSON} from '../../thirdparty/leaflet/layer/GeoJSON';
 import {tileLayer} from '../../thirdparty/leaflet/layer/tile/TileLayer';
@@ -16,7 +16,8 @@ import '../../thirdparty/leaflet/addons/fullscreen/leaflet-fullscreen-control';
 	styleUrls: ['leaflet.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
-export class MapComponent implements OnChanges {
+export class MapComponent implements OnChanges, OnDestroy {
+
 	@Input() geo: any;
 	@Input() settings: {
 		url: string;
@@ -33,7 +34,7 @@ export class MapComponent implements OnChanges {
 	private map: any;
 	private resetControl: any;
 
-	constructor(private platform: PlatformService) {
+	constructor(private platform: PlatformService, protected zone: NgZone) {
 		if (!this.platform.isBrowser) {
 			return;
 		}
@@ -53,13 +54,27 @@ export class MapComponent implements OnChanges {
 					popup.closePopup();
 				});
 				layer.on('click', (e) => {
-					this.regionClick.emit(feature);
+					if (e.originalEvent && e.originalEvent.stopPropagation) {
+						e.originalEvent.stopPropagation();
+					}
+					popup.closePopup();
+					this.zone.run(() => {
+						this.regionClick.emit(feature);
+					});
 				});
 			}),
 			style: (feature) => {
 				return {weight: 1, color: feature.properties['border'], fillColor: feature.properties['color'], opacity: 0.9, fillOpacity: 0.55};
 			}
 		});
+	}
+
+	public ngOnDestroy(): void {
+		this.leaflet_options = null;
+		this.map = null;
+		this.resetZoom = false;
+		this.resetControl = null;
+		this.geolayer = null;
 	}
 
 	public ngOnChanges(changes: SimpleChanges): void {
