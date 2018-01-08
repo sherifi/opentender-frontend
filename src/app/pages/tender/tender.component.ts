@@ -23,16 +23,16 @@ export class TenderPage implements OnInit, OnDestroy {
 	private subscription: Subscription;
 	public showDownloadDialog: boolean = false;
 	public portal: Country;
-	public state: { [name: string]: { open: boolean, label?: string } } = {
-		lots: {open: true},
-		buyer: {open: true},
-		indi: {open: true},
-		info: {open: true},
-		desc: {open: true},
-		reqs: {open: false},
-		additional: {open: false},
-		documents: {open: false},
-		publications: {open: false},
+	public state: { [name: string]: { open: boolean, empty: boolean, label?: string, subempty?: { [name: string]: boolean } } } = {
+		lots: {open: true, empty: true},
+		buyer: {open: true, empty: true},
+		indi: {open: true, empty: true},
+		info: {open: true, empty: true, subempty: {}},
+		desc: {open: true, empty: true},
+		reqs: {open: false, empty: true},
+		additional: {open: false, empty: true, subempty: {}},
+		documents: {open: false, empty: true},
+		publications: {open: false, empty: true}
 	};
 	public viz = {
 		indicator_groups: [],
@@ -78,7 +78,8 @@ export class TenderPage implements OnInit, OnDestroy {
 		if (!result) {
 			result = {
 				open: !this.platform.isBrowser,
-				label: this.i18n.get('Lot') + ' ' + (index + 1)
+				label: this.i18n.get('Lot') + ' ' + (index + 1),
+				empty: false
 			};
 			this.state['lot' + index] = result;
 		}
@@ -93,6 +94,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			let sub = this.api.getTender(id).subscribe(
 				(result) => this.display(result.data),
 				(error) => {
+					this.display(null);
 					if (error.status == 404) {
 						this.notFound = true;
 					} else {
@@ -110,49 +112,74 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.subscription.unsubscribe();
 	}
 
-	display(tender: Definitions.Tender): void {
-		this.tender = tender;
-		let vals = {};
-		let scores = {};
-		let indicators = {};
-		if (tender.indicators) {
-			tender.indicators.forEach(indicator => {
-				if (indicator.status === 'CALCULATED') {
-					vals[indicator.type] = indicator.value;
-					const ig = this.indicators.getGroupOf(indicator.type);
-					const ii = this.indicators.getIndicatorInfo(indicator.type);
-					if (ig && ii) {
-						indicators[ig.id] = indicators[ig.id] || [];
-						indicators[ig.id].push({id: indicator.type, name: ii.name, value: indicator.value});
-					}
-				}
-			});
+	objHasProperty(obj: any, propNames: Array<string>): boolean {
+		if (!obj) {
+			return false;
 		}
-		if (tender.scores) {
-			tender.scores.forEach(score => {
-				if (score.status === 'CALCULATED') {
-					vals[score.type] = score.value;
-					const ig = score.type == 'TENDER' ? this.indicators.TENDER : this.indicators.getGroupOf(score.type);
-					if (ig) {
-						scores[ig.id] = scores[ig.id] || [];
-						scores[ig.id].push({id: score.type, name: ig.name, value: score.value});
-					}
-				}
-			});
-		}
-		this.viz.indicator_groups = this.indicators.GROUPS.map(g => {
-			return {
-				title: g.name,
-				scores: scores[g.id] || [],
-				indicators: indicators[g.id] || []
-			};
-		});
+		return !!propNames.find(name => Utils.isDefined(obj['name']));
+	}
 
-		this.viz.distribution.highlight.values = vals;
-		if (tender.date) {
-			this.viz.distribution.highlight.year = tender.date.slice(0, 4);
+	display(tender: Definitions.Tender): void {
+		this.tender = null;
+		if (tender) {
+			this.tender = tender;
+			this.state.reqs.empty = !this.objHasProperty(tender, ['personalRequirements', 'economicRequirements', 'technicalRequirements', 'eligibilityCriteria', 'deposits']);
+			this.state.buyer.empty = !this.objHasProperty(tender, ['buyers', 'onBehalfOf', 'furtherInformationProvider', 'specificationsProvider', 'bidsRecipient', 'appealBodyName', 'mediationBodyName', 'administrators']);
+			this.state.info.subempty['types'] = !this.objHasProperty(tender, ['supplyType', 'procedureType', 'selectionMethod', 'eligibleBidLanguages', 'maxBidsCount', 'maxFrameworkAgreementParticipants', 'awardCriteria']);
+			this.state.info.subempty['prices'] = !this.objHasProperty(tender, ['estimatedPrice', 'finalPrice', 'documentsPrice']);
+			this.state.info.subempty['dates'] = !this.objHasProperty(tender, ['estimatedStartDate', 'estimatedCompletionDate', 'bidDeadline', 'documentsDeadline', 'estimatedDurationInDays', 'estimatedDurationInMonths', 'estimatedDurationInYears']);
+			this.state.additional.subempty['fundings'] = !Utils.isDefined(tender.fundings);
+			this.state.additional.subempty['tender'] =
+				!this.objHasProperty(tender, ['isEInvoiceAccepted', 'isCentralProcurement', 'isCoveredByGpa', 'isFrameworkAgreement', 'isJointProcurement', 'isDps', 'isElectronicAuction',
+					'hasLots', 'hasOptions', 'areVariantsAccepted', 'buyerAssignedId']);
+			this.state.info.subempty['publications'] = !Utils.isDefined(tender.publications);
+			this.state.info.subempty['documents'] = !Utils.isDefined(tender.documents);
+			this.state.info.subempty['cpvs'] = !Utils.isDefined(tender.cpvs);
+			this.state.info.subempty['lots'] = !Utils.isDefined(tender.lots);
+			this.state.info.subempty['first-column'] = this.state.info.subempty['prices'] && this.state.info.subempty['dates'] && this.state.info.subempty['cpvs'];
+			this.state.info.empty = this.state.info.subempty['first-column'] && this.state.info.subempty['types'];
+			let vals = {};
+			let scores = {};
+			let indicators = {};
+			if (tender.indicators) {
+				tender.indicators.forEach(indicator => {
+					if (indicator.status === 'CALCULATED') {
+						vals[indicator.type] = indicator.value;
+						const ig = this.indicators.getGroupOf(indicator.type);
+						const ii = this.indicators.getIndicatorInfo(indicator.type);
+						if (ig && ii) {
+							indicators[ig.id] = indicators[ig.id] || [];
+							indicators[ig.id].push({id: indicator.type, name: ii.name, value: indicator.value});
+						}
+					}
+				});
+			}
+			if (tender.scores) {
+				tender.scores.forEach(score => {
+					if (score.status === 'CALCULATED') {
+						vals[score.type] = score.value;
+						const ig = score.type == 'TENDER' ? this.indicators.TENDER : this.indicators.getGroupOf(score.type);
+						if (ig) {
+							scores[ig.id] = scores[ig.id] || [];
+							scores[ig.id].push({id: score.type, name: ig.name, value: score.value});
+						}
+					}
+				});
+			}
+			this.viz.indicator_groups = this.indicators.GROUPS.map(g => {
+				return {
+					title: g.name,
+					scores: scores[g.id] || [],
+					indicators: indicators[g.id] || []
+				};
+			});
+
+			this.viz.distribution.highlight.values = vals;
+			if (tender.date) {
+				this.viz.distribution.highlight.year = tender.date.slice(0, 4);
+			}
+			this.refresh();
 		}
-		this.refresh();
 	}
 
 	refresh(): void {

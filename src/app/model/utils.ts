@@ -131,5 +131,14 @@ export const Utils = {
 			evt.initUIEvent('resize', true, false, window, 0);
 			window.dispatchEvent(evt);
 		}, 0);
+	},
+	isDefined: (value: any): boolean => {
+		if (value === undefined || value === null) {
+			return false;
+		}
+		if (Array.isArray(value) || (typeof value === 'string')) {
+			return value.length > 0;
+		}
+		return true;
 	}
 };

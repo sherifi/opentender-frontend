@@ -1,6 +1,8 @@
 <div class="container-outer" *ngIf="!tender" loading></div>
 <div class="container-outer" *ngIf="notFound">
-	<div class="slab-not-found-error">404: <ng-container i18n>Not Found</ng-container></div>
+	<div class="slab-not-found-error">404:
+		<ng-container i18n>Not Found</ng-container>
+	</div>
 </div>
 <div class="container-outer entity" *ngIf="tender">
 	<div class="container">
@@ -17,19 +19,25 @@
 			<div *ngFor="let group of viz.indicator_groups">
 				<div class="graph-title">{{group.title}}</div>
 				<div class="container">
-					<div class="container-left-3"><graph score-grid [data]="group.scores"></graph></div>
-					<div class="container-left-9"><graph score-grid [data]="group.indicators" [isIndicators]="true"></graph></div>
+					<div class="container-left-3">
+						<graph score-grid [data]="group.scores"></graph>
+					</div>
+					<div class="container-left-9">
+						<graph score-grid [data]="group.indicators" [isIndicators]="true"></graph>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
-		<graph benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title" [entityTitle]="viz.distribution.name" [othersTitle]="viz.distribution.othersTitle" [filters]="viz.distribution.filters"  (filtersChange)="benchmarkFilterChange($event)"></graph>
+		<graph benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title" [entityTitle]="viz.distribution.name" [othersTitle]="viz.distribution.othersTitle" [filters]="viz.distribution.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
 	</div>
 
 	<div class="container" *ngIf="tender.description | defined">
-		<h3><collapse-expand [o]="state.desc"></collapse-expand></h3>
+		<h3>
+			<collapse-expand [o]="state.desc"></collapse-expand>
+		</h3>
 		<div *ngIf="state.desc.open" class="container slab-beta-light container-padded-large">
 			<div class="container justify">
 				<span>{{tender.description}}</span>
@@ -37,13 +45,13 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" *ngIf="!state.buyer.empty">
 		<h3>
 			<collapse-expand [o]="state.buyer"></collapse-expand>
 		</h3>
 		<div *ngIf="state.buyer.open" class="container slab-beta-light container-padded-large">
-			<div class="container-left-6">
-				<div *ngIf="tender.buyers | defined">
+			<div class="container-left-6" *ngIf="tender.buyers | defined">
+				<div>
 					<tender-body *ngFor="let authority of tender.buyers; let i = index" [body]="authority" [icon]="'icon-library'" [link]="'/authority/'+authority.id"></tender-body>
 				</div>
 			</div>
@@ -76,7 +84,7 @@
 				</div>
 				<div *ngIf="tender.administrators | defined">
 					<h4 i18n>Administrators</h4>
-					<div *ngFor="let admin of tender.administrators; let i = index">
+					<div *ngFor="let admin of tender.administrators">
 						<tender-body [body]="admin"></tender-body>
 					</div>
 				</div>
@@ -84,30 +92,32 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" *ngIf="!state.info.empty">
 		<h3>
 			<collapse-expand [o]="state.info"></collapse-expand>
 		</h3>
 		<div *ngIf="state.info.open" class="container slab-beta-light container-padded-large">
-			<div class="container-left-6">
+			<div class="container-left-6" *ngIf="!state.info.subempty['first-column']">
 				<!--<div class="info-foi" *ngIf="!tender.estimatedPrice || !tender.estimatedPrice.value">-->
 				<!--No value is given for this contract, you may request it via your Freedom of Information Laws.<br/>-->
 				<!--<a href="https://fragdenstaat.de/anfrage-stellen/">Request with FragDenStaat.de</a>-->
 				<!--</div>-->
-				<h4 i18n>Prices</h4>
-				<div class="inline-info" *ngIf="tender.estimatedPrice | defined">
-					<h4 i18n>Estimated Price</h4>
-					<tender-price [price]="tender.estimatedPrice"></tender-price>
+				<div *ngIf="!state.info.subempty['prices']">
+					<h4 i18n>Prices</h4>
+					<div class="inline-info" *ngIf="tender.estimatedPrice | defined">
+						<h4 i18n>Estimated Price</h4>
+						<tender-price [price]="tender.estimatedPrice"></tender-price>
+					</div>
+					<div class="inline-info" *ngIf="tender.finalPrice | defined">
+						<h4 i18n>Final Price</h4>
+						<tender-price [price]="tender.finalPrice"></tender-price>
+					</div>
+					<div class="inline-info" *ngIf="tender.documentsPrice | defined">
+						<h4 i18n>Documents Price</h4>
+						<tender-price [price]="tender.documentsPrice"></tender-price>
+					</div>
 				</div>
-				<div class="inline-info" *ngIf="tender.finalPrice | defined">
-					<h4 i18n>Final Price</h4>
-					<tender-price [price]="tender.finalPrice"></tender-price>
-				</div>
-				<div class="inline-info" *ngIf="tender.documentsPrice | defined">
-					<h4 i18n>Documents Price</h4>
-					<tender-price [price]="tender.documentsPrice"></tender-price>
-				</div>
-				<div *ngIf="(tender.estimatedStartDate || tender.estimatedCompletionDate || tender.bidDeadline || tender.documentsDeadline) | defined">
+				<div *ngIf="!state.info.subempty['dates']">
 					<h4 i18n>Dates</h4>
 					<div class="inline-info" *ngIf="tender.estimatedStartDate | defined">
 						<h4 i18n>Estimated Start Date</h4>
@@ -139,7 +149,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container-left-6">
+			<div class="container-left-6" *ngIf="!state.info.subempty['types']">
 				<h4 i18n>Types</h4>
 				<div class="inline-info" *ngIf="tender.supplyType | defined">
 					<h4 i18n>Supply Type</h4>
@@ -179,7 +189,7 @@
 		</div>
 	</div>
 
-	<div class="container" *ngIf="tender.lots | defined">
+	<div class="container" *ngIf="!state.lots.empty">
 		<h3>
 			<collapse-expand [o]="state.lots"></collapse-expand>
 		</h3>
@@ -336,7 +346,7 @@
 		</div>
 	</div>
 
-	<div class="container" *ngIf="(tender.personalRequirements || tender.economicRequirements || tender.technicalRequirements) | defined">
+	<div class="container" *ngIf="!state.reqs.empty">
 		<h3>
 			<collapse-expand [o]="state.reqs"></collapse-expand>
 		</h3>
@@ -364,7 +374,7 @@
 		</div>
 	</div>
 
-	<div class="container" *ngIf="tender.publications | defined">
+	<div class="container" *ngIf="!state.publications.empty">
 		<h3>
 			<collapse-expand [o]="state.publications"></collapse-expand>
 		</h3>
@@ -414,7 +424,7 @@
 		</div>
 	</div>
 
-	<div class="container" *ngIf="tender.documents | defined">
+	<div class="container" *ngIf="!state.documents.empty">
 		<h3>
 			<collapse-expand [o]="state.documents"></collapse-expand>
 		</h3>
@@ -442,7 +452,7 @@
 			<collapse-expand [o]="state.additional"></collapse-expand>
 		</h3>
 		<div *ngIf="state.additional.open" class="container slab-beta-light container-padded-large">
-			<div class="container-left-4">
+			<div class="container-left-4" *ngIf="!this.state.additional.subempty['tender']">
 				<h4 i18n>Tender Information</h4>
 				<div class="inline-info" *ngIf="tender.isEInvoiceAccepted | defined">
 					<h4 i18n>EInvoice Accepted</h4>
@@ -489,7 +499,7 @@
 					{{tender.buyerAssignedId}}
 				</div>
 			</div>
-			<div class="container-left-4" *ngIf="tender.fundings | defined">
+			<div class="container-left-4" *ngIf="!this.state.additional.subempty['fundings']">
 				<div>
 					<h4 i18n>Funding</h4>
 					<div *ngFor="let funding of tender.fundings">
@@ -515,10 +525,11 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="graph-footer">
 		<div class="graph-toolbar-container">
 			<div class="graph-toolbar">
-				<button class="tool-button" (click)="this.showDownloadDialog=true" i18n-title title="Download Data"><i class="icon-cloud-download"></i>
+				<button class="tool-button" (click)="showDownloadDialog=true" i18n-title title="Download Data"><i class="icon-cloud-download"></i>
 					<ng-container i18n>Download</ng-container>
 				</button>
 			</div>
@@ -526,7 +537,7 @@
 	</div>
 	<app-dialog i18n-title title="Download Data" [(visible)]="showDownloadDialog">
 		<div class="download-fixed-height">
-			<pre>{{getTenderJSONString()}}</pre>
+			<pre *ngIf="showDownloadDialog">{{getTenderJSONString()}}</pre>
 		</div>
 		<br>
 		<div class="download-buttons">
