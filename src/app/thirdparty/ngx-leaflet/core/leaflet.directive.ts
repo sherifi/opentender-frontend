@@ -1,5 +1,5 @@
 import {
-	Directive, ElementRef, EventEmitter, HostListener, Input, NgZone, OnChanges, OnInit, Output,
+	Directive, ElementRef, EventEmitter, HostListener, Input, NgZone, OnChanges, OnDestroy, OnInit, Output,
 	SimpleChange
 } from '@angular/core';
 
@@ -12,7 +12,7 @@ import {MapOptions} from '../../leaflet/Leaflet';
 	selector: '[leaflet]'
 })
 export class LeafletDirective
-	implements OnChanges, OnInit {
+	implements OnChanges, OnInit, OnDestroy {
 
 	readonly DEFAULT_ZOOM = 1;
 	readonly DEFAULT_CENTER = latLng(38.907192, -77.036871);
@@ -74,6 +74,15 @@ export class LeafletDirective
 		// Fire map ready event
 		this.mapReady.emit(this.map);
 
+	}
+
+	public ngOnDestroy(): void {
+		if (null != this.resizeTimer) {
+			clearTimeout(this.resizeTimer);
+		}
+		if (this.map) {
+			this.map = null;
+		}
 	}
 
 	ngOnChanges(changes: { [key: string]: SimpleChange }) {

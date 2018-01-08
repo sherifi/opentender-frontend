@@ -1,6 +1,3 @@
-// import { tileLayer, TileLayer } from 'leaflet';
-
-
 import {tileLayer, TileLayer} from '../../leaflet/layer/tile/TileLayer';
 
 export class LeafletTileLayerDefinition {
