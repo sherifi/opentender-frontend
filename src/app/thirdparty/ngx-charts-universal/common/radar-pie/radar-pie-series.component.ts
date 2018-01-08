@@ -4,7 +4,7 @@ import {ColorHelper} from '../../utils/color.helper';
 import {IChartData} from '../../chart.interface';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {arc, pie} from 'd3-shape';
-import {max} from 'd3-array';
+// import {max} from 'd3-array';
 
 interface PieArc {
 	data: IChartData;
@@ -29,7 +29,7 @@ interface PieArc {
 				   [radius]="outerRadius"
 				   [color]="arc.color"
 				   [label]="arc.label"
-				   [max]="max"
+				   [max]="maxValue"
 				   [value]="arc.value"
 				   [explodeSlices]="explodeSlices"
 				   ngx-tooltip
@@ -47,7 +47,7 @@ interface PieArc {
 					[value]="arc.data.value"
 					[gradient]="gradient"
 					[data]="arc.data"
-					[max]="max"
+					[max]="maxValue"
 					[explodeSlices]="explodeSlices"
 					[isActive]="isActive(arc.data)"
 					(select)="onClick($event)"
@@ -67,7 +67,7 @@ interface PieArc {
 					[value]="arc.data.value"
 					[gradient]="gradient"
 					[data]="arc.data"
-					[max]="max"
+					[max]="maxValue"
 					[explodeSlices]="explodeSlices"
 					[isActive]="isActive(arc.data)"
 					(select)="onClick($event)"

@@ -8,11 +8,11 @@ import 'd3-transition';
 	selector: 'g[ngx-charts-pie-label]',
 	template: `
 		<title>{{label}}</title>
-		<svg:text class="pie-label" dy=".35em"
+		<svg:text class="pie-label"
 				  [attr.transform]="transform"
 				  [style.text-anchor]="textAnc"
 				  [style.shape-rendering]="'crispEdges'">
-			{{text}}
+			<svg:tspan *ngFor="let text of texts; let i = index" x="0" [attr.y]="(i*textHeight)+offsetY">{{text}}</svg:tspan>
 		</svg:text>
 		<svg:path fill="none" class="line"
 				  [attr.d]="line"
@@ -40,15 +40,32 @@ export class PieLabelComponent implements OnChanges {
 	labelXY: any;
 	transform: string;
 	line: string;
+	textHeight: number = 16;
 	textAnc: string = 'end';
-	text: string;
+	texts: Array<string> = [];
+	offsetY: number = 0;
 
 	constructor(element: ElementRef, private platform: PlatformService) {
 		this.element = element.nativeElement;
 	}
 
-	getLabel(label: string) {
-		return label; // trimLabel(label, 20);
+	getTexts(label: string): Array<string> {
+		if (label.length > 20) {
+			let result = [''];
+			let array = label.split(' ');
+			array.forEach(w => {
+				let last = result[result.length - 1];
+				if (last.length === 0) {
+					result[result.length - 1] = w;
+				} else if ((last.length + w.length) < 20) {
+					result[result.length - 1] += ' ' + w;
+				} else {
+					result.push(w);
+				}
+			});
+			return result;
+		}
+		return [label];
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -78,11 +95,12 @@ export class PieLabelComponent implements OnChanges {
 		this.line = `M${innerArc.centroid(this.data)}L${outerArc.centroid(this.data)}L${this.labelXY}`;
 		this.transform = `translate(${this.labelXY})`;
 		this.textAnc = this.textAnchor();
-		this.text = this.getLabel(this.label);
-
-		if (this.platform.isBrowser) {
-			this.loadAnimation();
-		}
+		this.texts = this.getTexts(this.label);
+		this.offsetY = -((this.texts.length * this.textHeight) / 2) + (this.textHeight / 2);
+		//
+		// if (this.platform.isBrowser) {
+		// 	this.loadAnimation();
+		// }
 	}
 
 	textAnchor(): any {
@@ -93,21 +111,25 @@ export class PieLabelComponent implements OnChanges {
 		return d.startAngle + (d.endAngle - d.startAngle) / 2;
 	}
 
-	loadAnimation(): void {
-		let label = select(this.element).select('.label');
-		let line = select(this.element).select('.line');
+	// loadAnimation(): void {
+		// let label = select(this.element).select('.pie-label');
+		// let line = select(this.element).select('.line');
+		//
+		// label
+		// 	.attr('opacity', 0)
+		// 	.transition().delay(750).duration(750)
+		// 	.attr('opacity', 1);
+		// line
+		// 	.attr('opacity', 0)
+		// 	.transition().delay(750).duration(750)
+		// 	.attr('opacity', 1);
 
-		label
-			.attr('opacity', 0)
-			.transition().delay(750).duration(750)
-			.attr('opacity', 1);
-
-		line
-			.style('stroke-dashoffset', 2000)
-			.transition().delay(750).duration(750)
-			.style('stroke-dashoffset', '0')
-			.transition()
-			.style('stroke-dasharray', 'none');
-	}
+		// line
+		// 	.style('stroke-dashoffset', 2000)
+		// 	.transition().delay(750).duration(750)
+		// 	.style('stroke-dashoffset', '0')
+		// 	.transition()
+		// 	.style('stroke-dasharray', 'none');
+	// }
 
 }
