@@ -146,9 +146,9 @@ const clientAppConfig = () => {
 			new AngularCompilerPlugin({
 				"mainPath": "client/client.ts",
 				"platform": PLATFORM.Browser,
-				// "hostReplacementPaths": {
-				// "environments/environment.ts": "environments/environment.ts"
-				// },
+				"hostReplacementPaths": {
+					"environments/environment.ts": utils.config.devMode ? "environments/environment.ts" : "environments/environment.prod.ts"
+				},
 				"sourceMap": utils.config.devMode,
 				"tsConfigPath": "src/tsconfig.browser.json",
 				"skipCodeGeneration": true,

@@ -1,5 +1,4 @@
 import * as moment from 'moment';
-import {Consts} from './consts';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
 
 export const Utils = {
@@ -17,28 +16,6 @@ export const Utils = {
 	},
 	dateToUnix: (jsdate: Date) => {
 		return moment(jsdate).utc().valueOf();
-	},
-	formatCurrency: (value: string): string => {
-		if (value === undefined || value === null) {
-			return '';
-		}
-		value = value.toUpperCase();
-		if (Consts.currencies[value]) {
-			return Consts.currencies[value];
-		}
-		return value;
-	},
-	formatCurrencyValue: (value: number, fractionSize: number = 2): string => {
-		if (value === undefined) {
-			return '';
-		}
-		return Utils.formatValue(value);
-	},
-	formatCurrencyValueEUR: (value: number, fractionSize: number = 2): string => {
-		if (value === undefined) {
-			return '';
-		}
-		return '€ ' + Utils.formatValue(value);
 	},
 	expandUnderlined(value: string): string {
 		if (value === undefined || value === null) {
@@ -73,38 +50,6 @@ export const Utils = {
 	formatYear(value): string {
 		return value.toString();
 	},
-	formatValue(n: number): string {
-
-		if (n === null || n === undefined) {
-			return '';
-		}
-		if (n >= 1e6) {
-			// http://bmanolov.free.fr/numbers_names.php
-			const SI_PREFIXES = ['', 'Thousandth', 'Million', 'Billion', 'Trillion', 'Quadrillion', 'Quintillion', 'Sextillion', 'Septillion', 'Octillion',
-				'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion', 'Tredecillion', 'Quattuordecillion', 'Quindecillion',
-				'Sexdecillion', 'Septdecillion', 'Octodecillion', 'Novemdecillion', 'Vigintillion'];
-
-			// https://stackoverflow.com/a/40724354
-			// what tier? (determines SI prefix)
-			let tier = Math.log10(n) / 3 | 0;
-
-			// if zero, we don't need a prefix
-			if (tier === 0) {
-				return n.toLocaleString();
-			}
-
-			// get prefix and determine scale
-			let prefix = SI_PREFIXES[tier];
-			let scale = Math.pow(10, tier * 3);
-
-			// scale the number
-			let scaled = n / scale;
-
-			// format number and add prefix as suffix
-			return scaled.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' ' + prefix;
-		}
-		return n.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
-	},
 	seriesToTable(data: IChartData[], header, multi: boolean) {
 		if (multi) {
 			let list = data.map(d => {
@@ -126,27 +71,27 @@ export const Utils = {
 			return {rows: list, head: hasID ? [header.id, header.name, header.value] : [header.name, header.value]};
 		}
 	},
-	downloadSeries: function(format, data, header, multi: boolean, exportfilename) {
+	downloadSeries: function(format, data, header, multi: boolean, exportfilename): void {
 		if (format === 'csv') {
 			Utils.downloadCSVSeries(data, header, multi, exportfilename);
 		} else if (format === 'json') {
 			Utils.downloadJSON({fields: header, data: data}, exportfilename);
 		}
 	},
-	downloadCSVSeries(data: IChartData[], header, multi: boolean, exportfilename: string) {
+	downloadCSVSeries(data: IChartData[], header, multi: boolean, exportfilename: string): void {
 		let table = Utils.seriesToTable(data, header, multi);
 		let list = [JSON.stringify(table.head)];
 		table.rows.forEach(row => list.push(JSON.stringify(row)));
 		let csv = list.join('\n').replace(/(^\[)|(\]$)/mg, ''); // remove opening [ and closing ] brackets from each line
 		Utils.downloadCSV(csv, exportfilename);
 	},
-	downloadCSV: function(csvString, exportfilename) {
+	downloadCSV: function(csvString, exportfilename): void {
 		Utils.downloadBlob(csvString, exportfilename, 'csv', 'text/csv;charset=utf8;');
 	},
-	downloadJSON: function(obj, exportfilename) {
+	downloadJSON: function(obj, exportfilename): void {
 		Utils.downloadBlob(JSON.stringify(obj, null, '\t'), exportfilename, 'json', 'application/json');
 	},
-	downloadBlob: function(string, exportfilename, ext, type) {
+	downloadBlob: function(string, exportfilename, ext, type): void {
 		const blob = new Blob([string], {'type': type});
 		const filename = exportfilename.toLowerCase().replace(/ /g, '_') + '.' + ext;
 		if (window.navigator.msSaveOrOpenBlob) { // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
@@ -161,10 +106,10 @@ export const Utils = {
 			document.body.removeChild(a);
 		}
 	},
-	roundValueTwoDecimals: (value) => {
+	roundValueTwoDecimals: (value: number): number => {
 		return Math.round(value * 100) / 100;
 	},
-	formatFileSize: (value: number) => {
+	formatFileSize: (value: number): string => {
 		let i = -1;
 		const byteUnits = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 		do {
@@ -173,14 +118,14 @@ export const Utils = {
 		} while (value > 1024);
 		return Math.max(value, 0.1).toFixed(1) + ' ' + byteUnits[i];
 	},
-	scrollToFirst: (className: string) => {
+	scrollToFirst: (className: string): void => {
 		let elements = document.getElementsByClassName(className);
 		if (elements.length == 0) {
 			return;
 		}
 		elements[0].scrollIntoView();
 	},
-	triggerResize: () => {
+	triggerResize: (): void => {
 		setTimeout(() => {
 			let evt = window.document.createEvent('UIEvents');
 			evt.initUIEvent('resize', true, false, window, 0);

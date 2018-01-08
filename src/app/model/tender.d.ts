@@ -10,6 +10,7 @@ declare namespace Definitions {
 		 */
 		street?: string;
 		city?: string;
+		state?: string;
 		postcode?: string;
 		/**
 		 * Cleaned Nuts code
@@ -53,6 +54,7 @@ declare namespace Definitions {
 		 * Is there a subcontractor?
 		 */
 		isSubcontracted?: boolean;
+		isConsortium?: boolean;
 		/**
 		 * subcontractedProportion
 		 */
@@ -73,6 +75,8 @@ declare namespace Definitions {
 		 * Array of Unit Price
 		 */
 		unitPrices?: UnitPrice[];
+		payments?: Payment[];
+		subcontractors?: Bidder[];
 		/**
 		 * Value of the tender likely to be subcontracted to third parties
 		 */
@@ -120,6 +124,10 @@ declare namespace Definitions {
 		 */
 		mainActivities?: string[];
 		metaData?: BodyMetadata;
+		/**
+		 * Array of Indicators
+		 */
+		indicators?: Indicator[];
 	}
 	export interface Body {
 		id?: string;
@@ -188,6 +196,10 @@ declare namespace Definitions {
 		 */
 		isLeader?: boolean;
 		metaData?: BodyMetadata;
+		/**
+		 * Array of Indicators
+		 */
+		indicators?: Indicator[];
 	}
 	export type BuyerType = 'NATIONAL_AUTHORITY' | 'NATIONAL_AGENCY' | 'REGIONAL_AUTHORITY' | 'REGIONAL_AGENCY' | 'PUBLIC_BODY' | 'EUROPEAN_AGENCY' | 'UTILITIES' | 'OTHER';
 	export interface Correction {
@@ -273,10 +285,15 @@ declare namespace Definitions {
 	 */
 	export type DateTime = string; // ^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d$
 	export interface Document {
+		title?: string;
+		language?: string;
 		/**
 		 * Document url
 		 */
 		url?: string;
+		publicationDateTime?: DateTime; // ^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d$
+		type?: 'CONTRACTOR_AGREEMENT';
+		version?: number;
 	}
 	/**
 	 * undocumented form-type enumeration
@@ -300,13 +317,16 @@ declare namespace Definitions {
 		/**
 		 * Score of indicator
 		 */
-		value?: number;
+		value?: IndicatorValue;
 		/**
 		 * Type of indicator
 		 */
-		type?: 'CORRUPTION_SINGLE_BID' | 'CORRUPTION_CALL_FOR_TENDER_PUBLICATION' | 'CORRUPTION_ADVERTISEMENT_PERIOD' | 'CORRUPTION_PROCEDURE_TYPE' | 'CORRUPTION_DECISION_PERIOD' | 'CORRUPTION_TAX_HAVEN' | 'CORRUPTION_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE' | 'TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS';
-		status?: 'CALCULATED' | 'INSUFFICIENT_DATA' | 'UNDEFINED';
+		type?: IndicatorType;
+		status?: IndicatorStatusType;
 	}
+	export type IndicatorStatusType = 'CALCULATED' | 'INSUFFICIENT_DATA' | 'UNDEFINED';
+	export type IndicatorType = 'INTEGRITY_SINGLE_BID' | 'INTEGRITY_CALL_FOR_TENDER_PUBLICATION' | 'INTEGRITY_ADVERTISEMENT_PERIOD' | 'INTEGRITY_PROCEDURE_TYPE' | 'INTEGRITY_DECISION_PERIOD' | 'INTEGRITY_TAX_HAVEN' | 'INTEGRITY_NEW_COMPANY' | 'ADMINISTRATIVE_CENTRALIZED_PROCUREMENT' | 'ADMINISTRATIVE_ELECTRONIC_AUCTION' | 'ADMINISTRATIVE_COVERED_BY_GPA' | 'ADMINISTRATIVE_FRAMEWORK_AGREEMENT' | 'ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE' | 'TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS' | 'TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES';
+	export type IndicatorValue = number;
 	/**
 	 * undocumented language enumeration
 	 */
@@ -325,6 +345,7 @@ declare namespace Definitions {
 		 * Lot number
 		 */
 		lotNumber?: number;
+		validBidsCount?: number;
 		/**
 		 * Date of decision on tender award
 		 */
@@ -345,6 +366,7 @@ declare namespace Definitions {
 		 * cancellationDate
 		 */
 		cancellationDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		completionDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
 		selectionMethod?: SelectionMethod;
 		/**
 		 * Estimated value of tender lot
@@ -414,6 +436,7 @@ declare namespace Definitions {
 		 * MEAT criteria
 		 */
 		awardCriteria?: AwardCriteria[];
+		eligibilityCriteria?: string;
 		/**
 		 * Number of bids received via electronic means
 		 */
@@ -430,7 +453,11 @@ declare namespace Definitions {
 		 * cancellationReason
 		 */
 		cancellationReason?: string;
-		status?: 'ANNOUNCED' | 'AWARDED';
+		status?: 'ANNOUNCED' | 'AWARDED' | 'CANCELLED' | 'PREPARED';
+	}
+	export interface Payment {
+		paymentDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		price?: Price;
 	}
 	export interface Price {
 		/**
@@ -478,7 +505,7 @@ declare namespace Definitions {
 		 */
 		maxAmountWithVat?: number;
 	}
-	export type ProcedureType = 'OPEN' | 'RESTRICTED' | 'NEGOTIATED' | 'COMPETITIVE_DIALOG' | 'NEGOTIATED_WITH_PUBLICATION' | 'NEGOTIATED_WITHOUT_PUBLICATION' | 'DESIGN_CONTEST' | 'MINITENDER' | 'DPS_PURCHASE' | 'OUTRIGHT_AWARD' | 'APPROACHING_BIDDERS' | 'PUBLIC_CONTEST' | 'SIMPLIFIED_BELOW_THE_THRESHOLD' | 'INOVATION_PARTNERSHIP';
+	export type ProcedureType = 'OPEN' | 'RESTRICTED' | 'NEGOTIATED' | 'COMPETITIVE_DIALOG' | 'NEGOTIATED_WITH_PUBLICATION' | 'NEGOTIATED_WITHOUT_PUBLICATION' | 'DESIGN_CONTEST' | 'MINITENDER' | 'DPS_PURCHASE' | 'OUTRIGHT_AWARD' | 'APPROACHING_BIDDERS' | 'PUBLIC_CONTEST' | 'SIMPLIFIED_BELOW_THE_THRESHOLD' | 'INOVATION_PARTNERSHIP' | 'CONCESSION' | 'OTHER';
 	export interface Publication {
 		/**
 		 * Identifier of publication on source
@@ -492,6 +519,10 @@ declare namespace Definitions {
 		 * Url of tender on source, where human readable data are present, null if not available
 		 */
 		humanReadableUrl?: string;
+		/**
+		 * Url of tender on source, where machine readable data are present, null if not available
+		 */
+		machineReadableUrl?: string;
 		/**
 		 * Buyers custom identifier of publication
 		 */
@@ -508,6 +539,7 @@ declare namespace Definitions {
 		 * Date of dispatch (different from publication date)
 		 */
 		dispatchDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		lastUpdate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
 		/**
 		 * Language code of the publication
 		 */
@@ -532,26 +564,26 @@ declare namespace Definitions {
 		 * isParentTender
 		 */
 		isParentTender?: boolean;
+		version?: number;
 	}
 	export interface Score {
-		/**
-		 * Type of indicator score
-		 */
-		type?: 'CORRUPTION' | 'ADMINISTRATIVE' | 'TRANSPARENCY' | 'TENDER';
-		/**
-		 * Status of indicator score
-		 */
-		status?: 'CALCULATED' | 'INSUFFICIENT_DATA' | 'UNDEFINED';
+		type?: ScoreType;
+		status?: IndicatorStatusType;
 		/**
 		 * Calculated indicator score
 		 */
-		value?: number;
+		value?: IndicatorValue;
 	}
+	/**
+	 * Type of indicator score
+	 */
+	export type ScoreType = 'INTEGRITY' | 'ADMINISTRATIVE' | 'TRANSPARENCY' | 'TENDER';
 	/**
 	 * method used for bids evaluation - one of the LOWEST_PRICE or MEAT (most economically advantageous tender), individual MEAT criteria are in awardCriteria
 	 */
 	export type SelectionMethod = 'MEAT' | 'LOWEST_PRICE';
-	export type SupplyType = 'SUPPLIES' | 'WORKS' | 'SERVICES';
+	export type SizeType = 'BELOW_THE_THRESHOLD' | 'ABOVE_THE_THRESHOLD';
+	export type SupplyType = 'SUPPLIES' | 'WORKS' | 'SERVICES' | 'OTHER';
 	export interface Tender {
 		/**
 		 * Tender ID
@@ -634,6 +666,7 @@ declare namespace Definitions {
 		 */
 		modificationReasonDescription?: string;
 		procedureType?: ProcedureType;
+		size?: SizeType;
 		supplyType?: SupplyType;
 		selectionMethod?: SelectionMethod;
 		/**
@@ -684,6 +717,7 @@ declare namespace Definitions {
 		 * Are variant offers accepted?
 		 */
 		areVariantsAccepted?: boolean;
+		isDocumentsAccessRestricted?: boolean;
 		/**
 		 * Tender has options?
 		 */
@@ -717,6 +751,12 @@ declare namespace Definitions {
 		 */
 		documentsDeadline?: DateTime; // ^\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d$
 		/**
+		 * Date of decision on tender award
+		 */
+		awardDecisionDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		contractSignatureDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		completionDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		/**
 		 * Estimated tender duration in months
 		 */
 		estimatedDurationInMonths?: number;
@@ -740,6 +780,9 @@ declare namespace Definitions {
 		 * Maximum number of bids, typically used in Restricted or Negotiated with publication procedure
 		 */
 		maxBidsCount?: number;
+		envisagedMinCandidatesCount?: number;
+		envisagedMaxCandidatesCount?: number;
+		envisagedCandidatesCount?: number;
 		/**
 		 * Price of tender documents
 		 */
@@ -797,6 +840,7 @@ declare namespace Definitions {
 		 * MEAT criteria
 		 */
 		awardCriteria?: AwardCriteria[];
+		eligibilityCriteria?: string;
 		/**
 		 * Array of Languages in which tenders or requests to participate may be submitted
 		 */
@@ -817,6 +861,23 @@ declare namespace Definitions {
 		 * corrections
 		 */
 		corrections?: Correction[];
+		documentsLocation?: Address;
+		_indicators?: {
+		INTEGRITY_SINGLE_BID?: IndicatorValue;
+		INTEGRITY_CALL_FOR_TENDER_PUBLICATION?: IndicatorValue;
+		INTEGRITY_ADVERTISEMENT_PERIOD?: IndicatorValue;
+		INTEGRITY_PROCEDURE_TYPE?: IndicatorValue;
+		INTEGRITY_DECISION_PERIOD?: IndicatorValue;
+		INTEGRITY_TAX_HAVEN?: IndicatorValue;
+		INTEGRITY_NEW_COMPANY?: IndicatorValue;
+		ADMINISTRATIVE_CENTRALIZED_PROCUREMENT?: IndicatorValue;
+		ADMINISTRATIVE_ELECTRONIC_AUCTION?: IndicatorValue;
+		ADMINISTRATIVE_COVERED_BY_GPA?: IndicatorValue;
+		ADMINISTRATIVE_FRAMEWORK_AGREEMENT?: IndicatorValue;
+		ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE?: IndicatorValue;
+		TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS?: IndicatorValue;
+		TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES?: IndicatorValue;
+		};
 		/**
 		 * Array of indicator scores
 		 */

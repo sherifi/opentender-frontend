@@ -1,4 +1,7 @@
 <div class="container-outer" *ngIf="!authority" loading></div>
+<div class="container-outer" *ngIf="notFound">
+	<div class="slab-not-found-error">404: <ng-container i18n>Not Found</ng-container></div>
+</div>
 <div class="container-outer entity" *ngIf="authority">
 	<div class="container container-padded-bottom">
 		<h1 class="container-title">{{authority.name | nameGuard}}</h1>

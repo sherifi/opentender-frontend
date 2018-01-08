@@ -2,6 +2,7 @@ import {enableProdMode, StaticProvider} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MainModule} from './client.module';
 import {getTranslationProviders} from './i18n-providers';
+import {environment} from '../environments/environment';
 
 const init = () => {
 	getTranslationProviders().then(providers => {
@@ -12,6 +13,8 @@ const init = () => {
 		platformBrowserDynamic(<StaticProvider[]>options.providers).bootstrapModule(MainModule, options);
 	});
 };
+if (environment.production) {
+	enableProdMode();
+}
 
-enableProdMode();
 init();

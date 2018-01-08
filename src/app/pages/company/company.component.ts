@@ -24,6 +24,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	public similar: Array<Body> = [];
 	public include_companies_ids: Array<string> = [];
 	public loading: number = 0;
+	public notFound: boolean = false;
 	private subscription: any;
 
 	private viz: {
@@ -57,12 +58,17 @@ export class CompanyPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
+			this.notFound = false;
 			let sub = this.api.getCompany(id).subscribe(
 				result => {
 					this.display(result.data);
 				},
 				error => {
-					this.notify.error(error);
+					if (error.status == 404) {
+						this.notFound = true;
+					} else {
+						this.notify.error(error);
+					}
 				},
 				() => {
 					this.loading--;

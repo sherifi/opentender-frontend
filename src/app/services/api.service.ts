@@ -8,7 +8,7 @@ import {
 	IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
-	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads
+	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads, IApiResultPing
 } from '../app.interfaces';
 
 @Injectable()
@@ -142,11 +142,7 @@ export class ApiService {
 	// country unspecific api gets from backend
 
 	getPortalsStats(): Observable<IApiResultPortalsStats> {
-		let query = '';
-		if (this.config.locale) {
-			query = '?lang=' + this.config.locale;
-		}
-		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats' + query);
+		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats' + (this.config.locale ? '?lang=' + this.config.locale : ''));
 	}
 
 	getPortals(): Observable<IApiResultPortals> {
@@ -158,6 +154,10 @@ export class ApiService {
 	}
 
 	// country unspecific gets from frontend
+
+	ping(): Observable<IApiResultPing> {
+		return this.http.get<IApiResultPing>(this.absUrl + '/ping' + (this.config.locale ? '?lang=' + this.config.locale : ''));
+	}
 
 	getDownloads(): Observable<IApiResultDownloads> {
 		return this.http.get<IApiResultDownloads>(this.absUrl + '/data/files/downloads.json');

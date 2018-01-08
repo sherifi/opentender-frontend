@@ -3,19 +3,21 @@
 		<h1 class="container-title" i18n>Search Sector</h1>
 	</div>
 	<div class="container container-padded-top">
-		<table class="tables">
-			<tr>
-				<th>Sector Profile</th>
-				<th>CPV</th>
-				<th>Name</th>
-				<th>Tender Count</th>
-			</tr>
-			<tr *ngFor="let sector of sectors">
-				<td><a [routerLink]="['/sector/'+sector.id]"><i class="icon-hammer icon-large"></i></a></td>
-				<td>{{sector.id}}</td>
-				<td>{{sector.name}}</td>
-				<td>{{sector.value}}</td>
-			</tr>
-		</table>
+		<div class="tables-container">
+			<table class="tables">
+				<tr>
+					<th>Sector Profile</th>
+					<th>CPV</th>
+					<th>Name</th>
+					<th>Tender Count</th>
+				</tr>
+				<tr *ngFor="let sector of sectors">
+					<td><a [routerLink]="['/sector/'+sector.id]"><i class="icon-hammer icon-large"></i></a></td>
+					<td>{{sector.id}}</td>
+					<td>{{sector.name}}</td>
+					<td>{{sector.value}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

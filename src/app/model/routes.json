@@ -8,7 +8,8 @@
     },
     {
       "path": "start",
-      "title": "Opentender Portals"
+      "title": "Opentender Portals",
+      "rootHTML5": true
     },
     {
       "path": "dashboards",
@@ -95,7 +96,8 @@
       "path": "download",
       "title": "Download",
       "menu": true,
-      "rootMenu": true
+      "rootMenu": true,
+      "rootHTML5": true
     },
     {
       "path": "about",
@@ -125,7 +127,8 @@
     {
       "path": "imprint",
       "title": "Imprint",
-      "rootMenu": true
+      "rootMenu": true,
+      "rootHTML5": true
     },
     {
       "path": "test",

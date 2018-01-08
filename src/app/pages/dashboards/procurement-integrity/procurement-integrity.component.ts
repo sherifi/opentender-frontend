@@ -12,6 +12,6 @@ export class DashboardsIntegrityPage {
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'indicators.pii'];
 
 	constructor(indicators: IndicatorService) {
-		this.indicator = indicators.CORRUPTION;
+		this.indicator = indicators.INTEGRITY;
 	}
 }

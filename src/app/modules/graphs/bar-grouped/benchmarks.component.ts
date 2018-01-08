@@ -201,8 +201,12 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			this.graph.chart.yAxis.label = benchmark.name;
 			if (benchmark.build === 'values') {
 				this.graph.chart.yAxis.defaultWidth = 60;
-				this.graph.chart.yAxis.tickFormatting = Utils.formatCurrencyValue;
-				this.graph.chart.valueFormatting = Utils.formatCurrencyValueEUR;
+				this.graph.chart.yAxis.tickFormatting = (value) => {
+					return this.i18n.formatCurrencyValue(<number>value);
+				};
+				this.graph.chart.valueFormatting = (value) => {
+					return this.i18n.formatCurrencyValueEUR(<number>value);
+				};
 				this.in_years.data = this.buildCompareValueSeries(this.data, benchmark.id);
 			} else {
 				this.graph.chart.yAxis.defaultWidth = 20;

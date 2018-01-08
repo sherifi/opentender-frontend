@@ -268,7 +268,8 @@
     @include outer-container($max-width);
     background-color: $headercolor;
     margin-bottom: 20px;
-    margin-top: 70px;
+    margin-top: 55px;
+    padding-top: 10px;
 
     .header-sub-nav {
       text-align: center;
@@ -313,7 +314,6 @@
         }
       }
     }
-
   }
 
   .header-hero {

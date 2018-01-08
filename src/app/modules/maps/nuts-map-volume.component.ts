@@ -19,15 +19,17 @@ import {Utils} from '../../model/utils';
 export class MapVolumeComponent {
 	@Input()
 	data: IStatsNuts;
-	title: string;
-	map_level: number = 1;
+	public title: string;
+	public map_level: number = 1;
+	public formatTooltip: (featureProperties: any) => string;
 
 	constructor(private i18n: I18NService) {
 		this.title = this.i18n.get('Volume (€)');
+		this.formatTooltip = this.formatTooltipCallback.bind(this);
 	}
 
-	formatTooltip(properties: any): string {
-		return properties.name + ': ' + Utils.formatCurrencyValueEUR(properties.value);
+	formatTooltipCallback(properties: any): string {
+		return properties.name + ': ' + this.i18n.formatCurrencyValueEUR(properties.value);
 	}
 
 	setLevel(lvl: number): void {

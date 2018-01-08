@@ -118,9 +118,13 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 				show: true,
 				showLabel: true,
 				defaultWidth: 80,
-				tickFormatting: Utils.formatCurrencyValue
+				tickFormatting: (value) => {
+					return this.i18n.formatCurrencyValue(<number>value);
+				}
 			},
-			valueFormatting: Utils.formatCurrencyValueEUR,
+			valueFormatting: (value) => {
+				return this.i18n.formatCurrencyValueEUR(<number>value);
+			},
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
@@ -149,10 +153,12 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 				show: true,
 				showLabel: true,
 				defaultWidth: 80,
-				tickFormatting: Utils.formatCurrencyValue
+				tickFormatting: (value: number) => {
+					return this.i18n.formatCurrencyValue(value);
+				}
 			},
 			valueFormatting: (value: number) => {
-				return '€ ' + Utils.formatCurrencyValue(value);
+				return this.i18n.formatCurrencyValueEUR(value);
 			},
 			showGridLines: true,
 			gradient: false,
@@ -199,7 +205,7 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 	}
 
 	getSeriesInfo() {
-		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name:  this.graph.chart.xAxis.label}, filename: 'histogram'};
+		return {data: this.graph.data, header: {value: this.graph.chart.yAxis.label, name: this.graph.chart.xAxis.label}, filename: 'histogram'};
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

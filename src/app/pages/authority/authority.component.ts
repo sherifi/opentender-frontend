@@ -20,6 +20,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;
 	public country: Country;
 	public loading: number = 0;
+	public notFound: boolean = false;
 	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'lots.bids.bidders.name', 'finalPrice'];
 	private subscription: any;
@@ -60,6 +61,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		if (state) {
 			this.columnIds = state.columnIds;
 		}
+		this.notFound = false;
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
@@ -68,7 +70,11 @@ export class AuthorityPage implements OnInit, OnDestroy {
 					this.display(result.data);
 				},
 				(error) => {
-					this.notify.error(error);
+					if (error.status == 404) {
+						this.notFound = true;
+					} else {
+						this.notify.error(error);
+					}
 				},
 				() => {
 					this.loading--;

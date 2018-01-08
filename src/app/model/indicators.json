@@ -38,71 +38,71 @@
     },
     "icon": "icon-trophy"
   },
-  "CORRUPTION": {
-    "id": "CORRUPTION",
+  "INTEGRITY": {
+    "id": "INTEGRITY",
     "name": "Integrity Indicator",
     "plural": "Integrity Indicators",
     "subindicators": {
-      "CORRUPTION_SINGLE_BID": {
+      "INTEGRITY_SINGLE_BID": {
         "name": "Single bidder contract",
         "desc": "Single bid signals a risk when only one bid is submitted in a tender in a competitive market.",
         "order": 1
       },
-      "CORRUPTION_CALL_FOR_TENDER_PUBLICATION": {
+      "INTEGRITY_CALL_FOR_TENDER_PUBLICATION": {
         "name": "Call for tenders publication",
         "desc": "Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.",
         "order": 2
       },
-      "CORRUPTION_PROCEDURE_TYPE": {
+      "INTEGRITY_PROCEDURE_TYPE": {
         "name": "Procedure type",
         "desc": "Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).",
         "order": 3
       },
-      "CORRUPTION_ADVERTISEMENT_PERIOD": {
+      "INTEGRITY_ADVERTISEMENT_PERIOD": {
         "name": "Length of advertisement period",
         "desc": "Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.",
         "order": 5
       },
-      "CORRUPTION_DECISION_PERIOD": {
+      "INTEGRITY_DECISION_PERIOD": {
         "name": "Length of decision period",
         "desc": "Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.",
         "order": 6
       },
-      "CORRUPTION_NEW_COMPANY": {
+      "INTEGRITY_NEW_COMPANY": {
         "name": "New company",
         "desc": "New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).",
         "order": 7
       },
-      "CORRUPTION_TAX_HAVEN": {
+      "INTEGRITY_TAX_HAVEN": {
         "name": "Tax haven",
         "desc": "Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).",
         "order": 8
       },
-      "CORRUPTION_DESCRIPTION_LENGTH": {
+      "INTEGRITY_DESCRIPTION_LENGTH": {
         "notused": true,
         "name": "Description length",
         "desc": "Product description length signals the risk of product description being tailored to one company, when the description is excessively long.",
         "order": 0
       },
-      "CORRUPTION_POLITICAL_CONNECTIONS_OF_SUPPLIERS": {
+      "INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS": {
         "notused": true,
         "name": "Political connections of suppliers",
         "desc": "Political connection of the supplier captures the risk of at least one owner or manager holding a political office.",
         "order": 0
       },
-      "CORRUPTION_WINNER_CONTRACT_SHARE": {
+      "INTEGRITY_WINNER_CONTRACT_SHARE": {
         "notused": true,
         "name": "Winner contract share",
         "desc": "Winner contract share is the share of contract value won by a given company from a given buyer in a given year.",
         "order": 0
       },
-      "CORRUPTION_ELIGIBILITY_CRITERIA_LENGTH": {
+      "INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH": {
         "notused": true,
         "name": "Eligibility criteria length",
         "desc": "Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.",
         "order": 0
       },
-      "CORRUPTION_EVALUATION_CRITERIA": {
+      "INTEGRITY_EVALUATION_CRITERIA": {
         "notused": true,
         "name": "Evaluation criteria",
         "desc": "Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.",

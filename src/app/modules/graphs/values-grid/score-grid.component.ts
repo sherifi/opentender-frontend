@@ -36,7 +36,9 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 			},
 			labels: true,
 			maxValue: 100,
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value) => {
+				return this.i18n.formatValue(<number>value);
+			},
 			colorScheme: Colors.colorSchemes.linear_red_green
 		},
 		select: (event) => {

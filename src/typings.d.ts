@@ -50,6 +50,7 @@ interface IRouterInfo {
 	menu_title?: string;
 	menu?: boolean;
 	rootMenu?: boolean;
+	rootHTML5?: boolean;
 	routerLink?: Array<string>;
 	children?: Array<IRouterInfo>;
 }

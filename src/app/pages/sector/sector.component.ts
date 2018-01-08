@@ -19,6 +19,7 @@ export class SectorPage implements OnInit, OnDestroy {
 	public sector: ISector;
 	public parent_sectors: Array<ISector> = [];
 	public loading: number = 0;
+	public notFound: boolean = false;
 	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	public viz: {
@@ -66,12 +67,17 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
+			this.notFound = false;
 			let sub = this.api.getSectorStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
 				(error) => {
-					this.notify.error(error);
+					if (error.status == 404) {
+						this.notFound = true;
+					} else {
+						this.notify.error(error);
+					}
 				},
 				() => {
 					this.loading--;

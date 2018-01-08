@@ -7,7 +7,6 @@ import {I18NService} from '../modules/i18n/services/i18n.service';
 export interface Country {
 	id: string;
 	name: string;
-	ip?: Country;
 	foi?: any;
 }
 

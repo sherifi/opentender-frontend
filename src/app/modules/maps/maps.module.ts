@@ -11,6 +11,7 @@ import {PipesModule} from '../pipes/pipes.module';
 import {RouterModule} from '@angular/router';
 import {DownloadSeriesModule} from '../download-series/download-series.module';
 import {NGXLeafletModule} from '../../thirdparty/ngx-leaflet/leaflet.module';
+import {I18nModule} from '../i18n/i18n.module';
 
 @NgModule({
 	imports: [
@@ -18,6 +19,7 @@ import {NGXLeafletModule} from '../../thirdparty/ngx-leaflet/leaflet.module';
 		NGXLeafletModule,
 		PipesModule,
 		RouterModule,
+		I18nModule,
 		DownloadSeriesModule,
 	],
 	declarations: [

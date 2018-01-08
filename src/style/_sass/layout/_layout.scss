@@ -18,6 +18,12 @@
   margin-bottom: 0;
   //font-size: 0.8em;
   border-bottom: 2px solid #ebebeb;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
 .container-outer {

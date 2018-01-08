@@ -87,7 +87,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 			showGridLines: true,
 			gradient: false,
 			valueFormatting: (value: number) => {
-				return this.unit + ': ' + Utils.formatValue(value);
+				return this.unit + ': ' + this.i18n.formatValue(value);
 			},
 			colorScheme: Colors.colorSchemes.linear_red_green
 		},
@@ -118,7 +118,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 		value: null,
 		title: '',
 		toolTipFormat: (mark) => {
-			return mark.title + ': ' + Utils.formatValue(mark.value);
+			return mark.title + ': ' + this.i18n.formatValue(mark.value);
 		}
 	};
 

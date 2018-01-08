@@ -213,7 +213,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	}
 
 	setTableTitle(total?) {
-		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+		this.title = this.i18n.get('Tenders') + (total !== null ? ': ' + this.i18n.formatValue(total) : '');
 	}
 
 	display(data: ISearchResultTender): void {

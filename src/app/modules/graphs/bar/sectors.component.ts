@@ -46,7 +46,9 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value) => {
+				return this.i18n.formatValue(<number>value);
+			},
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_2

@@ -90,6 +90,9 @@ export class MapComponent implements OnChanges, OnDestroy {
 	}
 
 	private updateGeo() {
+		if (!this.geolayer || !this.map) {
+			return;
+		}
 		setTimeout(() => {
 			this.geolayer.clearLayers();
 			if (this.geo && this.geo.features.length > 0) {

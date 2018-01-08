@@ -121,7 +121,7 @@ const colors = {
 	redgreen: ['#ff0000', '#fffa4b', '#008000'],
 	indicators: {
 		'ADMINISTRATIVE': '#80aa6a',
-		'CORRUPTION': '#4c959d',
+		'INTEGRITY': '#4c959d',
 		'TRANSPARENCY': '#8e9d63',
 		'TENDER': '#0e9720'
 	}

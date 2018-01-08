@@ -23,7 +23,7 @@ export interface IIndicatorInfoConst {
 
 declare module '*indicators.json' {
 	export var ADMINISTRATIVE: IIndicatorInfoConst;
-	export var CORRUPTION: IIndicatorInfoConst;
+	export var INTEGRITY: IIndicatorInfoConst;
 	export var TRANSPARENCY: IIndicatorInfoConst;
 }
 
@@ -31,17 +31,17 @@ declare module '*indicators.json' {
 export class IndicatorService {
 	private _indicators = Indicators;
 	public ADMINISTRATIVE: IIndicatorInfo;
-	public CORRUPTION: IIndicatorInfo;
+	public INTEGRITY: IIndicatorInfo;
 	public TRANSPARENCY: IIndicatorInfo;
 	public TENDER: IIndicatorInfo;
 	public GROUPS: Array<IIndicatorInfo>;
 
 	constructor(private i18n: I18NService) {
 		this.ADMINISTRATIVE = this.buildIndicatorInfo(this._indicators.ADMINISTRATIVE);
-		this.CORRUPTION = this.buildIndicatorInfo(this._indicators.CORRUPTION);
+		this.INTEGRITY = this.buildIndicatorInfo(this._indicators.INTEGRITY);
 		this.TRANSPARENCY = this.buildIndicatorInfo(this._indicators.TRANSPARENCY);
 		this.TENDER = {id: 'TENDER', name: i18n.get('Good Procurement Score'), plural: i18n.get('Good Procurement Score'), icon: '', subindicators: []};
-		this.GROUPS = [this.ADMINISTRATIVE, this.CORRUPTION, this.TRANSPARENCY];
+		this.GROUPS = [this.ADMINISTRATIVE, this.INTEGRITY, this.TRANSPARENCY];
 	}
 
 	private buildIndicatorInfo(ii: IIndicatorInfoConst): IIndicatorInfo {

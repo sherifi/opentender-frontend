@@ -51,7 +51,7 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 	}
 
 	setTitle(total?) {
-		this.title = this.i18n.get('Authorities') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+		this.title = this.i18n.get('Authorities') + (total !== null ? ': ' + this.i18n.formatValue(total) : '');
 	}
 
 	searchChange(data: ISearchResultAuthority) {

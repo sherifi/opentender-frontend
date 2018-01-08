@@ -21,6 +21,12 @@ td {
   padding: 5px;
 }
 
+.tables-container {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .tables {
   $table-border-color: $base-border-color;
   $table-border: 1px solid $table-border-color;
@@ -30,6 +36,7 @@ td {
   $table-hover-background: darken($table-background, 5%);
   $table-stripe-background-hover: darken($table-stripe-background, 5%);
   width: 100%;
+
   background-color: $table-background;
   th {
     font-weight: bold;

@@ -16,6 +16,7 @@ export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;
 	public parent_regions: Array<IRegion> = [];
 	public child_regions: Array<IRegion> = [];
+	public notFound: boolean = false;
 	private loading: number = 0;
 	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
@@ -46,14 +47,18 @@ export class RegionPage implements OnInit, OnDestroy {
 		}
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
-
 			this.loading++;
+			this.notFound = false;
 			let sub = this.api.getRegionStats({ids: [id]}).subscribe(
 				(result) => {
 					this.display(result.data);
 				},
 				(error) => {
-					this.notify.error(error);
+					if (error.status == 404) {
+						this.notFound = true;
+					} else {
+						this.notify.error(error);
+					}
 				},
 				() => {
 					this.loading--;
@@ -63,7 +68,10 @@ export class RegionPage implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.subscription.unsubscribe();
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
+		this.subscription = null;
 		this.state.put('region', {
 			columnIds: this.columnIds
 		});

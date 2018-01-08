@@ -19,6 +19,7 @@ import {IndicatorService} from '../../services/indicator.service';
 export class TenderPage implements OnInit, OnDestroy {
 	public tender: Definitions.Tender;
 	public loading: number = 0;
+	public notFound: boolean = false;
 	private subscription: Subscription;
 	public showDownloadDialog: boolean = false;
 	public portal: Country;
@@ -34,17 +35,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		publications: {open: false},
 	};
 	public viz = {
-		indicators: {
-			CORRUPTION: {data: []},
-			TRANSPARENCY: {data: []},
-			ADMINISTRATIVE: {data: []}
-		},
-		scores: {
-			TENDER: {data: [], title: ''},
-			CORRUPTION: {data: [], title: ''},
-			TRANSPARENCY: {data: [], title: ''},
-			ADMINISTRATIVE: {data: [], title: ''}
-		},
+		indicator_groups: [],
 		distribution: {
 			data: null,
 			highlight: {
@@ -79,10 +70,6 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.state.additional.label = this.i18n.get('Additional Information');
 		this.state.documents.label = this.i18n.get('Documents');
 		this.state.publications.label = this.i18n.get('Publications');
-		this.viz.scores.TENDER.title = this.i18n.get('Good Procurement Score');
-		this.viz.scores.ADMINISTRATIVE.title = this.i18n.get('Administrative Capacity Score');
-		this.viz.scores.TRANSPARENCY.title = this.i18n.get('Transparency Score');
-		this.viz.scores.CORRUPTION.title = this.i18n.get('Procurement Integrity Score');
 		this.portal = config.country;
 	}
 
@@ -102,10 +89,15 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.subscription = this.route.params.subscribe(params => {
 			let id = params['id'];
 			this.loading++;
+			this.notFound = false;
 			let sub = this.api.getTender(id).subscribe(
 				(result) => this.display(result.data),
 				(error) => {
-					this.notify.error(error);
+					if (error.status == 404) {
+						this.notFound = true;
+					} else {
+						this.notify.error(error);
+					}
 				},
 				() => {
 					this.loading--;
@@ -121,8 +113,8 @@ export class TenderPage implements OnInit, OnDestroy {
 	display(tender: Definitions.Tender): void {
 		this.tender = tender;
 		let vals = {};
-		Object.keys(this.viz.scores).forEach(key => this.viz.scores[key].data = []);
-		Object.keys(this.viz.indicators).forEach(key => this.viz.indicators[key].data = []);
+		let scores = {};
+		let indicators = {};
 		if (tender.indicators) {
 			tender.indicators.forEach(indicator => {
 				if (indicator.status === 'CALCULATED') {
@@ -130,7 +122,8 @@ export class TenderPage implements OnInit, OnDestroy {
 					const ig = this.indicators.getGroupOf(indicator.type);
 					const ii = this.indicators.getIndicatorInfo(indicator.type);
 					if (ig && ii) {
-						this.viz.indicators[ig.id].data.push({id: indicator.type, name: ii.name, value: indicator.value});
+						indicators[ig.id] = indicators[ig.id] || [];
+						indicators[ig.id].push({id: indicator.type, name: ii.name, value: indicator.value});
 					}
 				}
 			});
@@ -141,11 +134,20 @@ export class TenderPage implements OnInit, OnDestroy {
 					vals[score.type] = score.value;
 					const ig = score.type == 'TENDER' ? this.indicators.TENDER : this.indicators.getGroupOf(score.type);
 					if (ig) {
-						this.viz.scores[ig.id].data.push({id: score.type, name: ig.name, value: score.value});
+						scores[ig.id] = scores[ig.id] || [];
+						scores[ig.id].push({id: score.type, name: ig.name, value: score.value});
 					}
 				}
 			});
 		}
+		this.viz.indicator_groups = this.indicators.GROUPS.map(g => {
+			return {
+				title: g.name,
+				scores: scores[g.id] || [],
+				indicators: indicators[g.id] || []
+			};
+		});
+
 		this.viz.distribution.highlight.values = vals;
 		if (tender.date) {
 			this.viz.distribution.highlight.year = tender.date.slice(0, 4);

@@ -40,7 +40,9 @@ export class GraphSectorTreeMap implements OnChanges, ISeriesProvider {
 				min: {height: 400},
 				max: {height: 400}
 			},
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value) => {
+				return this.i18n.formatValue(<number>value);
+			},
 			colorScheme: Colors.colorSchemes.ordinal_cpvs
 		},
 		select: (event) => {
@@ -57,7 +59,7 @@ export class GraphSectorTreeMap implements OnChanges, ISeriesProvider {
 				max: {height: 400}
 			},
 			valueFormatting: (n: number): string => {
-				return '€ ' + Utils.formatValue(n);
+				return this.i18n.formatCurrencyValueEUR(n);
 			},
 			colorScheme: Colors.colorSchemes.ordinal_cpvs
 		},

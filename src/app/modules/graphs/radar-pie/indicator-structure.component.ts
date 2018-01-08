@@ -4,6 +4,7 @@ import {ISeriesProvider, IStatsIndicators} from '../../../app.interfaces';
 import {Utils} from '../../../model/utils';
 import {IndicatorService} from '../../../services/indicator.service';
 import {Colors} from '../../../model/colors';
+import {I18NService} from '../../i18n/services/i18n.service';
 
 @Component({
 	selector: 'graph[indicator-structure]',
@@ -38,7 +39,9 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			},
 			labels: true,
 			maxValue: 100,
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value) => {
+				return this.i18n.formatValue(<number>value);
+			},
 			colorScheme: Colors.colorSchemes.ordinal_diverging
 		},
 		select: (event) => {
@@ -51,7 +54,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	};
 	graph: IChartRadar = this.indicators_pie;
 
-	constructor(private indicators: IndicatorService) {
+	constructor(private indicators: IndicatorService, private i18n: I18NService) {
 	}
 
 	getSeriesInfo() {

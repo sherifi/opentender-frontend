@@ -38,7 +38,9 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 				showLabel: true,
 				minInterval: 0.1,
 				defaultHeight: 20,
-				tickFormatting: Utils.formatValue
+				tickFormatting: (value) => {
+					return this.i18n.formatValue(<number>value);
+				}
 			},
 			yAxis: {
 				show: false,
@@ -46,7 +48,9 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: Utils.formatValue,
+			valueFormatting: (value) => {
+				return this.i18n.formatValue(<number>value);
+			},
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.linear_red_green

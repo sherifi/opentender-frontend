@@ -46,21 +46,23 @@
 		<div>
 			<h2 class="table-title"><ng-container i18n>Sectors</ng-container>: {{sectors_stats.length}}</h2>
 		</div>
-		<table class="tables">
-			<tr>
-				<th i18n>Sector Profile</th>
-				<th i18n>CPV</th>
-				<th i18n>Name</th>
-				<th i18n>Nr. of Tenders</th>
-				<th i18n>Volume of Tenders (€)</th>
-			</tr>
-			<tr *ngFor="let sectorInfo of sectors_stats">
-				<td><a [routerLink]="['/sector/'+sectorInfo.sector.id]"><i class="icon-hammer icon-large"></i></a></td>
-				<td>{{sectorInfo.sector.id}}</td>
-				<td>{{sectorInfo.sector.name}}</td>
-				<td>{{sectorInfo.sector.value | formatNumber}}</td>
-				<td>€ {{sectorInfo.stats.sum_finalPriceEUR.value | formatCurrencyValue}}</td>
-			</tr>
-		</table>
+		<div class="tables-container">
+			<table class="tables">
+				<tr>
+					<th i18n>Sector Profile</th>
+					<th i18n>CPV</th>
+					<th i18n>Name</th>
+					<th i18n>Nr. of Tenders</th>
+					<th i18n>Volume of Tenders (€)</th>
+				</tr>
+				<tr *ngFor="let sectorInfo of sectors_stats">
+					<td><a [routerLink]="['/sector/'+sectorInfo.sector.id]"><i class="icon-hammer icon-large"></i></a></td>
+					<td>{{sectorInfo.sector.id}}</td>
+					<td>{{sectorInfo.sector.name}}</td>
+					<td>{{sectorInfo.sector.value | formatNumber}}</td>
+					<td>€ {{sectorInfo.stats.sum_finalPriceEUR.value | formatCurrencyValue}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

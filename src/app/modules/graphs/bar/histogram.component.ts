@@ -80,9 +80,13 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 				show: true,
 				showLabel: true,
 				defaultWidth: 80,
-				tickFormatting: Utils.formatCurrencyValue
+				tickFormatting: (value) => {
+					return this.i18n.formatCurrencyValue(<number>value);
+				}
 			},
-			valueFormatting: Utils.formatCurrencyValueEUR,
+			valueFormatting: (value) => {
+				return this.i18n.formatCurrencyValueEUR(<number>value);
+			},
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
@@ -111,10 +115,12 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 				show: true,
 				showLabel: true,
 				defaultWidth: 80,
-				tickFormatting: Utils.formatCurrencyValue
+				tickFormatting: (value: number) => {
+					return this.i18n.formatCurrencyValue(value);
+				}
 			},
 			valueFormatting: (value: number) => {
-				return '€ ' + Utils.formatCurrencyValue(value);
+				return this.i18n.formatCurrencyValueEUR(value);
 			},
 			showGridLines: true,
 			gradient: false,

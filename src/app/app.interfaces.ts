@@ -28,27 +28,17 @@ export interface IUsageEntry {
 	missing: number;
 }
 
-export interface IAuthoritySources {
-	body: Buyer;
-	tender: string;
-	country: string;
-}
-
 export interface IAuthority {
 	body: Buyer;
-	sources?: IAuthoritySources[];
+	count: number;
+	countries: Array<string>;
 	value?: number;
-}
-
-export interface ICompanySources {
-	body: Buyer;
-	tender: string;
-	country: string;
 }
 
 export interface ICompany {
 	body: Bidder;
-	sources: ICompanySources[];
+	count: number;
+	countries: Array<string>;
 	value?: number;
 }
 
@@ -312,6 +302,13 @@ export interface IApiResultStatStats {
 	};
 }
 
+export interface IApiResultPing {
+	data: {
+		version: string;
+		country: Country
+	};
+}
+
 export interface IApiResultAutoComplete {
 	data: Array<{
 		key: string;
@@ -422,7 +419,7 @@ export interface ISearchCommandFilter {
 	sort?: string;
 	mode?: string;
 	and?: ISearchCommandFilter[];
-	weights?: ISearchCommandWeights,
+	weights?: ISearchCommandWeights;
 	subrequest?: {
 		[fieldname: string]: string | boolean | number;
 	};
@@ -507,6 +504,8 @@ export interface ITableLibrary {
 	indicators: Array<IIndicatorInfo>;
 	TENDER: IIndicatorInfo;
 	i18n: {
+		formatCurrencyValueEUR: (value: number) => string;
+		formatValue: (value: number) => string;
 		expandCountry: (key: string) => string;
 		nameGuard: (key: string) => string;
 		get: (key: string) => string;

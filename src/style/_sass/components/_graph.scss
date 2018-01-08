@@ -29,6 +29,17 @@ ngx-charts-tree-map ngx-charts-chart > div {
   button {
     font-size: 0.8em;
   }
+
+  @include respond-to(small-down) {
+    float: inherit;
+    display: block;
+    text-align: center;
+  }
+
+  @include respond-to(tiny-down) {
+    font-size: 0.8em;
+  }
+
 }
 
 .graph-title {
@@ -87,8 +98,9 @@ ngx-charts-tree-map ngx-charts-chart > div {
   overflow: hidden;
   width: 100%;
   margin-bottom: 3px;
-  min-height: 30px;
-
+  @include respond-to(medium-up) {
+    min-height: 30px;
+  }
   button {
     margin-top: 0;
     margin-bottom: 0;
@@ -96,11 +108,30 @@ ngx-charts-tree-map ngx-charts-chart > div {
 }
 
 .graph-toolbar-left {
-  float: left;
+  float: inherit;
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  @include respond-to(small-up) {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 }
 
 .graph-toolbar-right {
-  float: right;
-  text-align: right;
+  float: inherit;
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  @include respond-to(small-up) {
+    float: right;
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 

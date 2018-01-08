@@ -4,7 +4,7 @@ import Buyer = Definitions.Buyer;
 import Price = Definitions.Price;
 import Lot = Definitions.Lot;
 import Bid = Definitions.Bid;
-import {ITableColumnAuthority, ITableColumnCompany, ITableColumnTender, ITableCellLine, IIndicatorInfo} from '../app.interfaces';
+import {ITableColumnAuthority, ITableColumnCompany, ITableColumnTender, ITableCellLine, IIndicatorInfo, ITableLibrary} from '../app.interfaces';
 import {Utils} from './utils';
 import Tender = Definitions.Tender;
 
@@ -16,12 +16,12 @@ const ICON = {
 };
 
 const ColumnsFormatUtils = {
-	formatPriceEURValue: (value: number) => {
-		return Utils.formatCurrency('EUR') + '\u00a0' + Utils.formatCurrencyValue(value).replace(/ /g, '\u00a0');
+	formatPriceEURValue: (value: number, library: ITableLibrary) => {
+		return library.i18n.formatCurrencyValueEUR(value).replace(/ /g, '\u00a0');
 	},
-	formatPriceEUR: (price: Price) => {
+	formatPriceEUR: (price: Price, library: ITableLibrary) => {
 		if (price && price.hasOwnProperty('netAmountEur')) {
-			return [{content: ColumnsFormatUtils.formatPriceEURValue(price.netAmountEur)}];
+			return [{content: ColumnsFormatUtils.formatPriceEURValue(price.netAmountEur, library)}];
 		}
 		return [];
 	},
@@ -81,10 +81,10 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 		format: (authority, library): Array<ITableCellLine> => authority.body && authority.body.address ? [{content: library.i18n.expandCountry(authority.body.address.country)}] : []
 	},
 	{
-		name: 'Bids Count',
+		name: 'Tender Count',
 		id: 'count',
 		group: 'Authority',
-		format: (authority, library): Array<ITableCellLine> => [{content: Utils.formatValue(authority.sources.length)}]
+		format: (authority, library): Array<ITableCellLine> => [{content: library.i18n.formatValue(authority.count)}]
 	},
 	{
 		name: 'Main Activities',
@@ -156,10 +156,10 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 		format: (company, library): Array<ITableCellLine> => company.body && company.body.address ? [{content: library.i18n.expandCountry(company.body.address.country)}] : []
 	},
 	{
-		name: 'Bids Count',
+		name: 'Bid Count',
 		id: 'count',
 		group: 'Company',
-		format: (company, library): Array<ITableCellLine> => [{content: Utils.formatValue(company.sources.length)}]
+		format: (company, library): Array<ITableCellLine> => [{content: library.i18n.formatValue(company.count)}]
 	},
 	{
 		name: 'Profile Link',
@@ -353,7 +353,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		id: 'indicators.pii',
 		group: 'Indicators',
 		format: (tender, library) => {
-			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'CORRUPTION'));
+			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'INTEGRITY'));
 		}
 	},
 	{
@@ -535,7 +535,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'finalPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.finalPrice)
+		format: (tender, library) => ColumnsFormatUtils.formatPriceEUR(tender.finalPrice, library)
 	},
 	{
 		name: 'Estimated Price',
@@ -545,7 +545,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'estimatedPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.estimatedPrice)
+		format: (tender, library) => ColumnsFormatUtils.formatPriceEUR(tender.estimatedPrice, library)
 	},
 	{
 		name: 'Documents Price',
@@ -555,7 +555,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'documentsPrice.netAmountEur',
 			ascend: false
 		},
-		format: tender => ColumnsFormatUtils.formatPriceEUR(tender.documentsPrice)
+		format: (tender, library) => ColumnsFormatUtils.formatPriceEUR(tender.documentsPrice, library)
 	},
 	{
 		name: 'Bid Price',
@@ -565,7 +565,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'lots.bids.price.netAmountEur',
 			ascend: false
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.lots) {
 				return [];
 			}
@@ -576,7 +576,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 						if (bid.price && bid.price.netAmountEur) {
 							result.push({
 								prefix: (tender.lots.length ? 'Lot ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' Bid ' + (index_b + 1) : ''),
-								content: ColumnsFormatUtils.formatPriceEURValue(bid.price.netAmountEur)
+								content: ColumnsFormatUtils.formatPriceEURValue(bid.price.netAmountEur, library)
 							});
 						}
 					});

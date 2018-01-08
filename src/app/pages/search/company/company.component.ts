@@ -50,7 +50,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	}
 
 	setTitle(total?) {
-		this.title = this.i18n.get('Companies') + (total !== null ? ': ' + Utils.formatValue(total) : '');
+		this.title = this.i18n.get('Companies') + (total !== null ? ': ' + this.i18n.formatValue(total) : '');
 	}
 
 	searchChange(data: ISearchResultCompany) {

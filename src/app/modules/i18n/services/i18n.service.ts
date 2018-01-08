@@ -2,6 +2,7 @@ import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
 import {Consts} from '../../../model/consts';
 import * as i18nlanguages from '../../../../i18n/languages.json';
+import {Utils} from '../../../model/utils';
 
 declare module '*languages.json' {
 	export var enabled: Array<{
@@ -9,6 +10,63 @@ declare module '*languages.json' {
 		name: string;
 	}>;
 }
+
+interface INumeralName {
+	one?: string;
+	other?: string;
+}
+
+// http://bmanolov.free.fr/numbers_names.php
+const LARGE_NUMBERS_EN_US = [
+	{},
+	{other: 'Thousandth'},
+	{other: 'Million'},
+	{other: 'Billion'},
+	{other: 'Trillion'},
+	{other: 'Quadrillion'},
+	{other: 'Quintillion'},
+	{other: 'Sextillion'},
+	{other: 'Septillion'},
+	{other: 'Octillion'},
+	{other: 'Nonillion'},
+	{other: 'Decillion'},
+	{other: 'Undecillion'},
+	{other: 'Duodecillion'},
+	{other: 'Tredecillion'},
+	{other: 'Quattuordecillion'},
+	{other: 'Quindecillion'},
+	{other: 'Sexdecillion'},
+	{other: 'Septdecillion'},
+	{other: 'Octodecillion'},
+	{other: 'Novemdecillion'},
+	{other: 'Vigintillion'}
+];
+
+// http://bmanolov.free.fr/numbers_names.php
+const LARGE_NUMBERS_EN_UK = [
+	{},
+	{other: 'Thousandth'},
+	{other: 'Million'},
+	{other: 'Milliard'},
+	{other: 'Billion'},
+	{other: 'Billiard'},
+	{other: 'Trillion'},
+	{other: 'Trilliard'},
+	{other: 'Quadrillion'},
+	{other: 'Quadrilliard'},
+	{other: 'Quintillion'},
+	{other: 'Quintillion'},
+	{other: 'Sextillion'},
+	{other: 'Sextilliard'},
+	{other: 'Septillion'},
+	{other: 'Septilliard'},
+	{other: 'Octillion'},
+	{other: 'Octilliard'},
+	{other: 'Nonillion'},
+	{other: 'Nonilliard'},
+	{other: 'Decillion'},
+	{other: 'Decilliard'}
+];
 
 @Injectable()
 export class I18NService {
@@ -31,6 +89,83 @@ export class I18NService {
 	}
 
 	// extras based translation
+
+	public getTranslatedLargeNumberName(nn: INumeralName, value: number) {
+		if (nn) {
+			if (value === 1 && nn.one) {
+				return nn.one;
+			}
+			return nn.other;
+		}
+		return null;
+	}
+
+	public getLargeNumberName(tier: number, value: number) {
+		if (tier < 1) {
+			return '';
+		}
+		let names = LARGE_NUMBERS_EN_UK;
+		if (this._extra && this._extra.numerals) {
+			names = this._extra.numerals;
+		}
+		let name = this.getTranslatedLargeNumberName(names[tier], value);
+		if (name) {
+			return name;
+		}
+		const nums = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+		return '*10' + (tier * 3).toString().split('').map(c => nums[parseInt(c, 10)]).join('');
+	}
+
+	public formatValue(value: number) {
+		if (value === null || value === undefined) {
+			return '';
+		}
+		if (value >= 1e6) {
+			// https://stackoverflow.com/a/40724354
+			// what tier? (determines SI prefix)
+			let tier = Math.log10(value) / 3 | 0;
+
+			// if zero, we don't need a prefix
+			if (tier === 0) {
+				return value.toLocaleString();
+			}
+
+			// determine scale
+			let scale = Math.pow(10, tier * 3);
+
+			// scale the number
+			let scaled = value / scale;
+
+			// format number and add prefix as suffix
+			return scaled.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' ' + this.getLargeNumberName(tier, scaled);
+		}
+		return value.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2});
+	}
+
+	public formatCurrency(value: string) {
+		if (value === undefined || value === null) {
+			return '';
+		}
+		value = value.toUpperCase();
+		if (Consts.currencies[value]) {
+			return Consts.currencies[value];
+		}
+		return value;
+	}
+
+	public formatCurrencyValue(value: number, fractionSize: number = 2) {
+		if (value === undefined) {
+			return '';
+		}
+		return this.formatValue(value);
+	}
+
+	public formatCurrencyValueEUR(value: number, fractionSize: number = 2) {
+		if (value === undefined) {
+			return '';
+		}
+		return '€ ' + this.formatValue(value);
+	}
 
 	public nameGuard(value: string) {
 		return value || this.NameNotAvailable;

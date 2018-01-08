@@ -189,7 +189,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Score',
 		field: 'scores.value',
 		subrequest: {
-			'scores.type': 'CORRUPTION'
+			'scores.type': 'INTEGRITY'
 		},
 		type: ISearchFilterDefType.range,
 	},

@@ -80,6 +80,57 @@ let translations = {
 	'en': {lang: 'en', translation: null, extra: {}}
 };
 
+const NUMERALS = {
+	de: [
+		{},
+		{
+			'one': 'tausend',
+			'other': 'tausend'
+		},
+		{
+			'one': 'Million',
+			'other': 'Millionen'
+		},
+		{
+			'one': 'Milliarde',
+			'other': 'Milliarden'
+		},
+		{
+			'one': 'Billion',
+			'other': 'Billionen'
+		},
+		{
+			'one': 'Billiarde',
+			'other': 'Billiaden'
+		},
+		{
+			'one': 'Trillion',
+			'other': 'Trillionen'
+		},
+		{
+			'one': 'Trilliarde',
+			'other': 'Trilliarden'
+		},
+		{
+			'one': 'Quadrillion',
+			'other': 'Quadrillionen'
+		},
+		{
+			'one': 'Quadrilliarde',
+			'other': 'Quadrilliarden'
+		},
+		{
+			'one': 'Quintillion',
+			'other': 'Quintillionen'
+		},
+		{
+			'one': 'Quintilliarde',
+			'other': 'Quintilliarden'
+		}
+	]
+}
+
+
 languages.forEach(lang => {
 	if (lang.id !== 'en') {
 		let specials = {};
@@ -92,8 +143,9 @@ languages.forEach(lang => {
 			lang: lang.id,
 			translation: fs.readFileSync(path.resolve(I18N, 'language.' + lang.id + '.xlf')).toString(),
 			extra: {
-				countries: JSON.parse(fs.readFileSync(path.resolve(DATA, 'country-names/' + lang.id + '.json')).toString()),
-				portals: specials
+				countries: JSON.parse(fs.readFileSync(path.resolve(DATA, 'country-names', lang.id + '.json')).toString()),
+				portals: specials,
+				numerals: NUMERALS[lang.id]
 			}
 		};
 	}
@@ -206,20 +258,7 @@ let render = function(req, res, language, country) {
 };
 
 let startApp = function(req, res, originalUrl) {
-	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	let c_id = geoip.lookupCountry(ip);
-	let ip_country = null;
-	if (c_id) {
-		c_id = c_id.toLowerCase();
-		if (c_id === 'gb') {
-			c_id = 'uk';
-		}
-		ip_country = portals.filter(portal => portal.id == c_id)[0];
-		if (ip_country) {
-			ip_country = {id: ip_country.id, name: ip_country.name};
-		}
-	}
-	let country = {id: null, name: 'Portals', ip: ip_country};
+	let country = {id: null, name: 'Portals'};
 	req.originalUrl = originalUrl;
 	render(req, res, getLang(req), country);
 };
@@ -242,7 +281,7 @@ let registerPages = country => {
 
 	// Routes with html5pushstate
 	routes.routes.forEach(route => {
-		let s = route.path.split('/')[0];
+		let s = route.path;
 		if (s && s !== '' && s !== '**') {
 			app.use(country_path + '/' + s + '*', checkCache, ngApp);
 		}
@@ -263,14 +302,35 @@ portals.forEach(portal => {
 	}
 });
 
-app.use('/start*', (req, res) => {
-	startApp(req, res, '/start');
+app.use('/ping', (req, res) => {
+	let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	let c_id = geoip.lookupCountry(ip.toString());
+	let ip_country = undefined;
+	if (c_id) {
+		c_id = c_id.toLowerCase();
+		if (c_id === 'gb') {
+			c_id = 'uk';
+		}
+		let portal_country = portals.find(portal => portal.id == c_id);
+		if (portal_country) {
+			let country_name = portal_country.name;
+			let lang = getLang(req);
+			if (lang && lang.extra.countries && lang.extra.countries[portal_country.id.toUpperCase()]) {
+				country_name = lang.extra.countries[portal_country.id.toUpperCase()];
+			}
+			ip_country = {id: portal_country.id, name: country_name};
+		}
+	}
+	res.json({data: {version: VERSION, country: ip_country}});
 });
-app.use('/imprint*', (req, res) => {
-	startApp(req, res, '/imprint');
-});
-app.use('/download*', (req, res) => {
-	startApp(req, res, '/imprint');
+
+// Routes with html5pushstate
+routes.routes.forEach(route => {
+	if (route.rootHTML5) {
+		app.use('/' + route.path + '*', (req, res) => {
+			startApp(req, res, '/' + route.path);
+		});
+	}
 });
 app.use('/', (req, res) => {
 	let url = (req.originalUrl || '').split('?')[0];

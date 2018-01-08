@@ -1,4 +1,7 @@
 <div class="container-outer" *ngIf="!sector" loading></div>
+<div class="container-outer" *ngIf="notFound">
+	<div class="slab-not-found-error">404: <ng-container i18n>Not Found</ng-container></div>
+</div>
 <div class="container-outer entity" *ngIf="sector">
 	<div class="container">
 		<h1 class="container-title">{{sector.name}} (CPV {{sector.id}})</h1>
