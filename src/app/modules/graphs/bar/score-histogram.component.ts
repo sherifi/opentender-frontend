@@ -73,11 +73,13 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.avg_score_in_years.data = null;
-		if (this.data) {
-			this.avg_score_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key]};
-			});
+		if (changes.data) {
+			this.avg_score_in_years.data = null;
+			if (this.data) {
+				this.avg_score_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key]};
+				});
+			}
 		}
 	}
 

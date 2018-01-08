@@ -44,7 +44,7 @@
 		</div>
 		<br>
 		<div>
-			<h2 class="table-title"><ng-container i18n>Sectors</ng-container>: {{sectors_stats.length}}</h2>
+			<h2 class="table-title"><ng-container i18n>Sectors</ng-container><ng-container *ngIf="sectors_stats.length>0">: {{sectors_stats.length}}</ng-container></h2>
 		</div>
 		<div class="tables-container">
 			<table class="tables">

@@ -11,6 +11,7 @@ import '../../thirdparty/leaflet/addons/fullscreen/leaflet-fullscreen-control';
 	template: `
 		<div class="map_containers" [style.height.px]="height">
 			<div leaflet class="map_leaflet" [leafletOptions]="leaflet_options" [style.height.px]="height" (leafletMapReady)="onMapReady($event)"></div>
+			<div *ngIf="loading" class="map_placeholder" [style.line-height.px]="height">LOADING</div>
 			<div *ngIf="empty" class="map_placeholder" [style.line-height.px]="height">NO DATA</div>
 		</div>`,
 	styleUrls: ['leaflet.component.scss'],
@@ -24,6 +25,7 @@ export class MapComponent implements OnChanges, OnDestroy {
 		center: [number, number],
 		noAutoZoom: boolean
 	};
+	@Input() loading: boolean = false;
 	@Input() empty: boolean = false;
 	@Input() height: number = 376;
 	@Input() formatTooltip: (properties: any) => string;
@@ -90,10 +92,10 @@ export class MapComponent implements OnChanges, OnDestroy {
 	}
 
 	private updateGeo() {
-		if (!this.geolayer || !this.map) {
-			return;
-		}
 		setTimeout(() => {
+			if (!this.geolayer || !this.map) {
+				return;
+			}
 			this.geolayer.clearLayers();
 			if (this.geo && this.geo.features.length > 0) {
 				this.geolayer.addData(this.geo);

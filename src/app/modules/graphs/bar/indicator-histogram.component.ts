@@ -209,23 +209,25 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.avg_lots_in_years.data = null;
-		this.sum_lots_in_years.data = null;
-		this.sum_prices_in_years.data = null;
-		this.avg_prices_in_years.data = null;
-		if (this.data) {
-			this.avg_lots_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].percent};
-			});
-			this.sum_lots_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].value};
-			});
-			this.sum_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].sum_finalPriceEUR.value || 0};
-			});
-			this.avg_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].avg_finalPriceEUR.value || 0};
-			});
+		if (changes.data) {
+			this.avg_lots_in_years.data = null;
+			this.sum_lots_in_years.data = null;
+			this.sum_prices_in_years.data = null;
+			this.avg_prices_in_years.data = null;
+			if (this.data) {
+				this.avg_lots_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].percent};
+				});
+				this.sum_lots_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].value};
+				});
+				this.sum_prices_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].sum_finalPriceEUR.value || 0};
+				});
+				this.avg_prices_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].avg_finalPriceEUR.value || 0};
+				});
+			}
 		}
 	}
 

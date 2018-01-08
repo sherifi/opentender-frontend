@@ -81,33 +81,35 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.cpvs_codes_scores.data = [];
-		if (this.data) {
-			this.cpvs_codes_scores.data = Object.keys(this.data).map((key) => {
-				return {id: key, name: this.data[key].name, value: this.data[key].value};
-			});
-			this.cpvs_codes_scores.data.sort((a, b) => {
-				if (a.value > b.value) {
-					return 1;
+		if (changes.data) {
+			this.cpvs_codes_scores.data = null;
+			if (this.data) {
+				this.cpvs_codes_scores.data = Object.keys(this.data).map((key) => {
+					return {id: key, name: this.data[key].name, value: this.data[key].value};
+				});
+				this.cpvs_codes_scores.data.sort((a, b) => {
+					if (a.value > b.value) {
+						return 1;
+					}
+					if (a.value < b.value) {
+						return -1;
+					}
+					return 0;
+				});
+				let othergroup;
+				let othergroupcount = 0;
+				while (this.cpvs_codes_scores.data.length - 8 > 2) {
+					if (!othergroup) {
+						othergroup = {name: '', value: 0};
+					}
+					let item = this.cpvs_codes_scores.data.shift();
+					othergroup.value = Math.max(item.value, othergroup.value);
+					othergroupcount++;
+					othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: Utils.roundValueTwoDecimals(item.value)}]);
 				}
-				if (a.value < b.value) {
-					return -1;
+				if (othergroup) {
+					this.cpvs_codes_scores.data.unshift(othergroup);
 				}
-				return 0;
-			});
-			let othergroup;
-			let othergroupcount = 0;
-			while (this.cpvs_codes_scores.data.length - 8 > 2) {
-				if (!othergroup) {
-					othergroup = {name: '', value: 0};
-				}
-				let item = this.cpvs_codes_scores.data.shift();
-				othergroup.value = Math.max(item.value, othergroup.value);
-				othergroupcount++;
-				othergroup.name = this.i18n.getFormat('[{{count}} other sectors with less than {{value}}]', [{key: 'count', value: othergroupcount}, {key: 'value', value: Utils.roundValueTwoDecimals(item.value)}]);
-			}
-			if (othergroup) {
-				this.cpvs_codes_scores.data.unshift(othergroup);
 			}
 		}
 	}

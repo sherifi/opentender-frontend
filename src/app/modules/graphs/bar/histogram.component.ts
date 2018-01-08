@@ -165,25 +165,27 @@ export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.lots_in_years.data = null;
-		if (this.data) {
-			this.lots_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].value};
-			});
-			if (this.lots_in_years.data.filter(item => item.value > 0).length === 0) {
-				this.lots_in_years.data = [];
-			}
-			this.sum_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].sum_finalPriceEUR.value || 0};
-			});
-			if (this.sum_prices_in_years.data.filter(item => item.value > 0).length === 0) {
-				this.sum_prices_in_years.data = [];
-			}
-			this.avg_prices_in_years.data = Object.keys(this.data).map((key) => {
-				return {name: key, value: this.data[key].avg_finalPriceEUR.value || 0};
-			});
-			if (this.avg_prices_in_years.data.filter(item => item.value > 0).length === 0) {
-				this.avg_prices_in_years.data = [];
+		if (changes.data) {
+			this.lots_in_years.data = null;
+			if (this.data) {
+				this.lots_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].value};
+				});
+				if (this.lots_in_years.data.filter(item => item.value > 0).length === 0) {
+					this.lots_in_years.data = [];
+				}
+				this.sum_prices_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].sum_finalPriceEUR.value || 0};
+				});
+				if (this.sum_prices_in_years.data.filter(item => item.value > 0).length === 0) {
+					this.sum_prices_in_years.data = [];
+				}
+				this.avg_prices_in_years.data = Object.keys(this.data).map((key) => {
+					return {name: key, value: this.data[key].avg_finalPriceEUR.value || 0};
+				});
+				if (this.avg_prices_in_years.data.filter(item => item.value > 0).length === 0) {
+					this.avg_prices_in_years.data = [];
+				}
 			}
 		}
 	}

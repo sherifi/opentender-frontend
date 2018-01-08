@@ -119,15 +119,21 @@ export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		let companies: Array<ICompany> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
-		this.companies_absolute.data = companies.filter(company => company.body.id).map((company) => {
-			return {id: company.body.id, name: this.i18n.nameGuard(company.body.name), value: company.value};
-		}).reverse();
+		if (changes.data) {
+			this.companies_absolute.data = null;
+			this.companies_volume.data = null;
+			if (this.data) {
+				let companies: Array<ICompany> = this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
+				this.companies_absolute.data = companies.filter(company => company.body.id).map((company) => {
+					return {id: company.body.id, name: this.i18n.nameGuard(company.body.name), value: company.value};
+				}).reverse();
 
-		companies = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
-		this.companies_volume.data = companies.filter(company => company.body.id).map((company) => {
-			return {id: company.body.id, name: this.i18n.nameGuard(company.body.name), value: company.value};
-		}).reverse();
+				companies = this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
+				this.companies_volume.data = companies.filter(company => company.body.id).map((company) => {
+					return {id: company.body.id, name: this.i18n.nameGuard(company.body.name), value: company.value};
+				}).reverse();
+			}
+		}
 	}
 
 	getSeriesInfo() {

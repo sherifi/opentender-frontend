@@ -73,7 +73,6 @@ export class DashboardsMarketAnalysisPage implements OnInit, OnDestroy {
 
 	public ngOnInit(): void {
 		this.visualize();
-		// this.search();
 	}
 
 	public ngOnDestroy(): void {

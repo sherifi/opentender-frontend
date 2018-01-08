@@ -169,7 +169,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		if (this.showDialog && this.platform.isBrowser) {
 			setTimeout(() => {
 				Utils.triggerResize();
-			}, 10);
+			}, 1);
 		}
 	}
 
@@ -195,6 +195,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		} else {
 			this.filterWeights = null;
 		}
+		this.showDialog = false;
 		this.visualize();
 		this.search();
 	}

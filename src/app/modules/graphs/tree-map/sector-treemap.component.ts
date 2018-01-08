@@ -81,15 +81,17 @@ export class GraphSectorTreeMap implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.cpv_codes_nr.data = null;
-		this.cpv_codes_prices.data = null;
-		if (this.data) {
-			this.cpv_codes_nr.data = this.data.map(s => {
-				return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
-			});
-			this.cpv_codes_prices.data = this.data.map(s => {
-				return {name: s.sector.name, value: s.stats.sum_finalPriceEUR.value || 0, id: s.sector.id};
-			});
+		if (changes.data) {
+			this.cpv_codes_nr.data = null;
+			this.cpv_codes_prices.data = null;
+			if (this.data) {
+				this.cpv_codes_nr.data = this.data.filter(s => s.sector.value > 0).map(s => {
+					return {name: s.sector.name, value: s.sector.value, id: s.sector.id};
+				});
+				this.cpv_codes_prices.data = this.data.filter(s => !isNaN(s.stats.sum_finalPriceEUR.value) && s.stats.sum_finalPriceEUR.value > 0).map(s => {
+					return {name: s.sector.name, value: s.stats.sum_finalPriceEUR.value, id: s.sector.id};
+				});
+			}
 		}
 	}
 

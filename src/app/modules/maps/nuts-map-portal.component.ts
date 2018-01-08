@@ -13,7 +13,8 @@ declare let L;
 	selector: 'portal-map',
 	template: `
 		<leafletmap
-				[empty]="!portals || portals.length===0"
+				[empty]="portals && portals.length===0"
+				[loading]="!portals"
 				[height]="476"
 				[settings]="leafletSettings"
 				[geo]="leafletGeo"

@@ -13,6 +13,7 @@ import {Utils} from '../../model/utils';
 	template: `
 		<leafletmap
 				[empty]="data_list.length===0"
+				[loading]="!data"
 				[height]="376"
 				[settings]="leafletSettings"
 				[formatTooltip]="formatTooltip"
@@ -144,7 +145,7 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		if (this.platform.isBrowser && this.data) {
+		if (this.platform.isBrowser && (changes.data || changes.level) && this.data) {
 			this.loadMap();
 		}
 	}

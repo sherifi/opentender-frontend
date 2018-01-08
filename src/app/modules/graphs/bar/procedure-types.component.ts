@@ -71,20 +71,21 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.procedure_types_absolute.data = [];
-		if (this.data) {
-			this.procedure_types_absolute.data = Object.keys(this.data).map((key) => {
-				return {id: key, name: Utils.expandUnderlined(key), value: this.data[key]};
-			});
-			this.procedure_types_absolute.data.sort((a, b) => {
-				if (a.value > b.value) {
-					return 1;
-				}
-				if (a.value < b.value) {
-					return -1;
-				}
-				return 0;
-			});
+		if (changes.data) {
+			this.procedure_types_absolute.data = null;
+			if (this.data) {
+				this.procedure_types_absolute.data = Object.keys(this.data).map((key) => {
+					return {id: key, name: Utils.expandUnderlined(key), value: this.data[key]};
+				}).sort((a, b) => {
+					if (a.value > b.value) {
+						return 1;
+					}
+					if (a.value < b.value) {
+						return -1;
+					}
+					return 0;
+				});
+			}
 		}
 	}
 

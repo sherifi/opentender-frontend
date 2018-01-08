@@ -162,13 +162,12 @@ export class SectorPage implements OnInit, OnDestroy {
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.subsectors.data = stats.sectors_stats;
 		viz.authority_nuts.data = stats.terms_authority_nuts;
-		viz.score_in_years.data = stats.histogram_indicators ? stats.histogram_indicators['TENDER'] : null;
+		viz.score_in_years.data = (stats.histogram_indicators ? stats.histogram_indicators['TENDER'] : {}) || {};
 		viz.years.data = Object.keys(stats.histogram_count_finalPrices || {}).map(key => parseInt(key, 10));
 
 		let sub_scores = stats.terms_main_cpv_divisions_scores || stats.terms_main_cpv_groups_scores || stats.terms_main_cpv_categories_scores || stats.terms_main_cpv_full_scores;
-		viz.score_in_sectors.data = null;
+		viz.score_in_sectors.data = {};
 		if (sub_scores) {
-			viz.score_in_sectors.data = {};
 			Object.keys(sub_scores).forEach(key => {
 				let part = sub_scores[key];
 				if (part.scores['TENDER'] !== null) {

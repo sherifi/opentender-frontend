@@ -120,14 +120,20 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		let absolute: Array<IAuthority> = this.data && this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
-		this.authorities_absolute.data = absolute.filter(authority => authority.body.id).map((authority) => {
-			return {id: authority.body.id, name: this.i18n.nameGuard(authority.body.name), value: authority.value};
-		}).reverse();
-		let volume = this.data && this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
-		this.authorities_volume.data = volume.filter(authority => authority.body.id).map((authority) => {
-			return {id: authority.body.id, name: this.i18n.nameGuard(authority.body.name), value: authority.value};
-		}).reverse();
+		if (changes.data) {
+			this.authorities_absolute.data = null;
+			this.authorities_volume.data = null;
+			if (this.data) {
+				let absolute: Array<IAuthority> = this.data.absolute && this.data.absolute.top10 ? this.data.absolute.top10 : [];
+				this.authorities_absolute.data = absolute.filter(authority => authority.body.id).map((authority) => {
+					return {id: authority.body.id, name: this.i18n.nameGuard(authority.body.name), value: authority.value};
+				}).reverse();
+				let volume = this.data.volume && this.data.volume.top10 ? this.data.volume.top10 : [];
+				this.authorities_volume.data = volume.filter(authority => authority.body.id).map((authority) => {
+					return {id: authority.body.id, name: this.i18n.nameGuard(authority.body.name), value: authority.value};
+				}).reverse();
+			}
+		}
 	}
 
 	getSeriesInfo() {
