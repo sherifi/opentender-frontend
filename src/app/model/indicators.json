@@ -28,12 +28,6 @@
         "name": "English as foreign language",
         "desc": "English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.",
         "order": 4
-      },
-      "ADMINISTRATIVE_DISCREPANCIES_BETWEEN_CALL_FOR_TENDER_AND_AWARD": {
-        "notused": true,
-        "name": "Discrepancies between call for tender and contract award notices",
-        "desc": "Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).",
-        "order": 0
       }
     },
     "icon": "icon-trophy"
@@ -121,10 +115,15 @@
         "name": "Publication rate",
         "desc": "Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority."
       },
-      "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
-        "name": "Number of key missing fields in form",
-        "desc": "Number of key missing fields is the ratio of fields with missing values in the call for tender and contract award announcement related to a given tender (based on the most recently published versions).",
+      "TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES": {
+        "name": "Discrepancies between call for tender and contract award notices",
+        "desc": "Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).",
         "order": 1
+      },
+      "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
+        "name": "Share of non-missing key fields",
+        "desc": "Number of key missing fields is the ratio of fields with missing values in the call for tender and contract award announcement related to a given tender (based on the most recently published versions).",
+        "order": 2
       }
     },
     "icon": "icon-checkmark"
