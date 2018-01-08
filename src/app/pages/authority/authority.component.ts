@@ -70,8 +70,9 @@ export class AuthorityPage implements OnInit, OnDestroy {
 					this.display(result.data);
 				},
 				(error) => {
+					this.display(null);
 					if (error.status == 404) {
-						this.notFound = true;
+						this.notFound = true
 					} else {
 						this.notify.error(error);
 					}
@@ -96,6 +97,9 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			this.titleService.set(this.authority.name);
 			this.getSimilars(this.authority.id);
 			this.refresh();
+		} else {
+			this.authority = null;
+			this.titleService.setDefault();
 		}
 	}
 
@@ -139,8 +143,12 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			});
 	}
 
-	displaySimilar(data: { similar: Array<IAuthority> }): void {
-		if (!data.similar) {
+	displaySimilar(data: {
+		similar: Array<IAuthority>
+	}): void {
+		if (!
+				data.similar
+		) {
 			return;
 		}
 		this.similar = data.similar.map(authority => <Body>authority.body);
@@ -151,7 +159,9 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	refresh(): void {
-		if (!this.authority) {
+		if (!
+				this.authority
+		) {
 			return;
 		}
 		let ids = this.getCurrentIds();
@@ -159,7 +169,9 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.search(ids);
 	}
 
-	displayStats(data: { stats: IStats }): void {
+	displayStats(data: {
+		stats: IStats
+	}): void {
 		let viz = this.viz;
 		Object.keys(viz).forEach(key => {
 			viz[key].data = null;

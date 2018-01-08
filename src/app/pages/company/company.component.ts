@@ -64,6 +64,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 					this.display(result.data);
 				},
 				error => {
+					this.display(null);
 					if (error.status == 404) {
 						this.notFound = true;
 					} else {
@@ -139,6 +140,9 @@ export class CompanyPage implements OnInit, OnDestroy {
 			this.titleService.set(this.company.name);
 			this.getSimilars(this.company.id);
 			this.refresh();
+		} else {
+			this.company = null;
+			this.titleService.setDefault();
 		}
 	}
 
@@ -168,7 +172,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	}
 
 	displaySimilar(data: { similar: Array<ICompany> }): void {
-		if (!data.similar) {
+		if (!data || !data.similar) {
 			return;
 		}
 		this.similar = data.similar.map(company => company.body);

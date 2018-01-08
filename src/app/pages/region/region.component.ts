@@ -54,6 +54,7 @@ export class RegionPage implements OnInit, OnDestroy {
 					this.display(result.data);
 				},
 				(error) => {
+					this.display(null);
 					if (error.status == 404) {
 						this.notFound = true;
 					} else {
