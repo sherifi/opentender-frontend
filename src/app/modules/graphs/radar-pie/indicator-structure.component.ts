@@ -39,10 +39,10 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 			},
 			labels: true,
 			maxValue: 100,
-			valueFormatting: (value) => {
-				return this.i18n.formatValue(<number>value);
+			valueFormatting: (value: number) => {
+				return this.i18n.formatValue(value);
 			},
-			colorScheme: Colors.colorSchemes.ordinal_diverging
+			colorScheme: Colors.colorSchemes.linear_red_green
 		},
 		select: (event) => {
 			this.onSelect.emit(event);

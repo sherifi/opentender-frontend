@@ -4,11 +4,12 @@ import {ColorHelper} from '../../utils/color.helper';
 import {IChartData} from '../../chart.interface';
 import {getTooltipLabeledText} from '../tooltip/tooltip.helper';
 import {arc, pie} from 'd3-shape';
-// import {max} from 'd3-array';
 
 interface PieArc {
 	data: IChartData;
+	isLeft: boolean;
 	color: string;
+	label: string;
 	value: number;
 	index: number;
 	startAngle: number;
@@ -127,16 +128,13 @@ export class RadarPieSeriesComponent implements OnChanges {
 			.value((d) => this.radar ? this.getWeight(d) : d.value)
 			.sort(null);
 
-		const arcData = p(this.series).map(d => {
-			// TODO: proper extend PieArcDatum
-			return <any>d;
-		});
+		const arcData = <Array<PieArc>>p(this.series);
 
 		arcData.forEach((d, index) => {
 			d.isLeft = this.midAngle(d) < Math.PI;
 			d.pos = this.outerArc().centroid(d);
 			d.pos[0] = this.outerRadius * (d.isLeft ? 1 : -1);
-			d.color = this.colors.getColor(index);
+			d.color = this.colors.getColor(d.data.value);
 			d.label = formatLabel(d.data.name);
 			d.outerRadius = this.radar ? (this.outerRadius * d.data.value / this.maxValue) : this.outerRadius;
 		});
