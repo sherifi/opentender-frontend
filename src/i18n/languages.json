@@ -6,6 +6,11 @@
       "eng": "German"
     },
     {
+      "id": "fr",
+      "name": "Français",
+      "eng": "French"
+    },
+    {
       "id": "en",
       "name": "English",
       "eng": "English"
@@ -44,13 +49,8 @@
     },
     {
       "id": "fi",
-      "name": "",
-      "eng": "Finnish"
-    },
-    {
-      "id": "fr",
       "name": "Suomi",
-      "eng": "French"
+      "eng": "Finnish"
     },
     {
       "id": "ga",
