@@ -91,6 +91,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 	graph = this.in_years;
 
 	benchmark_groups = [];
+	othersTitle: string;
 	active = {
 		benchmark_group: null,
 		benchmark: null
@@ -98,6 +99,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.in_years.chart.xAxis.label = i18n.get('Year');
+		this.othersTitle = this.i18n.get('Average in Comparision Group');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [
@@ -147,7 +149,6 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		}
 		let series = [];
 		let years = this.collectYears(entity, compare);
-		let othersTitle = this.i18n.get('Average in Comparision Group');
 		years.forEach(year => {
 			let sub = {name: year, series: []};
 			if (entity[year] !== undefined) {
@@ -156,9 +157,9 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: 0, invalid: true});
 			}
 			if (compare[year] !== undefined) {
-				sub.series.push({name: othersTitle, value: compare[year]});
+				sub.series.push({name: this.othersTitle, value: compare[year]});
 			} else {
-				sub.series.push({name: othersTitle, value: 0, invalid: true});
+				sub.series.push({name: this.othersTitle, value: 0, invalid: true});
 			}
 			series.push(sub);
 		});
