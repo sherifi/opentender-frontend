@@ -80,57 +80,6 @@ let translations = {
 	'en': {lang: 'en', translation: null, extra: {}}
 };
 
-const NUMERALS = {
-	de: [
-		{},
-		{
-			'one': 'tausend',
-			'other': 'tausend'
-		},
-		{
-			'one': 'Million',
-			'other': 'Millionen'
-		},
-		{
-			'one': 'Milliarde',
-			'other': 'Milliarden'
-		},
-		{
-			'one': 'Billion',
-			'other': 'Billionen'
-		},
-		{
-			'one': 'Billiarde',
-			'other': 'Billiaden'
-		},
-		{
-			'one': 'Trillion',
-			'other': 'Trillionen'
-		},
-		{
-			'one': 'Trilliarde',
-			'other': 'Trilliarden'
-		},
-		{
-			'one': 'Quadrillion',
-			'other': 'Quadrillionen'
-		},
-		{
-			'one': 'Quadrilliarde',
-			'other': 'Quadrilliarden'
-		},
-		{
-			'one': 'Quintillion',
-			'other': 'Quintillionen'
-		},
-		{
-			'one': 'Quintilliarde',
-			'other': 'Quintilliarden'
-		}
-	]
-}
-
-
 languages.forEach(lang => {
 	if (lang.id !== 'en') {
 		let specials = {};
@@ -145,7 +94,7 @@ languages.forEach(lang => {
 			extra: {
 				countries: JSON.parse(fs.readFileSync(path.resolve(DATA, 'country-names', lang.id + '.json')).toString()),
 				portals: specials,
-				numerals: NUMERALS[lang.id]
+				numerals: JSON.parse(fs.readFileSync(path.resolve(DATA, 'number-names', lang.id + '.json')).toString())
 			}
 		};
 	}
