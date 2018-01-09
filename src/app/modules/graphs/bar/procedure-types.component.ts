@@ -45,8 +45,8 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: (value) => {
-				return this.i18n.formatValue(<number>value);
+			valueFormatting: (value: number) => {
+				return this.i18n.formatValue(value);
 			},
 			showGridLines: true,
 			gradient: false,

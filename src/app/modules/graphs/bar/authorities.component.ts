@@ -47,8 +47,8 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 				showLabel: true,
 				minInterval: 1,
 				defaultHeight: 20,
-				tickFormatting: (value) => {
-					return this.i18n.formatValue(<number>value);
+				tickFormatting: (value: number) => {
+					return this.i18n.formatValue(value);
 				}
 			},
 			yAxis: {
@@ -57,8 +57,8 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: (value) => {
-				return this.i18n.formatValue(<number>value);
+			valueFormatting: (value: number) => {
+				return this.i18n.formatValue(value);
 			},
 			showGridLines: true,
 			gradient: false,
@@ -83,7 +83,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 				show: true,
 				showLabel: true,
 				defaultHeight: 20,
-				tickFormatting: (value) => {
+				tickFormatting: (value: number) => {
 					return this.i18n.formatCurrencyValue(<number>value);
 				}
 			},
@@ -93,7 +93,7 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 				defaultWidth: 150,
 				maxLength: 24,
 			},
-			valueFormatting: (value) => {
+			valueFormatting: (value: number) => {
 				return this.i18n.formatCurrencyValueEUR(<number>value);
 			},
 			showGridLines: true,

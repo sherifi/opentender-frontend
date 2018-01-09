@@ -40,8 +40,8 @@ export class GraphSectorTreeMap implements OnChanges, ISeriesProvider {
 				min: {height: 400},
 				max: {height: 400}
 			},
-			valueFormatting: (value) => {
-				return this.i18n.formatValue(<number>value);
+			valueFormatting: (value: number) => {
+				return this.i18n.formatValue(value);
 			},
 			colorScheme: Colors.colorSchemes.ordinal_cpvs
 		},

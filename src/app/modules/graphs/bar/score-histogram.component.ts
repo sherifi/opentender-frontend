@@ -43,12 +43,12 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 				showLabel: true,
 				defaultWidth: 30,
 				minInterval: 0.1,
-				tickFormatting: (value) => {
-					return this.i18n.formatValue(<number>value);
+				tickFormatting: (value: number) => {
+					return this.i18n.formatValue(value);
 				}
 			},
-			valueFormatting: (value) => {
-				return this.i18n.formatValue(<number>value);
+			valueFormatting: (value: number) => {
+				return this.i18n.formatValue(value);
 			},
 			showGridLines: true,
 			gradient: false,

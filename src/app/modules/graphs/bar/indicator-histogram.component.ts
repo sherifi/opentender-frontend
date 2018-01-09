@@ -118,11 +118,11 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 				show: true,
 				showLabel: true,
 				defaultWidth: 80,
-				tickFormatting: (value) => {
+				tickFormatting: (value: number) => {
 					return this.i18n.formatCurrencyValue(<number>value);
 				}
 			},
-			valueFormatting: (value) => {
+			valueFormatting: (value: number) => {
 				return this.i18n.formatCurrencyValueEUR(<number>value);
 			},
 			showGridLines: true,

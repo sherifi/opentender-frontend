@@ -40,8 +40,8 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 				showLabel: true,
 				defaultWidth: 44,
 				minInterval: 1,
-				tickFormatting: (value) => {
-					return this.i18n.formatValue(<number>value);
+				tickFormatting: (value: number) => {
+					return this.i18n.formatValue(value);
 				}
 			},
 			showGridLines: true,
