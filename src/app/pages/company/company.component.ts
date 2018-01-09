@@ -45,7 +45,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
-		this.viz.stats.title = i18n.get('Benchmark Current Buyer');
+		this.viz.stats.title = i18n.get('Benchmark Current Company');
 	}
 
 	ngOnInit(): void {
