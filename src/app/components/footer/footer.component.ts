@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import {ConfigService} from '../../services/config.service';
+import {ConfigService, Country} from '../../services/config.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
@@ -11,7 +11,7 @@ import {I18NService} from '../../modules/i18n/services/i18n.service';
 	styleUrls: ['footer.component.scss']
 })
 export class FooterComponent implements OnDestroy {
-	public country: string;
+	public country: Country;
 	public version: string;
 	public isRootPage: boolean = false;
 	public contactmail: string;
@@ -21,7 +21,7 @@ export class FooterComponent implements OnDestroy {
 
 	constructor(public router: Router, private config: ConfigService, private i18n: I18NService) {
 		this.contactmail = config.contactmail;
-		this.country = config.country.name;
+		this.country = config.country;
 		this.version = config.config.version;
 		this.isRootPage = this.config.country.id === null;
 		const locale = config.locale || 'en';

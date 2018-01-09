@@ -12,21 +12,21 @@ import {Colors} from '../../../model/colors';
 		<div class="graph-title">{{title}}</div>
 		<div class="benchmark-select">
 			<div class="select-radios">
-				<div i18n>Value Group</div>
+				<div i18n>Indicator Group</div>
 				<label class="checkbox" *ngFor="let group of benchmark_groups">
 					<input [value]="group" name="group" type="radio" [(ngModel)]="active.benchmark_group" (change)="handleGroupChange()">
 					{{group.name}}
 				</label>
 			</div>
 			<div class="select-radios" *ngIf="active.benchmark_group">
-				<div i18n>Value</div>
+				<div i18n>Indicator</div>
 				<label class="checkbox" *ngFor="let bench of active.benchmark_group.benchmarks">
 					<input [value]="bench" name="bench" type="radio" [(ngModel)]="active.benchmark" (change)="handleBenchmarkChange()">
 					{{bench.name}}
 				</label>
 			</div>
 			<div class="select-checks">
-				<div i18n>Comparison</div>
+				<div i18n>Comparison Group</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
 					{{filter.name}}
@@ -49,8 +49,6 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 	title: string;
 	@Input()
 	entityTitle: string;
-	@Input()
-	othersTitle: string;
 	@Input()
 	data: IStats;
 	@Input()
@@ -149,6 +147,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 		}
 		let series = [];
 		let years = this.collectYears(entity, compare);
+		let othersTitle = this.i18n.get('Average in Comparision Group');
 		years.forEach(year => {
 			let sub = {name: year, series: []};
 			if (entity[year] !== undefined) {
@@ -157,9 +156,9 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: 0, invalid: true});
 			}
 			if (compare[year] !== undefined) {
-				sub.series.push({name: this.othersTitle || '', value: compare[year]});
+				sub.series.push({name: othersTitle, value: compare[year]});
 			} else {
-				sub.series.push({name: this.othersTitle || '', value: 0, invalid: true});
+				sub.series.push({name: othersTitle, value: 0, invalid: true});
 			}
 			series.push(sub);
 		});

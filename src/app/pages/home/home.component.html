@@ -3,7 +3,7 @@
 		<div class="container-left-10 hero">
 			<h2 class="hero-title_text" i18n="Banner Slogan Main Page|The portal slogan">Making Public Tenders More Transparent</h2>
 			<p>
-				<ng-container i18n>Welcome to the portal for {{country}}!</ng-container>
+				<ng-container i18n>Welcome to the portal for {{countryname}}!</ng-container>
 				<br/>
 				<ng-container i18n>This platform is part of the <a class="link-charlie" href="http://digiwhist.eu">DIGIWHIST project</a></ng-container>
 				<br>
@@ -16,6 +16,11 @@
 
 <div class="container-padded">
 	<div class="container-outer">
+		<div class="europam">
+			<ng-container i18n>Read more about tender legislation at</ng-container><br/>
+			<a target="_blank" rel="noopener" href="{{ country.id | europamLink}}"><img class="img-europam" alt="EuroPAM" src="/assets/img/europam-logo.png"></a>
+		</div>
+		<br/>
 		<div>
 			<graph home-histogram [data]="viz.lots_in_years.data"></graph>
 		</div>
@@ -64,7 +69,7 @@
 				<div class="card-content">
 					<p class="card-content-subhead" i18n>Download data</p>
 					<a [routerLink]="['/download']" i18n-title title="Download"><h3 class="card-title" i18n>Download</h3></a>
-					<p i18n>Want to work with the data? You can download all the date this page is build on.</p>
+					<p i18n>Want to work with the data? You can download all the data this page is built on.</p>
 				</div>
 			</article>
 			<article class="card">

@@ -146,40 +146,40 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		size: 30
 	},
 	{
-		id: 'cpvs.code.divisions',
+		id: 'ot.cpv.divisions',
 		name: 'CPV (Divisions)',
 		group: 'Sector',
-		field: 'cpvs.code.divisions',
+		field: 'ot.cpv.divisions',
 		type: ISearchFilterDefType.select
 	},
 	{
-		id: 'cpvs.code.groups',
+		id: 'ot.cpv.groups',
 		name: 'CPV (Groups)',
 		group: 'Sector',
-		field: 'cpvs.code.groups',
+		field: 'ot.cpv.groups',
 		type: ISearchFilterDefType.select
 	},
 	{
-		id: 'cpvs.code.categories',
+		id: 'ot.cpv.categories',
 		name: 'CPV (Categories)',
 		group: 'Sector',
-		field: 'cpvs.code.categories',
+		field: 'ot.cpv.categories',
 		type: ISearchFilterDefType.select
 	},
 	{
-		id: 'cpvs.code',
+		id: 'ot.cpv',
 		name: 'CPV (Full)',
 		group: 'Sector',
-		field: 'cpvs.code',
+		field: 'ot.cpv',
 		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'indicators.score_co',
 		name: 'Good Procurement',
 		group: 'Score',
-		field: 'scores.value',
+		field: 'ot.scores.value',
 		subrequest: {
-			'scores.type': 'TENDER'
+			'ot.scores.type': 'TENDER'
 		},
 		type: ISearchFilterDefType.range,
 	},
@@ -187,9 +187,9 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		id: 'indicators.score_pi',
 		name: 'Procurement Integrity',
 		group: 'Score',
-		field: 'scores.value',
+		field: 'ot.scores.value',
 		subrequest: {
-			'scores.type': 'INTEGRITY'
+			'ot.scores.type': 'INTEGRITY'
 		},
 		type: ISearchFilterDefType.range,
 	},
@@ -197,9 +197,9 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		id: 'indicators.score_ac',
 		name: 'Administrative Capacity',
 		group: 'Score',
-		field: 'scores.value',
+		field: 'ot.scores.value',
 		subrequest: {
-			'scores.type': 'ADMINISTRATIVE'
+			'ot.scores.type': 'ADMINISTRATIVE'
 		},
 		type: ISearchFilterDefType.range,
 	},
@@ -207,7 +207,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		id: 'indicators.score_ti',
 		name: 'Transparency',
 		group: 'Score',
-		field: 'scores.value',
+		field: 'ot.scores.value',
 		subrequest: {
 			'scores.type': 'TRANSPARENCY'
 		},

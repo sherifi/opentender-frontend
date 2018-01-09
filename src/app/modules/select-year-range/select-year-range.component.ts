@@ -10,12 +10,6 @@ export class SelectYearRangeComponent implements OnChanges {
 	@Input()
 	years: Array<number>;
 
-	@Input()
-	defStartYear: number;
-
-	@Input()
-	defEndYear: number;
-
 	@Output('onRangeChange')
 	onRangeChange = new EventEmitter();
 
@@ -27,15 +21,14 @@ export class SelectYearRangeComponent implements OnChanges {
 	public empty: boolean = false;
 
 	public ngOnChanges(changes: SimpleChanges): void {
-		if (changes.years && changes.years.currentValue !== null) {
-			this.setYears();
+		if (changes.years) {
+			if (changes.years.currentValue !== null) {
+				this.setYears();
+			}
 		}
 	}
 
-	setYears() {
-		if (this.isSet) {
-			return;
-		}
+	getMinMax() {
 		let years = this.years || [];
 		let startYear = 0;
 		let endYear = 0;
@@ -43,11 +36,22 @@ export class SelectYearRangeComponent implements OnChanges {
 			startYear = startYear == 0 ? year : Math.min(year, startYear);
 			endYear = endYear == 0 ? year : Math.max(year, endYear);
 		});
-		this.minYear = startYear;
-		this.maxYear = endYear;
-		this.startYear = startYear;
-		this.endYear = endYear;
-		this.empty = years.length === 0;
+		return {min: startYear, max: endYear};
+	}
+
+
+	setYears() {
+		let m = this.getMinMax();
+		if (this.isSet) {
+			this.minYear = Math.min(m.min, this.minYear);
+			this.maxYear = Math.max(m.min, this.maxYear);
+			return;
+		}
+		this.empty = (this.years || []).length === 0;
+		this.minYear = m.min;
+		this.maxYear = m.max;
+		this.startYear = this.minYear;
+		this.endYear = this.maxYear;
 		this.isSet = true;
 	}
 

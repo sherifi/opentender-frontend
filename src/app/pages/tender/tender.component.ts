@@ -7,7 +7,7 @@ import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
 import {Subscription} from 'rxjs/Subscription';
-import {ISearchFilterDefType, IStats} from '../../app.interfaces';
+import {ISearchCommandFilter, ISearchFilterDefType, IStats} from '../../app.interfaces';
 import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class TenderPage implements OnInit, OnDestroy {
 	public notFound: boolean = false;
 	private subscription: Subscription;
 	public showDownloadDialog: boolean = false;
-	public portal: Country;
+	public country: Country;
 	public state: { [name: string]: { open: boolean, empty: boolean, label?: string, subempty?: { [name: string]: boolean } } } = {
 		lots: {open: true, empty: true},
 		buyer: {open: true, empty: true},
@@ -43,10 +43,7 @@ export class TenderPage implements OnInit, OnDestroy {
 				values: null
 			},
 			title: '',
-			filters: [
-				{id: 'cpvs', name: '', active: false},
-				{id: 'nuts', name: '', active: false}
-			]
+			filters: []
 		}
 	};
 
@@ -58,9 +55,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.publications.open = true;
 			this.state.reqs.open = true;
 		}
-		this.viz.distribution.title = i18n.get('Benchmark');
-		this.viz.distribution.filters[0].name = i18n.get('Limit to same sector');
-		this.viz.distribution.filters[1].name = i18n.get('Limit to same region (NUTS2)');
+		this.viz.distribution.title = i18n.get('Benchmark Current Tender');
 		this.state.lots.label = this.i18n.get('Lots');
 		this.state.buyer.label = this.i18n.get('Buyer');
 		this.state.indi.label = this.i18n.get('Indicators');
@@ -70,7 +65,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.state.additional.label = this.i18n.get('Additional Information');
 		this.state.documents.label = this.i18n.get('Documents');
 		this.state.publications.label = this.i18n.get('Publications');
-		this.portal = config.country;
+		this.country = config.country;
 	}
 
 	getLotCollapse(lot, index) {
@@ -154,8 +149,8 @@ export class TenderPage implements OnInit, OnDestroy {
 					}
 				});
 			}
-			if (tender.scores) {
-				tender.scores.forEach(score => {
+			if (tender.ot.scores) {
+				tender.ot.scores.forEach(score => {
 					if (score.status === 'CALCULATED') {
 						vals[score.type] = score.value;
 						const ig = score.type == 'TENDER' ? this.indicators.TENDER : this.indicators.getGroupOf(score.type);
@@ -175,10 +170,21 @@ export class TenderPage implements OnInit, OnDestroy {
 			});
 
 			this.viz.distribution.highlight.values = vals;
-			if (tender.date) {
-				this.viz.distribution.highlight.year = tender.date.slice(0, 4);
+			if (tender.ot.date) {
+				this.viz.distribution.highlight.year = tender.ot.date.slice(0, 4);
 			}
+			this.buildBenchmarkFilter();
 			this.refresh();
+		}
+	}
+
+	buildBenchmarkFilter() {
+		this.viz.distribution.filters = [];
+		if (this.tender.ot.cpv) {
+			this.viz.distribution.filters.push({id: 'cpv', name: this.i18n.get('Limit to same sector'), active: false});
+		}
+		if (this.tender.buyers && this.tender.buyers.length > 0 && this.tender.buyers[0].address && this.tender.buyers[0].address.ot && this.tender.buyers[0].address.ot.nutscode) {
+			this.viz.distribution.filters.push({id: 'nuts', name: this.i18n.get('Limit to same region (NUTS2)'), active: false, data: this.tender.buyers[0].address.ot.nutscode});
 		}
 	}
 
@@ -186,21 +192,22 @@ export class TenderPage implements OnInit, OnDestroy {
 		if (!this.tender) {
 			return;
 		}
-		let filters = [];
-		if (this.viz.distribution.filters[0].active && this.tender.cpvs && this.tender.cpvs.length > 0) {
-			filters.push({
-				field: 'cpvs.code.divisions', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [this.tender.cpvs[0].code.slice(0, 2)], and: [
-					{field: 'cpvs.isMain', type: ISearchFilterDefType[ISearchFilterDefType.bool], value: [true]}
-				]
-			});
-		}
-		if (this.viz.distribution.filters[1].active && this.tender.buyers && this.tender.buyers.length > 0 && this.tender.buyers[0].address && this.tender.buyers[0].address.nutscode) {
-			let level = 3;
-			filters.push({
-				field: 'buyers.address.nutscode.nuts' + level, type: ISearchFilterDefType[ISearchFilterDefType.term],
-				value: [this.tender.buyers[0].address.nutscode.slice(0, 2 + level)]
-			});
-		}
+		let filters: Array<ISearchCommandFilter> = this.viz.distribution.filters.filter(f => f.active).map(f => {
+			if (f.id === 'nuts') {
+				let level = 3;
+				return {
+					field: 'buyers.address.ot.nutscode.nuts' + level,
+					type: ISearchFilterDefType[ISearchFilterDefType.term],
+					value: [f.data.slice(0, 2 + level)]
+				};
+			} else if (f.id === 'cpv') {
+				return {
+					field: 'ot.cpv.divisions',
+					type: ISearchFilterDefType[ISearchFilterDefType.term],
+					value: [this.tender.ot.cpv.slice(0, 2)]
+				};
+			}
+		});
 		let sub = this.api.getTenderStats({ids: [this.tender.id], filters: filters}).subscribe(
 			(result) => this.displayStats(result.data),
 			(error) => {

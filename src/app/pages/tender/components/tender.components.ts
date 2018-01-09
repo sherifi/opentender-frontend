@@ -24,7 +24,7 @@ export class CollapseExpandComponent {
 		<div *ngIf="address">
 			<div *ngIf="address.street | defined">{{address.street}}</div>
 			<div *ngIf="(address.postcode||address.city) | defined"><span *ngIf="address.postcode | defined">{{address.postcode}}, </span>{{address.city}}</div>
-			<div *ngIf="address.nutscode | defined"><a [routerLink]="['/region/'+address.nutscode]">NUTS {{address.nutscode}}</a></div>
+			<div *ngIf="address.ot.nutscode | defined"><a [routerLink]="['/region/'+address.ot.nutscode]">NUTS {{address.ot.nutscode}}</a></div>
 			<div *ngIf="address.country | defined">{{address.country | expandCountry}}</div>
 		</div>
 	`
@@ -77,12 +77,6 @@ export class TenderBodyLineComponent {
 	<ng-container *ngIf="price.currency!=='EUR'">
 	<div *ngIf="price.netAmountNational | defined"><span>(national)</span> <span>{{price.currencyNational | formatCurrency}}</span> {{price.netAmountNational | formatCurrencyValue}}</div>
 	</ng-container>
-		<!--<div *ngIf="price.netAmount | defined"><span>(netAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.netAmount | formatCurrencyValue}}</div>-->
-	<!--<div *ngIf="price.amountWithVat | defined"><span>(amountWithVat)</span> <span>{{price.currency | formatCurrency}}</span> {{price.amountWithVat | formatCurrencyValue}}</div>-->
-	<!--<div *ngIf="price.minNetAmount | defined"><span>(minNetAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.minNetAmount | formatCurrencyValue}}</div>-->
-	<!--<div *ngIf="price.maxNetAmount | defined"><span>(maxNetAmount)</span> <span>{{price.currency | formatCurrency}}</span> {{price.maxNetAmount | formatCurrencyValue}}</div>-->
-	<!--<div *ngIf="price.minAmountWithVat | defined"><span>(minAmountWithVat)</span> <span>{{price.currency | formatCurrency}}</span> {{price.minAmountWithVat | formatCurrencyValue}}</div>-->
-	<!--<div *ngIf="price.maxAmountWithVat | defined"><span>(maxAmountWithVat)</span> <span>{{price.currency | formatCurrency}}</span> {{price.maxAmountWithVat | formatCurrencyValue}}</div>-->
 	<div *ngIf="price.vat | defined"><span>(VAT)</span> {{price.vat}}%</div>
 </span>`
 })

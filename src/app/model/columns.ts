@@ -30,7 +30,7 @@ const ColumnsFormatUtils = {
 			return [];
 		}
 		let result: Array<ITableCellLine> = [];
-		tender.scores.forEach(score => {
+		tender.ot.scores.forEach(score => {
 			if (score.status === 'CALCULATED' && score.type === group.id) {
 				let collapseLines: Array<ITableCellLine> = [];
 				tender.indicators.forEach(indicator => {
@@ -219,10 +219,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 	},
 	{
 		name: 'Supplier Region',
-		id: 'lots.bids.bidder.address.nutscode',
+		id: 'lots.bids.bidder.address.ot.nutscode',
 		group: 'Supplier',
 		sortBy: {
-			id: 'lots.bids.bidder.address.nutscode',
+			id: 'lots.bids.bidder.address.ot.nutscode',
 			ascend: true
 		},
 		format: tender => {
@@ -235,8 +235,8 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Bidder) => {
-								if (bidder.address && bidder.address.nutscode) {
-									let nut = bidder.address.nutscode;
+								if (bidder.address && bidder.address.ot && bidder.address.ot.nutscode) {
+									let nut = bidder.address.ot.nutscode;
 									result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
 								}
 							});
@@ -266,10 +266,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 	},
 	{
 		name: 'Buyer Region',
-		id: 'buyer.address.nutscode',
+		id: 'buyer.address.ot.nutscode',
 		group: 'Buyer',
 		sortBy: {
-			id: 'buyers.address.nutscode',
+			id: 'buyers.address.ot.nutscode',
 			ascend: true
 		},
 		format: tender => {
@@ -278,8 +278,8 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			let result: Array<ITableCellLine> = [];
 			tender.buyers.forEach((buyer: Buyer) => {
-				if (buyer.address && buyer.address.nutscode) {
-					let nut = buyer.address.nutscode;
+				if (buyer.address && buyer.address.ot && buyer.address.ot.nutscode) {
+					let nut = buyer.address.ot.nutscode;
 					result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
 				}
 			});
@@ -333,7 +333,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			let result: Array<ITableCellLine> = [];
 			let collapseLines: Array<ITableCellLine> = [];
-			tender.scores.forEach(score => {
+			tender.ot.scores.forEach(score => {
 				if (score.status === 'CALCULATED' && score.type !== library.TENDER.id) {
 					let group = library.indicators.find(g => g.id == score.type);
 					if (group) {
@@ -341,7 +341,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					}
 				}
 			});
-			let tenderscore = tender.scores.find(s => s.type === library.TENDER.id);
+			let tenderscore = tender.ot.scores.find(s => s.type === library.TENDER.id);
 			if (tenderscore) {
 				result.push({prefix: library.TENDER.name, score: tenderscore.value, hint: library.TENDER.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
 			}
@@ -385,7 +385,11 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
-				return {content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				if (cpv['valid']) {
+					return {content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				} else {
+					return {content: (cpv['name'] || '') + ' ' + cpv.code};
+				}
 			});
 		}
 	},
@@ -402,7 +406,11 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			return tender.cpvs.map(cpv => {
-				return {list: true, content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				if (cpv['valid']) {
+					return {list: true, content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				} else {
+					return {list: true, content: (cpv['name'] || '') + ' ' + cpv.code};
+				}
 			});
 		}
 	},
@@ -419,7 +427,11 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
-				return {content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				if (cpv['valid']) {
+					return {content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				} else {
+					return {content: cpv.code};
+				}
 			});
 		}
 	},
@@ -436,7 +448,11 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			return tender.cpvs.map(cpv => {
-				return {list: true, content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				if (cpv['valid']) {
+					return {list: true, content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+				} else {
+					return {list: true, content: cpv.code};
+				}
 			});
 		}
 	},

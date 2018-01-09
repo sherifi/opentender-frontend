@@ -13,10 +13,6 @@ declare namespace Definitions {
 		state?: string;
 		postcode?: string;
 		/**
-		 * Cleaned Nuts code
-		 */
-		nutscode?: string;
-		/**
 		 * Country Code: ISO 3166-1 alpha-2 = two letter
 		 */
 		country?: string;
@@ -28,6 +24,12 @@ declare namespace Definitions {
 		 * Array of Nuts
 		 */
 		nuts?: (string | null)[];
+		ot?: {
+		/**
+		 * Cleaned Nuts code
+		 */
+		nutscode?: string;
+		};
 	}
 	export interface AwardCriteria {
 		/**
@@ -464,6 +466,7 @@ declare namespace Definitions {
 		 * ISO 4217 of used currency
 		 */
 		currency?: string;
+		publicationDate?: Date; // ^\d{4}-[01]\d-[0-3]\d$
 		/**
 		 * ISO 4217 of used currency
 		 */
@@ -862,30 +865,37 @@ declare namespace Definitions {
 		 */
 		corrections?: Correction[];
 		documentsLocation?: Address;
-		_indicators?: {
-		INTEGRITY_SINGLE_BID?: IndicatorValue;
-		INTEGRITY_CALL_FOR_TENDER_PUBLICATION?: IndicatorValue;
-		INTEGRITY_ADVERTISEMENT_PERIOD?: IndicatorValue;
-		INTEGRITY_PROCEDURE_TYPE?: IndicatorValue;
-		INTEGRITY_DECISION_PERIOD?: IndicatorValue;
-		INTEGRITY_TAX_HAVEN?: IndicatorValue;
-		INTEGRITY_NEW_COMPANY?: IndicatorValue;
-		ADMINISTRATIVE_CENTRALIZED_PROCUREMENT?: IndicatorValue;
-		ADMINISTRATIVE_ELECTRONIC_AUCTION?: IndicatorValue;
-		ADMINISTRATIVE_COVERED_BY_GPA?: IndicatorValue;
-		ADMINISTRATIVE_FRAMEWORK_AGREEMENT?: IndicatorValue;
-		ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE?: IndicatorValue;
-		TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS?: IndicatorValue;
-		TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES?: IndicatorValue;
+		ot?: {
+		indicators?: {
+			INTEGRITY_SINGLE_BID?: IndicatorValue;
+			INTEGRITY_CALL_FOR_TENDER_PUBLICATION?: IndicatorValue;
+			INTEGRITY_ADVERTISEMENT_PERIOD?: IndicatorValue;
+			INTEGRITY_PROCEDURE_TYPE?: IndicatorValue;
+			INTEGRITY_DECISION_PERIOD?: IndicatorValue;
+			INTEGRITY_TAX_HAVEN?: IndicatorValue;
+			INTEGRITY_NEW_COMPANY?: IndicatorValue;
+			ADMINISTRATIVE_CENTRALIZED_PROCUREMENT?: IndicatorValue;
+			ADMINISTRATIVE_ELECTRONIC_AUCTION?: IndicatorValue;
+			ADMINISTRATIVE_COVERED_BY_GPA?: IndicatorValue;
+			ADMINISTRATIVE_FRAMEWORK_AGREEMENT?: IndicatorValue;
+			ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE?: IndicatorValue;
+			TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS?: IndicatorValue;
+			TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES?: IndicatorValue;
 		};
+		cpv?: string;
 		/**
-		 * Array of indicator scores
+		 * Array of Indicator Scores
 		 */
 		scores?: Score[];
 		/**
-		 * Unified 'Tender' Date based on tender.awardDeadline && tender.lots.awardDecisionDate for Tender Date filtering
+		 * Unified Tender Date
 		 */
 		date?: Date; // ^\d{4}-[01]\d-[0-3]\d$
+		/**
+		 * Country Code: ISO 3166-1 alpha-2 = two letter OR ('EU' == European Institutions)
+		 */
+		country?: string;
+		};
 	}
 	export interface UnitPrice {
 		/**

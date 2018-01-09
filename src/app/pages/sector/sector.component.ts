@@ -107,7 +107,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		let filters = [];
 		if (this.filter.years) {
 			let yearFilter: ISearchCommandFilter = {
-				field: 'date',
+				field: 'ot.date',
 				type: 'years',
 				value: [this.filter.years.startValue, this.filter.years.endValue + 1],
 			};
@@ -144,8 +144,12 @@ export class SectorPage implements OnInit, OnDestroy {
 		if (data.sector) {
 			this.titleService.set(data.sector.name);
 		}
-
-		this.displayStats(data.stats);
+		let filters = this.buildFilters();
+		if (filters.length > 0) {
+			this.visualize();
+		} else {
+			this.displayStats(data.stats);
+		}
 		this.search();
 	}
 
@@ -186,16 +190,10 @@ export class SectorPage implements OnInit, OnDestroy {
 			return;
 		}
 		let filters = this.buildFilters();
-		let subfilter: ISearchCommandFilter = {
-			field: 'cpvs.isMain',
-			type: 'term',
-			value: [true]
-		};
 		let filter: ISearchCommandFilter = {
-			field: this.sector.level ? 'cpvs.code.' + this.sector.level : 'cpvs.code',
+			field: this.sector.level ? 'ot.cpv.' + this.sector.level : 'ot.cpv',
 			type: 'term',
 			value: [this.sector.id],
-			and: [subfilter]
 		};
 		filters.push(filter);
 		this.search_cmd = {filters: filters};

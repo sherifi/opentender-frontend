@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchFilterDefType} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchFilterDefType, ISearchCommandFilter} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 
@@ -32,17 +32,14 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		company_nuts: { data: IStatsNuts, title?: string };
 		lots_in_years: { data: IStatsPricesInYears, title?: string };
-		stats: { data: IStats, title?: string, othersTitle?: string, filters?: Array<IBenchmarkFilter> };
+		stats: { data: IStats, title?: string, filters?: Array<IBenchmarkFilter> };
 	} = {
 		top_companies: {data: null},
 		cpvs_codes: {data: null},
 		company_nuts: {data: null},
 		lots_in_years: {data: null},
 		stats: {
-			data: null, filters: [
-				{id: 'buyerType', name: '', active: false},
-				{id: 'mainActivities', name: '', active: false}
-			]
+			data: null, filters: []
 		}
 	};
 
@@ -50,10 +47,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 				private state: StateService, private i18n: I18NService, private config: ConfigService, private notify: NotifyService) {
 		this.country = config.country;
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
-		this.viz.stats.title = i18n.get('Benchmark');
-		this.viz.stats.othersTitle = i18n.get('Average of all Authorities');
-		this.viz.stats.filters[0].name = i18n.get('Limit to same authority type');
-		this.viz.stats.filters[1].name = i18n.get('Limit to same main activities');
+		this.viz.stats.title = i18n.get('Benchmark Current Authority');
 	}
 
 	ngOnInit(): void {
@@ -91,9 +85,20 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.subscription.unsubscribe();
 	}
 
+	buildBenchmarkFilter() {
+		this.viz.stats.filters = [];
+		if (this.authority.buyerType) {
+			this.viz.stats.filters.push({id: 'buyerType', name: this.i18n.get('Limit to same Authority Type'), active: true});
+		}
+		if (this.authority.mainActivities && this.authority.mainActivities.length > 0) {
+			this.viz.stats.filters.push({id: 'mainActivities', name: this.i18n.get('Limit to same Main Activities'), active: false});
+		}
+	}
+
 	display(data: { authority: IAuthority }): void {
 		if (data && data.authority) {
 			this.authority = data.authority.body;
+			this.buildBenchmarkFilter();
 			this.titleService.set(this.authority.name);
 			this.getSimilars(this.authority.id);
 			this.refresh();
@@ -109,13 +114,13 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	}
 
 	getStats(ids: Array<string>) {
-		let filters = [];
-		if (this.viz.stats.filters[0].active) {
-			filters.push({field: 'buyers.buyerType', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [this.authority.buyerType]});
-		}
-		if (this.viz.stats.filters[1].active && this.authority.mainActivities && this.authority.mainActivities.length > 0) {
-			filters.push({field: 'buyers.mainActivities', type: ISearchFilterDefType[ISearchFilterDefType.term], value: this.authority.mainActivities});
-		}
+		let filters: Array<ISearchCommandFilter> = this.viz.stats.filters.filter(f => f.active).map(f => {
+			if (f.id === 'buyerType') {
+				return {field: 'buyers.buyerType', type: ISearchFilterDefType[ISearchFilterDefType.term], value: [this.authority.buyerType]};
+			} else if (f.id === 'mainActivities') {
+				return {field: 'buyers.mainActivities', type: ISearchFilterDefType[ISearchFilterDefType.term], value: this.authority.mainActivities};
+			}
+		});
 		this.loading++;
 		let sub = this.api.getAuthorityStats({ids, filters}).subscribe(
 			(result) => {

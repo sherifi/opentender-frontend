@@ -229,11 +229,11 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		if (!this.selected) {
 			if (!this.filterWeights) {
 				filter = {
-					field: 'scores.type',
+					field: 'ot.scores.type',
 					type: 'term',
 					value: [this.searchPrefix],
 					and: [{
-						field: 'scores.value',
+						field: 'ot.scores.value',
 						type: 'range',
 						value: this.searchScore
 					}]
@@ -261,7 +261,7 @@ export class DashboardsIndicatorComponent implements OnChanges {
 		let filters = [filter];
 		if (this.filter.years) {
 			let yearFilter: ISearchCommandFilter = {
-				field: 'date',
+				field: 'ot.date',
 				type: 'years',
 				value: [this.filter.years.startValue, this.filter.years.endValue + 1],
 			};

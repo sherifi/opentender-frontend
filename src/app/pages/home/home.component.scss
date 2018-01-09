@@ -126,4 +126,15 @@
     margin-top: 0;
   }
 
+  .europam {
+    text-align: center;
+    .img-europam {
+      vertical-align: middle;
+      height: 38px;
+      &:hover {
+        border: 1px solid $base-border-color;
+      }
+    }
+  }
+
 }

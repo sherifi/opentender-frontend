@@ -164,12 +164,12 @@ export class TenderTableComponent implements OnChanges, OnInit {
 					let weightsfilter = cmd.filters.find(c => !!c.weights);
 					if (weightsfilter && result && result.data && result.data.hits && result.data.hits.hits) {
 						result.data.hits.hits.forEach(hit => {
-							let score = hit.scores.find(s => s.type === weightsfilter.field);
+							let score = hit.ot.scores.find(s => s.type === weightsfilter.field);
 							if (score) {
 								this.recalculateScore(score, hit.indicators, weightsfilter.weights);
-								let tenderscore = hit.scores.find(s => s.type === this.indicators.TENDER.id);
+								let tenderscore = hit.ot.scores.find(s => s.type === this.indicators.TENDER.id);
 								if (tenderscore) {
-									this.recalculateTenderScore(tenderscore, hit.scores);
+									this.recalculateTenderScore(tenderscore, hit.ot.scores);
 								}
 							}
 						});

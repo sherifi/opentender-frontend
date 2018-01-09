@@ -12,21 +12,21 @@ import {Colors} from '../../../model/colors';
 		<div class="graph-title">{{title}}</div>
 		<div class="benchmark-select">
 			<div class="select-radios">
-				<div i18n>Value Group</div>
+				<div i18n>Indicator Group</div>
 				<label class="checkbox" *ngFor="let group of benchmark_groups">
 					<input [value]="group" name="group" type="radio" [(ngModel)]="active.benchmark_group" (change)="handleGroupChange()">
 					{{group.name}}
 				</label>
 			</div>
 			<div class="select-radios" *ngIf="active.benchmark_group">
-				<div i18n>Value</div>
+				<div i18n>Indicator</div>
 				<label class="checkbox" *ngFor="let bench of active.benchmark_group.benchmarks">
 					<input [value]="bench" name="bench" type="radio" [(ngModel)]="active.benchmark" (change)="handleBenchmarkChange()">
 					{{bench.name}}
 				</label>
 			</div>
 			<div class="select-checks">
-				<div i18n>Comparison</div>
+				<div i18n>Comparison Group</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
 					{{filter.name}}
@@ -49,8 +49,6 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 	title: string;
 	@Input()
 	entityTitle: string;
-	@Input()
-	othersTitle: string;
 	@Input()
 	data: IStatsDistributionInYears;
 	@Input()

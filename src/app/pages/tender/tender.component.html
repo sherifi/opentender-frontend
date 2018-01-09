@@ -6,9 +6,27 @@
 </div>
 <div class="container-outer entity" *ngIf="tender">
 	<div class="container">
+		<div class="container-left-9">
 		<h1 class="container-title">{{tender.title}}</h1>
 		<h3>{{tender.titleEnglish}}</h3>
+		</div>
+
+		<div class="container-left-3">
+			<div class="info-links">
+				<div class="info-link-box">
+					<ng-container i18n>Find Tender Information at</ng-container>
+					<br>
+					<a target="_blank" rel="noopener" href="https://tenders.exposed/"><i class="icon-new-tab"></i> tenders.exposed</a>
+				</div>
+				<div class="info-link-box" *ngIf="country.foi">
+					<ng-container i18n>Find Freedom of Information requests at</ng-container>
+					<br>
+					<a target="_blank" rel="noopener" href="{{country.foi.url}}"><i class="icon-new-tab"></i> {{country.foi.name}}</a>
+				</div>
+			</div>
+		</div>
 	</div>
+
 
 	<div class="container" *ngIf="tender.indicators | defined">
 		<h3>
@@ -31,7 +49,7 @@
 	</div>
 
 	<div class="container">
-		<graph benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title" [entityTitle]="viz.distribution.name" [othersTitle]="viz.distribution.othersTitle" [filters]="viz.distribution.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
+		<graph benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title" [entityTitle]="viz.distribution.name" [filters]="viz.distribution.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
 	</div>
 
 	<div class="container" *ngIf="tender.description | defined">

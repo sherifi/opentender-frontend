@@ -350,6 +350,7 @@ export interface IBenchmarkFilter {
 	id: string;
 	name: string;
 	active: boolean;
+	data?: string;
 }
 
 /* search object helper */
