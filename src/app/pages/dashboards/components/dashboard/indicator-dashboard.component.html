@@ -5,7 +5,7 @@
 	</div>
 	<div class="container container-margin">
 		<div class="container-left-12">
-			<select-year-range [years]="viz.years.data" (onRangeChange)="onYearRangeSliderChange($event)"></select-year-range>
+			<select-year-range [years]="viz.scores.years.data" (onRangeChange)="onYearRangeSliderChange($event)"></select-year-range>
 		</div>
 		<div class="form-group">
 			<label for="subindicator" i18n>Sub-Indicators</label>
@@ -27,19 +27,19 @@
 				<div class="graph-title" i18n>Average Score of {{indicatorTitle}}</div>
 			</div>
 			<div class="container-left-3">
-				<graph score-grid [data]="viz.score.data"></graph>
+				<graph score-grid [data]="viz.scores.score.data"></graph>
 			</div>
 			<div class="container-left-9">
-				<graph indicator-structure [data]="viz.terms_indicators_score.data" [weights]="filterWeights" (onSelect)="selectIndicatorChange($event)"></graph>
+				<graph indicator-structure [data]="viz.scores.terms_indicators_score.data" [weights]="filterWeights" (onSelect)="selectIndicatorChange($event)"></graph>
 			</div>
 
 		</div>
 		<div class="container">
 			<div class="container-left-6">
-				<graph score-histogram [data]="viz.score_in_years.data" [title]="viz.score_in_years.title"></graph>
+				<graph score-histogram [data]="viz.scores.score_in_years.data" [title]="viz.scores.score_in_years.title"></graph>
 			</div>
 			<div class="container-left-6">
-				<graph score-sectors [data]="viz.score_in_sectors.data" [title]="viz.score_in_sectors.title"></graph>
+				<graph score-sectors [data]="viz.scores.score_in_sectors.data" [title]="viz.scores.score_in_sectors.title"></graph>
 			</div>
 		</div>
 	</div>
@@ -62,19 +62,19 @@
 		<div class="container container-margin">
 			<div class="container">
 				<div class="container-left-6">
-					<graph indicator-histogram [data]="viz.lots_in_years.data" [title]="viz.lots_in_years.title"></graph>
+					<graph indicator-histogram [data]="viz.ranges.lots_in_years.data" [title]="viz.ranges.lots_in_years.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph indicator-sectors [data]="viz.cpvs_codes.data" [title]="viz.cpvs_codes.title"></graph>
+					<graph indicator-sectors [data]="viz.ranges.cpvs_codes.data" [title]="viz.ranges.cpvs_codes.title"></graph>
 				</div>
 			</div>
 			<br/>
 			<div class="container">
 				<div class="container-left-6">
-					<graph companies [data]="viz.top_companies.data" [title]="viz.top_companies.title"></graph>
+					<graph companies [data]="viz.ranges.top_companies.data" [title]="viz.ranges.top_companies.title"></graph>
 				</div>
 				<div class="container-left-6">
-					<graph authorities [data]="viz.top_authorities.data" [title]="viz.top_authorities.title"></graph>
+					<graph authorities [data]="viz.ranges.top_authorities.data" [title]="viz.ranges.top_authorities.title"></graph>
 				</div>
 			</div>
 		</div>

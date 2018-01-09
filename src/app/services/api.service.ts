@@ -35,8 +35,12 @@ export class ApiService {
 		return this.http.post<T>(this.actionCountryUrl + url, params, {headers: this.headers});
 	}
 
-	getIndicatorStats(params: ISearchCommand): Observable<IApiResultStat> {
-		return this.post<IApiResultStat>('indicators/stats', params);
+	getIndicatorScoreStats(params: ISearchCommand): Observable<IApiResultStat> {
+		return this.post<IApiResultStat>('indicators/score-stats', params);
+	}
+
+	getIndicatorRangeStats(params: ISearchCommand): Observable<IApiResultStat> {
+		return this.post<IApiResultStat>('indicators/range-stats', params);
 	}
 
 	getSectorStats(params: IGetByIdCommand): Observable<IApiResultSector> {
