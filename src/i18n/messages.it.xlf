@@ -1312,9 +1312,9 @@
           Gara Corrente di Riferimento
         </target>
       </trans-unit>
-      <trans-unit id="BidCount" datatype="html">
+      <trans-unit id="Bid" datatype="html">
         <source>
-          Bid Count
+          Bid
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -1327,8 +1327,24 @@
         <note priority="1" from="description">
           runtime
         </note>
+      </trans-unit>
+      <trans-unit id="BidCount" datatype="html">
+        <source>
+          Bid Count
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            27
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
         <target>
-          Conteggio delle Offerte
+          Numero delle Offerte
         </target>
       </trans-unit>
       <trans-unit id="BidDeadline" datatype="html">
@@ -1340,7 +1356,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            28
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1359,7 +1375,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            28
+            29
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1378,7 +1394,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            29
+            30
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1397,7 +1413,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            30
+            31
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1416,7 +1432,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            32
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1435,7 +1451,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            32
+            33
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1454,7 +1470,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            34
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1473,7 +1489,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            34
+            35
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1492,7 +1508,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            35
+            36
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1511,7 +1527,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            36
+            37
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1530,7 +1546,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            37
+            38
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1549,7 +1565,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            38
+            39
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1568,7 +1584,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            39
+            40
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1587,7 +1603,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            41
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1606,7 +1622,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            42
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1625,12 +1641,15 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            42
+            43
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Gruppo di Controllo
+        </target>
       </trans-unit>
       <trans-unit id="ContractValues" datatype="html">
         <source>
@@ -1641,7 +1660,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            44
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1660,7 +1679,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            45
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1679,7 +1698,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            45
+            46
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1698,12 +1717,15 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            46
+            47
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Gara Corrente
+        </target>
       </trans-unit>
       <trans-unit id="Dashboards" datatype="html">
         <source>
@@ -1714,7 +1736,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            48
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1733,7 +1755,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            48
+            49
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1752,7 +1774,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            49
+            50
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1768,7 +1790,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            50
+            51
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1787,7 +1809,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            51
+            52
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1806,7 +1828,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            52
+            53
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1825,7 +1847,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            53
+            54
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1844,7 +1866,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            54
+            55
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1863,7 +1885,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            55
+            56
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1882,7 +1904,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            56
+            57
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1901,7 +1923,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            58
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1920,7 +1942,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            59
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1929,6 +1951,22 @@
         <target>
           Lingue di Offerta Idonee
         </target>
+      </trans-unit>
+      <trans-unit id="Entries" datatype="html">
+        <source>
+          Entries
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            60
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
       </trans-unit>
       <trans-unit id="EstimatedCompletionDate" datatype="html">
         <source>
@@ -1939,7 +1977,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            61
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1958,7 +1996,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            60
+            62
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1977,7 +2015,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            61
+            63
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1996,7 +2034,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            64
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2015,7 +2053,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            63
+            65
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2034,7 +2072,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            64
+            66
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2053,7 +2091,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            65
+            67
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2072,7 +2110,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            66
+            68
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2091,7 +2129,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            67
+            69
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2110,7 +2148,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            70
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2129,7 +2167,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            69
+            71
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2148,7 +2186,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            70
+            72
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2167,7 +2205,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            73
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2186,7 +2224,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            72
+            74
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2205,7 +2243,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            73
+            75
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2224,7 +2262,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            74
+            76
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2243,7 +2281,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            75
+            77
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2262,7 +2300,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            76
+            78
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2281,7 +2319,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            77
+            79
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2300,7 +2338,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            78
+            80
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2319,7 +2357,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            79
+            81
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2338,7 +2376,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            80
+            82
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2357,7 +2395,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            81
+            83
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2376,7 +2414,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            82
+            84
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2395,7 +2433,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            85
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2414,7 +2452,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            84
+            86
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2433,7 +2471,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            85
+            87
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2452,7 +2490,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            86
+            88
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2471,7 +2509,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            87
+            89
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2490,7 +2528,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            88
+            90
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2509,7 +2547,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            89
+            91
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2528,7 +2566,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            90
+            92
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2547,7 +2585,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            91
+            93
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2566,7 +2604,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            92
+            94
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2585,7 +2623,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            93
+            95
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2604,7 +2642,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            94
+            96
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2623,7 +2661,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            95
+            97
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2642,7 +2680,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            96
+            98
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2661,7 +2699,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            97
+            99
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2677,7 +2715,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            98
+            100
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2696,7 +2734,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            99
+            101
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2715,7 +2753,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            100
+            102
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2734,7 +2772,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            101
+            103
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2753,7 +2791,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            102
+            104
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2772,7 +2810,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            103
+            105
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2791,7 +2829,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            106
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2810,7 +2848,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            105
+            107
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2819,6 +2857,22 @@
         <target>
           Collegamento al Profilo
         </target>
+      </trans-unit>
+      <trans-unit id="ProfilePage" datatype="html">
+        <source>
+          Profile Page
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            108
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
       </trans-unit>
       <trans-unit id="Programme" datatype="html">
         <source>
@@ -2829,7 +2883,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            106
+            109
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2848,7 +2902,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            110
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2867,7 +2921,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            108
+            111
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2886,7 +2940,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            109
+            112
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2905,7 +2959,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            110
+            113
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2924,7 +2978,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            111
+            114
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2943,7 +2997,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            112
+            115
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2962,7 +3016,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            116
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2981,7 +3035,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            114
+            117
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3000,7 +3054,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            115
+            118
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3019,7 +3073,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            116
+            119
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3038,7 +3092,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            117
+            120
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3057,7 +3111,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            118
+            121
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3076,7 +3130,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            119
+            122
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3095,7 +3149,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            120
+            123
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3114,7 +3168,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            121
+            124
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3133,12 +3187,15 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            122
+            125
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Mostra tutti gli anni
+        </target>
       </trans-unit>
       <trans-unit id="Supplier" datatype="html">
         <source>
@@ -3149,7 +3206,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            123
+            126
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3168,7 +3225,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            124
+            127
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3187,7 +3244,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            125
+            128
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3206,7 +3263,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            126
+            129
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3225,7 +3282,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            127
+            130
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3244,7 +3301,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            128
+            131
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3263,14 +3320,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            129
+            132
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Conteggio delle Gare
+          Numero di Gare
         </target>
       </trans-unit>
       <trans-unit id="TenderInformation" datatype="html">
@@ -3282,7 +3339,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            130
+            133
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3301,7 +3358,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            131
+            134
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3320,7 +3377,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            132
+            135
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3339,7 +3396,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            133
+            136
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3358,7 +3415,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            134
+            137
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3377,7 +3434,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            135
+            138
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3396,7 +3453,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            136
+            139
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3415,7 +3472,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            137
+            140
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3434,7 +3491,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            138
+            141
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3453,7 +3510,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            139
+            142
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3472,7 +3529,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            143
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3491,7 +3548,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            141
+            144
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3510,7 +3567,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            142
+            145
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3529,7 +3586,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            143
+            146
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3548,7 +3605,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            144
+            147
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3567,7 +3624,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            145
+            148
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3586,7 +3643,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            146
+            149
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3605,7 +3662,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            147
+            150
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3630,7 +3687,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            148
+            151
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3649,7 +3706,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            149
+            152
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3668,7 +3725,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            150
+            153
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3687,7 +3744,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            151
+            154
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3706,7 +3763,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            152
+            155
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3725,7 +3782,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            153
+            156
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3744,7 +3801,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            154
+            157
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3763,7 +3820,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            155
+            158
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3782,7 +3839,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            156
+            159
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3801,7 +3858,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            157
+            160
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3820,7 +3877,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            158
+            161
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3839,7 +3896,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            159
+            162
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3858,7 +3915,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            160
+            163
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3877,7 +3934,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            161
+            164
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3896,7 +3953,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            162
+            165
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3915,7 +3972,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            163
+            166
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3934,7 +3991,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            164
+            167
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3953,7 +4010,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            165
+            168
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3972,7 +4029,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            166
+            169
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3991,7 +4048,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            167
+            170
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4010,7 +4067,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            168
+            171
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4029,7 +4086,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            169
+            172
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4048,7 +4105,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            170
+            173
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4067,7 +4124,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            171
+            174
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4086,7 +4143,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            172
+            175
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4105,7 +4162,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            173
+            176
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4124,7 +4181,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            174
+            177
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4143,7 +4200,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            175
+            178
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4162,7 +4219,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            179
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4181,7 +4238,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            180
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4200,7 +4257,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            178
+            181
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4219,7 +4276,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            179
+            182
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4238,7 +4295,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            183
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4257,7 +4314,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            184
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4276,7 +4333,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            182
+            185
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4295,7 +4352,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            183
+            186
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4314,7 +4371,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            184
+            187
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4333,7 +4390,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            185
+            188
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4352,7 +4409,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            186
+            189
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4371,7 +4428,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            187
+            190
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4390,7 +4447,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            188
+            191
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4409,7 +4466,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            189
+            192
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4428,7 +4485,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            190
+            193
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4447,7 +4504,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            191
+            194
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4466,7 +4523,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            192
+            195
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4485,7 +4542,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            193
+            196
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4504,7 +4561,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            194
+            197
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4523,7 +4580,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            195
+            198
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4542,7 +4599,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            196
+            199
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4561,7 +4618,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            197
+            200
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5515,6 +5572,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Non trovato
+        </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
         <source>
@@ -6409,6 +6469,9 @@
             24
           </context>
         </context-group>
+        <target>
+          Mappe e Codici NUTS
+        </target>
       </trans-unit>
       <trans-unit id="39a876f7caff60187b5482e728db9585b73de7ce" datatype="html">
         <source>
@@ -6428,6 +6491,9 @@
             28
           </context>
         </context-group>
+        <target>
+          Opentender visualizza mappe basate sui &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;codici NUTS&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+        </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
         <source>
@@ -6441,6 +6507,9 @@
             29
           </context>
         </context-group>
+        <target>
+          I codici mancanti negli indirizzi sono stati assegnati con:
+        </target>
       </trans-unit>
       <trans-unit id="b66b022fc628366345ae491af4ed98f8b87b33c6" datatype="html">
         <source>
@@ -6454,6 +6523,9 @@
             31
           </context>
         </context-group>
+        <target>
+          Forme utilizzate:
+        </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
         <source>
@@ -6467,6 +6539,9 @@
             57
           </context>
         </context-group>
+        <target>
+          La funzione di ricerca è un potente strumento per approfondire i dati e trovare un'offerta specifica, un acquirente o un fornitore che stai cercando. Puoi anche creare singole ricerche personalizzate da oltre 30 parametri aggiuntivi, inclusi gli indicatori.
+        </target>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
         <source>
@@ -6480,6 +6555,9 @@
             62
           </context>
         </context-group>
+        <target>
+          Profili
+        </target>
       </trans-unit>
       <trans-unit id="a33618ac50442a0a558cef69f0f4d212b4155712" datatype="html">
         <source>
@@ -6493,6 +6571,9 @@
             65
           </context>
         </context-group>
+        <target>
+          Per consentire l'accesso completo, ogni componente (settori, filiali, regioni, aziende, autorità e gare) nel database Opentender ha un profilo individuale che mostra informazioni dettagliate. A seconda del tipo, il profilo mostra una varietà di visualizzazioni come grafici, mappe e grafici che forniscono un approfondito livello di conoscenza del database. È possibile visualizzare i profili semplicemente cliccando sul rispettivo nome.
+        </target>
       </trans-unit>
       <trans-unit id="203669909f4f54336b8208aa175000457f4db6af" datatype="html">
         <source>
@@ -6506,6 +6587,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Qualità dei Dati
+        </target>
       </trans-unit>
       <trans-unit id="ca7250a22d99c18f87ff541d7ff814e2f2855394" datatype="html">
         <source>
@@ -6519,6 +6603,9 @@
             8
           </context>
         </context-group>
+        <target>
+          Questo elenco mostra quanti dati per campo sono disponibili.
+        </target>
       </trans-unit>
       <trans-unit id="32a904abdc4745a632d092d39b944991ada0ba9d" datatype="html">
         <source>
@@ -6532,6 +6619,9 @@
             13
           </context>
         </context-group>
+        <target>
+          Mostra campi con dati mancanti al 100%
+        </target>
       </trans-unit>
       <trans-unit id="87b5a4b1c81f74c0937d7ee1f9714d6fe67270ec" datatype="html">
         <source>
@@ -6545,6 +6635,9 @@
             21
           </context>
         </context-group>
+        <target>
+          Nome del campo
+        </target>
       </trans-unit>
       <trans-unit id="b7da3e3505cc80f9bf3cffc8444c53e8a9ec70a5" datatype="html">
         <source>
@@ -6558,6 +6651,9 @@
             22
           </context>
         </context-group>
+        <target>
+          Disponibile
+        </target>
       </trans-unit>
       <trans-unit id="da5d7e263a3c6dc585d04844074afaa7229b88a0" datatype="html">
         <source>
@@ -6571,6 +6667,9 @@
             24
           </context>
         </context-group>
+        <target>
+          Mancante
+        </target>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
         <source>
@@ -6584,6 +6683,9 @@
             9
           </context>
         </context-group>
+        <target>
+          Tipo di Autorità
+        </target>
       </trans-unit>
       <trans-unit id="b8a961f78f542ee07bb87623c47439d81e8f50b1" datatype="html">
         <source>
@@ -6597,6 +6699,9 @@
             10
           </context>
         </context-group>
+        <target>
+          Attività Principali
+        </target>
       </trans-unit>
       <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
         <source>
@@ -6610,6 +6715,9 @@
             14
           </context>
         </context-group>
+        <target>
+          Autorità Simili
+        </target>
       </trans-unit>
       <trans-unit id="32382c783e53d04c11023e4963cbba3359284203" datatype="html">
         <source>
@@ -6623,6 +6731,9 @@
             19
           </context>
         </context-group>
+        <target>
+          Cerca questa autorità al
+        </target>
       </trans-unit>
       <trans-unit id="e336524ffbb838864880def2bd86d4cb9de44335" datatype="html">
         <source>
@@ -6636,6 +6747,9 @@
             24
           </context>
         </context-group>
+        <target>
+          Trova richieste di Libertà di Informazione
+        </target>
       </trans-unit>
       <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
         <source>
@@ -6649,6 +6763,9 @@
             10
           </context>
         </context-group>
+        <target>
+          Aziende simili
+        </target>
       </trans-unit>
       <trans-unit id="10ca3b39d610b4266c4e9cee482bec2f62b1ac65" datatype="html">
         <source>
@@ -6662,6 +6779,9 @@
             15
           </context>
         </context-group>
+        <target>
+          Cerca questa azienda al
+        </target>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
         <source>
@@ -6683,6 +6803,9 @@
             17
           </context>
         </context-group>
+        <target>
+          Trova la richiesta di Libertà di Informazioni al
+        </target>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
         <source>
@@ -6696,6 +6819,9 @@
             11
           </context>
         </context-group>
+        <target>
+          Sotto-indicatori
+        </target>
       </trans-unit>
       <trans-unit id="4df6eb363d14f086afa8f3ab7f3deef5c1daae89" datatype="html">
         <source>
@@ -6709,6 +6835,9 @@
             13
           </context>
         </context-group>
+        <target>
+          Tutti i sotto-indicatori
+        </target>
       </trans-unit>
       <trans-unit id="666ef196e08af4a7292c9e4339154d1527fb5857" datatype="html">
         <source>
@@ -6722,6 +6851,9 @@
             18
           </context>
         </context-group>
+        <target>
+          Punteggio Composito
+        </target>
       </trans-unit>
       <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
         <source>
@@ -6735,6 +6867,9 @@
             19
           </context>
         </context-group>
+        <target>
+          Aggiusta i Pesi
+        </target>
       </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
         <source>
@@ -6750,6 +6885,9 @@
             27
           </context>
         </context-group>
+        <target>
+          Punteggio Medio di &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
         <source>
@@ -6763,6 +6901,9 @@
             48
           </context>
         </context-group>
+        <target>
+          Intervallo di Punteggi
+        </target>
       </trans-unit>
       <trans-unit id="ca4939f58d2dd3f3b511e5275c8d7b4dbd2fe825" datatype="html">
         <source>
@@ -6776,6 +6917,9 @@
             113
           </context>
         </context-group>
+        <target>
+          Applicare i Pesi
+        </target>
       </trans-unit>
       <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
         <source>
@@ -6789,6 +6933,9 @@
             114
           </context>
         </context-group>
+        <target>
+          Resettare i Pesi
+        </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
         <source>
@@ -6802,6 +6949,9 @@
             87
           </context>
         </context-group>
+        <target>
+          Regolare i Pesi dei Punteggi Compositi
+        </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
         <source>
@@ -6823,6 +6973,9 @@
             159
           </context>
         </context-group>
+        <target>
+          Settori
+        </target>
       </trans-unit>
       <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
         <source>
@@ -6836,6 +6989,9 @@
             52
           </context>
         </context-group>
+        <target>
+          Profilo del Settore
+        </target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
         <source>
@@ -6849,6 +7005,9 @@
             54
           </context>
         </context-group>
+        <target>
+          Nome
+        </target>
       </trans-unit>
       <trans-unit id="3330d0952d59bdb1e72d7bca952e6b7850fde8ed" datatype="html">
         <source>
@@ -6862,6 +7021,9 @@
             56
           </context>
         </context-group>
+        <target>
+          Volume della Gara (€)
+        </target>
       </trans-unit>
       <trans-unit id="6e6cb5e9109bc6606718e627281dc913e4cec6e0" datatype="html">
         <source>
@@ -6875,6 +7037,9 @@
             6
           </context>
         </context-group>
+        <target>
+          Su questa pagina puoi trovare tutti i dati delle gare di questo portale.
+        </target>
       </trans-unit>
       <trans-unit id="11db3f53da11cc43e48960e6cc537b79c5fd789e" datatype="html">
         <source>
@@ -6888,6 +7053,9 @@
             9
           </context>
         </context-group>
+        <target>
+          CSV
+        </target>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
         <source>
@@ -6901,6 +7069,9 @@
             13
           </context>
         </context-group>
+        <target>
+          JSON Gerarchico
+        </target>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
         <source>
@@ -6914,6 +7085,9 @@
             17
           </context>
         </context-group>
+        <target>
+          Portale Corrente
+        </target>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
         <source>
@@ -6951,6 +7125,9 @@
             30
           </context>
         </context-group>
+        <target>
+          Paese
+        </target>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
         <source>
@@ -6964,6 +7141,9 @@
             32
           </context>
         </context-group>
+        <target>
+          JSON
+        </target>
       </trans-unit>
       <trans-unit id="7c4ca89a999288712aede90091a5228ce76f489c" datatype="html">
         <source>
@@ -6977,6 +7157,9 @@
             33
           </context>
         </context-group>
+        <target>
+          NDJSON*
+        </target>
       </trans-unit>
       <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
         <source>
@@ -6996,6 +7179,9 @@
             46
           </context>
         </context-group>
+        <target>
+          I file sono compressi con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, che dovrebbe essere supportato dalla tua applicazione ZIP.
+        </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
         <source>
@@ -7015,6 +7201,9 @@
             47
           </context>
         </context-group>
+        <target>
+          * A causa della quantità di voci e dal fatto che molti decodificatori JSON non supportano le dimensioni del file, i dati JSON Tender DIGIWHIST sono stati salvati anche come &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+        </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
         <source>
@@ -7034,6 +7223,9 @@
             48
           </context>
         </context-group>
+        <target>
+          La struttura delle voci è è delineata in un &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;file schema JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+        </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
         <source>
@@ -7047,6 +7239,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Coordimanento del Progetto Digiwhist
+        </target>
       </trans-unit>
       <trans-unit id="729754dd19eb9ce0670b0aeb5a6ae60574c2c563" datatype="html">
         <source>
@@ -7060,6 +7255,9 @@
             17
           </context>
         </context-group>
+        <target>
+          Indirizzo
+        </target>
       </trans-unit>
       <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
         <source>
@@ -7073,6 +7271,9 @@
             26
           </context>
         </context-group>
+        <target>
+          Registro delle Imprese
+        </target>
       </trans-unit>
       <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
         <source>
@@ -7086,6 +7287,9 @@
             27
           </context>
         </context-group>
+        <target>
+          Numero del Registro di Associazione
+        </target>
       </trans-unit>
       <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
         <source>
@@ -7099,6 +7303,9 @@
             28
           </context>
         </context-group>
+        <target>
+          Partita IVA
+        </target>
       </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
         <source>
@@ -7112,6 +7319,9 @@
             29
           </context>
         </context-group>
+        <target>
+          Riferimenti e collegamenti
+        </target>
       </trans-unit>
       <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
         <source>
@@ -7125,6 +7335,9 @@
             30
           </context>
         </context-group>
+        <target>
+          OKF DE non è responsabile per eventuali contenuti collegati o richiamati da queste pagine. Se qualsiasi danno si verifica con l'uso delle informazioni presentate qui, solo l'autore delle rispettive pagine potrebbe essere responsabile, non colui che ha collegato le informazioni a queste pagine.
+        </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
         <source>
@@ -7138,6 +7351,9 @@
             31
           </context>
         </context-group>
+        <target>
+          Dichiarazione di limitazione di responsabilità
+        </target>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
         <source>
@@ -7151,6 +7367,9 @@
             32
           </context>
         </context-group>
+        <target>
+          Le informazioni e le opinioni pubblicate su questo sito sono solo dell'autore (degli autori) e non riflettono alcun parere di raccolta del consorzio DIGIWHIST, né riflettono l'opinione ufficiale della Commissione Eeuropea. Né la Commissione Europea né alcuna persona che agisce a nome della Commissione Europea è responsabile dell'uso che potrebbe essere fatto delle informazioni pubblicate su questo sito web.
+        </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
         <source>
@@ -7169,6 +7388,9 @@
             33
           </context>
         </context-group>
+        <target>
+          Tutti i contenuti di Digiwhist su questo sito web sono concessi in licenza con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
         <source>
@@ -7182,6 +7404,9 @@
             37
           </context>
         </context-group>
+        <target>
+          Open Knowledge Foundation Germany è lieta che tu stia visitando il nostro sito Web e che tu sia interessato al progetto DIGIWHIST di Horizon 2020. Prendiamo molto sul serio la protezione dei vostri dati personali e osserviamo scrupolosamente le disposizioni delle attuali leggi sulla privacy dei dati (ad esempio il German Data Protection Act (BDSG), il Telemedia Act (TMG) e Unfair Competition Act (UWG)).
+        </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
         <source>
@@ -7195,6 +7420,9 @@
             38
           </context>
         </context-group>
+        <target>
+          La seguente policy fornisce informazioni su come garantiamo questa protezione e sul tipo di dati che raccogliamo per quale scopo.
+        </target>
       </trans-unit>
       <trans-unit id="49dab74a6f204996046f98e886e8160260f58628" datatype="html">
         <source>
@@ -7208,6 +7436,9 @@
             39
           </context>
         </context-group>
+        <target>
+          1. Raccolta di dati anonimi
+        </target>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
         <source>
@@ -7221,6 +7452,9 @@
             40
           </context>
         </context-group>
+        <target>
+          Nella maggior parte dei casi è possibile visitare il sito Web Opentender.eu senza che sia necessario fornire dati personali.
+        </target>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
         <source>
@@ -7234,6 +7468,9 @@
             41
           </context>
         </context-group>
+        <target>
+          I file di registro sul nostro server Web raccolgono i seguenti dati:
+        </target>
       </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
         <source>
@@ -7247,6 +7484,9 @@
             43
           </context>
         </context-group>
+        <target>
+          Indirizzo IP
+        </target>
       </trans-unit>
       <trans-unit id="d376333bd7ba3b3b691d32aabe97366aabdcf644" datatype="html">
         <source>
@@ -7260,6 +7500,9 @@
             44
           </context>
         </context-group>
+        <target>
+          data, ora
+        </target>
       </trans-unit>
       <trans-unit id="9671e11011b3ebb58ca11fb31c01d1ac3c8704e3" datatype="html">
         <source>
@@ -7273,6 +7516,9 @@
             45
           </context>
         </context-group>
+        <target>
+          pagina visitata, garante
+        </target>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
         <source>
@@ -7286,6 +7532,9 @@
             46
           </context>
         </context-group>
+        <target>
+          browser
+        </target>
       </trans-unit>
       <trans-unit id="d5907df625e73d7d8c5075428fc21540304603b2" datatype="html">
         <source>
@@ -7299,6 +7548,9 @@
             47
           </context>
         </context-group>
+        <target>
+          sistema operativo
+        </target>
       </trans-unit>
       <trans-unit id="a8c6d54131c79ef785fc7c2249374a6f25f76ffd" datatype="html">
         <source>
@@ -7312,6 +7564,9 @@
             49
           </context>
         </context-group>
+        <target>
+          Questi dati sono disponibili per analisi statistiche, i dati grezzi vengono cancellati mensilmente dalla nostra società di web hosting.
+        </target>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
         <source>
@@ -7325,6 +7580,9 @@
             51
           </context>
         </context-group>
+        <target>
+          2. Raccolta e trattamento dei dati personali
+        </target>
       </trans-unit>
       <trans-unit id="b56fd0fd74eaa2b386434213c4d5e8c632cbcabc" datatype="html">
         <source>
@@ -7338,6 +7596,9 @@
             52
           </context>
         </context-group>
+        <target>
+          I dati personali sono raccolti solo in base alle normative vigenti. Oltre a questo, i tuoi dati sono utilizzati solo a scopo pubblicitario e di ricerca di mercato, anche per adattare i nostri servizi elettronici a soddisfare le esigenze attuali, se ci hai fornito il tuo previo consenso. Naturalmente, hai il diritto di revocare qualsiasi consenso che fornisci - in tutto o in parte - in qualsiasi momento, da quel momento in poi.
+        </target>
       </trans-unit>
       <trans-unit id="a0a8ca9b0db392405d5299ca16493cd321de4ee0" datatype="html">
         <source>
@@ -7351,6 +7612,9 @@
             54
           </context>
         </context-group>
+        <target>
+          3. Esportazione ed elaborazione dei dati negli stati al di fuori dello Spazio Economico Europeo (SEE).
+        </target>
       </trans-unit>
       <trans-unit id="a94a4cb46a4dd5450ca35df978441234f7bbfe8a" datatype="html">
         <source>
@@ -7364,6 +7628,9 @@
             55
           </context>
         </context-group>
+        <target>
+          Nessun dato è esportato o elaborato al di fuori dello Spazio Economico Europeo
+        </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
         <source>
@@ -7377,6 +7644,9 @@
             57
           </context>
         </context-group>
+        <target>
+          4. Cookie e tracciamento del sito web
+        </target>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
         <source>
@@ -7390,6 +7660,9 @@
             58
           </context>
         </context-group>
+        <target>
+          Su questo sito utilizziamo i sistemi di analisi web, volti a misurare e analizzare le visite al nostro sito web. Utilizziamo il tuo indirizzo IP allo scopo di raccogliere dati, tra le altre cose, sul traffico Internet, sul browser e sul computer.
+        </target>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
         <source>
@@ -7403,6 +7676,9 @@
             59
           </context>
         </context-group>
+        <target>
+          Non usiamo l'indirizzo IP o i cookie per identificarti personalmente. Usiamo il sistema di analisi web con lo scopo di aumentare l'efficienza sul nostro sito web.
+        </target>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
         <source>
@@ -7416,6 +7692,9 @@
             60
           </context>
         </context-group>
+        <target>
+          La maggior parte dei browser accetta automaticamente i cookie. Tuttavia, è possibile impedire che ciò accada manualmente modificando le impostazioni nel browser per garantire che i cookie non vengano più accettati. Puoi trovare dettagli al riguardo nelle istruzioni fornite dal produttore del browser.
+        </target>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
         <source>
@@ -7429,6 +7708,9 @@
             62
           </context>
         </context-group>
+        <target>
+          5. Cookie permanenti/cookie di terze parti
+        </target>
       </trans-unit>
       <trans-unit id="21974757a955b5ae8dc8f3cad13b9aacf9e9a3f9" datatype="html">
         <source>
@@ -7442,6 +7724,9 @@
             63
           </context>
         </context-group>
+        <target>
+          Questo sito web utilizza Piwik, un servizio di analisi web open source. Piwik utilizza i "cookies", che sono file di testo collocati sul tuo computer, per aiutare il sito ad analizzare come gli utenti utilizzano il sito. Le informazioni generate dal cookie sull'utilizzo del sito web (incluso il tuo indirizzo IP troncato dall'ultimo ottetto prima della sua memorizzazione, utilizzando il metodo _anonymizeIp ()) saranno trasmesse e archiviate sui nostri server in Germania. Utilizzeremo queste informazioni allo scopo di valutare l'utilizzo del sito Web, compilare report sulle attività del sito web per gli operatori del sito e fornire altri servizi relativi alle attività del sito e all'utilizzo di internet.
+        </target>
       </trans-unit>
       <trans-unit id="92e4b7e37947a8b945fc965353a1a79c88b0e93d" datatype="html">
         <source>
@@ -7455,6 +7740,9 @@
             65
           </context>
         </context-group>
+        <target>
+          7. Link esterni
+        </target>
       </trans-unit>
       <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
         <source>
@@ -7468,6 +7756,9 @@
             66
           </context>
         </context-group>
+        <target>
+          Cerchiamo di fornirti le migliori informazioni possibili. Questo è il motivo per cui troverai sul nostro sito i collegamenti che rimandano a pagine di proprietà di terzi. A meno che non sia perfettamente ovvio, attiriamo la vostra attenzione sul fatto che si tratta di collegamenti esterni. OKF DE non ha alcuna influenza sul contenuto o sulla progettazione di queste pagine di proprietà di fornitori esterni e quindi fa riferimento alle loro politiche sulla privacy. Sii consapevole che le assicurazioni fornite in questa policy sulla privacy non si applicano necessariamente in questo caso.
+        </target>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
         <source>
@@ -7481,6 +7772,9 @@
             68
           </context>
         </context-group>
+        <target>
+          8. Sicurezza
+        </target>
       </trans-unit>
       <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
         <source>
@@ -7494,6 +7788,9 @@
             69
           </context>
         </context-group>
+        <target>
+          OKF DE adotta misure tecniche e organizzative per garantire misure di sicurezza in linea con lo stato attuale della tecnologia per proteggere i dati forniti a OKF DE da manipolazioni accidentali o intenzionali, perdita, distruzione o accesso da parte di persone non autorizzate. Miglioriamo continuamente le nostre misure di sicurezza man mano che la tecnologia progredisce.
+        </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
         <source>
@@ -7507,6 +7804,9 @@
             71
           </context>
         </context-group>
+        <target>
+          9. Diritto di informazione, domande sulla riservatezza dei dati e revoca
+        </target>
       </trans-unit>
       <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
         <source>
@@ -7520,6 +7820,9 @@
             72
           </context>
         </context-group>
+        <target>
+          Attribuiamo grande importanza alla tuafiducia in noi. Questo è il motivo per cui cerchiamo di essere disponibili per fornirti informazioni e per rispondere alle tue domande in qualsiasi momento. Puoi contattare OKF DE in caso di domande sul trattamento dei dati personali; OKF DE è anche disponibile se si cercano informazioni, si desidera presentare domande o presentare reclami sulla questione della riservatezza dei dati.
+        </target>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
         <source>
@@ -7533,6 +7836,9 @@
             73
           </context>
         </context-group>
+        <target>
+          Inoltre, hai il diritto di revocare il consenso che hai concesso in qualsiasi momento, da quel momento in poi per il futuro.
+        </target>
       </trans-unit>
       <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
         <source>
@@ -7560,7 +7866,7 @@
           </context>
         </context-group>
         <target>
-          N. di Offerte nella Regione
+          N. di Gare nella Regione
         </target>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
@@ -7575,6 +7881,9 @@
             18
           </context>
         </context-group>
+        <target>
+          N. di Gare nella Sotto-Regione
+        </target>
       </trans-unit>
       <trans-unit id="6cec3565e21ae209bd028809ac44f2abcae5a7b2" datatype="html">
         <source>
@@ -7604,6 +7913,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Cerca Azienda
+        </target>
       </trans-unit>
       <trans-unit id="ad1c1442b4d5009646148af8153fcad20d40c3c2" datatype="html">
         <source>
@@ -7617,6 +7929,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Cerca Autorità
+        </target>
       </trans-unit>
       <trans-unit id="5ca707824ab93066c7d9b44e1b8bf216725c2c22" datatype="html">
         <source>
@@ -7630,6 +7945,9 @@
             6
           </context>
         </context-group>
+        <target>
+          Filtra
+        </target>
       </trans-unit>
       <trans-unit id="efea32159353fc5eeb7713f16044a43139b93640" datatype="html">
         <source>
@@ -7643,6 +7961,9 @@
             8
           </context>
         </context-group>
+        <target>
+          prima
+        </target>
       </trans-unit>
       <trans-unit id="ca420aebba5bdcb97c2704532fd6cb675599628c" datatype="html">
         <source>
@@ -7656,6 +7977,9 @@
             12
           </context>
         </context-group>
+        <target>
+          dopo
+        </target>
       </trans-unit>
       <trans-unit id="0a2fc68d81516378be0f06bbcee807c94d2c1a9a" datatype="html">
         <source>
@@ -7669,6 +7993,9 @@
             16
           </context>
         </context-group>
+        <target>
+          lo stesso giorno
+        </target>
       </trans-unit>
       <trans-unit id="ddbef9c00583b054e53c3fd05af57188542aaa7b" datatype="html">
         <source>
@@ -7682,6 +8009,9 @@
             2
           </context>
         </context-group>
+        <target>
+          Clicca per aggiungere questo campo di ricerca
+        </target>
       </trans-unit>
       <trans-unit id="293ab8acb61c97af9dfba991ce681bf173debabc" datatype="html">
         <source>
@@ -7695,6 +8025,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Cerca Settore
+        </target>
       </trans-unit>
       <trans-unit id="d9a2d748d645a9a51a535f9b8266eee949172f59" datatype="html">
         <source>
@@ -7708,6 +8041,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Clicca per aggiungere
+        </target>
       </trans-unit>
       <trans-unit id="660e1bbe19d17064a912aa8e4cdd10101be91ed6" datatype="html">
         <source>
@@ -7721,6 +8057,9 @@
             7
           </context>
         </context-group>
+        <target>
+          Settore di Controllo
+        </target>
       </trans-unit>
       <trans-unit id="a5e5b1ef473457ddf26f5f51bc83a46667f3c908" datatype="html">
         <source>
@@ -7750,6 +8089,9 @@
             31
           </context>
         </context-group>
+        <target>
+          Non ci sono Indicatori per questa Gara
+        </target>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
         <source>
@@ -7763,6 +8105,9 @@
             73
           </context>
         </context-group>
+        <target>
+          Per Conto di
+        </target>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
         <source>
@@ -7776,6 +8121,9 @@
             79
           </context>
         </context-group>
+        <target>
+          Fornitore di Ulteriori Informazioni
+        </target>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
         <source>
@@ -7789,6 +8137,9 @@
             83
           </context>
         </context-group>
+        <target>
+          Fornitore di Specifiche
+        </target>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
         <source>
@@ -7802,6 +8153,9 @@
             87
           </context>
         </context-group>
+        <target>
+          Destinatario delle Offerte
+        </target>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
         <source>
@@ -7815,6 +8169,9 @@
             91
           </context>
         </context-group>
+        <target>
+          Nome dell'Organo di Appello
+        </target>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
         <source>
@@ -7828,6 +8185,9 @@
             95
           </context>
         </context-group>
+        <target>
+          Nome dell'Organo di Mediazione
+        </target>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
         <source>
@@ -7841,6 +8201,9 @@
             99
           </context>
         </context-group>
+        <target>
+          Amministratori
+        </target>
       </trans-unit>
       <trans-unit id="54f00deeee916877ba52c54363d3951ca3a840a7" datatype="html">
         <source>
@@ -7854,6 +8217,9 @@
             119
           </context>
         </context-group>
+        <target>
+          Prezzi
+        </target>
       </trans-unit>
       <trans-unit id="417c7208ab7fd97d49ad0487b095923ffb21b5b7" datatype="html">
         <source>
@@ -7875,6 +8241,9 @@
             282
           </context>
         </context-group>
+        <target>
+          Prezzo Stimato
+        </target>
       </trans-unit>
       <trans-unit id="f9f909ae231e02a769784e9ca4ea72e92ea34b83" datatype="html">
         <source>
@@ -7888,6 +8257,9 @@
             125
           </context>
         </context-group>
+        <target>
+          Prezzo Finale
+        </target>
       </trans-unit>
       <trans-unit id="b8e154a2a372825dcb4aced784a3206b055f0e75" datatype="html">
         <source>
@@ -7901,6 +8273,9 @@
             129
           </context>
         </context-group>
+        <target>
+          Prezzo dei Documenti
+        </target>
       </trans-unit>
       <trans-unit id="ae78cbe2e07f699217c7488237bdb79850173273" datatype="html">
         <source>
@@ -7914,6 +8289,9 @@
             134
           </context>
         </context-group>
+        <target>
+          Date
+        </target>
       </trans-unit>
       <trans-unit id="e2617e1baa15fe59a7d3b9c1ded99c8c07f54150" datatype="html">
         <source>
@@ -7935,6 +8313,9 @@
             250
           </context>
         </context-group>
+        <target>
+          Data di Inizio Stimata
+        </target>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
         <source>
@@ -7956,6 +8337,9 @@
             254
           </context>
         </context-group>
+        <target>
+          Data Stimata di Completamento
+        </target>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
         <source>
@@ -7977,6 +8361,9 @@
             270
           </context>
         </context-group>
+        <target>
+          Termine per presentare l'Offerta
+        </target>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
         <source>
@@ -7998,6 +8385,9 @@
             274
           </context>
         </context-group>
+        <target>
+          Termine per presentare i Documenti
+        </target>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
         <source>
@@ -8011,6 +8401,9 @@
             152
           </context>
         </context-group>
+        <target>
+          Durata Stimata
+        </target>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
         <source>
@@ -8024,6 +8417,9 @@
             166
           </context>
         </context-group>
+        <target>
+          Tipi
+        </target>
       </trans-unit>
       <trans-unit id="ea426b43d3914772b31f045023e76280e38a4cb3" datatype="html">
         <source>
@@ -8037,6 +8433,9 @@
             168
           </context>
         </context-group>
+        <target>
+          Tipo di Fornitura
+        </target>
       </trans-unit>
       <trans-unit id="f918f7ad53e11419f1bd8613763610a67c907b25" datatype="html">
         <source>
@@ -8050,6 +8449,9 @@
             172
           </context>
         </context-group>
+        <target>
+          Tipo di Procedura
+        </target>
       </trans-unit>
       <trans-unit id="f35e650c934ab03d87dc6c18926013257a5d82d3" datatype="html">
         <source>
@@ -8063,6 +8465,9 @@
             176
           </context>
         </context-group>
+        <target>
+          Metodo di Selezione
+        </target>
       </trans-unit>
       <trans-unit id="a9404df24a66e14717a13e54c78f443d852e8ed6" datatype="html">
         <source>
@@ -8076,6 +8481,9 @@
             180
           </context>
         </context-group>
+        <target>
+          Lingue di Offerta Idonee
+        </target>
       </trans-unit>
       <trans-unit id="44929ed65effa672d2f881314c8160cb3d630727" datatype="html">
         <source>
@@ -8089,6 +8497,9 @@
             184
           </context>
         </context-group>
+        <target>
+          Numero Massimo di Offerte
+        </target>
       </trans-unit>
       <trans-unit id="94ecc5b64dfc32142cd639467a8329c1cd8b00ee" datatype="html">
         <source>
@@ -8102,6 +8513,9 @@
             188
           </context>
         </context-group>
+        <target>
+          Numero Massimo di Partecipanti agli Accordi Quadro
+        </target>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
         <source>
@@ -8115,6 +8529,9 @@
             192
           </context>
         </context-group>
+        <target>
+          Criteri di Aggiudicazione
+        </target>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
         <source>
@@ -8136,6 +8553,9 @@
             333
           </context>
         </context-group>
+        <target>
+          Prezzo
+        </target>
       </trans-unit>
       <trans-unit id="d68d8c2c960dc71366b178447b3a13e78ce505d4" datatype="html">
         <source>
@@ -8149,6 +8569,9 @@
             240
           </context>
         </context-group>
+        <target>
+          Dettagli del Lotto
+        </target>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
         <source>
@@ -8162,6 +8585,9 @@
             242
           </context>
         </context-group>
+        <target>
+          Stato
+        </target>
       </trans-unit>
       <trans-unit id="528a04d8d0947b73df1db3011b214d1419da122c" datatype="html">
         <source>
@@ -8175,6 +8601,9 @@
             246
           </context>
         </context-group>
+        <target>
+          Data di Decisione dell'Aggiudicazione
+        </target>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
         <source>
@@ -8188,6 +8617,9 @@
             258
           </context>
         </context-group>
+        <target>
+          Data di Completamento
+        </target>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
         <source>
@@ -8201,6 +8633,9 @@
             262
           </context>
         </context-group>
+        <target>
+          Termine per l'Aggiudicazione
+        </target>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
         <source>
@@ -8214,6 +8649,9 @@
             266
           </context>
         </context-group>
+        <target>
+          Data di Firma del Contratto
+        </target>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
         <source>
@@ -8227,6 +8665,9 @@
             278
           </context>
         </context-group>
+        <target>
+          Data di Cancellazione
+        </target>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
         <source>
@@ -8240,6 +8681,9 @@
             286
           </context>
         </context-group>
+        <target>
+          Numero delle Offerte
+        </target>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
         <source>
@@ -8253,6 +8697,9 @@
             290
           </context>
         </context-group>
+        <target>
+          Numero di Offerte in Formato Elettronico
+        </target>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
         <source>
@@ -8266,6 +8713,9 @@
             294
           </context>
         </context-group>
+        <target>
+          Numero del Contratto
+        </target>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
         <source>
@@ -8279,6 +8729,9 @@
             298
           </context>
         </context-group>
+        <target>
+          CPV
+        </target>
       </trans-unit>
       <trans-unit id="7b05eca339545782385023c492709e6b8903ea81" datatype="html">
         <source>
@@ -8292,6 +8745,9 @@
             302
           </context>
         </context-group>
+        <target>
+          Numero del Lotto
+        </target>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
         <source>
@@ -8305,6 +8761,9 @@
             306
           </context>
         </context-group>
+        <target>
+          Posizione sulla Pagina
+        </target>
       </trans-unit>
       <trans-unit id="648c25caed59b2d96be0fe5deb0fef0e9898d212" datatype="html">
         <source>
@@ -8326,6 +8785,9 @@
             380
           </context>
         </context-group>
+        <target>
+          Criteri di Ammissibilità
+        </target>
       </trans-unit>
       <trans-unit id="269b2364e25770a5c993dd687e9dc795d9ed887a" datatype="html">
         <source>
@@ -8355,6 +8817,9 @@
             325
           </context>
         </context-group>
+        <target>
+          Subappaltatori
+        </target>
       </trans-unit>
       <trans-unit id="fd6d213cefb9dc64095782605684e29078591d35" datatype="html">
         <source>
@@ -8368,6 +8833,9 @@
             337
           </context>
         </context-group>
+        <target>
+          Ha vinto
+        </target>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
         <source>
@@ -8381,6 +8849,9 @@
             341
           </context>
         </context-group>
+        <target>
+          Ha subappaltato
+        </target>
       </trans-unit>
       <trans-unit id="b9288b8987a9e5545360e59b2e9f63e0544bb2ad" datatype="html">
         <source>
@@ -8394,6 +8865,9 @@
             345
           </context>
         </context-group>
+        <target>
+          Valore del Subappalto
+        </target>
       </trans-unit>
       <trans-unit id="ec6a8d9946e545072847202bdd8216f3fe229162" datatype="html">
         <source>
@@ -8407,6 +8881,9 @@
             349
           </context>
         </context-group>
+        <target>
+          Prezzi per Unità
+        </target>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
         <source>
@@ -8420,6 +8897,9 @@
             368
           </context>
         </context-group>
+        <target>
+          Requisiti Personali
+        </target>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
         <source>
@@ -8433,6 +8913,9 @@
             372
           </context>
         </context-group>
+        <target>
+          Requisiti Economici
+        </target>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
         <source>
@@ -8446,6 +8929,9 @@
             376
           </context>
         </context-group>
+        <target>
+          Requisiti Tecnici
+        </target>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
         <source>
@@ -8480,6 +8966,9 @@
             456
           </context>
         </context-group>
+        <target>
+          URL
+        </target>
       </trans-unit>
       <trans-unit id="2393499fb6f7168b313e4358963cd8e0d7f73239" datatype="html">
         <source>
@@ -8493,6 +8982,9 @@
             404
           </context>
         </context-group>
+        <target>
+          Data di Pubblicazione
+        </target>
       </trans-unit>
       <trans-unit id="9bd1dc6d99e7401e05647a06b26bfc524a7a2dde" datatype="html">
         <source>
@@ -8506,6 +8998,9 @@
             408
           </context>
         </context-group>
+        <target>
+          Data di Spedizione
+        </target>
       </trans-unit>
       <trans-unit id="1d7cb8bd683036b637c74f4d4f8c239676de2540" datatype="html">
         <source>
@@ -8519,6 +9014,9 @@
             412
           </context>
         </context-group>
+        <target>
+          Tipo di Modulo
+        </target>
       </trans-unit>
       <trans-unit id="ad0c6b721d6d6cec75bf3a58abd1c2c7e77f80f7" datatype="html">
         <source>
@@ -8532,6 +9030,9 @@
             416
           </context>
         </context-group>
+        <target>
+          Fonte del Tipo di Modulo
+        </target>
       </trans-unit>
       <trans-unit id="fe46ccaae902ce974e2441abe752399288298619" datatype="html">
         <source>
@@ -8553,6 +9054,9 @@
             452
           </context>
         </context-group>
+        <target>
+          Lingua
+        </target>
       </trans-unit>
       <trans-unit id="ee19b874f6c1cde10b5abbb796b0c08988aa94b1" datatype="html">
         <source>
@@ -8566,6 +9070,9 @@
             424
           </context>
         </context-group>
+        <target>
+          ID Fonte
+        </target>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">
         <source>
@@ -8579,6 +9086,9 @@
             428
           </context>
         </context-group>
+        <target>
+          ID assegnato dall'Acquirente
+        </target>
       </trans-unit>
       <trans-unit id="a6e242f71fc204a6321623df674a71f0adbf7414" datatype="html">
         <source>
@@ -8592,6 +9102,9 @@
             432
           </context>
         </context-group>
+        <target>
+          È incluso
+        </target>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
         <source>
@@ -8605,6 +9118,9 @@
             448
           </context>
         </context-group>
+        <target>
+          Titolo
+        </target>
       </trans-unit>
       <trans-unit id="fa5de2fc65a3a7a2c2a7d88d944bc013ab43c8cd" datatype="html">
         <source>
@@ -8634,6 +9150,9 @@
             471
           </context>
         </context-group>
+        <target>
+          Fattura Accettata
+        </target>
       </trans-unit>
       <trans-unit id="10c13792a5eac0f405ff5fe26c89804923682ad0" datatype="html">
         <source>
@@ -8660,6 +9179,9 @@
             479
           </context>
         </context-group>
+        <target>
+          Coperto da Gpa
+        </target>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
         <source>
@@ -8673,6 +9195,9 @@
             483
           </context>
         </context-group>
+        <target>
+          Appalto Congiunto
+        </target>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">
         <source>
@@ -8686,6 +9211,9 @@
             487
           </context>
         </context-group>
+        <target>
+          Convenzione Quadro
+        </target>
       </trans-unit>
       <trans-unit id="0ba08037e5bc2c2675c0957ae659f9154736d15d" datatype="html">
         <source>
@@ -8712,6 +9240,9 @@
             495
           </context>
         </context-group>
+        <target>
+          Asta Elettronica
+        </target>
       </trans-unit>
       <trans-unit id="a860a554acd96bd1da91252d04f33fba9b110c58" datatype="html">
         <source>
@@ -8725,6 +9256,9 @@
             499
           </context>
         </context-group>
+        <target>
+          ha Lotti
+        </target>
       </trans-unit>
       <trans-unit id="63344e1765057a4008397080a6f9e2bc60930f52" datatype="html">
         <source>
@@ -8738,6 +9272,9 @@
             503
           </context>
         </context-group>
+        <target>
+          ha Opzioni
+        </target>
       </trans-unit>
       <trans-unit id="aaa77bdac46558e5d797b6d53b0ca285a0137dea" datatype="html">
         <source>
@@ -8751,6 +9288,9 @@
             507
           </context>
         </context-group>
+        <target>
+          Varianti Accettate
+        </target>
       </trans-unit>
       <trans-unit id="e0111239d8e59851b4c1fa1771cbb71ba0273375" datatype="html">
         <source>
@@ -8764,6 +9304,9 @@
             511
           </context>
         </context-group>
+        <target>
+          ID assegnato dal Compratore
+        </target>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
         <source>
@@ -8777,6 +9320,9 @@
             517
           </context>
         </context-group>
+        <target>
+          Finanziamento
+        </target>
       </trans-unit>
       <trans-unit id="5d926ca393abe804e7685919df49933d17f625e5" datatype="html">
         <source>
@@ -8790,6 +9336,9 @@
             529
           </context>
         </context-group>
+        <target>
+          Meta Dati
+        </target>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
         <source>
@@ -8803,6 +9352,9 @@
             531
           </context>
         </context-group>
+        <target>
+          Creato
+        </target>
       </trans-unit>
       <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
         <source>
@@ -8816,6 +9368,9 @@
             535
           </context>
         </context-group>
+        <target>
+          Modificato
+        </target>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
         <source>
@@ -8829,6 +9384,9 @@
             2
           </context>
         </context-group>
+        <target>
+          Clicca per nascondere/mostrare questa sezione
+        </target>
       </trans-unit>
     </body>
   </file>
