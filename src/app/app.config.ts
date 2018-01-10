@@ -9,7 +9,6 @@ import {MapsModule} from './modules/maps/maps.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {LoadingComponent} from './components/loading/loading.component';
 
 import {StartPage} from './pages/start/start.component';
 import {HomePage} from './pages/home/home.component';
@@ -26,13 +25,13 @@ import {PlatformService} from './services/platform.service';
 import {Title} from '@angular/platform-browser';
 import {TitleService} from './services/title.service';
 import {GraphsBarModule} from './modules/graphs/bar/graphs-bar.module';
+import {LoadingModule} from './modules/loading/loading.module';
 
 const AppConfig = {
 	declarations: [
 		AppComponent,
 		FooterComponent,
 		HeaderComponent,
-		LoadingComponent,
 		HomePage,
 		StartPage,
 		TestPage,
@@ -44,6 +43,7 @@ const AppConfig = {
 		MapsModule,
 		GraphsBarModule,
 		PipesModule,
+		LoadingModule,
 		ToastrModule.forRoot(),
 		AppRoutingModule
 	],

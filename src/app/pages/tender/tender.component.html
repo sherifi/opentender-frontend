@@ -1,9 +1,4 @@
-<div class="container-outer" *ngIf="!tender" loading></div>
-<div class="container-outer" *ngIf="notFound">
-	<div class="slab-not-found-error">404:
-		<ng-container i18n>Not Found</ng-container>
-	</div>
-</div>
+<loading [loading]="!tender" [notFound]="notFound"></loading>
 <div class="container-outer entity" *ngIf="tender">
 	<div class="container">
 		<div class="container-left-9">

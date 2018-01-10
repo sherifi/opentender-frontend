@@ -1,5 +1,5 @@
 import {Component, OnInit, ElementRef} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
+import {NavigationCancel, NavigationEnd, NavigationStart, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RoutesRecognized} from '@angular/router';
 import {TitleService} from './services/title.service';
 import {PlatformService} from './services/platform.service';
 
@@ -12,6 +12,7 @@ import {PlatformService} from './services/platform.service';
 	templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
+	public loading: boolean = false;
 
 	constructor(private router: Router, private el: ElementRef, private titleService: TitleService, private platform: PlatformService) {
 		titleService.setDefault();
@@ -26,7 +27,12 @@ export class AppComponent implements OnInit {
 	ngOnInit(): void {
 		if (this.platform.isBrowser) {
 			this.router.events.subscribe(e => {
-				if (e instanceof NavigationEnd) {
+				if (e instanceof RoutesRecognized) {
+					this.loading = true;
+				} else if (e instanceof NavigationCancel) {
+					this.loading = false;
+				} else if (e instanceof NavigationEnd) {
+					this.loading = false;
 					this.checkURL(e.url);
 					this.scrollToTop();
 				}

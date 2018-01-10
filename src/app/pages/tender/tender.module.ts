@@ -9,6 +9,7 @@ import {TenderPage} from './tender.component';
 import {DialogModule} from '../../modules/dialog/dialog.module';
 import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-heatmap-grid.module';
 import {GraphsValuesGridModule} from '../../modules/graphs/values-grid/graphs-values-grid.module';
+import {LoadingModule} from '../../modules/loading/loading.module';
 
 @NgModule({
 	imports: [
@@ -19,6 +20,7 @@ import {GraphsValuesGridModule} from '../../modules/graphs/values-grid/graphs-va
 		GraphsHeatMapGridModule,
 		GraphsValuesGridModule,
 		DialogModule,
+		LoadingModule,
 		routing
 	],
 	declarations: [

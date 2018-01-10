@@ -1,0 +1,4 @@
+<div *ngIf="loading && !notFound" class="page-loading" i18n>Loading…</div>
+<div *ngIf="notFound" class="page-error">
+	404: <ng-container i18n>Not Found</ng-container>
+</div>

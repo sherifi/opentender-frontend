@@ -9,6 +9,7 @@ import {MapsModule} from '../../modules/maps/maps.module';
 import {RegionPage} from './region.component';
 import {TableModule} from '../../modules/tables/table.module';
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
+import {LoadingModule} from '../../modules/loading/loading.module';
 
 @NgModule({
 	imports: [
@@ -20,6 +21,7 @@ import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 		MapsModule,
 		TableModule,
 		DialogModule,
+		LoadingModule,
 		routing
 	],
 	declarations: [
