@@ -23,7 +23,7 @@ const ColumnsFormatUtils = {
 		return list;
 	},
 	sortListByContent: (list: Array<ITableCellLine>) => {
-		return list.sort((a, b) => {
+		list.sort((a, b) => {
 			if (a.content < b.content) {
 				return -1;
 			}
@@ -32,6 +32,7 @@ const ColumnsFormatUtils = {
 			}
 			return 0;
 		});
+		return list;
 	},
 	formatPriceEURValue: (value: number, library: ITableLibrary) => {
 		return library.i18n.formatCurrencyValueEUR(value).replace(/ /g, '\u00a0');
