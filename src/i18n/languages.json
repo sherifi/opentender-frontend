@@ -6,9 +6,9 @@
       "eng": "German"
     },
     {
-      "id": "fr",
-      "name": "Français",
-      "eng": "French"
+      "id": "it",
+      "name": "Italiano",
+      "eng": "Italian"
     },
     {
       "id": "en",
@@ -17,6 +17,11 @@
     }
   ],
   "disabled": [
+    {
+      "id": "fr",
+      "name": "Français",
+      "eng": "French"
+    },
     {
       "id": "bg",
       "name": "български",
@@ -66,11 +71,6 @@
       "id": "hu",
       "name": "Magyar",
       "eng": "Hungarian"
-    },
-    {
-      "id": "it",
-      "name": "Italiano",
-      "eng": "Italian"
     },
     {
       "id": "lt",
