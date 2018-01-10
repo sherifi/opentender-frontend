@@ -30,11 +30,11 @@ export class SelectYearRangeComponent implements OnChanges {
 
 	getMinMax() {
 		let years = this.years || [];
-		let startYear = 0;
-		let endYear = 0;
+		let startYear = null;
+		let endYear = null;
 		years.forEach((year) => {
-			startYear = startYear == 0 ? year : Math.min(year, startYear);
-			endYear = endYear == 0 ? year : Math.max(year, endYear);
+			startYear = startYear === null ? year : Math.min(year, startYear);
+			endYear = endYear === null ? year : Math.max(year, endYear);
 		});
 		return {min: startYear, max: endYear};
 	}
@@ -43,13 +43,21 @@ export class SelectYearRangeComponent implements OnChanges {
 	setYears() {
 		let m = this.getMinMax();
 		if (this.isSet) {
-			this.minYear = Math.min(m.min, this.minYear);
-			this.maxYear = Math.max(m.min, this.maxYear);
+			if (m.min !== null) {
+				this.minYear = Math.min(m.min, this.minYear);
+			}
+			if (m.max !== null) {
+				this.maxYear = Math.max(m.max, this.maxYear);
+			}
 			return;
 		}
 		this.empty = (this.years || []).length === 0;
-		this.minYear = m.min;
-		this.maxYear = m.max;
+		if (m.min !== null) {
+			this.minYear = m.min;
+		}
+		if (m.max !== null) {
+			this.maxYear = m.max;
+		}
 		this.startYear = this.minYear;
 		this.endYear = this.maxYear;
 		this.isSet = true;
