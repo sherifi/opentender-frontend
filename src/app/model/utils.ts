@@ -1,5 +1,6 @@
 import * as moment from 'moment';
 import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
+import {ISeriesDataTable} from '../app.interfaces';
 
 export const Utils = {
 	formatDatetime: (value: string): string => {
@@ -50,25 +51,27 @@ export const Utils = {
 	formatYear(value): string {
 		return value.toString();
 	},
-	seriesToTable(data: IChartData[], header, multi: boolean) {
+	seriesToTable(data: IChartData[], header, multi: boolean): ISeriesDataTable {
 		if (multi) {
 			let list = data.map(d => {
 				let row: Array<string | number | Date> = d.series.map(val => val.invalid ? 'NO DATA' : val.value);
 				row.unshift(d.name);
 				return row;
 			});
+			let heads = [];
 			let head = data && data.length > 0 ? data[0].series.map(d => d.name) : [];
 			head.unshift(header.name);
 			let subhead = data && data.length > 0 ? data[0].series.map(d => header.value) : [];
 			subhead.unshift('Value');
-			list.unshift(subhead);
-			return {rows: list, head: head};
+			heads.push(subhead);
+			heads.push(head);
+			return {rows: list, heads: heads};
 		} else {
 			let hasID = header.hasOwnProperty('id');
 			let list = data.map(d => {
 				return hasID ? [d.id, d.name, d.value] : [d.name, d.value];
 			});
-			return {rows: list, head: hasID ? [header.id, header.name, header.value] : [header.name, header.value]};
+			return {rows: list, heads: [hasID ? [header.id, header.name, header.value] : [header.name, header.value]]};
 		}
 	},
 	downloadSeries: function(format, data, header, multi: boolean, exportfilename): void {
@@ -80,7 +83,7 @@ export const Utils = {
 	},
 	downloadCSVSeries(data: IChartData[], header, multi: boolean, exportfilename: string): void {
 		let table = Utils.seriesToTable(data, header, multi);
-		let list = [JSON.stringify(table.head)];
+		let list = table.heads.map(head => JSON.stringify(head));
 		table.rows.forEach(row => list.push(JSON.stringify(row)));
 		let csv = list.join('\n').replace(/(^\[)|(\]$)/mg, ''); // remove opening [ and closing ] brackets from each line
 		Utils.downloadCSV(csv, exportfilename);

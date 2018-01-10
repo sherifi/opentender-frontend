@@ -58,9 +58,11 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
-		this.scores.data = null;
-		if (this.data) {
-			this.scores.data = this.data;
+		if (changes.data) {
+			this.scores.data = null;
+			if (this.data) {
+				this.scores.data = this.data;
+			}
 		}
 		this.graph.chart.labels = this.isIndicators;
 		this.graph.chart.maxRadius = this.isIndicators ? 40 : null;

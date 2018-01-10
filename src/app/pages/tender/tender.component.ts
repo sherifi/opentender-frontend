@@ -168,7 +168,6 @@ export class TenderPage implements OnInit, OnDestroy {
 					indicators: indicators[g.id] || []
 				};
 			});
-
 			this.viz.distribution.highlight.values = vals;
 			if (tender.ot.date) {
 				this.viz.distribution.highlight.year = tender.ot.date.slice(0, 4);
@@ -185,6 +184,9 @@ export class TenderPage implements OnInit, OnDestroy {
 		}
 		if (this.tender.buyers && this.tender.buyers.length > 0 && this.tender.buyers[0].address && this.tender.buyers[0].address.ot && this.tender.buyers[0].address.ot.nutscode) {
 			this.viz.distribution.filters.push({id: 'nuts', name: this.i18n.get('Limit to same region (NUTS2)'), active: false, data: this.tender.buyers[0].address.ot.nutscode});
+		}
+		if (this.tender.ot.date) {
+			this.viz.distribution.filters.push({id: 'years', name: this.i18n.get('Show all years'), active: false});
 		}
 	}
 
@@ -206,8 +208,10 @@ export class TenderPage implements OnInit, OnDestroy {
 					type: ISearchFilterDefType[ISearchFilterDefType.term],
 					value: [this.tender.ot.cpv.slice(0, 2)]
 				};
+			} else {
+				return null;
 			}
-		});
+		}).filter(f => f !== null);
 		let sub = this.api.getTenderStats({ids: [this.tender.id], filters: filters}).subscribe(
 			(result) => this.displayStats(result.data),
 			(error) => {
@@ -225,7 +229,21 @@ export class TenderPage implements OnInit, OnDestroy {
 			return;
 		}
 		let stats = data.stats;
-		viz.distribution.data = stats.histogram_distribution_indicators;
+		let showYears = this.viz.distribution.filters.find(f => f.id === 'years');
+		if (!this.tender.ot.date || (showYears && showYears.active)) {
+			viz.distribution.data = stats.histogram_distribution_indicators;
+		} else {
+			let limited = {};
+			let year = this.tender.ot.date.slice(0, 4);
+			Object.keys(stats.histogram_distribution_indicators).forEach(key => {
+				let group = stats.histogram_distribution_indicators[key];
+				if (group[year]) {
+					limited[key] = {};
+					limited[key][year] = group[year];
+				}
+			});
+			viz.distribution.data = limited;
+		}
 	}
 
 	benchmarkFilterChange(event) {

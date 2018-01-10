@@ -344,6 +344,11 @@ export interface ISeriesProvider {
 	getSeriesInfo: () => ISeries;
 }
 
+export interface ISeriesDataTable {
+	heads: Array<Array<string>>;
+	rows: Array<Array<string | number | Date>>;
+}
+
 /* benchmark filter */
 
 export interface IBenchmarkFilter {

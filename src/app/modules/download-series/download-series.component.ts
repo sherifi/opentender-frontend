@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Utils} from '../../model/utils';
-import {ISeries, ISeriesProvider} from '../../app.interfaces';
+import {ISeries, ISeriesDataTable, ISeriesProvider} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
@@ -13,10 +13,7 @@ export class SelectDownloadSeriesComponent {
 	sender: ISeriesProvider;
 	showDialog: boolean = false;
 	series: ISeries;
-	table: {
-		head: Array<string>;
-		rows: Array<Array<string | number | Date>>;
-	};
+	table: ISeriesDataTable;
 
 	constructor() {
 	}
