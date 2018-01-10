@@ -2,8 +2,10 @@
 	<div class="title">{{caption}}</div>
 	<div class="similars-list">
 		<div class="similar" *ngFor="let body of similar">
+			<div class="similar-form">
 			<a [routerLink]="[link+body.id]" i18n-title title="Click to jump to the profile page"><i class="{{icon}}"></i> </a>
-			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" [(ngModel)]="search_similars[body.id]" (ngModelChange)="triggerChange()" /> {{body.name | nameGuard}}</label>
+			<label class="checkbox" i18n-title title="Click to include/exclude into view"><input type="checkbox" [(ngModel)]="search_similars[body.id]" (ngModelChange)="triggerChange()" /> <span>{{body.name | nameGuard}}</span></label>
+		</div>
 		</div>
 	</div>
 	<div class="similars-tools" *ngIf="similar.length>1"><a (click)="markAll()" i18n>Select all</a> | <a (click)="markNone()" i18n>Deselect all</a></div>

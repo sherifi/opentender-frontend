@@ -27,6 +27,14 @@
     @include respond-to(medium-up) {
       width: 45%;
     }
+
+    .similar-form {
+      display: block;
+      padding: 1px 2px;
+      margin-left: 44px;
+      text-indent: -43px;
+    }
+
     label {
       display: inline;
       font-size: 0.8em;
@@ -36,9 +44,11 @@
         display: inline-block;
       }
     }
+
     a {
-      display: inline-block;
+      display: inline;
       font-size: 0.8em;
+      margin-left: 3px;
     }
   }
 
