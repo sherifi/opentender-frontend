@@ -13,6 +13,7 @@ declare module '*languages.json' {
 
 interface INumeralName {
 	one?: string;
+	four?: string;
 	other?: string;
 }
 
@@ -93,6 +94,8 @@ export class I18NService {
 	public getTranslatedLargeNumberName(nn: INumeralName, value: number) {
 		if (nn) {
 			if (value === 1 && nn.one) {
+				return nn.one;
+			} else if (value < 5 && nn.four) {
 				return nn.one;
 			}
 			return nn.other;
