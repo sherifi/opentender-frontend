@@ -39,9 +39,7 @@
       "assets": [
         "../assets"
       ],
-      "styles": [
-        "style/style.scss"
-      ],
+      "styles": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
