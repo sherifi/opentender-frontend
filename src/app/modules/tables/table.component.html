@@ -12,7 +12,8 @@
 		<td *ngFor="let cell of row.cells" class="{{cell.lines.length>0 ? cell.lines[0].align :''}}">
 			<div *ngFor="let line of cell.lines">
 				<div class="table-line-prefix" *ngIf="line.prefix">{{line.prefix}}</div>
-				<div *ngIf="line.collapseLines" (click)="line.collapsed = !line.collapsed" class="table-line-collapse"><i class="icon-chevron-down"></i></div>
+				<div class="table-line-prefix clickable" *ngIf="line.collapseName" (click)="line.collapsed = !line.collapsed">{{line.collapseName}}</div>
+				<div *ngIf="line.collapseLines" (click)="line.collapsed = !line.collapsed" class="table-line-collapse clickable"><i class="icon-chevron-down"></i></div>
 				<div class="table-score-gradient" *ngIf="line.score!==undefined" title="{{line.hint}}">
 					<graph score-gradient [value]="line.score"></graph>
 				</div>

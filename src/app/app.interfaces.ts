@@ -501,6 +501,7 @@ export interface ITableCellLine {
 	icon?: string;
 	styleClass?: string;
 	score?: number;
+	collapseName?: string;
 	collapseLines?: Array<ITableCellLine>;
 	collapsed?: boolean;
 	align?: string;

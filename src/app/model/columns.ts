@@ -16,6 +16,23 @@ const ICON = {
 };
 
 const ColumnsFormatUtils = {
+	checkEntryCollapse: (list: Array<ITableCellLine>, library: ITableLibrary, amount: number = 10) => {
+		if (list.length > amount) {
+			return [{collapseName: list.length + ' ' + library.i18n.get('Entries'), collapseLines: list, collapsed: true}];
+		}
+		return list;
+	},
+	sortListByContent: (list: Array<ITableCellLine>) => {
+		return list.sort((a, b) => {
+			if (a.content < b.content) {
+				return -1;
+			}
+			if (a.content > b.content) {
+				return 1;
+			}
+			return 0;
+		});
+	},
 	formatPriceEURValue: (value: number, library: ITableLibrary) => {
 		return library.i18n.formatCurrencyValueEUR(value).replace(/ /g, '\u00a0');
 	},
@@ -118,7 +135,7 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 			icon: ICON.authority + ' icon-large',
 			content: '',
 			link: '/authority/' + authority.body.id,
-			hint: ('Profile Page ' + library.i18n.nameGuard(authority.body.name)),
+			hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(authority.body.name),
 			align: 'center'
 		}]
 	}
@@ -165,7 +182,7 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 		name: 'Profile Link',
 		id: 'id',
 		group: 'Company',
-		format: (company, library) => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: ('Profile Page ' + library.i18n.nameGuard(company.body.name)), align: 'center'}]
+		format: (company, library) => [{icon: ICON.company + ' icon-large', content: '', link: '/company/' + company.body.id, hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(company.body.name), align: 'center'}]
 	}
 ];
 
@@ -174,7 +191,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Tender Link',
 		id: 'id',
 		group: 'Tender',
-		format: tender => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id, hint: 'Tender Page ' + tender.title, align: 'center'}]
+		format: (tender, library) => [{icon: ICON.tender + ' icon-large', content: '', link: '/tender/' + tender.id, hint: library.i18n.get('Profile Page') + ' ' + tender.title, align: 'center'}]
 	},
 	{
 		name: 'Supplier',
@@ -194,7 +211,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid) => {
 						if (bid.bidders) {
 							bid.bidders.forEach((bidder: Bidder) => {
-								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: ('Profile Page ' + library.i18n.nameGuard(bidder.name)), link: '/company/' + bidder.id};
+								companies[bidder.id] = companies[bidder.name] || {bidder: bidder, lots: [], hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(bidder.name), link: '/company/' + bidder.id};
 								companies[bidder.id].lots.push(index_l + 1);
 							});
 						}
@@ -209,12 +226,12 @@ export const TenderColumns: Array<ITableColumnTender> = [
 							c.lots = c.lots.slice(0, 5);
 							c.lots.push('…');
 						}
-						result.push({prefix: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
+						result.push({prefix: library.i18n.get('Lot') + ' ' + c.lots.join(',')});
 					}
-					result.push({icon: ICON.company, content: library.i18n.nameGuard(c.bidder.name), hint: ('Profile Page ' + library.i18n.nameGuard(c.bidder.name)), link: c.link});
+					result.push({icon: ICON.company, content: library.i18n.nameGuard(c.bidder.name), hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(c.bidder.name), link: c.link});
 				}
 			);
-			return result;
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -225,7 +242,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'lots.bids.bidder.address.ot.nutscode',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.lots) {
 				return [];
 			}
@@ -244,7 +261,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					});
 				}
 			});
-			return result;
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -259,9 +276,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			if (!tender.buyers) {
 				return [];
 			}
-			return tender.buyers.map((buyer: Buyer) => {
-				return {icon: ICON.authority, content: library.i18n.nameGuard(buyer.name), hint: ('Profile Page ' + library.i18n.nameGuard(buyer.name)), link: '/authority/' + buyer.id};
+			let result = tender.buyers.map((buyer: Buyer) => {
+				return {icon: ICON.authority, content: library.i18n.nameGuard(buyer.name), hint: (library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(buyer.name)), link: '/authority/' + buyer.id};
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -272,7 +290,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'buyers.address.ot.nutscode',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.buyers) {
 				return [];
 			}
@@ -280,10 +298,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			tender.buyers.forEach((buyer: Buyer) => {
 				if (buyer.address && buyer.address.ot && buyer.address.ot.nutscode) {
 					let nut = buyer.address.ot.nutscode;
-					result.push({icon: ICON.region, content: nut, hint: ('Region Page NUTS Code' + nut), link: '/region/' + nut});
+					result.push({icon: ICON.region, content: nut, hint: library.i18n.get('Profile Page') + ' NUTS ' + nut, link: '/region/' + nut});
 				}
 			});
-			return result;
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -294,13 +312,14 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'administrators.name.raw',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.administrators) {
 				return [];
 			}
-			return tender.administrators.map((admin: Buyer) => {
+			let result = tender.administrators.map((admin: Buyer) => {
 				return {content: admin.name};
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -380,13 +399,13 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'cpvs.code',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.cpvs) {
 				return [];
 			}
 			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
 				if (cpv['valid']) {
-					return {content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+					return {content: cpv['name'] || cpv.code, hint: library.i18n.get('Profile Page') + ' ' + cpv['name'], link: '/sector/' + cpv.code};
 				} else {
 					return {content: (cpv['name'] || '') + ' ' + cpv.code};
 				}
@@ -401,17 +420,18 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'cpvs.code',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.cpvs) {
 				return [];
 			}
-			return tender.cpvs.map(cpv => {
+			let result = tender.cpvs.map(cpv => {
 				if (cpv['valid']) {
-					return {list: true, content: cpv['name'] || cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+					return {list: true, content: cpv['name'] || cpv.code, hint: library.i18n.get('Profile Page') + ' ' + cpv['name'], link: '/sector/' + cpv.code};
 				} else {
 					return {list: true, content: (cpv['name'] || '') + ' ' + cpv.code};
 				}
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -422,17 +442,18 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'cpvs.code',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.cpvs) {
 				return [];
 			}
-			return tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
+			let result = tender.cpvs.filter(cpv => cpv.isMain).map(cpv => {
 				if (cpv['valid']) {
-					return {content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+					return {content: cpv.code, hint: library.i18n.get('Profile Page') + ' ' + cpv['name'], link: '/sector/' + cpv.code};
 				} else {
 					return {content: cpv.code};
 				}
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -443,17 +464,18 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'cpvs.code',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.cpvs) {
 				return [];
 			}
-			return tender.cpvs.map(cpv => {
+			let result = tender.cpvs.map(cpv => {
 				if (cpv['valid']) {
-					return {list: true, content: cpv.code, hint: 'Sector Page ' + cpv['name'], link: '/sector/' + cpv.code};
+					return {list: true, content: cpv.code, hint: library.i18n.get('Profile Page') + ' ' + cpv['name'], link: '/sector/' + cpv.code};
 				} else {
 					return {list: true, content: cpv.code};
 				}
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -469,9 +491,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 				return [];
 			}
 			let list = tender.fundings.filter(funding => funding.isEuFund);
-			return list.map(funding => {
+			let result = list.map(funding => {
 				return {list: list.length > 1, prefix: library.i18n.get('EU-Fund'), content: library.i18n.nameGuard(funding.programme)};
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -482,14 +505,15 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'fundings.programme',
 			ascend: true
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.fundings) {
 				return [];
 			}
 			let list = tender.fundings.filter(funding => funding.programme);
-			return list.map(funding => {
-				return {list: list.length > 1, prefix: funding.isEuFund ? 'EU-Fund' : null, content: funding.programme};
+			let result = list.map(funding => {
+				return {list: list.length > 1, prefix: funding.isEuFund ? library.i18n.get('EU-Fund') : null, content: funding.programme};
 			});
+			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
 	{
@@ -591,14 +615,14 @@ export const TenderColumns: Array<ITableColumnTender> = [
 					lot.bids.forEach((bid: Bid, index_b: number) => {
 						if (bid.price && bid.price.netAmountEur) {
 							result.push({
-								prefix: (tender.lots.length ? 'Lot ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' Bid ' + (index_b + 1) : ''),
+								prefix: (tender.lots.length ? library.i18n.get('Lot') + ' ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' ' + library.i18n.get('Bid') + ' ' + (index_b + 1) : ''),
 								content: ColumnsFormatUtils.formatPriceEURValue(bid.price.netAmountEur, library)
 							});
 						}
 					});
 				}
 			});
-			return result;
+			return ColumnsFormatUtils.checkEntryCollapse(result, library);
 		}
 	},
 	{
@@ -647,7 +671,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'lots.awardDecisionDate',
 			ascend: false
 		},
-		format: tender => {
+		format: (tender, library) => {
 			if (!tender.lots) {
 				return [];
 			}
@@ -662,17 +686,14 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			let datekeys = Object.keys(dates);
 			datekeys.forEach(key => {
 					let c = dates[key];
-					// if (tender.lots.length > 1 && datekeys.length > 1) {
-					// 	result.push({content: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
-					// }
 					if (c.lots.length > 5) {
 						c.lots = c.lots.slice(0, 5);
 						c.lots.push('…');
 					}
-					result.push({content: Utils.formatDate(c.date), hint: 'Lot' + (c.lots.length > 1 ? 's' : '') + ' ' + c.lots.join(',')});
+					result.push({content: Utils.formatDate(c.date), hint: library.i18n.get('Lot') + ' ' + c.lots.join(',')});
 				}
 			);
-			return result;
+			return ColumnsFormatUtils.checkEntryCollapse(result, library);
 		}
 	},
 	{
