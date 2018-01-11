@@ -1,5 +1,4 @@
 import {Utils} from './utils';
-import {Consts} from './consts';
 import {ISearchFilterDef, ISearchFilterDefType} from '../app.interfaces';
 
 export const TenderFilterDefs: Array<ISearchFilterDef> = [
@@ -144,6 +143,13 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		aggregation_field: 'fundings.programme.raw',
 		aggregation_type: ISearchFilterDefType.term,
 		size: 30
+	},
+	{
+		id: 'cpvs.code',
+		name: 'CPV Code',
+		group: 'Sector',
+		field: 'cpvs.code',
+		type: ISearchFilterDefType.text,
 	},
 	{
 		id: 'ot.cpv.divisions',
