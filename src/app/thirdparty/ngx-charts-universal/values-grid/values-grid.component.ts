@@ -1,7 +1,7 @@
 import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {calculateViewDimensions, ViewDimensions} from '../utils/view-dimensions.helper';
 import {gridLayout} from '../utils/grid.helper';
-import {formatLabel} from '../utils/label.helper';
+import {formatLabel, splitLabel} from '../utils/label.helper';
 import {IChartData, IChartPieSeriesSettings} from '../chart.interface';
 import {getTooltipLabeledText} from '../common/tooltip/tooltip.helper';
 import {min} from 'd3-array';
@@ -41,7 +41,8 @@ import {IDomain} from '../common/common.interface';
 							  dy="1.23em"
 							  x="0"
 							  [attr.y]="series.outerRadius"
-							  text-anchor="middle">{{series.label}}
+							  text-anchor="middle">
+						<svg:tspan *ngFor="let text of series.labels; let i = index" x="0" [attr.y]="(i*textHeight)+series.outerRadius">{{text}}</svg:tspan>
 					</svg:text>
 				</svg:g>
 			</svg:g>
@@ -66,6 +67,7 @@ export class ValuesGridComponent extends BaseChartComponent {
 	layout_data: any[] = [];
 	series: any[] = [];
 	getTooltipText = getTooltipLabeledText;
+	textHeight = 26;
 
 	onClick(data): void {
 		this.select.emit(data);
@@ -113,6 +115,7 @@ export class ValuesGridComponent extends BaseChartComponent {
 	}
 
 	getSeries(): any[] {
+		console.log(this.layout_data);
 		return this.layout_data.map((d) => {
 			const baselineLabelHeight = this.chart.labels ? 20 : 0;
 			const padding = 10;
@@ -134,6 +137,7 @@ export class ValuesGridComponent extends BaseChartComponent {
 				innerRadius,
 				outerRadius: radius,
 				label,
+				labels: labelLeft ? [label] : splitLabel(label),
 				total: this.chart.maxValue,
 				value,
 				fontSize,

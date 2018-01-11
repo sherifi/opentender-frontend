@@ -3,6 +3,7 @@ import {PlatformService} from '../../../../services/platform.service';
 import {select} from 'd3-selection';
 import {arc} from 'd3-shape';
 import 'd3-transition';
+import {splitLabel} from '../../utils/label.helper';
 
 @Component({
 	selector: 'g[ngx-charts-pie-label]',
@@ -49,25 +50,6 @@ export class PieLabelComponent implements OnChanges {
 		this.element = element.nativeElement;
 	}
 
-	getTexts(label: string): Array<string> {
-		if (label.length > 20) {
-			let result = [''];
-			let array = label.split(' ');
-			array.forEach(w => {
-				let last = result[result.length - 1];
-				if (last.length === 0) {
-					result[result.length - 1] = w;
-				} else if ((last.length + w.length) < 20) {
-					result[result.length - 1] += ' ' + w;
-				} else {
-					result.push(w);
-				}
-			});
-			return result;
-		}
-		return [label];
-	}
-
 	ngOnChanges(changes: SimpleChanges): void {
 		this.update();
 	}
@@ -95,7 +77,7 @@ export class PieLabelComponent implements OnChanges {
 		this.line = `M${innerArc.centroid(this.data)}L${outerArc.centroid(this.data)}L${this.labelXY}`;
 		this.transform = `translate(${this.labelXY})`;
 		this.textAnc = this.textAnchor();
-		this.texts = this.getTexts(this.label);
+		this.texts = splitLabel(this.label);
 		this.offsetY = -((this.texts.length * this.textHeight) / 2) + (this.textHeight / 2);
 		//
 		// if (this.platform.isBrowser) {

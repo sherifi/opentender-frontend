@@ -30,3 +30,22 @@ export function trimLabel(s, max = 16): string {
 		return `${s.slice(0, max).trim()}…`;
 	}
 }
+
+export function splitLabel(label: string, charCount: number = 20): Array<string> {
+	if (label.length > charCount) {
+		let result = [''];
+		let array = label.split(' ');
+		array.forEach(w => {
+			let last = result[result.length - 1];
+			if (last.length === 0) {
+				result[result.length - 1] = w;
+			} else if ((last.length + w.length) < charCount) {
+				result[result.length - 1] += ' ' + w;
+			} else {
+				result.push(w);
+			}
+		});
+		return result;
+	}
+	return [label];
+}
