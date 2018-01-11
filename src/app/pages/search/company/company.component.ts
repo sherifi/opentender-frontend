@@ -32,7 +32,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		let state = this.state.get('search.company');
 		if (state) {
-			this.columns = state.columns;
+			this.columnIds = state.columns;
 			this.search = state.search;
 			this.search_cmd = state.search_cmd;
 		} else {
@@ -42,7 +42,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.state.put('search.company', {
-			columns: this.columns,
+			columns: this.columnIds,
 			search: this.search,
 			search_cmd: this.search_cmd
 		});
