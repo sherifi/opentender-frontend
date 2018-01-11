@@ -115,7 +115,6 @@ export class ValuesGridComponent extends BaseChartComponent {
 	}
 
 	getSeries(): any[] {
-		console.log(this.layout_data);
 		return this.layout_data.map((d) => {
 			const baselineLabelHeight = this.chart.labels ? 20 : 0;
 			const padding = 10;
