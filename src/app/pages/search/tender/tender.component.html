@@ -16,6 +16,6 @@
 
 <div class="container-outer container-padded-top-lite">
 	<div class="container">
-		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>
+		<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);" (columnsChange)="columnsChange($event);"></tender-table>
 	</div>
 </div>

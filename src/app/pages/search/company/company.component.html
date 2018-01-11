@@ -15,6 +15,6 @@
 </div>
 <div class="container-outer container-padded-top-lite">
 	<div class="container">
-		<company-table [search_cmd]="search_cmd" [columnIds]="columns" [title]="title" (searchChange)="searchChange($event);"></company-table>
+		<company-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="title" (searchChange)="searchChange($event);" (columnsChange)="columnsChange($event);"></company-table>
 	</div>
 </div>

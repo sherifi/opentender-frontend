@@ -4,7 +4,6 @@ import {StateService} from '../../../services/state.service';
 import {AuthorityFilterDefs} from '../../../model/filters';
 import {ISearchResultAuthority, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
-import {Utils} from '../../../model/utils';
 
 @Component({
 	moduleId: __filename,
@@ -58,6 +57,10 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 		let total = data.hits && data.hits.total ? data.hits.total : 0;
 		this.setTitle(total);
 		this.search.fillAggregationResults(data.aggregations);
+	}
+
+	columnsChange(data: { columns: Array<string> }) {
+		this.columnIds = data.columns;
 	}
 
 	refresh() {

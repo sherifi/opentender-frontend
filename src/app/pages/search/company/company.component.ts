@@ -3,7 +3,6 @@ import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
 import {CompanyFilterDefs} from '../../../model/filters';
 import {ISearchResultCompany, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
-import {Utils} from '../../../model/utils';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	title = '';
 	search = new Search('company', CompanyFilterDefs);
 	search_cmd: ISearchCommand;
-	columns = ['id', 'body.name', 'body.address.city', 'body.address.country'];
+	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
 	quick_filters = [];
 	check_filters = CompanyFilterDefs;
 	search_filters = CompanyFilterDefs.filter(f => f.type !== ISearchFilterDefType.select);
@@ -56,6 +55,10 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	searchChange(data: ISearchResultCompany) {
 		this.setTitle(data.hits && data.hits.total ? data.hits.total : 0);
 		this.search.fillAggregationResults(data.aggregations);
+	}
+
+	columnsChange(data: { columns: Array<string> }) {
+		this.columnIds = data.columns;
 	}
 
 	refresh() {

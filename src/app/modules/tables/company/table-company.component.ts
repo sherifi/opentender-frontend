@@ -21,6 +21,8 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 	title: string;
 	@Output()
 	searchChange = new EventEmitter();
+	@Output()
+	columnsChange = new EventEmitter();
 
 	columns: Array<ITableColumnCompany> = [];
 	all_columns = CompanyColumns;
@@ -67,6 +69,7 @@ export class CompanyTableComponent implements OnChanges, OnInit {
 
 	onSelectColumns(event) {
 		this.columns = event.value;
+		this.columnsChange.emit({columns: this.columns.map(column => column.id)});
 		this.buildTable();
 	}
 

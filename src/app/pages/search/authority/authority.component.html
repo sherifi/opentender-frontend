@@ -15,6 +15,6 @@
 </div>
 <div class="container-outer container-padded-top-lite">
 	<div class="container">
-		<authority-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="title" (searchChange)="searchChange($event);"></authority-table>
+		<authority-table [search_cmd]="search_cmd" [columnIds]="columnIds" [title]="title" (searchChange)="searchChange($event);" (columnsChange)="columnsChange($event);"></authority-table>
 	</div>
 </div>

@@ -21,6 +21,8 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 	title: string;
 	@Output()
 	searchChange = new EventEmitter();
+	@Output()
+	columnsChange = new EventEmitter();
 
 	columns: Array<ITableColumnAuthority> = [];
 	table: ITable;
@@ -66,6 +68,7 @@ export class AuthorityTableComponent implements OnChanges, OnInit {
 
 	public onSelectColumns(event: { value: Array<ITableColumnAuthority> }): void {
 		this.columns = event.value;
+		this.columnsChange.emit({columns: this.columns.map(column => column.id)});
 		this.buildTable();
 	}
 

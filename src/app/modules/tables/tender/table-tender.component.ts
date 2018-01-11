@@ -24,6 +24,8 @@ export class TenderTableComponent implements OnChanges, OnInit {
 	columnIds: Array<string>;
 	@Output()
 	searchChange = new EventEmitter();
+	@Output()
+	columnsChange = new EventEmitter();
 
 	columns: Array<ITableColumnTender> = [];
 	all_columns = TenderColumns;
@@ -101,6 +103,7 @@ export class TenderTableComponent implements OnChanges, OnInit {
 
 	onSelectColumns(event: { value: Array<ITableColumnTender> }): void {
 		this.columns = event.value;
+		this.columnsChange.emit({columns: this.columns.map(column => column.id)});
 		this.buildTable();
 	}
 

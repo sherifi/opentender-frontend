@@ -59,6 +59,10 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		this.search.fillAggregationResults(data.aggregations);
 	}
 
+	columnsChange(data: { columns: Array<string> }) {
+		this.columnIds = data.columns;
+	}
+
 	refresh() {
 		this.search_cmd = this.search.getCommand();
 	}
