@@ -1,6 +1,12 @@
 @import "../../../style/globals.scss";
 
 :host {
+
+  pre {
+    font-size: 13px;
+    line-height: 1.5em;
+  }
+
   h4 {
     font-size: 0.8em;
     border-bottom: 1px solid $neutral-gray;
@@ -123,4 +129,5 @@
     width: 100%;
     text-align: right;
   }
+
 }
