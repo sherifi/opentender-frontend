@@ -145,36 +145,43 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		size: 30
 	},
 	{
+		id: 'ot.cpv',
+		name: 'Main CPV',
+		group: 'Sector',
+		field: 'ot.cpv',
+		type: ISearchFilterDefType.text,
+	},
+	{
 		id: 'cpvs.code',
-		name: 'CPV Code',
+		name: 'CPV Codes',
 		group: 'Sector',
 		field: 'cpvs.code',
 		type: ISearchFilterDefType.text,
 	},
 	{
 		id: 'ot.cpv.divisions',
-		name: 'CPV (Divisions)',
+		name: 'Main CPV (Divisions)',
 		group: 'Sector',
 		field: 'ot.cpv.divisions',
 		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'ot.cpv.groups',
-		name: 'CPV (Groups)',
+		name: 'Main CPV (Groups)',
 		group: 'Sector',
 		field: 'ot.cpv.groups',
 		type: ISearchFilterDefType.select
 	},
 	{
 		id: 'ot.cpv.categories',
-		name: 'CPV (Categories)',
+		name: 'Main CPV (Categories)',
 		group: 'Sector',
 		field: 'ot.cpv.categories',
 		type: ISearchFilterDefType.select
 	},
 	{
-		id: 'ot.cpv',
-		name: 'CPV (Full)',
+		id: 'ot.cpv.full',
+		name: 'Main CPV (Full)',
 		group: 'Sector',
 		field: 'ot.cpv',
 		type: ISearchFilterDefType.select
