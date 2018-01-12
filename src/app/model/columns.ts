@@ -60,7 +60,7 @@ const ColumnsFormatUtils = {
 						}
 					}
 				});
-				result.push({prefix: group.name, score: score.value, hint: group.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
+				result.push({collapseName: group.name, score: score.value, hint: group.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
 			}
 		});
 		return result;
@@ -363,7 +363,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			});
 			let tenderscore = tender.ot.scores.find(s => s.type === library.TENDER.id);
 			if (tenderscore) {
-				result.push({prefix: library.TENDER.name, score: tenderscore.value, hint: library.TENDER.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
+				result.push({collapseName: library.TENDER.name, score: tenderscore.value, hint: library.TENDER.name, collapseLines: collapseLines, collapsed: true, align: 'center'});
 			}
 			return result;
 		}
