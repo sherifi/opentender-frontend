@@ -39,11 +39,6 @@ declare module '*countries.json' {
 	export default value;
 }
 
-declare module '*currencies.json' {
-	const value: any;
-	export default value;
-}
-
 interface IRouterInfo {
 	path: string;
 	title?: string;

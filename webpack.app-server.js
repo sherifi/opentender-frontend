@@ -68,7 +68,9 @@ const serverAppConfig = () => {
 				"sourceMap": true,
 				"tsConfigPath": "src/tsconfig.server.json",
 				"skipCodeGeneration": true,
-				"compilerOptions": {},
+				"compilerOptions": {
+					"fullTemplateTypeCheck": true
+				},
 				"exclude": ['src/client/**/*']
 			})
 		],

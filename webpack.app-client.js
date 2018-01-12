@@ -152,7 +152,9 @@ const clientAppConfig = () => {
 				"sourceMap": utils.config.devMode,
 				"tsConfigPath": "src/tsconfig.browser.json",
 				"skipCodeGeneration": true,
-				"compilerOptions": {},
+				"compilerOptions": {
+					"fullTemplateTypeCheck": true
+				},
 				"exclude": ['src/server/**/*', 'server/**/*']
 			})
 		],

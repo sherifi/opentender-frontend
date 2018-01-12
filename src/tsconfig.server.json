@@ -24,6 +24,9 @@
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true
   },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true
+  },
   "exclude": [
     "test.ts",
     "**/*.spec.ts",

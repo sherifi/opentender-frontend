@@ -18,6 +18,9 @@
 			"dom"
 		]
 	},
+	"angularCompilerOptions": {
+		"fullTemplateTypeCheck": true
+	},
 	"exclude": [
 		"test.ts",
 		"**/*.spec.ts",
