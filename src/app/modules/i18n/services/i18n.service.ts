@@ -2,7 +2,7 @@ import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
 import {Consts} from '../../../model/consts';
 import * as i18nlanguages from '../../../../i18n/languages.json';
-import {Utils} from '../../../model/utils';
+import {getCurrencySymbol} from '@angular/common';
 
 declare module '*languages.json' {
 	export var enabled: Array<{
@@ -150,8 +150,9 @@ export class I18NService {
 			return '';
 		}
 		value = value.toUpperCase();
-		if (Consts.currencies[value]) {
-			return Consts.currencies[value];
+		let symbol = getCurrencySymbol(value, 'narrow');
+		if (symbol) {
+			return symbol;
 		}
 		return value;
 	}
