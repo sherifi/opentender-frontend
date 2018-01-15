@@ -32,8 +32,7 @@ import {AppConfig} from '../app/app.config';
 	]
 })
 export class MainModule {
-	// inject Angulartics2Piwik to initialize it!!!
+	// inject Angulartics2Piwik to initialize it!
 	constructor(private angulartics2: Angulartics2, private angulartics2Piwik: Angulartics2Piwik, private config: ConfigService) {
-		angulartics2.developerMode(config.config.devMode);
 	}
 }
