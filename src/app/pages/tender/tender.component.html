@@ -157,9 +157,10 @@
 				</div>
 				<div *ngIf="tender.cpvs | defined">
 					<h4 i18n>Sectors</h4>
-					<div *ngFor="let val of tender.cpvs"><a [routerLink]="['/sector/'+val.code]">{{val.name}}</a>
-						<small> (CPV {{val.code}})</small>
+					<div *ngIf="tender.ot.cpv"><a [routerLink]="['/sector/'+tender.ot.cpv]">{{tender.ot['cpv_name']}}</a>
+						<small> (CPV {{tender.ot.cpv}})</small>
 					</div>
+					<div *ngFor="let val of tender.cpvs"><div *ngIf="!val.isMain">{{val.name}} <small> (CPV {{val.code}})</small></div></div>
 				</div>
 			</div>
 			<div class="container-left-6" *ngIf="!state.info.subempty['types']">

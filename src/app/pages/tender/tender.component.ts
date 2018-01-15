@@ -111,7 +111,7 @@ export class TenderPage implements OnInit, OnDestroy {
 		if (!obj) {
 			return false;
 		}
-		return !!propNames.find(name => Utils.isDefined(obj['name']));
+		return !!propNames.find(name => Utils.isDefined(obj[name]));
 	}
 
 	display(tender: Definitions.Tender): void {
@@ -120,6 +120,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.tender = tender;
 			this.state.reqs.empty = !this.objHasProperty(tender, ['personalRequirements', 'economicRequirements', 'technicalRequirements', 'eligibilityCriteria', 'deposits']);
 			this.state.buyer.empty = !this.objHasProperty(tender, ['buyers', 'onBehalfOf', 'furtherInformationProvider', 'specificationsProvider', 'bidsRecipient', 'appealBodyName', 'mediationBodyName', 'administrators']);
+			this.state.lots.empty = !Utils.isDefined(tender.lots);
 			this.state.info.subempty['types'] = !this.objHasProperty(tender, ['supplyType', 'procedureType', 'selectionMethod', 'eligibleBidLanguages', 'maxBidsCount', 'maxFrameworkAgreementParticipants', 'awardCriteria']);
 			this.state.info.subempty['prices'] = !this.objHasProperty(tender, ['estimatedPrice', 'finalPrice', 'documentsPrice']);
 			this.state.info.subempty['dates'] = !this.objHasProperty(tender, ['estimatedStartDate', 'estimatedCompletionDate', 'bidDeadline', 'documentsDeadline', 'estimatedDurationInDays', 'estimatedDurationInMonths', 'estimatedDurationInYears']);
@@ -130,7 +131,6 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.state.info.subempty['publications'] = !Utils.isDefined(tender.publications);
 			this.state.info.subempty['documents'] = !Utils.isDefined(tender.documents);
 			this.state.info.subempty['cpvs'] = !Utils.isDefined(tender.cpvs);
-			this.state.info.subempty['lots'] = !Utils.isDefined(tender.lots);
 			this.state.info.subempty['first-column'] = this.state.info.subempty['prices'] && this.state.info.subempty['dates'] && this.state.info.subempty['cpvs'];
 			this.state.info.empty = this.state.info.subempty['first-column'] && this.state.info.subempty['types'];
 			let vals = {};
