@@ -143,7 +143,7 @@ app.use('/assets', errorResponse);
 
 app.use('/api*', (req, res) => {
 	try {
-		let reply = request(Config.server.backendUrl + req.baseUrl);
+		let reply = request(Config.server.backendUrl + req.originalUrl);
 		req.pipe(reply);
 		reply.pipe(res);
 	} catch (err) {
