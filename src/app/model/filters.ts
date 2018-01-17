@@ -198,7 +198,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 	},
 	{
 		id: 'indicators.score_pi',
-		name: 'Procurement Integrity',
+		name: 'Integrity',
 		group: 'Score',
 		field: 'ot.scores.value',
 		subrequest: {

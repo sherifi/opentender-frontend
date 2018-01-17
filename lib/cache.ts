@@ -14,7 +14,7 @@ class MemcachedAdapter {
 		});
 	}
 
-	upsert(key, data, cb): void {
+	upsert(key, data, duration, cb): void {
 		this.memcached.get(key, (err, result) => {
 			if (err) {
 				return cb(err);
@@ -44,7 +44,7 @@ class NodeCacheAdapter {
 		cb(null, c ? c.data : null);
 	}
 
-	upsert(key, data, cb) {
+	upsert(key, data, duration, cb) {
 		let c = this.nodecache.get(key);
 		if (!c) {
 			let maximum_waittime = 2147483647; // max wait time
@@ -64,14 +64,14 @@ class NullCacheAdapter {
 		cb();
 	}
 
-	upsert(key, data, cb) {
+	upsert(key, data, duration, cb) {
 		cb(null, false);
 	}
 }
 
 export interface Cache {
 	get: (key: string, cb: (err, data) => void) => void;
-	upsert: (key: string, data: Object, cb: (err, data) => void) => void;
+	upsert: (key: string, data: Object, duration: number, cb: (err, data) => void) => void;
 }
 
 export function initCache(options): Cache {

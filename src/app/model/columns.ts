@@ -369,7 +369,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		}
 	},
 	{
-		name: 'Procurement Integrity Indicator',
+		name: 'Integrity Indicator',
 		id: 'indicators.pii',
 		group: 'Indicators',
 		format: (tender, library) => {

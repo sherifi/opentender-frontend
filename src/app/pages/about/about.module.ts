@@ -3,7 +3,6 @@ import {routing} from './about.routing';
 import {CommonModule} from '@angular/common';
 import {AboutOpentenderPage} from './opentender/opentender.component';
 import {AboutPage} from './about.component';
-import {AboutDataQualityPage} from './quality/quality.component';
 import {AboutHowPage} from './how/how.component';
 import {AboutGlossaryPage} from './glossary/glossary.component';
 import {FormsModule} from '@angular/forms';
@@ -18,9 +17,7 @@ import {FormsModule} from '@angular/forms';
 		AboutPage,
 		AboutOpentenderPage,
 		AboutGlossaryPage,
-		AboutHowPage,
-		AboutDataQualityPage,
-
+		AboutHowPage
 	]
 })
 export class AboutModule {

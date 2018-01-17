@@ -37,10 +37,10 @@
           "menu_title": "Transparency"
         },
         {
-          "path": "procurement-integrity",
-          "title": "Procurement Integrity Indicators",
+          "path": "integrity",
+          "title": "Integrity Indicators",
           "menu": true,
-          "menu_title": "Procurement Integrity"
+          "menu_title": "Integrity"
         }
       ]
     },

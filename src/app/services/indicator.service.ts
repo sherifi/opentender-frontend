@@ -41,7 +41,7 @@ export class IndicatorService {
 		this.INTEGRITY = this.buildIndicatorInfo(this._indicators.INTEGRITY);
 		this.TRANSPARENCY = this.buildIndicatorInfo(this._indicators.TRANSPARENCY);
 		this.TENDER = {id: 'TENDER', name: i18n.get('Good Procurement Score'), plural: i18n.get('Good Procurement Score'), icon: '', subindicators: []};
-		this.GROUPS = [this.ADMINISTRATIVE, this.INTEGRITY, this.TRANSPARENCY];
+		this.GROUPS = [this.ADMINISTRATIVE, this.TRANSPARENCY, this.INTEGRITY];
 	}
 
 	private buildIndicatorInfo(ii: IIndicatorInfoConst): IIndicatorInfo {

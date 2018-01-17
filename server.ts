@@ -40,7 +40,7 @@ let getCacheKey = (req) => {
 
 const cache = initCache(Config.server.cache);
 let addToCache = (req, data) => {
-	cache.upsert(getCacheKey(req), data, err => {
+	cache.upsert(getCacheKey(req), data, 0, err => {
 		if (err) {
 			console.log(err);
 		}
@@ -110,7 +110,7 @@ morgan.token('cached', (req) => {
 app.use(morgan('[:date[clf]] - cached: :cached - :method :url - :res[content-length] - :response-time ms',
 	{
 		skip: (req, res) => {
-			return (req.originalUrl.indexOf('/assets') === 0);
+			return false; // (req.originalUrl.indexOf('/assets') === 0);
 		}
 	}
 ));
@@ -124,17 +124,15 @@ app.use('/robots.txt', express.static(path.join(ASSETS, '/robots.txt')));
 app.use('/favicon.ico', express.static(path.join(ASSETS, '/favicons/favicon.ico')));
 app.use('/assets/js', express.static(DIST_JS, {index: false}));
 app.use('/assets/style', express.static(DIST_STYLE, {index: false}));
-app.use('/assets/lang/:id', (req, res) => {
+app.use('/assets/lang/:id', checkCache, (req, res) => {
 	if (!translations[req.params.id]) {
 		return res.sendStatus(404);
 	}
-	res.send({translations: translations[req.params.id].translation, extra: translations[req.params.id].extra});
+	let result = {translations: translations[req.params.id].translation, extra: translations[req.params.id].extra};
+	sendAndAddToCache(req, res, result);
 });
 app.use('/data/schema.json', express.static(path.join(DATA, '/schema.json')));
-app.use('/data/nuts0.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl0.geo.json')));
-app.use('/data/nuts1.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl1.geo.json')));
-app.use('/data/nuts2.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl2.geo.json')));
-app.use('/data/nuts3.geo.json', express.static(path.join(DATA, '/nuts/nuts_20M_lvl3.geo.json')));
+app.use('/data/nuts', express.static(path.join(DATA, '/nuts'), {index: false}));
 app.use('/data/files', express.static(path.join(DATA, '/downloads'), {index: false}));
 app.use('/data/files', errorResponse);
 app.use('/data', errorResponse);
