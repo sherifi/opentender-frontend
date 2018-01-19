@@ -115,8 +115,12 @@ export class I18NService {
 		if (name) {
 			return name;
 		}
+		return '*' + this.getLargeNumberString(tier);
+	}
+
+	public getLargeNumberString(tier: number) {
 		const nums = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-		return '*10' + (tier * 3).toString().split('').map(c => nums[parseInt(c, 10)]).join('');
+		return '10' + (tier * 3).toString().split('').map(c => nums[parseInt(c, 10)]).join('');
 	}
 
 	public formatValue(value: number) {
