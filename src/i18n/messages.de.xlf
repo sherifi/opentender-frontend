@@ -6472,6 +6472,22 @@
           Der übergreifende Good Procurement Score ist ein Durchschnitt der oben genannten drei zusammengesetzten Scores.
         </target>
       </trans-unit>
+      <trans-unit id="2eb6671f8d1299f1c00e65bcd5f2fe5d321b2095" datatype="html">
+        <source>
+          Numbers
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/glossary/glossary.component.ts
+          </context>
+          <context context-type="linenumber">
+            57
+          </context>
+        </context-group>
+        <target>
+          Zahlen
+        </target>
+      </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
         <source>
           How Opentender Works
@@ -6619,6 +6635,22 @@
         </context-group>
         <target>
           Benutzte Formen:
+        </target>
+      </trans-unit>
+      <trans-unit id="4d273f9f8f9d66c78d3f7e5550612c0855415208" datatype="html">
+        <source>
+          The dashboards provide you with state-of-the-art visualisations of procurement data in four categories:
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/about/how/how.component.ts
+          </context>
+          <context context-type="linenumber">
+            41
+          </context>
+        </context-group>
+        <target>
+          Die Dashboards bieten Ihnen hochmoderne Visualisierungen von Beschaffungsdaten in vier Kategorien:
         </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
