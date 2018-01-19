@@ -6,18 +6,12 @@
 		<p i18n>On this page you find all the tender data of this portal.</p>
 	</div>
 	<div class="container">
-		<h2 class="h3" i18n>CSV</h2>
-		<p>[<i class="icon-hammer"></i> CSV download is under construction]</p>
-	</div>
-	<div class="container">
 		<h2 class="h3" i18n>Hierarchical JSON</h2>
 	</div>
 	<div class="container container-current-download" *ngIf="current">
 		<p>
-			<ng-container i18n>Current Portal</ng-container>
-			: {{current.name}}<br/>
-			<ng-container i18n>Tenders</ng-container>
-			: {{current.count}}<br/>
+			<ng-container i18n>Current Portal</ng-container>: {{current.name}}<br/>
+			<ng-container i18n>Tenders</ng-container>: {{current.count}}<br/>
 			<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i> JSON</a> {{current.formats.json.size | formatFileSize}} -
 			<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i> NDJSON</a> {{current.formats.ndjson.size | formatFileSize}}
 		</p>

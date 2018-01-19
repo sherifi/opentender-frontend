@@ -34,7 +34,13 @@ export class DownloadPage implements OnInit {
 		let sub = this.api.getDownloads().subscribe(
 			(data: any) => {
 				data.forEach(download => {
-					download.name = this.i18n.expandCountry(download.country);
+					if (download.country === 'eu') {
+						download.name = this.i18n.get('EU Institutions');
+					} else if (download.country === 'all') {
+						download.name = this.i18n.get('All Data');
+					} else {
+						download.name = this.i18n.getPortalName(download.country.toUpperCase(), this.i18n.expandCountry(download.country));
+					}
 					if (download.country === current_id && download.count > 0) {
 						this.current = download;
 					}
