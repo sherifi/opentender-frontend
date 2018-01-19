@@ -4,13 +4,26 @@
 	</div>
 	<div class="container container-padded-top container-padded-bottom">
 		<div class="container">
-			<search-box [search]="search" [filters]="search_filters" [quick_filters]="quick_search_filters" (onChange)="refresh()"></search-box>
+			<search-box [search]="search" [filters]="search_filters" (onChange)="refresh()"></search-box>
 		</div>
 	</div>
 	<div class="container container-padded-bottom">
 		<div class="container">
 			<filter-box [search]="search" [filters]="check_filters" (onChange)="refresh()"></filter-box>
 		</div>
+	</div>
+</div>
+
+<div class="container-outer container-padded-top-lite">
+	<div class="container">
+		<select-viz-button [viz]="viz" (selectChange)="onSelectViz($event)"></select-viz-button>
+	</div>
+	<div class="container">
+		<graph *ngIf="viz.procedure_types.active" procedure-types [data]="viz.procedure_types.data" [title]="viz.procedure_types.title"></graph>
+		<graph *ngIf="viz.cpvs_codes.active" sectors [data]="viz.cpvs_codes.data"></graph>
+		<graph *ngIf="viz.histogram_finalPriceEUR.active" histogram [data]="viz.histogram_finalPriceEUR.data"></graph>
+		<graph *ngIf="viz.distribution.active" benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title"></graph>
+
 	</div>
 </div>
 

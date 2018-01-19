@@ -99,7 +99,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.in_years.chart.xAxis.label = i18n.get('Year');
-		this.othersTitle = this.i18n.get('Average in Comparision Group');
+		this.othersTitle = this.i18n.get('Average in Comparison Group');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
 			name: i18n.get('Overall'), benchmarks: [

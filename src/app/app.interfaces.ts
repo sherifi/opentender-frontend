@@ -194,6 +194,7 @@ export interface ISearchResultTender {
 	};
 	sortBy: ITableColumnSort;
 	aggregations: ISearchResultAggregation;
+	stats: IStats;
 }
 
 export interface ISearchResultAuthority {
@@ -434,6 +435,7 @@ export interface ISearchCommandFilter {
 export interface ISearchCommand {
 	filters: Array<ISearchCommandFilter>;
 	aggregations?: Array<ISearchCommandAggregation>;
+	stats?: Array<string>;
 	size?: number;
 	from?: number;
 	sort?: {

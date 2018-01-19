@@ -222,7 +222,7 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		group: 'Score',
 		field: 'ot.scores.value',
 		subrequest: {
-			'scores.type': 'TRANSPARENCY'
+			'ot.scores.type': 'TRANSPARENCY'
 		},
 		type: ISearchFilterDefType.range,
 	},

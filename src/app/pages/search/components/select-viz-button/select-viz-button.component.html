@@ -1,0 +1,14 @@
+<app-dialog [title]="title" [(visible)]="showDialog">
+	<div *ngFor="let v of list" class="select-filter-item">
+		<label class="checkbox">
+			<input type="checkbox" [(ngModel)]="v.active" (ngModelChange)="update(v, $event)">
+			{{v.title | i18n}}
+		</label>
+	</div>
+</app-dialog>
+<div class="dialog-button" (click)="showDialog = !showDialog">
+	<div class="dialog-button_inner">
+		<p class="dialog-button_description" i18n>Visualization</p>
+		<p class="dialog-button_text" i18n>Click to Add</p>
+	</div>
+</div>

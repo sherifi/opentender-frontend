@@ -2,7 +2,10 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {StateService} from '../../../services/state.service';
 import {Search} from '../../../model/search';
 import {TenderFilterDefs} from '../../../model/filters';
-import {ISearchResultTender, ISearchFilterDef, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
+import {
+	ISearchResultTender, ISearchFilterDef, ISearchFilterDefType, ISearchCommand, IStatsPcPricesLotsInYears, IStatsNuts, IStatsProcedureType, IStatsCpvs, IStatsInYears, IStatsAuthorities, ISector, IStats,
+	IStatsCompanies, IStatsPricesInYears, IStatsIndicators
+} from '../../../app.interfaces';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
 @Component({
@@ -11,15 +14,24 @@ import {I18NService} from '../../../modules/i18n/services/i18n.service';
 	templateUrl: 'tender.component.html'
 })
 export class SearchTenderPage implements OnInit, OnDestroy {
-	search = new Search('tender');
-	search_cmd: ISearchCommand;
-	quick_search_filters: Array<ISearchFilterDef> = [];
-	search_filters = TenderFilterDefs.filter(f => f.type === ISearchFilterDefType.text || f.type === ISearchFilterDefType.value || f.type === ISearchFilterDefType.term);
-	check_filters = TenderFilterDefs.filter(f => f.type !== ISearchFilterDefType.value);
-	columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'lots.bids.price'];
-	filterIds = ['indicators.score_pi', 'indicators.score_ac', 'indicators.score_ti', 'lots.awardDecisionDate.year'];
-	searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
-	quicksearchIds = [];
+	public search = new Search('tender');
+	public search_cmd: ISearchCommand;
+	public search_filters = TenderFilterDefs.filter(f => f.type === ISearchFilterDefType.text || f.type === ISearchFilterDefType.value || f.type === ISearchFilterDefType.term);
+	public check_filters = TenderFilterDefs.filter(f => f.type !== ISearchFilterDefType.value);
+	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'lots.bids.price'];
+	public filterIds = ['indicators.score_pi', 'indicators.score_ac', 'indicators.score_ti', 'lots.awardDecisionDate.year'];
+	public searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
+	public viz: {
+		procedure_types: { id: string; data: IStatsProcedureType, title?: string, active: boolean };
+		cpvs_codes: { id: string; data: IStatsCpvs, title?: string, active: boolean };
+		histogram_finalPriceEUR: { id: string; data: IStatsPricesInYears, title?: string, active: boolean };
+		distribution: { id: string; data: IStatsIndicators, title?: string, active: boolean };
+	} = {
+		distribution: {id: 'histogram_distribution_indicators', data: null, active: false},
+		cpvs_codes: {id: 'terms_main_cpv_divisions', data: null, active: false},
+		histogram_finalPriceEUR: {id: 'histogram_finalPriceEUR', data: null, active: false},
+		procedure_types: {id: 'terms_procedure_type', data: null, active: false}
+	};
 
 	constructor(private state: StateService, private i18n: I18NService) {
 		this.search.build(this.check_filters.filter(def => {
@@ -30,9 +42,10 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 				this.search.addSearch(def);
 			}
 		});
-		this.quick_search_filters = this.search_filters.filter(def => {
-			return (this.quicksearchIds.indexOf(def.field) >= 0);
-		});
+		this.viz.procedure_types.title = this.i18n.get('Procedure Type');
+		this.viz.cpvs_codes.title = this.i18n.get('Sectors');
+		this.viz.histogram_finalPriceEUR.title = this.i18n.get('Tenders over Time');
+		this.viz.distribution.title = this.i18n.get('Indicators');
 	}
 
 	ngOnInit(): void {
@@ -46,7 +59,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		}
 	}
 
-	ngOnDestroy() {
+	ngOnDestroy(): void {
 		let state = {
 			columnIds: this.columnIds,
 			search: this.search,
@@ -55,15 +68,32 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		this.state.put('search.tender', state);
 	}
 
-	searchChange(data: ISearchResultTender) {
+	searchChange(data: ISearchResultTender): void {
 		this.search.fillAggregationResults(data.aggregations);
+		Object.keys(this.viz).forEach(key => {
+			this.viz[key].data = null;
+		});
+		if (data.stats) {
+			Object.keys(this.viz).forEach(key => {
+				this.viz[key].data = data.stats[ this.viz[key].id];
+			});
+		}
 	}
 
-	columnsChange(data: { columns: Array<string> }) {
+	onSelectViz(data: Array<string>): void {
+		Object.keys(this.viz).forEach(key => {
+			this.viz[key].active = data.indexOf(key) >= 0;
+		});
+		this.refresh();
+	}
+
+	columnsChange(data: { columns: Array<string> }): void {
 		this.columnIds = data.columns;
 	}
 
-	refresh() {
-		this.search_cmd = this.search.getCommand();
+	refresh(): void {
+		let cmd = this.search.getCommand();
+		cmd.stats = Object.keys(this.viz).filter(key => this.viz[key].active).map(key => this.viz[key].id);
+		this.search_cmd = cmd;
 	}
 }

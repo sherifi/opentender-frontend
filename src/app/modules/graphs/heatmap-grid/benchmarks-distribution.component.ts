@@ -25,7 +25,7 @@ import {Colors} from '../../../model/colors';
 					{{bench.name}}
 				</label>
 			</div>
-			<div class="select-checks">
+			<div class="select-checks" *ngIf="filters.length>0">
 				<div i18n>Comparison Group</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
@@ -85,7 +85,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 			showGridLines: true,
 			gradient: false,
 			valueFormatting: (value: number) => {
-				return this.unit + ': ' + this.i18n.formatValue(value);
+				return this.unit + ': ' + this.i18n.formatValue(value) + ' ' + this.i18n.get('Tenders');
 			},
 			colorScheme: Colors.colorSchemes.linear_red_green
 		},
@@ -122,7 +122,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 
 	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.histogram_distribution.chart.yAxis.label = i18n.get('Year');
-		this.unit = i18n.get('Comparision Group');
+		this.unit = i18n.get('Comparison Group');
 		this.marker.title = this.i18n.get('Current Tender');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({

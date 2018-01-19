@@ -24,6 +24,10 @@ import {PipesModule} from '../../modules/pipes/pipes.module';
 import {SliderModule} from '../../modules/slider/silder.module';
 import {TypeaheadModule} from '../../thirdparty/typeahead/typeahead.module';
 import {SearchSectorPage} from './sector/sector.component';
+import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
+import {GraphsRadarPieModule} from '../../modules/graphs/radar-pie/graphs-radar-pie.module';
+import {SelectVizButtonComponent} from './components/select-viz-button/select-viz-button.component';
+import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-heatmap-grid.module';
 
 @NgModule({
 	imports: [
@@ -34,6 +38,8 @@ import {SearchSectorPage} from './sector/sector.component';
 		I18nModule,
 		TableModule,
 		PipesModule,
+		GraphsBarModule,
+		GraphsHeatMapGridModule,
 		TypeaheadModule,
 		SliderModule,
 		DialogModule
@@ -44,6 +50,7 @@ import {SearchSectorPage} from './sector/sector.component';
 		SearchCompanyPage,
 		SearchAuthorityPage,
 		FilterBoxComponent,
+		SelectVizButtonComponent,
 		SelectFiltersButtonComponent,
 		SelectFiltersComponent,
 		SelectYearRangeFilterComponent,

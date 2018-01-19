@@ -48,7 +48,7 @@ export class Search {
 			}
 			filter.buckets = [];
 			if (aggregations) {
-				let agg = aggregations[filter.aggregation_id];
+				let agg = aggregations['_' + filter.aggregation_id];
 				if (agg) {
 					filter.buckets = agg.buckets;
 					if (agg.buckets) {
