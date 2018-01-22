@@ -69,6 +69,7 @@ export class GraphSectorsComponent implements OnChanges, ISeriesProvider {
 		this.title = this.i18n.get('Sectors');
 		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.cpvs_codes_absolute.chart.yAxis.label = this.i18n.get('Sector (CPV)');
+		this.cpvs_codes_absolute.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

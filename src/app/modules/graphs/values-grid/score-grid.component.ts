@@ -51,6 +51,7 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	graph: IChartPieSeries = this.scores;
 
 	constructor(private router: Router, private i18n: I18NService) {
+		this.scores.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

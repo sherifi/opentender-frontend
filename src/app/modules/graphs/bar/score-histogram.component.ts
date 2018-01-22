@@ -66,6 +66,7 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 	constructor(private i18n: I18NService) {
 		this.avg_score_in_years.chart.xAxis.label = this.i18n.get('Year');
 		this.avg_score_in_years.chart.yAxis.label = this.i18n.get('Average Score');
+		this.avg_score_in_years.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

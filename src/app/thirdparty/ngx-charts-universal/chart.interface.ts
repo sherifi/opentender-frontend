@@ -13,6 +13,11 @@ export interface IAxisSettings {
 	tickFormatting?: (val: number | Date | string) => string;
 }
 
+export interface IChartI18N {
+	no_data: string;
+	loading: string;
+}
+
 export interface IScale {
 	(val: String | Number | Date): string;
 
@@ -45,7 +50,7 @@ export interface IChartData {
 	series?: Array<IChartData>;
 	id?: string;
 	color?: string;
-	invalid?: boolean;
+	replacement?: string;
 }
 
 export interface IChartDimension {
@@ -82,12 +87,15 @@ export interface IChartBaseSettings {
 	colorScheme: IColorSet;
 	valueFormatting?: (val: number | Date | string) => string;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 }
 
 export interface IChartFlowChartSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
+
 	links: Array<IChartLink>;
 }
 
@@ -95,6 +103,7 @@ export interface IChartGaugeSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 
 	min: number;
 	max: number;
@@ -111,6 +120,7 @@ export interface IChartXYAxisSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 	valueFormatting?: (val: number | Date | string) => string;
 
 	xAxis: IAxisSettings;
@@ -123,6 +133,7 @@ export interface IChartBarsSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
 	showGridLines: boolean;
@@ -136,6 +147,7 @@ export interface IChartPieSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 
 	labels: boolean;
 	explodeSlices: boolean;
@@ -147,6 +159,7 @@ export interface IChartPieSeriesSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 
 	labels: boolean;
 	maxRadius?: number;
@@ -157,6 +170,7 @@ export interface IChartRadarSettings extends IChartBaseSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 
 	labels: boolean;
 	maxRadius?: number;
@@ -167,6 +181,7 @@ export interface IChartLineSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
 	showGridLines: boolean;
@@ -180,6 +195,7 @@ export interface IChartAreaSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
 	showGridLines: boolean;
@@ -192,6 +208,7 @@ export interface IChartHeatmapSettings extends IChartXYAxisSettings {
 	view: IChartView;
 	colorScheme: IColorSet;
 	legend?: IChartLegendSettings;
+	i18n?: IChartI18N;
 	xAxis: IAxisSettings;
 	yAxis: IAxisSettings;
 	showGridLines: boolean;

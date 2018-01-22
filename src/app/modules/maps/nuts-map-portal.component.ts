@@ -14,7 +14,7 @@ declare let L;
 	template: `
 		<leafletmap
 				[empty]="portals && portals.length===0"
-				[loading]="!portals"
+				[loading]="!portals || (loading>0)"
 				[height]="476"
 				[settings]="leafletSettings"
 				[geo]="leafletGeo"
@@ -42,6 +42,9 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 
 	constructor(private api: ApiService, private platform: PlatformService, private config: ConfigService, private notify: NotifyService, private router: Router) {
 		this.current = config.country;
+		if (!platform.isBrowser) {
+			this.loading++; // show "loading..." in server version, maps are not rendered because leaflet doesn't support it
+		}
 	}
 
 	onRegionClick(feature) {
@@ -54,7 +57,9 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 	}
 
 	public ngAfterViewInit(): void {
-		this.load();
+		if (this.platform.isBrowser) {
+			this.load();
+		}
 	}
 
 

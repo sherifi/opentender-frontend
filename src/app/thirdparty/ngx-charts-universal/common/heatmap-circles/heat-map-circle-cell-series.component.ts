@@ -46,6 +46,7 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 	@Input() colors: ColorHelper;
 	@Input() xScale;
 	@Input() yScale;
+	@Input() no_data: string;
 	@Input() valueFormatting?: (val: number | Date | string) => string;
 
 	@Output() select = new EventEmitter();
@@ -104,7 +105,9 @@ export class HeatMapCircleCellSeriesComponent implements OnChanges {
 	}
 
 	getTooltipText(cell: ICell): string {
-		return getTooltipLabeledText(`${cell.series} • ${cell.label}`, cell.data === null ? 'NO DATA' : (this.valueFormatting ? this.valueFormatting(cell.data) : cell.data.toLocaleString()));
+		return getTooltipLabeledText(`${cell.series} • ${cell.label}`, cell.data === null ?
+			(this.no_data ? this.no_data : 'NO DATA') :
+			(this.valueFormatting ? this.valueFormatting(cell.data) : cell.data.toLocaleString()));
 	}
 
 	trackBy(index: number, item: ICell): string {

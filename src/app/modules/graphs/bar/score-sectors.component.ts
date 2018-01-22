@@ -71,6 +71,7 @@ export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 		this.title = this.i18n.get('Sectors');
 		this.cpvs_codes_scores.chart.xAxis.label = this.i18n.get('Average Score');
 		this.cpvs_codes_scores.chart.yAxis.label = this.i18n.get('Sector (CPV)');
+		this.cpvs_codes_scores.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

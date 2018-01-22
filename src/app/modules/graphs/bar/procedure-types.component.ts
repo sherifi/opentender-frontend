@@ -64,6 +64,7 @@ export class GraphProcedureTypesComponent implements OnChanges, ISeriesProvider 
 	constructor(private i18n: I18NService) {
 		this.procedure_types_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.procedure_types_absolute.chart.yAxis.label = this.i18n.get('Procedure Type');
+		this.procedure_types_absolute.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

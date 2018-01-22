@@ -12,7 +12,7 @@ import 'd3-transition';
 			<svg:g ngx-charts-svg-linear-gradient [color]="fill" [orientation]="orientation" [name]="gradId.id" [stops]="gradientStops"/>
 		</svg:defs>
 		<svg:path class="bar" stroke="none" [class.active]="isActive" [attr.d]="path" [attr.fill]="hasGradient ? gradId.url : fill" (click)="select.emit(data)"/>
-		<svg:text *ngIf="invalid" [style.font-size]="'11px'" stroke="#818181" stroke-width="0.5" [attr.x]="x+3" [attr.y]="y+(width/2)+3" [attr.transform]="textTransform">NO DATA</svg:text>
+		<svg:text *ngIf="replacement" [style.font-size]="'11px'" stroke="#818181" stroke-width="0.5" [attr.x]="x+3" [attr.y]="y+(width/2)+3" [attr.transform]="textTransform">{{replacement}}</svg:text>
 	`,
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -23,7 +23,7 @@ export class BarComponent implements OnChanges {
 	@Input() height;
 	@Input() x;
 	@Input() y;
-	@Input() invalid;
+	@Input() replacement: string;
 	@Input() orientation;
 	@Input() roundEdges: boolean = false;
 	@Input() gradient: boolean = false;

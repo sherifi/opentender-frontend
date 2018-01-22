@@ -183,6 +183,10 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 		this.sum_prices_in_years.chart.yAxis.label = this.i18n.get('Volume of Tenders (€)');
 		this.avg_prices_in_years.chart.xAxis.label = year;
 		this.avg_prices_in_years.chart.yAxis.label = this.i18n.get('Average Volume of Tenders (€)');
+		this.avg_lots_in_years.chart.i18n = this.i18n.ChartsTranslations;
+		this.sum_lots_in_years.chart.i18n = this.i18n.ChartsTranslations;
+		this.sum_prices_in_years.chart.i18n = this.i18n.ChartsTranslations;
+		this.avg_prices_in_years.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 

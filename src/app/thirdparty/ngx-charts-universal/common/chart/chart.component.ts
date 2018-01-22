@@ -71,7 +71,6 @@ export class ChartComponent implements OnChanges {
 
 	constructor(private vcr: ViewContainerRef, private injectionService: InjectionService) {
 		this.injectionService.setRootViewContainer(vcr);
-		this.label.text = 'LOADING';
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
@@ -93,7 +92,7 @@ export class ChartComponent implements OnChanges {
 		this.legendWidth = this.dim.width * legendColumns / 12.0;
 		this.label.x = this.dim.width / 2;
 		this.label.y = this.dim.height / 2;
-		this.label.text = (!this.data) ? 'LOADING' : (this.data.length == 0 ? 'NO DATA' : '');
+		this.label.text = (!this.data) ? (this.chart.i18n ? this.chart.i18n.loading : 'LOADING') : (this.data.length == 0 ? (this.chart.i18n ? this.chart.i18n.no_data : 'NO DATA') : '');
 	}
 
 	getLegendType(): string {

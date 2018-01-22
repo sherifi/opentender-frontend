@@ -99,6 +99,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.in_years.chart.xAxis.label = i18n.get('Year');
+		this.in_years.chart.i18n = this.i18n.ChartsTranslations;
 		this.othersTitle = this.i18n.get('Average in Comparison Group');
 		this.benchmark_groups = [];
 		this.benchmark_groups.push({
@@ -154,12 +155,12 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			if (entity[year] !== undefined) {
 				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: entity[year]});
 			} else {
-				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: 0, invalid: true});
+				sub.series.push({name: this.i18n.nameGuard(this.entityTitle), value: 0, replacement: this.i18n.ChartsTranslations.no_data});
 			}
 			if (compare[year] !== undefined) {
 				sub.series.push({name: this.othersTitle, value: compare[year]});
 			} else {
-				sub.series.push({name: this.othersTitle, value: 0, invalid: true});
+				sub.series.push({name: this.othersTitle, value: 0, replacement: this.i18n.ChartsTranslations.no_data});
 			}
 			series.push(sub);
 		});
@@ -179,12 +180,12 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			if (entity[year] && entity[year][id] && entity[year][id].value !== null) {
 				sub.series.push({name: this.entityTitle, value: entity[year][id].value});
 			} else {
-				sub.series.push({name: this.entityTitle, value: 0, invalid: true});
+				sub.series.push({name: this.entityTitle, value: 0, replacement: this.i18n.ChartsTranslations.no_data});
 			}
 			if (compare[year] && compare[year][id] && compare[year][id].value !== null) {
 				sub.series.push({name: this.othersTitle, value: compare[year][id].value});
 			} else {
-				sub.series.push({name: this.othersTitle, value: 0, invalid: true});
+				sub.series.push({name: this.othersTitle, value: 0, replacement: this.i18n.ChartsTranslations.no_data});
 			}
 			series.push(sub);
 		});

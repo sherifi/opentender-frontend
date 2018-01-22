@@ -77,6 +77,13 @@ export class I18NService {
 	private _parser: I18NHtmlParser;
 	private _translations: { [name: string]: any };
 	public NameNotAvailable: string;
+	public ChartsTranslations: {
+		no_data: string;
+		loading: string;
+	} = {
+		no_data: '',
+		loading: ''
+	};
 
 	constructor(@Inject(TRANSLATIONS) source: string, @Inject('TRANSLATIONS_EXTRA') extra) {
 		this._extra = extra;
@@ -87,6 +94,8 @@ export class I18NService {
 			this._parser = new I18NHtmlParser(new HtmlParser(), this._source);
 		}
 		this.NameNotAvailable = this.get('[Name not available]');
+		this.ChartsTranslations.no_data = this.get('No data');
+		this.ChartsTranslations.loading = this.get('Loading…');
 	}
 
 	// extras based translation

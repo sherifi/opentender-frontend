@@ -4,6 +4,7 @@ import {IStatsNuts} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {I18NService} from '../i18n/services/i18n.service';
 import {ConfigService} from '../../services/config.service';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	moduleId: __filename,
@@ -35,7 +36,7 @@ export class MapHomeComponent {
 	public loading: number = 0;
 	public title: string = '';
 
-	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private config: ConfigService) {
+	constructor(private api: ApiService, private notify: NotifyService, private i18n: I18NService, private config: ConfigService, private platform: PlatformService) {
 		this.formatTooltip = this.formatTooltipCallback.bind(this);
 		this.fillMap(this.map_level);
 	}
@@ -55,6 +56,9 @@ export class MapHomeComponent {
 
 	fillMap(level) {
 		this.title = this.getTitle();
+		if (!this.platform.isBrowser) {
+			return;
+		}
 		if (this.map_companies) {
 			this.loading++;
 			let sub = this.api.getCompanyNutsStats().subscribe(

@@ -122,6 +122,7 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 
 	constructor(private i18n: I18NService, private indicators: IndicatorService) {
 		this.histogram_distribution.chart.yAxis.label = i18n.get('Year');
+		this.histogram_distribution.chart.i18n = this.i18n.ChartsTranslations;
 		this.unit = i18n.get('Comparison Group');
 		this.marker.title = this.i18n.get('Current Tender');
 		this.benchmark_groups = [];

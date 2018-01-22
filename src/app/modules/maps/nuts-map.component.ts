@@ -13,7 +13,7 @@ import {Utils} from '../../model/utils';
 	template: `
 		<leafletmap
 				[empty]="data_list.length===0"
-				[loading]="!data"
+				[loading]="!data || (loading>0)"
 				[height]="376"
 				[settings]="leafletSettings"
 				[formatTooltip]="formatTooltip"
@@ -64,6 +64,9 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 	};
 
 	constructor(private api: ApiService, private platform: PlatformService, private router: Router, private notify: NotifyService) {
+		if (!platform.isBrowser) {
+			this.loading++; // show "loading..." in server version, maps are not rendered because leaflet doesn't support it
+		}
 	}
 
 	getSeriesInfo() {

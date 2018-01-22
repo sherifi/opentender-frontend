@@ -60,6 +60,7 @@ export class GraphHomeHistogramComponent implements OnChanges, ISeriesProvider {
 	constructor(private i18n: I18NService) {
 		this.lots_in_years.chart.xAxis.label = this.i18n.get('Year');
 		this.lots_in_years.chart.yAxis.label = this.i18n.get('Nr. of Tenders');
+		this.lots_in_years.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

@@ -55,6 +55,7 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	graph: IChartRadar = this.indicators_pie;
 
 	constructor(private indicators: IndicatorService, private i18n: I18NService) {
+		this.indicators_pie.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {

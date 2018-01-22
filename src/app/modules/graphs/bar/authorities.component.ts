@@ -115,8 +115,10 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 	constructor(private router: Router, private i18n: I18NService) {
 		this.authorities_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.authorities_absolute.chart.yAxis.label = this.i18n.get('Buyer');
+		this.authorities_absolute.chart.i18n = this.i18n.ChartsTranslations;
 		this.authorities_volume.chart.xAxis.label = this.i18n.get('Total Volume of Tenders (€)');
 		this.authorities_volume.chart.yAxis.label = this.i18n.get('Buyer');
+		this.authorities_volume.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {

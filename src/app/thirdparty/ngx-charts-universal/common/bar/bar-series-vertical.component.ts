@@ -17,7 +17,7 @@ import {ColorHelper} from '../../utils/color.helper';
 			   [fill]="bar.color"
 			   [stops]="bar.gradientStops"
 			   [data]="bar.data"
-			   [invalid]="bar.invalid"
+			   [replacement]="bar.replacement"
 			   [orientation]="'vertical'"
 			   [roundEdges]="bar.roundEdges"
 			   [gradient]="gradient"
@@ -100,7 +100,7 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				height: 0,
 				x: 0,
 				y: 0,
-				invalid: d.invalid,
+				replacement: d.replacement,
 				id: d.id
 			};
 
@@ -162,8 +162,8 @@ export class BarSeriesVerticalComponent implements OnChanges {
 				}
 			}
 
-			if (d.invalid) {
-				bar.tooltipText = 'NO DATA';
+			if (d.replacement) {
+				bar.tooltipText = d.replacement;
 			} else {
 				bar.tooltipText = getTooltipLabeledText(formattedLabel, this.valueFormatting ? this.valueFormatting(value) : value.toLocaleString());
 			}

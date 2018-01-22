@@ -5,14 +5,15 @@ import {tileLayer} from '../../thirdparty/leaflet/layer/tile/TileLayer';
 import {toLatLng as latLng} from '../../thirdparty/leaflet/geo/LatLng';
 import {LeafletResetControl} from '../../thirdparty/leaflet/addons/reset/leaflet-reset-control';
 import '../../thirdparty/leaflet/addons/fullscreen/leaflet-fullscreen-control';
+import {I18NService} from '../i18n/services/i18n.service';
 
 @Component({
 	selector: 'leafletmap',
 	template: `
 		<div class="map_containers" [style.height.px]="height">
 			<div leaflet class="map_leaflet" [leafletOptions]="leaflet_options" [style.height.px]="height" (leafletMapReady)="onMapReady($event)"></div>
-			<div *ngIf="loading" class="map_placeholder" [style.line-height.px]="height">LOADING</div>
-			<div *ngIf="empty" class="map_placeholder" [style.line-height.px]="height">NO DATA</div>
+			<div *ngIf="loading" class="map_placeholder" [style.line-height.px]="height">{{i18n.ChartsTranslations.loading}}</div>
+			<div *ngIf="empty" class="map_placeholder" [style.line-height.px]="height">{{i18n.ChartsTranslations.no_data}}</div>
 		</div>`,
 	styleUrls: ['leaflet.component.scss'],
 	encapsulation: ViewEncapsulation.None
@@ -36,7 +37,7 @@ export class MapComponent implements OnChanges, OnDestroy {
 	private map: any;
 	private resetControl: any;
 
-	constructor(private platform: PlatformService, protected zone: NgZone) {
+	constructor(private platform: PlatformService, protected zone: NgZone, public i18n: I18NService) {
 		if (!this.platform.isBrowser) {
 			return;
 		}

@@ -69,6 +69,7 @@ interface IRect {
 					   [colors]="colors"
 					   [valueFormatting]="chart.valueFormatting"
 					   [data]="data"
+					   [no_data]="chart.i18n.no_data"
 					   (select)="onClick($event)"
 				/>
 			</svg:g>

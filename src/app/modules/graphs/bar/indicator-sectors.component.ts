@@ -109,6 +109,8 @@ export class GraphIndicatorSectorsComponent implements OnChanges, ISeriesProvide
 		this.cpvs_codes_average.chart.yAxis.label = this.i18n.get('Sector (CPV Division)');
 		this.cpvs_codes_absolute.chart.xAxis.label = this.i18n.get('Nr. of Tenders');
 		this.cpvs_codes_absolute.chart.yAxis.label = this.i18n.get('Sector (CPV Division)');
+		this.cpvs_codes_average.chart.i18n = this.i18n.ChartsTranslations;
+		this.cpvs_codes_absolute.chart.i18n = this.i18n.ChartsTranslations;
 	}
 
 	getSeriesInfo() {
