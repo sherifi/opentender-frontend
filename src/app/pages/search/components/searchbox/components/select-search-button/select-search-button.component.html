@@ -1,9 +1,0 @@
-<app-dialog [title]="title" [(visible)]="showDialog">
-	<select-filters mode="add" [filters_all]="filters_all" [filters_active]="filters_active" (selectChange)="onSelectFilters($event)"></select-filters>
-</app-dialog>
-<div class="dialog-button" (click)="showDialog = !showDialog">
-	<div class="dialog-button_inner">
-		<p class="dialog-button_description" i18n>Search</p>
-		<p class="dialog-button_text" i18n>Click to Add</p>
-	</div>
-</div>

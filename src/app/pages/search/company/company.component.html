@@ -4,12 +4,7 @@
 	</div>
 	<div class="container container-padded-top container-padded-bottom">
 		<div class="container">
-			<search-box [search]="search" [filters]="search_filters" [quick_filters]="quick_filters" (onChange)="refresh()"></search-box>
-		</div>
-	</div>
-	<div class="container container-padded-bottom">
-		<div class="container">
-			<filter-box [search]="search" [filters]="check_filters" (onChange)="refresh()"></filter-box>
+			<search-box [search]="search" [filters]="filters" (onChange)="refresh()"></search-box>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 // import {animate, style, transition, state, trigger} from '@angular/animations';
 
 @Component({
@@ -21,7 +21,8 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 		// 		animate(100, style({transform: 'scale3d(.0, .0, .0)'}))
 		// 	])
 		// ])
-	]
+	],
+	encapsulation: ViewEncapsulation.None
 })
 export class DialogComponent implements OnInit {
 	@Input() closable = true;

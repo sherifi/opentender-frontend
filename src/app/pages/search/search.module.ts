@@ -7,15 +7,11 @@ import {SearchTenderPage} from './tender/tender.component';
 import {SearchCompanyPage} from './company/company.component';
 import {SearchAuthorityPage} from './authority/authority.component';
 import {SearchBoxComponent} from './components/searchbox/searchbox.component';
-import {AutoCompleteComponent} from './components/searchbox/components/autocomplete/autocomplete.component';
-import {SelectSearchesButtonComponent} from './components/searchbox/components/select-search-button/select-search-button.component';
-import {ValueInputComponent} from './components/searchbox/components/value-input/value-input.component';
-import {SelectDateFilterComponent} from './components/filterbox/components/date/select-date-filter-component';
-import {SelectFiltersButtonComponent} from './components/filterbox/components/select-filters-button/select-filters-button.component';
-import {SelectFiltersComponent} from './components/filterbox/components/select-filters/select-filters.component';
-import {SelectScoreRangeFilterComponent} from './components/filterbox/components/score-range/select-score-range-filter.component';
-import {SelectYearRangeFilterComponent} from './components/filterbox/components/year-range/select-year-range-filter.component';
-import {FilterBoxComponent} from './components/filterbox/filterbox.component';
+import {AutoCompleteComponent} from './components/autocomplete/autocomplete.component';
+import {ValueInputComponent} from './components/value-input/value-input.component';
+import {SelectDateFilterComponent} from './components/date-filter/select-date-filter-component';
+import {SelectScoreRangeFilterComponent} from './components/score-range/select-score-range-filter.component';
+import {SelectYearRangeFilterComponent} from './components/year-range/select-year-range-filter.component';
 import {MyDatePickerModule} from 'mydatepicker';
 import {TableModule} from '../../modules/tables/table.module';
 import {DialogModule} from '../../modules/dialog/dialog.module';
@@ -25,9 +21,9 @@ import {SliderModule} from '../../modules/slider/silder.module';
 import {TypeaheadModule} from '../../thirdparty/typeahead/typeahead.module';
 import {SearchSectorPage} from './sector/sector.component';
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
-import {GraphsRadarPieModule} from '../../modules/graphs/radar-pie/graphs-radar-pie.module';
 import {SelectVizButtonComponent} from './components/select-viz-button/select-viz-button.component';
 import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-heatmap-grid.module';
+import {SelectSearchButtonComponent} from './components/select-search-button/select-search-button.component';
 
 @NgModule({
 	imports: [
@@ -49,17 +45,14 @@ import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-
 		SearchTenderPage,
 		SearchCompanyPage,
 		SearchAuthorityPage,
-		FilterBoxComponent,
 		SelectVizButtonComponent,
-		SelectFiltersButtonComponent,
-		SelectFiltersComponent,
 		SelectYearRangeFilterComponent,
 		SelectScoreRangeFilterComponent,
 		SelectDateFilterComponent,
+		SelectSearchButtonComponent,
 		SearchBoxComponent,
 		SearchSectorPage,
 		AutoCompleteComponent,
-		SelectSearchesButtonComponent,
 		ValueInputComponent
 	]
 })

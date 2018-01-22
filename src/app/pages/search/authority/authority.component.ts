@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {AuthorityFilterDefs} from '../../../model/filters';
+import {AuthorityFilterDefs, isSearchDef} from '../../../model/filters';
 import {ISearchResultAuthority, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
@@ -16,17 +16,12 @@ export class SearchAuthorityPage implements OnInit, OnDestroy {
 	search_cmd: ISearchCommand;
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
 	filterIds = ['body.name', 'body.address.city', 'body.mainActivities', 'body.buyerType'];
-	quick_filters = [];
-	check_filters = AuthorityFilterDefs;
-	search_filters = AuthorityFilterDefs.filter(f => f.type !== ISearchFilterDefType.select);
+	filters = AuthorityFilterDefs;
 
 	constructor(private state: StateService, private i18n: I18NService) {
-		this.search.build(this.check_filters.filter(def => {
+		this.search.build(this.filters.filter(isSearchDef), this.filters.filter(def => {
 			return this.filterIds.indexOf(def.id) >= 0;
 		}));
-		this.search_filters.forEach(filter => {
-			this.search.addSearch(filter);
-		});
 		this.setTitle();
 	}
 

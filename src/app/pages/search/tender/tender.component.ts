@@ -2,10 +2,7 @@ import {Component, OnInit, OnDestroy} from '@angular/core';
 import {StateService} from '../../../services/state.service';
 import {Search} from '../../../model/search';
 import {TenderFilterDefs} from '../../../model/filters';
-import {
-	ISearchResultTender, ISearchFilterDef, ISearchFilterDefType, ISearchCommand, IStatsPcPricesLotsInYears, IStatsNuts, IStatsProcedureType, IStatsCpvs, IStatsInYears, IStatsAuthorities, ISector, IStats,
-	IStatsCompanies, IStatsPricesInYears, IStatsIndicators
-} from '../../../app.interfaces';
+import {ISearchResultTender, ISearchFilterDefType, ISearchCommand, IStatsProcedureType, IStatsCpvs, IStatsPricesInYears, IStatsIndicators} from '../../../app.interfaces';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
 @Component({
@@ -16,8 +13,8 @@ import {I18NService} from '../../../modules/i18n/services/i18n.service';
 export class SearchTenderPage implements OnInit, OnDestroy {
 	public search = new Search('tender');
 	public search_cmd: ISearchCommand;
-	public search_filters = TenderFilterDefs.filter(f => f.type === ISearchFilterDefType.text || f.type === ISearchFilterDefType.value || f.type === ISearchFilterDefType.term);
-	public check_filters = TenderFilterDefs.filter(f => f.type !== ISearchFilterDefType.value);
+
+	public filters = TenderFilterDefs;
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name', 'lots.bids.price'];
 	public filterIds = ['indicators.score_pi', 'indicators.score_ac', 'indicators.score_ti', 'lots.awardDecisionDate.year'];
 	public searchIds = ['title', 'buyers.name', 'lots.bids.bidders.name'];
@@ -34,14 +31,13 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 	};
 
 	constructor(private state: StateService, private i18n: I18NService) {
-		this.search.build(this.check_filters.filter(def => {
-			return this.filterIds.indexOf(def.id) >= 0;
-		}));
-		this.search_filters.filter(def => {
-			if (this.searchIds.indexOf(def.id) >= 0) {
-				this.search.addSearch(def);
-			}
-		});
+		this.search.build(
+			this.filters.filter(def => {
+				return (this.searchIds.indexOf(def.id) >= 0);
+			}),
+			this.filters.filter(def => {
+				return (this.filterIds.indexOf(def.id) >= 0);
+			}));
 		this.viz.procedure_types.title = this.i18n.get('Procedure Type');
 		this.viz.cpvs_codes.title = this.i18n.get('Sectors');
 		this.viz.histogram_finalPriceEUR.title = this.i18n.get('Tenders over Time');
@@ -75,7 +71,7 @@ export class SearchTenderPage implements OnInit, OnDestroy {
 		});
 		if (data.stats) {
 			Object.keys(this.viz).forEach(key => {
-				this.viz[key].data = data.stats[ this.viz[key].id];
+				this.viz[key].data = data.stats[this.viz[key].id];
 			});
 		}
 	}

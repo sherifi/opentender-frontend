@@ -102,6 +102,10 @@ export const AuthorityColumns: Array<ITableColumnAuthority> = [
 		name: 'Tender Count',
 		id: 'count',
 		group: 'Authority',
+		sortBy: {
+			id: 'count',
+			ascend: true
+		},
 		format: (authority, library): Array<ITableCellLine> => [{content: library.i18n.formatValue(authority.count)}]
 	},
 	{
@@ -177,6 +181,10 @@ export const CompanyColumns: Array<ITableColumnCompany> = [
 		name: 'Bid Count',
 		id: 'count',
 		group: 'Company',
+		sortBy: {
+			id: 'count',
+			ascend: true
+		},
 		format: (company, library): Array<ITableCellLine> => [{content: library.i18n.formatValue(company.count)}]
 	},
 	{
@@ -630,6 +638,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Eligible Bid Languages',
 		id: 'eligibleBidLanguages',
 		group: 'Tender Requirements',
+		sortBy: {
+			id: 'eligibleBidLanguages',
+			ascend: true
+		},
 		format: tender => {
 			if (!tender.eligibleBidLanguages) {
 				return [];
@@ -643,24 +655,40 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Deposits',
 		id: 'deposits',
 		group: 'Tender Requirements',
+		sortBy: {
+			id: 'deposits',
+			ascend: true
+		},
 		format: tender => [{content: tender.deposits}]
 	},
 	{
 		name: 'Personal Requirements',
 		id: 'personalRequirements',
 		group: 'Tender Requirements',
+		sortBy: {
+			id: 'personalRequirements',
+			ascend: true
+		},
 		format: tender => [{content: tender.personalRequirements}]
 	},
 	{
 		name: 'Economic Requirements',
 		id: 'economicRequirements',
 		group: 'Tender Requirements',
+		sortBy: {
+			id: 'economicRequirements',
+			ascend: true
+		},
 		format: tender => [{content: tender.economicRequirements}]
 	},
 	{
 		name: 'Technical Requirements',
 		id: 'technicalRequirements',
 		group: 'Tender Requirements',
+		sortBy: {
+			id: 'technicalRequirements',
+			ascend: true
+		},
 		format: tender => [{content: tender.technicalRequirements}]
 	},
 
@@ -762,6 +790,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Country',
 		id: 'country',
 		group: 'Tender Meta Data',
+		sortBy: {
+			id: 'country',
+			ascend: true
+		},
 		format: (tender, library) => {
 			if (!tender.country) {
 				return [];

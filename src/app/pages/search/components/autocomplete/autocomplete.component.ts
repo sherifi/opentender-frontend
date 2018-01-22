@@ -1,8 +1,8 @@
 import {Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
-import {ApiService} from '../../../../../../services/api.service';
-import {TypeaheadMatch} from '../../../../../../thirdparty/typeahead/typeahead-match.class';
+import {ApiService} from '../../../../services/api.service';
+import {TypeaheadMatch} from '../../../../thirdparty/typeahead/typeahead-match.class';
 import {Observable} from 'rxjs';
-import {NotifyService} from '../../../../../../services/notify.service';
+import {NotifyService} from '../../../../services/notify.service';
 
 @Component({
 	selector: 'autocomplete',

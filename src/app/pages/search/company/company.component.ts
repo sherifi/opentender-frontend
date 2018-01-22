@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Search} from '../../../model/search';
 import {StateService} from '../../../services/state.service';
-import {CompanyFilterDefs} from '../../../model/filters';
+import {CompanyFilterDefs, isSearchDef} from '../../../model/filters';
 import {ISearchResultCompany, ISearchFilterDefType, ISearchCommand} from '../../../app.interfaces';
 import {I18NService} from '../../../modules/i18n/services/i18n.service';
 
@@ -15,17 +15,13 @@ export class SearchCompanyPage implements OnInit, OnDestroy {
 	search = new Search('company', CompanyFilterDefs);
 	search_cmd: ISearchCommand;
 	columnIds = ['id', 'body.name', 'body.address.city', 'body.address.country'];
-	quick_filters = [];
-	check_filters = CompanyFilterDefs;
-	search_filters = CompanyFilterDefs.filter(f => f.type !== ISearchFilterDefType.select);
+	filterIds = ['body.name', 'body.address.city'];
+	filters = CompanyFilterDefs;
 
 	constructor(private state: StateService, private i18n: I18NService) {
-		this.search.filters.forEach(filter => {
-			filter.active = true;
-		});
-		this.search_filters.forEach(filter => {
-			this.search.addSearch(filter);
-		});
+		this.search.build(this.filters.filter(isSearchDef), this.filters.filter(def => {
+			return this.filterIds.indexOf(def.id) >= 0;
+		}));
 		this.setTitle();
 	}
 

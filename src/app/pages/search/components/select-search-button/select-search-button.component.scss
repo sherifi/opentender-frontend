@@ -1,0 +1,63 @@
+@import "../../../../../style/globals.scss";
+
+:host {
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
+
+  .select-filters {
+
+    .select-filters-group {
+      font-size: 0.9em;
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+
+    @include respond-to(small-up) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-flow: row wrap;
+      .select-filters-group {
+        width: 49%;
+      }
+    }
+
+    .select-filters-group-title {
+      font-weight: bold;
+      border-bottom: 1px solid $neutral-gray;
+      margin-bottom: 8px;
+    }
+
+    .select-filter-item {
+      display: block;
+      white-space: nowrap;
+
+      i {
+        margin-left: 1px;
+        margin-right: 6px;
+      }
+
+      label {
+        display: inline-block;
+        margin-left: 20px;
+        margin-bottom: 0;
+        white-space: normal;
+        cursor: pointer;
+      }
+
+      label:before {
+        margin-left: -23px;
+      }
+
+      .checkbox input {
+        margin-top: 5px;
+        display: inline-block;
+        margin-left: -20px;
+      }
+    }
+  }
+
+}
+

@@ -376,3 +376,11 @@ export const AuthorityFilterDefs: Array<ISearchFilterDef> = [
 		size: 30
 	}
 ];
+
+export function isSearchDef(filter: ISearchFilterDef) {
+	return filter.type === ISearchFilterDefType.text || filter.type === ISearchFilterDefType.value || filter.type === ISearchFilterDefType.term
+}
+
+export function isFilterDef(filter: ISearchFilterDef) {
+	return filter.type !== ISearchFilterDefType.value;
+}

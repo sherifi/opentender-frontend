@@ -1,5 +1,5 @@
 import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
-import {ISearchFilter, ISearchResultBucket} from '../../../../../../app.interfaces';
+import {ISearchFilter, ISearchResultBucket} from '../../../../app.interfaces';
 
 @Component({
 	moduleId: __filename,

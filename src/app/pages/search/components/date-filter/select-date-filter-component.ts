@@ -1,7 +1,7 @@
 import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
-import {ISearchFilter, ISearchResultBucket} from '../../../../../../app.interfaces';
+import {ISearchFilter, ISearchResultBucket} from '../../../../app.interfaces';
 import {IMyDateModel, IMyDpOptions} from 'mydatepicker';
-import {Utils} from '../../../../../../model/utils';
+import {Utils} from '../../../../model/utils';
 
 @Component({
 	moduleId: __filename,
