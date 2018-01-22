@@ -1,5 +1,5 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file datatype="plaintext" original="ng2.template" source-language="en" target-language="de">
+  <file datatype="plaintext" original="ng2.template" source-language="en" target-language="pt">
     <body>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
         <source>
@@ -20,7 +20,7 @@
           Banner Slogan Main Page
         </note>
         <target>
-          Öffentliche Ausschreibungen transparenter machen
+          Tornando os Concursos Públicos Mais Transparentes
         </target>
       </trans-unit>
       <trans-unit id="e6027cd74254062aa2c9e4c9239af8ba0c72c7cd" datatype="html">
@@ -39,7 +39,7 @@
           </context>
         </context-group>
         <target>
-          Willkommen beim Portal für &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
+          Bem-vindo/a ao portal de &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
         </target>
       </trans-unit>
       <trans-unit id="512bf9c0d4f7525c747098d506a7b11c2dd956b5" datatype="html">
@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Diese Plattform ist Teil des &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;DIGIWHIST Projekts&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Esta plataforma faz parte do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; projecto DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -84,7 +84,7 @@
           </context>
         </context-group>
         <target>
-          Mehr über die Gesetzgebung für Ausschreibungen bei
+          Leia mais sobre a legislação dos concursos em
         </target>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
@@ -100,7 +100,7 @@
           </context>
         </context-group>
         <target>
-          Mit dem Klick auf diese Kacheln haben Sie verschiedenen Möglichkeiten mit den Daten zu interagieren. Die Bereiche sind miteinander verbunden und verfügen über die gleiche Datentiefe.
+          Pode seleccionar entre diferentes maneiras de interagir com os dados usando estes mosaicos. Eles estão interligados, por isso a mesma profundidade de dados completa pode ser acedida de maneiras diferentes.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -148,7 +148,7 @@
           </context>
         </context-group>
         <target>
-          Marktüberblick
+          Análise de mercado
         </target>
       </trans-unit>
       <trans-unit id="4fb1c019f7b2bc0aeb553bfa7719dde5aa299c1b" datatype="html">
@@ -164,7 +164,7 @@
           </context>
         </context-group>
         <target>
-          Datenüberblick
+          Visão geral dos dados
         </target>
       </trans-unit>
       <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
@@ -188,7 +188,7 @@
           </context>
         </context-group>
         <target>
-          Dieses Dashboard bietet einen Überblick über die öffentlichen Beschaffungsmärkte und hilft Käufern und Bietern effektiver auszuschreiben.
+          Este painel de controlo oferece uma visão geral dos mercados de contratos públicos, ajudando os compradores e os proponentes a concorrerem de maneira mais eficaz.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -244,7 +244,7 @@
           </context>
         </context-group>
         <target>
-          Suche
+          Pesquisa
         </target>
       </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
@@ -260,7 +260,7 @@
           </context>
         </context-group>
         <target>
-          Suchen und Finden
+          Pesquise e encontre
         </target>
       </trans-unit>
       <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
@@ -276,7 +276,7 @@
           </context>
         </context-group>
         <target>
-          In diesem Abschnitt können Sie nach ihren Kriterien in den Daten suchen. Die Suchergebnisse können für weitere Untersuchung heruntergeladen werden.
+          Nesta secção, pode pesquisar nos dados por critérios do seu interesse. Os resultados são transferíveis para um exame detalhado.
         </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
@@ -332,7 +332,7 @@
           </context>
         </context-group>
         <target>
-          Download
+          Transferência
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -348,7 +348,7 @@
           </context>
         </context-group>
         <target>
-          Daten herunterladen
+          Transfira dados
         </target>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
@@ -364,7 +364,7 @@
           </context>
         </context-group>
         <target>
-          Möchten Sie selbst mit den Daten arbeiten? Sie können alle Daten dieser Seite herunterladen.
+          Quer trabalhar com os dados? Pode transferir todos os dados que servem de base a esta página.
         </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
@@ -420,7 +420,7 @@
           </context>
         </context-group>
         <target>
-          Indikatoren
+          Indicadores
         </target>
       </trans-unit>
       <trans-unit id="695caafe46b918dce47fc32933810772fac59cc1" datatype="html">
@@ -444,7 +444,7 @@
           </context>
         </context-group>
         <target>
-          Verwaltungskapazität
+          Capacidade administrativa
         </target>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
@@ -468,7 +468,7 @@
           </context>
         </context-group>
         <target>
-          Mit diesem Dashboard können Sie die Verwaltungskapazität der Käufer analysieren.
+          Este painel de controlo permite-lhe analisar e comparar a capacidade administrativa dos compradores.
         </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -508,7 +508,7 @@
           </context>
         </context-group>
         <target>
-          Transparenz
+          Transparência
         </target>
       </trans-unit>
       <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
@@ -532,7 +532,7 @@
           </context>
         </context-group>
         <target>
-          Mit diesem Dashboard können Sie den Grad der Transparenz in den öffentlichen Ausschreibungen analysieren.
+          Este painel de controlo permite-lhe analisar e comparar o grau de transparência em concursos de contratos públicos
         </target>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -572,7 +572,7 @@
           </context>
         </context-group>
         <target>
-          Integrität
+          Integridade
         </target>
       </trans-unit>
       <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
@@ -596,7 +596,7 @@
           </context>
         </context-group>
         <target>
-          Mit diesem Dashboard können Sie die Integritätsrisiken von öffentlichen Beschaffung analysieren.
+          Este painel de controlo permite-lhe analisar e comparar os riscos da integridade dos contratos públicos.
         </target>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -612,7 +612,7 @@
           </context>
         </context-group>
         <target>
-          Nicht sicher wohin? Fangen Sie hier an…
+          Não sabe onde ir? Comece aqui...
         </target>
       </trans-unit>
       <trans-unit id="b07a7e6f8a93b42c5499b8e0bde24b7260dc8f52" datatype="html">
@@ -628,7 +628,7 @@
           </context>
         </context-group>
         <target>
-          Worum es bei Opentender geht
+          Saiba em que é que isto consiste
         </target>
       </trans-unit>
       <trans-unit id="dab1af6ba43c8dd113734ea6cb57300ed6b88c42" datatype="html">
@@ -660,7 +660,7 @@
           </context>
         </context-group>
         <target>
-          Über Opentender
+          Sobre o ConcursoPúblico
         </target>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -676,7 +676,7 @@
           </context>
         </context-group>
         <target>
-          Willkommen bei Opentender
+          Bem-vindo ao ConcursoPúblico
         </target>
       </trans-unit>
       <trans-unit id="f04950f0b9fc8d772223961210585c1de1eb8449" datatype="html">
@@ -692,7 +692,7 @@
           </context>
         </context-group>
         <target>
-          Mit dieser Plattform können Sie Ausschreibungsdaten aus 35 Jurisdiktionen (28 EU-Mitgliedsstaaten, Norwegen, Europäische Institutionen, Island, Schweiz, Serbien, Georgien und Armenien) recherchieren und analysieren.
+          Esta plataforma permite-lhe pesquisar e analisar dados dos concursos de 35 jurisdições (28 estados-membros da UE, Noruega, as Instituições da UE, Islândia, Suíça, Sérvia, Geórgia e Arménia).
         </target>
       </trans-unit>
       <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
@@ -711,7 +711,7 @@
           </context>
         </context-group>
         <target>
-          Es sieht so aus als ob sie uns aus &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt; besuchen.
+          Parece que está a procurar a partir de &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -735,7 +735,7 @@
           </context>
         </context-group>
         <target>
-          Wir laden Sie ein, &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; zu besuchen.
+          Convidamo-lo(a) a visitar &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; ConcursoPúblico&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
@@ -757,7 +757,7 @@
           </context>
         </context-group>
         <target>
-          Bitte wählen Sie ein Länderportal oder durchsuchen Sie &lt;x ctype="x-a" id="START_LINK"/&gt;alle verfügbaren Daten&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;
+          Pode visualizar os dados em portais nacionais individuais seleccionando um país em baixo ou explore &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; todos os dados disponíveis &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; dados disponíveis.
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -821,7 +821,7 @@
           </context>
         </context-group>
         <target>
-          Anzahl Ausschreibungen
+          Nº de Concursos
         </target>
       </trans-unit>
       <trans-unit id="About" datatype="html">
@@ -840,7 +840,7 @@
           runtime
         </note>
         <target>
-          Über
+          Sobre
         </target>
       </trans-unit>
       <trans-unit id="AboutOpentender" datatype="html">
@@ -859,7 +859,7 @@
           runtime
         </note>
         <target>
-          Über Opentender
+          Sobre o ConcursoPúblico
         </target>
       </trans-unit>
       <trans-unit id="AddSearchFields" datatype="html">
@@ -878,7 +878,7 @@
           runtime
         </note>
         <target>
-          Suchfelder hinzufügen
+          Adicione Campos de Pesquisa
         </target>
       </trans-unit>
       <trans-unit id="AdditionalInformation" datatype="html">
@@ -897,7 +897,7 @@
           runtime
         </note>
         <target>
-          Zusätzliche Informationen
+          Informação Adicional
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacity" datatype="html">
@@ -916,7 +916,7 @@
           runtime
         </note>
         <target>
-          Verwaltungskapazität
+          Capacidade administrativa
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
@@ -935,7 +935,7 @@
           runtime
         </note>
         <target>
-          Verwaltungskapazität-Indikator
+          Indicador da capacidade administrativa
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
@@ -954,7 +954,7 @@
           runtime
         </note>
         <target>
-          Verwaltungskapazität-Indikatoren
+          Indicadores da capacidade administrativa
         </target>
       </trans-unit>
       <trans-unit id="Administrators" datatype="html">
@@ -973,7 +973,7 @@
           runtime
         </note>
         <target>
-          Verwalter
+          Administradores
         </target>
       </trans-unit>
       <trans-unit id="AllData" datatype="html">
@@ -992,7 +992,7 @@
           runtime
         </note>
         <target>
-          Alle Daten
+          Todos os dados
         </target>
       </trans-unit>
       <trans-unit id="AllDigiwhistdata" datatype="html">
@@ -1011,7 +1011,7 @@
           runtime
         </note>
         <target>
-          Alle Digiwhist Daten
+          Todos os dados da Digiwhist
         </target>
       </trans-unit>
       <trans-unit id="AppealBodyName" datatype="html">
@@ -1030,7 +1030,7 @@
           runtime
         </note>
         <target>
-          Berufungsinstanz
+          Nome do corpo do recurso
         </target>
       </trans-unit>
       <trans-unit id="Authorities" datatype="html">
@@ -1049,7 +1049,7 @@
           runtime
         </note>
         <target>
-          Behörden
+          Autoridades
         </target>
       </trans-unit>
       <trans-unit id="Authority" datatype="html">
@@ -1068,7 +1068,7 @@
           runtime
         </note>
         <target>
-          Behörde
+          Autoridade
         </target>
       </trans-unit>
       <trans-unit id="Average%ofTenders" datatype="html">
@@ -1087,7 +1087,7 @@
           runtime
         </note>
         <target>
-          Durchschnittliche % der Ausschreibungen
+          Percentagem média de concursos
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
@@ -1106,7 +1106,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Good Procurement Score über die Zeit
+          Resultado médio de boas aquisições ao longo do tempo
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
@@ -1125,7 +1125,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Good Procurement Score pro Branche
+          Resultado médio de boas aquisições por sector
         </target>
       </trans-unit>
       <trans-unit id="AverageScore" datatype="html">
@@ -1144,7 +1144,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Indikator-Score
+          Resultado médio
         </target>
       </trans-unit>
       <trans-unit id="AverageScoreof" datatype="html">
@@ -1163,7 +1163,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Score von
+          Resultado médio de
         </target>
       </trans-unit>
       <trans-unit id="AverageValue(€)" datatype="html">
@@ -1182,7 +1182,7 @@
           runtime
         </note>
         <target>
-          Durchschnittlicher Betrag (€)
+          Valor médio (€)
         </target>
       </trans-unit>
       <trans-unit id="AverageVolumeofTenders(€)" datatype="html">
@@ -1201,7 +1201,7 @@
           runtime
         </note>
         <target>
-          Durchschnittliches Volumen der Ausschreibungen (€)
+          Volume médio de concursos
         </target>
       </trans-unit>
       <trans-unit id="AverageinComparisonGroup" datatype="html">
@@ -1220,7 +1220,7 @@
           runtime
         </note>
         <target>
-          Durchschnitt in Vergleichsgruppe
+          Média em Grupo de Comparação
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionDate" datatype="html">
@@ -1239,7 +1239,7 @@
           runtime
         </note>
         <target>
-          Datum der Zuschlagsentscheidung
+          Data de decisão de adjudicação
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionYear" datatype="html">
@@ -1258,7 +1258,7 @@
           runtime
         </note>
         <target>
-          Zuschlagsentscheidungsjahr
+          Ano de decisão de adjudicação
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentAuthority" datatype="html">
@@ -1277,7 +1277,7 @@
           runtime
         </note>
         <target>
-          Benchmark: Aktuelle Behörde
+          Autoridade actual de referência
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentCompany" datatype="html">
@@ -1296,7 +1296,7 @@
           runtime
         </note>
         <target>
-          Benchmark: Aktuelle Firma
+          Companhia actual de referência
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
@@ -1315,7 +1315,7 @@
           runtime
         </note>
         <target>
-          Benchmark: Aktuelle Ausschreibung
+          Concurso actual de referência
         </target>
       </trans-unit>
       <trans-unit id="Bid" datatype="html">
@@ -1334,7 +1334,7 @@
           runtime
         </note>
         <target>
-          Gebot
+          Oferta
         </target>
       </trans-unit>
       <trans-unit id="BidCount" datatype="html">
@@ -1353,7 +1353,7 @@
           runtime
         </note>
         <target>
-          Anzahl Angebote
+          Contagem de ofertas
         </target>
       </trans-unit>
       <trans-unit id="BidDeadline" datatype="html">
@@ -1372,7 +1372,7 @@
           runtime
         </note>
         <target>
-          Gebotsfrist
+          Prazo de ofertas
         </target>
       </trans-unit>
       <trans-unit id="BidPrice" datatype="html">
@@ -1391,7 +1391,7 @@
           runtime
         </note>
         <target>
-          Angebotspreis
+          Preço de ofertas
         </target>
       </trans-unit>
       <trans-unit id="BidPriceEUR" datatype="html">
@@ -1410,7 +1410,7 @@
           runtime
         </note>
         <target>
-          Angebotspreis EUR
+          Preço de ofertas EUR
         </target>
       </trans-unit>
       <trans-unit id="Buyer" datatype="html">
@@ -1429,7 +1429,7 @@
           runtime
         </note>
         <target>
-          Käufer
+          Comprador
         </target>
       </trans-unit>
       <trans-unit id="BuyerRegion" datatype="html">
@@ -1448,7 +1448,7 @@
           runtime
         </note>
         <target>
-          Käuferregion
+          Região do comprador
         </target>
       </trans-unit>
       <trans-unit id="BuyerType" datatype="html">
@@ -1467,7 +1467,7 @@
           runtime
         </note>
         <target>
-          Käufertyp
+          Tipo do comprador
         </target>
       </trans-unit>
       <trans-unit id="Buyers" datatype="html">
@@ -1486,7 +1486,7 @@
           runtime
         </note>
         <target>
-          Käufer
+          Compradores
         </target>
       </trans-unit>
       <trans-unit id="CPVCodes" datatype="html">
@@ -1505,7 +1505,7 @@
           runtime
         </note>
         <target>
-          CPV Codes
+          Códigos CPV
         </target>
       </trans-unit>
       <trans-unit id="City" datatype="html">
@@ -1524,7 +1524,7 @@
           runtime
         </note>
         <target>
-          Stadt
+          Cidade
         </target>
       </trans-unit>
       <trans-unit id="Companies" datatype="html">
@@ -1543,7 +1543,7 @@
           runtime
         </note>
         <target>
-          Firmen
+          Companhias
         </target>
       </trans-unit>
       <trans-unit id="Company" datatype="html">
@@ -1562,7 +1562,7 @@
           runtime
         </note>
         <target>
-          Firma
+          Companhia
         </target>
       </trans-unit>
       <trans-unit id="ComparisonGroup" datatype="html">
@@ -1581,7 +1581,7 @@
           runtime
         </note>
         <target>
-          Vergleichsgruppe
+          Grupo de comparação
         </target>
       </trans-unit>
       <trans-unit id="ContractValues" datatype="html">
@@ -1600,7 +1600,7 @@
           runtime
         </note>
         <target>
-          Auschreibungspreise
+          Valores do contrato
         </target>
       </trans-unit>
       <trans-unit id="Country" datatype="html">
@@ -1619,7 +1619,7 @@
           runtime
         </note>
         <target>
-          Land
+          País
         </target>
       </trans-unit>
       <trans-unit id="CreationDate" datatype="html">
@@ -1638,7 +1638,7 @@
           runtime
         </note>
         <target>
-          Erstelldatum
+          Data de criação
         </target>
       </trans-unit>
       <trans-unit id="CurrentTender" datatype="html">
@@ -1657,7 +1657,7 @@
           runtime
         </note>
         <target>
-          Aktuelle Ausschreibung
+          Concurso actual
         </target>
       </trans-unit>
       <trans-unit id="Dashboards" datatype="html">
@@ -1676,7 +1676,7 @@
           runtime
         </note>
         <target>
-          Dashboards
+          Painéis de controlo
         </target>
       </trans-unit>
       <trans-unit id="Dates" datatype="html">
@@ -1695,7 +1695,7 @@
           runtime
         </note>
         <target>
-          Termine
+          Datas
         </target>
       </trans-unit>
       <trans-unit id="Deposits" datatype="html">
@@ -1714,7 +1714,7 @@
           runtime
         </note>
         <target>
-          Einlagen
+          Depósitos
         </target>
       </trans-unit>
       <trans-unit id="Description" datatype="html">
@@ -1733,7 +1733,7 @@
           runtime
         </note>
         <target>
-          Beschreibung
+          Descrição
         </target>
       </trans-unit>
       <trans-unit id="DocumentPriceEUR" datatype="html">
@@ -1752,7 +1752,7 @@
           runtime
         </note>
         <target>
-          Dokumentpreis EUR
+          Preço do documento EUR
         </target>
       </trans-unit>
       <trans-unit id="Documents" datatype="html">
@@ -1771,7 +1771,7 @@
           runtime
         </note>
         <target>
-          Dokumente
+          Documentos
         </target>
       </trans-unit>
       <trans-unit id="DocumentsDeadline" datatype="html">
@@ -1790,7 +1790,7 @@
           runtime
         </note>
         <target>
-          Unterlagenfrist
+          Prazo dos documentos
         </target>
       </trans-unit>
       <trans-unit id="DocumentsPrice" datatype="html">
@@ -1809,7 +1809,7 @@
           runtime
         </note>
         <target>
-          Dokumentpreis
+          Preço dos documentos
         </target>
       </trans-unit>
       <trans-unit id="Download" datatype="html">
@@ -1828,7 +1828,7 @@
           runtime
         </note>
         <target>
-          Download
+          Transferência
         </target>
       </trans-unit>
       <trans-unit id="EUInstitutions" datatype="html">
@@ -1847,7 +1847,7 @@
           runtime
         </note>
         <target>
-          EU Institutionen
+          Instituições da UE
         </target>
       </trans-unit>
       <trans-unit id="EU-Fund" datatype="html">
@@ -1866,7 +1866,7 @@
           runtime
         </note>
         <target>
-          EU-Mittel
+          Fundo da UE
         </target>
       </trans-unit>
       <trans-unit id="EconomicRequirements" datatype="html">
@@ -1885,7 +1885,7 @@
           runtime
         </note>
         <target>
-          Wirtschaftliche Voraussetzungen
+          Requisitos económicos
         </target>
       </trans-unit>
       <trans-unit id="EligibleBidLanguages" datatype="html">
@@ -1904,7 +1904,7 @@
           runtime
         </note>
         <target>
-          Gültige Angebotssprachen
+          Línguas elegíveis das ofertas
         </target>
       </trans-unit>
       <trans-unit id="Entries" datatype="html">
@@ -1923,7 +1923,7 @@
           runtime
         </note>
         <target>
-          Einträge
+          Entradas
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionDate" datatype="html">
@@ -1942,7 +1942,7 @@
           runtime
         </note>
         <target>
-          Geschätztes Fertigstellungsdatum
+          Data estimada da conclusão
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionYear" datatype="html">
@@ -1961,7 +1961,7 @@
           runtime
         </note>
         <target>
-          Geschätztes Fertigstellungsjahr
+          Ano estimado da conclusão
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPrice" datatype="html">
@@ -1980,7 +1980,7 @@
           runtime
         </note>
         <target>
-          Schätzpreis
+          Preço estimado
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPriceEUR" datatype="html">
@@ -1999,7 +1999,7 @@
           runtime
         </note>
         <target>
-          Geschätzter Preis EUR
+          Preço estimado EUR
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartDate" datatype="html">
@@ -2018,7 +2018,7 @@
           runtime
         </note>
         <target>
-          Geschätztes Startdatum
+          Data estimada de início
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartYear" datatype="html">
@@ -2037,7 +2037,7 @@
           runtime
         </note>
         <target>
-          Geschätztes Startjahr
+          Ano estimado de início
         </target>
       </trans-unit>
       <trans-unit id="FinalPrice" datatype="html">
@@ -2056,7 +2056,7 @@
           runtime
         </note>
         <target>
-          Endpreis
+          Preço final
         </target>
       </trans-unit>
       <trans-unit id="FinalPriceEUR" datatype="html">
@@ -2075,7 +2075,7 @@
           runtime
         </note>
         <target>
-          Endpreis EUR
+          Preço final EUR
         </target>
       </trans-unit>
       <trans-unit id="Funding" datatype="html">
@@ -2094,7 +2094,7 @@
           runtime
         </note>
         <target>
-          Finanzierung
+          Financiamento
         </target>
       </trans-unit>
       <trans-unit id="Glossary" datatype="html">
@@ -2113,7 +2113,7 @@
           runtime
         </note>
         <target>
-          Glossar
+          Glossário
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurement" datatype="html">
@@ -2132,7 +2132,7 @@
           runtime
         </note>
         <target>
-          Good Procurement
+          Boa aquisição
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurementScore" datatype="html">
@@ -2151,7 +2151,7 @@
           runtime
         </note>
         <target>
-          Good Procurement Score
+          Resultado da boa aquisição
         </target>
       </trans-unit>
       <trans-unit id="Home" datatype="html">
@@ -2170,7 +2170,7 @@
           runtime
         </note>
         <target>
-          Start
+          Início
         </target>
       </trans-unit>
       <trans-unit id="HowOpentenderworks" datatype="html">
@@ -2189,7 +2189,7 @@
           runtime
         </note>
         <target>
-          Wie Opentender funktioniert
+          Como funciona o Concursopúblico
         </target>
       </trans-unit>
       <trans-unit id="Imprint" datatype="html">
@@ -2208,7 +2208,7 @@
           runtime
         </note>
         <target>
-          Impressum
+          Imprimir
         </target>
       </trans-unit>
       <trans-unit id="Indicator" datatype="html">
@@ -2227,7 +2227,7 @@
           runtime
         </note>
         <target>
-          Indikator
+          Indicador
         </target>
       </trans-unit>
       <trans-unit id="Indicators" datatype="html">
@@ -2246,7 +2246,7 @@
           runtime
         </note>
         <target>
-          Indikatoren
+          Indicadores
         </target>
       </trans-unit>
       <trans-unit id="Integrity" datatype="html">
@@ -2265,7 +2265,7 @@
           runtime
         </note>
         <target>
-          Integrität
+          Integridade
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicator" datatype="html">
@@ -2284,7 +2284,7 @@
           runtime
         </note>
         <target>
-          Indikator für Integrität
+          Indicador de integridade
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicators" datatype="html">
@@ -2303,7 +2303,7 @@
           runtime
         </note>
         <target>
-          Indikatoren für Integrität
+          Indicadores de integridade
         </target>
       </trans-unit>
       <trans-unit id="LimittosameAuthorityType" datatype="html">
@@ -2322,7 +2322,7 @@
           runtime
         </note>
         <target>
-          Auf gleichen Behörden-Typ limitieren
+          Limite ao mesmo Tipo de Autoridade
         </target>
       </trans-unit>
       <trans-unit id="LimittosameMainActivities" datatype="html">
@@ -2341,7 +2341,7 @@
           runtime
         </note>
         <target>
-          Auf gleiche Hauptaktivitäten limitieren
+          Limite às mesmas Actividades Principais
         </target>
       </trans-unit>
       <trans-unit id="Limittosameregion(NUTS2)" datatype="html">
@@ -2360,7 +2360,7 @@
           runtime
         </note>
         <target>
-          Auf gleiche Region (NUTS2) limitieren
+          Limite à mesma região (NUTS2)
         </target>
       </trans-unit>
       <trans-unit id="Limittosamesector" datatype="html">
@@ -2379,7 +2379,7 @@
           runtime
         </note>
         <target>
-          Auf gleiche Branche limitieren
+          Limite ao mesmo sector
         </target>
       </trans-unit>
       <trans-unit id="Lot" datatype="html">
@@ -2398,7 +2398,7 @@
           runtime
         </note>
         <target>
-          Vertragsgruppe
+          Lote
         </target>
       </trans-unit>
       <trans-unit id="Lots" datatype="html">
@@ -2417,7 +2417,7 @@
           runtime
         </note>
         <target>
-          Vertragsgruppen (Lots)
+          Lotes
         </target>
       </trans-unit>
       <trans-unit id="MainActivities" datatype="html">
@@ -2436,7 +2436,7 @@
           runtime
         </note>
         <target>
-          Hauptaktivitäten
+          Principais actividades
         </target>
       </trans-unit>
       <trans-unit id="MainBuyers" datatype="html">
@@ -2455,7 +2455,7 @@
           runtime
         </note>
         <target>
-          Hauptkäufer
+          Principais compradores
         </target>
       </trans-unit>
       <trans-unit id="MainBuyersinScoreRange" datatype="html">
@@ -2474,7 +2474,7 @@
           runtime
         </note>
         <target>
-          Hauptkäufer im Score-Bereich
+          Principais compradores na amplitude de resultados
         </target>
       </trans-unit>
       <trans-unit id="MainCPV" datatype="html">
@@ -2493,7 +2493,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV
+          Principal CPV
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Categories)" datatype="html">
@@ -2512,7 +2512,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV (Kategorien)
+          Principal CPV (Categorias)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Divisions)" datatype="html">
@@ -2531,7 +2531,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV (Divisionen)
+          Principal CPV (Divisões)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Full)" datatype="html">
@@ -2550,7 +2550,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV (Voll)
+          Principal CPV (total)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Groups)" datatype="html">
@@ -2569,7 +2569,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV (Gruppen)
+          Principal CPV (Grupos)
         </target>
       </trans-unit>
       <trans-unit id="MainCPVCode" datatype="html">
@@ -2588,7 +2588,7 @@
           runtime
         </note>
         <target>
-          Haupt-CPV-Code
+          Principal código CPV
         </target>
       </trans-unit>
       <trans-unit id="MainSector" datatype="html">
@@ -2607,7 +2607,7 @@
           runtime
         </note>
         <target>
-          Hauptbranche
+          Sector principal
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliers" datatype="html">
@@ -2626,7 +2626,7 @@
           runtime
         </note>
         <target>
-          Hauptzulieferer
+          Principais fornecedores
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliersinScoreRange" datatype="html">
@@ -2645,7 +2645,7 @@
           runtime
         </note>
         <target>
-          Hauptzulieferer im Score-Bereich
+          Principais fornecedores na amplitude de resultados
         </target>
       </trans-unit>
       <trans-unit id="MarketAnalysis" datatype="html">
@@ -2664,7 +2664,7 @@
           runtime
         </note>
         <target>
-          Marktüberblick
+          Análise de mercado
         </target>
       </trans-unit>
       <trans-unit id="MediationBodyName" datatype="html">
@@ -2683,7 +2683,7 @@
           runtime
         </note>
         <target>
-          Vermittlungsinstanz
+          Nome do corpo de mediação
         </target>
       </trans-unit>
       <trans-unit id="ModificationDate" datatype="html">
@@ -2702,7 +2702,7 @@
           runtime
         </note>
         <target>
-          Änderungsdatum
+          Data de modificação
         </target>
       </trans-unit>
       <trans-unit id="Name" datatype="html">
@@ -2721,7 +2721,7 @@
           runtime
         </note>
         <target>
-          Name
+          Nome
         </target>
       </trans-unit>
       <trans-unit id="Nr.ofTenders" datatype="html">
@@ -2740,7 +2740,7 @@
           runtime
         </note>
         <target>
-          Anzahl Ausschreibungen
+          Nº de concursos
         </target>
       </trans-unit>
       <trans-unit id="NumberofBuyersbyRegion" datatype="html">
@@ -2759,7 +2759,7 @@
           runtime
         </note>
         <target>
-          Anzahl der Käufer pro Region
+          Número de compradores por região
         </target>
       </trans-unit>
       <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
@@ -2778,7 +2778,7 @@
           runtime
         </note>
         <target>
-          Anzahl der Zulieferer pro Region
+          Número de fornecedores por região
         </target>
       </trans-unit>
       <trans-unit id="OpentenderPortals" datatype="html">
@@ -2797,7 +2797,7 @@
           runtime
         </note>
         <target>
-          Opentender Portale
+          Portais do Concursopúblico
         </target>
       </trans-unit>
       <trans-unit id="Overall" datatype="html">
@@ -2816,7 +2816,7 @@
           runtime
         </note>
         <target>
-          Gesamt
+          Geral
         </target>
       </trans-unit>
       <trans-unit id="PersonalRequirements" datatype="html">
@@ -2835,7 +2835,7 @@
           runtime
         </note>
         <target>
-          Persönliche Voraussetzungen
+          Requisitos pessoais
         </target>
       </trans-unit>
       <trans-unit id="Portals" datatype="html">
@@ -2854,7 +2854,7 @@
           runtime
         </note>
         <target>
-          Portale
+          Portais
         </target>
       </trans-unit>
       <trans-unit id="Prices" datatype="html">
@@ -2873,7 +2873,7 @@
           runtime
         </note>
         <target>
-          Preise
+          Preços
         </target>
       </trans-unit>
       <trans-unit id="ProcedureType" datatype="html">
@@ -2892,7 +2892,7 @@
           runtime
         </note>
         <target>
-          Verfahrensart
+          Tipo de procedimento
         </target>
       </trans-unit>
       <trans-unit id="ProfileLink" datatype="html">
@@ -2911,7 +2911,7 @@
           runtime
         </note>
         <target>
-          Link zu Profil
+          Link do perfil
         </target>
       </trans-unit>
       <trans-unit id="ProfilePage" datatype="html">
@@ -2930,7 +2930,7 @@
           runtime
         </note>
         <target>
-          Profilseite
+          Página do perfil
         </target>
       </trans-unit>
       <trans-unit id="Programme" datatype="html">
@@ -2949,7 +2949,7 @@
           runtime
         </note>
         <target>
-          Programm
+          Programa
         </target>
       </trans-unit>
       <trans-unit id="Publications" datatype="html">
@@ -2968,7 +2968,7 @@
           runtime
         </note>
         <target>
-          Veröffentlichungen
+          Publicações
         </target>
       </trans-unit>
       <trans-unit id="Region" datatype="html">
@@ -2987,7 +2987,7 @@
           runtime
         </note>
         <target>
-          Region
+          Região
         </target>
       </trans-unit>
       <trans-unit id="Requirements" datatype="html">
@@ -3006,7 +3006,7 @@
           runtime
         </note>
         <target>
-          Anforderungen
+          Requisitos
         </target>
       </trans-unit>
       <trans-unit id="Score" datatype="html">
@@ -3025,7 +3025,7 @@
           runtime
         </note>
         <target>
-          Score
+          Resultado
         </target>
       </trans-unit>
       <trans-unit id="Search" datatype="html">
@@ -3044,7 +3044,7 @@
           runtime
         </note>
         <target>
-          Suche
+          Pesquisa
         </target>
       </trans-unit>
       <trans-unit id="SearchAuthority" datatype="html">
@@ -3063,7 +3063,7 @@
           runtime
         </note>
         <target>
-          Behörde suchen
+          Autoridade da pesquisa
         </target>
       </trans-unit>
       <trans-unit id="SearchCompany" datatype="html">
@@ -3082,7 +3082,7 @@
           runtime
         </note>
         <target>
-          Firma suchen
+          Companhia da pesquisa
         </target>
       </trans-unit>
       <trans-unit id="SearchTender" datatype="html">
@@ -3101,7 +3101,7 @@
           runtime
         </note>
         <target>
-          Ausschreibung suchen
+          Concurso da pesquisa
         </target>
       </trans-unit>
       <trans-unit id="Sector" datatype="html">
@@ -3120,7 +3120,7 @@
           runtime
         </note>
         <target>
-          Branche
+          Sector
         </target>
       </trans-unit>
       <trans-unit id="Sector(CPVDivision)" datatype="html">
@@ -3139,7 +3139,7 @@
           runtime
         </note>
         <target>
-          Branche (CPV Divisionen)
+          Sector (Divisão CPV)
         </target>
       </trans-unit>
       <trans-unit id="Sector(CPV)" datatype="html">
@@ -3158,7 +3158,7 @@
           runtime
         </note>
         <target>
-          Branche (CPV)
+          Sector (CPV)
         </target>
       </trans-unit>
       <trans-unit id="SectorOverview" datatype="html">
@@ -3177,7 +3177,7 @@
           runtime
         </note>
         <target>
-          Branchenüberblick
+          Visão geral do sector
         </target>
       </trans-unit>
       <trans-unit id="Sectors" datatype="html">
@@ -3196,7 +3196,7 @@
           runtime
         </note>
         <target>
-          Branchen
+          Sectores
         </target>
       </trans-unit>
       <trans-unit id="SelectColumn" datatype="html">
@@ -3215,7 +3215,7 @@
           runtime
         </note>
         <target>
-          Spaltenauswahl
+          Seleccione coluna
         </target>
       </trans-unit>
       <trans-unit id="SelectFilter" datatype="html">
@@ -3234,7 +3234,7 @@
           runtime
         </note>
         <target>
-          Filterauswahl
+          Seleccione filtro
         </target>
       </trans-unit>
       <trans-unit id="SelectVisualization" datatype="html">
@@ -3253,7 +3253,7 @@
           runtime
         </note>
         <target>
-          Visualisierung auswählen
+          Seleccione visualização
         </target>
       </trans-unit>
       <trans-unit id="Showallyears" datatype="html">
@@ -3272,7 +3272,7 @@
           runtime
         </note>
         <target>
-          Alle Jahre anzeigen
+          Mostrar todos os anos
         </target>
       </trans-unit>
       <trans-unit id="Supplier" datatype="html">
@@ -3291,7 +3291,7 @@
           runtime
         </note>
         <target>
-          Zulieferer
+          Fornecedor
         </target>
       </trans-unit>
       <trans-unit id="SupplierRegion" datatype="html">
@@ -3310,7 +3310,7 @@
           runtime
         </note>
         <target>
-          Zuliefererregion
+          Região do fornecedor
         </target>
       </trans-unit>
       <trans-unit id="Suppliers" datatype="html">
@@ -3329,7 +3329,7 @@
           runtime
         </note>
         <target>
-          Zulieferer
+          Fornecedores
         </target>
       </trans-unit>
       <trans-unit id="SupplyType" datatype="html">
@@ -3348,7 +3348,7 @@
           runtime
         </note>
         <target>
-          Angebotstyp
+          Tipo de fornecimento
         </target>
       </trans-unit>
       <trans-unit id="TechnicalRequirements" datatype="html">
@@ -3367,7 +3367,7 @@
           runtime
         </note>
         <target>
-          Technische Voraussetzungen
+          Requisitos técnicos
         </target>
       </trans-unit>
       <trans-unit id="Tender" datatype="html">
@@ -3386,7 +3386,7 @@
           runtime
         </note>
         <target>
-          Aussschreibung
+          Concurso
         </target>
       </trans-unit>
       <trans-unit id="TenderCount" datatype="html">
@@ -3405,7 +3405,7 @@
           runtime
         </note>
         <target>
-          Anzahl Ausschreibungen
+          Contagem de concursos
         </target>
       </trans-unit>
       <trans-unit id="TenderInformation" datatype="html">
@@ -3424,7 +3424,7 @@
           runtime
         </note>
         <target>
-          Ausschreibungs-Informationen
+          Informação sobre os concursos
         </target>
       </trans-unit>
       <trans-unit id="TenderLink" datatype="html">
@@ -3443,7 +3443,7 @@
           runtime
         </note>
         <target>
-          Link zu Ausschreibung
+          Link dos concursos
         </target>
       </trans-unit>
       <trans-unit id="TenderMetaData" datatype="html">
@@ -3462,7 +3462,7 @@
           runtime
         </note>
         <target>
-          Ausschreibungs-Metadaten
+          Meta dados dos concursos
         </target>
       </trans-unit>
       <trans-unit id="TenderRequirements" datatype="html">
@@ -3481,7 +3481,7 @@
           runtime
         </note>
         <target>
-          Ausschreibungsanforderungen
+          Requisitos dos concursos
         </target>
       </trans-unit>
       <trans-unit id="Tenders" datatype="html">
@@ -3500,7 +3500,7 @@
           runtime
         </note>
         <target>
-          Ausschreibungen
+          Concursos
         </target>
       </trans-unit>
       <trans-unit id="TendersoverTime" datatype="html">
@@ -3519,7 +3519,7 @@
           runtime
         </note>
         <target>
-          Ausschreibungen über die Zeit
+          Concursos ao longo do tempo
         </target>
       </trans-unit>
       <trans-unit id="Test" datatype="html">
@@ -3538,7 +3538,7 @@
           runtime
         </note>
         <target>
-          Test
+          Teste
         </target>
       </trans-unit>
       <trans-unit id="Title" datatype="html">
@@ -3557,7 +3557,7 @@
           runtime
         </note>
         <target>
-          Titel
+          Título
         </target>
       </trans-unit>
       <trans-unit id="TitleEnglish" datatype="html">
@@ -3576,7 +3576,7 @@
           runtime
         </note>
         <target>
-          Titel Englisch
+          Título inglês
         </target>
       </trans-unit>
       <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
@@ -3595,7 +3595,7 @@
           runtime
         </note>
         <target>
-          Absolutes Volumen der Ausschreibungen (€)
+          Volume total de concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="Transparency" datatype="html">
@@ -3614,7 +3614,7 @@
           runtime
         </note>
         <target>
-          Transparenz
+          Transparência
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicator" datatype="html">
@@ -3633,7 +3633,7 @@
           runtime
         </note>
         <target>
-          Indikator für Transparenz
+          Indicador de transparência
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicators" datatype="html">
@@ -3652,7 +3652,7 @@
           runtime
         </note>
         <target>
-          Indikatoren für Transparenz
+          Indicadores de transparência
         </target>
       </trans-unit>
       <trans-unit id="Type" datatype="html">
@@ -3671,7 +3671,7 @@
           runtime
         </note>
         <target>
-          Typ
+          Tipo
         </target>
       </trans-unit>
       <trans-unit id="Volume(€)" datatype="html">
@@ -3690,7 +3690,7 @@
           runtime
         </note>
         <target>
-          Volumen (€)
+          Volume (€)
         </target>
       </trans-unit>
       <trans-unit id="VolumeofTenders(€)" datatype="html">
@@ -3709,7 +3709,7 @@
           runtime
         </note>
         <target>
-          Volumen der Ausschreibungen (€)
+          Volume de concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="Year" datatype="html">
@@ -3728,7 +3728,7 @@
           runtime
         </note>
         <target>
-          Jahr
+          Ano
         </target>
       </trans-unit>
       <trans-unit id="[Namenotavailable]" datatype="html">
@@ -3747,7 +3747,7 @@
           runtime
         </note>
         <target>
-          [Name nicht verfügbar]
+          [Nome não disponível]
         </target>
       </trans-unit>
       <trans-unit id="[{{count}}othersectorswithlessthan{{value}}]" datatype="html">
@@ -3772,7 +3772,7 @@
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; andere Sektoren mit weniger als &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;outros sectores com menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -3791,7 +3791,7 @@
           runtime
         </note>
         <target>
-          im Score-Bereich
+          em amplitude de resultados
         </target>
       </trans-unit>
       <trans-unit id="overTime" datatype="html">
@@ -3810,7 +3810,7 @@
           runtime
         </note>
         <target>
-          über die Zeit
+          ao longo do tempo
         </target>
       </trans-unit>
       <trans-unit id="perSector" datatype="html">
@@ -3829,7 +3829,7 @@
           runtime
         </note>
         <target>
-          pro Branche
+          por sector
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
@@ -3848,7 +3848,7 @@
           runtime
         </note>
         <target>
-          Indikator für Verwaltungskapazität
+          Indicador da Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
@@ -3867,7 +3867,7 @@
           runtime
         </note>
         <target>
-          Indikatoren für Verwaltungskapazität
+          Indicadores da Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
@@ -3886,7 +3886,7 @@
           runtime
         </note>
         <target>
-          Gemeinsame oder zentrale Beschaffung
+          Aquisição conjunta ou ceentralizada
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
@@ -3905,7 +3905,7 @@
           runtime
         </note>
         <target>
-          Die zentralisierte Beschaffung bietet gute Verwaltungskapazitäten, wenn die Ausschreibung von einer zentralen Beschaffungsstelle verwaltet wird.
+          A aquisição centralizada sugere boa capacidade administrativa se o concurso for dirigido por um corpo central de aquisições
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3924,7 +3924,7 @@
           runtime
         </note>
         <target>
-          Nutzung von Rahmenverträgen
+          Uso de acordos estruturais
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.desc" datatype="html">
@@ -3943,7 +3943,7 @@
           runtime
         </note>
         <target>
-          Die Rahmenvereinbarung schlägt eine gute Verwaltungskapazität vor, wenn die Ausschreibung eine Rahmenvereinbarung festlegt.
+          O acordo estrutural sugere boa capacidade administrativa se o concurso estabelecer um acordo estrutural
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
@@ -3962,7 +3962,7 @@
           runtime
         </note>
         <target>
-          Elektronische Auktion
+          Leilão electrónico
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.desc" datatype="html">
@@ -3981,7 +3981,7 @@
           runtime
         </note>
         <target>
-          Elektronische Auktionen weisen eine gute Verwaltungskapazität auf, wenn die Ausschreibung über eine elektronische Auktion durchgeführt wurde.
+          O leilão electrónico aponta para boa capacidade administrativa se o concurso foi realizado através de um leilão electrónico.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.name" datatype="html">
@@ -4000,7 +4000,7 @@
           runtime
         </note>
         <target>
-          Nutzung des WTO-Rahmens
+          Uso de estrutura WTO
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.desc" datatype="html">
@@ -4019,7 +4019,7 @@
           runtime
         </note>
         <target>
-          Die Nutzung des WTO-Rahmens legt eine gute Verwaltungskapazität nahe, wenn das Ausschreibungsverfahren gemäß dem WTO-Rahmen durchgeführt wird.
+          O uso da estrutura WTO sugere boa capacidade administrativa se o processo de orçamento for realizado de acordo com a estrutura WTO.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
@@ -4038,7 +4038,7 @@
           runtime
         </note>
         <target>
-          Englisch als Fremdsprache
+          Inglês como língua estrangeira
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.desc" datatype="html">
@@ -4057,7 +4057,7 @@
           runtime
         </note>
         <target>
-          Englisch als Fremdsprache weist auf eine gute administrative Fähigkeit hin, wenn die Angebote in Englisch als Fremdsprache eingereicht werden können.
+          O inglês como língua estrangeira sugere boa capacidade administrativa se as ofertas puderem ser submetidas em inglês como língua estrangeira.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.name" datatype="html">
@@ -4076,7 +4076,7 @@
           runtime
         </note>
         <target>
-          Indikator für Beschaffungsintegrität
+          Indicador de integridade
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.plural" datatype="html">
@@ -4095,7 +4095,7 @@
           runtime
         </note>
         <target>
-          Indikatoren für Beschaffungsintegrität
+          Indicadores de integridade
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
@@ -4114,7 +4114,7 @@
           runtime
         </note>
         <target>
-          Einzelbietervertrag
+          Contrato único de licitante
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
@@ -4133,7 +4133,7 @@
           runtime
         </note>
         <target>
-          Ein einzelnes Gebot ist ein Risiko, wenn in einem wettbewerbsorientierten Markt nur ein Gebot abgegeben wird.
+          A oferta única assinala um risco quando apenas uma oferta é submetida num concurso, num mercado competitivo.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
@@ -4152,7 +4152,7 @@
           runtime
         </note>
         <target>
-          Veröffentlichung der Ausschreibung
+          Chamada para a publicação dos concursos
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
@@ -4171,7 +4171,7 @@
           runtime
         </note>
         <target>
-          Die Nichtveröffentlichung von Ausschreibungen stellt ein Risiko dar, wenn vor einer Auftragsvergabe keine Ausschreibung veröffentlicht wird, wodurch sich der potenzielle Bieterpool verringert.
+          Não publicar chamadas para concurso assinala um risco quando nenhuma chamada para concursos é publicada antes de uma adjudicação do contrato, diminuindo a potencial "pool" de licitantes.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
@@ -4190,7 +4190,7 @@
           runtime
         </note>
         <target>
-          Verfahrensart
+          Tipo de procedimento
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.desc" datatype="html">
@@ -4209,7 +4209,7 @@
           runtime
         </note>
         <target>
-          Nicht-offene Verfahren signalisieren das Risiko, Verfahrenstypen zu verwenden, die weniger wettbewerbsoffen sind und eher für direkt beauftragte verbundene Unternehmen verwendet werden (z.B. ohne Veröffentlichung ausgehandelt).
+          Os procedimentos não públicos assinalam um risco de utilização de tipos de procedimento que estão menos abertos à competição e que são usados mais facilmente para contratar directamente empresas ligadas (por exemplo, negociadas sem publicação).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
@@ -4228,7 +4228,7 @@
           runtime
         </note>
         <target>
-          Dauer des Anzeigenzeitraums
+          Duração do período de publicidade
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.desc" datatype="html">
@@ -4247,7 +4247,7 @@
           runtime
         </note>
         <target>
-          Die Länge der Ausschreibungsfrist verrät das Risiko von verdächtig engen Ausschreibungsfristen oder einer zu langen Ausschreibungsdauer.
+          A duração do período de publicidade revela o risco de prazos de oferta suspeitosamente apertados ou quando o período de publicidade é excessivamente longo.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.name" datatype="html">
@@ -4266,7 +4266,7 @@
           runtime
         </note>
         <target>
-          Dauer des Entscheidungszeitraums
+          Duração do período de decisão
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.desc" datatype="html">
@@ -4285,7 +4285,7 @@
           runtime
         </note>
         <target>
-          Länge des Entscheidungszeitraums signalisiert Risiken, wenn die Länge des Entscheidungszeitraums entweder verdächtig kurz oder verdächtig lang ist.
+          A duração do período de decisão assinala riscos quando a duração do período de decisão é ou suspeitosamente curta ou suspeitosamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
@@ -4304,7 +4304,7 @@
           runtime
         </note>
         <target>
-          Neue Firma
+          Nova companhia
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.desc" datatype="html">
@@ -4323,7 +4323,7 @@
           runtime
         </note>
         <target>
-          Ein neues Unternehmen signalisiert das Risiko, dass ein sehr junges Unternehmen eine Ausschreibung gewinnt (zum Zeitpunkt des Gewinnens jünger als 1 Jahr).
+          A nova companhia assinala o risco de uma companhia muito jovem ganhar um concurso (com menos de 1 ano na altura do ganho).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
@@ -4342,7 +4342,7 @@
           runtime
         </note>
         <target>
-          Steueroase
+          Paraíso fiscal
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.desc" datatype="html">
@@ -4361,7 +4361,7 @@
           runtime
         </note>
         <target>
-          Steueroasen signalisieren ein Risiko, wenn der Lieferant in einem Steueroasenland ansässig ist (basierend auf dem Finanzgeheimnis-Index).
+          O paraíso fiscal assinala um risco quando o fornecedor está localizado num país de paraísos fiscais (baseado no índice do segredo financeiro).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
@@ -4380,7 +4380,7 @@
           runtime
         </note>
         <target>
-          Länge der Beschreibung
+          Duração da descrição
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.desc" datatype="html">
@@ -4399,7 +4399,7 @@
           runtime
         </note>
         <target>
-          Die Länge der Produktbeschreibung signalisiert das Risiko, dass die Produktbeschreibung auf ein Unternehmen zugeschnitten ist, wenn die Beschreibung zu lang ist.
+          A duração da descrição dos produtos assinala o risco de a descrição dos produtos ser adaptada a uma companhia, quando a descrição for excessivamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
@@ -4418,7 +4418,7 @@
           runtime
         </note>
         <target>
-          Politische Verbindungen der Lieferanten
+          Ligações políticas de fornecedores
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
@@ -4437,7 +4437,7 @@
           runtime
         </note>
         <target>
-          Die politische Verbindung des Anbieters birgt das Risiko, dass mindestens ein Eigentümer oder Manager ein politisches Amt innehat.
+          A ligação política do fornecedor capta o risco de pelo menos um proprietário ou dirigente deter um cargo político.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
@@ -4456,7 +4456,7 @@
           runtime
         </note>
         <target>
-          Vertragsanteil des erfolgreichen Bieters
+          Acção do contrato do vencedor
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
@@ -4475,7 +4475,7 @@
           runtime
         </note>
         <target>
-          Winner Contract Share ist der Anteil des Auftragswerts, den ein Unternehmen von einem bestimmten Käufer in einem bestimmten Jahr gewonnen hat.
+          A acção do contrato do vencedor é a acção do valor do contrato ganho por uma dada companhia a partir de um dado comprador num dado ano.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
@@ -4494,7 +4494,7 @@
           runtime
         </note>
         <target>
-          Länge der Zulassungskriterien
+          Duração dos critérios de elegibilidade
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
@@ -4513,7 +4513,7 @@
           runtime
         </note>
         <target>
-          Die Länge der Zulassungskriterien signalisiert das Risiko, dass die Kriterien auf ein Unternehmen zugeschnitten sind und die Beschreibung der Kriterien zu lang ist.
+          A duração dos critérios de elegibilidade assinala o risco de os critérios serem adaptados a uma companhia com a descrição dos critérios a ser excessivamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.name" datatype="html">
@@ -4532,7 +4532,7 @@
           runtime
         </note>
         <target>
-          Evaluationskriterien
+          Critérios de avaliação
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.desc" datatype="html">
@@ -4551,7 +4551,7 @@
           runtime
         </note>
         <target>
-          Bewertungskriterien signalisieren das Risiko, mit nicht-quantitativen Kriterien, die subjektiv und leicht manipulierbar sind, Bieter zu bewerten.
+          Os critérios de avaliação assinalam o risco da utilização de critérios não quantitativos para avaliar  licitantes que são subjectivos e facilmente manipuláveis.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.name" datatype="html">
@@ -4570,7 +4570,7 @@
           runtime
         </note>
         <target>
-          Indikator für Transparenz
+          Indicador de transparência
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.plural" datatype="html">
@@ -4589,7 +4589,7 @@
           runtime
         </note>
         <target>
-          Indikatoren für Transparenz
+          Indicadores de transparência
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
@@ -4608,7 +4608,7 @@
           runtime
         </note>
         <target>
-          Veröffentlichungsrate
+          Taxa de publicação
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
@@ -4627,7 +4627,7 @@
           runtime
         </note>
         <target>
-          Die Veröffentlichungsrate ist das Verhältnis der beworbenen öffentlichen Beschaffungsausgaben zu den gesamten öffentlichen Beschaffungsausgaben eines bestimmten öffentlichen Auftraggebers.
+          A taxa de publicação é a taxa de gastos da aquisição pública anunciada para além dos gastos totais da aquisição pública de uma dada autoridade contraente.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
@@ -4646,7 +4646,7 @@
           runtime
         </note>
         <target>
-          Diskrepanzen zwischen Ausschreibung und Vergabebekanntmachung
+          As discrepâncias entre a chamada pelo concurso e adjudicação de contratos
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
@@ -4665,7 +4665,7 @@
           runtime
         </note>
         <target>
-          Die Diskrepanz zwischen Ausschreibung und Vergabebekanntmachung ist das Verhältnis von Feldern mit unterschiedlichen Werten in der Ausschreibung und den Bekanntmachungen über die Auftragsvergabe in Bezug auf ein bestimmtes Angebot (basierend auf den zuletzt veröffentlichten Versionen).
+          As discrepâncias entre a chamada pelo concurso e adjudicação de contratos é a taxa de campos com valores diferentes na chamada pelo concurso e anúncios de adjudicação de contratos relacionados com um dado concurso (baseados em últimas versões publicadas).
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
@@ -4684,7 +4684,7 @@
           runtime
         </note>
         <target>
-          Anteil wichtiger vorhandener Felder
+          Partilha de campos-chave que não faltam
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.desc" datatype="html">
@@ -4703,7 +4703,7 @@
           runtime
         </note>
         <target>
-          Die Anzahl der fehlenden Schlüsselfelder ist das Verhältnis der Felder mit fehlenden Werten in der Ausschreibung und der Bekanntmachung der Auftragsvergabe bezogen auf ein bestimmtes Angebot (basierend auf den zuletzt veröffentlichten Versionen).
+          O número de campos-chave que faltam é a taxa de campos com valores ausentes na chamada pelo concurso e anúncio da adjudicação de contratos relacionados com um dado concurso (baseados nas versões publicadas mais recentemente).
         </target>
       </trans-unit>
       <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
@@ -4751,7 +4751,7 @@
           </context>
         </context-group>
         <target>
-          Daten
+          Dados
         </target>
       </trans-unit>
       <trans-unit id="3baa652179af58935b7b8d0fd3c3483dc6659ac4" datatype="html">
@@ -4799,7 +4799,7 @@
           </context>
         </context-group>
         <target>
-          Daten herunterladen
+          Transferir dados
         </target>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -4815,7 +4815,7 @@
           </context>
         </context-group>
         <target>
-          Daten herunterladen als CSV
+          Transferir dados como CSV
         </target>
       </trans-unit>
       <trans-unit id="63bb9f00af8a5a2cef39a6df68b9d00700c5e6f8" datatype="html">
@@ -4839,7 +4839,7 @@
           </context>
         </context-group>
         <target>
-          Daten herunterladen als JSON
+          Transferir dados como JSON
         </target>
       </trans-unit>
       <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
@@ -4855,7 +4855,7 @@
           </context>
         </context-group>
         <target>
-          Quellen
+          Fontes
         </target>
       </trans-unit>
       <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">
@@ -4871,7 +4871,7 @@
           </context>
         </context-group>
         <target>
-          Käufer
+          Compradores
         </target>
       </trans-unit>
       <trans-unit id="d59bf68e8dab37e7aff7d2c005064e64279e86b5" datatype="html">
@@ -4887,7 +4887,7 @@
           </context>
         </context-group>
         <target>
-          Zulieferer
+          Fornecedores
         </target>
       </trans-unit>
       <trans-unit id="aee7d0de4e30405c1289745e4264e622b613632a" datatype="html">
@@ -4903,7 +4903,7 @@
           </context>
         </context-group>
         <target>
-          Länder
+          Países
         </target>
       </trans-unit>
       <trans-unit id="9cf900e27326dae9ad9dcaa7c3049788f5143961" datatype="html">
@@ -5039,7 +5039,7 @@
           </context>
         </context-group>
         <target>
-          Zulieferer pro Region
+          Fornecedores por região
         </target>
       </trans-unit>
       <trans-unit id="a6711c5b2a6f255a9d4395211ea5954c20902374" datatype="html">
@@ -5055,7 +5055,7 @@
           </context>
         </context-group>
         <target>
-          Käufer pro Region
+          Compradores por região
         </target>
       </trans-unit>
       <trans-unit id="4b9fdfae648741b5eb89d0309ac931eb8b2e3f64" datatype="html">
@@ -5071,7 +5071,7 @@
           </context>
         </context-group>
         <target>
-          Volumen (€) pro Region
+          Volume (€) por região
         </target>
       </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
@@ -5087,7 +5087,7 @@
           </context>
         </context-group>
         <target>
-          Öffentliche Ausschreibungen transparenter machen
+          Tornando os concursos públicos mais transparentes
         </target>
       </trans-unit>
       <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
@@ -5103,7 +5103,7 @@
           </context>
         </context-group>
         <target>
-          Portaleüberblick
+          Visão geral do portal
         </target>
       </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
@@ -5119,7 +5119,7 @@
           </context>
         </context-group>
         <target>
-          Was ist Opentender?
+          O que é o Concursopúblico?
         </target>
       </trans-unit>
       <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
@@ -5135,7 +5135,7 @@
           </context>
         </context-group>
         <target>
-          Wie Opentender funktioniert
+          Como funciona o Concursopúblico
         </target>
       </trans-unit>
       <trans-unit id="be37a41139d137a21483439caa3709cdcea48185" datatype="html">
@@ -5159,7 +5159,7 @@
           </context>
         </context-group>
         <target>
-          Dashboards
+          Painéis de controlo
         </target>
       </trans-unit>
       <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
@@ -5183,7 +5183,7 @@
           </context>
         </context-group>
         <target>
-          Impressum
+          Imprimir
         </target>
       </trans-unit>
       <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
@@ -5207,7 +5207,7 @@
           </context>
         </context-group>
         <target>
-          Kontakt
+          Contacto
         </target>
       </trans-unit>
       <trans-unit id="01dac0bf3d300f1a1556a5f312c5c69d06499aff" datatype="html">
@@ -5231,7 +5231,7 @@
           </context>
         </context-group>
         <target>
-          Rechtliches
+          Aviso legal
         </target>
       </trans-unit>
       <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
@@ -5255,7 +5255,7 @@
           </context>
         </context-group>
         <target>
-          Datenschutzerklärung
+          Política de privacidade
         </target>
       </trans-unit>
       <trans-unit id="d68ce4f097c2db0b05e823eb2c4025f66f2364ad" datatype="html">
@@ -5271,7 +5271,7 @@
           </context>
         </context-group>
         <target>
-          Fragen?
+          Questões?
         </target>
       </trans-unit>
       <trans-unit id="6b2ba0058011086805244b6dd86cd0edce3aef63" datatype="html">
@@ -5294,7 +5294,7 @@
           </context>
         </context-group>
         <target>
-          Kontaktieren Sie Opentender unter &lt;x ctype="x-a" id="START_LINK"/&gt;&lt;x id="INTERPOLATION"/&gt;&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;.
+          Contacte o Concursopúblico em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
@@ -5317,7 +5317,7 @@
           </context>
         </context-group>
         <target>
-          Diese Seite (&lt;x ctype="x-a" id="START_LINK"/&gt;&lt;x id="INTERPOLATION"/&gt;&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;) ist und nutzt offene Software.
+          Este site  (&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{'v'+version}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;) é distribuído pelo código-fonte aberto.
         </target>
       </trans-unit>
       <trans-unit id="778f8d4e1d800b732a93d20e8f8a0858a603799b" datatype="html">
@@ -5339,7 +5339,7 @@
           </context>
         </context-group>
         <target>
-          Kommentare und Verbesserungsvorschläge gerne auf &lt;x ctype="x-a" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;.
+          Acolhemos contribuições e comentários em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5355,7 +5355,7 @@
           </context>
         </context-group>
         <target>
-          Mehr über die Gesetzgebung für Ausschreibungen bei
+          Leia mais sobre a legislação dos concursos em
         </target>
       </trans-unit>
       <trans-unit id="83be59bfa61a6accd9d6e353912ab7fee53096d9" datatype="html">
@@ -5371,7 +5371,7 @@
           </context>
         </context-group>
         <target>
-          Folge uns auf
+          Siga-nos
         </target>
       </trans-unit>
       <trans-unit id="99cb827741e93125476a0f5b676372d85d15b5fc" datatype="html">
@@ -5419,7 +5419,7 @@
           </context>
         </context-group>
         <target>
-          Diese Seite in anderer Sprache anzeigen
+          Mudar a língua desta página
         </target>
       </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
@@ -5447,7 +5447,7 @@
           </context>
         </context-group>
         <target>
-          Dieses Projekt erhält Fördermittel aus dem &lt;x ctype="x-a" id="START_LINK"/&gt;EU-Forschungsrahmenprogramm Horizon 2020&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; unter der dem Förderkennzeichen &lt;x ctype="x-a" id="START_LINK_1"/&gt;645852&lt;x ctype="x-a" id="CLOSE_LINK"/&gt;.
+          Este projecto recebeu financiamento do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; programa de inovação e pesquisa do Horizonte da União Europeia 2020 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sob acordo de concessão&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nº 645852 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5487,7 +5487,7 @@
           </context>
         </context-group>
         <target>
-          Volumen (€)
+          Volume (€)
         </target>
       </trans-unit>
       <trans-unit id="760a04b7973f1ba8ccd2c829871b7b351b812958" datatype="html">
@@ -5503,7 +5503,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibungen pro Jahr
+          Concursos por ano
         </target>
       </trans-unit>
       <trans-unit id="d59c29464c0e2b8ac4a4c86a505fafcef34037e8" datatype="html">
@@ -5521,7 +5521,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; über die Zeit
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; ao longo do tempo
         </target>
       </trans-unit>
       <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
@@ -5545,7 +5545,7 @@
           </context>
         </context-group>
         <target>
-          Durchschnitt
+          Média
         </target>
       </trans-unit>
       <trans-unit id="d1da3b1d8aa673508710ff4425ec528b9b1b56b4" datatype="html">
@@ -5569,7 +5569,7 @@
           </context>
         </context-group>
         <target>
-          Absolut
+          Absoluto
         </target>
       </trans-unit>
       <trans-unit id="d07981f293c51226089eccef6d39124f8196d6f8" datatype="html">
@@ -5587,7 +5587,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; pro Branche
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; por sector
         </target>
       </trans-unit>
       <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
@@ -5603,7 +5603,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibungen über die Zeit
+          Concursos ao longo do tempo
         </target>
       </trans-unit>
       <trans-unit id="8700afbd9703e190b3d675a06b96a159518fa81c" datatype="html">
@@ -5619,7 +5619,7 @@
           </context>
         </context-group>
         <target>
-          Gesamtvolumen (€)
+          Volume total (€)
         </target>
       </trans-unit>
       <trans-unit id="27575017642b02439056216f88dde0263ca001cf" datatype="html">
@@ -5635,7 +5635,7 @@
           </context>
         </context-group>
         <target>
-          Durchschnittliches Volumen (€)
+          Volume médio (€)
         </target>
       </trans-unit>
       <trans-unit id="6df3069422db26773a9ec6e7e5d80ccbd1ec1d21" datatype="html">
@@ -5651,7 +5651,7 @@
           </context>
         </context-group>
         <target>
-          Lädt…
+          A carregar...
         </target>
       </trans-unit>
       <trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
@@ -5667,7 +5667,7 @@
           </context>
         </context-group>
         <target>
-          Nicht gefunden
+          Não encontrado
         </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
@@ -5683,7 +5683,7 @@
           </context>
         </context-group>
         <target>
-          Klicken um das Profil zu öffnen
+          Clique para ir para a página do perfil
         </target>
       </trans-unit>
       <trans-unit id="929e297c9887a4f940e5359a9f957e6b57c003e8" datatype="html">
@@ -5699,7 +5699,7 @@
           </context>
         </context-group>
         <target>
-          Klickem um zur Ansicht hinzufügen/entfernen
+          Clique para incluir/excluir da visão
         </target>
       </trans-unit>
       <trans-unit id="b463541a7e303aa4d0b1102eaff8afbaf34e7a74" datatype="html">
@@ -5715,7 +5715,7 @@
           </context>
         </context-group>
         <target>
-          Alles auswählen
+          Seleccionar tudo
         </target>
       </trans-unit>
       <trans-unit id="1a83e9e4c9179e62fc020802fc4fc93c42b7734c" datatype="html">
@@ -5731,7 +5731,7 @@
           </context>
         </context-group>
         <target>
-          Auswahl aufheben
+          Deixar de seleccionar tudo
         </target>
       </trans-unit>
       <trans-unit id="7361dbbb380d6b868939269d9e1a59d8aaf44f4c" datatype="html">
@@ -5755,7 +5755,7 @@
           </context>
         </context-group>
         <target>
-          Indikatorgruppe
+          Grupo de indicador
         </target>
       </trans-unit>
       <trans-unit id="b3b47e8b4611a699f1ba916202b416934f7ea323" datatype="html">
@@ -5779,7 +5779,7 @@
           </context>
         </context-group>
         <target>
-          Indikator
+          Indicador
         </target>
       </trans-unit>
       <trans-unit id="479830cde65077164423b75158f96ec0b53ee623" datatype="html">
@@ -5803,7 +5803,7 @@
           </context>
         </context-group>
         <target>
-          Vergleichsgruppe
+          Grupo de comparação
         </target>
       </trans-unit>
       <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
@@ -5819,7 +5819,7 @@
           </context>
         </context-group>
         <target>
-          Zeitbereich
+          Amplitude da data
         </target>
       </trans-unit>
       <trans-unit id="e541883c251041b07e82cffd236a97b4e3671424" datatype="html">
@@ -5835,7 +5835,7 @@
           </context>
         </context-group>
         <target>
-          Wählen Sie Jahre aus um die Daten dieser Seite zu Filtern
+          Escolha anos para filtrar as datas desta página
         </target>
       </trans-unit>
       <trans-unit id="c6d56bff2f3b8ce41c532f2e014579458d2d2813" datatype="html">
@@ -5851,7 +5851,7 @@
           </context>
         </context-group>
         <target>
-          Keine Datum-Daten verfügbar
+          Sem datas disponíveis
         </target>
       </trans-unit>
       <trans-unit id="999030b358bd2143eab89e3cc6b96d2cd6c5e82e" datatype="html">
@@ -5875,7 +5875,7 @@
           </context>
         </context-group>
         <target>
-          Daten herunterladen als gzip-komprimiertes JSON
+          Transferir dados como JSON gzipped
         </target>
       </trans-unit>
       <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
@@ -5897,7 +5897,7 @@
           </context>
         </context-group>
         <target>
-          Der Download enthält &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; Einträge und die komprimierte Dateigröße mindestens &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt; betragen.
+          A transferência contém &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; entradas e o tamanho do ficheiro comprimido será aproximadamente mais &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -5913,7 +5913,7 @@
           </context>
         </context-group>
         <target>
-          JSON.GZ Datei herunterladen
+          Transferir ficheiro JSON.GZ
         </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -5937,7 +5937,7 @@
           </context>
         </context-group>
         <target>
-          Abbruch
+          Cancelar
         </target>
       </trans-unit>
       <trans-unit id="599e1282c032f9504328a3763c368f095e39ce78" datatype="html">
@@ -5953,7 +5953,7 @@
           </context>
         </context-group>
         <target>
-          Download angefragt
+          Transferência pedida
         </target>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
@@ -5969,7 +5969,7 @@
           </context>
         </context-group>
         <target>
-          Vorherige
+          Anterior
         </target>
       </trans-unit>
       <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
@@ -5985,7 +5985,7 @@
           </context>
         </context-group>
         <target>
-          Nächste
+          Seguinte
         </target>
       </trans-unit>
       <trans-unit id="02c7747f38014504ddbc5b3b17b329b74db68800" datatype="html">
@@ -6009,7 +6009,7 @@
           </context>
         </context-group>
         <target>
-          Seite: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; von &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Einträge: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Página &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; de &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; Entradas: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6025,7 +6025,7 @@
           </context>
         </context-group>
         <target>
-          Einträge pro Seite
+          Entradas por página
         </target>
       </trans-unit>
       <trans-unit id="b169576ab898458aa823e09c1e7f3397f8f011a0" datatype="html">
@@ -6041,7 +6041,7 @@
           </context>
         </context-group>
         <target>
-          Spalten
+          Colunas
         </target>
       </trans-unit>
       <trans-unit id="69cc495a16ac1551ca1f076617be86394906d1cb" datatype="html">
@@ -6065,7 +6065,7 @@
           </context>
         </context-group>
         <target>
-          Auswählen
+          Clique para seleccionar
         </target>
       </trans-unit>
       <trans-unit id="0ed2616d6f3149d89f34950cc4e7bf33c3e45ade" datatype="html">
@@ -6081,7 +6081,7 @@
           </context>
         </context-group>
         <target>
-          Etwa 15 % des Bruttoinlandsprodukts der EU werden jedes Jahr für die Beschaffung von Waren und Dienstleistungen ausgegeben, und einige Schätzungen gehen davon aus, dass Korruption die Kosten für staatliche Aufträge um 20 bis 25 % erhöht. Noch besorgniserregender ist, dass die Korruption im öffentlichen Beschaffungswesen weit verbreitete öffentliche Ziele gefährdet, wie den Bau sicherer Autobahnen, qualitativ hochwertiger Schulgebäude oder die rechtzeitige Lieferung von Medikamenten.
+          Aproximadamente 15% do Produto Interno Bruto da UE é gasto todos os anos na oferta de produtos e serviços, e algumas estimativas indicam que a corrupção aumenta o custo de contratos governamentais em 20-25%. É ainda mais preocupante que a corrupção em compromissos de ofertas públicas apoiava largamente objectivos públicos, como a construção de auto-estradas seguras, edifícios escolares de elevada qualidade, ou a entrega de medicamentos a tempo.
         </target>
       </trans-unit>
       <trans-unit id="9dd624a60198301ed4ee85c40cbf879782f979dc" datatype="html">
@@ -6097,7 +6097,7 @@
           </context>
         </context-group>
         <target>
-          Durch die kostenlose Bereitstellung umfassender Informationen über das öffentliche Beschaffungswesen in einem benutzerfreundlichen Format für alle interessierten Parteien soll die Markttransparenz erhöht, Transaktionskosten gesenkt und die Rechenschaftspflicht der Regierung erleichtert werden. Daher wurde opentender.eu, eine zentrale, öffentliche und offene Beschaffungsplattform eingerichtet, die dazu beitragen soll, ein gutes Preis-Leistungs-Verhältnis im öffentlichen Beschaffungswesen zu erzielen und die Integrität im gesamten öffentlichen Sektor zu erhöhen.
+          Espera-se que a transmissão de informação compreensiva sobre as ofertas públicas gratuitamente num formato fácil de usar para todas as partes interessadas aumente a transparência dos mercados, diminua os custos das transacções, e facilite a responsabilidade do governo. Daí que a opentender.eu, uma plataforma central, pública, e de oferta pública tenha sido criada para contribuir para o alcance de valor para dinheiro em ofertas públicas, bem como o aumento da integridade por todo o sector público.
         </target>
       </trans-unit>
       <trans-unit id="b5ff828d47f8aea76c4174fecf3c180f92366800" datatype="html">
@@ -6113,7 +6113,7 @@
           </context>
         </context-group>
         <target>
-          Wer ist Opentender?
+          Quem é o Concursopúblico?
         </target>
       </trans-unit>
       <trans-unit id="75ac84cfeb7ee1d570978f08e87da5c4d440d1d6" datatype="html">
@@ -6129,7 +6129,7 @@
           </context>
         </context-group>
         <target>
-          DIGIWHIST, ein von der EU gefördertes Projekt im Rahmen des Horizont-2020-Programms, vereint sechs europäische Forschungsinstitute mit dem Ziel, die Gesellschaft in die Lage zu versetzen, Korruption im öffentlichen Sektor zu bekämpfen. Gleichzeitig wird es das Vertrauen in die Regierungen stärken und die Effizienz der öffentlichen Ausgaben in ganz Europa durch die systematische Sammlung, Strukturierung, Analyse und Verbreitung von Informationen über das öffentliche Beschaffungswesen und über Mechanismen, die die Rechenschaftspflicht von Amtsträgern in der gesamten EU und einigen Nachbarländern erhöhen, verbessern.
+          A DIGIWHIST, um projecto fundado pela Horizonte UE 2020, junta seis institutos europeus de pesquisa, com o objectivo de fortalecer a sociedade para combater a corrupção no sector público. Aumentará simultaneamente a confiança nos governos e melhorará a eficiência dos gastos públicos na Europa através da colecção, estruturação, análise e disseminação sistemáticas em ofertas públicas e em mecanismos que aumentem a responsabilidade de oficiais públicos em toda a UE e em alguns países vizinhos.
         </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
@@ -6145,7 +6145,7 @@
           </context>
         </context-group>
         <target>
-          Das 'Department of Sociology' in Cambridge hat ein ausgeprägtes Profil als Exzellenzzentrum für herausragende Arbeiten in der Sozialtheorie und der empirischen soziologischen Forschung. Die Soziologie in Cambridge wird ebenfalls in einem interdisziplinären Kontext praktiziert und gelehrt, mit besonders starken Verbindungen zu Politik, Psychologie, Anthropologie, Ökonomie und Geschichte.
+          O Departamento de Sociologia em Cambridge tem um perfil distinto como um centro de excelência por trabalho notável em teoria social e em pesquisa sociológica empírica. A sociologia em Cambridge é também praticada e ensinada num contexto interdisciplinar, com ligações particularmente fortes com a política, psicologia, antropologia, economia e história.
         </target>
       </trans-unit>
       <trans-unit id="feefffc590f4a0607d1a2e97f6db8e4f72578c0e" datatype="html">
@@ -6161,7 +6161,7 @@
           </context>
         </context-group>
         <target>
-          Die Hertie School of Governance bereitet herausragende Studierende auf Führungspositionen in Regierung, Wirtschaft und Zivilgesellschaft vor. Die Schule bietet auch erfahrenen Fachleuten die Möglichkeit, ihre Fähigkeiten im Bereich des öffentlichen Managements zu vertiefen. Als eine renommierte internationale Fakultät mit Expertise in Wirtschafts-, Wirtschafts-, Rechts-, Politik- und Sozialwissenschaften verfolgt sie einen interdisziplinären, politikorientierten Ansatz für die Lehr- und Forschungsagenda der Hochschule.
+          A Escola de Governo de Hertie prepara alunos excepcionais para posições de chefia no governo, nos negócios, e na sociedade civil. A Escola também dá a profissionais experientes a oportunidade de aprofundar as suas capacidades no campo da gestão pública. Uma faculdade internacional notável com mestria em economia, negócios, direito, ciência política e social leva uma abordagem interdisciplinar e orientada para a política à agenda de ensino e de pesquisa da Escola.
         </target>
       </trans-unit>
       <trans-unit id="747b114de34de8097882ea700e545e8fa21ec7a6" datatype="html">
@@ -6177,7 +6177,7 @@
           </context>
         </context-group>
         <target>
-          Die Gründung des Government Transparency Institute im Jahr 2015 wurde durch das wachsende Bedürfnis und die Möglichkeit motiviert, unabhängige Forschung und Befürwortung zu Transparenz, Korruption und Qualität von Regierungen in Europa und darüber hinaus zu betreiben. Das Institut ist ein überparteilicher Think Tank, der unabhängig von Regierungen, politischen Parteien oder Interessengruppen ist. Ziel des Instituts ist die systematische Erforschung der Ursachen, Charakteristika und Folgen einer schlechten Regierungsqualität in einem interdisziplinären Ansatz, der sich auf Politikwissenschaft, Ökonomie, Recht und Datenwissenschaft stützt. Das Institut will den Bürgern helfen, Regierungen durch die Veröffentlichung großer Datenmengen und aussagekräftiger Analysen zur Rechenschaft zu ziehen.
+          A fundação do Instituto de Transparência do Governo em 2015 foi motivada por necessidade crescente e pela oportunidade de fazer pesquisa independente e advocacia na transparência, corrupção e qualidade do governo na Europa e noutros locais. O Instituto é um laboratório de ideias não partidário independente de governos, partidos políticos ou grupos de interesses especiais. O objectivo do Instituto é explorar sistematicamente as causas, características, e consequências da baixa qualidade do governo numa abordagem interdisciplinar que recorre à ciência política, economia, direito e ciência de dados. O Instituto pretende ajudar cidadãos a considerar os governos responsáveis por meio da publicação de grandes conjuntos de dados e da análise robusta.
         </target>
       </trans-unit>
       <trans-unit id="f8ecdb1e36c8b982bb54606ace91b24cbf483488" datatype="html">
@@ -6205,7 +6205,7 @@
           </context>
         </context-group>
         <target>
-          Datlab ist ein tschechisches IT-Unternehmen, das sich auf die Datenextraktion und -verarbeitung spezialisiert hat. Ab 2015 verarbeitet sie regelmäßig Daten von 30 verschiedenen Websites und Systemen. Sie arbeitet eng mit dem NRO-Sektor zusammen und betreibt mehrere große OpenData-Dienste, wie z.B. &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (Beschaffungsdatenbank), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (Monitor für die Finanzierung politischer Parteien).
+          A Datlab é uma companhia checa de IT que se especializa na extracção de dados e no processamento de empregos. A partir de 2015, processa regularmente dados de 30 diversos websites e sistemas. Trabalha em estreita ligação com o sector NGO e executa vários serviços importantes de opendata, como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (base de dados das ofertas), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitor de financiamento do partido político).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6221,7 +6221,7 @@
           </context>
         </context-group>
         <target>
-          Transcrime ist die Gemeinsame Forschungsstelle für grenzüberschreitende Kriminalität der Università Cattolica del Sacro Cuore in Mailand und der Universität Trient. Es analysiert Strategien zur Prävention und Bekämpfung von Kriminalität mit einem integrierten Ansatz (Kriminologie, Recht, Statistik, Wirtschaft, forensische Rechnungslegung). Transcrime analysiert insbesondere Kriminalitätsphänomene im Bereich der organisierten Kriminalität, der Finanzkriminalität, der Geldwäsche und der Korruption.
+          O Transcrime é o Centro de Pesquisa Conjunta do Crime Transnacional da Università Cattolica del Sacro Cuore de Milão e da Universidade de Trento. Analisa estratégias para a prevenção e combate ao crime adoptando um abordagem integrada (criminologia, direito, estatística, economia, responsabilidade forense). A Transcrime analisa em particular fenómenos criminosos no campo do crime organizado, crime financeiro, lavagem de dinheiro e corrupção.
         </target>
       </trans-unit>
       <trans-unit id="6c9413918f44d867ccd39ead5b0f8eb8af3431d2" datatype="html">
@@ -6237,7 +6237,7 @@
           </context>
         </context-group>
         <target>
-          Die Open Knowledge Foundation Deutschland (OKF DE) ist ein gemeinnütziger Verein, der sich für offene Daten und freies Wissen einsetzt und sich dem Aufbau einer digitalen Infrastruktur für die Zivilgesellschaft in Deutschland und Europa verschrieben hat und sich für die Verbreitung von freiem und offen zugänglichem Wissen in der Gesellschaft einsetzt. Die Open Knowledge Foundation Deutschland ist der deutsche Zweig der Open Knowledge Foundation, eines weltweit aktiven Netzwerks von Aktivisten, Entwicklern, Policy-Spezialisten und Wissenschaftlern, die sich für die Förderung offenen Wissens und offener Daten einsetzen. OKF DE ist ein Think-and-Do-Tank, der juristisches Fachwissen und technisches Know-how kombiniert, um Behörden und andere Organisationen bei der Veröffentlichung offener Daten zu beraten und potenziellen Weiterverwendern zu helfen, sich mit offenen Daten zu beschäftigen, um innovative neue Produkte und Dienstleistungen zu entwickeln. OKF DE arbeitet an Technologien, die mehr Transparenz im öffentlichen Leben ermöglichen und neue Räume für bürgerschaftliches Engagement schaffen.
+          A Fundação de Conhecimento Público Deutschland (FCP DE) é o Capítulo Alemão da Rede Internacional das Fundações de Conhecimento Público (RFCP). É uma organização independente sem fins lucrativos fundada em 2011 e dedicada a promover dados públicos e conteúdo público em todas as suas formas - incluindo informação pública, pesquisa financiada publicamente e conteúdo cultural do domínio público. É uma líder internacional na sua área e tem grande experiência na construção de ferramentas e de comunidades à volta de material público. A FCP DE é um tanque de pensar e fazer que combina mestria legal e conhecimentos técnicos para aconselhar as autoridades governamentais e outras organizações a publicar dados públicos e a ajudar potenciais reutilizadores a participarem em dados públicos para criarem novos produtos e serviços inovadores. A FCP DE trabalha em tecnologias que permitem maior transparência na vida pública e novos espaços para a participação dos cidadãos.
         </target>
       </trans-unit>
       <trans-unit id="6edd1a650db2af580ebe746813024c45f1d854b1" datatype="html">
@@ -6253,7 +6253,7 @@
           </context>
         </context-group>
         <target>
-          Glossar
+          Glossário
         </target>
       </trans-unit>
       <trans-unit id="b9cc52c8a82c39aec3392a0b7dc15f361af011e0" datatype="html">
@@ -6269,7 +6269,7 @@
           </context>
         </context-group>
         <target>
-          Begriffe
+          Termos
         </target>
       </trans-unit>
       <trans-unit id="d36b96d4e672041ce9dd2d6d4da813d84b9cc216" datatype="html">
@@ -6285,7 +6285,7 @@
           </context>
         </context-group>
         <target>
-          Die Nomenklatur der Gebietseinheiten für die Statistik (NUTS) ist ein Geocode-Norm, die eine Untergliederung des Wirtschaftsgebiets der Europäischen Union in Gebietseinheiten für die Erstellung von Regionalstatistiken und für gezielte politische Interventionen auf regionaler Ebene vorsieht. Lesen Sie mehr unter
+          A nomenclatura das unidades territoriais para a estatística (NUTE) é um padrão de geocódigo para oferecer uma decomposição do território económico da União Europeia em unidades territoriais para a produção de estatística regional e para almejar intervenções políticas a um nível regional. Leia mais em
         </target>
       </trans-unit>
       <trans-unit id="d7a05d2dcbbc43e6d28a3b0ec0c7c4dea2479d5d" datatype="html">
@@ -6325,7 +6325,7 @@
           </context>
         </context-group>
         <target>
-          Das Common Procurement Vocabulary (CPV) zielt darauf ab, durch ein einheitliches Klassifizierungssystem für das öffentliche Beschaffungswesen die Begriffe zu vereinheitlichen, die von öffentlichen Auftraggebern und Auftraggebern zur Beschreibung des Auftragsgegenstandes verwendet werden. Lesen Sie mehr unter
+          O Vocabulário Comum de Oferta (VCO) procura padronizar, por meio de um único sistema de classificação para ofertas públicas, os termos usados por autoridades e entidades contraentes para descrever o assunto dos contratos. Leia mais em
         </target>
       </trans-unit>
       <trans-unit id="10498cb7788dfb689cb7ae44b02c8171cb36aaa3" datatype="html">
@@ -6341,7 +6341,7 @@
           </context>
         </context-group>
         <target>
-          Gesamt-Scores
+          Resultados compostos
         </target>
       </trans-unit>
       <trans-unit id="e82e548747be8aa595d8f3df72a90d9e40d4a3ed" datatype="html">
@@ -6357,7 +6357,7 @@
           </context>
         </context-group>
         <target>
-          Transparenz-Score
+          Resultado da transparência
         </target>
       </trans-unit>
       <trans-unit id="f6567ad1161a72fe32e32b0c22f4816e33608907" datatype="html">
@@ -6373,7 +6373,7 @@
           </context>
         </context-group>
         <target>
-          Der Transparenz Score ist ein Durchschnitt der Transparenz-Indikatoren.
+          O resultado da transparência é a média dos Indicadores de Transparência.
         </target>
       </trans-unit>
       <trans-unit id="322db1b76bdf54269462c78acbcfadf204a7fb0c" datatype="html">
@@ -6389,7 +6389,7 @@
           </context>
         </context-group>
         <target>
-          Integritäts-Score
+          Resultado da Integridade
         </target>
       </trans-unit>
       <trans-unit id="77f714cf45e052c53b705f95f1e25809b20e3a55" datatype="html">
@@ -6405,7 +6405,7 @@
           </context>
         </context-group>
         <target>
-          Der Beschaffungsintegritäts-Score ist ein Durchschnitt der Beschaffungsintegritäts-Indikatoren.
+          O resultado da Integridade da Oferta é a média dos Indicadores da Integridade das Ofertas.
         </target>
       </trans-unit>
       <trans-unit id="d6f50cb3ff1e50fc4302cfef784a99ad9b374193" datatype="html">
@@ -6421,7 +6421,7 @@
           </context>
         </context-group>
         <target>
-          Verwaltungskapazität-Score
+          Resultado da Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="a38958957882e0403d7c765a45a605ba20024627" datatype="html">
@@ -6437,7 +6437,7 @@
           </context>
         </context-group>
         <target>
-          Der Verwaltungskapazität-Score ist ein Durchschnitt der Verwaltungskapazität-Indikatoren.
+          O resultado da capacidade administrativa é a média dos Indicadores da Capacidade Administrativa.
         </target>
       </trans-unit>
       <trans-unit id="a760b1133506b725c66251807a4cb613b1b3718b" datatype="html">
@@ -6453,7 +6453,7 @@
           </context>
         </context-group>
         <target>
-          Good Procurement Score
+          Bom resultado da oferta
         </target>
       </trans-unit>
       <trans-unit id="5c444086165505c6a44674d6c1b45cfa6c3dca57" datatype="html">
@@ -6469,7 +6469,7 @@
           </context>
         </context-group>
         <target>
-          Der übergreifende Good Procurement Score ist ein Durchschnitt der oben genannten drei zusammengesetzten Scores.
+          O bom resultado da oferta geral é a média dos três resultados compostos acima.
         </target>
       </trans-unit>
       <trans-unit id="2eb6671f8d1299f1c00e65bcd5f2fe5d321b2095" datatype="html">
@@ -6485,7 +6485,7 @@
           </context>
         </context-group>
         <target>
-          Zahlen
+          Números
         </target>
       </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
@@ -6501,7 +6501,7 @@
           </context>
         </context-group>
         <target>
-          Wie Opentender funktioniert
+          Como funciona o Concursopúblico
         </target>
       </trans-unit>
       <trans-unit id="f6176a22daca08338d51d188d0f0718f0373710d" datatype="html">
@@ -6517,7 +6517,7 @@
           </context>
         </context-group>
         <target>
-          Opentender basiert auf einer robusten Datenerfassungs- und Verarbeitungssoftware, die Beschaffungsdaten aus etwa 20 verschiedenen Quellen sammelt. Wenn keine offenen Daten verfügbar sind, extrahieren wir die Informationen aus Tausenden von Webseiten, um zu einer strukturierten Datenbank zu gelangen. Danach fassen wir alle Publikationen zusammen, die jede Ausschreibung beschreiben, und erstellen schließlich ein endgültiges Bild, das die jeweilige Ausschreibung am genauesten beschreibt. Quellsysteme und Daten unterscheiden sich von Land zu Land, so dass für jede Quelle eine maßgeschneiderte Software erstellt wird.
+          O Concursopúblico assenta na robusta colecção de dados e em software de processamento que junta dados de ofertas de cerca de 20 fontes diversas. Quando não há quaisquer dados públicos disponíveis, extraímos a informação de milhares de páginas web para chegar a uma base de dados estruturada. Depois disso, agrupamos todas as publicações que descrevem cada concurso e acabamos por criar uma imagem final que descreve com muita precisão o concurso particular. Os sistemas de fontes e os dadod diferem de país para país, de modo que um pedaço de software adaptado é criado separadamente para cada fonte.
         </target>
       </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
@@ -6564,7 +6564,7 @@
           </context>
         </context-group>
         <target>
-          Opentender verwendet Leistungsindikatoren für das öffentliche Beschaffungswesen auf der Grundlage einer breiten Palette wissenschaftlicher Analysen, die in unserer eigenen Forschung synthetisiert und weiterentwickelt wurden: für Verwaltungskapazität-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Methods Paper on Administrative Quality Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Transparenz-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Methods Paper on Fiscal Transparency&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, für Integritäts-Indikatoren siehe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Der "Good Procurement Score" ist der einfache Durchschnitt der drei zugesammengesetzten Indikator Scores. Alle diese Indikatoren basieren auf objektiven Daten, sind von öffentlichen und privaten Akteuren direkt umsetzbar und werden transparent und eindeutig berechnet. Wenn Sie einen Fehler in den &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;Formeln&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; finden, benachrichtigen Sie uns bitte &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          O Concursopúblico usa indicadores de desempenho de aquisições públicas baseados num amplo conjunto de análises científicas, sintetizadas e levadas em consideração na nossa própria pesquisa: para indicadores de capacidade admisitrativa, veja&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Documento de métodos em Indicadores de Qualidade Administrativa &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de transparência, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Documento de Métodos sobre a Transparência Fiscal &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de integridade, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Documento de Métodos sobre Indicadores de Risco de Corrupção &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.  O resultado abrangente das boas aquisições é a simples média dos três resultados compostos. Todos estes indicadores baseiam-se em dados objectivos, são directamente accionáveis por actores públicos e privados, e são calculados de forma transparente e inequívoca. Se encontrar algum erro nas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; fórmulas &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, por favor notifique-nos em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6580,7 +6580,7 @@
           </context>
         </context-group>
         <target>
-          Karten und NUTS Codes
+          Mapas e Códigos NUTE
         </target>
       </trans-unit>
       <trans-unit id="39a876f7caff60187b5482e728db9585b73de7ce" datatype="html">
@@ -6602,7 +6602,7 @@
           </context>
         </context-group>
         <target>
-          Opentender zeigt auf &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS Codes&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; basierte Karten an.
+          O Concursopúblico exibe &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Códigos NUTE &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; mapas baseados.
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
@@ -6618,7 +6618,7 @@
           </context>
         </context-group>
         <target>
-          Fehlende Codes in Adressen wurden zugeordnet zu:
+          Atribuíram-se aos códigos que faltam nas moradas:
         </target>
       </trans-unit>
       <trans-unit id="b66b022fc628366345ae491af4ed98f8b87b33c6" datatype="html">
@@ -6634,7 +6634,7 @@
           </context>
         </context-group>
         <target>
-          Benutzte Formen:
+          Formas usadas:
         </target>
       </trans-unit>
       <trans-unit id="4d273f9f8f9d66c78d3f7e5550612c0855415208" datatype="html">
@@ -6650,7 +6650,7 @@
           </context>
         </context-group>
         <target>
-          Die Dashboards bieten Ihnen hochmoderne Visualisierungen von Beschaffungsdaten in vier Kategorien:
+          Os painéis de controlo dão-lhe visualizações de ponta de dados de aquisições em quatro categorias:
         </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
@@ -6666,7 +6666,7 @@
           </context>
         </context-group>
         <target>
-          Die Suchfunktion ist ein leistungsstarkes Werkzeug um spezifische Angebote, Käufer oder Anbieter zu finden. Darüber hinaus können Sie aus mehr als 30 zusätzlichen Parametern, einschließlich der entwickelten Indikatoren, individuelle, benutzerdefinierte Suchanfragen erstellen.
+          A função da pesquisa é uma ferramenta poderosa para detalhar os dados e encontrar um concurso, comprador, ou fornecedor específicos de que se esteja à procura. Pode também criar pesquisas personalizadas individuais de mais de 30 parâmetros adicionais, incluindo os indicadores.
         </target>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
@@ -6682,7 +6682,7 @@
           </context>
         </context-group>
         <target>
-          Profile
+          Perfis
         </target>
       </trans-unit>
       <trans-unit id="a33618ac50442a0a558cef69f0f4d212b4155712" datatype="html">
@@ -6698,7 +6698,7 @@
           </context>
         </context-group>
         <target>
-          Um den vollen Zugriff zu ermöglichen, verfügt jede Komponente (Sektoren, Branchen, Regionen, Unternehmen, Behörden und Ausschreibungen) in der Opentender-Datenbank über ein individuelles Profil mit detaillierten Informationen. Je nach Typ zeigt das Profil eine Vielzahl von Visualisierungen wie Grafiken, Karten und Diagramme, die Ihnen einen tiefen Einblick in die Datenbank ermöglichen. Sie können sich die Profile ansehen, indem Sie auf den jeweiligen Namen klicken.
+          Para permitir acesso total, cada componente (sectores, ramos, regiões, companhias, autoridades, e concursos) na base de dados do Concursopúblico tem um perfil individual que mostra informação detalhada. Dependendo do seu tipo, o perfil mostra várias visualizações como gráficos, mapas, e tabelas que lhe oferecem uma profunda compreensão da base de dados. Pode visualizar os perfis clicando simplesmente no nome respectivo.
         </target>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
@@ -6714,7 +6714,7 @@
           </context>
         </context-group>
         <target>
-          Art der Behörde
+          Tipo de autoridade
         </target>
       </trans-unit>
       <trans-unit id="b8a961f78f542ee07bb87623c47439d81e8f50b1" datatype="html">
@@ -6730,7 +6730,7 @@
           </context>
         </context-group>
         <target>
-          Hauptaktivitäten
+          Principais actividades
         </target>
       </trans-unit>
       <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
@@ -6746,7 +6746,7 @@
           </context>
         </context-group>
         <target>
-          Ähnliche Behörden
+          Autoridades semelhantes
         </target>
       </trans-unit>
       <trans-unit id="32382c783e53d04c11023e4963cbba3359284203" datatype="html">
@@ -6762,7 +6762,7 @@
           </context>
         </context-group>
         <target>
-          Diese Behörde suchen bei
+          Pesquise esta autoridade em
         </target>
       </trans-unit>
       <trans-unit id="e336524ffbb838864880def2bd86d4cb9de44335" datatype="html">
@@ -6778,7 +6778,7 @@
           </context>
         </context-group>
         <target>
-          IFG-Anfragen finden
+          Encontre pedidos de liberdade de informação
         </target>
       </trans-unit>
       <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
@@ -6794,7 +6794,7 @@
           </context>
         </context-group>
         <target>
-          Ähnliche Firmen
+          Companhias semelhantes
         </target>
       </trans-unit>
       <trans-unit id="10ca3b39d610b4266c4e9cee482bec2f62b1ac65" datatype="html">
@@ -6810,7 +6810,7 @@
           </context>
         </context-group>
         <target>
-          Diese Firma suchen bei
+          Pesquise esta companhia em
         </target>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
@@ -6834,7 +6834,7 @@
           </context>
         </context-group>
         <target>
-          IFG-Anfragen finden bei
+          Encontre pedidos de liberdade de informação em
         </target>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
@@ -6850,7 +6850,7 @@
           </context>
         </context-group>
         <target>
-          Unterindikatoren
+          Sub-indicadores
         </target>
       </trans-unit>
       <trans-unit id="4df6eb363d14f086afa8f3ab7f3deef5c1daae89" datatype="html">
@@ -6866,7 +6866,7 @@
           </context>
         </context-group>
         <target>
-          Alle Unterindikatoren
+          Todos os sub-indicadores
         </target>
       </trans-unit>
       <trans-unit id="666ef196e08af4a7292c9e4339154d1527fb5857" datatype="html">
@@ -6882,7 +6882,7 @@
           </context>
         </context-group>
         <target>
-          Gesamt-Score
+          Resultado composto
         </target>
       </trans-unit>
       <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
@@ -6898,7 +6898,7 @@
           </context>
         </context-group>
         <target>
-          Gewichtung ändern
+          Ajustar pesos
         </target>
       </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
@@ -6916,7 +6916,7 @@
           </context>
         </context-group>
         <target>
-          Durchschnittlicher Score von &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
+          Resultado médio de &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
@@ -6932,7 +6932,7 @@
           </context>
         </context-group>
         <target>
-          Score-Bereich
+          Amplitude de resultados
         </target>
       </trans-unit>
       <trans-unit id="ca4939f58d2dd3f3b511e5275c8d7b4dbd2fe825" datatype="html">
@@ -6948,7 +6948,7 @@
           </context>
         </context-group>
         <target>
-          Gewichtung anwenden
+          Aplicar pesos
         </target>
       </trans-unit>
       <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
@@ -6964,7 +6964,7 @@
           </context>
         </context-group>
         <target>
-          Gewichtung zurücksetzen
+          Restabelecer pesos
         </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
@@ -6980,7 +6980,7 @@
           </context>
         </context-group>
         <target>
-          Gewichtung in Score Berechnung ändern
+          Ajustar pesos de resultados compostos
         </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
@@ -7004,7 +7004,7 @@
           </context>
         </context-group>
         <target>
-          Branchen
+          Sectores
         </target>
       </trans-unit>
       <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
@@ -7020,7 +7020,7 @@
           </context>
         </context-group>
         <target>
-          Branchenprofil
+          Perfil do sector
         </target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
@@ -7036,7 +7036,7 @@
           </context>
         </context-group>
         <target>
-          Name
+          Nome
         </target>
       </trans-unit>
       <trans-unit id="3330d0952d59bdb1e72d7bca952e6b7850fde8ed" datatype="html">
@@ -7052,7 +7052,7 @@
           </context>
         </context-group>
         <target>
-          Volumen der Ausschreibungen (€)
+          Volume de concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="6e6cb5e9109bc6606718e627281dc913e4cec6e0" datatype="html">
@@ -7068,7 +7068,7 @@
           </context>
         </context-group>
         <target>
-          Auf dieser Seite finden Sie alle Ausschreibungsdaten dieses Portals.
+          Nesta página, encontra todos os dados do concurso deste portal.
         </target>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
@@ -7084,7 +7084,7 @@
           </context>
         </context-group>
         <target>
-          Hierarchisches JSON
+          JSON hierárquico
         </target>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
@@ -7100,7 +7100,7 @@
           </context>
         </context-group>
         <target>
-          Aktuelles Portal
+          Portal actual
         </target>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
@@ -7124,7 +7124,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibungen
+          Concursos
         </target>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
@@ -7140,7 +7140,7 @@
           </context>
         </context-group>
         <target>
-          Land
+          País
         </target>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
@@ -7194,7 +7194,7 @@
           </context>
         </context-group>
         <target>
-          Dateien sind mit &lt;x ctype="x-a" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; komprimiert, das von allen gängigen ZIP Programmen unterstützt wird.
+          Os ficheiros são comprimidos com &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GZip &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, o que deve ser apoiado pela sua aplicação ZIP.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7216,7 +7216,7 @@
           </context>
         </context-group>
         <target>
-          * Aufgrund der hohen Anzahl von Einträgen, die von viele JSON Parsern nicht unterstützt werden, wurden die DIGIWHIST Tender JSON Daten auch als &lt;x ctype="x-a" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; gespeichert.
+          * Devido à quantidade de entradas e a muitos analisadores JSON, não apoie o tamanho do ficheiro, os dados JSON do Concurso DIGIWHIST foram também salvos como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7238,7 +7238,7 @@
           </context>
         </context-group>
         <target>
-          Die Struktur der Daten ist einem &lt;x ctype="x-a" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" id="CLOSE_LINK"/&gt; umrissen.
+          A estrutura das entradas é destacada num &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Ficheiro JSON Schema &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7254,7 +7254,7 @@
           </context>
         </context-group>
         <target>
-          Digiwhist Projektkoordination
+          Coordenação de projecto Digiwhist
         </target>
       </trans-unit>
       <trans-unit id="729754dd19eb9ce0670b0aeb5a6ae60574c2c563" datatype="html">
@@ -7270,7 +7270,7 @@
           </context>
         </context-group>
         <target>
-          Adresse
+          Morada
         </target>
       </trans-unit>
       <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
@@ -7286,7 +7286,7 @@
           </context>
         </context-group>
         <target>
-          Handelsregister
+          Registo de comércio
         </target>
       </trans-unit>
       <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
@@ -7302,7 +7302,7 @@
           </context>
         </context-group>
         <target>
-          Vereinsregisternummer
+          Registo de número de associação
         </target>
       </trans-unit>
       <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
@@ -7318,7 +7318,7 @@
           </context>
         </context-group>
         <target>
-          Mwst.
+          IVA
         </target>
       </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
@@ -7334,7 +7334,7 @@
           </context>
         </context-group>
         <target>
-          Verweise und Links
+          Referências e ligações
         </target>
       </trans-unit>
       <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
@@ -7350,7 +7350,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE ist nicht verantwortlich für Inhalte, auf die von diesen Seiten aus verwiesen wird. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der gelinkten/verknüpften Seiten hat der Autor keinerlei Einfluss.
+          A FCP DE não é responsável por quaisquer conteúdos ligados ou mencionados a partir destas páginas. Se ocorrer algum dano pelo uso da informação ali apresentada, o autor da respectiva página pode ser responsável, não aquele que se ligou a essas páginas.
         </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
@@ -7366,7 +7366,7 @@
           </context>
         </context-group>
         <target>
-          Haftungsausschluss
+          Aviso legal
         </target>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
@@ -7382,7 +7382,7 @@
           </context>
         </context-group>
         <target>
-          Die auf dieser Website dargestellten Informationen und Ansichten sind ausschließlich die des/der Verfasser(s) und spiegeln weder die Meinung des DIGIWHIST-Konsortiums noch die offizielle Meinung der Europäischen Kommission wider. Weder die Europäische Kommission noch eine Person, die im Namen der Europäischen Kommission handelt, ist für die Verwendung der auf dieser Website veröffentlichten Informationen verantwortlich.
+          A informação e vistas estabelecidas neste website são as do(s) autor(es) apenas e não reflectem qualquer opinião colectiva do consórcio DIGIWHIST, nem reflectem a opinião oficial da Comissão Europeia. Nem a Comissão Europeia nem qualquer Pessoa que aja em nome da Comissão Europeia é responsável pelo uso que se possa fazer da Informação publicada neste website.
         </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
@@ -7403,7 +7403,7 @@
           </context>
         </context-group>
         <target>
-          Alle Inhalte von Digiwhist auf dieser Website sind unter &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; lizenziert.
+          Todos os conteúdos da Digiwhist neste website são autorizados pela &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Creative Commons BY-NC-SA 4.0. &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
@@ -7419,7 +7419,7 @@
           </context>
         </context-group>
         <target>
-          Die Open Knowledge Foundation Germany freut sich über Ihren Besuch auf unserer Website und Ihr Interesse am Projekt Horizon 2020 DIGIWHIST. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und halten uns strikt an die Regeln der Datenschutzgesetze (z.B. Bundesdatenschutzgesetz (BDSG), Telemediengesetz (TMG) und Gesetz gegen den unlauteren Wettbewerb (UWG)).
+          A Fundação do Conhecimento Público da Alemanha regozija-se por o(a) senhor(a) estar a visitar o nosso website sobre o projecto Horizonte 2020 DIGIWHIST. Levamos a protecção dos seus dados pessoais muito a sério e aderimos estritamente às provisões de leis de privacidade de dados actuais (por exemplo, o Acto Alemão da Protecção de Dados (BDSG), o Acto Telemedia (TMG) e o Acto da Competição Injusta (UWG)).
         </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
@@ -7435,7 +7435,7 @@
           </context>
         </context-group>
         <target>
-          Die nachfolgende Erklärung gibt Ihnen einen Überblick darüber, wie wir diesen Schutz gewährleisten und welche Art von Daten zu welchem Zweck erhoben werden.
+          A política que se segue dá-lhe a compreensão do modo como nós garantimos esta protecção e que tipo de dados recolhemos para que propósito.
         </target>
       </trans-unit>
       <trans-unit id="49dab74a6f204996046f98e886e8160260f58628" datatype="html">
@@ -7451,7 +7451,7 @@
           </context>
         </context-group>
         <target>
-          1. Anonyme Datenerhebung
+          Recolha anónima de dados
         </target>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
@@ -7467,7 +7467,7 @@
           </context>
         </context-group>
         <target>
-          In den meisten Fällen können Sie die Website Opentender.eu besuchen, ohne dass wir persönliche Daten von Ihnen benötigen.
+          Na maior parte dos casos, pode visitar o website Opentender.eu sem que nós lhe peçamos para fornecer dados pessoais.
         </target>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
@@ -7483,7 +7483,7 @@
           </context>
         </context-group>
         <target>
-          Die Log-Dateien unseres Webservers sammeln folgende Daten:
+          Os ficheiros do "log" no nosso servidor da web recolhem os seguintes dados:
         </target>
       </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
@@ -7499,7 +7499,7 @@
           </context>
         </context-group>
         <target>
-          IP-Adresse
+          Endereço IP
         </target>
       </trans-unit>
       <trans-unit id="d376333bd7ba3b3b691d32aabe97366aabdcf644" datatype="html">
@@ -7515,7 +7515,7 @@
           </context>
         </context-group>
         <target>
-          Datum, Zeit
+          data, horas
         </target>
       </trans-unit>
       <trans-unit id="9671e11011b3ebb58ca11fb31c01d1ac3c8704e3" datatype="html">
@@ -7531,7 +7531,7 @@
           </context>
         </context-group>
         <target>
-          besuchte Seite, Referrer
+          Página visitada, referente
         </target>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
@@ -7547,7 +7547,7 @@
           </context>
         </context-group>
         <target>
-          Browser
+          Navegador
         </target>
       </trans-unit>
       <trans-unit id="d5907df625e73d7d8c5075428fc21540304603b2" datatype="html">
@@ -7563,7 +7563,7 @@
           </context>
         </context-group>
         <target>
-          Betriebssystem
+          Sistema operador
         </target>
       </trans-unit>
       <trans-unit id="a8c6d54131c79ef785fc7c2249374a6f25f76ffd" datatype="html">
@@ -7579,7 +7579,7 @@
           </context>
         </context-group>
         <target>
-          Diese Daten stehen für statistische Auswertungen zur Verfügung, die Rohdaten werden von unserem Webhostingunternehmen monatlich gelöscht.
+          Estes dados estão disponíveis para análises de fins estatísticos, os dados não tratados são apagados pela nossa companhia anfitriã da web com uma frequência mensal.
         </target>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
@@ -7595,7 +7595,7 @@
           </context>
         </context-group>
         <target>
-          2. Erhebung und Verarbeitung personenbezogener Daten
+          2. Recolha e processamento de dados pessoais
         </target>
       </trans-unit>
       <trans-unit id="b56fd0fd74eaa2b386434213c4d5e8c632cbcabc" datatype="html">
@@ -7611,7 +7611,7 @@
           </context>
         </context-group>
         <target>
-          Personenbezogene Daten werden nur im Rahmen der jeweils geltenden Vorschriften erhoben. Darüber hinaus erfolgt eine Nutzung Ihrer Daten für Zwecke der Werbung und Marktforschung sowie zur bedarfsgerechten Gestaltung unserer elektronischen Dienste nur, wenn Sie uns zuvor Ihre Einwilligung erteilt haben. Selbstverständlich haben Sie das Recht, eine erteilte Einwilligung mit Wirkung für die Zukunft jederzeit ganz oder teilweise zu widerrufen.
+          Os dados pessoais são apenas recolhidos baseados nas regulações aplicáveis actuais. Para além disto, os seus dados são apenas usados para a publicidade e para a pesquisa de mercado, e também para adaptar os nossos serviços electrónicos para ir ao encontro de necessidades actuais, se nos tiver dado o seu consentimento prévio. Naturalmente que tem direito a revogar qualquer consentimento que dê - seja total ou parcialmente - em qualquer altura, eficaz para o futuro.
         </target>
       </trans-unit>
       <trans-unit id="a0a8ca9b0db392405d5299ca16493cd321de4ee0" datatype="html">
@@ -7627,7 +7627,7 @@
           </context>
         </context-group>
         <target>
-          3. Export und Verarbeitung der Daten in Staaten außerhalb des Europäischen Wirtschaftsraums (EWR)
+          3. Exportação e processamento dos dados em estados fora da Área Económica Europeia (AEE)
         </target>
       </trans-unit>
       <trans-unit id="a94a4cb46a4dd5450ca35df978441234f7bbfe8a" datatype="html">
@@ -7643,7 +7643,7 @@
           </context>
         </context-group>
         <target>
-          Es werden keine Daten exportiert und keine Prozesse außerhalb des Europäischen Wirtschaftsraumes durchgeführt.
+          Nenhum dado é exportado ou se processa fora da Área Económica Europeia
         </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
@@ -7659,7 +7659,7 @@
           </context>
         </context-group>
         <target>
-          4. Cookies und Website-Tracking
+          4. "Cookies" e registo do website
         </target>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
@@ -7675,7 +7675,7 @@
           </context>
         </context-group>
         <target>
-          Wir verwenden auf dieser Website Webanalysesysteme, die dazu dienen, die Besuche auf unserer Website zu messen und zu analysieren. Wir verwenden Ihre IP-Adresse zum Zweck der Datenerhebung, u.a. über den Internetverkehr, Ihren Browser und Ihren Computer.
+          Usamos sistemas de análise da web neste website, destinados a medir e a analisar visitas ao nosso website. Usamos o seu endereço IP com o fim de recolher dados, entre outras coisas no congestionamento da Internet, no seu navegador e no seu computador.
         </target>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
@@ -7691,7 +7691,7 @@
           </context>
         </context-group>
         <target>
-          Wir verwenden die IP-Adresse oder Cookies nicht, um Sie persönlich zu identifizieren. Wir setzen das Webanalysesystem ein, um die Effizienz unserer Website zu steigern.
+          Não usamos o endereço IP ou "cookies" para o(a) identificar pessoalmente. Usamos o sistema de análise da web com o objectivo de aumentar a eficiência no nosso website.
         </target>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
@@ -7707,7 +7707,7 @@
           </context>
         </context-group>
         <target>
-          Die meisten Browser akzeptieren Cookies automatisch. Sie können dies jedoch manuell verhindern, indem Sie die Einstellungen Ihres Browsers so ändern, dass Cookies nicht mehr akzeptiert werden. Einzelheiten hierzu entnehmen Sie bitte der Anleitung des Herstellers Ihres Browsers.
+          A maior parte dos navegadores aceita os "cookies" automaticamente. Contudo, o(a) utilizador(a) pode impedir isto de acontecer de forma manual, mudando as definições no seu navegador para garantir que os "cookies" não serão mais aceites. Por favor, encontre pormenores a este respeito nas instruções dadas pelo fabricante do seu navegador.
         </target>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
@@ -7723,7 +7723,7 @@
           </context>
         </context-group>
         <target>
-          5. Permanente Cookies / Drittanbieter-Cookies
+          5. "Cookies" permanentes/"cookies" de terceira parte
         </target>
       </trans-unit>
       <trans-unit id="21974757a955b5ae8dc8f3cad13b9aacf9e9a3f9" datatype="html">
@@ -7739,7 +7739,7 @@
           </context>
         </context-group>
         <target>
-          Diese Website benutzt Piwik, einen Open-Source-Webanalysedienst. Piwik verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung der Website (einschließlich Ihrer IP-Adresse, die durch das letzte Oktett vor der Speicherung mit der Methode "_anonymizeIp()" abgeschnitten wurde) werden an unsere Server in Deutschland übertragen und dort gespeichert. Wir verwenden diese Informationen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen.
+          Este website usa Piwik, um serviço de análise de web de código aberto. O Piwik usa "cookies", que são ficheiros de texto colocados no seu computador, para ajudar o website a analisar o modo como os utilizadores usam o site. A informação gerada pelo "cookie" sobre o seu uso do website (incluindo o seu endereço IP cortado pelo último octeto antes do seu armazenamento usando o método “_anonymizeIp()” será transmitido aos e armazenado nos nossos servidores na Alemanha. Utilizaremos esta informação para avaliar o seu uso do website, compilando relatórios sobre a actividade dos websites para operadores de websites e oferecendo outros serviços relacionados com a actividade dos websites e com o uso da internet.
         </target>
       </trans-unit>
       <trans-unit id="92e4b7e37947a8b945fc965353a1a79c88b0e93d" datatype="html">
@@ -7755,7 +7755,7 @@
           </context>
         </context-group>
         <target>
-          7. Externe Links
+          7. Ligações externas
         </target>
       </trans-unit>
       <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
@@ -7771,7 +7771,7 @@
           </context>
         </context-group>
         <target>
-          Wir sind bestrebt, Ihnen die bestmögliche Information zu geben. Deshalb finden Sie auf unserer Website Links, die auf Seiten Dritter verweisen. Soweit dies nicht offensichtlich erkennbar ist, weisen wir Sie darauf hin, dass es sich um externe Links handelt. OKF DE hat keinen Einfluss auf den Inhalt und die Gestaltung dieser Seiten fremder Anbieter und verweist daher auf deren Datenschutzerklärung. Bitte beachten Sie, dass die in dieser Datenschutzerklärung gegebenen Zusicherungen natürlich nicht notwendigerweise auch dort gelten.
+          Procuramos dar-lhe a melhor informação possível. É por isto que o(a) utilizador(a) encontrará, no nosso website, ligações que se referem a páginas de terceiras partes. A não ser que seja totalmente evidente, chamamos a sua atenção para o facto de estas serem ligações externas. A (...) não tem qualquer influência no conteúdo ou design destas páginas que são de fornecedores externos e, assim, refere-se às políticas de privacidade deles. Por favor, esteja consciente de que as garantias dadas nesta política de privacidade não se aplicam necessariamente, como é evidente, aí.
         </target>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
@@ -7787,7 +7787,7 @@
           </context>
         </context-group>
         <target>
-          8. Sicherheit
+          Segurança
         </target>
       </trans-unit>
       <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
@@ -7803,7 +7803,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE setzt technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre an OKF DE übermittelten Daten nach dem derzeitigen Stand der Technik gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen. Wir verbessern kontinuierlich unsere Sicherheitsmaßnahmen im Zuge des technischen Fortschritts.
+          A (...) toma medidas técnicas e organizacionais para assegurar a segurança de acordo com o actual estado da tecnologia para proteger os dados que o(a) utilizador(a) dá à (...) contra manipulação acidental ou deliberada, perda, destruição ou acesso por pessoas não autorizadas. Melhoramos continuamente as nossas medidas de segurança como progressos tecnológicos.
         </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
@@ -7819,7 +7819,7 @@
           </context>
         </context-group>
         <target>
-          9. Auskunftsrecht, Fragen zum Datenschutz und Widerrufsrecht
+          9. Direito de informação, questões sobre a privacidade dos dados e revogação
         </target>
       </trans-unit>
       <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
@@ -7835,7 +7835,7 @@
           </context>
         </context-group>
         <target>
-          Wir legen großen Wert auf Ihr Vertrauen in uns. Deshalb sind wir bestrebt, Ihnen jederzeit zur Verfügung zu stehen, um Sie zu informieren und Ihre Fragen zu beantworten. Wenn Sie Fragen hinsichtlich der Verarbeitung Ihrer persönlichen Daten haben, wenden Sie sich bitte an OKF DE; OKF DE steht Ihnen auch zur Verfügung, wenn Sie Auskünfte wünschen, Anträge stellen oder Beschwerden zum Thema Datenschutz einreichen möchten.
+          Atribuímos grande importância à sua confiança em nós. É por isto que procuramos estar disponíveis para lhe dar informação e para responder às suas questões em qualquer altura. Por favor, contacte (...) se tiver alguma questão sobre o processamento dos seus dados pessoais. O (...) está também disponível se se estiver a procurar informação, desejar colocar aplicações ou apresentar reclamações sobre a questão da privacidade dos dados.
         </target>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
@@ -7851,7 +7851,7 @@
           </context>
         </context-group>
         <target>
-          Darüber hinaus haben Sie das Recht, eine erteilte Einwilligung mit Wirkung für die Zukunft jederzeit zu widerrufen.
+          Para além disso, o(a) utilizador(a) tem o direito de revogar o consentimento dado respectivamente em qualquer altura, eficaz para o futuro.
         </target>
       </trans-unit>
       <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
@@ -7867,7 +7867,7 @@
           </context>
         </context-group>
         <target>
-          Übergeordnete Regionen
+          Regiões principais
         </target>
       </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">
@@ -7883,7 +7883,7 @@
           </context>
         </context-group>
         <target>
-          Anzahl der Ausschreibungen in der Region
+          Nº de concursos em região
         </target>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
@@ -7899,7 +7899,7 @@
           </context>
         </context-group>
         <target>
-          Anzahl der Ausschreibungen in den Unterregionen
+          Nº de concursos em sub-regiões
         </target>
       </trans-unit>
       <trans-unit id="6cec3565e21ae209bd028809ac44f2abcae5a7b2" datatype="html">
@@ -7915,7 +7915,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibung suchen
+          Pesquisar concurso
         </target>
       </trans-unit>
       <trans-unit id="2e39557e8f1d40be27b31bd45d05d7293e57ce41" datatype="html">
@@ -7931,7 +7931,7 @@
           </context>
         </context-group>
         <target>
-          Firma suchen
+          Companhia de pesquisa
         </target>
       </trans-unit>
       <trans-unit id="ad1c1442b4d5009646148af8153fcad20d40c3c2" datatype="html">
@@ -7947,7 +7947,7 @@
           </context>
         </context-group>
         <target>
-          Behörde suchen
+          Autoridade de pesquisa
         </target>
       </trans-unit>
       <trans-unit id="5f2b4e3e104e37c6283dff48b4c08b23ca1f6707" datatype="html">
@@ -7963,7 +7963,7 @@
           </context>
         </context-group>
         <target>
-          Visualisierung
+          Visualização
         </target>
       </trans-unit>
       <trans-unit id="d9a2d748d645a9a51a535f9b8266eee949172f59" datatype="html">
@@ -7987,7 +7987,7 @@
           </context>
         </context-group>
         <target>
-          Hinzufügen
+          Clique para adicionar
         </target>
       </trans-unit>
       <trans-unit id="5ca707824ab93066c7d9b44e1b8bf216725c2c22" datatype="html">
@@ -8003,7 +8003,7 @@
           </context>
         </context-group>
         <target>
-          Filter
+          Filtrar
         </target>
       </trans-unit>
       <trans-unit id="efea32159353fc5eeb7713f16044a43139b93640" datatype="html">
@@ -8019,7 +8019,7 @@
           </context>
         </context-group>
         <target>
-          vor
+          Antes
         </target>
       </trans-unit>
       <trans-unit id="ca420aebba5bdcb97c2704532fd6cb675599628c" datatype="html">
@@ -8035,7 +8035,7 @@
           </context>
         </context-group>
         <target>
-          nach
+          Depois
         </target>
       </trans-unit>
       <trans-unit id="0a2fc68d81516378be0f06bbcee807c94d2c1a9a" datatype="html">
@@ -8051,7 +8051,7 @@
           </context>
         </context-group>
         <target>
-          gleicher Tag
+          mesmo dia
         </target>
       </trans-unit>
       <trans-unit id="ddbef9c00583b054e53c3fd05af57188542aaa7b" datatype="html">
@@ -8067,7 +8067,7 @@
           </context>
         </context-group>
         <target>
-          Hier klicken um das Suchfeld hinzufügen
+          Por favor clique para adicionar este campo de pesquisa
         </target>
       </trans-unit>
       <trans-unit id="293ab8acb61c97af9dfba991ce681bf173debabc" datatype="html">
@@ -8083,7 +8083,7 @@
           </context>
         </context-group>
         <target>
-          Branche suchen
+          Pesquisar sector
         </target>
       </trans-unit>
       <trans-unit id="660e1bbe19d17064a912aa8e4cdd10101be91ed6" datatype="html">
@@ -8099,7 +8099,7 @@
           </context>
         </context-group>
         <target>
-          Übergeordnete Branchen
+          Sectores principais
         </target>
       </trans-unit>
       <trans-unit id="a5e5b1ef473457ddf26f5f51bc83a46667f3c908" datatype="html">
@@ -8115,7 +8115,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibungsinformationen finden bei
+          Encontre informação sobre o concurso em
         </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
@@ -8131,7 +8131,7 @@
           </context>
         </context-group>
         <target>
-          Keine Indikatoren für diese Ausschreibung
+          Não há quaisquer indicadores para este concurso
         </target>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
@@ -8147,7 +8147,7 @@
           </context>
         </context-group>
         <target>
-          Im Auftrag von
+          Em nome de
         </target>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
@@ -8163,7 +8163,7 @@
           </context>
         </context-group>
         <target>
-          Weitere Informationen durch
+          Fornecedor de informação adicional
         </target>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
@@ -8179,7 +8179,7 @@
           </context>
         </context-group>
         <target>
-          Vorgaben durch
+          Fornecedor das especificações
         </target>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
@@ -8195,7 +8195,7 @@
           </context>
         </context-group>
         <target>
-          Gebote-Empfänger
+          Receptor das ofertas
         </target>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
@@ -8211,7 +8211,7 @@
           </context>
         </context-group>
         <target>
-          Beschwerdestelle
+          Nome do corpo de apelo
         </target>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
@@ -8227,7 +8227,7 @@
           </context>
         </context-group>
         <target>
-          Vermittlungsstelle
+          Nome do corpo de mediação
         </target>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
@@ -8243,7 +8243,7 @@
           </context>
         </context-group>
         <target>
-          Administration
+          Administradores
         </target>
       </trans-unit>
       <trans-unit id="54f00deeee916877ba52c54363d3951ca3a840a7" datatype="html">
@@ -8259,7 +8259,7 @@
           </context>
         </context-group>
         <target>
-          Preise
+          Preços
         </target>
       </trans-unit>
       <trans-unit id="417c7208ab7fd97d49ad0487b095923ffb21b5b7" datatype="html">
@@ -8283,7 +8283,7 @@
           </context>
         </context-group>
         <target>
-          Geschätzter Preis
+          Preço estimado
         </target>
       </trans-unit>
       <trans-unit id="f9f909ae231e02a769784e9ca4ea72e92ea34b83" datatype="html">
@@ -8299,7 +8299,7 @@
           </context>
         </context-group>
         <target>
-          Endpreis
+          Preço final
         </target>
       </trans-unit>
       <trans-unit id="b8e154a2a372825dcb4aced784a3206b055f0e75" datatype="html">
@@ -8315,7 +8315,7 @@
           </context>
         </context-group>
         <target>
-          Dokumentenpreis
+          Preço dos documentos
         </target>
       </trans-unit>
       <trans-unit id="ae78cbe2e07f699217c7488237bdb79850173273" datatype="html">
@@ -8331,7 +8331,7 @@
           </context>
         </context-group>
         <target>
-          Zeiten
+          Datas
         </target>
       </trans-unit>
       <trans-unit id="e2617e1baa15fe59a7d3b9c1ded99c8c07f54150" datatype="html">
@@ -8355,7 +8355,7 @@
           </context>
         </context-group>
         <target>
-          Geschätzte Startzeit
+          Data estimada de início
         </target>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
@@ -8379,7 +8379,7 @@
           </context>
         </context-group>
         <target>
-          Geschätze Fertigstellungszeit
+          Data estimada de conclusão
         </target>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
@@ -8403,7 +8403,7 @@
           </context>
         </context-group>
         <target>
-          Gebotsfrist
+          Prazo das ofertas
         </target>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
@@ -8427,7 +8427,7 @@
           </context>
         </context-group>
         <target>
-          Dokumentenfrist
+          Prazo dos documentos
         </target>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
@@ -8443,7 +8443,7 @@
           </context>
         </context-group>
         <target>
-          Geschätzte Laufzeit
+          Duração estimada
         </target>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
@@ -8459,7 +8459,7 @@
           </context>
         </context-group>
         <target>
-          Typen
+          Tipos
         </target>
       </trans-unit>
       <trans-unit id="ea426b43d3914772b31f045023e76280e38a4cb3" datatype="html">
@@ -8475,7 +8475,7 @@
           </context>
         </context-group>
         <target>
-          Angebotstyp
+          Tipo de fornecimento
         </target>
       </trans-unit>
       <trans-unit id="f918f7ad53e11419f1bd8613763610a67c907b25" datatype="html">
@@ -8491,7 +8491,7 @@
           </context>
         </context-group>
         <target>
-          Verfahrensart
+          Tipo de procedimento
         </target>
       </trans-unit>
       <trans-unit id="f35e650c934ab03d87dc6c18926013257a5d82d3" datatype="html">
@@ -8507,7 +8507,7 @@
           </context>
         </context-group>
         <target>
-          Auswahlmethode
+          Método de selecção
         </target>
       </trans-unit>
       <trans-unit id="a9404df24a66e14717a13e54c78f443d852e8ed6" datatype="html">
@@ -8523,7 +8523,7 @@
           </context>
         </context-group>
         <target>
-          Gültige Angebotssprachen
+          Línguas elegíveis de ofertas
         </target>
       </trans-unit>
       <trans-unit id="44929ed65effa672d2f881314c8160cb3d630727" datatype="html">
@@ -8539,7 +8539,7 @@
           </context>
         </context-group>
         <target>
-          Maximale Anzahl Angebote
+          Contagem máxima de ofertas
         </target>
       </trans-unit>
       <trans-unit id="94ecc5b64dfc32142cd639467a8329c1cd8b00ee" datatype="html">
@@ -8555,7 +8555,7 @@
           </context>
         </context-group>
         <target>
-          Maximale Anzahl Beteiligter des Rahmenvertrags
+          Participantes máximos do acordo estruturado
         </target>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
@@ -8571,7 +8571,7 @@
           </context>
         </context-group>
         <target>
-          Vergabekriterien
+          Critérios de entrega
         </target>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
@@ -8595,7 +8595,7 @@
           </context>
         </context-group>
         <target>
-          Preis
+          Preço
         </target>
       </trans-unit>
       <trans-unit id="d68d8c2c960dc71366b178447b3a13e78ce505d4" datatype="html">
@@ -8611,7 +8611,7 @@
           </context>
         </context-group>
         <target>
-          Lot Details
+          Detalhes do lote
         </target>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
@@ -8627,7 +8627,7 @@
           </context>
         </context-group>
         <target>
-          Status
+          Estatuto
         </target>
       </trans-unit>
       <trans-unit id="528a04d8d0947b73df1db3011b214d1419da122c" datatype="html">
@@ -8643,7 +8643,7 @@
           </context>
         </context-group>
         <target>
-          Zuschlagsentscheidungdatum
+          Prazo de decisão da entrega
         </target>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
@@ -8659,7 +8659,7 @@
           </context>
         </context-group>
         <target>
-          Fertigstellungsdatum
+          Data de conclusão
         </target>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
@@ -8675,7 +8675,7 @@
           </context>
         </context-group>
         <target>
-          Zuschlagsfrist
+          Prazo de entrega
         </target>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
@@ -8691,7 +8691,7 @@
           </context>
         </context-group>
         <target>
-          Vertragsunterzeichnungsdatum
+          Data de assinatura do contrato
         </target>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
@@ -8707,7 +8707,7 @@
           </context>
         </context-group>
         <target>
-          Abbruchdatum
+          Data de cancelamento
         </target>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
@@ -8723,7 +8723,7 @@
           </context>
         </context-group>
         <target>
-          Anzahl Angebote
+          Contagem das ofertas
         </target>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
@@ -8739,7 +8739,7 @@
           </context>
         </context-group>
         <target>
-          Anzahl elektronischer Angebote
+          Contagem das ofertas electrónicas
         </target>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
@@ -8755,7 +8755,7 @@
           </context>
         </context-group>
         <target>
-          Vertragsnummer
+          Número do contrato
         </target>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
@@ -8771,7 +8771,7 @@
           </context>
         </context-group>
         <target>
-          CPV
+          Cpvs
         </target>
       </trans-unit>
       <trans-unit id="7b05eca339545782385023c492709e6b8903ea81" datatype="html">
@@ -8787,7 +8787,7 @@
           </context>
         </context-group>
         <target>
-          Lot Nummer
+          Número do lote
         </target>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
@@ -8803,7 +8803,7 @@
           </context>
         </context-group>
         <target>
-          Position auf Seite
+          Posição na página
         </target>
       </trans-unit>
       <trans-unit id="648c25caed59b2d96be0fe5deb0fef0e9898d212" datatype="html">
@@ -8827,7 +8827,7 @@
           </context>
         </context-group>
         <target>
-          Zulassungskriterien
+          Critérios de elegibilidade
         </target>
       </trans-unit>
       <trans-unit id="269b2364e25770a5c993dd687e9dc795d9ed887a" datatype="html">
@@ -8843,7 +8843,7 @@
           </context>
         </context-group>
         <target>
-          Gebote
+          Ofertas
         </target>
       </trans-unit>
       <trans-unit id="eba03745afc51c98d70458cf75efb444ad3c0c54" datatype="html">
@@ -8859,7 +8859,7 @@
           </context>
         </context-group>
         <target>
-          Subunternehmer
+          Subcontratantes
         </target>
       </trans-unit>
       <trans-unit id="fd6d213cefb9dc64095782605684e29078591d35" datatype="html">
@@ -8875,7 +8875,7 @@
           </context>
         </context-group>
         <target>
-          Gewonnen
+          Está a vencer
         </target>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
@@ -8891,7 +8891,7 @@
           </context>
         </context-group>
         <target>
-          Subkontaktiert
+          É subcontratado
         </target>
       </trans-unit>
       <trans-unit id="b9288b8987a9e5545360e59b2e9f63e0544bb2ad" datatype="html">
@@ -8907,7 +8907,7 @@
           </context>
         </context-group>
         <target>
-          Subkontaktierter Wert
+          Valor subcontratado
         </target>
       </trans-unit>
       <trans-unit id="ec6a8d9946e545072847202bdd8216f3fe229162" datatype="html">
@@ -8923,7 +8923,7 @@
           </context>
         </context-group>
         <target>
-          Stückpreise
+          Preços de unidade
         </target>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
@@ -8939,7 +8939,7 @@
           </context>
         </context-group>
         <target>
-          Persönliche Voraussetzungen
+          Requisitos pessoais
         </target>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
@@ -8955,7 +8955,7 @@
           </context>
         </context-group>
         <target>
-          Wirtschaftliche Voraussetzungen
+          Requisitos económicos
         </target>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
@@ -8971,7 +8971,7 @@
           </context>
         </context-group>
         <target>
-          Technische Voraussetzungen
+          Requisitos técnicos
         </target>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
@@ -8987,7 +8987,7 @@
           </context>
         </context-group>
         <target>
-          Einlagen
+          Depósitos
         </target>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
@@ -9027,7 +9027,7 @@
           </context>
         </context-group>
         <target>
-          Veröffentlichungsdatum
+          Data de publicação
         </target>
       </trans-unit>
       <trans-unit id="9bd1dc6d99e7401e05647a06b26bfc524a7a2dde" datatype="html">
@@ -9043,7 +9043,7 @@
           </context>
         </context-group>
         <target>
-          Versanddatum
+          Data de expedição
         </target>
       </trans-unit>
       <trans-unit id="1d7cb8bd683036b637c74f4d4f8c239676de2540" datatype="html">
@@ -9059,7 +9059,7 @@
           </context>
         </context-group>
         <target>
-          Formulartyp
+          Tipo de forma
         </target>
       </trans-unit>
       <trans-unit id="ad0c6b721d6d6cec75bf3a58abd1c2c7e77f80f7" datatype="html">
@@ -9075,7 +9075,7 @@
           </context>
         </context-group>
         <target>
-          Quellformulartyp
+          Tipo de forma de fonte
         </target>
       </trans-unit>
       <trans-unit id="fe46ccaae902ce974e2441abe752399288298619" datatype="html">
@@ -9099,7 +9099,7 @@
           </context>
         </context-group>
         <target>
-          Sprache
+          Língua
         </target>
       </trans-unit>
       <trans-unit id="ee19b874f6c1cde10b5abbb796b0c08988aa94b1" datatype="html">
@@ -9115,7 +9115,7 @@
           </context>
         </context-group>
         <target>
-          Quell-ID
+          ID fonte
         </target>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">
@@ -9131,7 +9131,7 @@
           </context>
         </context-group>
         <target>
-          Käufer-ID
+          ID atribuído pelo comprador
         </target>
       </trans-unit>
       <trans-unit id="a6e242f71fc204a6321623df674a71f0adbf7414" datatype="html">
@@ -9147,7 +9147,7 @@
           </context>
         </context-group>
         <target>
-          Ist enthalten
+          Está incluído
         </target>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
@@ -9163,7 +9163,7 @@
           </context>
         </context-group>
         <target>
-          Titel
+          Título
         </target>
       </trans-unit>
       <trans-unit id="fa5de2fc65a3a7a2c2a7d88d944bc013ab43c8cd" datatype="html">
@@ -9179,7 +9179,7 @@
           </context>
         </context-group>
         <target>
-          Ausschreibungs-Informationen
+          Informação sobre o concurso
         </target>
       </trans-unit>
       <trans-unit id="438a512770714af06882db959b1a97240d7b3f79" datatype="html">
@@ -9195,7 +9195,7 @@
           </context>
         </context-group>
         <target>
-          EInvoice akzeptiert
+          Elnvoice aceite
         </target>
       </trans-unit>
       <trans-unit id="10c13792a5eac0f405ff5fe26c89804923682ad0" datatype="html">
@@ -9211,7 +9211,7 @@
           </context>
         </context-group>
         <target>
-          Zentrale Beschaffung
+          Aquisição central
         </target>
       </trans-unit>
       <trans-unit id="e2dc172acb02aa39d879ea4153f54ce0aff6e2b1" datatype="html">
@@ -9227,7 +9227,7 @@
           </context>
         </context-group>
         <target>
-          Fällt unter das GPA
+          Abrangido pelo Gpa
         </target>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
@@ -9243,7 +9243,7 @@
           </context>
         </context-group>
         <target>
-          Gemeinsame Beschaffung
+          Aquisição conjunta
         </target>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">
@@ -9259,7 +9259,7 @@
           </context>
         </context-group>
         <target>
-          Rahmenvertrag
+          Acordo estrutural
         </target>
       </trans-unit>
       <trans-unit id="0ba08037e5bc2c2675c0957ae659f9154736d15d" datatype="html">
@@ -9291,7 +9291,7 @@
           </context>
         </context-group>
         <target>
-          Online-Auktion
+          Leilão electrónico
         </target>
       </trans-unit>
       <trans-unit id="a860a554acd96bd1da91252d04f33fba9b110c58" datatype="html">
@@ -9307,7 +9307,7 @@
           </context>
         </context-group>
         <target>
-          hat Lots
+          tem Lotes
         </target>
       </trans-unit>
       <trans-unit id="63344e1765057a4008397080a6f9e2bc60930f52" datatype="html">
@@ -9323,7 +9323,7 @@
           </context>
         </context-group>
         <target>
-          hat Optionen
+          tem Opções
         </target>
       </trans-unit>
       <trans-unit id="aaa77bdac46558e5d797b6d53b0ca285a0137dea" datatype="html">
@@ -9339,7 +9339,7 @@
           </context>
         </context-group>
         <target>
-          Varianten akzeptiert
+          Variantes aceites
         </target>
       </trans-unit>
       <trans-unit id="e0111239d8e59851b4c1fa1771cbb71ba0273375" datatype="html">
@@ -9355,7 +9355,7 @@
           </context>
         </context-group>
         <target>
-          Käufer-ID
+          ID atribuído pelo comprador
         </target>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
@@ -9371,7 +9371,7 @@
           </context>
         </context-group>
         <target>
-          Finanzierung
+          Financiamento
         </target>
       </trans-unit>
       <trans-unit id="5d926ca393abe804e7685919df49933d17f625e5" datatype="html">
@@ -9387,7 +9387,7 @@
           </context>
         </context-group>
         <target>
-          Metadaten
+          Meta data
         </target>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
@@ -9403,7 +9403,7 @@
           </context>
         </context-group>
         <target>
-          Erstellt
+          Criado
         </target>
       </trans-unit>
       <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
@@ -9419,7 +9419,7 @@
           </context>
         </context-group>
         <target>
-          Geändert
+          Modificado
         </target>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
@@ -9435,7 +9435,7 @@
           </context>
         </context-group>
         <target>
-          Klicken um den Abschnitt ein-/auszuklappen
+          Clique para esconder/mostrar esta secção
         </target>
       </trans-unit>
     </body>

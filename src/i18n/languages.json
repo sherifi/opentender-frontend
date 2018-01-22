@@ -11,6 +11,11 @@
       "eng": "Italian"
     },
     {
+      "id": "pt",
+      "name": "Português",
+      "eng": "Portuguese"
+    },
+    {
       "id": "en",
       "name": "English",
       "eng": "English"
@@ -96,11 +101,6 @@
       "id": "pl",
       "name": "Polski",
       "eng": "Polish"
-    },
-    {
-      "id": "pt",
-      "name": "Português",
-      "eng": "Portuguese"
     },
     {
       "id": "ro",
