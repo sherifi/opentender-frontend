@@ -22,7 +22,7 @@ let sites = ['/',
 	'/search/company',
 	'/search/authority',
 	'/dashboards/market-analysis',
-	'/dashboards/procurement-integrity',
+	'/dashboards/integrity',
 	'/dashboards/transparency',
 	'/dashboards/administrative-capacity'
 ];

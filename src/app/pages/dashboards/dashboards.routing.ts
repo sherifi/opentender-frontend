@@ -15,7 +15,7 @@ const routes: Routes = [
 			{path: 'market-analysis', component: DashboardsMarketAnalysisPage},
 			{path: 'administrative-capacity', component: DashboardsAdministrativeCapacityPage},
 			{path: 'transparency', component: DashboardsTransparencyPage},
-			{path: 'procurement-integrity', component: DashboardsIntegrityPage}
+			{path: 'integrity', component: DashboardsIntegrityPage}
 		]
 	}
 ];
