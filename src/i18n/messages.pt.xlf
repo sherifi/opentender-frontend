@@ -39,7 +39,7 @@
           </context>
         </context-group>
         <target>
-          Bem-vindo/a ao portal de &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
+          Bem-vindo/a ao portal para &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
         </target>
       </trans-unit>
       <trans-unit id="512bf9c0d4f7525c747098d506a7b11c2dd956b5" datatype="html">
@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Esta plataforma faz parte do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; projecto DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Esta plataforma faz parte do  projecto DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -100,7 +100,7 @@
           </context>
         </context-group>
         <target>
-          Pode seleccionar entre diferentes maneiras de interagir com os dados usando estes mosaicos. Eles estão interligados, por isso a mesma profundidade de dados completa pode ser acedida de maneiras diferentes.
+          Pode seleccionar entre diferentes maneiras de interagir com os dados usando estes mosaicos. Eles estão interligados e por isso podem ser acedidos em toda a sua extensão de maneiras diferentes.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -148,7 +148,7 @@
           </context>
         </context-group>
         <target>
-          Análise de mercado
+          Análise de Mercado
         </target>
       </trans-unit>
       <trans-unit id="4fb1c019f7b2bc0aeb553bfa7719dde5aa299c1b" datatype="html">
@@ -260,7 +260,7 @@
           </context>
         </context-group>
         <target>
-          Pesquise e encontre
+          Pesquisar e Encontrar
         </target>
       </trans-unit>
       <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
@@ -276,7 +276,7 @@
           </context>
         </context-group>
         <target>
-          Nesta secção, pode pesquisar nos dados por critérios do seu interesse. Os resultados são transferíveis para um exame detalhado.
+          Nesta secção pode pesquisar os dados por critérios do seu interesse. Os resultados são descarregáveis para um exame detalhado.
         </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
@@ -332,7 +332,7 @@
           </context>
         </context-group>
         <target>
-          Transferência
+          Descarregamento
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -348,7 +348,7 @@
           </context>
         </context-group>
         <target>
-          Transfira dados
+          Descarregar dados
         </target>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
@@ -364,7 +364,7 @@
           </context>
         </context-group>
         <target>
-          Quer trabalhar com os dados? Pode transferir todos os dados que servem de base a esta página.
+          Quer trabalhar com os dados? Pode descarregar todos os dados que servem de base a esta página.
         </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
@@ -444,7 +444,7 @@
           </context>
         </context-group>
         <target>
-          Capacidade administrativa
+          Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
@@ -468,7 +468,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo permite-lhe analisar e comparar a capacidade administrativa dos compradores.
+          Este painel de controlo permite-lhe analisar e aferir a capacidade administrativa dos compradores.
         </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -532,7 +532,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo permite-lhe analisar e comparar o grau de transparência em concursos de contratos públicos
+          Este painel de controlo permite-lhe analisar e aferir o grau de transparência em concursos de contratos públicos
         </target>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -596,7 +596,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo permite-lhe analisar e comparar os riscos da integridade dos contratos públicos.
+          Este painel de controlo permite-lhe analisar e aferir os riscos de integridade dos contratos públicos.
         </target>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -660,7 +660,7 @@
           </context>
         </context-group>
         <target>
-          Sobre o ConcursoPúblico
+          Sobre o Opentender
         </target>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -676,7 +676,7 @@
           </context>
         </context-group>
         <target>
-          Bem-vindo ao ConcursoPúblico
+          Bem-vindo ao Opentender
         </target>
       </trans-unit>
       <trans-unit id="f04950f0b9fc8d772223961210585c1de1eb8449" datatype="html">
@@ -711,7 +711,7 @@
           </context>
         </context-group>
         <target>
-          Parece que está a procurar a partir de &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
+          Parece que está a navegar a partir de &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -735,7 +735,7 @@
           </context>
         </context-group>
         <target>
-          Convidamo-lo(a) a visitar &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; ConcursoPúblico&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Convidamo-lo/a a visitar o &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
@@ -859,7 +859,7 @@
           runtime
         </note>
         <target>
-          Sobre o ConcursoPúblico
+          Sobre o Opentender
         </target>
       </trans-unit>
       <trans-unit id="AddSearchFields" datatype="html">
@@ -916,7 +916,7 @@
           runtime
         </note>
         <target>
-          Capacidade administrativa
+          Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
@@ -935,7 +935,7 @@
           runtime
         </note>
         <target>
-          Indicador da capacidade administrativa
+          Indicador de Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
@@ -954,7 +954,7 @@
           runtime
         </note>
         <target>
-          Indicadores da capacidade administrativa
+          Indicadores de Capacidade Administrativa
         </target>
       </trans-unit>
       <trans-unit id="Administrators" datatype="html">
@@ -992,7 +992,7 @@
           runtime
         </note>
         <target>
-          Todos os dados
+          Todos os Dados
         </target>
       </trans-unit>
       <trans-unit id="AllDigiwhistdata" datatype="html">
@@ -1011,7 +1011,7 @@
           runtime
         </note>
         <target>
-          Todos os dados da Digiwhist
+          Todos os dados Digiwhist
         </target>
       </trans-unit>
       <trans-unit id="AppealBodyName" datatype="html">
@@ -1030,7 +1030,7 @@
           runtime
         </note>
         <target>
-          Nome do corpo do recurso
+          Nome do Órgão de Recurso
         </target>
       </trans-unit>
       <trans-unit id="Authorities" datatype="html">
@@ -1087,7 +1087,7 @@
           runtime
         </note>
         <target>
-          Percentagem média de concursos
+          Percentagem Média de Concursos
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
@@ -1106,7 +1106,7 @@
           runtime
         </note>
         <target>
-          Resultado médio de boas aquisições ao longo do tempo
+          Resultado Médio de Boas Aquisições ao Longo do Tempo
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
@@ -1125,7 +1125,7 @@
           runtime
         </note>
         <target>
-          Resultado médio de boas aquisições por sector
+          Resultado Médio de Boas Aquisições por Sector
         </target>
       </trans-unit>
       <trans-unit id="AverageScore" datatype="html">
@@ -1144,7 +1144,7 @@
           runtime
         </note>
         <target>
-          Resultado médio
+          Resultado Médio
         </target>
       </trans-unit>
       <trans-unit id="AverageScoreof" datatype="html">
@@ -1163,7 +1163,7 @@
           runtime
         </note>
         <target>
-          Resultado médio de
+          Resultado Médio de
         </target>
       </trans-unit>
       <trans-unit id="AverageValue(€)" datatype="html">
@@ -1182,7 +1182,7 @@
           runtime
         </note>
         <target>
-          Valor médio (€)
+          Valor Médio (€)
         </target>
       </trans-unit>
       <trans-unit id="AverageVolumeofTenders(€)" datatype="html">
@@ -1201,7 +1201,7 @@
           runtime
         </note>
         <target>
-          Volume médio de concursos
+          Volume Médio de Concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="AverageinComparisonGroup" datatype="html">
@@ -1239,7 +1239,7 @@
           runtime
         </note>
         <target>
-          Data de decisão de adjudicação
+          Data de Decisão de Adjudicação
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionYear" datatype="html">
@@ -1258,7 +1258,7 @@
           runtime
         </note>
         <target>
-          Ano de decisão de adjudicação
+          Ano de Decisão de Adjudicação
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentAuthority" datatype="html">
@@ -1277,7 +1277,7 @@
           runtime
         </note>
         <target>
-          Autoridade actual de referência
+          Aferir a Autoridade Atual
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentCompany" datatype="html">
@@ -1296,7 +1296,7 @@
           runtime
         </note>
         <target>
-          Companhia actual de referência
+          Aferir a Companhia Atual
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
@@ -1315,7 +1315,7 @@
           runtime
         </note>
         <target>
-          Concurso actual de referência
+          Aferir o Concurso Atual
         </target>
       </trans-unit>
       <trans-unit id="Bid" datatype="html">
@@ -1372,7 +1372,7 @@
           runtime
         </note>
         <target>
-          Prazo de ofertas
+          Prazo Limite de ofertas
         </target>
       </trans-unit>
       <trans-unit id="BidPrice" datatype="html">
@@ -1391,7 +1391,7 @@
           runtime
         </note>
         <target>
-          Preço de ofertas
+          Preço de Ofertas
         </target>
       </trans-unit>
       <trans-unit id="BidPriceEUR" datatype="html">
@@ -1410,7 +1410,7 @@
           runtime
         </note>
         <target>
-          Preço de ofertas EUR
+          Preço de Ofertas EUR
         </target>
       </trans-unit>
       <trans-unit id="Buyer" datatype="html">
@@ -1448,7 +1448,7 @@
           runtime
         </note>
         <target>
-          Região do comprador
+          Região do Comprador
         </target>
       </trans-unit>
       <trans-unit id="BuyerType" datatype="html">
@@ -1467,7 +1467,7 @@
           runtime
         </note>
         <target>
-          Tipo do comprador
+          Tipo do Comprador
         </target>
       </trans-unit>
       <trans-unit id="Buyers" datatype="html">
@@ -1581,7 +1581,7 @@
           runtime
         </note>
         <target>
-          Grupo de comparação
+          Grupo de Comparação
         </target>
       </trans-unit>
       <trans-unit id="ContractValues" datatype="html">
@@ -1600,7 +1600,7 @@
           runtime
         </note>
         <target>
-          Valores do contrato
+          Valores do Contrato
         </target>
       </trans-unit>
       <trans-unit id="Country" datatype="html">
@@ -1638,7 +1638,7 @@
           runtime
         </note>
         <target>
-          Data de criação
+          Data de Criação
         </target>
       </trans-unit>
       <trans-unit id="CurrentTender" datatype="html">
@@ -1657,7 +1657,7 @@
           runtime
         </note>
         <target>
-          Concurso actual
+          Concurso Atual
         </target>
       </trans-unit>
       <trans-unit id="Dashboards" datatype="html">
@@ -1676,7 +1676,7 @@
           runtime
         </note>
         <target>
-          Painéis de controlo
+          Painéis de Controlo
         </target>
       </trans-unit>
       <trans-unit id="Dates" datatype="html">
@@ -1752,7 +1752,7 @@
           runtime
         </note>
         <target>
-          Preço do documento EUR
+          Preço do Documento EUR
         </target>
       </trans-unit>
       <trans-unit id="Documents" datatype="html">
@@ -1790,7 +1790,7 @@
           runtime
         </note>
         <target>
-          Prazo dos documentos
+          Prazo Limite dos Documentos
         </target>
       </trans-unit>
       <trans-unit id="DocumentsPrice" datatype="html">
@@ -1809,7 +1809,7 @@
           runtime
         </note>
         <target>
-          Preço dos documentos
+          Preço dos Documentos
         </target>
       </trans-unit>
       <trans-unit id="Download" datatype="html">
@@ -1828,7 +1828,7 @@
           runtime
         </note>
         <target>
-          Transferência
+          Descarregamento
         </target>
       </trans-unit>
       <trans-unit id="EUInstitutions" datatype="html">
@@ -1904,7 +1904,7 @@
           runtime
         </note>
         <target>
-          Línguas elegíveis das ofertas
+          Línguas Elegíveis das Ofertas
         </target>
       </trans-unit>
       <trans-unit id="Entries" datatype="html">
@@ -1942,7 +1942,7 @@
           runtime
         </note>
         <target>
-          Data estimada da conclusão
+          Data Estimada de Conclusão
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionYear" datatype="html">
@@ -1961,7 +1961,7 @@
           runtime
         </note>
         <target>
-          Ano estimado da conclusão
+          Ano Estimado de Conclusão
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPrice" datatype="html">
@@ -1980,7 +1980,7 @@
           runtime
         </note>
         <target>
-          Preço estimado
+          Preço Estimado
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPriceEUR" datatype="html">
@@ -1999,7 +1999,7 @@
           runtime
         </note>
         <target>
-          Preço estimado EUR
+          Preço Estimado EUR
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartDate" datatype="html">
@@ -2018,7 +2018,7 @@
           runtime
         </note>
         <target>
-          Data estimada de início
+          Data Estimada de Início
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartYear" datatype="html">
@@ -2037,7 +2037,7 @@
           runtime
         </note>
         <target>
-          Ano estimado de início
+          Ano Estimado de Início
         </target>
       </trans-unit>
       <trans-unit id="FinalPrice" datatype="html">
@@ -2056,7 +2056,7 @@
           runtime
         </note>
         <target>
-          Preço final
+          Preço Final
         </target>
       </trans-unit>
       <trans-unit id="FinalPriceEUR" datatype="html">
@@ -2075,7 +2075,7 @@
           runtime
         </note>
         <target>
-          Preço final EUR
+          Preço Final EUR
         </target>
       </trans-unit>
       <trans-unit id="Funding" datatype="html">
@@ -2132,7 +2132,7 @@
           runtime
         </note>
         <target>
-          Boa aquisição
+          Boa Aquisição
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurementScore" datatype="html">
@@ -2151,7 +2151,7 @@
           runtime
         </note>
         <target>
-          Resultado da boa aquisição
+          Resultado de Boa Aquisição
         </target>
       </trans-unit>
       <trans-unit id="Home" datatype="html">
@@ -2189,7 +2189,7 @@
           runtime
         </note>
         <target>
-          Como funciona o Concursopúblico
+          Como funciona o Opentender
         </target>
       </trans-unit>
       <trans-unit id="Imprint" datatype="html">
@@ -2208,7 +2208,7 @@
           runtime
         </note>
         <target>
-          Imprimir
+          Marca
         </target>
       </trans-unit>
       <trans-unit id="Indicator" datatype="html">
@@ -2284,7 +2284,7 @@
           runtime
         </note>
         <target>
-          Indicador de integridade
+          Indicador de Integridade
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicators" datatype="html">
@@ -2303,7 +2303,7 @@
           runtime
         </note>
         <target>
-          Indicadores de integridade
+          Indicadores de Integridade
         </target>
       </trans-unit>
       <trans-unit id="LimittosameAuthorityType" datatype="html">
@@ -2382,6 +2382,25 @@
           Limite ao mesmo sector
         </target>
       </trans-unit>
+      <trans-unit id="Loading…" datatype="html">
+        <source>
+          Loading…
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            83
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          A carregar…
+        </target>
+      </trans-unit>
       <trans-unit id="Lot" datatype="html">
         <source>
           Lot
@@ -2391,7 +2410,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            84
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2410,7 +2429,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            84
+            85
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2429,25 +2448,6 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            85
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Principais actividades
-        </target>
-      </trans-unit>
-      <trans-unit id="MainBuyers" datatype="html">
-        <source>
-          Main Buyers
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
             86
           </context>
         </context-group>
@@ -2455,12 +2455,12 @@
           runtime
         </note>
         <target>
-          Principais compradores
+          Atividades Principais
         </target>
       </trans-unit>
-      <trans-unit id="MainBuyersinScoreRange" datatype="html">
+      <trans-unit id="MainBuyers" datatype="html">
         <source>
-          Main Buyers in Score Range
+          Main Buyers
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2474,12 +2474,12 @@
           runtime
         </note>
         <target>
-          Principais compradores na amplitude de resultados
+          Compradores Principais
         </target>
       </trans-unit>
-      <trans-unit id="MainCPV" datatype="html">
+      <trans-unit id="MainBuyersinScoreRange" datatype="html">
         <source>
-          Main CPV
+          Main Buyers in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2493,12 +2493,12 @@
           runtime
         </note>
         <target>
-          Principal CPV
+          Compradores Principais no Intervalo de Resultados
         </target>
       </trans-unit>
-      <trans-unit id="MainCPV(Categories)" datatype="html">
+      <trans-unit id="MainCPV" datatype="html">
         <source>
-          Main CPV (Categories)
+          Main CPV
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2512,12 +2512,12 @@
           runtime
         </note>
         <target>
-          Principal CPV (Categorias)
+          CPV Principal
         </target>
       </trans-unit>
-      <trans-unit id="MainCPV(Divisions)" datatype="html">
+      <trans-unit id="MainCPV(Categories)" datatype="html">
         <source>
-          Main CPV (Divisions)
+          Main CPV (Categories)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2531,12 +2531,12 @@
           runtime
         </note>
         <target>
-          Principal CPV (Divisões)
+          CPV Principal (Categorias)
         </target>
       </trans-unit>
-      <trans-unit id="MainCPV(Full)" datatype="html">
+      <trans-unit id="MainCPV(Divisions)" datatype="html">
         <source>
-          Main CPV (Full)
+          Main CPV (Divisions)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2550,12 +2550,12 @@
           runtime
         </note>
         <target>
-          Principal CPV (total)
+          CPV Principal (Divisões)
         </target>
       </trans-unit>
-      <trans-unit id="MainCPV(Groups)" datatype="html">
+      <trans-unit id="MainCPV(Full)" datatype="html">
         <source>
-          Main CPV (Groups)
+          Main CPV (Full)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2569,12 +2569,12 @@
           runtime
         </note>
         <target>
-          Principal CPV (Grupos)
+          CPV Principal (Total)
         </target>
       </trans-unit>
-      <trans-unit id="MainCPVCode" datatype="html">
+      <trans-unit id="MainCPV(Groups)" datatype="html">
         <source>
-          Main CPV Code
+          Main CPV (Groups)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2588,12 +2588,12 @@
           runtime
         </note>
         <target>
-          Principal código CPV
+          CPV Principal (Grupos)
         </target>
       </trans-unit>
-      <trans-unit id="MainSector" datatype="html">
+      <trans-unit id="MainCPVCode" datatype="html">
         <source>
-          Main Sector
+          Main CPV Code
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2607,12 +2607,12 @@
           runtime
         </note>
         <target>
-          Sector principal
+          Código do CPV Principal
         </target>
       </trans-unit>
-      <trans-unit id="MainSuppliers" datatype="html">
+      <trans-unit id="MainSector" datatype="html">
         <source>
-          Main Suppliers
+          Main Sector
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2626,12 +2626,12 @@
           runtime
         </note>
         <target>
-          Principais fornecedores
+          Setor Principal
         </target>
       </trans-unit>
-      <trans-unit id="MainSuppliersinScoreRange" datatype="html">
+      <trans-unit id="MainSuppliers" datatype="html">
         <source>
-          Main Suppliers in Score Range
+          Main Suppliers
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2645,12 +2645,12 @@
           runtime
         </note>
         <target>
-          Principais fornecedores na amplitude de resultados
+          Fornecedores Principais
         </target>
       </trans-unit>
-      <trans-unit id="MarketAnalysis" datatype="html">
+      <trans-unit id="MainSuppliersinScoreRange" datatype="html">
         <source>
-          Market Analysis
+          Main Suppliers in Score Range
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2664,12 +2664,12 @@
           runtime
         </note>
         <target>
-          Análise de mercado
+          Fornecedores Principais no Intervalo de Resultados
         </target>
       </trans-unit>
-      <trans-unit id="MediationBodyName" datatype="html">
+      <trans-unit id="MarketAnalysis" datatype="html">
         <source>
-          Mediation Body Name
+          Market Analysis
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2683,12 +2683,12 @@
           runtime
         </note>
         <target>
-          Nome do corpo de mediação
+          Análise de Mercado
         </target>
       </trans-unit>
-      <trans-unit id="ModificationDate" datatype="html">
+      <trans-unit id="MediationBodyName" datatype="html">
         <source>
-          Modification Date
+          Mediation Body Name
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2702,12 +2702,12 @@
           runtime
         </note>
         <target>
-          Data de modificação
+          Nome do Órgão de Mediação
         </target>
       </trans-unit>
-      <trans-unit id="Name" datatype="html">
+      <trans-unit id="ModificationDate" datatype="html">
         <source>
-          Name
+          Modification Date
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2721,12 +2721,12 @@
           runtime
         </note>
         <target>
-          Nome
+          Data de Modificação
         </target>
       </trans-unit>
-      <trans-unit id="Nr.ofTenders" datatype="html">
+      <trans-unit id="Name" datatype="html">
         <source>
-          Nr. of Tenders
+          Name
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2740,12 +2740,12 @@
           runtime
         </note>
         <target>
-          Nº de concursos
+          Nome
         </target>
       </trans-unit>
-      <trans-unit id="NumberofBuyersbyRegion" datatype="html">
+      <trans-unit id="Nodata" datatype="html">
         <source>
-          Number of Buyers by Region
+          No data
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2759,12 +2759,12 @@
           runtime
         </note>
         <target>
-          Número de compradores por região
+          Sem dados
         </target>
       </trans-unit>
-      <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
+      <trans-unit id="Nr.ofTenders" datatype="html">
         <source>
-          Number of Suppliers by Region
+          Nr. of Tenders
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2778,12 +2778,12 @@
           runtime
         </note>
         <target>
-          Número de fornecedores por região
+          Nº de Concursos
         </target>
       </trans-unit>
-      <trans-unit id="OpentenderPortals" datatype="html">
+      <trans-unit id="NumberofBuyersbyRegion" datatype="html">
         <source>
-          Opentender Portals
+          Number of Buyers by Region
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -2797,7 +2797,45 @@
           runtime
         </note>
         <target>
-          Portais do Concursopúblico
+          Número de Compradores por Região
+        </target>
+      </trans-unit>
+      <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
+        <source>
+          Number of Suppliers by Region
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            105
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Número de Fornecedores por Região
+        </target>
+      </trans-unit>
+      <trans-unit id="OpentenderPortals" datatype="html">
+        <source>
+          Opentender Portals
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            106
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Portais do Opentender
         </target>
       </trans-unit>
       <trans-unit id="Overall" datatype="html">
@@ -2809,7 +2847,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            105
+            107
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2828,14 +2866,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            106
+            108
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Requisitos pessoais
+          Requisitos Pessoais
         </target>
       </trans-unit>
       <trans-unit id="Portals" datatype="html">
@@ -2847,7 +2885,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            109
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2866,7 +2904,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            108
+            110
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2885,14 +2923,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            109
+            111
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Tipo de procedimento
+          Tipo de Procedimento
         </target>
       </trans-unit>
       <trans-unit id="ProfileLink" datatype="html">
@@ -2904,14 +2942,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            110
+            112
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Link do perfil
+          Link do Perfil
         </target>
       </trans-unit>
       <trans-unit id="ProfilePage" datatype="html">
@@ -2923,14 +2961,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            111
+            113
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Página do perfil
+          Página do Perfil
         </target>
       </trans-unit>
       <trans-unit id="Programme" datatype="html">
@@ -2942,7 +2980,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            112
+            114
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2961,7 +2999,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            115
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2980,7 +3018,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            114
+            116
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2999,7 +3037,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            115
+            117
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3018,7 +3056,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            116
+            118
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3037,7 +3075,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            117
+            119
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3056,44 +3094,6 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            118
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Autoridade da pesquisa
-        </target>
-      </trans-unit>
-      <trans-unit id="SearchCompany" datatype="html">
-        <source>
-          Search Company
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            119
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Companhia da pesquisa
-        </target>
-      </trans-unit>
-      <trans-unit id="SearchTender" datatype="html">
-        <source>
-          Search Tender
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
             120
           </context>
         </context-group>
@@ -3101,12 +3101,12 @@
           runtime
         </note>
         <target>
-          Concurso da pesquisa
+          Pesquisar Autoridade
         </target>
       </trans-unit>
-      <trans-unit id="Sector" datatype="html">
+      <trans-unit id="SearchCompany" datatype="html">
         <source>
-          Sector
+          Search Company
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3120,12 +3120,12 @@
           runtime
         </note>
         <target>
-          Sector
+          Pesquisar Companhia
         </target>
       </trans-unit>
-      <trans-unit id="Sector(CPVDivision)" datatype="html">
+      <trans-unit id="SearchTender" datatype="html">
         <source>
-          Sector (CPV Division)
+          Search Tender
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3139,12 +3139,12 @@
           runtime
         </note>
         <target>
-          Sector (Divisão CPV)
+          Pesquisar Concurso
         </target>
       </trans-unit>
-      <trans-unit id="Sector(CPV)" datatype="html">
+      <trans-unit id="Sector" datatype="html">
         <source>
-          Sector (CPV)
+          Sector
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3158,12 +3158,12 @@
           runtime
         </note>
         <target>
-          Sector (CPV)
+          Setor
         </target>
       </trans-unit>
-      <trans-unit id="SectorOverview" datatype="html">
+      <trans-unit id="Sector(CPVDivision)" datatype="html">
         <source>
-          Sector Overview
+          Sector (CPV Division)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3177,12 +3177,12 @@
           runtime
         </note>
         <target>
-          Visão geral do sector
+          Setor (Divisão CPV)
         </target>
       </trans-unit>
-      <trans-unit id="Sectors" datatype="html">
+      <trans-unit id="Sector(CPV)" datatype="html">
         <source>
-          Sectors
+          Sector (CPV)
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3196,12 +3196,12 @@
           runtime
         </note>
         <target>
-          Sectores
+          Setor (CPV)
         </target>
       </trans-unit>
-      <trans-unit id="SelectColumn" datatype="html">
+      <trans-unit id="SectorOverview" datatype="html">
         <source>
-          Select Column
+          Sector Overview
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3215,12 +3215,12 @@
           runtime
         </note>
         <target>
-          Seleccione coluna
+          Visão geral do Setor
         </target>
       </trans-unit>
-      <trans-unit id="SelectVisualization" datatype="html">
+      <trans-unit id="Sectors" datatype="html">
         <source>
-          Select Visualization
+          Sectors
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3234,7 +3234,45 @@
           runtime
         </note>
         <target>
-          Seleccione visualização
+          Setores
+        </target>
+      </trans-unit>
+      <trans-unit id="SelectColumn" datatype="html">
+        <source>
+          Select Column
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            128
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Selecionar Coluna
+        </target>
+      </trans-unit>
+      <trans-unit id="SelectVisualization" datatype="html">
+        <source>
+          Select Visualization
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            129
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Selecionar Visualização
         </target>
       </trans-unit>
       <trans-unit id="Showallyears" datatype="html">
@@ -3246,7 +3284,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            128
+            130
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3265,7 +3303,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            129
+            131
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3284,7 +3322,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            130
+            132
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3303,7 +3341,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            131
+            133
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3322,14 +3360,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            132
+            134
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Tipo de fornecimento
+          Tipo de Fornecimento
         </target>
       </trans-unit>
       <trans-unit id="TechnicalRequirements" datatype="html">
@@ -3341,14 +3379,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            133
+            135
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Requisitos técnicos
+          Requisitos Técnicos
         </target>
       </trans-unit>
       <trans-unit id="Tender" datatype="html">
@@ -3360,7 +3398,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            134
+            136
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3379,44 +3417,6 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            135
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Contagem de concursos
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderInformation" datatype="html">
-        <source>
-          Tender Information
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            136
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Informação sobre os concursos
-        </target>
-      </trans-unit>
-      <trans-unit id="TenderLink" datatype="html">
-        <source>
-          Tender Link
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
             137
           </context>
         </context-group>
@@ -3424,12 +3424,12 @@
           runtime
         </note>
         <target>
-          Link dos concursos
+          Quantidade de Concursos
         </target>
       </trans-unit>
-      <trans-unit id="TenderMetaData" datatype="html">
+      <trans-unit id="TenderInformation" datatype="html">
         <source>
-          Tender Meta Data
+          Tender Information
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3443,12 +3443,12 @@
           runtime
         </note>
         <target>
-          Meta dados dos concursos
+          Informação sobre o Concurso
         </target>
       </trans-unit>
-      <trans-unit id="TenderRequirements" datatype="html">
+      <trans-unit id="TenderLink" datatype="html">
         <source>
-          Tender Requirements
+          Tender Link
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3462,7 +3462,45 @@
           runtime
         </note>
         <target>
-          Requisitos dos concursos
+          Link para o Concurso
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderMetaData" datatype="html">
+        <source>
+          Tender Meta Data
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            140
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Meta Dados do Concurso
+        </target>
+      </trans-unit>
+      <trans-unit id="TenderRequirements" datatype="html">
+        <source>
+          Tender Requirements
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            141
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Requisitos do Concurso
         </target>
       </trans-unit>
       <trans-unit id="Tenders" datatype="html">
@@ -3474,7 +3512,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            142
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3493,14 +3531,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            141
+            143
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Concursos ao longo do tempo
+          Concursos ao Longo do Tempo
         </target>
       </trans-unit>
       <trans-unit id="Test" datatype="html">
@@ -3512,7 +3550,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            142
+            144
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3531,7 +3569,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            143
+            145
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3550,14 +3588,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            144
+            146
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Título inglês
+          Título Inglês
         </target>
       </trans-unit>
       <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
@@ -3569,14 +3607,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            145
+            147
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Volume total de concursos (€)
+          Volume total de Concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="Transparency" datatype="html">
@@ -3588,7 +3626,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            146
+            148
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3607,14 +3645,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            147
+            149
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Indicador de transparência
+          Indicador de Transparência
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicators" datatype="html">
@@ -3626,14 +3664,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            148
+            150
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Indicadores de transparência
+          Indicadores de Transparência
         </target>
       </trans-unit>
       <trans-unit id="Type" datatype="html">
@@ -3645,7 +3683,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            149
+            151
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3664,7 +3702,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            150
+            152
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3683,14 +3721,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            151
+            153
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Volume de concursos (€)
+          Volume de Concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="Year" datatype="html">
@@ -3702,7 +3740,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            152
+            154
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3721,7 +3759,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            153
+            155
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3746,14 +3784,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            154
+            156
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;outros sectores com menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;outros setores com menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -3765,14 +3803,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            155
+            157
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          em amplitude de resultados
+          no Intervalo de Resultados
         </target>
       </trans-unit>
       <trans-unit id="overTime" datatype="html">
@@ -3784,7 +3822,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            156
+            158
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3803,44 +3841,6 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            157
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          por sector
-        </target>
-      </trans-unit>
-      <trans-unit id="ADMINISTRATIVE.name" datatype="html">
-        <source>
-          Administrative Capacity Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            158
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indicador da Capacidade Administrativa
-        </target>
-      </trans-unit>
-      <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
-        <source>
-          Administrative Capacity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
             159
           </context>
         </context-group>
@@ -3848,12 +3848,12 @@
           runtime
         </note>
         <target>
-          Indicadores da Capacidade Administrativa
+          por Setor
         </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE.name" datatype="html">
         <source>
-          Joint or centralized procurement
+          Administrative Capacity Indicator
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3867,12 +3867,12 @@
           runtime
         </note>
         <target>
-          Aquisição conjunta ou ceentralizada
+          Indicador de Capacidade Administrativa
         </target>
       </trans-unit>
-      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
         <source>
-          Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.
+          Administrative Capacity Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -3886,7 +3886,45 @@
           runtime
         </note>
         <target>
-          A aquisição centralizada sugere boa capacidade administrativa se o concurso for dirigido por um corpo central de aquisições
+          Indicadores de Capacidade Administrativa
+        </target>
+      </trans-unit>
+      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
+        <source>
+          Joint or centralized procurement
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            162
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Aquisição conjunta ou centralizada
+        </target>
+      </trans-unit>
+      <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
+        <source>
+          Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            163
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          A aquisição centralizada sugere boa capacidade administrativa se o concurso for gerido por um órgão central de aquisições
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3898,7 +3936,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            162
+            164
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3917,7 +3955,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            163
+            165
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3936,14 +3974,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            164
+            166
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Leilão electrónico
+          Leilão eletrónico
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.desc" datatype="html">
@@ -3955,14 +3993,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            165
+            167
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          O leilão electrónico aponta para boa capacidade administrativa se o concurso foi realizado através de um leilão electrónico.
+          O leilão eletrónico aponta para boa capacidade administrativa se o concurso foi realizado através de um leilão eletrónico.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.name" datatype="html">
@@ -3974,7 +4012,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            166
+            168
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3993,14 +4031,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            167
+            169
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          O uso da estrutura WTO sugere boa capacidade administrativa se o processo de orçamento for realizado de acordo com a estrutura WTO.
+          O uso da estrutura WTO sugere boa capacidade administrativa se o processo do concurso for realizado de acordo com a estrutura WTO.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
@@ -4012,7 +4050,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            168
+            170
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4031,44 +4069,6 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            169
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          O inglês como língua estrangeira sugere boa capacidade administrativa se as ofertas puderem ser submetidas em inglês como língua estrangeira.
-        </target>
-      </trans-unit>
-      <trans-unit id="INTEGRITY.name" datatype="html">
-        <source>
-          Integrity Indicator
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            170
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-        <target>
-          Indicador de integridade
-        </target>
-      </trans-unit>
-      <trans-unit id="INTEGRITY.plural" datatype="html">
-        <source>
-          Integrity Indicators
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
             171
           </context>
         </context-group>
@@ -4076,12 +4076,12 @@
           runtime
         </note>
         <target>
-          Indicadores de integridade
+          O Inglês como língua estrangeira sugere boa capacidade administrativa se as ofertas puderem ser submetidas em Inglês como língua estrangeira.
         </target>
       </trans-unit>
-      <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
+      <trans-unit id="INTEGRITY.name" datatype="html">
         <source>
-          Single bidder contract
+          Integrity Indicator
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -4095,12 +4095,12 @@
           runtime
         </note>
         <target>
-          Contrato único de licitante
+          Indicador de Integridade
         </target>
       </trans-unit>
-      <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
+      <trans-unit id="INTEGRITY.plural" datatype="html">
         <source>
-          Single bid signals a risk when only one bid is submitted in a tender in a competitive market.
+          Integrity Indicators
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -4114,12 +4114,12 @@
           runtime
         </note>
         <target>
-          A oferta única assinala um risco quando apenas uma oferta é submetida num concurso, num mercado competitivo.
+          Indicadores de Integridade
         </target>
       </trans-unit>
-      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
+      <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
         <source>
-          Call for tenders publication
+          Single bidder contract
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -4133,12 +4133,12 @@
           runtime
         </note>
         <target>
-          Chamada para a publicação dos concursos
+          Contrato de proponente único
         </target>
       </trans-unit>
-      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
+      <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
         <source>
-          Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.
+          Single bid signals a risk when only one bid is submitted in a tender in a competitive market.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -4152,7 +4152,45 @@
           runtime
         </note>
         <target>
-          Não publicar chamadas para concurso assinala um risco quando nenhuma chamada para concursos é publicada antes de uma adjudicação do contrato, diminuindo a potencial "pool" de licitantes.
+          A oferta única indicia um risco quando apenas uma oferta é submetida num concurso, num mercado competitivo.
+        </target>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
+        <source>
+          Call for tenders publication
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            176
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Pedido para publicação de concursos
+        </target>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
+        <source>
+          Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/i18n/components/i18n.component.ts
+          </context>
+          <context context-type="linenumber">
+            177
+          </context>
+        </context-group>
+        <note priority="1" from="description">
+          runtime
+        </note>
+        <target>
+          Não publicar pedidos  para concurso indicia um risco quando nenhum pedido para concursos é publicado antes de uma adjudicação de contrato, reduzindo o conjunto potencial de proponentes.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
@@ -4164,7 +4202,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            178
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4183,14 +4221,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            179
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Os procedimentos não públicos assinalam um risco de utilização de tipos de procedimento que estão menos abertos à competição e que são usados mais facilmente para contratar directamente empresas ligadas (por exemplo, negociadas sem publicação).
+          Os procedimentos não públicos indiciam um risco de usar tipos de procedimentos menos abertos à concorrência e mais facilmente usados para contratar directamente empresas ligadas (por exemplo, negociadas sem publicação).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
@@ -4202,7 +4240,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            178
+            180
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4221,7 +4259,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            179
+            181
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4240,7 +4278,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            182
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4259,14 +4297,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            183
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A duração do período de decisão assinala riscos quando a duração do período de decisão é ou suspeitosamente curta ou suspeitosamente longa.
+          A duração do período de decisão indicia riscos quando a duração do período de decisão é suspeitosamente curta ou suspeitosamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
@@ -4278,7 +4316,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            182
+            184
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4297,14 +4335,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            183
+            185
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A nova companhia assinala o risco de uma companhia muito jovem ganhar um concurso (com menos de 1 ano na altura do ganho).
+          Nova companhia indicia risco de uma companhia muito jovem ganhar um concurso (com menos de 1 ano na altura da adjudicação).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
@@ -4316,7 +4354,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            184
+            186
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4335,14 +4373,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            185
+            187
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          O paraíso fiscal assinala um risco quando o fornecedor está localizado num país de paraísos fiscais (baseado no índice do segredo financeiro).
+          O paraíso fiscal indicia um risco quando o fornecedor está localizado num país paraíso fiscal (baseado no índice de secretismo financeiro).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
@@ -4354,14 +4392,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            186
+            188
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Duração da descrição
+          Comprimento da descrição
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.desc" datatype="html">
@@ -4373,14 +4411,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            187
+            189
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A duração da descrição dos produtos assinala o risco de a descrição dos produtos ser adaptada a uma companhia, quando a descrição for excessivamente longa.
+          O comprimento da descrição dos produtos indicia o risco de a descrição dos produtos ser adaptada a uma companhia, quando a descrição for excessivamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
@@ -4392,7 +4430,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            188
+            190
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4411,14 +4449,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            189
+            191
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A ligação política do fornecedor capta o risco de pelo menos um proprietário ou dirigente deter um cargo político.
+          A ligação política do fornecedor indicia o risco de pelo menos um proprietário ou gestor deter um cargo político.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
@@ -4430,14 +4468,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            190
+            192
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Acção do contrato do vencedor
+          Parcela do contrato do vencedor
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
@@ -4449,14 +4487,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            191
+            193
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A acção do contrato do vencedor é a acção do valor do contrato ganho por uma dada companhia a partir de um dado comprador num dado ano.
+          A parcela do contrato do vencedor é a parcela de valor do contrato ganho por uma dada companhia a partir de um dado comprador num dado ano.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
@@ -4468,7 +4506,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            192
+            194
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4487,7 +4525,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            193
+            195
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4506,7 +4544,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            194
+            196
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4525,14 +4563,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            195
+            197
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Os critérios de avaliação assinalam o risco da utilização de critérios não quantitativos para avaliar  licitantes que são subjectivos e facilmente manipuláveis.
+          Os critérios de avaliação assinalam o risco de usar critérios não quantitativos para avaliar proponentes que são subjectivos e facilmente manipuláveis.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.name" datatype="html">
@@ -4544,14 +4582,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            196
+            198
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Indicador de transparência
+          Indicador de Transparência
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.plural" datatype="html">
@@ -4563,14 +4601,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            197
+            199
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Indicadores de transparência
+          Indicadores de Transparência
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
@@ -4582,7 +4620,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            198
+            200
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4601,14 +4639,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            199
+            201
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          A taxa de publicação é a taxa de gastos da aquisição pública anunciada para além dos gastos totais da aquisição pública de uma dada autoridade contraente.
+          A taxa de publicação é a razão entre os gastos da aquisição pública anunciada e os gastos totais da aquisição pública de uma dada autoridade contraente.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
@@ -4620,14 +4658,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            200
+            202
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          As discrepâncias entre a chamada pelo concurso e adjudicação de contratos
+          Discrepâncias entre anúncios de pedido de concurso e de adjudicação de contrato
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
@@ -4639,7 +4677,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            201
+            203
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4658,7 +4696,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            202
+            204
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4677,7 +4715,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            203
+            205
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -5632,7 +5670,7 @@
           </context>
         </context-group>
         <target>
-          A carregar...
+          A carregar…
         </target>
       </trans-unit>
       <trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
@@ -6035,6 +6073,22 @@
           </context>
           <context context-type="linenumber">
             7
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/search/components/select-viz-button/select-viz-button.component.ts
+          </context>
+          <context context-type="linenumber">
+            12
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/search/components/select-search-button/select-search-button.component.ts
+          </context>
+          <context context-type="linenumber">
+            20
           </context>
         </context-group>
         <target>
@@ -7939,30 +7993,6 @@
           Visualização
         </target>
       </trans-unit>
-      <trans-unit id="d9a2d748d645a9a51a535f9b8266eee949172f59" datatype="html">
-        <source>
-          Click to Add
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/components/select-viz-button/select-viz-button.component.ts
-          </context>
-          <context context-type="linenumber">
-            12
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/components/select-search-button/select-search-button.component.ts
-          </context>
-          <context context-type="linenumber">
-            20
-          </context>
-        </context-group>
-        <target>
-          Clique para adicionar
-        </target>
-      </trans-unit>
       <trans-unit id="efea32159353fc5eeb7713f16044a43139b93640" datatype="html">
         <source>
           before
@@ -8943,6 +8973,9 @@
             401
           </context>
         </context-group>
+        <target>
+          Fonte
+        </target>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
         <source>
