@@ -17,8 +17,7 @@
 		<graph *ngIf="viz.procedure_types.active" procedure-types [data]="viz.procedure_types.data" [title]="viz.procedure_types.title"></graph>
 		<graph *ngIf="viz.cpvs_codes.active" sectors [data]="viz.cpvs_codes.data"></graph>
 		<graph *ngIf="viz.histogram_finalPriceEUR.active" histogram [data]="viz.histogram_finalPriceEUR.data"></graph>
-		<graph *ngIf="viz.distribution.active" benchmarks-distribution [data]="viz.distribution.data" [highlight]="viz.distribution.highlight" [title]="viz.distribution.title"></graph>
-
+		<graph *ngIf="viz.distribution.active" benchmarks-distribution [data]="viz.distribution.data" [title]="viz.distribution.title"></graph>
 	</div>
 </div>
 
