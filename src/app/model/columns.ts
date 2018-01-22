@@ -355,6 +355,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Good Procurement Score',
 		id: 'indicators',
 		group: 'Indicators',
+		sortBy: {
+			id: 'ot.score.TENDER',
+			ascend: false
+		},
 		format: (tender, library) => {
 			if (!tender.indicators) {
 				return [];
@@ -380,6 +384,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Integrity Indicator',
 		id: 'indicators.pii',
 		group: 'Indicators',
+		sortBy: {
+			id: 'ot.score.INTEGRITY',
+			ascend: false
+		},
 		format: (tender, library) => {
 			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'INTEGRITY'));
 		}
@@ -388,6 +396,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Transparency Indicator',
 		id: 'indicators.ti',
 		group: 'Indicators',
+		sortBy: {
+			id: 'ot.score.TRANSPARENCY',
+			ascend: false
+		},
 		format: (tender, library) => {
 			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'TRANSPARENCY'));
 		}
@@ -396,6 +408,10 @@ export const TenderColumns: Array<ITableColumnTender> = [
 		name: 'Administrative Capacity Indicator',
 		id: 'indicators.aci',
 		group: 'Indicators',
+		sortBy: {
+			id: 'ot.score.ADMINISTRATIVE',
+			ascend: false
+		},
 		format: (tender, library) => {
 			return ColumnsFormatUtils.formatTenderIndicatorGroup(tender, library.indicators.find(group => group.id === 'ADMINISTRATIVE'));
 		}

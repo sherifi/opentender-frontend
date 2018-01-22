@@ -866,7 +866,7 @@ declare namespace Definitions {
 		corrections?: Correction[];
 		documentsLocation?: Address;
 		ot?: {
-		indicators?: {
+		indicator?: {
 			INTEGRITY_SINGLE_BID?: IndicatorValue;
 			INTEGRITY_CALL_FOR_TENDER_PUBLICATION?: IndicatorValue;
 			INTEGRITY_ADVERTISEMENT_PERIOD?: IndicatorValue;
@@ -881,6 +881,12 @@ declare namespace Definitions {
 			ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE?: IndicatorValue;
 			TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS?: IndicatorValue;
 			TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES?: IndicatorValue;
+		};
+		score?: {
+			INTEGRITY?: IndicatorValue;
+			ADMINISTRATIVE?: IndicatorValue;
+			TRANSPARENCY?: IndicatorValue;
+			TENDER?: IndicatorValue;
 		};
 		cpv?: string;
 		/**
