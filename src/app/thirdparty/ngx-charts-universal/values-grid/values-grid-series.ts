@@ -131,7 +131,6 @@ export class ValuesGridSeriesComponent implements OnChanges {
 		node
 			.transition().duration(750)
 			.attrTween('d', function(d) {
-				console.log('twwww', d);
 				this['_current'] = this['_current'] || d;
 				let interpol = interpolate(this['_current'], d);
 				this['_current'] = interpol(0);

@@ -3,6 +3,7 @@ import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
 import {Consts} from '../../../model/consts';
 import * as i18nlanguages from '../../../../i18n/languages.json';
 import {getCurrencySymbol} from '@angular/common';
+import {environment} from '../../../../environments/environment';
 
 declare module '*languages.json' {
 	export var enabled: Array<{
@@ -207,8 +208,6 @@ export class I18NService {
 				let result = this._extra.countries[key];
 				if (result) {
 					return result;
-				} else {
-					console.log('no country translation', key);
 				}
 			}
 		}
@@ -252,7 +251,9 @@ export class I18NService {
 		}
 		let id = key.replace(/ /g, '');
 		if (!this._translations[id]) {
-			console.log('i18n, untranslated text', key);
+			if (!environment.production) {
+				console.log('i18n, untranslated text', key);
+			}
 			return null;
 		}
 		let results = this._translations[id].filter((node) => node.hasOwnProperty('value')).map(node => node.value);
@@ -268,7 +269,9 @@ export class I18NService {
 		}
 		let id = key.replace(/ /g, '');
 		if (!this._translations[id]) {
-			console.log('i18n, untranslated text', key);
+			if (!environment.production) {
+				console.log('i18n, untranslated text', key);
+			}
 			return this._simpleInterpolate(key, interpolation);
 		}
 		let interpol = interpolation.map(i => i.value.toString());
