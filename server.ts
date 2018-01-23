@@ -110,7 +110,7 @@ morgan.token('cached', (req) => {
 app.use(morgan('[:date[clf]] - cached: :cached - :method :url - :res[content-length] - :response-time ms',
 	{
 		skip: (req, res) => {
-			return false; // (req.originalUrl.indexOf('/assets') === 0);
+			return (Config.client.devMode && (req.originalUrl.indexOf('/assets') === 0 || req.originalUrl.indexOf('/data') === 0));
 		}
 	}
 ));
