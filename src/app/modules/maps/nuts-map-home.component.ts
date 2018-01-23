@@ -81,8 +81,12 @@ export class MapHomeComponent {
 					this.map_level = level;
 					if (['eu', 'all'].indexOf(this.config.country.id) < 0) {
 						let filtered = {};
+						let id = this.config.country.id;
+						if (id === 'gr') {
+							id = 'el';
+						}
 						Object.keys(result.data).forEach(key => {
-							if (key.indexOf(this.config.country.id) === 0) {
+							if (key.indexOf(id) === 0) {
 								filtered[key] = result.data[key];
 							}
 						});
