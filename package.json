@@ -111,6 +111,7 @@
     "memcached": "=2.2.2",
     "memory-cache": "=0.2.0",
     "moment": "=2.20.1",
+    "morgan": "^1.9.0",
     "mydatepicker": "=2.6.1",
     "ngx-toastr": "=8.1.0",
     "node-sass": "=4.7.2",
