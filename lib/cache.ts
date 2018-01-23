@@ -20,7 +20,7 @@ class MemcachedAdapter {
 				return cb(err);
 			}
 			if (!result) {
-				this.memcached.set(key, {data: data}, 0, (err2) => {
+				this.memcached.set(key, {data: data}, duration, (err2) => {
 					if (err2) {
 						return cb(err2);
 					}
@@ -73,6 +73,8 @@ export interface Cache {
 	get: (key: string, cb: (err, data) => void) => void;
 	upsert: (key: string, data: Object, duration: number, cb: (err, data) => void) => void;
 }
+
+export const CacheFOREVER = 0;
 
 export function initCache(options): Cache {
 	if (options) {

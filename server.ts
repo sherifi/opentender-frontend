@@ -15,7 +15,7 @@ import * as crypto from 'crypto';
 
 import {enableProdMode} from '@angular/core';
 import {ngExpressEngine} from './lib/express-engine/main';
-import {initCache} from './lib/cache';
+import {CacheFOREVER, initCache} from './lib/cache';
 import {TRANSLATIONS, TRANSLATIONS_FORMAT, LOCALE_ID} from '@angular/core';
 
 const Config = require('./config.js');
@@ -40,7 +40,7 @@ let getCacheKey = (req) => {
 
 const cache = initCache(Config.server.cache);
 let addToCache = (req, data) => {
-	cache.upsert(getCacheKey(req), data, 0, err => {
+	cache.upsert(getCacheKey(req), data, CacheFOREVER, err => {
 		if (err) {
 			console.log(err);
 		}
@@ -274,12 +274,12 @@ app.use('/ping', (req, res) => {
 // Routes with html5pushstate
 routes.routes.forEach(route => {
 	if (route.rootHTML5) {
-		app.use('/' + route.path + '*', (req, res) => {
+		app.use('/' + route.path + '*', checkCache, (req, res) => {
 			startApp(req, res, '/' + route.path);
 		});
 	}
 });
-app.use('/', (req, res) => {
+app.use('/', checkCache, (req, res) => {
 	let url = (req.originalUrl || '').split('?')[0];
 	if (['/', '/index.html'].indexOf(url) < 0) {
 		return errorResponse(req, res);
