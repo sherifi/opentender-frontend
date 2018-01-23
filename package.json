@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@angular-devkit/build-optimizer": "0.0.38",
+    "@angular-devkit/core": "0.0.28",
     "@angular/animations": "5.2.0",
     "@angular/cli": "=1.6.4",
     "@angular/common": "5.2.0",
