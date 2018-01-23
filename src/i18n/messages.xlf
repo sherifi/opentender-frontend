@@ -2180,6 +2180,13 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="41aac9cecddc9f345c263d3742192e68e227e413" datatype="html">
+        <source>Menu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
         <source>Making Public Tenders More Transparent</source>
         <context-group purpose="location">
@@ -2493,13 +2500,6 @@
       </trans-unit>
       <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
         <source>Date Range</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/select-year-range/select-year-range.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="e541883c251041b07e82cffd236a97b4e3671424" datatype="html">
-        <source>Choose years to filter the data on this page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/select-year-range/select-year-range.component.ts</context>
           <context context-type="linenumber">1</context>

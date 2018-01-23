@@ -5093,6 +5093,22 @@
           Volume (€) per regione
         </target>
       </trans-unit>
+      <trans-unit id="41aac9cecddc9f345c263d3742192e68e227e413" datatype="html">
+        <source>
+          Menu
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            4
+          </context>
+        </context-group>
+        <target>
+          Menu
+        </target>
+      </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
         <source>
           Making Public Tenders More Transparent
@@ -5839,22 +5855,6 @@
         </context-group>
         <target>
           Intervallo di date
-        </target>
-      </trans-unit>
-      <trans-unit id="e541883c251041b07e82cffd236a97b4e3671424" datatype="html">
-        <source>
-          Choose years to filter the data on this page
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/select-year-range/select-year-range.component.ts
-          </context>
-          <context context-type="linenumber">
-            1
-          </context>
-        </context-group>
-        <target>
-          Scegli gli anni per filtrare i dati su questa pagina
         </target>
       </trans-unit>
       <trans-unit id="c6d56bff2f3b8ce41c532f2e014579458d2d2813" datatype="html">
