@@ -60,6 +60,9 @@ export class StartPage {
 				this.allportal = p;
 			}
 		});
+		this.portals.sort((a, b) => {
+			return a.name.localeCompare(b.name);
+		});
 	}
 
 }
