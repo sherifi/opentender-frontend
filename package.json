@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run server",
     "prebuild": "rimraf dist",
-    "build": "npm run build:styles:prod && npm run build:universal:prod && npm run build:app-client:prod && npm run build:server:prod",
+    "build": "npm run build:universal:prod && npm run build:styles:prod && npm run build:app-client:prod && npm run build:server:prod",
     "server": "node dist/server/index.js",
     "debug": "node --debug-brk dist/server/index.js",
     "lint": "tslint --project tsconfig.json \"src/**/*.ts\"",
@@ -40,7 +40,7 @@
     "build:standalone": "ng build --aot=false --app 0 --output-hashing=false",
     "build:standalone:prod": "ng build --prod --aot=false --app 0",
     "build:universal": "ng build --aot=false --app 1 --output-hashing=false",
-    "build:universal:prod": "ng build --prod --aot=false --app 1 --output-hashing=false"
+    "build:universal:prod": "ng build --prod --aot=false --app 1 --output-hashing=false --missingTranslation=ignore"
   },
   "dependencies": {
     "@angular-devkit/build-optimizer": "0.0.38",
