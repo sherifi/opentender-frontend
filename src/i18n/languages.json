@@ -1,9 +1,19 @@
 {
   "enabled": [
     {
+      "id": "bg",
+      "name": "български",
+      "eng": "Bulgarian"
+    },
+    {
       "id": "de",
       "name": "Deutsch",
       "eng": "German"
+    },
+    {
+      "id": "en",
+      "name": "English",
+      "eng": "English"
     },
     {
       "id": "it",
@@ -11,14 +21,14 @@
       "eng": "Italian"
     },
     {
+      "id": "lt",
+      "name": "Lietuviškai",
+      "eng": "Lithuanian"
+    },
+    {
       "id": "pt",
       "name": "Português",
       "eng": "Portuguese"
-    },
-    {
-      "id": "en",
-      "name": "English",
-      "eng": "English"
     }
   ],
   "disabled": [
@@ -26,11 +36,6 @@
       "id": "fr",
       "name": "Français",
       "eng": "French"
-    },
-    {
-      "id": "bg",
-      "name": "български",
-      "eng": "Bulgarian"
     },
     {
       "id": "cs",
@@ -76,11 +81,6 @@
       "id": "hu",
       "name": "Magyar",
       "eng": "Hungarian"
-    },
-    {
-      "id": "lt",
-      "name": "Lietuviškai",
-      "eng": "Lithuanian"
     },
     {
       "id": "lv",

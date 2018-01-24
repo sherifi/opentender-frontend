@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Esta plataforma faz parte do  projecto DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Esta plataforma faz parte do  projecto &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; DIGIWHIST  &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -100,7 +100,7 @@
           </context>
         </context-group>
         <target>
-          Pode seleccionar entre diferentes maneiras de interagir com os dados usando estes mosaicos. Eles estão interligados e por isso podem ser acedidos em toda a sua extensão de maneiras diferentes.
+          Pode selecionar entre diferentes maneiras de interagir com os dados usando estes mosaicos. Eles estão interligados e por isso podem ser acedidos de maneiras diferentes em toda a extensão dos seus dados.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -188,7 +188,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo oferece uma visão geral dos mercados de contratos públicos, ajudando os compradores e os proponentes a concorrerem de maneira mais eficaz.
+          Este painel de controlo oferece uma visão geral dos mercados de contratação pública, ajudando compradores e  proponentes a concorrerem de maneira mais eficaz.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -276,7 +276,7 @@
           </context>
         </context-group>
         <target>
-          Nesta secção pode pesquisar os dados por critérios do seu interesse. Os resultados são descarregáveis para um exame detalhado.
+          Nesta secção pode pesquisar os dados por critérios do seu interesse. Pode fazer download dos resultados para um exame detalhado.
         </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
@@ -332,7 +332,7 @@
           </context>
         </context-group>
         <target>
-          Descarregamento
+          Fazer download
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -348,7 +348,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar dados
+          Fazer download de dados
         </target>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
@@ -364,7 +364,7 @@
           </context>
         </context-group>
         <target>
-          Quer trabalhar com os dados? Pode descarregar todos os dados que servem de base a esta página.
+          Quer trabalhar com os dados? Pode fazer download de todos os dados que servem de base a esta página.
         </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
@@ -532,7 +532,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo permite-lhe analisar e aferir o grau de transparência em concursos de contratos públicos
+          Este painel de controlo permite-lhe analisar e aferir o grau de transparência em concursos  de contratação pública.
         </target>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -596,7 +596,7 @@
           </context>
         </context-group>
         <target>
-          Este painel de controlo permite-lhe analisar e aferir os riscos de integridade dos contratos públicos.
+          Este painel de controlo permite-lhe analisar e aferir os riscos de integridade da contratação pública.
         </target>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -738,6 +738,30 @@
           Convidamo-lo/a a visitar o &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
+      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
+        <source>
+          Change the language of this page
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            15
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            92
+          </context>
+        </context-group>
+        <target>
+          Mudar a língua desta página
+        </target>
+      </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
         <source>
           You can view the data on individual national portals by selecting a country below or explore
@@ -753,7 +777,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            22
           </context>
         </context-group>
         <target>
@@ -769,7 +793,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            27
           </context>
         </context-group>
         <context-group purpose="location">
@@ -1106,7 +1130,7 @@
           runtime
         </note>
         <target>
-          Resultado Médio de Boas Aquisições ao Longo do Tempo
+          Resultado Médio de Boa Contratação Pública ao Longo do Tempo
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
@@ -1125,7 +1149,7 @@
           runtime
         </note>
         <target>
-          Resultado Médio de Boas Aquisições por Sector
+          Resultado Médio de Boa Contratação Pública por Setor
         </target>
       </trans-unit>
       <trans-unit id="AverageScore" datatype="html">
@@ -1828,7 +1852,7 @@
           runtime
         </note>
         <target>
-          Descarregamento
+          Fazer download
         </target>
       </trans-unit>
       <trans-unit id="EUInstitutions" datatype="html">
@@ -1885,7 +1909,7 @@
           runtime
         </note>
         <target>
-          Requisitos económicos
+          Requisitos Económicos
         </target>
       </trans-unit>
       <trans-unit id="EligibleBidLanguages" datatype="html">
@@ -2132,7 +2156,7 @@
           runtime
         </note>
         <target>
-          Boa Aquisição
+          Boa Contratação Pública
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurementScore" datatype="html">
@@ -2151,7 +2175,7 @@
           runtime
         </note>
         <target>
-          Resultado de Boa Aquisição
+          Resultado de Boa Contratação Pública
         </target>
       </trans-unit>
       <trans-unit id="Home" datatype="html">
@@ -2379,7 +2403,7 @@
           runtime
         </note>
         <target>
-          Limite ao mesmo sector
+          Limite ao mesmo setor
         </target>
       </trans-unit>
       <trans-unit id="Loading…" datatype="html">
@@ -3329,7 +3353,7 @@
           runtime
         </note>
         <target>
-          Região do fornecedor
+          Região do Fornecedor
         </target>
       </trans-unit>
       <trans-unit id="Suppliers" datatype="html">
@@ -3614,7 +3638,7 @@
           runtime
         </note>
         <target>
-          Volume total de Concursos (€)
+          Volume Total de Concursos (€)
         </target>
       </trans-unit>
       <trans-unit id="Transparency" datatype="html">
@@ -3905,7 +3929,7 @@
           runtime
         </note>
         <target>
-          Aquisição conjunta ou centralizada
+          Contratação pública conjunta ou centralizada
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
@@ -3924,7 +3948,7 @@
           runtime
         </note>
         <target>
-          A aquisição centralizada sugere boa capacidade administrativa se o concurso for gerido por um órgão central de aquisições
+          A contratação pública centralizada sugere boa capacidade administrativa se o concurso for gerido por um órgão central de aquisições.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3962,7 +3986,7 @@
           runtime
         </note>
         <target>
-          O acordo-quadro sugere boa capacidade administrativa se o concurso estabelecer um acordo estrutural
+          O acordo-quadro sugere boa capacidade administrativa se o concurso estabelecer um acordo-quadro
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
@@ -4190,7 +4214,7 @@
           runtime
         </note>
         <target>
-          A não publicação do lançamento de concursos assinala um risco quando nenhum lançamento de concursos é publicado antes de uma adjudicação de contrato, reduzindo o conjunto potencial de proponentes.
+          A não publicação de lançamentos de concursos assinala um risco quando nenhum lançamento de concursos é publicado antes de uma adjudicação de contrato, reduzindo o conjunto potencial de proponentes.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
@@ -4342,7 +4366,7 @@
           runtime
         </note>
         <target>
-          Nova companhia assinala o risco de uma companhia muito jovem ganhar um concurso (com menos de 1 ano na altura da adjudicação).
+          Nova companhia assinala o risco de uma companhia muito jovem ganhar um concurso (com menos de 1 ano quando o ganhou).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
@@ -4380,7 +4404,7 @@
           runtime
         </note>
         <target>
-          O paraíso fiscal assinala um risco quando o fornecedor está localizado num país paraíso fiscal (baseado no índice de secretismo financeiro).
+          O paraíso fiscal assinala um risco quando o fornecedor está localizado num país paraíso fiscal (com base no índice de secretismo financeiro).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
@@ -4418,7 +4442,7 @@
           runtime
         </note>
         <target>
-          O comprimento da descrição dos produtos assinala o risco de a descrição dos produtos ser adaptada a uma companhia, quando a descrição for excessivamente longa.
+          O comprimento da descrição dos produtos assinala o risco de a descrição dos produtos ser adaptada a uma companhia, quando a descrição é excessivamente longa.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
@@ -4475,7 +4499,7 @@
           runtime
         </note>
         <target>
-          Parcela do contrato do vencedor
+          Parcela do contrato vencedor
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
@@ -4494,7 +4518,7 @@
           runtime
         </note>
         <target>
-          A parcela do contrato do vencedor é a parcela de valor do contrato ganho por uma dada companhia a partir de um dado comprador num dado ano.
+          A parcela do contrato vencedor é a parcela de valor do contrato ganha por uma dada companhia a partir de um dado comprador num dado ano.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
@@ -4570,7 +4594,7 @@
           runtime
         </note>
         <target>
-          Os critérios de avaliação assinalam o risco de usar critérios não quantitativos para avaliar proponentes que são subjectivos e facilmente manipuláveis.
+          Os critérios de avaliação assinalam o risco de usar critérios não quantitativos para avaliar proponentes que são subjetivos e facilmente manipuláveis.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.name" datatype="html">
@@ -4646,7 +4670,7 @@
           runtime
         </note>
         <target>
-          A taxa de publicação é a razão entre os gastos da aquisição pública anunciada e os gastos totais da aquisição pública de uma dada autoridade contraente.
+          A taxa de publicação é o rácio entre os gastos anunciados da contratação pública e os gastos totais da contratação pública de uma dada autoridade contraente.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
@@ -4665,7 +4689,7 @@
           runtime
         </note>
         <target>
-          Discrepâncias entre anúncios de pedido de concurso e de adjudicação de contrato
+          Discrepâncias entre anúncio de lançamento de concurso e anúncio de adjudicação de contrato
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
@@ -4684,7 +4708,7 @@
           runtime
         </note>
         <target>
-          Discrepâncias entre anúncios de pedido de concurso e de adjudicação de contratos é a taxa de campos com valores diferentes nos anúncios de lançamento de concurso e de adjudicação de contratos relacionados com um dado concurso (com base nas últimas versões publicadas).
+          Discrepâncias entre anúncio de lançamento de concurso e anúncio de adjudicação de contrato para um dado concurso é o rácio de campos com valores diferentes no anúncio de lançamento desse concurso e no anúncio de adjudicação do respetivo contrato (com base nas últimas versões publicadas).
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
@@ -4722,7 +4746,7 @@
           runtime
         </note>
         <target>
-          O número de campos-chave em falta é a taxa de campos com valores em falta no lançamento do concurso e anúncio da adjudicação do contrato referentes a um dado concurso (com base nas versões publicadas mais recentemente).
+          O número de campos-chave em falta para um dado concurso é o rácio de campos com valores em falta no anúncio de lançamento desse concurso e no anúncio de adjudicação do respetivo contrato (com base nas mais recentes versões publicadas).
         </target>
       </trans-unit>
       <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
@@ -4818,7 +4842,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar dados
+          Fazer download de dados
         </target>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -4834,7 +4858,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar dados como CSV
+          Fazer download de dados como CSV
         </target>
       </trans-unit>
       <trans-unit id="63bb9f00af8a5a2cef39a6df68b9d00700c5e6f8" datatype="html">
@@ -4858,7 +4882,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar dados como JSON
+          Fazer download de dados como JSON
         </target>
       </trans-unit>
       <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
@@ -5441,22 +5465,6 @@
           Facebook
         </target>
       </trans-unit>
-      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
-        <source>
-          Change the language of this page
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/footer/footer.component.ts
-          </context>
-          <context context-type="linenumber">
-            92
-          </context>
-        </context-group>
-        <target>
-          Mudar a língua desta página
-        </target>
-      </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
         <source>
           This project has received funding from the
@@ -5482,7 +5490,7 @@
           </context>
         </context-group>
         <target>
-          Este projecto recebeu financiamento do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; programa de pesquisa e inovação Horizonte 2020 da União Europeia &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sob acordo de subvenção &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Nº 645852 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Este projecto recebeu financiamento do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; programa de pesquisa e inovação Horizon 2020 da União Europeia &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sob acordo de subvenção &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Nº 645852 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5894,7 +5902,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar dados como JSON gzipped
+          Fazer download de dados como JSON gzipped
         </target>
       </trans-unit>
       <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
@@ -5916,7 +5924,7 @@
           </context>
         </context-group>
         <target>
-          O dsecarregamento contém &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; entradas e o tamanho do ficheiro comprimido será aproximadamente acima de &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
+          O download contém &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; entradas e o tamanho do ficheiro comprimido será aproximadamente acima de &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -5932,7 +5940,7 @@
           </context>
         </context-group>
         <target>
-          Descarregar ficheiro JSON.GZ
+          Fazer download de ficheiro JSON.GZ
         </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -5972,7 +5980,7 @@
           </context>
         </context-group>
         <target>
-          Descarregamento pedido
+          Download pedido
         </target>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
@@ -6108,7 +6116,7 @@
           </context>
         </context-group>
         <target>
-          Aproximadamente 15% do Produto Interno Bruto da UE é gasto todos os anos na aquisição de produtos e serviços, e algumas estimativas indicam que a corrupção aumenta o custo de contratos governamentais em 20-25%. O que é ainda mais preocupante é que a corrupção na aquisição pública  compromete objetivos públicos com grande apoio, como a construção de auto-estradas seguras, edifícios escolares de elevada qualidade, ou a entrega de medicamentos a tempo.
+          Aproximadamente 15% do Produto Interno Bruto da UE é gasto todos os anos na contratação pública de produtos e serviços, e algumas estimativas indicam que a corrupção aumenta o custo de contratos governamentais em 20-25%. O que é ainda mais preocupante é que a corrupção na contratação pública compromete objetivos públicos com grande apoio, como a construção de auto-estradas seguras, edifícios escolares de elevada qualidade, ou a entrega de medicamentos a tempo.
         </target>
       </trans-unit>
       <trans-unit id="9dd624a60198301ed4ee85c40cbf879782f979dc" datatype="html">
@@ -6124,7 +6132,7 @@
           </context>
         </context-group>
         <target>
-          Espera-se que o fornecimento gratuito de informações detalhadas sobre as aquisições públicas a todas as partes interessadas, num formato fácil de usar, aumente a transparência dos mercados, diminua os custos das transações, e facilite a responsabilidade do governo. Daí que  opentender.eu, uma plataforma de aquisição central, pública e aberta, tenha sido criada com o fim de contribuir para uma melhor relação qualidade-preço nas aquisições públicas , bem como o de promover a integridade em todo o setor público.
+          Espera-se que o fornecimento gratuito de informações detalhadas sobre contratação pública a todas as partes interessadas, num formato fácil de usar, aumente a transparência dos mercados, diminua os custos das transações, e facilite a responsabilização do governo. Daí que  opentender.eu, uma plataforma de contratação central, pública e aberta, tenha sido criada com o fim de contribuir para uma melhor relação qualidade-preço na contratação pública, bem como o de aumentar a integridade em todo o setor público.
         </target>
       </trans-unit>
       <trans-unit id="b5ff828d47f8aea76c4174fecf3c180f92366800" datatype="html">
@@ -6156,7 +6164,7 @@
           </context>
         </context-group>
         <target>
-          DIGIWHIST, um projeto financiado pelo Horizon 2020 da UE, junta seis institutos europeus de pesquisa, com o objetivo de fortalecer a sociedade no combate à corrupção no setor público. Aumentará simultaneamente a confiança nos governos e melhorará a eficiência dos gastos públicos na Europa através da coleção, estruturação, análise e disseminação sistemáticas de informação sobre aquisições públicas e sobre  mecanismos que aumentam a responsabilidade de funcionários públicos em toda a UE e em alguns países vizinhos.
+          DIGIWHIST, um projeto financiado pelo Horizon 2020 da UE, junta seis institutos europeus de pesquisa, com o objetivo de fortalecer a sociedade no combate à corrupção no setor público. Aumentará simultaneamente a confiança nos governos e melhorará a eficiência dos gastos públicos na Europa através da recolha, estruturação, análise e disseminação sistemáticas de informação sobre contratação pública e sobre mecanismos que aumentam a responsabilização de funcionários públicos em toda a UE e nalguns países vizinhos.
         </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
@@ -6172,7 +6180,7 @@
           </context>
         </context-group>
         <target>
-          O Departamento de Sociologia em Cambridge tem um perfil distintivo como um centro de excelência pelo seu trabalho notável em teoria social e em pesquisa sociológica empírica. A sociologia em Cambridge é também praticada e ensinada num contexto interdisciplinar, com ligações particularmente fortes com a política, psicologia, antropologia, economia e história.
+          O Departamento de Sociologia em Cambridge tem um perfil distintivo como um centro de excelência pelo seu trabalho notável em teoria social e em pesquisa sociológica empírica. A sociologia em Cambridge é também praticada e ensinada num contexto interdisciplinar, com ligações particularmente fortes à política, psicologia, antropologia, economia e história.
         </target>
       </trans-unit>
       <trans-unit id="feefffc590f4a0607d1a2e97f6db8e4f72578c0e" datatype="html">
@@ -6232,7 +6240,7 @@
           </context>
         </context-group>
         <target>
-          A Datlab é uma companhia checa de IT que se especializa na extração de dados e no tratamento de empregos. Desde 2015 que vem tratando  regularmente dados de 30 diversos websites e sistemas. Trabalha em estreita ligação com o setor NGO e executa vários serviços importantes de dados livres, como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (base de dados de aquisições), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitor de financiamento de partido político).
+          A Datlab é uma companhia de IT checa que se especializa na extração de dados e no tratamento de empregos. Desde 2015 que vem tratando regularmente dados de 30 diversos websites e sistemas. Trabalha em estreita ligação com o setor NGO e executa vários serviços importantes de dados livres, como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (base de dados de contratação), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitor de financiamento de partidos políticos).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6312,7 +6320,7 @@
           </context>
         </context-group>
         <target>
-          A nomenclatura das unidades territoriais para a estatística (NUTS) é um padrão de geocódigo que efetua uma decomposição do território económico da União Europeia em unidades territoriais para a produção de estatística regional e para visar as intervenções políticas a um nível regional. Leia mais em
+          A nomenclatura das unidades territoriais para a estatística (NUTS) é um padrão de geocódigo que permite efetuar uma decomposição do território económico da União Europeia em unidades territoriais para a produção de estatística regional e para ter na mira as intervenções políticas a um nível regional. Leia mais em
         </target>
       </trans-unit>
       <trans-unit id="d7a05d2dcbbc43e6d28a3b0ec0c7c4dea2479d5d" datatype="html">
@@ -6352,7 +6360,7 @@
           </context>
         </context-group>
         <target>
-          O Vocabulário Comum de Aquisição (VCO) procura padronizar, por meio de um único sistema de classificação para aquisições públicas, os termos usados por autoridades e entidades contraentes para descrever o assunto dos contratos. Leia mais em
+          O Vocabulário Comum de Contratação (CPV) procura padronizar, por meio de um único sistema de classificação para a contratação pública, os termos usados por autoridades e entidades contraentes para descrever o tema dos contratos. Leia mais em
         </target>
       </trans-unit>
       <trans-unit id="10498cb7788dfb689cb7ae44b02c8171cb36aaa3" datatype="html">
@@ -6432,7 +6440,7 @@
           </context>
         </context-group>
         <target>
-          O resultado da Integridade da Aquisição é a média dos Indicadores da Integridade de Aquisição.
+          O resultado da Integridade da Contratação é a média dos Indicadores de Integridade de Contratação .
         </target>
       </trans-unit>
       <trans-unit id="d6f50cb3ff1e50fc4302cfef784a99ad9b374193" datatype="html">
@@ -6464,7 +6472,7 @@
           </context>
         </context-group>
         <target>
-          O resultado da Capacidade Administrativa é a média dos Indicadores da Capacidade Administrativa.
+          O resultado da Capacidade Administrativa é a média dos Indicadores de Capacidade Administrativa.
         </target>
       </trans-unit>
       <trans-unit id="a760b1133506b725c66251807a4cb613b1b3718b" datatype="html">
@@ -6480,7 +6488,7 @@
           </context>
         </context-group>
         <target>
-          Resultado de Boas Aquisições
+          Resultado de Boa Contratação
         </target>
       </trans-unit>
       <trans-unit id="5c444086165505c6a44674d6c1b45cfa6c3dca57" datatype="html">
@@ -6496,7 +6504,7 @@
           </context>
         </context-group>
         <target>
-          O resultado abrangente das boas aquisições é a média dos três resultados compostos acima.
+          O resultado abrangente da boa contratação é a média dos três resultados compostos acima.
         </target>
       </trans-unit>
       <trans-unit id="2eb6671f8d1299f1c00e65bcd5f2fe5d321b2095" datatype="html">
@@ -6544,7 +6552,7 @@
           </context>
         </context-group>
         <target>
-          O Opentender assenta em sólida colheita de dados e em software de processamento que junta dados de aquisições de cerca de 20 fontes diversas. Quando não há quaisquer dados livres disponíveis, extraímos a informação de milhares de páginas web para chegar a uma base de dados estruturada. Depois disso agrupamos todas as publicações que descrevem cada concurso e acabamos por criar uma imagem final que descreve com muita precisão o concurso particular. Os sistemas de fontes e os dados diferem de país para país, de modo que é criado separadamente um segmento de software próprio para cada fonte.
+          O Opentender assenta numa sólida recolha de dados e em software de processamento que junta dados de contratação de cerca de 20 fontes diversas. Quando não há quaisquer dados livres disponíveis, extraímos a informação de milhares de páginas web para chegar a uma base de dados estruturada. Depois disso agrupamos todas as publicações que descrevem cada concurso e acabamos por criar uma imagem final que descreve com muita precisão o concurso específico. Os sistemas de fontes e os dados diferem de país para país, de modo que é criado separadamente um segmento de software próprio para cada fonte.
         </target>
       </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
@@ -6591,7 +6599,7 @@
           </context>
         </context-group>
         <target>
-          O Opentender usa indicadores de desempenho de aquisições públicas baseados num amplo conjunto de análises científicas, sintetizadas e afinadas na nossa própria pesquisa: para indicadores de capacidade administrativa, veja&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Documento de Métodos em Indicadores de Qualidade Administrativa &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de transparência, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Documento de Métodos sobre a Transparência Fiscal &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de integridade, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Documento de Métodos sobre Indicadores de Risco de Corrupção &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.  O resultado abrangente das boas aquisições é a simples média dos três resultados compostos. Todos estes indicadores baseiam-se em dados objetivos, são diretamente acionáveis por atores públicos e privados, e são calculados de forma transparente e inequívoca. Se encontrar algum erro nas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; fórmulas &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, por favor notifique-nos em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          O Opentender usa indicadores de desempenho de contratação pública baseados num amplo conjunto de análises científicas, sintetizadas e afinadas na nossa própria pesquisa: para indicadores de capacidade administrativa, veja&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Documento de Métodos sobre Indicadores de Qualidade Administrativa &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de transparência, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Documento de Métodos sobre a Transparência Fiscal &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de integridade, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Documento de Métodos sobre Indicadores de Risco de Corrupção &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.  O resultado abrangente da boa contratação é a média simples dos três resultados compostos. Todos estes indicadores baseiam-se em dados objetivos, são diretamente acionáveis por atores públicos e privados, e são calculados de forma transparente e inequívoca. Se encontrar algum erro nas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; fórmulas &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, por favor notifique-nos em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6677,7 +6685,7 @@
           </context>
         </context-group>
         <target>
-          Os painéis de controlo permitem-lhe visualizações com alta qualidade de dados de aquisições em quatro categorias:
+          Os painéis de controlo oferecem-lhe visualizações com alta qualidade de dados de contratação em quatro categorias:
         </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
@@ -6693,7 +6701,7 @@
           </context>
         </context-group>
         <target>
-          A função da pesquisa é uma ferramenta poderosa para detalhar os dados e encontrar um concurso, comprador, ou fornecedor específicos de que se esteja à procura. Pode também criar pesquisas individuais personalizadas combinando mais de 30 parâmetros adicionais, incluindo os indicadores.
+          A função da pesquisa é uma ferramenta poderosa para detalhar os dados e encontrar um concurso, comprador, ou fornecedor específicos de que esteja à procura. Pode também criar pesquisas individuais personalizadas combinando mais de 30 parâmetros adicionais, incluindo os indicadores.
         </target>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
@@ -6725,7 +6733,7 @@
           </context>
         </context-group>
         <target>
-          Para permitir acesso total, cada componente (setores, ramos, regiões, companhias, autoridades, e concursos) da base de dados do Opentender tem um perfil individual que mostra informação detalhada. Dependendo do seu tipo, o perfil mostra visualizações diversas tais como gráficos, mapas, e tabelas que lhe permitem ter uma profunda compreensão da base de dados. Pode visualizar os perfis clicando simplesmente no nome respetivo.
+          Para permitir acesso total, cada componente (setores, ramos, regiões, companhias, autoridades e concursos) da base de dados do Opentender tem um perfil individual que mostra informação detalhada. Dependendo do tipo de perfil, este mostra visualizações diversas tais como gráficos, mapas, e tabelas que lhe permitem ter uma profunda compreensão da base de dados. Pode visualizar os perfis clicando simplesmente no nome respetivo.
         </target>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
@@ -6991,7 +6999,7 @@
           </context>
         </context-group>
         <target>
-          Restabelecer pesos
+          Restabelecer Pesos
         </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
@@ -7111,7 +7119,7 @@
           </context>
         </context-group>
         <target>
-          JSON hierárquico
+          JSON Hierárquico
         </target>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
@@ -7243,7 +7251,7 @@
           </context>
         </context-group>
         <target>
-          * Devido à quantidade de entradas e ao facto que muitos analisadores JSON não suportam o tamanho do ficheiro, os dados JSON do Concurso DIGIWHIST foram também salvos como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Devido à quantidade de entradas e ao facto de muitos analisadores JSON não suportarem  o tamanho do ficheiro, os dados JSON do Concurso DIGIWHIST foram também salvos como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7265,7 +7273,7 @@
           </context>
         </context-group>
         <target>
-          A estrutura das entradas é destacada num &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Ficheiro JSON Schema &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          A estrutura das entradas é delineada num &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Ficheiro JSON Schema &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7377,7 +7385,7 @@
           </context>
         </context-group>
         <target>
-          A OKF DE não é responsável por quaisquer conteúdos ligados ou mencionados a partir destas páginas. Se ocorrer algum dano pelo uso da informação aí apresentada, apenas o autor das respetivas páginas pode ser responsabilizado, não aquele que se ligou a essas páginas.
+          A OKF DE não é responsável por quaisquer conteúdos ligados ou referidos a partir destas páginas. Se ocorrer algum dano pelo uso da informação aí apresentada, apenas o autor das respetivas páginas pode ser responsabilizado, não aquele que se ligou a essas páginas.
         </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
@@ -7409,7 +7417,7 @@
           </context>
         </context-group>
         <target>
-          A informação e opiniões apresentadas neste website são do(s) autor(es) apenas e não refletem qualquer opinião coletiva do consórcio DIGIWHIST, nem refletem a opinião oficial da Comissão Europeia. Nem a Comissão Europeia nem qualquer Pessoa agindo em nome da Comissão Europeia é responsável pelo uso que se possa dar à Informação publicada neste website.
+          A informação e as opiniões apresentadas neste website são apenas as do autor(es),  e não refletem qualquer opinião coletiva do consórcio DIGIWHIST, nem refletem a opinião oficial da Comissão Europeia. Nem a Comissão Europeia nem qualquer Pessoa agindo em nome da Comissão Europeia é responsável pelo uso que se possa dar à Informação publicada neste website.
         </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
@@ -7446,7 +7454,7 @@
           </context>
         </context-group>
         <target>
-          A Fundação do Conhecimento Aberto Alemanha aprecia a sua visita ao nosso website e o seu interesse  no projeto Horizonte 2020 DIGIWHIST. Levamos muito a sério a proteção dos seus dados pessoais  e aderimos estritamente às provisões das leis atuais sobre privacidade de dados (por exemplo, a Lei da Proteção de Dados Alemã (BDSG), a Lei Telemedia (TMG) e a Lei da Concorrência Injusta (UWG)).
+          A Fundação do Conhecimento Aberto Alemanha aprecia a sua visita ao nosso website e o seu interesse no projeto DIGIWHIST do Horizon 2020. Levamos muito a sério a proteção dos seus dados pessoais  e aderimos estritamente às provisões das leis atuais sobre privacidade de dados (por exemplo, a Lei da Proteção de Dados Alemã (BDSG), a Lei Telemedia (TMG) e a Lei da Concorrência Injusta (UWG)).
         </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
@@ -7478,7 +7486,7 @@
           </context>
         </context-group>
         <target>
-          Recolha anónima de dados
+          1. Recolha anónima de dados
         </target>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
@@ -7494,7 +7502,7 @@
           </context>
         </context-group>
         <target>
-          Na maior parte dos casos, pode visitar o website Opentender.eu sem que nós lhe peçamos para fornecer dados pessoais.
+          Na maior parte dos casos pode visitar o website Opentender.eu sem que nós lhe peçamos para fornecer dados pessoais.
         </target>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
@@ -7558,7 +7566,7 @@
           </context>
         </context-group>
         <target>
-          página visitada, quem refere
+          página visitada, quem a refere
         </target>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
@@ -7670,7 +7678,7 @@
           </context>
         </context-group>
         <target>
-          Nenhum dado é exportado ou se processa fora da Área Económica Europeia
+          Nenhum dado é exportado ou processado fora da Área Económica Europeia
         </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
@@ -7718,7 +7726,7 @@
           </context>
         </context-group>
         <target>
-          Não usamos o endereço IP ou cookies para o(a) identificar pessoalmente. Usamos o sistema de análise da rede com o objetivo de aumentar a eficiência no nosso website.
+          Não usamos o endereço IP ou cookies para o/a identificar pessoalmente. Usamos o sistema de análise da rede com o objetivo de aumentar a eficiência no nosso website.
         </target>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
@@ -7734,7 +7742,7 @@
           </context>
         </context-group>
         <target>
-          A maior parte dos navegadores aceita cookies  automaticamente. Contudo, tal pode ser impedido por si de forma manual, mudando as definições no seu navegador para garantir que os cookies deixarão de ser aceites. Encontrará detalhes a este respeito nas instruções fornecidas pelo fabricante do seu navegador.
+          A maior parte dos navegadores aceita cookies  automaticamente. Contudo, tal pode ser impedido por si de forma manual, mudando as definições no seu navegador para garantir que os cookies deixam de ser aceites. Encontrará detalhes a este respeito nas instruções fornecidas pelo fabricante do seu navegador.
         </target>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
@@ -7814,7 +7822,7 @@
           </context>
         </context-group>
         <target>
-          Segurança
+          8. Segurança
         </target>
       </trans-unit>
       <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
@@ -7878,7 +7886,7 @@
           </context>
         </context-group>
         <target>
-          Para além disso, está no seu direito de revogar em qualquer altura o consentimento dado respetivamente, revogação essa válida para o futuro.
+          Para além disso, tem o direito de revogar em qualquer altura o consentimento dado antes, revogação essa válida para o futuro.
         </target>
       </trans-unit>
       <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
@@ -8102,7 +8110,7 @@
           </context>
         </context-group>
         <target>
-          Não há quaisquer Indicadores para este Concurso
+          Não há Indicadores para este Concurso
         </target>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
@@ -8398,7 +8406,7 @@
           </context>
         </context-group>
         <target>
-          Prazo Limite dos Documentos
+          Prazo Limite de Documentos
         </target>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
@@ -8614,7 +8622,7 @@
           </context>
         </context-group>
         <target>
-          Data de Decisão da Adjudicação
+          Data de Decisão de Adjudicação
         </target>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
@@ -8758,7 +8766,7 @@
           </context>
         </context-group>
         <target>
-          Número do Lote
+          Número de Lote
         </target>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
@@ -9190,7 +9198,7 @@
           </context>
         </context-group>
         <target>
-          Aquisição Central
+          Contratação Central
         </target>
       </trans-unit>
       <trans-unit id="e2dc172acb02aa39d879ea4153f54ce0aff6e2b1" datatype="html">
@@ -9206,7 +9214,7 @@
           </context>
         </context-group>
         <target>
-          Abrangido pelo Gpa
+          Abrangido por Gpa
         </target>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
@@ -9222,7 +9230,7 @@
           </context>
         </context-group>
         <target>
-          Aquisição Conjunta
+          Contratação Conjunta
         </target>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">

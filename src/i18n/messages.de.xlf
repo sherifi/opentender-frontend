@@ -738,6 +738,30 @@
           Wir laden Sie ein, &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; zu besuchen.
         </target>
       </trans-unit>
+      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
+        <source>
+          Change the language of this page
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/start/start.component.ts
+          </context>
+          <context context-type="linenumber">
+            15
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            92
+          </context>
+        </context-group>
+        <target>
+          Diese Seite in anderer Sprache anzeigen
+        </target>
+      </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
         <source>
           You can view the data on individual national portals by selecting a country below or explore
@@ -753,7 +777,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            22
           </context>
         </context-group>
         <target>
@@ -769,7 +793,7 @@
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            27
           </context>
         </context-group>
         <context-group purpose="location">
@@ -5439,22 +5463,6 @@
         </context-group>
         <target>
           Facebook
-        </target>
-      </trans-unit>
-      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
-        <source>
-          Change the language of this page
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/footer/footer.component.ts
-          </context>
-          <context context-type="linenumber">
-            92
-          </context>
-        </context-group>
-        <target>
-          Diese Seite in anderer Sprache anzeigen
         </target>
       </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">

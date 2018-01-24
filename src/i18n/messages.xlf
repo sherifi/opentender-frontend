@@ -332,18 +332,29 @@
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
+        <source>Change the language of this page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
         <source>You can view the data on individual national portals by selecting a country below or explore <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>all available data<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> available data.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
         <source>Nr. of Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/graphs/bar/companies.component.ts</context>
@@ -2324,13 +2335,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
           <context context-type="linenumber">83</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
-        <source>Change the language of this page</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">

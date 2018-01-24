@@ -1,5 +1,5 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file datatype="plaintext" original="ng2.template" source-language="en" target-language="it">
+  <file datatype="plaintext" original="ng2.template" source-language="en" target-language="lt">
     <body>
       <trans-unit id="9fa46117d630454a234d2a4657f425a63bfe4b9d" datatype="html">
         <source>
@@ -20,7 +20,7 @@
           Banner Slogan Main Page
         </note>
         <target>
-          Rendere gli appalti pubblici più trasparenti
+          Siekiame atverti viešąsias sutartis
         </target>
       </trans-unit>
       <trans-unit id="e6027cd74254062aa2c9e4c9239af8ba0c72c7cd" datatype="html">
@@ -39,7 +39,7 @@
           </context>
         </context-group>
         <target>
-          Benvenuti nel portale &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
+          Sveiki atvykę! &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
         </target>
       </trans-unit>
       <trans-unit id="512bf9c0d4f7525c747098d506a7b11c2dd956b5" datatype="html">
@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Questa piattaforma è parte del &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; progetto DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Tėvų sektorius
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -84,7 +84,7 @@
           </context>
         </context-group>
         <target>
-          Maggiori informazioni sulla legislazione sugli appalti al sito
+          Daugiau apie paraiškų teisinį reguliavima
         </target>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
@@ -100,7 +100,8 @@
           </context>
         </context-group>
         <target>
-          Puoi scegliere tra diversi modi di elaborare i dati usando queste schede. Le schede sono interconnesse, quindi, è possibile accedere alla stessa mole di dati nella loro completezza in diversi modi.
+          You can select between different ways of interacting with the data using these tiles. They are interconnected so the same full data depth can be accessed in different ways.
+Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failus. Jie yra tarpusavyje susiję, todėl tie patys duomenys gali būti naudojami skirtingais būdais.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -148,7 +149,7 @@
           </context>
         </context-group>
         <target>
-          Analisi del mercato
+          Rinkos tyrimas
         </target>
       </trans-unit>
       <trans-unit id="4fb1c019f7b2bc0aeb553bfa7719dde5aa299c1b" datatype="html">
@@ -164,7 +165,7 @@
           </context>
         </context-group>
         <target>
-          Panoramica dei dati
+          Duomenų apžvalga
         </target>
       </trans-unit>
       <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
@@ -188,7 +189,7 @@
           </context>
         </context-group>
         <target>
-          Questa scheda offre una panoramica dei mercati degli appalti pubblici, aiutando gli acquirenti e gli offerenti a presentare offerte più efficaci.
+          Šis duomenų skydas suteikia viešųjų pirkų apžvalgą taip padedant pirkėjams ir siūlytojams sudaryti sutartis efektyviau.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -244,7 +245,7 @@
           </context>
         </context-group>
         <target>
-          Cerca
+          Paieška
         </target>
       </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
@@ -260,7 +261,7 @@
           </context>
         </context-group>
         <target>
-          Cerca e trova
+          Ieškok ir rask
         </target>
       </trans-unit>
       <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
@@ -276,7 +277,7 @@
           </context>
         </context-group>
         <target>
-          In questa sezione puoi cercare i dati secondo i criteri di tuo interesse. I risultati sono scaricabili per un esame dettagliato.
+          Šioje sekcijoje galite rasti duomenis pagal reikiamus kriterijus. Rezultatai yra atsiunčiami detaliai.
         </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
@@ -332,7 +333,7 @@
           </context>
         </context-group>
         <target>
-          Download
+          Atsisiųsti
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -348,7 +349,7 @@
           </context>
         </context-group>
         <target>
-          Scaricare i dati
+          Duomenų atsisiuntimas
         </target>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
@@ -364,7 +365,7 @@
           </context>
         </context-group>
         <target>
-          Vuoi lavorare con i dati? Puoi scaricare tutti i dati su cui è costruita questa pagina.
+          Norite dirbti su duomenimis? Galite atsisiųsti visus duomenis iš šio puslapio.
         </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
@@ -420,7 +421,7 @@
           </context>
         </context-group>
         <target>
-          Indicatori
+          Rodikliai
         </target>
       </trans-unit>
       <trans-unit id="695caafe46b918dce47fc32933810772fac59cc1" datatype="html">
@@ -444,7 +445,7 @@
           </context>
         </context-group>
         <target>
-          Capacità amministrativa
+          Administraciniai pajėgumai
         </target>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
@@ -468,7 +469,7 @@
           </context>
         </context-group>
         <target>
-          Questa scheda consente di analizzare e confrontare la capacità amministrativa degli acquirenti.
+          Prietaisų skydas leidžia analizuoti ir nustatyti pirkėjo administracinius pajėgumus.
         </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -508,7 +509,7 @@
           </context>
         </context-group>
         <target>
-          Trasparenza
+          Skaidrumas
         </target>
       </trans-unit>
       <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
@@ -532,7 +533,7 @@
           </context>
         </context-group>
         <target>
-          Questa scheda consente di analizzare e confrontare il grado di trasparenza negli appalti pubblici.
+          Prietaisų skydas leidžia analizuoti ir nustatyti skaidrumo lygį viešųjų pirkimų sutartyse.
         </target>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -572,7 +573,7 @@
           </context>
         </context-group>
         <target>
-          Integrità
+          Integralumas
         </target>
       </trans-unit>
       <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
@@ -596,7 +597,7 @@
           </context>
         </context-group>
         <target>
-          Questa scheda consente di analizzare e confrontare i rischi di integrità negli appalti pubblici.
+          Prietaisų skydas leidžia analizuoti ir nustatyti viešųjų pirkimų integralumo rizikas.
         </target>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -612,7 +613,7 @@
           </context>
         </context-group>
         <target>
-          Non sai dove andare? Comincia qui …
+          Neapsisprendei nuo ko pradėti? Pradėk čia...
         </target>
       </trans-unit>
       <trans-unit id="b07a7e6f8a93b42c5499b8e0bde24b7260dc8f52" datatype="html">
@@ -628,7 +629,7 @@
           </context>
         </context-group>
         <target>
-          Scopri di cosa si tratta
+          Susipažink
         </target>
       </trans-unit>
       <trans-unit id="dab1af6ba43c8dd113734ea6cb57300ed6b88c42" datatype="html">
@@ -660,7 +661,7 @@
           </context>
         </context-group>
         <target>
-          Informazioni su Opentender
+          Apie Opentender
         </target>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -676,7 +677,7 @@
           </context>
         </context-group>
         <target>
-          Benvenuto su Opentender
+          Sveiki atvykę į Opentender
         </target>
       </trans-unit>
       <trans-unit id="f04950f0b9fc8d772223961210585c1de1eb8449" datatype="html">
@@ -692,7 +693,7 @@
           </context>
         </context-group>
         <target>
-          Questa piattaforma consente di cercare e analizzare i dati di gara di 35 giurisdizioni (28 stati membri dell'UE, Norvegia, istituzioni dell'UE, Islanda, Svizzera, Serbia, Georgia e Armenia).
+          Ši platforma leidžia ieškoti sutarčių duomenų iš 35 jurisdikcijų (28 ES šalys narės, Norvegija, ES institucijos, Islandija, Šveicarija, Serbija, Gruzija ir Armėnija).
         </target>
       </trans-unit>
       <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
@@ -711,7 +712,7 @@
           </context>
         </context-group>
         <target>
-          Sembra che tu stia navigando da &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
+          Atrodo, kad jūs naršote iš &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -735,7 +736,7 @@
           </context>
         </context-group>
         <target>
-          Ti invitiamo a visitare &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Kviečiame aplankyti&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -759,7 +760,7 @@
           </context>
         </context-group>
         <target>
-          Cambia la lingua di questa pagina
+          Pakeisti puslapio kalbą
         </target>
       </trans-unit>
       <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
@@ -781,7 +782,7 @@
           </context>
         </context-group>
         <target>
-          È possibile visualizzare i dati sui singoli portali nazionali selezionando un paese in basso o esplorando &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;tutti i dati disponibili&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; dati disponibili.
+          Galite peržiūrėti duomenis asmeniniame portale pasirinkdami šalį arba ieškodami &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;visi galimi duomenys&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; pasiekiami duomenys
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -845,7 +846,7 @@
           </context>
         </context-group>
         <target>
-          N. di Gare
+          Paraiškos nr.
         </target>
       </trans-unit>
       <trans-unit id="About" datatype="html">
@@ -864,7 +865,7 @@
           runtime
         </note>
         <target>
-          Informazioni
+          Apie
         </target>
       </trans-unit>
       <trans-unit id="AboutOpentender" datatype="html">
@@ -883,7 +884,7 @@
           runtime
         </note>
         <target>
-          Informazioni su Opentender
+          Apie Opentender
         </target>
       </trans-unit>
       <trans-unit id="AddSearchFields" datatype="html">
@@ -902,7 +903,7 @@
           runtime
         </note>
         <target>
-          Aggiungi campi di ricerca
+          Pridėti paieškos laukus
         </target>
       </trans-unit>
       <trans-unit id="AdditionalInformation" datatype="html">
@@ -921,7 +922,7 @@
           runtime
         </note>
         <target>
-          Informazioni aggiuntive
+          Papildoma informacija
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacity" datatype="html">
@@ -940,7 +941,7 @@
           runtime
         </note>
         <target>
-          Capacità amministrativa
+          Administracinis pajėgumas
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicator" datatype="html">
@@ -959,7 +960,7 @@
           runtime
         </note>
         <target>
-          Indicatore di capacità amministrativa
+          Administracinio pajėgumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="AdministrativeCapacityIndicators" datatype="html">
@@ -978,7 +979,7 @@
           runtime
         </note>
         <target>
-          Indicatori di capacità amministrativa
+          Administacinio pajėgumo rodikliai
         </target>
       </trans-unit>
       <trans-unit id="Administrators" datatype="html">
@@ -997,7 +998,7 @@
           runtime
         </note>
         <target>
-          Amministratori
+          Administratoriai
         </target>
       </trans-unit>
       <trans-unit id="AllData" datatype="html">
@@ -1016,7 +1017,7 @@
           runtime
         </note>
         <target>
-          Tut i dati
+          Visi duomenys
         </target>
       </trans-unit>
       <trans-unit id="AllDigiwhistdata" datatype="html">
@@ -1035,7 +1036,7 @@
           runtime
         </note>
         <target>
-          Tutti i dati di Digiwhist
+          Visi Digiwhist duomenys
         </target>
       </trans-unit>
       <trans-unit id="AppealBodyName" datatype="html">
@@ -1054,7 +1055,7 @@
           runtime
         </note>
         <target>
-          Nome dell'ente per il ricorso
+          Apeliuojančio asmens pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="Authorities" datatype="html">
@@ -1073,7 +1074,7 @@
           runtime
         </note>
         <target>
-          Autorità
+          Institucijos
         </target>
       </trans-unit>
       <trans-unit id="Authority" datatype="html">
@@ -1092,7 +1093,7 @@
           runtime
         </note>
         <target>
-          Autorità
+          Institucija
         </target>
       </trans-unit>
       <trans-unit id="Average%ofTenders" datatype="html">
@@ -1111,7 +1112,7 @@
           runtime
         </note>
         <target>
-          % media di Gare
+          Paraiškų vidurkis %
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
@@ -1130,7 +1131,7 @@
           runtime
         </note>
         <target>
-          Punteggio medio dell'imparzialità dell'appalto nel tempo
+          Vidutinis gero viešojo pirkimo balas per laiką
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
@@ -1149,7 +1150,7 @@
           runtime
         </note>
         <target>
-          Punteggio medio dell'imparzialità dell'appalto per settore
+          Vidutinis gero viešojo pirkimo balas sektoriuje
         </target>
       </trans-unit>
       <trans-unit id="AverageScore" datatype="html">
@@ -1168,7 +1169,7 @@
           runtime
         </note>
         <target>
-          Punteggio medio
+          Vidutinis balas
         </target>
       </trans-unit>
       <trans-unit id="AverageScoreof" datatype="html">
@@ -1187,7 +1188,7 @@
           runtime
         </note>
         <target>
-          Punteggio medio di
+          Vidutinis balas
         </target>
       </trans-unit>
       <trans-unit id="AverageValue(€)" datatype="html">
@@ -1206,7 +1207,7 @@
           runtime
         </note>
         <target>
-          Valore Medio (€)
+          Vidutinė vertė
         </target>
       </trans-unit>
       <trans-unit id="AverageVolumeofTenders(€)" datatype="html">
@@ -1225,7 +1226,7 @@
           runtime
         </note>
         <target>
-          Volume medio delle gare (€)
+          Paraiškų kiekio vidurkis
         </target>
       </trans-unit>
       <trans-unit id="AverageinComparisonGroup" datatype="html">
@@ -1244,7 +1245,7 @@
           runtime
         </note>
         <target>
-          Media nel gruppo di confronto
+          Lyginamosios grupės vidurkis
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionDate" datatype="html">
@@ -1263,7 +1264,7 @@
           runtime
         </note>
         <target>
-          Data di aggiudicazione
+          Sprendimo priėmimo data
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionYear" datatype="html">
@@ -1282,7 +1283,7 @@
           runtime
         </note>
         <target>
-          Anno dell'aggiudicazione
+          Sprendimo priėmimo metai
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentAuthority" datatype="html">
@@ -1301,7 +1302,7 @@
           runtime
         </note>
         <target>
-          Autorità corrente di riferimento
+          Ati
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentCompany" datatype="html">
@@ -1320,7 +1321,7 @@
           runtime
         </note>
         <target>
-          Azienda corrente di riferimento
+          Standartinės dabartinės įmonės
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
@@ -1339,7 +1340,7 @@
           runtime
         </note>
         <target>
-          Gara corrente di riferimento
+          Standartinė dabartinė paraiška
         </target>
       </trans-unit>
       <trans-unit id="Bid" datatype="html">
@@ -1358,7 +1359,7 @@
           runtime
         </note>
         <target>
-          Offerta
+          Siūlymas
         </target>
       </trans-unit>
       <trans-unit id="BidCount" datatype="html">
@@ -1377,7 +1378,7 @@
           runtime
         </note>
         <target>
-          Numero di offerte ricevute
+          Kainos pasiūlymas
         </target>
       </trans-unit>
       <trans-unit id="BidDeadline" datatype="html">
@@ -1396,7 +1397,7 @@
           runtime
         </note>
         <target>
-          Termine dell'offerta
+          Siūlymo paskutinis terminas
         </target>
       </trans-unit>
       <trans-unit id="BidPrice" datatype="html">
@@ -1415,7 +1416,7 @@
           runtime
         </note>
         <target>
-          Prezzo dell'offerta
+          Siūlymo kaina
         </target>
       </trans-unit>
       <trans-unit id="BidPriceEUR" datatype="html">
@@ -1434,7 +1435,7 @@
           runtime
         </note>
         <target>
-          Prezzo dell'offerta (€)
+          Siūlymo kaina EUR
         </target>
       </trans-unit>
       <trans-unit id="Buyer" datatype="html">
@@ -1453,7 +1454,7 @@
           runtime
         </note>
         <target>
-          Acquirente
+          Pirkėjas
         </target>
       </trans-unit>
       <trans-unit id="BuyerRegion" datatype="html">
@@ -1472,7 +1473,7 @@
           runtime
         </note>
         <target>
-          Regione dell'acquirente
+          Pirkėjo regionas
         </target>
       </trans-unit>
       <trans-unit id="BuyerType" datatype="html">
@@ -1491,7 +1492,7 @@
           runtime
         </note>
         <target>
-          Tipo di acquirente
+          Pirkėjo tipas
         </target>
       </trans-unit>
       <trans-unit id="Buyers" datatype="html">
@@ -1510,7 +1511,7 @@
           runtime
         </note>
         <target>
-          Acquirenti
+          Pirkėjai
         </target>
       </trans-unit>
       <trans-unit id="CPVCodes" datatype="html">
@@ -1529,7 +1530,7 @@
           runtime
         </note>
         <target>
-          Codici CPV
+          CPV kodas
         </target>
       </trans-unit>
       <trans-unit id="City" datatype="html">
@@ -1548,7 +1549,7 @@
           runtime
         </note>
         <target>
-          Città
+          Miestas
         </target>
       </trans-unit>
       <trans-unit id="Companies" datatype="html">
@@ -1567,7 +1568,7 @@
           runtime
         </note>
         <target>
-          Aziende
+          Įmonės
         </target>
       </trans-unit>
       <trans-unit id="Company" datatype="html">
@@ -1586,7 +1587,7 @@
           runtime
         </note>
         <target>
-          Azienda
+          Įmonė
         </target>
       </trans-unit>
       <trans-unit id="ComparisonGroup" datatype="html">
@@ -1605,7 +1606,7 @@
           runtime
         </note>
         <target>
-          Gruppo di confronto
+          Lyginamoji grupė
         </target>
       </trans-unit>
       <trans-unit id="ContractValues" datatype="html">
@@ -1624,7 +1625,7 @@
           runtime
         </note>
         <target>
-          Valore del contratto
+          Sutarties vertės
         </target>
       </trans-unit>
       <trans-unit id="Country" datatype="html">
@@ -1643,7 +1644,7 @@
           runtime
         </note>
         <target>
-          Paese
+          Šalis
         </target>
       </trans-unit>
       <trans-unit id="CreationDate" datatype="html">
@@ -1662,7 +1663,7 @@
           runtime
         </note>
         <target>
-          Data di creazione
+          Sukūrimo data
         </target>
       </trans-unit>
       <trans-unit id="CurrentTender" datatype="html">
@@ -1681,7 +1682,7 @@
           runtime
         </note>
         <target>
-          Gara corrente
+          Dabartinė paraiška
         </target>
       </trans-unit>
       <trans-unit id="Dashboards" datatype="html">
@@ -1700,7 +1701,7 @@
           runtime
         </note>
         <target>
-          Schede
+          Prietaisų skydas
         </target>
       </trans-unit>
       <trans-unit id="Dates" datatype="html">
@@ -1719,7 +1720,7 @@
           runtime
         </note>
         <target>
-          Date
+          Datos
         </target>
       </trans-unit>
       <trans-unit id="Deposits" datatype="html">
@@ -1738,7 +1739,7 @@
           runtime
         </note>
         <target>
-          Depositi
+          Užstatai
         </target>
       </trans-unit>
       <trans-unit id="Description" datatype="html">
@@ -1757,7 +1758,7 @@
           runtime
         </note>
         <target>
-          Descrizione
+          Aprašymas
         </target>
       </trans-unit>
       <trans-unit id="DocumentPriceEUR" datatype="html">
@@ -1776,7 +1777,7 @@
           runtime
         </note>
         <target>
-          Prezzo del documento (€)
+          Dokumento kaina EUR
         </target>
       </trans-unit>
       <trans-unit id="Documents" datatype="html">
@@ -1795,7 +1796,7 @@
           runtime
         </note>
         <target>
-          Documenti
+          Dokumentai
         </target>
       </trans-unit>
       <trans-unit id="DocumentsDeadline" datatype="html">
@@ -1814,7 +1815,7 @@
           runtime
         </note>
         <target>
-          Termine per la consegna dei documenti
+          Dokumentų paskutinė data
         </target>
       </trans-unit>
       <trans-unit id="DocumentsPrice" datatype="html">
@@ -1833,7 +1834,7 @@
           runtime
         </note>
         <target>
-          Prezzo dei documenti
+          Dokumentų kaina
         </target>
       </trans-unit>
       <trans-unit id="Download" datatype="html">
@@ -1852,7 +1853,7 @@
           runtime
         </note>
         <target>
-          Download
+          Atsisiųsti
         </target>
       </trans-unit>
       <trans-unit id="EUInstitutions" datatype="html">
@@ -1871,7 +1872,7 @@
           runtime
         </note>
         <target>
-          EU istituzioni
+          ES institucijos
         </target>
       </trans-unit>
       <trans-unit id="EU-Fund" datatype="html">
@@ -1890,7 +1891,7 @@
           runtime
         </note>
         <target>
-          Fondi EU
+          ES fondas
         </target>
       </trans-unit>
       <trans-unit id="EconomicRequirements" datatype="html">
@@ -1909,7 +1910,7 @@
           runtime
         </note>
         <target>
-          Requisiti economici
+          Ekonominiai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="EligibleBidLanguages" datatype="html">
@@ -1928,7 +1929,7 @@
           runtime
         </note>
         <target>
-          Lingue autorizzate
+          Atitinkamos pasiūlymo kalbos
         </target>
       </trans-unit>
       <trans-unit id="Entries" datatype="html">
@@ -1947,7 +1948,7 @@
           runtime
         </note>
         <target>
-          Voci
+          Įrašai
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionDate" datatype="html">
@@ -1966,7 +1967,7 @@
           runtime
         </note>
         <target>
-          Data stimata di completamento
+          Apytikslė baigimo data
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionYear" datatype="html">
@@ -1985,7 +1986,7 @@
           runtime
         </note>
         <target>
-          Anno stimato di completamento
+          Apytiksliai baigimo metai
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPrice" datatype="html">
@@ -2004,7 +2005,7 @@
           runtime
         </note>
         <target>
-          Prezzo stimato
+          Apytikslė kaina
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPriceEUR" datatype="html">
@@ -2023,7 +2024,7 @@
           runtime
         </note>
         <target>
-          Prezzo stimato (€)
+          Apytikslė kaina EUR
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartDate" datatype="html">
@@ -2042,7 +2043,7 @@
           runtime
         </note>
         <target>
-          Data di inizio stimata
+          Apytikslė pradžios data
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartYear" datatype="html">
@@ -2061,7 +2062,7 @@
           runtime
         </note>
         <target>
-          Anno di inizio stimato
+          Apytiksliai pradžios metai
         </target>
       </trans-unit>
       <trans-unit id="FinalPrice" datatype="html">
@@ -2080,7 +2081,7 @@
           runtime
         </note>
         <target>
-          Prezzo finale
+          Galutinė kaina
         </target>
       </trans-unit>
       <trans-unit id="FinalPriceEUR" datatype="html">
@@ -2099,7 +2100,7 @@
           runtime
         </note>
         <target>
-          Prezzo finale (€)
+          Galutinė kaina EUR
         </target>
       </trans-unit>
       <trans-unit id="Funding" datatype="html">
@@ -2118,7 +2119,7 @@
           runtime
         </note>
         <target>
-          Finanziamento
+          Finansavimas
         </target>
       </trans-unit>
       <trans-unit id="Glossary" datatype="html">
@@ -2137,7 +2138,7 @@
           runtime
         </note>
         <target>
-          Glossario
+          Terminų  žodynas
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurement" datatype="html">
@@ -2156,7 +2157,7 @@
           runtime
         </note>
         <target>
-          Imparzialità dell'appalto
+          Geras viešasis pirkimas
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurementScore" datatype="html">
@@ -2175,7 +2176,7 @@
           runtime
         </note>
         <target>
-          Punteggio di imparzialità dell'appalto
+          Geras viešojo pirkimo balas
         </target>
       </trans-unit>
       <trans-unit id="Home" datatype="html">
@@ -2194,7 +2195,7 @@
           runtime
         </note>
         <target>
-          Pagina iniziale
+          Pradžia
         </target>
       </trans-unit>
       <trans-unit id="HowOpentenderworks" datatype="html">
@@ -2213,7 +2214,7 @@
           runtime
         </note>
         <target>
-          Come funziona Opentender
+          Kaip Opentender veikia
         </target>
       </trans-unit>
       <trans-unit id="Imprint" datatype="html">
@@ -2232,7 +2233,7 @@
           runtime
         </note>
         <target>
-          Stampa
+          Išleidimo duomenys
         </target>
       </trans-unit>
       <trans-unit id="Indicator" datatype="html">
@@ -2251,7 +2252,7 @@
           runtime
         </note>
         <target>
-          Indicatore
+          Rodiklis
         </target>
       </trans-unit>
       <trans-unit id="Indicators" datatype="html">
@@ -2270,7 +2271,7 @@
           runtime
         </note>
         <target>
-          Indicatori
+          Rodikliai
         </target>
       </trans-unit>
       <trans-unit id="Integrity" datatype="html">
@@ -2289,7 +2290,7 @@
           runtime
         </note>
         <target>
-          Integrità
+          Integralumas
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicator" datatype="html">
@@ -2308,7 +2309,7 @@
           runtime
         </note>
         <target>
-          Indicatore di integrità
+          Integralumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicators" datatype="html">
@@ -2327,7 +2328,7 @@
           runtime
         </note>
         <target>
-          Indicatori di integrità
+          Integralumo indikatoriai
         </target>
       </trans-unit>
       <trans-unit id="LimittosameAuthorityType" datatype="html">
@@ -2346,7 +2347,7 @@
           runtime
         </note>
         <target>
-          Limita allo stesso tipo di autorità
+          Apriboti iki tokio paties institucijos tipo
         </target>
       </trans-unit>
       <trans-unit id="LimittosameMainActivities" datatype="html">
@@ -2365,7 +2366,7 @@
           runtime
         </note>
         <target>
-          Limita alla stessa attività principale
+          Apriboti iki tokių pačių pagrindinių veiklų
         </target>
       </trans-unit>
       <trans-unit id="Limittosameregion(NUTS2)" datatype="html">
@@ -2384,7 +2385,7 @@
           runtime
         </note>
         <target>
-          Limita alla stessa regione (NUTS2)
+          Apriboti iki tokio paties regiono (NUTS2)
         </target>
       </trans-unit>
       <trans-unit id="Limittosamesector" datatype="html">
@@ -2403,7 +2404,7 @@
           runtime
         </note>
         <target>
-          Limita allo stesso settore
+          Apriboti iki tokio paties sektoriaus
         </target>
       </trans-unit>
       <trans-unit id="Loading…" datatype="html">
@@ -2422,7 +2423,7 @@
           runtime
         </note>
         <target>
-          Caricamento…
+          Laukiama...
         </target>
       </trans-unit>
       <trans-unit id="Lot" datatype="html">
@@ -2441,7 +2442,7 @@
           runtime
         </note>
         <target>
-          Lotto
+          Sklypas
         </target>
       </trans-unit>
       <trans-unit id="Lots" datatype="html">
@@ -2460,7 +2461,7 @@
           runtime
         </note>
         <target>
-          Lotti
+          Sklypai
         </target>
       </trans-unit>
       <trans-unit id="MainActivities" datatype="html">
@@ -2479,7 +2480,7 @@
           runtime
         </note>
         <target>
-          Attività principale
+          Pagrindinės veiklos
         </target>
       </trans-unit>
       <trans-unit id="MainBuyers" datatype="html">
@@ -2498,7 +2499,7 @@
           runtime
         </note>
         <target>
-          Acquirenti principali
+          Pagrindiniai pirkėjia
         </target>
       </trans-unit>
       <trans-unit id="MainBuyersinScoreRange" datatype="html">
@@ -2517,7 +2518,7 @@
           runtime
         </note>
         <target>
-          Acquirenti principali in ordine di punteggio
+          Pagrindiniai pirkėjai balų skalėje
         </target>
       </trans-unit>
       <trans-unit id="MainCPV" datatype="html">
@@ -2536,7 +2537,7 @@
           runtime
         </note>
         <target>
-          CPV principale
+          Pagrindiniai CPV
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Categories)" datatype="html">
@@ -2555,7 +2556,7 @@
           runtime
         </note>
         <target>
-          CPV principale (Categorie)
+          Pagrindiniai CPV (Kategorijos)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Divisions)" datatype="html">
@@ -2574,7 +2575,7 @@
           runtime
         </note>
         <target>
-          CPV principale (Divisioni)
+          Pagrindiniai CPV (Skyriai)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Full)" datatype="html">
@@ -2593,7 +2594,7 @@
           runtime
         </note>
         <target>
-          CPV principale (Intero)
+          Pagrindiniai CPV (Pilnas)
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Groups)" datatype="html">
@@ -2612,7 +2613,7 @@
           runtime
         </note>
         <target>
-          CPV principale (Gruppi)
+          Pagrindiniai CPV (grupės)
         </target>
       </trans-unit>
       <trans-unit id="MainCPVCode" datatype="html">
@@ -2631,7 +2632,7 @@
           runtime
         </note>
         <target>
-          Codice CPV principale
+          Pagrindinių  CPV kodas
         </target>
       </trans-unit>
       <trans-unit id="MainSector" datatype="html">
@@ -2650,7 +2651,7 @@
           runtime
         </note>
         <target>
-          Settore principale
+          Pagrindinis sektorius
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliers" datatype="html">
@@ -2669,7 +2670,7 @@
           runtime
         </note>
         <target>
-          Fornitori principali
+          Pagrindiniai tiekėjai
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliersinScoreRange" datatype="html">
@@ -2688,7 +2689,7 @@
           runtime
         </note>
         <target>
-          Fornitori principali in ordine di punteggio
+          Pagrindiniai tiekėjai balų skalėje
         </target>
       </trans-unit>
       <trans-unit id="MarketAnalysis" datatype="html">
@@ -2707,7 +2708,7 @@
           runtime
         </note>
         <target>
-          Analisi di mercato
+          Rinkos tyrimai
         </target>
       </trans-unit>
       <trans-unit id="MediationBodyName" datatype="html">
@@ -2726,7 +2727,7 @@
           runtime
         </note>
         <target>
-          Nome dell'ente di mediazione
+          Tarpininko pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="ModificationDate" datatype="html">
@@ -2745,7 +2746,7 @@
           runtime
         </note>
         <target>
-          Data di modifica
+          Pakeitimo data
         </target>
       </trans-unit>
       <trans-unit id="Name" datatype="html">
@@ -2764,7 +2765,7 @@
           runtime
         </note>
         <target>
-          Nome
+          Vardas
         </target>
       </trans-unit>
       <trans-unit id="Nodata" datatype="html">
@@ -2783,7 +2784,7 @@
           runtime
         </note>
         <target>
-          Nessun dato
+          Nerasta duomenų
         </target>
       </trans-unit>
       <trans-unit id="Nr.ofTenders" datatype="html">
@@ -2802,7 +2803,7 @@
           runtime
         </note>
         <target>
-          N. di gare
+          Paraiškų nr.
         </target>
       </trans-unit>
       <trans-unit id="NumberofBuyersbyRegion" datatype="html">
@@ -2821,7 +2822,7 @@
           runtime
         </note>
         <target>
-          Numero di acquirenti per regione
+          Pirkėjų skaičius pagal regioną
         </target>
       </trans-unit>
       <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
@@ -2840,7 +2841,7 @@
           runtime
         </note>
         <target>
-          Numero di fornitori per regione
+          Tiekėjų skaičius pagal regioną
         </target>
       </trans-unit>
       <trans-unit id="OpentenderPortals" datatype="html">
@@ -2859,7 +2860,7 @@
           runtime
         </note>
         <target>
-          Portali Opentender
+          Opentender portalai
         </target>
       </trans-unit>
       <trans-unit id="Overall" datatype="html">
@@ -2878,7 +2879,7 @@
           runtime
         </note>
         <target>
-          Totale
+          Iš viso
         </target>
       </trans-unit>
       <trans-unit id="PersonalRequirements" datatype="html">
@@ -2897,7 +2898,7 @@
           runtime
         </note>
         <target>
-          Requisiti personali
+          Asmeniniai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="Portals" datatype="html">
@@ -2916,7 +2917,7 @@
           runtime
         </note>
         <target>
-          Portali
+          Portalai
         </target>
       </trans-unit>
       <trans-unit id="Prices" datatype="html">
@@ -2935,7 +2936,7 @@
           runtime
         </note>
         <target>
-          Prezzi
+          Kainos
         </target>
       </trans-unit>
       <trans-unit id="ProcedureType" datatype="html">
@@ -2954,7 +2955,7 @@
           runtime
         </note>
         <target>
-          Tipo di procedura
+          Procedūros tipas
         </target>
       </trans-unit>
       <trans-unit id="ProfileLink" datatype="html">
@@ -2973,7 +2974,7 @@
           runtime
         </note>
         <target>
-          Collegamento al profilo
+          Profilio nuoroda
         </target>
       </trans-unit>
       <trans-unit id="ProfilePage" datatype="html">
@@ -2992,7 +2993,7 @@
           runtime
         </note>
         <target>
-          Profilo
+          Profilio puslapis
         </target>
       </trans-unit>
       <trans-unit id="Programme" datatype="html">
@@ -3011,7 +3012,7 @@
           runtime
         </note>
         <target>
-          Programma
+          Programa
         </target>
       </trans-unit>
       <trans-unit id="Publications" datatype="html">
@@ -3030,7 +3031,7 @@
           runtime
         </note>
         <target>
-          Pubblicazioni
+          Publikacija
         </target>
       </trans-unit>
       <trans-unit id="Region" datatype="html">
@@ -3049,7 +3050,7 @@
           runtime
         </note>
         <target>
-          Regione
+          Regionas
         </target>
       </trans-unit>
       <trans-unit id="Requirements" datatype="html">
@@ -3068,7 +3069,7 @@
           runtime
         </note>
         <target>
-          Requisiti
+          Reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="Score" datatype="html">
@@ -3087,7 +3088,7 @@
           runtime
         </note>
         <target>
-          Punteggio
+          Balas
         </target>
       </trans-unit>
       <trans-unit id="Search" datatype="html">
@@ -3106,7 +3107,7 @@
           runtime
         </note>
         <target>
-          Cerca
+          Paieška
         </target>
       </trans-unit>
       <trans-unit id="SearchAuthority" datatype="html">
@@ -3125,7 +3126,7 @@
           runtime
         </note>
         <target>
-          Cerca autorità
+          Paieškos institucija
         </target>
       </trans-unit>
       <trans-unit id="SearchCompany" datatype="html">
@@ -3144,7 +3145,7 @@
           runtime
         </note>
         <target>
-          Cerca azienda
+          Paieškos įmonė
         </target>
       </trans-unit>
       <trans-unit id="SearchTender" datatype="html">
@@ -3163,7 +3164,7 @@
           runtime
         </note>
         <target>
-          Cerca gara
+          Ieškoti paraiškos
         </target>
       </trans-unit>
       <trans-unit id="Sector" datatype="html">
@@ -3182,7 +3183,7 @@
           runtime
         </note>
         <target>
-          Settore
+          Sektorius
         </target>
       </trans-unit>
       <trans-unit id="Sector(CPVDivision)" datatype="html">
@@ -3201,7 +3202,7 @@
           runtime
         </note>
         <target>
-          Settore (Divisione CPV)
+          Sektorius (CPV skiltis)
         </target>
       </trans-unit>
       <trans-unit id="Sector(CPV)" datatype="html">
@@ -3220,7 +3221,7 @@
           runtime
         </note>
         <target>
-          Settore (CPV)
+          Sektorius (CPV)
         </target>
       </trans-unit>
       <trans-unit id="SectorOverview" datatype="html">
@@ -3239,7 +3240,7 @@
           runtime
         </note>
         <target>
-          Panoramica del settore
+          Sektoriaus apžvalga
         </target>
       </trans-unit>
       <trans-unit id="Sectors" datatype="html">
@@ -3258,7 +3259,7 @@
           runtime
         </note>
         <target>
-          Settori
+          Sektoriai
         </target>
       </trans-unit>
       <trans-unit id="SelectColumn" datatype="html">
@@ -3277,7 +3278,7 @@
           runtime
         </note>
         <target>
-          Seleziona colonna
+          Sektoriaus stulpelis
         </target>
       </trans-unit>
       <trans-unit id="SelectVisualization" datatype="html">
@@ -3296,7 +3297,7 @@
           runtime
         </note>
         <target>
-          Seleziona visualizzazione
+          Sektoriaus vizualizacija
         </target>
       </trans-unit>
       <trans-unit id="Showallyears" datatype="html">
@@ -3315,7 +3316,7 @@
           runtime
         </note>
         <target>
-          Mostra tutti gli anni
+          Rodyti visus metus
         </target>
       </trans-unit>
       <trans-unit id="Supplier" datatype="html">
@@ -3334,7 +3335,7 @@
           runtime
         </note>
         <target>
-          Fornitore
+          Tiekėjas
         </target>
       </trans-unit>
       <trans-unit id="SupplierRegion" datatype="html">
@@ -3353,7 +3354,7 @@
           runtime
         </note>
         <target>
-          Regione del fornitore
+          Tiekėjo regionas
         </target>
       </trans-unit>
       <trans-unit id="Suppliers" datatype="html">
@@ -3372,7 +3373,7 @@
           runtime
         </note>
         <target>
-          Fornitori
+          Tiekėjai
         </target>
       </trans-unit>
       <trans-unit id="SupplyType" datatype="html">
@@ -3391,7 +3392,7 @@
           runtime
         </note>
         <target>
-          Tipo di fornitura
+          Tiekėjo tipas
         </target>
       </trans-unit>
       <trans-unit id="TechnicalRequirements" datatype="html">
@@ -3410,7 +3411,7 @@
           runtime
         </note>
         <target>
-          Requisiti tecnici
+          Techniniai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="Tender" datatype="html">
@@ -3429,7 +3430,7 @@
           runtime
         </note>
         <target>
-          Gara
+          Paraiška
         </target>
       </trans-unit>
       <trans-unit id="TenderCount" datatype="html">
@@ -3448,7 +3449,7 @@
           runtime
         </note>
         <target>
-          Numero di gare
+          Paraiškų skaičius
         </target>
       </trans-unit>
       <trans-unit id="TenderInformation" datatype="html">
@@ -3467,7 +3468,7 @@
           runtime
         </note>
         <target>
-          Informazioni sulla gara
+          Paraiškos informacija
         </target>
       </trans-unit>
       <trans-unit id="TenderLink" datatype="html">
@@ -3486,7 +3487,7 @@
           runtime
         </note>
         <target>
-          Link alla gara
+          Paraiškos nuoroda
         </target>
       </trans-unit>
       <trans-unit id="TenderMetaData" datatype="html">
@@ -3505,7 +3506,7 @@
           runtime
         </note>
         <target>
-          Metadati della gara
+          Paraiškos meta duomenys
         </target>
       </trans-unit>
       <trans-unit id="TenderRequirements" datatype="html">
@@ -3524,7 +3525,7 @@
           runtime
         </note>
         <target>
-          Requisiti della gara
+          Paraiškos reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="Tenders" datatype="html">
@@ -3543,7 +3544,7 @@
           runtime
         </note>
         <target>
-          Gare
+          Paraiškos
         </target>
       </trans-unit>
       <trans-unit id="TendersoverTime" datatype="html">
@@ -3562,7 +3563,7 @@
           runtime
         </note>
         <target>
-          Gare nel tempo
+          Paraiškos per laiką
         </target>
       </trans-unit>
       <trans-unit id="Test" datatype="html">
@@ -3581,7 +3582,7 @@
           runtime
         </note>
         <target>
-          Testo
+          Testas
         </target>
       </trans-unit>
       <trans-unit id="Title" datatype="html">
@@ -3600,7 +3601,7 @@
           runtime
         </note>
         <target>
-          Titolo
+          Pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="TitleEnglish" datatype="html">
@@ -3619,7 +3620,7 @@
           runtime
         </note>
         <target>
-          Titolo in inglese
+          Pavadinimas anglų kalba
         </target>
       </trans-unit>
       <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
@@ -3638,7 +3639,7 @@
           runtime
         </note>
         <target>
-          Volume totale delle gare (€)
+          Sutarčių visa suma (€ )
         </target>
       </trans-unit>
       <trans-unit id="Transparency" datatype="html">
@@ -3657,7 +3658,7 @@
           runtime
         </note>
         <target>
-          Trasparenza
+          Skaidrumas
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicator" datatype="html">
@@ -3676,7 +3677,7 @@
           runtime
         </note>
         <target>
-          Indicatore di trasparenza
+          Skaidrumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicators" datatype="html">
@@ -3695,7 +3696,7 @@
           runtime
         </note>
         <target>
-          Indicatori di trasparenza
+          Skaidrumo rodikliai
         </target>
       </trans-unit>
       <trans-unit id="Type" datatype="html">
@@ -3714,7 +3715,7 @@
           runtime
         </note>
         <target>
-          Tipo
+          Tipas
         </target>
       </trans-unit>
       <trans-unit id="Volume(€)" datatype="html">
@@ -3733,7 +3734,7 @@
           runtime
         </note>
         <target>
-          Volume (€)
+          Apimtis
         </target>
       </trans-unit>
       <trans-unit id="VolumeofTenders(€)" datatype="html">
@@ -3752,7 +3753,7 @@
           runtime
         </note>
         <target>
-          Volume delle gare (€)
+          Sutarčių apimtis (€ )
         </target>
       </trans-unit>
       <trans-unit id="Year" datatype="html">
@@ -3771,7 +3772,7 @@
           runtime
         </note>
         <target>
-          Anno
+          Metai
         </target>
       </trans-unit>
       <trans-unit id="[Namenotavailable]" datatype="html">
@@ -3790,7 +3791,7 @@
           runtime
         </note>
         <target>
-          [Nome non disponibile]
+          [Pavadinimas nerastas]
         </target>
       </trans-unit>
       <trans-unit id="[{{count}}othersectorswithlessthan{{value}}]" datatype="html">
@@ -3815,7 +3816,7 @@
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; altri settori con meno di &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; kiti sektoriai su mažiau nei &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -3834,7 +3835,7 @@
           runtime
         </note>
         <target>
-          in ordine di punteggio
+          Balų sistemoje
         </target>
       </trans-unit>
       <trans-unit id="overTime" datatype="html">
@@ -3853,7 +3854,7 @@
           runtime
         </note>
         <target>
-          nel tempo
+          Per laiką
         </target>
       </trans-unit>
       <trans-unit id="perSector" datatype="html">
@@ -3872,7 +3873,7 @@
           runtime
         </note>
         <target>
-          per settore
+          sektoriuje
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
@@ -3891,7 +3892,7 @@
           runtime
         </note>
         <target>
-          Indicatore di capacità amministrativa
+          Administracinio pajėgumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.plural" datatype="html">
@@ -3910,7 +3911,7 @@
           runtime
         </note>
         <target>
-          Indicatori di capacità amministrativa
+          Administracinio pajėgumo rodikliai
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.name" datatype="html">
@@ -3929,7 +3930,7 @@
           runtime
         </note>
         <target>
-          Appalto congiunto o centralizzato
+          Jungtinis ar centralizuotas viešasis pirkimas
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_CENTRALIZED_PROCUREMENT.desc" datatype="html">
@@ -3948,7 +3949,7 @@
           runtime
         </note>
         <target>
-          Gli appalti centralizzati suggeriscono una buona capacità amministrativa se la gara è gestita da un ente appaltante centrale.
+          Centralizuoti viešieji pirkimai reikalauja gerų administracinių pajėgumų jeigu sutartis tvarkoma centralizuoto asmens.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3967,7 +3968,7 @@
           runtime
         </note>
         <target>
-          Uso di accordi quadro
+          Sistemos susitarimų naudojimas
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.desc" datatype="html">
@@ -3986,7 +3987,7 @@
           runtime
         </note>
         <target>
-          L'accordo quadro suggerisce una buona capacità amministrativa se l'offerta stabilisce un accordo quadro.
+          Standartinė sutartis reikalauja gerų administracinių pajėgumų jeigu sutartis nustato standartinį susitarimą.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
@@ -4005,7 +4006,7 @@
           runtime
         </note>
         <target>
-          Asta elettronica
+          Elektroninis aukcionas
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.desc" datatype="html">
@@ -4024,7 +4025,7 @@
           runtime
         </note>
         <target>
-          L'asta elettronica suggerisce una buona capacità amministrativa se l'offerta è stata condotta tramite un'asta elettronica.
+          Elektroninių aukcionų taškai yra gerame administraciniame pajėgume, jeigu sutartis buvo sudaryta per elektroninį aukcioną.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.name" datatype="html">
@@ -4043,7 +4044,7 @@
           runtime
         </note>
         <target>
-          Uso della struttura dell'OMC
+          WTO standartų naudojimas
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.desc" datatype="html">
@@ -4062,7 +4063,7 @@
           runtime
         </note>
         <target>
-          L'uso della struttura dell'OMC suggerisce buona capacità amministrativa se la procedura di gara è condotta secondo la struttura dell'OMC.
+          WTO standartų naudojimas singalizuoja gerą administracinį pajėgumą jeigu sutarties procesas yra sudarytas pagal WTO standartą.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
@@ -4081,7 +4082,7 @@
           runtime
         </note>
         <target>
-          Inglese come lingua straniera
+          Anglų kaip užsienio kalba
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.desc" datatype="html">
@@ -4100,7 +4101,7 @@
           runtime
         </note>
         <target>
-          L'inglese come lingua straniera suggerisce buone capacità amministrative se le offerte possono essere presentate in inglese come lingua straniera.
+          Anglų kaip užsienio šalies kalba signalizuoja gerą administracinį pajėgumą jeigu pasiūlymai gali būti priimti anglų kalba.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.name" datatype="html">
@@ -4119,7 +4120,7 @@
           runtime
         </note>
         <target>
-          Indicatore di integrità
+          Integralumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.plural" datatype="html">
@@ -4138,7 +4139,7 @@
           runtime
         </note>
         <target>
-          Indicatori di integrità
+          Integralumo rodikliai
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
@@ -4157,7 +4158,7 @@
           runtime
         </note>
         <target>
-          Contratto con offerente singolo
+          Vieno siūlytojo sutartis
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
@@ -4176,7 +4177,7 @@
           runtime
         </note>
         <target>
-          L'offerta singola segnala un rischio quando in un mercato competitivo viene presentata una sola offerta in una gara.
+          Vienas pasiūlymas signalizuoja riziką kai tik vienas pasiūlymas yra užregistruotas konkurse, konkurencingoje rinkoje.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
@@ -4195,7 +4196,7 @@
           runtime
         </note>
         <target>
-          Pubblicazione dei bandi di gara
+          Prašyti paraiškos publikavimo
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
@@ -4214,7 +4215,7 @@
           runtime
         </note>
         <target>
-          La mancata pubblicazione delle gare d'appalto segna un rischio quando nessuna gara d'appalto viene pubblicata prima dell'assegnazione dell'appalto, diminuendo il potenziale numero di offerenti.
+          Neskelbimas dalyvauti konkurse singnalizuoja riziką, kad prieš sutarties sudarymą nebus paskelbta dalyvavimo konkurse, sumažinus potencialius siūlytojus.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
@@ -4233,7 +4234,7 @@
           runtime
         </note>
         <target>
-          Tipo di procedura
+          Procedūros tipas
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.desc" datatype="html">
@@ -4252,7 +4253,7 @@
           runtime
         </note>
         <target>
-          Le procedure non aperte segnalano il rischio di utilizzare tipi di procedure che sono meno aperte alla concorrenza e più prontamente utilizzate per fare direttamente contratti con società collegate (ad esempio, procedure negoziate senza pubblicazione).
+          Neatviros procedūros signalizuoja riziką naudoti procedūrų tipus, kurie yra mažiau atviri konkurencijai ir akivaizdžiai naudojami sudaryti sutartis su susijusiomis įmonėmis (susitarta be viešinimo).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
@@ -4271,7 +4272,7 @@
           runtime
         </note>
         <target>
-          Durata del periodo di pubblicazione
+          Reklamos trukmės periodas
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.desc" datatype="html">
@@ -4290,7 +4291,7 @@
           runtime
         </note>
         <target>
-          La lunghezza del periodo di pubblicazione rivela il rischio di scadenze sospettose per le offerte o quando il periodo di pubblicazione è eccessivamente lungo.
+          Reklamos periodo trukmė atskleidžia riziką dėl įtartinų siūlymui skirtų terminų arba kuomet reklamos periodas yra per ilgas.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.name" datatype="html">
@@ -4309,7 +4310,7 @@
           runtime
         </note>
         <target>
-          Lunghezza del periodo decisionale
+          Sprendimo trukmės periodas
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.desc" datatype="html">
@@ -4328,7 +4329,7 @@
           runtime
         </note>
         <target>
-          La durata del periodo decisionale segnala i rischi quando la durata del periodo è sospettosamente breve o sospettosamente lunga.
+          Sprendimo periodo trukmė singnalizuoja riziką kuomet sprendimo periodo trukmė ir arba įtartinai trumpa arba įtartinai ilga.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
@@ -4347,7 +4348,7 @@
           runtime
         </note>
         <target>
-          Azienda "neonata"
+          Nauja įmonė
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.desc" datatype="html">
@@ -4366,7 +4367,7 @@
           runtime
         </note>
         <target>
-          Una nuova azienda segnala il rischio di una società molto giovane che vince una gara d'appalto (meno di 1 anno al momento dell'assegnazione).
+          Nauja įmonė iššaukia daugiau rizikos, kad labai jauna įmonė laimės konkursą (jaunesnė nei 1 metai nuo tada kai laimima).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
@@ -4385,7 +4386,7 @@
           runtime
         </note>
         <target>
-          Paradiso fiscale
+          Mokeščių rojus
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.desc" datatype="html">
@@ -4404,7 +4405,7 @@
           runtime
         </note>
         <target>
-          Il paradiso fiscale segnala un rischio quando il fornitore si trova in un paese segnalato come paradiso fiscale (in base all'indice di segretezza finanziaria).
+          Mokesčių rojus signalizauoja riziką kai tiekėjas yra mokesčių rojaus šalyje (paremta finansinio slaptumo indeksu).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
@@ -4423,7 +4424,7 @@
           runtime
         </note>
         <target>
-          Lunghezza della descrizione
+          Aprašymo ilgis
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.desc" datatype="html">
@@ -4442,7 +4443,7 @@
           runtime
         </note>
         <target>
-          La lunghezza della descrizione del prodotto segnala il rischio che la descrizione del prodotto venga adattata a una società, quando la descrizione è eccessivamente lunga.
+          Produkto aprašymo ilgis signalizuoja riziką, kad produkto aprašymas bus pritraikytas vienam įmonei, kai aprašymas yra per ilgas.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
@@ -4461,7 +4462,7 @@
           runtime
         </note>
         <target>
-          Connessioni politiche dei fornitori
+          Tiekėjų politiniai ryšiai
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
@@ -4480,7 +4481,7 @@
           runtime
         </note>
         <target>
-          La connessione politica del fornitore coglie il rischio che almeno un proprietario o un manager abbia una carica politica.
+          Tiekėjų politiniai ryšiai atskleidžia riziką, kad bent vienas savininkas ar vadybininkas yra valstybės tarnautojas.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
@@ -4499,7 +4500,7 @@
           runtime
         </note>
         <target>
-          Quota del contratto del vincitore
+          Laimėtojo sutarties dalis
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
@@ -4518,7 +4519,7 @@
           runtime
         </note>
         <target>
-          La quota del contratto del vincitore è la quota del valore del contratto vinta da una determinata società da un determinato acquirente in un dato anno.
+          Laimėjusio kontrakto dalis yra dalis susitarimo vertės laimėtos tos įmonės iš pirkėjo, duotą dieną.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
@@ -4537,7 +4538,7 @@
           runtime
         </note>
         <target>
-          Lunghezza dei criteri di ammissibilità
+          Atsisakymas
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
@@ -4556,7 +4557,7 @@
           runtime
         </note>
         <target>
-          La lunghezza dei criteri di ammissibilità indica il rischio che i criteri siano adattati a una società quando la descrizione dei criteri risulta eccessivamente lunga.
+          Tinkamumo kriterijaus trukmė signalizuoja, kad kriterijus gali būti priskirtas vienai įmonėi su pertekliniu kriterijaus aprašymu.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.name" datatype="html">
@@ -4575,7 +4576,7 @@
           runtime
         </note>
         <target>
-          Criteri di valutazione
+          Įvertinimo kriterijus
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.desc" datatype="html">
@@ -4594,7 +4595,7 @@
           runtime
         </note>
         <target>
-          I criteri di valutazione segnalano il rischio di utilizzare criteri non quantitativi per valutare gli offerenti; questi criteri sono soggettivi e possono essere facilmente manipolati.
+          Įvertinimo kriterijus signalizuoja riziką dėl naudojimo nekiekybinio kriterijaus pritraukti siūlytojus, kurie yra subjektyvūs ir gali būti lengvai manipuliuojami.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.name" datatype="html">
@@ -4613,7 +4614,7 @@
           runtime
         </note>
         <target>
-          Indicatore di trasparenza
+          Skaidrumo rodiklis
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.plural" datatype="html">
@@ -4632,7 +4633,7 @@
           runtime
         </note>
         <target>
-          Indicatori di trasparenza
+          Skaidrumo rodikliai
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
@@ -4651,7 +4652,7 @@
           runtime
         </note>
         <target>
-          Tasso di pubblicazione
+          Publikacijos reitingas
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
@@ -4670,7 +4671,7 @@
           runtime
         </note>
         <target>
-          Il tasso di pubblicazione è il rapporto tra la spesa pubblicitaria degli appalti pubblici e la spesa totale per gli appalti pubblici di una data amministrazione aggiudicatrice.
+          Viešinimo lygis yra santykis reklamos išvaidų viešajam pirkimui ir visų viešojo pirkimo išlaidų kontrakto institucijai.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
@@ -4689,7 +4690,7 @@
           runtime
         </note>
         <target>
-          Discrepanze tra bandi di gara e avvisi di aggiudicazione del contratto
+          Neatitikimai tarp paraiškos paskelbimo ir sutarties sudarimo pranešimų
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
@@ -4708,7 +4709,7 @@
           runtime
         </note>
         <target>
-          Le discrepanze tra bandi di gara e avvisi di aggiudicazione del contratto sono il rapporto tra i campi con valori diversi nel bando di gara e negli annunci di aggiudicazione del contratto relativi a una determinata offerta (sulla base delle ultime versioni pubblicate).
+          Neatitikimai tarp konkurso šaukimo ir sutarties sudarymo yra santykis sričių su skirtingomis vertėmis konkurso šaukime ir pranešime apie kontrakto sudarymą susijusio su numatytu konkursu (remiantis paskutine vieša versija).
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
@@ -4727,7 +4728,7 @@
           runtime
         </note>
         <target>
-          Condivisione di campi importanti non mancanti
+          Netrūkstamų pagrindinių sričių dalis
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.desc" datatype="html">
@@ -4746,7 +4747,7 @@
           runtime
         </note>
         <target>
-          Numero di campi importanti mancanti è il rapporto tra i campi con valori mancanti nel bando di gara e l'annuncio di aggiudicazione del contratto relativo a una determinata offerta (sulla base delle versioni pubblicate più di recente).
+          Skaičius trūkstamų sričių yra santykis sričių su nerastomis vertėmis konkurso šaukime ir sutarties pasirašymo pranešime susijusio su duotuoju konkursu (remiantis paskutine vieša versija)/
         </target>
       </trans-unit>
       <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
@@ -4794,7 +4795,7 @@
           </context>
         </context-group>
         <target>
-          Dati
+          Duomenys
         </target>
       </trans-unit>
       <trans-unit id="3baa652179af58935b7b8d0fd3c3483dc6659ac4" datatype="html">
@@ -4842,7 +4843,7 @@
           </context>
         </context-group>
         <target>
-          Scarica i dati
+          Atsisiųsti duomenis
         </target>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -4858,7 +4859,7 @@
           </context>
         </context-group>
         <target>
-          Scarica i dati in CSV
+          Atsisiųsti duomenis kaip CSV
         </target>
       </trans-unit>
       <trans-unit id="63bb9f00af8a5a2cef39a6df68b9d00700c5e6f8" datatype="html">
@@ -4882,7 +4883,7 @@
           </context>
         </context-group>
         <target>
-          Scarica i dati in JSON
+          Atsisiųsti duomenis kaip JSON
         </target>
       </trans-unit>
       <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
@@ -4898,7 +4899,7 @@
           </context>
         </context-group>
         <target>
-          Fonti
+          Šaltiniai
         </target>
       </trans-unit>
       <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">
@@ -4914,7 +4915,7 @@
           </context>
         </context-group>
         <target>
-          Acquirenti
+          Pirkėjai
         </target>
       </trans-unit>
       <trans-unit id="d59bf68e8dab37e7aff7d2c005064e64279e86b5" datatype="html">
@@ -4930,7 +4931,7 @@
           </context>
         </context-group>
         <target>
-          Fornitori
+          Tiekėjai
         </target>
       </trans-unit>
       <trans-unit id="aee7d0de4e30405c1289745e4264e622b613632a" datatype="html">
@@ -4946,7 +4947,7 @@
           </context>
         </context-group>
         <target>
-          Paesi
+          Šalys
         </target>
       </trans-unit>
       <trans-unit id="9cf900e27326dae9ad9dcaa7c3049788f5143961" datatype="html">
@@ -4986,7 +4987,7 @@
           </context>
         </context-group>
         <target>
-          NUTS 1
+          NUTS1
         </target>
       </trans-unit>
       <trans-unit id="8bd8472ece5180c2cf647e62aa698a7a80b50e14" datatype="html">
@@ -5026,7 +5027,7 @@
           </context>
         </context-group>
         <target>
-          NUTS 2
+          NUTS2
         </target>
       </trans-unit>
       <trans-unit id="43311e75b4948fee987d94dbc39855efa70cd07a" datatype="html">
@@ -5066,7 +5067,7 @@
           </context>
         </context-group>
         <target>
-          NUTS 3
+          NUTS3
         </target>
       </trans-unit>
       <trans-unit id="8bc2696cf741ede224966775854e5f5dba1a207e" datatype="html">
@@ -5082,7 +5083,7 @@
           </context>
         </context-group>
         <target>
-          Fornitori per regione
+          Tiekėjai pagal regioną
         </target>
       </trans-unit>
       <trans-unit id="a6711c5b2a6f255a9d4395211ea5954c20902374" datatype="html">
@@ -5098,7 +5099,7 @@
           </context>
         </context-group>
         <target>
-          Acquirenti per regione
+          Pirkėjai pagal regioną
         </target>
       </trans-unit>
       <trans-unit id="4b9fdfae648741b5eb89d0309ac931eb8b2e3f64" datatype="html">
@@ -5114,7 +5115,7 @@
           </context>
         </context-group>
         <target>
-          Volume (€) per regione
+          Apimtis (€ ) pagal regioną
         </target>
       </trans-unit>
       <trans-unit id="41aac9cecddc9f345c263d3742192e68e227e413" datatype="html">
@@ -5130,7 +5131,7 @@
           </context>
         </context-group>
         <target>
-          Menu
+          Meniu
         </target>
       </trans-unit>
       <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
@@ -5146,7 +5147,7 @@
           </context>
         </context-group>
         <target>
-          Rendere le Gare Pubbliche più Trasparenti
+          Siekiame atverti viešąsias sutartis
         </target>
       </trans-unit>
       <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
@@ -5162,7 +5163,7 @@
           </context>
         </context-group>
         <target>
-          Panoramica del Portale
+          Portalo peržiūra
         </target>
       </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
@@ -5178,7 +5179,7 @@
           </context>
         </context-group>
         <target>
-          Cos'è Opentender?
+          Kas yra Opentender?
         </target>
       </trans-unit>
       <trans-unit id="cdd78ff4ba9a06a2c5357473690cc533b915edfe" datatype="html">
@@ -5194,7 +5195,7 @@
           </context>
         </context-group>
         <target>
-          Come funziona Opentender
+          Kaip Opentender veikia?
         </target>
       </trans-unit>
       <trans-unit id="be37a41139d137a21483439caa3709cdcea48185" datatype="html">
@@ -5218,7 +5219,7 @@
           </context>
         </context-group>
         <target>
-          Schede
+          Prietaisų skydas
         </target>
       </trans-unit>
       <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
@@ -5242,7 +5243,7 @@
           </context>
         </context-group>
         <target>
-          Stampa
+          Leidimo duomenys
         </target>
       </trans-unit>
       <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
@@ -5266,7 +5267,7 @@
           </context>
         </context-group>
         <target>
-          Contatti
+          Kontaktai
         </target>
       </trans-unit>
       <trans-unit id="01dac0bf3d300f1a1556a5f312c5c69d06499aff" datatype="html">
@@ -5290,7 +5291,7 @@
           </context>
         </context-group>
         <target>
-          Nota Legale
+          Teisinis įspėjimas
         </target>
       </trans-unit>
       <trans-unit id="b8d10cd55fae4e4ad4f87d28e18251694f159bf7" datatype="html">
@@ -5314,7 +5315,7 @@
           </context>
         </context-group>
         <target>
-          Condizioni di Riservatezza
+          Privatumo politika
         </target>
       </trans-unit>
       <trans-unit id="d68ce4f097c2db0b05e823eb2c4025f66f2364ad" datatype="html">
@@ -5330,7 +5331,7 @@
           </context>
         </context-group>
         <target>
-          Domande?
+          Turite klausimų?
         </target>
       </trans-unit>
       <trans-unit id="6b2ba0058011086805244b6dd86cd0edce3aef63" datatype="html">
@@ -5353,7 +5354,7 @@
           </context>
         </context-group>
         <target>
-          Contatta Openteder al &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Susisiek su Opentender&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
@@ -5376,7 +5377,7 @@
           </context>
         </context-group>
         <target>
-          Il sito (&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{'v'+version}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;) è alimentato da codice open source.
+          Šis puslapis(&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{'v'+version}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;) yra sukurtas atviru kodu.
         </target>
       </trans-unit>
       <trans-unit id="778f8d4e1d800b732a93d20e8f8a0858a603799b" datatype="html">
@@ -5398,7 +5399,7 @@
           </context>
         </context-group>
         <target>
-          Accogliamo con piacere contributi e commenti su &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Laukiame prisidėjimo ir komentarų &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5414,7 +5415,7 @@
           </context>
         </context-group>
         <target>
-          Maggiori informazioni sulla legislazione sugli appalti al
+          Daugiau apie paraiškų teisinį reguliavimą
         </target>
       </trans-unit>
       <trans-unit id="83be59bfa61a6accd9d6e353912ab7fee53096d9" datatype="html">
@@ -5430,7 +5431,7 @@
           </context>
         </context-group>
         <target>
-          Seguici
+          Sekite mus
         </target>
       </trans-unit>
       <trans-unit id="99cb827741e93125476a0f5b676372d85d15b5fc" datatype="html">
@@ -5490,7 +5491,7 @@
           </context>
         </context-group>
         <target>
-          Questo progetto ha ricevuto finanziamenti dal &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; programma di ricerca e innovazione dell'Unione Europea Horizon 2020&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; nell'ambito della convenzione di sovvenzione &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;n. 6458524&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Šis projektas gavo finansavimą iš &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Europos Sąjungos Horizon 2020  tyrimų ir inovacijų programos&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; su sutartimi &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nr. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5530,7 +5531,7 @@
           </context>
         </context-group>
         <target>
-          Volume (€)
+          Apimtis (€)
         </target>
       </trans-unit>
       <trans-unit id="760a04b7973f1ba8ccd2c829871b7b351b812958" datatype="html">
@@ -5546,7 +5547,7 @@
           </context>
         </context-group>
         <target>
-          Gare per anno
+          Paraiškos per metus
         </target>
       </trans-unit>
       <trans-unit id="d59c29464c0e2b8ac4a4c86a505fafcef34037e8" datatype="html">
@@ -5564,7 +5565,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; nel tempo
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; per laiką
         </target>
       </trans-unit>
       <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
@@ -5588,7 +5589,7 @@
           </context>
         </context-group>
         <target>
-          Media
+          Vidurkis
         </target>
       </trans-unit>
       <trans-unit id="d1da3b1d8aa673508710ff4425ec528b9b1b56b4" datatype="html">
@@ -5612,7 +5613,7 @@
           </context>
         </context-group>
         <target>
-          Assoluto
+          Absoliutus
         </target>
       </trans-unit>
       <trans-unit id="d07981f293c51226089eccef6d39124f8196d6f8" datatype="html">
@@ -5630,7 +5631,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; per settore
+          Subrangos vertė
         </target>
       </trans-unit>
       <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
@@ -5646,7 +5647,7 @@
           </context>
         </context-group>
         <target>
-          Gare nel tempo
+          Paraiškos per laiką
         </target>
       </trans-unit>
       <trans-unit id="8700afbd9703e190b3d675a06b96a159518fa81c" datatype="html">
@@ -5662,7 +5663,7 @@
           </context>
         </context-group>
         <target>
-          Volume totale (€)
+          Visa apimtis (€ )
         </target>
       </trans-unit>
       <trans-unit id="27575017642b02439056216f88dde0263ca001cf" datatype="html">
@@ -5678,7 +5679,7 @@
           </context>
         </context-group>
         <target>
-          Volume medio (€)
+          Vidutinė apimtis (€ )
         </target>
       </trans-unit>
       <trans-unit id="6df3069422db26773a9ec6e7e5d80ccbd1ec1d21" datatype="html">
@@ -5694,7 +5695,7 @@
           </context>
         </context-group>
         <target>
-          Caricamento…
+          Kraunasi...
         </target>
       </trans-unit>
       <trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
@@ -5710,7 +5711,7 @@
           </context>
         </context-group>
         <target>
-          Non trovato
+          Nerasta
         </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
@@ -5726,7 +5727,7 @@
           </context>
         </context-group>
         <target>
-          Clicca per raggiungere la pagina del profilo
+          Persikelti į profilio puslapį
         </target>
       </trans-unit>
       <trans-unit id="929e297c9887a4f940e5359a9f957e6b57c003e8" datatype="html">
@@ -5742,7 +5743,7 @@
           </context>
         </context-group>
         <target>
-          Clicca per includere/escludere dalla visualizzazione
+          Įtraukti/išimti iš rodymo
         </target>
       </trans-unit>
       <trans-unit id="b463541a7e303aa4d0b1102eaff8afbaf34e7a74" datatype="html">
@@ -5758,7 +5759,7 @@
           </context>
         </context-group>
         <target>
-          Seleziona tutto
+          Pasirinkti visus
         </target>
       </trans-unit>
       <trans-unit id="1a83e9e4c9179e62fc020802fc4fc93c42b7734c" datatype="html">
@@ -5774,7 +5775,7 @@
           </context>
         </context-group>
         <target>
-          Deseleziona tutto
+          Panaikinti pasirinkimą
         </target>
       </trans-unit>
       <trans-unit id="7361dbbb380d6b868939269d9e1a59d8aaf44f4c" datatype="html">
@@ -5798,7 +5799,7 @@
           </context>
         </context-group>
         <target>
-          Gruppo di indicatori
+          Rodiklių grupė
         </target>
       </trans-unit>
       <trans-unit id="b3b47e8b4611a699f1ba916202b416934f7ea323" datatype="html">
@@ -5822,7 +5823,7 @@
           </context>
         </context-group>
         <target>
-          Indicatore
+          Rodiklis
         </target>
       </trans-unit>
       <trans-unit id="479830cde65077164423b75158f96ec0b53ee623" datatype="html">
@@ -5846,7 +5847,7 @@
           </context>
         </context-group>
         <target>
-          Gruppo di confronto
+          Lyginamoji grupė
         </target>
       </trans-unit>
       <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
@@ -5862,7 +5863,7 @@
           </context>
         </context-group>
         <target>
-          Intervallo di date
+          Duomenų intervalas
         </target>
       </trans-unit>
       <trans-unit id="c6d56bff2f3b8ce41c532f2e014579458d2d2813" datatype="html">
@@ -5878,7 +5879,7 @@
           </context>
         </context-group>
         <target>
-          Nessuna data disponibile
+          Negalimos datos
         </target>
       </trans-unit>
       <trans-unit id="999030b358bd2143eab89e3cc6b96d2cd6c5e82e" datatype="html">
@@ -5902,7 +5903,7 @@
           </context>
         </context-group>
         <target>
-          Scarica i dati come JSON compresso in gzip
+          Atsisiųsti sukompersuotus duomenis JSON
         </target>
       </trans-unit>
       <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
@@ -5924,7 +5925,7 @@
           </context>
         </context-group>
         <target>
-          Il download contiene &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; voci e il file compresso avrà una dimensione di circa &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
+          Atsisiuntimai susideda iš &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; įvestys ir suspaustų failų dydis bus apie &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -5940,7 +5941,7 @@
           </context>
         </context-group>
         <target>
-          Scarica il file JSON.GZ
+          Atsisiųsti JSON.GZ bylą
         </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -5964,7 +5965,7 @@
           </context>
         </context-group>
         <target>
-          Cancella
+          Atšaukti
         </target>
       </trans-unit>
       <trans-unit id="599e1282c032f9504328a3763c368f095e39ce78" datatype="html">
@@ -5980,7 +5981,7 @@
           </context>
         </context-group>
         <target>
-          Richiedi il download
+          Atsiuntimas priimtas
         </target>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
@@ -5996,7 +5997,7 @@
           </context>
         </context-group>
         <target>
-          Precedente
+          Atgal
         </target>
       </trans-unit>
       <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
@@ -6012,7 +6013,7 @@
           </context>
         </context-group>
         <target>
-          Successivo
+          Sekantis
         </target>
       </trans-unit>
       <trans-unit id="02c7747f38014504ddbc5b3b17b329b74db68800" datatype="html">
@@ -6036,7 +6037,7 @@
           </context>
         </context-group>
         <target>
-          Pagina: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; di &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Voci: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Puslapiai: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; of &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Įvestys: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6052,7 +6053,7 @@
           </context>
         </context-group>
         <target>
-          Voci per pagina
+          Įvestys puslapyje
         </target>
       </trans-unit>
       <trans-unit id="b169576ab898458aa823e09c1e7f3397f8f011a0" datatype="html">
@@ -6068,7 +6069,7 @@
           </context>
         </context-group>
         <target>
-          Colonne
+          Stulpeliai
         </target>
       </trans-unit>
       <trans-unit id="69cc495a16ac1551ca1f076617be86394906d1cb" datatype="html">
@@ -6100,7 +6101,7 @@
           </context>
         </context-group>
         <target>
-          Clicca per selezionare
+          Pasirinkti
         </target>
       </trans-unit>
       <trans-unit id="0ed2616d6f3149d89f34950cc4e7bf33c3e45ade" datatype="html">
@@ -6116,7 +6117,7 @@
           </context>
         </context-group>
         <target>
-          Circa il 15% del prodotto interno lordo dell'UE è speso ogni anno per l'acquisto di beni e servizi e alcune stime indicano che la corruzione aumenta il costo dei contratti governativi del 20-25%. È ancora più preoccupante che la corruzione negli appalti pubblici comprometta ampiamente gli obiettivi pubblici sostenuti, come la costruzione di autostrade sicure, edifici scolastici di alta qualità o la fornitura di medicinali in tempo.
+          Apie 15% ES BVP yra išleidžiama kiekvienais metais viešiesiems pirkimams paslaugoms ir prekėms ir kai kurie skaičiai rodo, kad korupcija padidina valstybinių sutarčių kainas 20 - 25%. Tai net didesnis susirūpinimas, kad korupcija viešuosiuose pirkimuose nusleidžia viešiesiems tikslams, tokiems kaip saugių greitkelių statymas, aukštos kokybės mokyklos ar medikamentų pristatymas laiku.
         </target>
       </trans-unit>
       <trans-unit id="9dd624a60198301ed4ee85c40cbf879782f979dc" datatype="html">
@@ -6132,7 +6133,7 @@
           </context>
         </context-group>
         <target>
-          Fornire informazioni complete sugli appalti pubblici gratuitamente in un formato facile da usare a tutte le parti interessate dovrebbe: aumentare la trasparenza del mercato, ridurre i costi di transazione, e facilitare la responsabilità del governo. Pertanto, opentender.eu, una piattaforma di appalto centrale, pubblica e aperta, è stata creata  per contribuire a ottenere un buon rapporto costi-benefici negli appalti pubblici e per aumentare l'integrità in tutto il settore pubblico.
+          Suteikiant išsamią viešųjų pirkimų informaciją nemokamai, lengvai naudojamu formatu visiems, tikimasi padidinti rinkos skaidrumą, sumažinti kainas ir padidinti valstybės atskaitingumą. Todėl opentender.eu centrinė, vieša ir atvira viešųjų pirkimų platforma buvo sukurta, kad prisidėtumė prie viešųjų pirkimų skaidrumo bei padidintume integralumo viešajame sektoriuje.
         </target>
       </trans-unit>
       <trans-unit id="b5ff828d47f8aea76c4174fecf3c180f92366800" datatype="html">
@@ -6148,7 +6149,7 @@
           </context>
         </context-group>
         <target>
-          Chi è Opentender?
+          Kas yra Opentender?
         </target>
       </trans-unit>
       <trans-unit id="75ac84cfeb7ee1d570978f08e87da5c4d440d1d6" datatype="html">
@@ -6164,7 +6165,7 @@
           </context>
         </context-group>
         <target>
-          DIGIWHIST, un progetto finanziato dall'UE all'interno del programma Horizon 2020, riunisce sei istituti di ricerca europei, con l'obiettivo di dare alla società il potere per combattere la corruzione del settore pubblico. Allo stesso tempo ha lo scopo di aumentare la fiducia nei governi e migliorare l'efficienza della spesa pubblica in tutta Europa attraverso la raccolta sistematica, la strutturazione, l'analisi e la diffusione di informazioni sugli appalti pubblici e sui meccanismi che aumentano la responsabilità dei funzionari pubblici in tutta l'UE e in alcuni paesi limitrofi.
+          "DIGIWHIST", EU Horizon 2020 finansuojamas projektas, susideda iš šešių Europos mokslinių tyrimų institutų, siekiant suteikti galimybę visuomenei kovoti su viešojo sektoriaus korupcija. Tai kartu padidins pasitikėjimą vyriausybėmis ir padidins viešųjų išlaidų efektyvumą visoje Europoje sistemingai rinkdama, struktūrizuojant, analizuojant ir skleidžiant informaciją apie viešuosius pirkimus ir mechanizmus, kurie padidina viešųjų pareigūnų atskaitomybę visose ES ir kai kuriose kaimyninėse šalyse.
         </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
@@ -6180,7 +6181,7 @@
           </context>
         </context-group>
         <target>
-          Il Dipartimento di Sociologia di Cambridge ha un profilo distintivo come centro di eccellenza per il lavoro eccezionale nella teoria sociale e nella ricerca sociologica empirica. La sociologia a Cambridge viene anche praticata e insegnata in un contesto interdisciplinare, con legami particolarmente forti con la politica, la psicologia, l'antropologia, l'economia e la storia.
+          Sociologijos departaments Kembridže turi atskirus profilius kaip kompetencijos centrą išskirtiniams darbams socialinės teorijos ir empirinės sociologijos tyrimuose. Sociologija Kembridže yra praktikuojama ir mokoma tarpdisciplininiame kontekste su atitinkamais stipriais ryšiais politikoje, psichologijoje, antropologijoje, ekonomikoje ir istorijoje.
         </target>
       </trans-unit>
       <trans-unit id="feefffc590f4a0607d1a2e97f6db8e4f72578c0e" datatype="html">
@@ -6196,7 +6197,7 @@
           </context>
         </context-group>
         <target>
-          La Hertie School of Governance prepara studenti eccezionali per posizioni di leadership nel governo, negli affari e nella società civile. La Hertie School offre anche a professionisti esperti l'opportunità di approfondire le loro competenze nel campo della gestione pubblica. Una rinomata facoltà internazionale, con esperienza in economia, business, diritto, scienze politiche e sociali, porta un approccio interdisciplinare e orientato alla politica nell'agenda di insegnamento e ricerca della Hertie School.
+          "Hertie School of Governance" ruošia išskirtinius studentus lyderio pozicijos viešajam sektoriui, verslui bei pilietinei visuomenei. Mokykla siūlo patyrusiems profesionalams galimybę pagilinti žinias viešosios vadybos srityje. Atnaujintas ekonomikos, verslo, teisės, politikos ir socialinių mokslų tarptautinis fakultetas taiko metodus orientuotus į politikos formavimą.
         </target>
       </trans-unit>
       <trans-unit id="747b114de34de8097882ea700e545e8fa21ec7a6" datatype="html">
@@ -6212,7 +6213,7 @@
           </context>
         </context-group>
         <target>
-          La fondazione dell'Istituto per la Trasparenza del Governo nel 2015 è stata motivata dalla crescente necessità e opportunità di svolgere attività di ricerca e difesa indipendente in materia di trasparenza, corruzione e qualità del governo in Europa e oltre. L'Istituto è un gruppo di esperti indipendente da governi, partiti politici o gruppi di interesse speciali. L'obiettivo dell'Istituto è quello di esplorare sistematicamente le cause, le caratteristiche e le conseguenze della scarsa qualità del governo in un approccio interdisciplinare basato su scienze politiche, economia, giurisprudenza e scienze dei dati. L'Istituto si propone di aiutare i cittadini a rendere i governi responsabili attraverso la pubblicazione di grandi set di dati e una solida analisi.
+          Vyriausybės skaidrumo instituto įkūrimas 2015 m. buvo motyvuotas didėjančiu poreikiu ir galimybe atlikti nepriklausomus tyrimus ir propaguoti skaidrumą, korupciją ir vyriausybės kokybę Europoje ir už jos ribų. Institutas yra nepriklausoma ekspertų grupė, nepriklausoma nuo vyriausybių, politinių partijų ar specialiųjų interesų grupių. Instituto tikslas yra sistemingai išnagrinėti žemo valdžios kokybės priežastis, ypatybes ir pasekmes tarpdisciplininiu požiūriu, pagrįstu politiniu mokslu, ekonomika, teise ir duomenų mokslu. Institutas siekia padėti piliečiams vyriausybes atsiskaityti paskelbdamas didelius duomenų rinkinius ir atlikdamas tvirtą analizę.
         </target>
       </trans-unit>
       <trans-unit id="f8ecdb1e36c8b982bb54606ace91b24cbf483488" datatype="html">
@@ -6240,7 +6241,7 @@
           </context>
         </context-group>
         <target>
-          Datlab è una società informatica ceca specializzata in processi di estrazione e elaborazione di dati. A partire dal 2015, elabora regolarmente i dati di 30 diversi siti Web e sistemi. Lavora a stretto contatto con il settore delle ONG e gestisce un paio di importanti servizi di open data, come &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (database di appalti), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitoraggio del finanziamento dei partiti politici).
+          Datlab yra čekų IT įmonė, kuri specializuojasi į duomenų išėmimą ir apdirbimą. Nuo 2015  reguliariai dirba su duomenimis iš 30 skirtingų puslapių ir sistemų. Dirba kartu su NVO sektoriumi ir rūpinasi keletu pagrindinių opendata paslaugų, tokių kaip&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (viešieji pirkimai), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (politinių partijų finansavimo stebėjimas).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6256,7 +6257,7 @@
           </context>
         </context-group>
         <target>
-          Transcrime è il centro di ricerca sul crimine transnazionale dell'Università Cattolica del Sacro Cuore di Milano e l'Università di Trento. Analizza le strategie per prevenire e combattere la criminalità adottando un approccio integrato (criminologia, diritto, statistica, economia, contabilità forense). In particolare Transcrime analizza i fenomeni di criminalità nel campo della criminalità organizzata, della criminalità finanziaria, del riciclaggio di denaro e della corruzione.
+          Transcrime - Milano Università Cattolica del Sacro Cuore ir Trento universitetų jungtinis tyrimų centras. Jame analizuojamos nusikalstamumo prevencijos ir kovos su juo strategijos, priimančios integruotą požiūrį (kriminologija, teisė, statistika, ekonomika, teismo ekspertizė). Transcrime analizuoja nusikalstamumo reiškinius organizuoto nusikalstamumo, finansinių nusikaltimų, pinigų plovimo ir korupcijos srityse.
         </target>
       </trans-unit>
       <trans-unit id="6c9413918f44d867ccd39ead5b0f8eb8af3431d2" datatype="html">
@@ -6272,7 +6273,7 @@
           </context>
         </context-group>
         <target>
-          L'Open Knowledge Foundation Deutschland (OKF DE) è il capitolo tedesco dell'International Open Knowledge Foundation Network (OKFN). È un'organizzazione indipendente senza fini di lucro fondata nel 2011 e dedita alla promozione di open data e di contenuti aperti in tutte le loro forme, tra cui informazioni pubbliche, ricerca finanziata con fondi pubblici e contenuti culturali di pubblico dominio. È un leader internazionale nel suo campo e ha una vasta esperienza nella costruzione di strumenti e comunità intorno a materiale aperto. OKF DE è un Think-and-Do Tank che combina competenze legali e know-how tecnico per consigliare autorità governative e altre organizzazioni a pubblicare dati aperti e aiutare potenziali riutilizzatori a interagire con dati aperti per creare nuovi prodotti e servizi innovativi. OKF DE lavora su tecnologie che consentono una maggiore trasparenza nella vita pubblica e nuovi spazi per l'impegno dei cittadini.
+          Open Knowledge Foundation Deutschland (OKF DE) yra tarptautinio atvirosios žinių fondo tinklo (OKFN) Vokietijos skyrius. Tai savarankiška ne pelno organizacija, įkurta 2011 m. ir skirta atviriems duomenims ir visų formų atviriems turiniui skatinti, įskaitant viešąją informaciją, viešai finansuojamus mokslinius tyrimus ir viešą kultūrinį turinį. Tai yra tarptautinis šios srities lyderis ir turi didelę patirtį kuriant įrankius ir bendruomenę apie atvirą medžiagą. OKF DE yra "Think-and-Do", kuris jungia teisines žinias ir technines žinias patarti vyriausybinėms institucijoms ir kitoms organizacijoms skelbti atvirus duomenis ir padėti potencialiems pakartotiniams naudotojams naudotis atvirais duomenimis, kad būtų galima kurti novatoriškus naujus produktus ir paslaugas. "OKF DE" dirba su technologijomis, kurios užtikrina didesnį viešojo gyvenimo skaidrumą ir naujas piliečių dalyvavimo erdves.
         </target>
       </trans-unit>
       <trans-unit id="6edd1a650db2af580ebe746813024c45f1d854b1" datatype="html">
@@ -6288,7 +6289,7 @@
           </context>
         </context-group>
         <target>
-          Glossario
+          Terminų žodynas
         </target>
       </trans-unit>
       <trans-unit id="b9cc52c8a82c39aec3392a0b7dc15f361af011e0" datatype="html">
@@ -6304,7 +6305,7 @@
           </context>
         </context-group>
         <target>
-          Termini
+          Terminai
         </target>
       </trans-unit>
       <trans-unit id="d36b96d4e672041ce9dd2d6d4da813d84b9cc216" datatype="html">
@@ -6320,7 +6321,7 @@
           </context>
         </context-group>
         <target>
-          La nomenclatura delle unità territoriali per la statistica (NUTS) è uno standard di geocodifica per fornire una ripartizione del territorio economico dell'Unione Europea in unità territoriali per la produzione di statistiche regionali e per indirizzare gli interventi politici a livello regionale. Leggi di più al
+          Teritoriniai statistiniai vienetai (NUTS) yra geografinis kodas, pagal kurį Europos Sąjungos ekonominė teritorija suskirstoma į regioninių statistinių duomenų rengimo teritorinius vienetus ir skiriama politinei intervencijai regioniniu lygmeniu. Skaitykite daugiau
         </target>
       </trans-unit>
       <trans-unit id="d7a05d2dcbbc43e6d28a3b0ec0c7c4dea2479d5d" datatype="html">
@@ -6360,7 +6361,7 @@
           </context>
         </context-group>
         <target>
-          Il Vocabolario Comune per gli Appalti (CPV) mira a standardizzare, mediante un unico sistema di classificazione per gli appalti pubblici, i termini utilizzati dalle amministrazioni aggiudicatrici e dagli enti per descrivere l'oggetto dei contratti. Leggi di più al
+          Visuotinis viešjųjų pirkimų žodynas (VVP) siekia standartizuoti pagal vieną klasifikacijos systemą viešiesiems pirkimams, terminai naudoti kontrakto institucijų ir vienetai aprašymui kontrakto subjekto. Daugiau
         </target>
       </trans-unit>
       <trans-unit id="10498cb7788dfb689cb7ae44b02c8171cb36aaa3" datatype="html">
@@ -6376,7 +6377,7 @@
           </context>
         </context-group>
         <target>
-          Punteggi compositi
+          Sudėtinis balas
         </target>
       </trans-unit>
       <trans-unit id="e82e548747be8aa595d8f3df72a90d9e40d4a3ed" datatype="html">
@@ -6392,7 +6393,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio di trasparenza
+          Skaidrumo balas
         </target>
       </trans-unit>
       <trans-unit id="f6567ad1161a72fe32e32b0c22f4816e33608907" datatype="html">
@@ -6408,7 +6409,7 @@
           </context>
         </context-group>
         <target>
-          Il Punteggio di trasparenza è la media degli indicatori di trasparenza.
+          Skaidrumo balas yra vidurkis skaidrumo rodiklio
         </target>
       </trans-unit>
       <trans-unit id="322db1b76bdf54269462c78acbcfadf204a7fb0c" datatype="html">
@@ -6424,7 +6425,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio di integrità
+          Integralumo balas
         </target>
       </trans-unit>
       <trans-unit id="77f714cf45e052c53b705f95f1e25809b20e3a55" datatype="html">
@@ -6440,7 +6441,7 @@
           </context>
         </context-group>
         <target>
-          Il punteggio di Integrità negli appalti è la media degli indicatori di integrità negli appalti.
+          Viešųjų pirkimų integralumo balas yra vidurkis viešųjų pirkimų integralumo rodiklio
         </target>
       </trans-unit>
       <trans-unit id="d6f50cb3ff1e50fc4302cfef784a99ad9b374193" datatype="html">
@@ -6456,7 +6457,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio di capacità amministrativa
+          Administracinių pajėgumų balas
         </target>
       </trans-unit>
       <trans-unit id="a38958957882e0403d7c765a45a605ba20024627" datatype="html">
@@ -6472,7 +6473,7 @@
           </context>
         </context-group>
         <target>
-          Il Punteggio di capacità amministrativa è la media degli indicatori di capacità amministrativa.
+          Ad
         </target>
       </trans-unit>
       <trans-unit id="a760b1133506b725c66251807a4cb613b1b3718b" datatype="html">
@@ -6488,7 +6489,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio di imparzialità dell'appalto
+          Geras viešojo pirkimo balas
         </target>
       </trans-unit>
       <trans-unit id="5c444086165505c6a44674d6c1b45cfa6c3dca57" datatype="html">
@@ -6504,7 +6505,7 @@
           </context>
         </context-group>
         <target>
-          Il punteggio complessivo di buon appalto è la media dei tre punteggi compositi sopra menzionati.
+          Visuotinis gerų viešųjų pirkimų balas yra vidurkus visų trijų viršuje išvardintų sudėtinių balų.
         </target>
       </trans-unit>
       <trans-unit id="2eb6671f8d1299f1c00e65bcd5f2fe5d321b2095" datatype="html">
@@ -6520,7 +6521,7 @@
           </context>
         </context-group>
         <target>
-          Numero
+          Skaičiai
         </target>
       </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
@@ -6536,7 +6537,7 @@
           </context>
         </context-group>
         <target>
-          Come funziona Opentender
+          Kaip Opentender veikia
         </target>
       </trans-unit>
       <trans-unit id="f6176a22daca08338d51d188d0f0718f0373710d" datatype="html">
@@ -6552,7 +6553,7 @@
           </context>
         </context-group>
         <target>
-          Opentender è costruito su un robusto software di raccolta e elaborazione dei dati che raccoglie i dati sugli appalti da circa 20 diverse fonti. Quando non ci sono dati aperti disponibili, estraiamo le informazioni da migliaia di pagine Web per arrivare a un database strutturato. Dopodiché, raggruppiamo tutte le pubblicazioni che descrivono ciascuna gara e, alla fine, creiamo un'immagine finale che descrive con maggiore precisione una particolare gara. I sistemi e i dati di origine differiscono da paese a paese, quindi, una parte di software personalizzato è stata creata separatamente per ciascuna fonte.
+          "Opentender" yra pagrįstas patikima duomenų rinkimo ir apdorojimo programine įranga, kuri renka duomenis apie pirkimus iš maždaug 20 įvairių šaltinių. Kai nėra atvirų duomenų, mes ištraukiame informaciją iš tūkstančių tinklalapių, kad gautume struktūrizuotą duomenų bazę. Po to mes sujungiame visus leidinius, apibūdinančius kiekvieną pasiūlymą ir galiausiai sukuriame galutinį vaizdą, kuris tiksliausiai apibūdina konkretų pasiūlymą. Šaltinių sistemos ir duomenys skirtingose šalyse skiriasi, todėl kiekvienam šaltiniui atskirai sukurta pritaikyta programinė įranga.
         </target>
       </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
@@ -6599,7 +6600,7 @@
           </context>
         </context-group>
         <target>
-          Opentender utilizza indicatori di performance degli appalti pubblici basati su un'ampia serie di analisi scientifiche, sintetizzate e portate avanti nella nostra ricerca: per gli indicatori di capacità amministrativa vedi &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Methods Paper on Indicators Quality Administrative&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, per gli indicatori di trasparenza vedi &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Methods Paper on Fiscal Transparency&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, per gli indicatori di integrità vedi &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Si raggiunge il punteggio di buon appalto con la media semplice dei tre punteggi compositi. Tutti questi indicatori sono basati su dati oggettivi, sono direttamente perseguibili da attori pubblici e privati e sono calcolati in modo trasparente e non ambiguo. Se trovi errori nelle &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formule&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;,  ti preghiamo di comunicarcelo al &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender naudoja viešųjų pirkimų veiklos indikatorius paremtus mokslinėmis analizėmis, sintezuota ir toliau naudojama mūsų tryrimui: administracinio pajėgumo indikatoriui&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Metodinis darbas apie administravimo kokybės indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, skaidrumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Metodinis darbas apie fiskalinį skaidrumą&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, integralumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Metodinis darbas apie korupcijos indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Geras viešojo pirkimo balas yra paprasčiausiai vidurkis trijų sukomponuotų balų. Visi šie indikatoriai yra paremti objektyviais duomenimis, yra tiesiogiai veikiami viesų ir privačių veikėjų ir skaidriai ir atidžiai suskaičiuoti. Jei radote klaidą  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulėse&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, praneškite mums&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6615,7 +6616,7 @@
           </context>
         </context-group>
         <target>
-          Mappe e codici NUTS
+          Žemėlapis ir NUTS kodai
         </target>
       </trans-unit>
       <trans-unit id="39a876f7caff60187b5482e728db9585b73de7ce" datatype="html">
@@ -6637,7 +6638,7 @@
           </context>
         </context-group>
         <target>
-          Opentender visualizza mappe basate sui &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;codici NUTS&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender rodo &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS kodais&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; pagrįstus žemėlapius.
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
@@ -6653,7 +6654,7 @@
           </context>
         </context-group>
         <target>
-          I codici mancanti negli indirizzi sono stati assegnati con:
+          Trūkstami adresų kodai buvo priskirti:
         </target>
       </trans-unit>
       <trans-unit id="b66b022fc628366345ae491af4ed98f8b87b33c6" datatype="html">
@@ -6669,7 +6670,7 @@
           </context>
         </context-group>
         <target>
-          Forme utilizzate:
+          Naudotos formos:
         </target>
       </trans-unit>
       <trans-unit id="4d273f9f8f9d66c78d3f7e5550612c0855415208" datatype="html">
@@ -6685,7 +6686,7 @@
           </context>
         </context-group>
         <target>
-          I dashboard forniscono visualizzazioni all'avanguardia dei dati di approvvigionamento in quattro categorie:
+          Prietaisų skydas suteikia naujausią viešųjų pirkimų informaciją keturiose kategorijose.
         </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
@@ -6701,7 +6702,7 @@
           </context>
         </context-group>
         <target>
-          La funzione di ricerca è un potente strumento per approfondire i dati e trovare un'offerta specifica, un acquirente o un fornitore che stai cercando. Puoi anche creare singole ricerche personalizzate da oltre 30 parametri aggiuntivi, inclusi gli indicatori.
+          Ieškojimo funkcija yra galingas įrankis surasti duomenis ir specifinį konkursą, pirkėją ar tiekėją, kurio iekškote. Galite sukurti individualią paiešką iš daugiau nei 30 parametrų, įtraukiant indikatorius.
         </target>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
@@ -6717,7 +6718,7 @@
           </context>
         </context-group>
         <target>
-          Profili
+          Profiliai
         </target>
       </trans-unit>
       <trans-unit id="a33618ac50442a0a558cef69f0f4d212b4155712" datatype="html">
@@ -6733,7 +6734,7 @@
           </context>
         </context-group>
         <target>
-          Per consentire l'accesso completo, ogni componente (settori, filiali, regioni, aziende, autorità e gare) nel database Opentender ha un profilo individuale che mostra informazioni dettagliate. A seconda del tipo, il profilo mostra una varietà di visualizzazioni come grafici, mappe e grafici che forniscono un approfondito livello di conoscenza del database. È possibile visualizzare i profili semplicemente cliccando sul rispettivo nome.
+          Leidžia pilną prieigą, kiekvienas komponentas (sektorius, filialai, regionas, įmonės, institucijos ir konkursai) turi individualų profilį, rodantį detalią informaciją Opentender platformoje. Priklausomai nuo tipo, profilis rodo įvairias vizualicaijas, tokias kaip, grafikai, žemėlapiai suteikiant gilų supratimą apie duomenų bazę. Galite peržiūrėti profilius paprasčiausiai spaudžiant ant atitinkamo pavadinimo.
         </target>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
@@ -6749,7 +6750,7 @@
           </context>
         </context-group>
         <target>
-          Tipo di autorità
+          Insitucijos tipas
         </target>
       </trans-unit>
       <trans-unit id="b8a961f78f542ee07bb87623c47439d81e8f50b1" datatype="html">
@@ -6765,7 +6766,7 @@
           </context>
         </context-group>
         <target>
-          Attività principali
+          Pagrindinės veiklos
         </target>
       </trans-unit>
       <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
@@ -6781,7 +6782,7 @@
           </context>
         </context-group>
         <target>
-          Autorità simili
+          Panašios institucijos
         </target>
       </trans-unit>
       <trans-unit id="32382c783e53d04c11023e4963cbba3359284203" datatype="html">
@@ -6797,7 +6798,7 @@
           </context>
         </context-group>
         <target>
-          Cerca questa autorità al
+          Ieškoti institucijos
         </target>
       </trans-unit>
       <trans-unit id="e336524ffbb838864880def2bd86d4cb9de44335" datatype="html">
@@ -6813,7 +6814,7 @@
           </context>
         </context-group>
         <target>
-          Trova richieste di FOIA
+          Surasti informacijos laisvės užklausą
         </target>
       </trans-unit>
       <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
@@ -6829,7 +6830,7 @@
           </context>
         </context-group>
         <target>
-          Aziende simili
+          Panašios įmonės
         </target>
       </trans-unit>
       <trans-unit id="10ca3b39d610b4266c4e9cee482bec2f62b1ac65" datatype="html">
@@ -6845,7 +6846,7 @@
           </context>
         </context-group>
         <target>
-          Cerca questa azienda al
+          Ieškoti įmonės
         </target>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
@@ -6869,7 +6870,7 @@
           </context>
         </context-group>
         <target>
-          Trova la richiesta di FOIA al
+          Surasti informacijos laisvės užklausą
         </target>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
@@ -6885,7 +6886,7 @@
           </context>
         </context-group>
         <target>
-          Sotto-indicatori
+          Subindikatoriai
         </target>
       </trans-unit>
       <trans-unit id="4df6eb363d14f086afa8f3ab7f3deef5c1daae89" datatype="html">
@@ -6901,7 +6902,7 @@
           </context>
         </context-group>
         <target>
-          Tutti i sotto-indicatori
+          Visi subindikatoriai
         </target>
       </trans-unit>
       <trans-unit id="666ef196e08af4a7292c9e4339154d1527fb5857" datatype="html">
@@ -6917,7 +6918,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio composito
+          Sudėtinis balas
         </target>
       </trans-unit>
       <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
@@ -6933,7 +6934,7 @@
           </context>
         </context-group>
         <target>
-          Aggiusta i pesi
+          Sureguliuotas svoris
         </target>
       </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
@@ -6951,7 +6952,7 @@
           </context>
         </context-group>
         <target>
-          Punteggio medio di &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
+          Vidutinis balas &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
@@ -6967,7 +6968,7 @@
           </context>
         </context-group>
         <target>
-          Intervallo dei punteggi
+          Balo intervalas
         </target>
       </trans-unit>
       <trans-unit id="ca4939f58d2dd3f3b511e5275c8d7b4dbd2fe825" datatype="html">
@@ -6983,7 +6984,7 @@
           </context>
         </context-group>
         <target>
-          Applicare i pesi
+          Pritaikyti svorius
         </target>
       </trans-unit>
       <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
@@ -6999,7 +7000,7 @@
           </context>
         </context-group>
         <target>
-          Resettare i pesi
+          Perkrauti svorius
         </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
@@ -7015,7 +7016,7 @@
           </context>
         </context-group>
         <target>
-          Regolare i pesi dei punteggi compositi
+          Pritaikyti sudėtinio balo svorius
         </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
@@ -7039,7 +7040,7 @@
           </context>
         </context-group>
         <target>
-          Settori
+          Sektoriai
         </target>
       </trans-unit>
       <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
@@ -7055,7 +7056,7 @@
           </context>
         </context-group>
         <target>
-          Profilo del settore
+          Sektoriaus profilis
         </target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
@@ -7071,7 +7072,7 @@
           </context>
         </context-group>
         <target>
-          Nome
+          Pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="3330d0952d59bdb1e72d7bca952e6b7850fde8ed" datatype="html">
@@ -7087,7 +7088,7 @@
           </context>
         </context-group>
         <target>
-          Volume della Gara (€)
+          Paraiškų kiekis (€ )
         </target>
       </trans-unit>
       <trans-unit id="6e6cb5e9109bc6606718e627281dc913e4cec6e0" datatype="html">
@@ -7103,7 +7104,7 @@
           </context>
         </context-group>
         <target>
-          Su questa pagina puoi trovare tutti i dati delle gare di questo portale.
+          Šiame puslapyje rasite visų sutarčių duomenis iš šio portalo.
         </target>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
@@ -7119,7 +7120,7 @@
           </context>
         </context-group>
         <target>
-          JSON gerarchico
+          Hierarchinis JSON
         </target>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
@@ -7135,7 +7136,7 @@
           </context>
         </context-group>
         <target>
-          Portale corrente
+          Dabartinis portalas
         </target>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
@@ -7159,7 +7160,7 @@
           </context>
         </context-group>
         <target>
-          Gare
+          Paraiškos
         </target>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
@@ -7175,7 +7176,7 @@
           </context>
         </context-group>
         <target>
-          Paese
+          Šalis
         </target>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
@@ -7229,7 +7230,7 @@
           </context>
         </context-group>
         <target>
-          I file sono compressi con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, che dovrebbe essere supportato dalla tua applicazione ZIP.
+          Failai yra suspausti su &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, kuri palaikoma ZIP aplikacijos.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7251,7 +7252,7 @@
           </context>
         </context-group>
         <target>
-          * A causa della quantità di voci e dal fatto che molti decodificatori JSON non supportano le dimensioni del file, i dati JSON Tender DIGIWHIST sono stati salvati anche come &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Dėl įvesčių kiekio ir JSON parsinimo nepalaiko failo dydžio, DIGIWHIST konkurso JSON duomenys išsaugoti kaip&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7273,7 +7274,7 @@
           </context>
         </context-group>
         <target>
-          La struttura delle voci è è delineata in un &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;file schema JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Įvesčių struktūra yra išdėstyta &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;JSON schemos faile&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7289,7 +7290,7 @@
           </context>
         </context-group>
         <target>
-          Coordimanento del Progetto Digiwhist
+          Digiwist projekto koordinatorius
         </target>
       </trans-unit>
       <trans-unit id="729754dd19eb9ce0670b0aeb5a6ae60574c2c563" datatype="html">
@@ -7305,7 +7306,7 @@
           </context>
         </context-group>
         <target>
-          Indirizzo
+          Adresas
         </target>
       </trans-unit>
       <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
@@ -7321,7 +7322,7 @@
           </context>
         </context-group>
         <target>
-          Registro delle imprese
+          Prekybos registras
         </target>
       </trans-unit>
       <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
@@ -7337,7 +7338,7 @@
           </context>
         </context-group>
         <target>
-          Numero registrazione impresa
+          Asociacijos numerio registras
         </target>
       </trans-unit>
       <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
@@ -7353,7 +7354,7 @@
           </context>
         </context-group>
         <target>
-          Partita IVA
+          PVM
         </target>
       </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
@@ -7369,7 +7370,7 @@
           </context>
         </context-group>
         <target>
-          Riferimenti e collegamenti
+          Rekomendacijos ir nuorodos
         </target>
       </trans-unit>
       <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
@@ -7385,7 +7386,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE non è responsabile per eventuali contenuti collegati o richiamati da queste pagine. Se qualsiasi danno si verifica con l'uso delle informazioni presentate qui, solo l'autore delle rispettive pagine potrebbe essere responsabile, non colui che ha collegato le informazioni a queste pagine.
+          OKF DE nėra atsakingi už turinį susietą ar nukreiptą į kitus puslapius. Jeigu žala padaryta dėl informacijos pristatytos čia, tik autorius atitinkamo puslapio yra atsakingas, bet ne tas, kuris susiejo su kitu puslapiu.
         </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
@@ -7401,7 +7402,7 @@
           </context>
         </context-group>
         <target>
-          Dichiarazione di limitazione di responsabilità
+          Atsisakymas
         </target>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
@@ -7417,7 +7418,7 @@
           </context>
         </context-group>
         <target>
-          Le informazioni e le opinioni pubblicate su questo sito sono solo dell'autore (degli autori) e non riflettono alcun parere di raccolta del consorzio DIGIWHIST, né riflettono l'opinione ufficiale della Commissione Eeuropea. Né la Commissione Europea né alcuna persona che agisce a nome della Commissione Europea è responsabile dell'uso che potrebbe essere fatto delle informazioni pubblicate su questo sito web.
+          Šioje svetainėje pateikiama informacija ir nuomonė yra tik autoriaus (-ų) turinys ir neatspindi "DIGIWHIST" konsorciumo kolekcijos nuomonės, taip pat neatspindi oficialios Europos Komisijos nuomonės. Nei Europos Komisija, nei bet kuris asmuo, veikiantis Europos Komisijos vardu, neatsako už naudojimąsi šioje svetainėje paskelbta informacija.
         </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
@@ -7438,7 +7439,7 @@
           </context>
         </context-group>
         <target>
-          Tutti i contenuti di Digiwhist su questo sito web sono concessi in licenza con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Visas Digiwhist turinys šioje svetainėje yra licenzijuotas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
@@ -7454,7 +7455,7 @@
           </context>
         </context-group>
         <target>
-          Open Knowledge Foundation Germany è lieta che tu stia visitando il nostro sito Web e che tu sia interessato al progetto DIGIWHIST di Horizon 2020. Prendiamo molto sul serio la protezione dei vostri dati personali e osserviamo scrupolosamente le disposizioni delle attuali leggi sulla privacy dei dati (ad esempio il German Data Protection Act (BDSG), il Telemedia Act (TMG) e Unfair Competition Act (UWG)).
+          "Open Knowledge Foundation" Vokietija džiaugiasi, kad lankotės mūsų tinklalapyje ir kad jus domina Horizon 2020 DIGIWHIST projektas. Mes labai rimtai saugome jūsų asmeninius duomenis ir griežtai laikomės galiojančių duomenų privatumo įstatymų nuostatų (pvz., Vokietijos duomenų apsaugos įstatymas (BDSG), Telemedia aktas (TMG) ir Nesąžiningos konkurencijos įstatymas (UWG)).
         </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
@@ -7470,7 +7471,7 @@
           </context>
         </context-group>
         <target>
-          La seguente policy fornisce informazioni su come garantiamo questa protezione e sul tipo di dati che raccogliamo per quale scopo.
+          Sekančios taisyklės suteikia informaciją, kaip mes garantuojame saugumą ir kokio tipo duomenis renkame ir kokiam tikslui.
         </target>
       </trans-unit>
       <trans-unit id="49dab74a6f204996046f98e886e8160260f58628" datatype="html">
@@ -7486,7 +7487,7 @@
           </context>
         </context-group>
         <target>
-          1. Raccolta di dati anonimi
+          1. Anoniminis duomenų rinkimas
         </target>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
@@ -7502,7 +7503,7 @@
           </context>
         </context-group>
         <target>
-          Nella maggior parte dei casi è possibile visitare il sito Web Opentender.eu senza che sia necessario fornire dati personali.
+          Dažniausiai Opentender.eu puslapį galite naudoti be reikalavimo pateikti asmeninę informaciją.
         </target>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
@@ -7518,7 +7519,7 @@
           </context>
         </context-group>
         <target>
-          I file di registro sul nostro server Web raccolgono i seguenti dati:
+          Įregistruoti failai šio puslapio serveryje renka tokią informaciją:
         </target>
       </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
@@ -7534,7 +7535,7 @@
           </context>
         </context-group>
         <target>
-          Indirizzo IP
+          IP adresas
         </target>
       </trans-unit>
       <trans-unit id="d376333bd7ba3b3b691d32aabe97366aabdcf644" datatype="html">
@@ -7550,7 +7551,7 @@
           </context>
         </context-group>
         <target>
-          data, ora
+          data, laikas
         </target>
       </trans-unit>
       <trans-unit id="9671e11011b3ebb58ca11fb31c01d1ac3c8704e3" datatype="html">
@@ -7566,7 +7567,7 @@
           </context>
         </context-group>
         <target>
-          pagina visitata, garante
+          lankyti puslapiai, rekomendacijos
         </target>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
@@ -7582,7 +7583,7 @@
           </context>
         </context-group>
         <target>
-          browser
+          Naršyklė
         </target>
       </trans-unit>
       <trans-unit id="d5907df625e73d7d8c5075428fc21540304603b2" datatype="html">
@@ -7598,7 +7599,7 @@
           </context>
         </context-group>
         <target>
-          sistema operativo
+          Operacinė sistema
         </target>
       </trans-unit>
       <trans-unit id="a8c6d54131c79ef785fc7c2249374a6f25f76ffd" datatype="html">
@@ -7614,7 +7615,7 @@
           </context>
         </context-group>
         <target>
-          Questi dati sono disponibili per analisi statistiche, i dati grezzi vengono cancellati mensilmente dalla nostra società di web hosting.
+          Šie duomenys yra pasiekiami statistinei analizei atlikti, neapdoroti duomenys yra ištrinami puslapį palaikančių įmonių kas mėnesį.
         </target>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
@@ -7630,7 +7631,7 @@
           </context>
         </context-group>
         <target>
-          2. Raccolta e trattamento dei dati personali
+          2. Rinkimas ir apdirbimas asmenin4s informacijos
         </target>
       </trans-unit>
       <trans-unit id="b56fd0fd74eaa2b386434213c4d5e8c632cbcabc" datatype="html">
@@ -7646,7 +7647,7 @@
           </context>
         </context-group>
         <target>
-          I dati personali sono raccolti solo in base alle normative vigenti. Oltre a questo, i tuoi dati sono utilizzati solo a scopo pubblicitario e di ricerca di mercato, anche per adattare i nostri servizi elettronici a soddisfare le esigenze attuali, se ci hai fornito il tuo previo consenso. Naturalmente, hai il diritto di revocare qualsiasi consenso che fornisci - in tutto o in parte - in qualsiasi momento, da quel momento in poi.
+          Asmens duomenys renkami tik remiantis galiojančiomis taisyklėmis. Jūsų duomenys naudojami tik reklamai ir rinkos tyrimams, taip pat pritaikyti mūsų elektronines paslaugas, kad atitiktų dabartinius poreikius, jei pateikėte mums savo išankstinį sutikimą. Žinoma, turite teisę atšaukti bet kokį jūsų pateiktą sutikimą - visiškai arba iš dalies - bet kuriuo metu, galiojančiu ateityje.
         </target>
       </trans-unit>
       <trans-unit id="a0a8ca9b0db392405d5299ca16493cd321de4ee0" datatype="html">
@@ -7662,7 +7663,7 @@
           </context>
         </context-group>
         <target>
-          3. Esportazione ed elaborazione dei dati negli stati al di fuori dello Spazio Economico Europeo (SEE).
+          3. Duomenų eksportavimas ir apdorojimas valstybėse už Europos Ekonominės Zonos (EEZ)
         </target>
       </trans-unit>
       <trans-unit id="a94a4cb46a4dd5450ca35df978441234f7bbfe8a" datatype="html">
@@ -7678,7 +7679,7 @@
           </context>
         </context-group>
         <target>
-          Nessun dato è esportato o elaborato al di fuori dello Spazio Economico Europeo
+          Duomenys nėra eksportuojami ar apdorojami už Europos Ekonominės Zonos ribų.
         </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
@@ -7694,7 +7695,7 @@
           </context>
         </context-group>
         <target>
-          4. Cookie e tracciamento del sito web
+          4. "Cookies" ir puslapio sekimas
         </target>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
@@ -7710,7 +7711,8 @@
           </context>
         </context-group>
         <target>
-          Su questo sito utilizziamo i sistemi di analisi web, volti a misurare e analizzare le visite al nostro sito web. Utilizziamo il tuo indirizzo IP allo scopo di raccogliere dati, tra le altre cose, sul traffico Internet, sul browser e sul computer.
+          We use web analysis systems on this website, intended to measure and analyse visits to our website. We use your IP address with purpose of collecting data, among other things on Internet traffic, your browser and your computer.
+Mes naudojame svetainės analizavimo sistemas norėdami įvertinti ir analizuoti apsilankymus mūsų svetainėje. Naudojame Jūsų IP adresą duomenų rinkimui, be kitų dalykų Jūsų interneto srauto, naršyklės ir Jūsų kompiuterio.
         </target>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
@@ -7726,7 +7728,7 @@
           </context>
         </context-group>
         <target>
-          Non usiamo l'indirizzo IP o i cookie per identificarti personalmente. Usiamo il sistema di analisi web con lo scopo di aumentare l'efficienza sul nostro sito web.
+          Mes nenaudojame IP adreso arba "cookies" identifikuoti jūsų asmenybę. Naudojame svetainės analitines sistemas, kad padidintume efektyvumą mūsų svetainės.
         </target>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
@@ -7742,7 +7744,7 @@
           </context>
         </context-group>
         <target>
-          La maggior parte dei browser accetta automaticamente i cookie. Tuttavia, è possibile impedire che ciò accada manualmente modificando le impostazioni nel browser per garantire che i cookie non vengano più accettati. Puoi trovare dettagli al riguardo nelle istruzioni fornite dal produttore del browser.
+          Daugėlis naršyklių automatiškai priima "cookies". Tačiau Jūs galite užkirtsi kelią tam nustatant parametrus Jūsų naršyklėje užtikrinant, kad "cookies" nebus priimami. Daugiau detalių nurodytoje instrukcijoje Jūsų naršyklėje gamintojo.
         </target>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
@@ -7758,7 +7760,7 @@
           </context>
         </context-group>
         <target>
-          5. Cookie permanenti/cookie di terze parti
+          5. Pastovūs "cookies"/trečių šalių "cookies"
         </target>
       </trans-unit>
       <trans-unit id="21974757a955b5ae8dc8f3cad13b9aacf9e9a3f9" datatype="html">
@@ -7774,7 +7776,7 @@
           </context>
         </context-group>
         <target>
-          Questo sito web utilizza Piwik, un servizio di analisi web open source. Piwik utilizza i "cookies", che sono file di testo collocati sul tuo computer, per aiutare il sito ad analizzare come gli utenti utilizzano il sito. Le informazioni generate dal cookie sull'utilizzo del sito web (incluso il tuo indirizzo IP troncato dall'ultimo ottetto prima della sua memorizzazione, utilizzando il metodo _anonymizeIp ()) saranno trasmesse e archiviate sui nostri server in Germania. Utilizzeremo queste informazioni allo scopo di valutare l'utilizzo del sito Web, compilare report sulle attività del sito web per gli operatori del sito e fornire altri servizi relativi alle attività del sito e all'utilizzo di internet.
+          Ši svetainė naudoja "open source" žiniatinklio analizės paslaugą "Piwik". "Piwik" naudoja "slapukus", kurie yra jūsų kompiuteryje esantys tekstiniai failai, siekiant padėti svetainę analizuoti, kaip vartotojai naudoja svetainę. Slapukio sukurta informacija apie jūsų naudojimąsi svetaine (įskaitant jūsų IP adresą, sutrumpintą paskutiniuoju oktetu iki jos saugojimo naudojant metodą "_anonymizeIp ()",) bus perduotas ir saugomas mūsų serveriuose Vokietijoje. Mes naudosime šią informaciją, kad galėtume įvertinti, kaip naudojatės svetaine, sukoncentruosite svetainių veikėjų svetainių veiklos ataskaitas ir teikiate kitas paslaugas, susijusias su svetainių veikla ir interneto naudojimu.
         </target>
       </trans-unit>
       <trans-unit id="92e4b7e37947a8b945fc965353a1a79c88b0e93d" datatype="html">
@@ -7790,7 +7792,7 @@
           </context>
         </context-group>
         <target>
-          7. Link esterni
+          7. Išorinės nuorodos
         </target>
       </trans-unit>
       <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
@@ -7806,7 +7808,7 @@
           </context>
         </context-group>
         <target>
-          Cerchiamo di fornirti le migliori informazioni possibili. Questo è il motivo per cui troverai sul nostro sito i collegamenti che rimandano a pagine di proprietà di terzi. A meno che non sia perfettamente ovvio, attiriamo la vostra attenzione sul fatto che si tratta di collegamenti esterni. OKF DE non ha alcuna influenza sul contenuto o sulla progettazione di queste pagine di proprietà di fornitori esterni e quindi fa riferimento alle loro politiche sulla privacy. Sii consapevole che le assicurazioni fornite in questa policy sulla privacy non si applicano necessariamente in questo caso.
+          Mes siekiame suteikti jums kuo geresnę informaciją. Štai kodėl rasite nuorodų mūsų tinklalapiuose, kurie yra trečiųjų šalių turimi puslapiai. Atkreipiame dėmesį į tai, kad tai yra išorinės nuorodos. OKF DE neturi jokios įtakos šių puslapių turiniui ar dizainui, kuris priklauso išoriniams teikėjams ir todėl nurodo jų privatumo politiką. Atkreipkite dėmesį, kad šioje privatumo politikoje pateiktos garantijos nebūtinai taikomos ten.
         </target>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
@@ -7822,7 +7824,7 @@
           </context>
         </context-group>
         <target>
-          8. Sicurezza
+          8. Saugumas
         </target>
       </trans-unit>
       <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
@@ -7838,7 +7840,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE adotta misure tecniche e organizzative per garantire misure di sicurezza in linea con lo stato attuale della tecnologia per proteggere i dati forniti a OKF DE da manipolazioni accidentali o intenzionali, perdita, distruzione o accesso da parte di persone non autorizzate. Miglioriamo continuamente le nostre misure di sicurezza man mano che la tecnologia progredisce.
+          OKF DE apima technines ir organizacines priemones užtikrinti saugumą kartu su technologijomis apsaugoti duomenis, kuriuos suteikiate OKF DE dėl netyčinės manipuliacijos, praradimo, destrukcijos arba prieigos priskirtam asmeniui. Mes nuolatos tobuliname mūsų saugumo priemones kartu su technologiniu progresu.
         </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
@@ -7854,7 +7856,7 @@
           </context>
         </context-group>
         <target>
-          9. Diritto di informazione, domande sulla riservatezza dei dati e revoca
+          9. Informacijos teisė, klausimai apie duomenų apsaugą ir atšaukimą
         </target>
       </trans-unit>
       <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
@@ -7870,7 +7872,8 @@
           </context>
         </context-group>
         <target>
-          Attribuiamo grande importanza alla tuafiducia in noi. Questo è il motivo per cui cerchiamo di essere disponibili per fornirti informazioni e per rispondere alle tue domande in qualsiasi momento. Puoi contattare OKF DE in caso di domande sul trattamento dei dati personali; OKF DE è anche disponibile se si cercano informazioni, si desidera presentare domande o presentare reclami sulla questione della riservatezza dei dati.
+          We attach great importance to your trust in us. This is why we seek to be available to provide you with information and to answer your questions at any time. Please contact OKF DE if you have any questions concerning the processing of your personal data; OKF DE is also available if you are seeking information, wish to place applications or lodge complaints on the question of data privacy.
+Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums informaciją ir atsakyti klausimus bet kuriuo metu. Susisiekite su OKF DE, jeigu turite klausimų susijūsių su duomenų apdirbimu; OKF DE yra pasiekiami jeigu Jums reikai informacijos, norite sukurti aplikacijas ar išsakyti atvėjus dėl duomėnų saugumo.
         </target>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
@@ -7886,7 +7889,7 @@
           </context>
         </context-group>
         <target>
-          Inoltre, hai il diritto di revocare il consenso che hai concesso in qualsiasi momento, da quel momento in poi per il futuro.
+          Be to, Jūs galite atšaukti leidimą, kuris Jums buvo suteiktas bet kuriuo metu, efektyviai ateityje.
         </target>
       </trans-unit>
       <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
@@ -7902,7 +7905,7 @@
           </context>
         </context-group>
         <target>
-          Area di controllo
+          Patronuojantys regionai
         </target>
       </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">
@@ -7918,7 +7921,7 @@
           </context>
         </context-group>
         <target>
-          N. di gare nella regione
+          Paraiškų nr. regione
         </target>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
@@ -7934,7 +7937,7 @@
           </context>
         </context-group>
         <target>
-          N. di gare per macroarea
+          Paraiškos nr. subregione
         </target>
       </trans-unit>
       <trans-unit id="6cec3565e21ae209bd028809ac44f2abcae5a7b2" datatype="html">
@@ -7950,7 +7953,7 @@
           </context>
         </context-group>
         <target>
-          Cerca gara
+          Ieškoti paraiškos
         </target>
       </trans-unit>
       <trans-unit id="2e39557e8f1d40be27b31bd45d05d7293e57ce41" datatype="html">
@@ -7966,7 +7969,7 @@
           </context>
         </context-group>
         <target>
-          Cerca Aazienda
+          Ieškoti įmonės
         </target>
       </trans-unit>
       <trans-unit id="ad1c1442b4d5009646148af8153fcad20d40c3c2" datatype="html">
@@ -7982,7 +7985,7 @@
           </context>
         </context-group>
         <target>
-          Cerca autorità
+          Ieškoti institucijos
         </target>
       </trans-unit>
       <trans-unit id="5f2b4e3e104e37c6283dff48b4c08b23ca1f6707" datatype="html">
@@ -7998,7 +8001,7 @@
           </context>
         </context-group>
         <target>
-          Visualizzazione
+          Vizualizacija
         </target>
       </trans-unit>
       <trans-unit id="efea32159353fc5eeb7713f16044a43139b93640" datatype="html">
@@ -8014,7 +8017,7 @@
           </context>
         </context-group>
         <target>
-          prima
+          Prieš
         </target>
       </trans-unit>
       <trans-unit id="ca420aebba5bdcb97c2704532fd6cb675599628c" datatype="html">
@@ -8030,7 +8033,7 @@
           </context>
         </context-group>
         <target>
-          dopo
+          Po
         </target>
       </trans-unit>
       <trans-unit id="0a2fc68d81516378be0f06bbcee807c94d2c1a9a" datatype="html">
@@ -8046,7 +8049,7 @@
           </context>
         </context-group>
         <target>
-          lo stesso giorno
+          Ta pati diena
         </target>
       </trans-unit>
       <trans-unit id="293ab8acb61c97af9dfba991ce681bf173debabc" datatype="html">
@@ -8062,7 +8065,7 @@
           </context>
         </context-group>
         <target>
-          Cerca settore
+          Paieškos sekcija
         </target>
       </trans-unit>
       <trans-unit id="660e1bbe19d17064a912aa8e4cdd10101be91ed6" datatype="html">
@@ -8078,7 +8081,7 @@
           </context>
         </context-group>
         <target>
-          Settore di controllo
+          Tėvų sektorius
         </target>
       </trans-unit>
       <trans-unit id="a5e5b1ef473457ddf26f5f51bc83a46667f3c908" datatype="html">
@@ -8094,7 +8097,7 @@
           </context>
         </context-group>
         <target>
-          Trova informazioni sulla gara al
+          Surasti paraiškos informaciją
         </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
@@ -8110,7 +8113,7 @@
           </context>
         </context-group>
         <target>
-          Non ci sono indicatori per questa gara
+          Nėra jokių indikacijų šiai paraiškai
         </target>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
@@ -8126,7 +8129,7 @@
           </context>
         </context-group>
         <target>
-          Per cConto di
+          Vardu
         </target>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
@@ -8142,7 +8145,7 @@
           </context>
         </context-group>
         <target>
-          Fornitore di ulteriori informazioni
+          Tolesnės informacijos suteikėjas
         </target>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
@@ -8158,7 +8161,7 @@
           </context>
         </context-group>
         <target>
-          Fornitore di specifiche
+          Ypatumų suteikėjas
         </target>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
@@ -8174,7 +8177,7 @@
           </context>
         </context-group>
         <target>
-          Destinatario delle offerte
+          Pasiūlymo gavėjas
         </target>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
@@ -8190,7 +8193,7 @@
           </context>
         </context-group>
         <target>
-          Nome dell'ente per il ricorso
+          Apeliuojančio asmens pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
@@ -8206,7 +8209,7 @@
           </context>
         </context-group>
         <target>
-          Nome dell'ente di mediazione
+          Tarpininkaujančio asmens pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
@@ -8222,7 +8225,7 @@
           </context>
         </context-group>
         <target>
-          Amministratori
+          Administratoriai
         </target>
       </trans-unit>
       <trans-unit id="54f00deeee916877ba52c54363d3951ca3a840a7" datatype="html">
@@ -8238,7 +8241,7 @@
           </context>
         </context-group>
         <target>
-          Prezzi
+          Kainos
         </target>
       </trans-unit>
       <trans-unit id="417c7208ab7fd97d49ad0487b095923ffb21b5b7" datatype="html">
@@ -8262,7 +8265,7 @@
           </context>
         </context-group>
         <target>
-          Prezzo stimato
+          Apytikslė kaina
         </target>
       </trans-unit>
       <trans-unit id="f9f909ae231e02a769784e9ca4ea72e92ea34b83" datatype="html">
@@ -8278,7 +8281,7 @@
           </context>
         </context-group>
         <target>
-          Prezzo Finale
+          Galutinė kaina
         </target>
       </trans-unit>
       <trans-unit id="b8e154a2a372825dcb4aced784a3206b055f0e75" datatype="html">
@@ -8294,7 +8297,7 @@
           </context>
         </context-group>
         <target>
-          Prezzo dei documenti
+          Dokumentų kaina
         </target>
       </trans-unit>
       <trans-unit id="ae78cbe2e07f699217c7488237bdb79850173273" datatype="html">
@@ -8310,7 +8313,7 @@
           </context>
         </context-group>
         <target>
-          Date
+          Datos
         </target>
       </trans-unit>
       <trans-unit id="e2617e1baa15fe59a7d3b9c1ded99c8c07f54150" datatype="html">
@@ -8334,7 +8337,7 @@
           </context>
         </context-group>
         <target>
-          Data di inizio stimata
+          Apytikslė pradėjimo data
         </target>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
@@ -8358,7 +8361,7 @@
           </context>
         </context-group>
         <target>
-          Data stimata di completamento
+          Apytikslė pabaigos data
         </target>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
@@ -8382,7 +8385,7 @@
           </context>
         </context-group>
         <target>
-          Termine per presentare l'offerta
+          Siūlymo paskutinė data
         </target>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
@@ -8406,7 +8409,7 @@
           </context>
         </context-group>
         <target>
-          Termine per presentare i documenti
+          Dokumentų paskutinė data
         </target>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
@@ -8422,7 +8425,7 @@
           </context>
         </context-group>
         <target>
-          Durata stimata
+          Apskaičiuota trukmė
         </target>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
@@ -8438,7 +8441,7 @@
           </context>
         </context-group>
         <target>
-          Tipi
+          Tipai
         </target>
       </trans-unit>
       <trans-unit id="ea426b43d3914772b31f045023e76280e38a4cb3" datatype="html">
@@ -8454,7 +8457,7 @@
           </context>
         </context-group>
         <target>
-          Tipo di fornitura
+          Tiekėjo tipas
         </target>
       </trans-unit>
       <trans-unit id="f918f7ad53e11419f1bd8613763610a67c907b25" datatype="html">
@@ -8470,7 +8473,7 @@
           </context>
         </context-group>
         <target>
-          Tipo di procedura
+          Procedūros tipas
         </target>
       </trans-unit>
       <trans-unit id="f35e650c934ab03d87dc6c18926013257a5d82d3" datatype="html">
@@ -8486,7 +8489,7 @@
           </context>
         </context-group>
         <target>
-          Metodo di selezione
+          Atrinkos metodas
         </target>
       </trans-unit>
       <trans-unit id="a9404df24a66e14717a13e54c78f443d852e8ed6" datatype="html">
@@ -8502,7 +8505,7 @@
           </context>
         </context-group>
         <target>
-          Lingue autorizzate
+          Tinkamo siūlymo kalbos
         </target>
       </trans-unit>
       <trans-unit id="44929ed65effa672d2f881314c8160cb3d630727" datatype="html">
@@ -8518,7 +8521,7 @@
           </context>
         </context-group>
         <target>
-          Numero massimo di offerte
+          Maksimalus pasiūlymų skaičius
         </target>
       </trans-unit>
       <trans-unit id="94ecc5b64dfc32142cd639467a8329c1cd8b00ee" datatype="html">
@@ -8534,7 +8537,7 @@
           </context>
         </context-group>
         <target>
-          Numero massimo di partecipanti agli accordi quadro
+          Maksimalūs standartinio susitarimo dalyviai
         </target>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
@@ -8550,7 +8553,7 @@
           </context>
         </context-group>
         <target>
-          Criteri di aggiudicazione
+          Apdovanojimo kriterijus
         </target>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
@@ -8574,7 +8577,7 @@
           </context>
         </context-group>
         <target>
-          Prezzo
+          Kaina
         </target>
       </trans-unit>
       <trans-unit id="d68d8c2c960dc71366b178447b3a13e78ce505d4" datatype="html">
@@ -8590,7 +8593,7 @@
           </context>
         </context-group>
         <target>
-          Dettagli del lotto
+          Sklypo detalės
         </target>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
@@ -8606,7 +8609,7 @@
           </context>
         </context-group>
         <target>
-          Stato
+          Statusas
         </target>
       </trans-unit>
       <trans-unit id="528a04d8d0947b73df1db3011b214d1419da122c" datatype="html">
@@ -8622,7 +8625,7 @@
           </context>
         </context-group>
         <target>
-          Data di aggiudicazione
+          Apdovanojimo sprendimo data
         </target>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
@@ -8638,7 +8641,7 @@
           </context>
         </context-group>
         <target>
-          Data di completamento
+          Pabaigos data
         </target>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
@@ -8654,7 +8657,7 @@
           </context>
         </context-group>
         <target>
-          Termine per l'aggiudicazione
+          Apdovanojimo paskutinė data
         </target>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
@@ -8670,7 +8673,7 @@
           </context>
         </context-group>
         <target>
-          Data di firma del contratto
+          Sutarties pasirašymo data
         </target>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
@@ -8686,7 +8689,7 @@
           </context>
         </context-group>
         <target>
-          Data di cancellazione
+          Atšaukimo data
         </target>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
@@ -8702,7 +8705,7 @@
           </context>
         </context-group>
         <target>
-          Numero di offerte ricevute
+          Pasiūlymų skaičiavimas
         </target>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
@@ -8718,7 +8721,7 @@
           </context>
         </context-group>
         <target>
-          Numero di offerte in formato elettronico
+          Elektroninis pasiūlymų skaičiavimas
         </target>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
@@ -8734,7 +8737,7 @@
           </context>
         </context-group>
         <target>
-          Numero del contratto
+          Sutarties numeris
         </target>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
@@ -8750,7 +8753,7 @@
           </context>
         </context-group>
         <target>
-          CPV
+          Cpvs
         </target>
       </trans-unit>
       <trans-unit id="7b05eca339545782385023c492709e6b8903ea81" datatype="html">
@@ -8766,7 +8769,7 @@
           </context>
         </context-group>
         <target>
-          Numero del lotto
+          Sklypo numeris
         </target>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
@@ -8782,7 +8785,7 @@
           </context>
         </context-group>
         <target>
-          Posizione sulla pagina
+          Pozicija puslapyje
         </target>
       </trans-unit>
       <trans-unit id="648c25caed59b2d96be0fe5deb0fef0e9898d212" datatype="html">
@@ -8806,7 +8809,7 @@
           </context>
         </context-group>
         <target>
-          Criteri di ammissibilità
+          Tinkamumo kriterijus
         </target>
       </trans-unit>
       <trans-unit id="269b2364e25770a5c993dd687e9dc795d9ed887a" datatype="html">
@@ -8822,7 +8825,7 @@
           </context>
         </context-group>
         <target>
-          Offerte
+          Pasiūlymai
         </target>
       </trans-unit>
       <trans-unit id="eba03745afc51c98d70458cf75efb444ad3c0c54" datatype="html">
@@ -8838,7 +8841,7 @@
           </context>
         </context-group>
         <target>
-          Subappaltatori
+          Subrangos sutartis
         </target>
       </trans-unit>
       <trans-unit id="fd6d213cefb9dc64095782605684e29078591d35" datatype="html">
@@ -8854,7 +8857,7 @@
           </context>
         </context-group>
         <target>
-          Ha vinto
+          Laimi
         </target>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
@@ -8870,7 +8873,7 @@
           </context>
         </context-group>
         <target>
-          Ha subappaltato
+          Sudaryta subrangos sutartis
         </target>
       </trans-unit>
       <trans-unit id="b9288b8987a9e5545360e59b2e9f63e0544bb2ad" datatype="html">
@@ -8886,7 +8889,7 @@
           </context>
         </context-group>
         <target>
-          Valore del subappalto
+          Subrangos vertė
         </target>
       </trans-unit>
       <trans-unit id="ec6a8d9946e545072847202bdd8216f3fe229162" datatype="html">
@@ -8902,7 +8905,7 @@
           </context>
         </context-group>
         <target>
-          Prezzi per unità
+          Vieneto kaina
         </target>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
@@ -8918,7 +8921,7 @@
           </context>
         </context-group>
         <target>
-          Requisiti personali
+          Asmeniniai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
@@ -8934,7 +8937,7 @@
           </context>
         </context-group>
         <target>
-          Requisiti economici
+          Ekonominiai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
@@ -8950,7 +8953,7 @@
           </context>
         </context-group>
         <target>
-          Requisiti tecnici
+          Techniniai reikalavimai
         </target>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
@@ -8966,7 +8969,7 @@
           </context>
         </context-group>
         <target>
-          Depositi
+          Užstatas
         </target>
       </trans-unit>
       <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
@@ -8982,7 +8985,7 @@
           </context>
         </context-group>
         <target>
-          Fonte
+          Šaltinis
         </target>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
@@ -9030,7 +9033,7 @@
           </context>
         </context-group>
         <target>
-          Data di pubblicazione
+          Publikacijos data
         </target>
       </trans-unit>
       <trans-unit id="9bd1dc6d99e7401e05647a06b26bfc524a7a2dde" datatype="html">
@@ -9046,7 +9049,7 @@
           </context>
         </context-group>
         <target>
-          Data di spedizione
+          Siuntimo diena
         </target>
       </trans-unit>
       <trans-unit id="1d7cb8bd683036b637c74f4d4f8c239676de2540" datatype="html">
@@ -9062,7 +9065,7 @@
           </context>
         </context-group>
         <target>
-          Tipo di modulo
+          Formos tipas
         </target>
       </trans-unit>
       <trans-unit id="ad0c6b721d6d6cec75bf3a58abd1c2c7e77f80f7" datatype="html">
@@ -9078,7 +9081,7 @@
           </context>
         </context-group>
         <target>
-          Fonte del tipo di modulo
+          Šaltinio formos tipas
         </target>
       </trans-unit>
       <trans-unit id="fe46ccaae902ce974e2441abe752399288298619" datatype="html">
@@ -9102,7 +9105,7 @@
           </context>
         </context-group>
         <target>
-          Lingua
+          Kalba
         </target>
       </trans-unit>
       <trans-unit id="ee19b874f6c1cde10b5abbb796b0c08988aa94b1" datatype="html">
@@ -9118,7 +9121,7 @@
           </context>
         </context-group>
         <target>
-          ID Fonte
+          Šaltinio ID
         </target>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">
@@ -9134,7 +9137,7 @@
           </context>
         </context-group>
         <target>
-          ID assegnato dall'acquirente
+          Pirkėjui priskirtas ID
         </target>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
@@ -9150,7 +9153,7 @@
           </context>
         </context-group>
         <target>
-          Titolo
+          Pavadinimas
         </target>
       </trans-unit>
       <trans-unit id="fa5de2fc65a3a7a2c2a7d88d944bc013ab43c8cd" datatype="html">
@@ -9166,7 +9169,7 @@
           </context>
         </context-group>
         <target>
-          Informazioni sulla gara
+          Paraiškos informacija
         </target>
       </trans-unit>
       <trans-unit id="438a512770714af06882db959b1a97240d7b3f79" datatype="html">
@@ -9182,7 +9185,7 @@
           </context>
         </context-group>
         <target>
-          Fattura accettata
+          Sąskaita patvirtinta
         </target>
       </trans-unit>
       <trans-unit id="10c13792a5eac0f405ff5fe26c89804923682ad0" datatype="html">
@@ -9198,7 +9201,7 @@
           </context>
         </context-group>
         <target>
-          Centrale acquisti
+          Centrinis viešasis pirkimas
         </target>
       </trans-unit>
       <trans-unit id="e2dc172acb02aa39d879ea4153f54ce0aff6e2b1" datatype="html">
@@ -9214,7 +9217,7 @@
           </context>
         </context-group>
         <target>
-          Coperto da Gpa
+          Taikomas Gpa
         </target>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
@@ -9230,7 +9233,7 @@
           </context>
         </context-group>
         <target>
-          Appalto congiunto
+          Jungtinis viešasis pirkimas
         </target>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">
@@ -9246,7 +9249,7 @@
           </context>
         </context-group>
         <target>
-          Accordo quadro
+          Standartinis susitarimas
         </target>
       </trans-unit>
       <trans-unit id="0ba08037e5bc2c2675c0957ae659f9154736d15d" datatype="html">
@@ -9262,7 +9265,7 @@
           </context>
         </context-group>
         <target>
-          Sistema dinamico di acquisizione
+          Dps
         </target>
       </trans-unit>
       <trans-unit id="7d3dabffdd8c374c3b429a5a58dfbb1e339d9c17" datatype="html">
@@ -9278,7 +9281,7 @@
           </context>
         </context-group>
         <target>
-          Asta elettronica
+          Elektroninis pasirinkimas
         </target>
       </trans-unit>
       <trans-unit id="a860a554acd96bd1da91252d04f33fba9b110c58" datatype="html">
@@ -9294,7 +9297,7 @@
           </context>
         </context-group>
         <target>
-          ha Lotti
+          turiu sklypų
         </target>
       </trans-unit>
       <trans-unit id="63344e1765057a4008397080a6f9e2bc60930f52" datatype="html">
@@ -9310,7 +9313,7 @@
           </context>
         </context-group>
         <target>
-          ha Opzioni
+          turi opcijas
         </target>
       </trans-unit>
       <trans-unit id="aaa77bdac46558e5d797b6d53b0ca285a0137dea" datatype="html">
@@ -9326,7 +9329,7 @@
           </context>
         </context-group>
         <target>
-          Varianti accettate
+          Priimti variantai
         </target>
       </trans-unit>
       <trans-unit id="e0111239d8e59851b4c1fa1771cbb71ba0273375" datatype="html">
@@ -9342,7 +9345,7 @@
           </context>
         </context-group>
         <target>
-          ID assegnato dal Compratore
+          Pirkėjui priskirtas ID
         </target>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
@@ -9358,7 +9361,7 @@
           </context>
         </context-group>
         <target>
-          Finanziamento
+          Finansavimas
         </target>
       </trans-unit>
       <trans-unit id="5d926ca393abe804e7685919df49933d17f625e5" datatype="html">
@@ -9374,7 +9377,7 @@
           </context>
         </context-group>
         <target>
-          Metadati
+          Meta duomenys
         </target>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
@@ -9390,7 +9393,7 @@
           </context>
         </context-group>
         <target>
-          Creato
+          Sukurta
         </target>
       </trans-unit>
       <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
@@ -9406,7 +9409,7 @@
           </context>
         </context-group>
         <target>
-          Modificato
+          Pakeista
         </target>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
@@ -9422,7 +9425,7 @@
           </context>
         </context-group>
         <target>
-          Clicca per nascondere/mostrare questa sezione
+          Paslėpti/rodyti sekciją
         </target>
       </trans-unit>
     </body>
