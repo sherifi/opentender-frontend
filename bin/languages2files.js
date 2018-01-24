@@ -327,9 +327,28 @@ let updateLanguage = function (lang, currentNodes, cb) {
 			let i = getNodeIndexById(nodes, transNode.attributes.id);
 			if (i >= 0) {
 				let node = nodes[i];
+				let source = node.children.find(sub => sub.tag === 'source');
 				let i_Target = getNodeIndexByTag(node.children, 'target');
 				if (i_Target >= 0) {
-					transNode.children.push(node.children[i_Target]);
+					let newNode = node.children[i_Target];
+					if (source.children && source.children.length > 1) {
+						let interpolations = source.children.filter(sub => sub.tag === 'x');
+						let parts = newNode.children[0].text.split('&lt;x').filter(part => part.indexOf('id="') >= 0).map(part => part.slice(0, part.indexOf('/&gt;')));
+						if (interpolations.length !== parts.length) {
+							console.error('---- Invalid Interpolation Count, ERROR in ' + lang + ' id: ' + transNode.attributes.id);
+							console.error('expected', interpolations.length, interpolations);
+							console.error('was', parts.length, newNode.children);
+						} else {
+							interpolations.forEach((interpolation,index)=>{
+								if (parts[index].indexOf('id="'+interpolation.attributes.id+'"')<0) {
+									console.error('---- Invalid Interpolation Order, ERROR in ' + lang + ' id: ' + transNode.attributes.id);
+									console.error('expected', interpolation);
+									console.error('was', parts[index]);
+								}
+							})
+						}
+					}
+					transNode.children.push(newNode);
 				}
 			}
 		});
