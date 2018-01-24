@@ -12,7 +12,7 @@ import {ILegendOptions} from '../common.interface';
 			<svg class="ngx-charts" [attr.width]="chartWidth" [attr.height]="dim.height">
 				<ng-content></ng-content>
 				<g *ngIf="label.text.length>0">
-					<text stroke-width="0.01" text-anchor="middle" [attr.x]="label.x" [attr.y]="label.y">{{label.text}}</text>
+					<text stroke-width="0.01" fill-opacity="0.7" text-anchor="middle" [attr.x]="label.x" [attr.y]="label.y">{{label.text}}</text>
 				</g>
 			</svg>
 			<ngx-charts-scale-legend
