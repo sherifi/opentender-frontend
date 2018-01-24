@@ -4,6 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {IStatsCountry} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 import {PlatformService} from '../../services/platform.service';
+import {I18NService} from '../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -17,10 +18,13 @@ export class StartPage {
 	private allportal: IStatsCountry;
 	private current: Country;
 	private loading: number = 0;
+	public languages = [];
 
-	constructor(private api: ApiService, private config: ConfigService, private notify: NotifyService, private platform: PlatformService) {
+	constructor(private api: ApiService, private config: ConfigService, private notify: NotifyService, private platform: PlatformService, private i18n: I18NService) {
 		this.current = this.config.country;
 		if (platform.isBrowser) {
+			const locale = config.locale || 'en';
+			this.languages = i18n.languages.filter(lang => lang.id !== locale);
 			this.loading++;
 			let sub_ping = this.api.ping().subscribe(
 				(result) => {
