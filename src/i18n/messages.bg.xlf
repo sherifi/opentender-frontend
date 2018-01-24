@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Тази платформа е част от проекта DIGIWHIST
+          Тази платформа е част от проекта &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -6599,7 +6599,7 @@
           </context>
         </context-group>
         <target>
-          Opentender използва показатели за изпълнение на обществените поръчки, основани на широк набор от научни анализи, синтезирани и развити в наши собствени изследвания: за показатели за административен капацитет виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Методичeн доклад за показателите за административно качество &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, за показатели за честност виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Методичен доклад за показателите относно рискове от корупция &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Всеобхватният резултат за добри обществени поръчки е средната стойност от трите съставни резултата. Всички тези показатели са базирани на обективни данни, са пряко подлежащи на действие от страна на публични и частни субекти, и са прозрачно и недвусмислено изчислени. Ако намерите каквито и да било грешки във &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;формулите &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, моля уведомете ни на &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender използва показатели за изпълнение на обществените поръчки, основани на широк набор от научни анализи, синтезирани и развити в наши собствени изследвания: за показатели за административен капацитет виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Методичeн доклад за показателите за административно качество &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, за показатели за честност виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Методичен доклад за показателите относно рискове от корупция &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, for integrity indicators see &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Всеобхватният резултат за добри обществени поръчки е средната стойност от трите съставни резултата. Всички тези показатели са базирани на обективни данни, са пряко подлежащи на действие от страна на публични и частни субекти, и са прозрачно и недвусмислено изчислени. Ако намерите каквито и да било грешки във &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;формулите&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, моля уведомете ни на &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">

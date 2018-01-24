@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Tėvų sektorius
+          Tėvų sektorius &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -736,7 +736,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Kviečiame aplankyti&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Kviečiame aplankyti &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -5354,7 +5354,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Susisiek su Opentender&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Susisiek su Opentender &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
@@ -5377,7 +5377,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Šis puslapis(&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{'v'+version}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;) yra sukurtas atviru kodu.
+          Šis puslapis (&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x equiv-text="{{'v'+version}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;) yra sukurtas atviru kodu.
         </target>
       </trans-unit>
       <trans-unit id="778f8d4e1d800b732a93d20e8f8a0858a603799b" datatype="html">
@@ -5631,7 +5631,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Subrangos vertė
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; Subrangos vertė
         </target>
       </trans-unit>
       <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
