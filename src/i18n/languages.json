@@ -29,6 +29,11 @@
       "id": "pt",
       "name": "Português",
       "eng": "Portuguese"
+    },
+    {
+      "id": "sl",
+      "name": "Slovenščina",
+      "eng": "Slovenian"
     }
   ],
   "disabled": [
@@ -111,11 +116,6 @@
       "id": "sk",
       "name": "Slovenčina",
       "eng": "Slovak"
-    },
-    {
-      "id": "sl",
-      "name": "Slovenščina",
-      "eng": "Slovenian"
     },
     {
       "id": "sv",
