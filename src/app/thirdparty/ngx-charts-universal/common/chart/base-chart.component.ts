@@ -13,14 +13,16 @@ export {PlatformService};
 export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 	@Input() chart: IChartBaseSettings;
 	@Input() data: Array<IChartData>;
-	@Output() select = new EventEmitter();
 	@Input() activeEntries: any[] = [];
+	@Output() select = new EventEmitter();
 	@Output() activate: EventEmitter<any> = new EventEmitter();
 	@Output() deactivate: EventEmitter<any> = new EventEmitter();
 
 	public dim: IChartDimension;
 	public lastdim: IChartDimension;
+	public clickable: boolean = false;
 	private resizeSubscription: Subscription;
+
 
 	constructor(protected chartElement: ElementRef, protected zone: NgZone, protected cd: ChangeDetectorRef, protected platform: PlatformService) {
 	}
@@ -39,6 +41,7 @@ export class BaseChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.update();
+		this.clickable = this.select.observers.length > 0;
 	}
 
 	update(): void {

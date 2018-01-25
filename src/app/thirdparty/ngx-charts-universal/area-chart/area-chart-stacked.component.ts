@@ -11,7 +11,8 @@ import {PlatformService} from '../../../services/platform.service';
       [dim]="dim" [chart]="chart" [data]="data"
       [legendOptions]="legendOptions"
       [activeEntries]="activeEntries"
-      (legendLabelClick)="onClick($event)"
+	  [clickable]="clickable"
+	  (legendLabelClick)="onClick($event)"
       (legendLabelActivate)="onActivate($event)"
       (legendLabelDeactivate)="onDeactivate($event)">
       <svg:defs>

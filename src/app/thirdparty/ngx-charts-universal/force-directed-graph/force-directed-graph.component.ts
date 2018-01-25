@@ -12,6 +12,7 @@ import {forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY}
 	template: `
 		<ngx-charts-chart
 				[dim]="dim" [chart]="chart" [data]="data"
+				[clickable]="clickable"
 				[legendOptions]="legendOptions"
 				(legendLabelClick)="onClick($event)"
 				(legendLabelActivate)="onActivate($event)"

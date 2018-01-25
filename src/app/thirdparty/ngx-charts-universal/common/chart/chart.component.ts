@@ -9,7 +9,7 @@ import {ILegendOptions} from '../common.interface';
 	selector: 'ngx-charts-chart',
 	template: `
 		<div [style.width.px]="dim.width">
-			<svg class="ngx-charts" [attr.width]="chartWidth" [attr.height]="dim.height">
+			<svg class="ngx-charts" [ngClass]="{'chart-click': clickable}" [attr.width]="chartWidth" [attr.height]="dim.height">
 				<ng-content></ng-content>
 				<g *ngIf="label.text.length>0">
 					<text stroke-width="0.01" fill-opacity="0.7" text-anchor="middle" [attr.x]="label.x" [attr.y]="label.y">{{label.text}}</text>
@@ -56,6 +56,7 @@ export class ChartComponent implements OnChanges {
 	@Input() chart: IChartBaseSettings;
 	@Input() legendOptions: ILegendOptions;
 	@Input() activeEntries: any[];
+	@Input() clickable: boolean = false;
 	@Output() legendLabelClick: EventEmitter<any> = new EventEmitter();
 	@Output() legendLabelActivate: EventEmitter<any> = new EventEmitter();
 	@Output() legendLabelDeactivate: EventEmitter<any> = new EventEmitter();
@@ -75,6 +76,7 @@ export class ChartComponent implements OnChanges {
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.update();
+		// this.clickable = this.chart && this.chart.
 	}
 
 	update(): void {

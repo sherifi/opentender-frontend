@@ -12,6 +12,7 @@ import {ColorHelper} from '../utils/color.helper';
 				[dim]="dim" [chart]="chart" [data]="data"
 				[legendOptions]="legendOptions"
 				[activeEntries]="activeEntries"
+				[clickable]="clickable"
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)"
 				(legendLabelClick)="onClick($event)">

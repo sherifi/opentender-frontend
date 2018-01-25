@@ -8,16 +8,7 @@ import {Colors} from '../../../model/colors';
 
 @Component({
 	selector: 'graph[score-grid]',
-	template: `
-		<div class="graph-title">{{title}}</div>
-		<ngx-charts-values-grid
-				class="chart-container"
-				[chart]="graph.chart"
-				[data]="graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
-		</ngx-charts-values-grid>
-	`
+	template: `<div class="graph-title">{{title}}</div><ngx-charts-values-grid class="chart-container" [chart]="graph.chart" [data]="graph.data"></ngx-charts-values-grid>`
 })
 export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -40,10 +31,6 @@ export class GraphScoreGridComponent implements OnChanges, ISeriesProvider {
 				return this.i18n.formatValue(value);
 			},
 			colorScheme: Colors.colorSchemes.linear_red_green
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

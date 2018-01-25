@@ -20,8 +20,7 @@ import {Colors} from '../../../model/colors';
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
+				(select)="graph.select($event)">
 		</ngx-charts-bar-horizontal-labeled>
 		<series-download-button [sender]="this"></series-download-button>`
 })
@@ -67,8 +66,6 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 		select: (event) => {
 			this.router.navigate(['/authority/' + event.id]);
 		},
-		onLegendLabelClick: (event) => {
-		},
 		data: null
 	};
 
@@ -104,8 +101,6 @@ export class GraphAuthoritiesComponent implements OnChanges, ISeriesProvider {
 			if (event.id) {
 				this.router.navigate(['/authority/' + event.id]);
 			}
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

@@ -12,6 +12,7 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 				[dim]="dim" [chart]="chart" [data]="data"
 				[legendOptions]="legendOptions"
 				[activeEntries]="activeEntries"
+				[clickable]="clickable"
 				(legendLabelClick)="onClick($event)"
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)">

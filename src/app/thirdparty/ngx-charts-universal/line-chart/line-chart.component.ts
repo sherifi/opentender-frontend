@@ -15,6 +15,7 @@ import {curveLinear} from 'd3-shape';
 				[dim]="dim" [chart]="chart" [data]="data"
 				[legendOptions]="legendOptions"
 				[activeEntries]="activeEntries"
+				[clickable]="clickable"
 				(legendLabelClick)="onClick($event)"
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)">

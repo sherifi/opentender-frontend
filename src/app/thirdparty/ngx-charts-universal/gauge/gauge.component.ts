@@ -9,7 +9,7 @@ import {IDomain} from '../common/common.interface';
 @Component({
 	selector: 'ngx-charts-gauge',
 	template: `
-		<ngx-charts-chart [dim]="dim" [chart]="chart">
+		<ngx-charts-chart [dim]="dim" [chart]="chart" [clickable]="clickable">
 			<svg:g [attr.transform]="transform" class="gauge chart">
 				<svg:g *ngFor="let arc of arcs" [attr.transform]="rotation">
 					<svg:g ngx-charts-gauge-arc

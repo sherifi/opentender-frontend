@@ -22,6 +22,7 @@ interface IRect {
 	template: `
 		<ngx-charts-chart
 				[dim]="dim" [chart]="chart" [data]="data"
+				[clickable]="clickable"
 				[legendOptions]="legendOptions"
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)"

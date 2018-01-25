@@ -10,7 +10,7 @@ import {min} from 'd3-array';
 @Component({
 	selector: 'ngx-charts-pie-grid',
 	template: `
-		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
+		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [clickable]="clickable">
 			<svg:g [attr.transform]="transform" class="pie-grid chart">
 				<svg:g *ngFor="let series of series"
 					   class="pie-grid-item"

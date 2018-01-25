@@ -36,9 +36,7 @@ import {Colors} from '../../../model/colors';
 		<ngx-charts-bar-vertical-grouped
 				class="chart-container"
 				[chart]="graph.chart"
-				[data]="graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
+				[data]="graph.data">
 		</ngx-charts-bar-vertical-grouped>
 		<series-download-button [sender]="this"></series-download-button>
 	`,
@@ -80,10 +78,6 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_dual
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

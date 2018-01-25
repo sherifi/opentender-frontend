@@ -22,8 +22,7 @@ import {Colors} from '../../../model/colors';
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]=" graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
+				(select)="graph.select($event)">
 		</ngx-charts-tree-map>
 		<series-download-button [sender]="this"></series-download-button>`
 })

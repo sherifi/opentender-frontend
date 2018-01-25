@@ -8,7 +8,7 @@ import {treemap, stratify} from 'd3-hierarchy';
 @Component({
 	selector: 'ngx-charts-tree-map',
 	template: `
-		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [activeEntries]="activeEntries">
+		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [activeEntries]="activeEntries" [clickable]="clickable">
 			<svg:g [attr.transform]="transform" class="tree-map chart">
 				<svg:g ngx-charts-tree-map-cell-series
 					   [colors]="colors"

@@ -15,7 +15,6 @@ import {I18NService} from '../../i18n/services/i18n.service';
 				[chart]="graph.chart"
 				[data]="graph.data"
 				[weights_data]="graph.weights_data"
-				(legendLabelClick)="graph.onLegendLabelClick($event)"
 				(select)="graph.select($event)">
 		</ngx-charts-radar-pie-chart>
 		<series-download-button [sender]="this"></series-download-button>`
@@ -46,8 +45,6 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 		},
 		select: (event) => {
 			this.onSelect.emit(event);
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null,
 		weights_data: null

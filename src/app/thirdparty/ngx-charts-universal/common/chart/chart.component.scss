@@ -125,10 +125,12 @@
 		font-weight: normal;
 	}
 
-	.circle,
-	.bar,
-	.arc {
-		cursor: pointer;
+	&.chart-click {
+		.circle,
+		.bar,
+		.arc {
+			cursor: pointer;
+		}
 	}
 
 	.bar,

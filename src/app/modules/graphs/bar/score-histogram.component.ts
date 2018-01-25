@@ -13,9 +13,7 @@ import {Colors} from '../../../model/colors';
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"
-				[data]="graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
+				[data]="graph.data">
 		</ngx-charts-bar-vertical>
 		<series-download-button [sender]="this"></series-download-button>`
 })
@@ -53,10 +51,6 @@ export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeries
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.linear_red_green
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

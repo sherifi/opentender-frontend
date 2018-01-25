@@ -22,9 +22,7 @@ import {Colors} from '../../../model/colors';
 		<ngx-charts-bar-vertical
 				class="chart-container"
 				[chart]="graph.chart"
-				[data]="graph.data"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)">
+				[data]="graph.data">
 		</ngx-charts-bar-vertical>
 		<series-download-button [sender]="this"></series-download-button>`
 })
@@ -62,10 +60,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
 		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
-		},
 		data: null
 	};
 
@@ -93,10 +87,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};
@@ -129,10 +119,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
 		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
-		},
 		data: null
 	};
 
@@ -163,10 +149,6 @@ export class GraphIndicatorHistogramComponent implements OnChanges, ISeriesProvi
 			showGridLines: true,
 			gradient: false,
 			colorScheme: Colors.colorSchemes.ordinal_1
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

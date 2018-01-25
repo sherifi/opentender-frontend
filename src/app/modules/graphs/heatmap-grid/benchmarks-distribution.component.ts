@@ -37,9 +37,7 @@ import {Colors} from '../../../model/colors';
 				class="chart-container"
 				[chart]="graph.chart"
 				[data]="graph.data"
-				[marker]="marker"
-				(select)="graph.select($event)"
-				(legendLabelClick)="graph.onLegendLabelClick($event)"></ngx-charts-heat-map-grid>
+				[marker]="marker"></ngx-charts-heat-map-grid>
 		<series-download-button [sender]="this"></series-download-button>
 	`,
 	styleUrls: ['../bar-grouped/benchmarks.component.scss']
@@ -88,10 +86,6 @@ export class GraphBenchmarksDistributionComponent implements OnChanges, ISeriesP
 				return this.unit + ': ' + this.i18n.formatValue(value) + ' ' + this.i18n.get('Tenders');
 			},
 			colorScheme: Colors.colorSchemes.linear_red_green
-		},
-		select: (event) => {
-		},
-		onLegendLabelClick: (event) => {
 		},
 		data: null
 	};

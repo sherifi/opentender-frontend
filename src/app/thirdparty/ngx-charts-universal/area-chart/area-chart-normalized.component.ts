@@ -13,6 +13,7 @@ import {PlatformService} from '../../../services/platform.service';
 				[data]="data"
 				[legendOptions]="legendOptions"
 				[activeEntries]="activeEntries"
+				[clickable]="clickable"
 				(legendLabelClick)="onClick($event)"
 				(legendLabelActivate)="onActivate($event)"
 				(legendLabelDeactivate)="onDeactivate($event)">

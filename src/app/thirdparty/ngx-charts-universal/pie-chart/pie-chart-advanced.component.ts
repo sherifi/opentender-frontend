@@ -12,7 +12,7 @@ import {IChartPieSettings, IChartData} from '../chart.interface';
 			<div class="advanced-pie chart"
 				 [style.width.px]="viewDim.width"
 				 [style.height.px]="viewDim.height">
-				<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
+				<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [clickable]="clickable">
 					<svg:g
 							[attr.transform]="transform"
 							class="pie chart">

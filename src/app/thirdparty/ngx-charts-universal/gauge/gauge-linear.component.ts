@@ -10,6 +10,7 @@ import {scaleLinear} from 'd3-scale';
 	template: `
 		<ngx-charts-chart
 				[dim]="dim" [chart]="chart" [data]="data"
+				[clickable]="clickable"
 				(click)="onClick()">
 			<svg:g class="linear-gauge chart">
 				<svg:g ngx-charts-bar

@@ -13,7 +13,7 @@ import {PlatformService} from '../../../services/platform.service';
 @Component({
 	selector: 'ngx-charts-values-grid',
 	template: `
-		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data">
+		<ngx-charts-chart [dim]="dim" [chart]="chart" [data]="data" [clickable]="clickable">
 			<svg:g [attr.transform]="transform" class="values-grid chart">
 				<svg:g *ngFor="let serie of series"
 					   class="values-grid-item"
