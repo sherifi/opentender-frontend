@@ -329,7 +329,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            3
+            4
           </context>
         </context-group>
         <target>
@@ -4791,7 +4791,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            551
+            552
           </context>
         </context-group>
         <target>
@@ -4831,7 +4831,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            550
+            551
           </context>
         </context-group>
         <context-group purpose="location">
@@ -4839,7 +4839,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            556
+            557
           </context>
         </context-group>
         <target>
@@ -4879,7 +4879,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            562
+            563
           </context>
         </context-group>
         <target>
@@ -6746,7 +6746,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            9
+            10
           </context>
         </context-group>
         <target>
@@ -6762,7 +6762,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            10
+            11
           </context>
         </context-group>
         <target>
@@ -6778,7 +6778,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            15
           </context>
         </context-group>
         <target>
@@ -6794,7 +6794,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            19
+            20
           </context>
         </context-group>
         <target>
@@ -6810,7 +6810,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            24
+            25
           </context>
         </context-group>
         <target>
@@ -6826,7 +6826,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            10
+            11
           </context>
         </context-group>
         <target>
@@ -6842,7 +6842,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            15
+            16
           </context>
         </context-group>
         <target>
@@ -6858,7 +6858,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/company/company.component.ts
           </context>
           <context context-type="linenumber">
-            22
+            23
           </context>
         </context-group>
         <context-group purpose="location">
@@ -6866,7 +6866,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            17
+            18
           </context>
         </context-group>
         <target>
@@ -7036,7 +7036,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            159
+            160
           </context>
         </context-group>
         <target>
@@ -7100,7 +7100,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            6
+            7
           </context>
         </context-group>
         <target>
@@ -7116,7 +7116,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            9
+            10
           </context>
         </context-group>
         <target>
@@ -7132,7 +7132,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            13
+            14
           </context>
         </context-group>
         <target>
@@ -7148,7 +7148,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            15
           </context>
         </context-group>
         <context-group purpose="location">
@@ -7156,7 +7156,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            26
           </context>
         </context-group>
         <target>
@@ -7172,7 +7172,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            24
+            25
           </context>
         </context-group>
         <target>
@@ -7188,7 +7188,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            26
+            27
           </context>
         </context-group>
         <target>
@@ -7204,7 +7204,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            28
           </context>
         </context-group>
         <target>
@@ -7226,7 +7226,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            41
           </context>
         </context-group>
         <target>
@@ -7248,7 +7248,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            42
           </context>
         </context-group>
         <target>
@@ -7270,7 +7270,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            42
+            43
           </context>
         </context-group>
         <target>
@@ -7892,22 +7892,6 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
           Be to, Jūs galite atšaukti leidimą, kuris Jums buvo suteiktas bet kuriuo metu, efektyviai ateityje.
         </target>
       </trans-unit>
-      <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
-        <source>
-          Parent Regions
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/region/region.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <target>
-          Patronuojantys regionai
-        </target>
-      </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">
         <source>
           Nr. of Tenders in Region
@@ -7917,7 +7901,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/region/region.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            15
           </context>
         </context-group>
         <target>
@@ -7933,7 +7917,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/region/region.component.ts
           </context>
           <context context-type="linenumber">
-            18
+            19
           </context>
         </context-group>
         <target>
@@ -8068,22 +8052,6 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
           Paieškos sekcija
         </target>
       </trans-unit>
-      <trans-unit id="660e1bbe19d17064a912aa8e4cdd10101be91ed6" datatype="html">
-        <source>
-          Parent Sectors
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/sector/sector.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <target>
-          Tėvų sektorius
-        </target>
-      </trans-unit>
       <trans-unit id="a5e5b1ef473457ddf26f5f51bc83a46667f3c908" datatype="html">
         <source>
           Find Tender Information at
@@ -8093,7 +8061,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            12
+            13
           </context>
         </context-group>
         <target>
@@ -8109,7 +8077,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            32
           </context>
         </context-group>
         <target>
@@ -8125,7 +8093,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            73
+            74
           </context>
         </context-group>
         <target>
@@ -8141,7 +8109,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            79
+            80
           </context>
         </context-group>
         <target>
@@ -8157,7 +8125,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            84
           </context>
         </context-group>
         <target>
@@ -8173,7 +8141,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            87
+            88
           </context>
         </context-group>
         <target>
@@ -8189,7 +8157,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            91
+            92
           </context>
         </context-group>
         <target>
@@ -8205,7 +8173,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            95
+            96
           </context>
         </context-group>
         <target>
@@ -8221,7 +8189,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            99
+            100
           </context>
         </context-group>
         <target>
@@ -8237,7 +8205,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            119
+            120
           </context>
         </context-group>
         <target>
@@ -8253,7 +8221,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            121
+            122
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8261,7 +8229,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            283
+            284
           </context>
         </context-group>
         <target>
@@ -8277,7 +8245,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            125
+            126
           </context>
         </context-group>
         <target>
@@ -8293,7 +8261,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            129
+            130
           </context>
         </context-group>
         <target>
@@ -8309,7 +8277,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            134
+            135
           </context>
         </context-group>
         <target>
@@ -8325,7 +8293,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            136
+            137
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8333,7 +8301,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            251
+            252
           </context>
         </context-group>
         <target>
@@ -8349,7 +8317,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            141
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8357,7 +8325,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            255
+            256
           </context>
         </context-group>
         <target>
@@ -8373,7 +8341,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            144
+            145
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8381,7 +8349,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            271
+            272
           </context>
         </context-group>
         <target>
@@ -8397,7 +8365,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            148
+            149
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8405,7 +8373,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            275
+            276
           </context>
         </context-group>
         <target>
@@ -8421,7 +8389,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            152
+            153
           </context>
         </context-group>
         <target>
@@ -8437,7 +8405,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            167
+            168
           </context>
         </context-group>
         <target>
@@ -8453,7 +8421,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            169
+            170
           </context>
         </context-group>
         <target>
@@ -8469,7 +8437,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            173
+            174
           </context>
         </context-group>
         <target>
@@ -8485,7 +8453,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            178
           </context>
         </context-group>
         <target>
@@ -8501,7 +8469,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            182
           </context>
         </context-group>
         <target>
@@ -8517,7 +8485,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            185
+            186
           </context>
         </context-group>
         <target>
@@ -8533,7 +8501,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            189
+            190
           </context>
         </context-group>
         <target>
@@ -8549,7 +8517,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            193
+            194
           </context>
         </context-group>
         <target>
@@ -8565,7 +8533,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            228
+            229
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8573,7 +8541,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            334
+            335
           </context>
         </context-group>
         <target>
@@ -8589,7 +8557,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            241
+            242
           </context>
         </context-group>
         <target>
@@ -8605,7 +8573,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            243
+            244
           </context>
         </context-group>
         <target>
@@ -8621,7 +8589,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            247
+            248
           </context>
         </context-group>
         <target>
@@ -8637,7 +8605,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            259
+            260
           </context>
         </context-group>
         <target>
@@ -8653,7 +8621,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            263
+            264
           </context>
         </context-group>
         <target>
@@ -8669,7 +8637,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            267
+            268
           </context>
         </context-group>
         <target>
@@ -8685,7 +8653,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            279
+            280
           </context>
         </context-group>
         <target>
@@ -8701,7 +8669,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            287
+            288
           </context>
         </context-group>
         <target>
@@ -8717,7 +8685,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            291
+            292
           </context>
         </context-group>
         <target>
@@ -8733,7 +8701,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            295
+            296
           </context>
         </context-group>
         <target>
@@ -8749,7 +8717,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            299
+            300
           </context>
         </context-group>
         <target>
@@ -8765,7 +8733,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            303
+            304
           </context>
         </context-group>
         <target>
@@ -8781,7 +8749,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            307
+            308
           </context>
         </context-group>
         <target>
@@ -8797,7 +8765,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            311
+            312
           </context>
         </context-group>
         <context-group purpose="location">
@@ -8805,7 +8773,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            381
+            382
           </context>
         </context-group>
         <target>
@@ -8821,7 +8789,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            316
+            317
           </context>
         </context-group>
         <target>
@@ -8837,7 +8805,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            326
+            327
           </context>
         </context-group>
         <target>
@@ -8853,7 +8821,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            338
+            339
           </context>
         </context-group>
         <target>
@@ -8869,7 +8837,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            342
+            343
           </context>
         </context-group>
         <target>
@@ -8885,7 +8853,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            346
+            347
           </context>
         </context-group>
         <target>
@@ -8901,7 +8869,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            350
+            351
           </context>
         </context-group>
         <target>
@@ -8917,7 +8885,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            369
+            370
           </context>
         </context-group>
         <target>
@@ -8933,7 +8901,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            373
+            374
           </context>
         </context-group>
         <target>
@@ -8949,7 +8917,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            377
+            378
           </context>
         </context-group>
         <target>
@@ -8965,7 +8933,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            385
+            386
           </context>
         </context-group>
         <target>
@@ -8981,7 +8949,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            401
+            402
           </context>
         </context-group>
         <target>
@@ -8997,7 +8965,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            405
+            406
           </context>
         </context-group>
         <context-group purpose="location">
@@ -9005,7 +8973,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            409
+            410
           </context>
         </context-group>
         <context-group purpose="location">
@@ -9013,7 +8981,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            461
+            462
           </context>
         </context-group>
         <target>
@@ -9029,7 +8997,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            413
+            414
           </context>
         </context-group>
         <target>
@@ -9045,7 +9013,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            417
+            418
           </context>
         </context-group>
         <target>
@@ -9061,7 +9029,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            421
+            422
           </context>
         </context-group>
         <target>
@@ -9077,7 +9045,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            425
+            426
           </context>
         </context-group>
         <target>
@@ -9093,7 +9061,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            429
+            430
           </context>
         </context-group>
         <context-group purpose="location">
@@ -9101,7 +9069,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            457
+            458
           </context>
         </context-group>
         <target>
@@ -9117,7 +9085,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            433
+            434
           </context>
         </context-group>
         <target>
@@ -9133,7 +9101,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            437
+            438
           </context>
         </context-group>
         <target>
@@ -9149,7 +9117,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            453
+            454
           </context>
         </context-group>
         <target>
@@ -9165,7 +9133,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            474
+            475
           </context>
         </context-group>
         <target>
@@ -9181,7 +9149,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            476
+            477
           </context>
         </context-group>
         <target>
@@ -9197,7 +9165,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            480
+            481
           </context>
         </context-group>
         <target>
@@ -9213,7 +9181,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            484
+            485
           </context>
         </context-group>
         <target>
@@ -9229,7 +9197,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            488
+            489
           </context>
         </context-group>
         <target>
@@ -9245,7 +9213,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            492
+            493
           </context>
         </context-group>
         <target>
@@ -9261,7 +9229,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            496
+            497
           </context>
         </context-group>
         <target>
@@ -9277,7 +9245,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            500
+            501
           </context>
         </context-group>
         <target>
@@ -9293,7 +9261,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            504
+            505
           </context>
         </context-group>
         <target>
@@ -9309,7 +9277,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            508
+            509
           </context>
         </context-group>
         <target>
@@ -9325,7 +9293,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            512
+            513
           </context>
         </context-group>
         <target>
@@ -9341,7 +9309,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            516
+            517
           </context>
         </context-group>
         <target>
@@ -9357,7 +9325,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            522
+            523
           </context>
         </context-group>
         <target>
@@ -9373,7 +9341,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            534
+            535
           </context>
         </context-group>
         <target>
@@ -9389,7 +9357,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            536
+            537
           </context>
         </context-group>
         <target>
@@ -9405,7 +9373,7 @@ Mes pabrėžiame ypatingą pasitikėjimą Jumis. Mes siekiame pateikti Jums info
             src/app/pages/tender/tender.component.ts
           </context>
           <context context-type="linenumber">
-            540
+            541
           </context>
         </context-group>
         <target>

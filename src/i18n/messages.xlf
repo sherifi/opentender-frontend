@@ -149,7 +149,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -2041,7 +2041,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">551</context>
+          <context context-type="linenumber">552</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3baa652179af58935b7b8d0fd3c3483dc6659ac4" datatype="html">
@@ -2060,11 +2060,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">550</context>
+          <context context-type="linenumber">551</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">556</context>
+          <context context-type="linenumber">557</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -2082,7 +2082,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">562</context>
+          <context context-type="linenumber">563</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
@@ -2869,60 +2869,60 @@
         <source>Authority Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/authority/authority.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b8a961f78f542ee07bb87623c47439d81e8f50b1" datatype="html">
         <source>Main Activities</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/authority/authority.component.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
         <source>Similar Authorities</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/authority/authority.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="32382c783e53d04c11023e4963cbba3359284203" datatype="html">
         <source>Search this authority at</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/authority/authority.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e336524ffbb838864880def2bd86d4cb9de44335" datatype="html">
         <source>Find Freedom of Information requests</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/authority/authority.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
         <source>Similar Companies</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/company/company.component.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="10ca3b39d610b4266c4e9cee482bec2f62b1ac65" datatype="html">
         <source>Search this company at</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/company/company.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6bd5afff269b16ad2e0e257382c6049922509c95" datatype="html">
         <source>Find Freedom of Information requests at</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/company/company.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
@@ -2996,7 +2996,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">160</context>
         </context-group>
       </trans-unit>
       <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
@@ -3024,74 +3024,74 @@
         <source>On this page you find all the tender data of this portal.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
         <source>Hierarchical JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
         <source>Current Portal</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
         <source>Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
         <source>JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7c4ca89a999288712aede90091a5228ce76f489c" datatype="html">
         <source>NDJSON*</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
         <source>Files are compressed with <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>GZip<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, which should be supported by your ZIP application.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
         <source>* Due to the amount of entries and many JSON parser don&apos;t support the file size, DIGIWHIST Tender JSON data has also been saved as <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Newline Delimited JSON<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
         <source>The structure of entries is outlined in a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>JSON Schema File<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -3360,25 +3360,18 @@
           <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="16951aacbfe79e825abc11b3e58e5c287b2bdd80" datatype="html">
-        <source>Parent Regions</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/region/region.component.ts</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">
         <source>Nr. of Tenders in Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/region/region.component.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="da78dd858112ea9dbf7a105accf8e4dc9c69e3b2" datatype="html">
         <source>Nr. of Tenders in Subregions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/region/region.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6cec3565e21ae209bd028809ac44f2abcae5a7b2" datatype="html">
@@ -3437,597 +3430,590 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="660e1bbe19d17064a912aa8e4cdd10101be91ed6" datatype="html">
-        <source>Parent Sectors</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/sector/sector.component.ts</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="a5e5b1ef473457ddf26f5f51bc83a46667f3c908" datatype="html">
         <source>Find Tender Information at</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
         <source>There are no Indicators for this Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
         <source>On Behalf Of</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
         <source>Further Information Provider</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
         <source>Specifications Provider</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
         <source>Bids Recipient</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
         <source>Appeal Body Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
         <source>Mediation Body Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
         <source>Administrators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="54f00deeee916877ba52c54363d3951ca3a840a7" datatype="html">
         <source>Prices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">119</context>
+          <context context-type="linenumber">120</context>
         </context-group>
       </trans-unit>
       <trans-unit id="417c7208ab7fd97d49ad0487b095923ffb21b5b7" datatype="html">
         <source>Estimated Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">121</context>
+          <context context-type="linenumber">122</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">283</context>
+          <context context-type="linenumber">284</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f9f909ae231e02a769784e9ca4ea72e92ea34b83" datatype="html">
         <source>Final Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b8e154a2a372825dcb4aced784a3206b055f0e75" datatype="html">
         <source>Documents Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">130</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae78cbe2e07f699217c7488237bdb79850173273" datatype="html">
         <source>Dates</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">135</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e2617e1baa15fe59a7d3b9c1ded99c8c07f54150" datatype="html">
         <source>Estimated Start Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">251</context>
+          <context context-type="linenumber">252</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
         <source>Estimated Completion Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">141</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">255</context>
+          <context context-type="linenumber">256</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
         <source>Bid Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">145</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">271</context>
+          <context context-type="linenumber">272</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
         <source>Documents Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">149</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">275</context>
+          <context context-type="linenumber">276</context>
         </context-group>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
         <source>Estimated Duration</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">153</context>
         </context-group>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
         <source>Types</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">168</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea426b43d3914772b31f045023e76280e38a4cb3" datatype="html">
         <source>Supply Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">169</context>
+          <context context-type="linenumber">170</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f918f7ad53e11419f1bd8613763610a67c907b25" datatype="html">
         <source>Procedure Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">173</context>
+          <context context-type="linenumber">174</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f35e650c934ab03d87dc6c18926013257a5d82d3" datatype="html">
         <source>Selection Method</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">177</context>
+          <context context-type="linenumber">178</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a9404df24a66e14717a13e54c78f443d852e8ed6" datatype="html">
         <source>Eligible Bid Languages</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">181</context>
+          <context context-type="linenumber">182</context>
         </context-group>
       </trans-unit>
       <trans-unit id="44929ed65effa672d2f881314c8160cb3d630727" datatype="html">
         <source>Max Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">185</context>
+          <context context-type="linenumber">186</context>
         </context-group>
       </trans-unit>
       <trans-unit id="94ecc5b64dfc32142cd639467a8329c1cd8b00ee" datatype="html">
         <source>Max Framework Agreement Participants</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">189</context>
+          <context context-type="linenumber">190</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
         <source>Award Criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">193</context>
+          <context context-type="linenumber">194</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
         <source>Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">228</context>
+          <context context-type="linenumber">229</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">334</context>
+          <context context-type="linenumber">335</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d68d8c2c960dc71366b178447b3a13e78ce505d4" datatype="html">
         <source>Lot Details</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">241</context>
+          <context context-type="linenumber">242</context>
         </context-group>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
         <source>Status</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">243</context>
+          <context context-type="linenumber">244</context>
         </context-group>
       </trans-unit>
       <trans-unit id="528a04d8d0947b73df1db3011b214d1419da122c" datatype="html">
         <source>Award Decision Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">247</context>
+          <context context-type="linenumber">248</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
         <source>Completion Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">259</context>
+          <context context-type="linenumber">260</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
         <source>Award Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">263</context>
+          <context context-type="linenumber">264</context>
         </context-group>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
         <source>Contract Signature Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">267</context>
+          <context context-type="linenumber">268</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
         <source>Cancellation Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">279</context>
+          <context context-type="linenumber">280</context>
         </context-group>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
         <source>Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">287</context>
+          <context context-type="linenumber">288</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
         <source>Electronic Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">291</context>
+          <context context-type="linenumber">292</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
         <source>Contract Number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">296</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
         <source>Cpvs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">299</context>
+          <context context-type="linenumber">300</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7b05eca339545782385023c492709e6b8903ea81" datatype="html">
         <source>Lot Number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">303</context>
+          <context context-type="linenumber">304</context>
         </context-group>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
         <source>Position On Page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">307</context>
+          <context context-type="linenumber">308</context>
         </context-group>
       </trans-unit>
       <trans-unit id="648c25caed59b2d96be0fe5deb0fef0e9898d212" datatype="html">
         <source>Eligibility Criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">311</context>
+          <context context-type="linenumber">312</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">381</context>
+          <context context-type="linenumber">382</context>
         </context-group>
       </trans-unit>
       <trans-unit id="269b2364e25770a5c993dd687e9dc795d9ed887a" datatype="html">
         <source>Bids</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">316</context>
+          <context context-type="linenumber">317</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eba03745afc51c98d70458cf75efb444ad3c0c54" datatype="html">
         <source>Subcontractors</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">326</context>
+          <context context-type="linenumber">327</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fd6d213cefb9dc64095782605684e29078591d35" datatype="html">
         <source>Is Winning</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">338</context>
+          <context context-type="linenumber">339</context>
         </context-group>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
         <source>Is Subcontracted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">342</context>
+          <context context-type="linenumber">343</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b9288b8987a9e5545360e59b2e9f63e0544bb2ad" datatype="html">
         <source>Subcontacted Value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">346</context>
+          <context context-type="linenumber">347</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ec6a8d9946e545072847202bdd8216f3fe229162" datatype="html">
         <source>Unit Prices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">350</context>
+          <context context-type="linenumber">351</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
         <source>Personal Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">369</context>
+          <context context-type="linenumber">370</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
         <source>Economic Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">373</context>
+          <context context-type="linenumber">374</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
         <source>Technical Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">377</context>
+          <context context-type="linenumber">378</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
         <source>Deposits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">385</context>
+          <context context-type="linenumber">386</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
         <source>Source</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">401</context>
+          <context context-type="linenumber">402</context>
         </context-group>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
         <source>URL</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">405</context>
+          <context context-type="linenumber">406</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">409</context>
+          <context context-type="linenumber">410</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">461</context>
+          <context context-type="linenumber">462</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2393499fb6f7168b313e4358963cd8e0d7f73239" datatype="html">
         <source>Publication Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">413</context>
+          <context context-type="linenumber">414</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9bd1dc6d99e7401e05647a06b26bfc524a7a2dde" datatype="html">
         <source>Dispatch Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">417</context>
+          <context context-type="linenumber">418</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1d7cb8bd683036b637c74f4d4f8c239676de2540" datatype="html">
         <source>Form Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">421</context>
+          <context context-type="linenumber">422</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ad0c6b721d6d6cec75bf3a58abd1c2c7e77f80f7" datatype="html">
         <source>Source Form Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">425</context>
+          <context context-type="linenumber">426</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fe46ccaae902ce974e2441abe752399288298619" datatype="html">
         <source>Language</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">429</context>
+          <context context-type="linenumber">430</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">457</context>
+          <context context-type="linenumber">458</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ee19b874f6c1cde10b5abbb796b0c08988aa94b1" datatype="html">
         <source>Source Id</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">433</context>
+          <context context-type="linenumber">434</context>
         </context-group>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">
         <source>Buyer Assigned Id</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">437</context>
+          <context context-type="linenumber">438</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
         <source>Title</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">453</context>
+          <context context-type="linenumber">454</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fa5de2fc65a3a7a2c2a7d88d944bc013ab43c8cd" datatype="html">
         <source>Tender Information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">474</context>
+          <context context-type="linenumber">475</context>
         </context-group>
       </trans-unit>
       <trans-unit id="438a512770714af06882db959b1a97240d7b3f79" datatype="html">
         <source>EInvoice Accepted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">476</context>
+          <context context-type="linenumber">477</context>
         </context-group>
       </trans-unit>
       <trans-unit id="10c13792a5eac0f405ff5fe26c89804923682ad0" datatype="html">
         <source>Central Procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">480</context>
+          <context context-type="linenumber">481</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e2dc172acb02aa39d879ea4153f54ce0aff6e2b1" datatype="html">
         <source>Covered By Gpa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">484</context>
+          <context context-type="linenumber">485</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
         <source>Joint Procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">488</context>
+          <context context-type="linenumber">489</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">
         <source>Framework Agreement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">492</context>
+          <context context-type="linenumber">493</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0ba08037e5bc2c2675c0957ae659f9154736d15d" datatype="html">
         <source>Dps</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">496</context>
+          <context context-type="linenumber">497</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7d3dabffdd8c374c3b429a5a58dfbb1e339d9c17" datatype="html">
         <source>Electronic Auction</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">500</context>
+          <context context-type="linenumber">501</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a860a554acd96bd1da91252d04f33fba9b110c58" datatype="html">
         <source>has Lots</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">504</context>
+          <context context-type="linenumber">505</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63344e1765057a4008397080a6f9e2bc60930f52" datatype="html">
         <source>has Options</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">508</context>
+          <context context-type="linenumber">509</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aaa77bdac46558e5d797b6d53b0ca285a0137dea" datatype="html">
         <source>Variants Accepted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">512</context>
+          <context context-type="linenumber">513</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0111239d8e59851b4c1fa1771cbb71ba0273375" datatype="html">
         <source>Buyer Assigned ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">516</context>
+          <context context-type="linenumber">517</context>
         </context-group>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
         <source>Funding</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">522</context>
+          <context context-type="linenumber">523</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5d926ca393abe804e7685919df49933d17f625e5" datatype="html">
         <source>Meta Data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">534</context>
+          <context context-type="linenumber">535</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
         <source>Created</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">536</context>
+          <context context-type="linenumber">537</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
         <source>Modified</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">540</context>
+          <context context-type="linenumber">541</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
