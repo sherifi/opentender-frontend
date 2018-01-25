@@ -3,6 +3,7 @@ import {ApiService} from '../../../../services/api.service';
 import {TypeaheadMatch} from '../../../../thirdparty/typeahead/typeahead-match.class';
 import {Observable} from 'rxjs';
 import {NotifyService} from '../../../../services/notify.service';
+import {I18NService} from '../../../../modules/i18n/services/i18n.service';
 
 @Component({
 	selector: 'autocomplete',
@@ -28,7 +29,7 @@ export class AutoCompleteComponent implements OnChanges {
 	public loading: number = 0;
 	public dataSource: Observable<any>;
 
-	public constructor(private api: ApiService, private notify: NotifyService) {
+	public constructor(private api: ApiService, private notify: NotifyService, public i18n: I18NService) {
 		this.init();
 	}
 
