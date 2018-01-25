@@ -82,7 +82,7 @@ export class RegionPage implements OnInit, OnDestroy {
 
 	public buildCrumbs(): void {
 		this.crumbs = [
-			{name: this.i18n.get('Regions')}
+			{name: this.i18n.get('Region')}
 		];
 		if (this.parent_regions) {
 			this.parent_regions.forEach(region => {

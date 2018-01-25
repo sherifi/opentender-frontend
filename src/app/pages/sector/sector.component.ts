@@ -63,7 +63,7 @@ export class SectorPage implements OnInit, OnDestroy {
 
 	public buildCrumbs(): void {
 		this.crumbs = [
-			{name: this.i18n.get('Sectors')}
+			{name: this.i18n.get('Sector')}
 		];
 		if (this.parent_sectors) {
 			this.parent_sectors.forEach(sector => {
