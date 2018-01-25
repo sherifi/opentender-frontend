@@ -21,6 +21,11 @@
       "eng": "English"
     },
     {
+      "id": "es",
+      "name": "Español",
+      "eng": "Spanish"
+    },
+    {
       "id": "it",
       "name": "Italiano",
       "eng": "Italian"
@@ -56,11 +61,6 @@
       "id": "da",
       "name": "Dansk",
       "eng": "Danish"
-    },
-    {
-      "id": "es",
-      "name": "Español",
-      "eng": "Spanish"
     },
     {
       "id": "et",
