@@ -36,6 +36,11 @@
       "eng": "Lithuanian"
     },
     {
+      "id": "pl",
+      "name": "Polski",
+      "eng": "Polish"
+    },
+    {
       "id": "pt",
       "name": "Português",
       "eng": "Portuguese"
@@ -101,11 +106,6 @@
       "id": "nl",
       "name": "Nederlands",
       "eng": "Dutch"
-    },
-    {
-      "id": "pl",
-      "name": "Polski",
-      "eng": "Polish"
     },
     {
       "id": "ro",
