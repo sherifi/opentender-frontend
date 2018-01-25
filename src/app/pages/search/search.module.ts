@@ -24,6 +24,7 @@ import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 import {SelectVizButtonComponent} from './components/select-viz-button/select-viz-button.component';
 import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-heatmap-grid.module';
 import {SelectSearchButtonComponent} from './components/select-search-button/select-search-button.component';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -36,6 +37,7 @@ import {SelectSearchButtonComponent} from './components/select-search-button/sel
 		PipesModule,
 		GraphsBarModule,
 		GraphsHeatMapGridModule,
+		BreadcrumbModule,
 		TypeaheadModule,
 		SliderModule,
 		DialogModule

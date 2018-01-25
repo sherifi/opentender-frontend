@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
-import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears} from '../../app.interfaces';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears, IBreadcrumb} from '../../app.interfaces';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class RegionPage implements OnInit, OnDestroy {
 	public region: IRegion;
 	public parent_regions: Array<IRegion> = [];
 	public child_regions: Array<IRegion> = [];
+	public crumbs: Array<IBreadcrumb> = [];
 	public notFound: boolean = false;
 	private loading: number = 0;
 	public search_cmd: ISearchCommand;
@@ -38,9 +39,10 @@ export class RegionPage implements OnInit, OnDestroy {
 				private titleService: TitleService, private i18n: I18NService, private state: StateService) {
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
+		this.buildCrumbs();
 	}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		let state = this.state.get('region');
 		if (state) {
 			this.columnIds = state.columnIds;
@@ -68,7 +70,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		});
 	}
 
-	ngOnDestroy() {
+	public ngOnDestroy(): void {
 		if (this.subscription) {
 			this.subscription.unsubscribe();
 		}
@@ -78,7 +80,26 @@ export class RegionPage implements OnInit, OnDestroy {
 		});
 	}
 
-	display(data: IStatsRegion): void {
+	public buildCrumbs(): void {
+		this.crumbs = [
+			{name: this.i18n.get('Regions')}
+		];
+		if (this.parent_regions) {
+			this.parent_regions.forEach(region => {
+				this.crumbs.push({
+					name: region.name,
+					link: '/region/' + region.id
+				});
+			});
+		}
+		if (this.region) {
+			this.crumbs.push({
+				name: this.region.name
+			});
+		}
+	}
+
+	private display(data: IStatsRegion): void {
 		this.region = null;
 		this.parent_regions = [];
 		this.child_regions = [];
@@ -88,8 +109,12 @@ export class RegionPage implements OnInit, OnDestroy {
 		this.titleService.set(data.region.name);
 		this.region = data.region;
 		this.parent_regions = data.parents || [];
+		this.parent_regions.sort((a, b) => {
+			return a.level - b.level;
+		});
 		this.child_regions = data.children || [];
 		this.displayStats(data.stats);
+		this.buildCrumbs();
 		this.search();
 	}
 
@@ -107,7 +132,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		viz.child_regions.data = stats.terms_subregions_nuts;
 	}
 
-	search() {
+	public search(): void {
 		if (!this.region) {
 			return;
 		}
@@ -130,7 +155,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		};
 	}
 
-	searchChange(data) {
+	public searchChange(data): void {
 	}
 
 }

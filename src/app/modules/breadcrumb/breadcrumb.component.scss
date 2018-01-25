@@ -1,0 +1,53 @@
+@import "../../../style/globals.scss";
+
+:host {
+  .container-outer {
+    margin-top: -18px;
+  }
+
+  .breadcrumb {
+    $base-background-color: white !default;
+    $breadcrumb-border-color: gainsboro;
+    $breadcrumb-border: 1px solid $breadcrumb-border-color;
+    $breadcrumb-height: 1.5em;
+    $breadcrumb-arrow-color: $breadcrumb-border-color;
+    $breadcrumb-background: $base-background-color;
+    $breadcrumb-inactive-hover-color: $breadcrumb-background;
+    $breadcrumb-color: #878787;
+    $breadcrumb-color-hover: #477DCA;
+
+    display: inline-block;
+    text-align: left;
+    span {
+      padding-left: 4px;
+      padding-top: 2px;
+      cursor: default;
+      vertical-align: middle;
+      color: $breadcrumb-arrow-color;
+    }
+    a {
+      background-color: $breadcrumb-background;
+      color: $breadcrumb-color;
+      display: inline-block;
+      font-size: 0.7em;
+      line-height: $breadcrumb-height;
+      margin-bottom: 2px;
+      margin-right: -5px;
+      position: relative;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        background-color: $breadcrumb-inactive-hover-color;
+        color: $breadcrumb-color-hover;
+      }
+
+      &.no-link {
+        color: $breadcrumb-color;
+        cursor: default;
+      }
+
+    }
+  }
+
+}

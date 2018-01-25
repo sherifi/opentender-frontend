@@ -12,6 +12,7 @@ import {SelectYearRangeModule} from '../../modules/select-year-range/select-year
 import {GraphsTreeMapModule} from '../../modules/graphs/tree-map/graphs-treemap.module';
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 import {LoadingModule} from '../../modules/loading/loading.module';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -21,6 +22,7 @@ import {LoadingModule} from '../../modules/loading/loading.module';
 		PipesModule,
 		GraphsTreeMapModule,
 		GraphsBarModule,
+		BreadcrumbModule,
 		TableModule,
 		SelectYearRangeModule,
 		MapsModule,

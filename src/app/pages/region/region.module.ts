@@ -10,6 +10,7 @@ import {RegionPage} from './region.component';
 import {TableModule} from '../../modules/tables/table.module';
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 import {LoadingModule} from '../../modules/loading/loading.module';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -18,6 +19,7 @@ import {LoadingModule} from '../../modules/loading/loading.module';
 		RouterModule,
 		PipesModule,
 		GraphsBarModule,
+		BreadcrumbModule,
 		MapsModule,
 		TableModule,
 		DialogModule,

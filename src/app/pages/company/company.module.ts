@@ -12,6 +12,7 @@ import {TableModule} from '../../modules/tables/table.module';
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 import {GraphsBarGroupedModule} from '../../modules/graphs/bar-grouped/graphs-bar-grouped.module';
 import {LoadingModule} from '../../modules/loading/loading.module';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -21,6 +22,7 @@ import {LoadingModule} from '../../modules/loading/loading.module';
 		PipesModule,
 		GraphsBarModule,
 		GraphsBarGroupedModule,
+		BreadcrumbModule,
 		MapsModule,
 		TableModule,
 		LoadingModule,

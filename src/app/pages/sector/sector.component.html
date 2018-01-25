@@ -1,12 +1,13 @@
+<breadcrumb [crumbs]="crumbs"></breadcrumb>
 <loading [loading]="!sector" [notFound]="notFound"></loading>
 <div class="container-outer entity" *ngIf="sector">
 	<div class="container">
 		<h1 class="container-title">{{sector.name}} (CPV {{sector.id}})</h1>
 	</div>
-	<div class="container container-padded-top" *ngIf="parent_sectors.length>0">
-		<div class="title"><ng-container i18n>Parent Sectors</ng-container>:</div>
-		<div *ngFor="let val of parent_sectors"><a [routerLink]="['/sector/'+val.id]">{{val.name}} (CPV {{val.id}})</a></div>
-	</div>
+	<!--<div class="container container-padded-top" *ngIf="parent_sectors.length>0">-->
+		<!--<div class="title"><ng-container i18n>Parent Sectors</ng-container>:</div>-->
+		<!--<div *ngFor="let val of parent_sectors"><a [routerLink]="['/sector/'+val.id]">{{val.name}} (CPV {{val.id}})</a></div>-->
+	<!--</div>-->
 	<div class="container container-margin">
 		<select-year-range [years]="viz.years.data" (onRangeChange)="onYearRangeSliderChange($event)"></select-year-range>
 	</div>

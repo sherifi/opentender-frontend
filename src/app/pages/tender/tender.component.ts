@@ -7,7 +7,7 @@ import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
 import {Subscription} from 'rxjs/Subscription';
-import {ISearchCommandFilter, ISearchFilterDefType, IStats} from '../../app.interfaces';
+import {IBreadcrumb, ISearchCommandFilter, ISearchFilterDefType, IStats} from '../../app.interfaces';
 import {IndicatorService} from '../../services/indicator.service';
 
 @Component({
@@ -22,6 +22,7 @@ export class TenderPage implements OnInit, OnDestroy {
 	public notFound: boolean = false;
 	private subscription: Subscription;
 	public showDownloadDialog: boolean = false;
+	public crumbs: Array<IBreadcrumb> = [];
 	public country: Country;
 	public state: { [name: string]: { open: boolean, empty: boolean, label?: string, subempty?: { [name: string]: boolean } } } = {
 		lots: {open: true, empty: true},
@@ -66,6 +67,21 @@ export class TenderPage implements OnInit, OnDestroy {
 		this.state.documents.label = this.i18n.get('Documents');
 		this.state.publications.label = this.i18n.get('Publications');
 		this.country = config.country;
+		this.buildCrumbs();
+	}
+
+	public buildCrumbs(): void {
+		this.crumbs = [
+			{
+				name: this.i18n.get('Tenders'),
+				link: '/search/tender'
+			}
+		];
+		if (this.tender) {
+			this.crumbs.push({
+				name: this.i18n.get('Tender')
+			});
+		}
 	}
 
 	getLotCollapse(lot, index) {
@@ -175,6 +191,7 @@ export class TenderPage implements OnInit, OnDestroy {
 			this.buildBenchmarkFilter();
 			this.refresh();
 		}
+		this.buildCrumbs();
 	}
 
 	buildBenchmarkFilter() {

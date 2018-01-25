@@ -10,6 +10,7 @@ import {DialogModule} from '../../modules/dialog/dialog.module';
 import {GraphsHeatMapGridModule} from '../../modules/graphs/heatmap-grid/graphs-heatmap-grid.module';
 import {GraphsValuesGridModule} from '../../modules/graphs/values-grid/graphs-values-grid.module';
 import {LoadingModule} from '../../modules/loading/loading.module';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -19,6 +20,7 @@ import {LoadingModule} from '../../modules/loading/loading.module';
 		PipesModule,
 		GraphsHeatMapGridModule,
 		GraphsValuesGridModule,
+		BreadcrumbModule,
 		DialogModule,
 		LoadingModule,
 		routing

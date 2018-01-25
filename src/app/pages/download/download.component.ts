@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {ConfigService} from '../../services/config.service';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
+import {IBreadcrumb} from '../../app.interfaces';
 
 interface Download {
 	country: string;
@@ -20,9 +21,10 @@ interface Download {
 export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];
 	current: Download;
+	public crumbs: Array<IBreadcrumb> = [];
 
 	constructor(private api: ApiService, private config: ConfigService, private i18n: I18NService) {
-
+		this.crumbs = [{name: i18n.get('Download')}];
 	}
 
 	public ngOnInit(): void {

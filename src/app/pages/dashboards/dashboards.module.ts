@@ -19,6 +19,7 @@ import {GraphsTreeMapModule} from '../../modules/graphs/tree-map/graphs-treemap.
 import {GraphsBarModule} from '../../modules/graphs/bar/graphs-bar.module';
 import {GraphsRadarPieModule} from '../../modules/graphs/radar-pie/graphs-radar-pie.module';
 import {GraphsValuesGridModule} from '../../modules/graphs/values-grid/graphs-values-grid.module';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
@@ -31,6 +32,7 @@ import {GraphsValuesGridModule} from '../../modules/graphs/values-grid/graphs-va
 		GraphsBarModule,
 		GraphsRadarPieModule,
 		GraphsValuesGridModule,
+		BreadcrumbModule,
 		PipesModule,
 		SliderModule,
 		DialogModule,

@@ -7,7 +7,7 @@ import {NotifyService} from '../../services/notify.service';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
 import {
 	ISector, IStats, IStatsAuthorities, IStatsCompanies, IStatsSector, IStatsPcPricesLotsInYears, IStatsProcedureType,
-	IStatsNuts, ISearchCommandFilter, ISearchCommand, IStatsCpvs, IStatsInYears
+	IStatsNuts, ISearchCommandFilter, ISearchCommand, IStatsCpvs, IStatsInYears, IBreadcrumb
 } from '../../app.interfaces';
 
 @Component({
@@ -21,6 +21,7 @@ export class SectorPage implements OnInit, OnDestroy {
 	public loading: number = 0;
 	public notFound: boolean = false;
 	public search_cmd: ISearchCommand;
+	public crumbs: Array<IBreadcrumb> = [];
 	public columnIds = ['id', 'title', 'buyers.name', 'lots.bids.bidders.name'];
 	public viz: {
 		histogram: { data: IStatsPcPricesLotsInYears, title?: string };
@@ -57,6 +58,26 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.procedure_types.title = this.i18n.get('Procedure Type');
+		this.buildCrumbs();
+	}
+
+	public buildCrumbs(): void {
+		this.crumbs = [
+			{name: this.i18n.get('Sectors')}
+		];
+		if (this.parent_sectors) {
+			this.parent_sectors.forEach(sector => {
+				this.crumbs.push({
+					name: sector.name,
+					link: '/sector/' + sector.id
+				});
+			});
+		}
+		if (this.sector) {
+			this.crumbs.push({
+				name: this.sector.name
+			});
+		}
 	}
 
 	public ngOnInit(): void {
@@ -137,10 +158,14 @@ export class SectorPage implements OnInit, OnDestroy {
 		this.sector = null;
 		this.parent_sectors = [];
 		if (!data) {
+			this.buildCrumbs();
 			return;
 		}
 		this.sector = data.sector;
 		this.parent_sectors = data.parents || [];
+		this.parent_sectors.sort((a, b) => {
+			return a.id.length - b.id.length;
+		});
 		if (data.sector) {
 			this.titleService.set(data.sector.name);
 		}
@@ -150,6 +175,7 @@ export class SectorPage implements OnInit, OnDestroy {
 		} else {
 			this.displayStats(data.stats);
 		}
+		this.buildCrumbs();
 		this.search();
 	}
 

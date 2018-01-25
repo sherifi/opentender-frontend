@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
-import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchFilterDefType, ISearchCommandFilter} from '../../app.interfaces';
+import {IAuthority, IStats, IStatsCompanies, IStatsCpvs, ISearchCommand, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchFilterDefType, ISearchCommandFilter, IBreadcrumb} from '../../app.interfaces';
 import {ConfigService, Country} from '../../services/config.service';
 import {NotifyService} from '../../services/notify.service';
 
@@ -18,6 +18,7 @@ import {I18NService} from '../../modules/i18n/services/i18n.service';
 })
 export class AuthorityPage implements OnInit, OnDestroy {
 	public authority: Buyer;
+	public crumbs: Array<IBreadcrumb> = [];
 	public country: Country;
 	public loading: number = 0;
 	public notFound: boolean = false;
@@ -48,6 +49,19 @@ export class AuthorityPage implements OnInit, OnDestroy {
 		this.country = config.country;
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.stats.title = i18n.get('Benchmark Current Authority');
+		this.buildCrumbs();
+	}
+
+	public buildCrumbs(): void {
+		this.crumbs = [
+			{
+				name: this.i18n.get('Authorities')
+			}];
+		if (this.authority) {
+			this.crumbs.push({
+				name: this.i18n.nameGuard(this.authority.name)
+			});
+		}
 	}
 
 	ngOnInit(): void {
@@ -106,6 +120,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 			this.authority = null;
 			this.titleService.setDefault();
 		}
+		this.buildCrumbs();
 	}
 
 	benchmarkFilterChange(event) {

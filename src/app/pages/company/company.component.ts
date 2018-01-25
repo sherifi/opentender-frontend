@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {TitleService} from '../../services/title.service';
 import {StateService} from '../../services/state.service';
 import {ConfigService, Country} from '../../services/config.service';
-import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchCommandFilter, ISearchFilterDefType} from '../../app.interfaces';
+import {IStats, ICompany, IStatsCpvs, ISearchCommand, IStatsAuthorities, IStatsNuts, IStatsPricesInYears, IBenchmarkFilter, ISearchCommandFilter, ISearchFilterDefType, IBreadcrumb} from '../../app.interfaces';
 import {NotifyService} from '../../services/notify.service';
 
 /// <reference path="./model/tender.d.ts" />
@@ -21,6 +21,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	public country: Country;
 	public search_cmd: ISearchCommand;
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'finalPrice'];
+	public crumbs: Array<IBreadcrumb> = [];
 	public similar: Array<Body> = [];
 	public include_companies_ids: Array<string> = [];
 	public loading: number = 0;
@@ -46,6 +47,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 		this.country = config.country;
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
 		this.viz.stats.title = i18n.get('Benchmark Current Company');
+		this.buildCrumbs();
 	}
 
 	ngOnInit(): void {
@@ -81,6 +83,18 @@ export class CompanyPage implements OnInit, OnDestroy {
 			columnIds: this.columnIds
 		});
 		this.subscription.unsubscribe();
+	}
+
+	public buildCrumbs(): void {
+		this.crumbs = [
+			{
+				name: this.i18n.get('Companies')
+			}];
+		if (this.company) {
+			this.crumbs.push({
+				name: this.i18n.nameGuard(this.company.name)
+			});
+		}
 	}
 
 	benchmarkFilterChange(event) {
@@ -153,6 +167,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 			this.company = null;
 			this.titleService.setDefault();
 		}
+		this.buildCrumbs();
 	}
 
 	getCurrentIds(): Array<string> {

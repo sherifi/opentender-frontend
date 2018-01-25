@@ -6,11 +6,13 @@ import {AboutPage} from './about.component';
 import {AboutHowPage} from './how/how.component';
 import {AboutGlossaryPage} from './glossary/glossary.component';
 import {FormsModule} from '@angular/forms';
+import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
+		BreadcrumbModule,
 		routing
 	],
 	declarations: [

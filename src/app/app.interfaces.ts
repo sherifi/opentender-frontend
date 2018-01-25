@@ -533,3 +533,7 @@ export interface ITableColumnTender extends ITableColumn {
 	format: (tender: Tender, library: ITableLibrary) => Array<ITableCellLine>;
 }
 
+export interface IBreadcrumb {
+	name: string;
+	link?: string;
+}
