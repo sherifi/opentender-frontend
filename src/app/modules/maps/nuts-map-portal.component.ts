@@ -28,7 +28,7 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 	@Input()
 	formatTooltip: (properties: any) => string;
 
-	public leafletGeo;
+	public leafletGeo = null;
 	public leafletSettings = {
 		url: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png',
 		center: [56.17002298293205, 9.404296875000002],
@@ -38,7 +38,6 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 	public current: Country;
 	public loading: number = 0;
 	public geojson: IApiResultGeoJSON;
-	private map: any;
 
 	constructor(private api: ApiService, private platform: PlatformService, private config: ConfigService, private notify: NotifyService, private router: Router) {
 		this.current = config.country;
@@ -58,10 +57,11 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 
 	public ngAfterViewInit(): void {
 		if (this.platform.isBrowser) {
-			this.load();
+			setTimeout(() => {
+				this.load();
+			});
 		}
 	}
-
 
 	public ngOnChanges(changes: SimpleChanges): void {
 		this.apply();
@@ -89,7 +89,6 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 	}
 
 	private apply() {
-		this.leafletGeo = null;
 		if (this.platform.isBrowser && this.portals && this.geojson && this.geojson.features) {
 			this.geojson.features.forEach(feature => {
 				let portal = this.portals.find(p => feature.properties.id == p.id);
@@ -101,6 +100,8 @@ export class MapPortalComponent implements AfterViewInit, OnChanges {
 				feature.properties['border'] = '#fff';
 			});
 			this.leafletGeo = this.geojson;
+		} else {
+			this.leafletGeo = null;
 		}
 	}
 }
