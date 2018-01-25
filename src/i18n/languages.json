@@ -11,6 +11,11 @@
       "eng": "German"
     },
     {
+      "id": "el",
+      "name": "Ελληνικά",
+      "eng": "Greek"
+    },
+    {
       "id": "en",
       "name": "English",
       "eng": "English"
@@ -51,11 +56,6 @@
       "id": "da",
       "name": "Dansk",
       "eng": "Danish"
-    },
-    {
-      "id": "el",
-      "name": "Ελληνικά",
-      "eng": "Greek"
     },
     {
       "id": "es",
