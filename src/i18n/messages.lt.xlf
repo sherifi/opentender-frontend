@@ -778,7 +778,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            22
+            24
           </context>
         </context-group>
         <target>
@@ -794,7 +794,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
             src/app/pages/start/start.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            29
           </context>
         </context-group>
         <context-group purpose="location">

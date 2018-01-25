@@ -347,14 +347,14 @@
         <source>You can view the data on individual national portals by selecting a country below or explore <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>all available data<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> available data.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
         <source>Nr. of Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/start/start.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/graphs/bar/companies.component.ts</context>
