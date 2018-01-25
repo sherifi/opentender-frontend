@@ -88,10 +88,10 @@
 	</div>
 	<div class="container">
 		<div class="footer-col_left footer-col_left_margin_top">
-			<p class="footer-languages">
-				<ng-container i18n>Change the language of this page</ng-container><br/>
-				<span *ngFor="let lang of languages"><a class="link-active-beta" href="{{url}}?lang={{lang.id}}">{{lang.name}}</a> </span>
-			</p>
+				<div class="footer-languages">
+					<ng-container i18n>Change the language of this page</ng-container><br/>
+					<ng-container *ngFor="let lang of languages"><a class="link-active-beta" href="{{url}}?lang={{lang.id}}">{{lang.name}}</a></ng-container>
+				</div>
 		</div>
 		<div class="footer-col_right">
 			<div class="footer-bottom">
