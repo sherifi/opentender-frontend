@@ -294,6 +294,15 @@ let fillI18nTemplate = function (folder) {
 	fs.writeFileSync(path.join(folder, 'i18n.component.ts'), mod);
 };
 
+let matchAll = function (regex, text) {
+	let result = [];
+	while ((match = regex.exec(text)) != null) {
+		// console.log(match);
+		result.push({index: match.index, match: match[0]});
+	}
+	return result;
+};
+
 let updateLanguage = function (lang, currentNodes, cb) {
 	let transNodes = copyArray(currentNodes);
 
@@ -339,8 +348,8 @@ let updateLanguage = function (lang, currentNodes, cb) {
 							console.error('expected', interpolations.length, interpolations);
 							console.error('was', parts.length, newNode.children);
 						} else {
-							interpolations.forEach((interpolation,index)=>{
-								if (parts[index].indexOf('id="'+interpolation.attributes.id+'"')<0) {
+							interpolations.forEach((interpolation, index) => {
+								if (parts[index].indexOf('id="' + interpolation.attributes.id + '"') < 0) {
 									console.error('---- Invalid Interpolation Order, ERROR in ' + lang + ' id: ' + transNode.attributes.id);
 									console.error('expected', interpolation);
 									console.error('was', parts[index]);
@@ -348,6 +357,63 @@ let updateLanguage = function (lang, currentNodes, cb) {
 								}
 							})
 						}
+					}
+					if (newNode.children && newNode.children[0] && newNode.children[0].text) {
+						let text = newNode.children[0].text;
+
+						let reg = /&lt;x ctype="x-a" equiv-text="&amp;lt;\/a&amp;gt;" id="CLOSE_LINK"\/&gt;/g;
+						let matches = matchAll(reg, text);
+						matches.forEach(match => {
+							let c = text[match.index - 1];
+							if (c === ' ') {
+								console.error('---- Space before link end in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error(match);
+								console.error(text);
+							}
+							c = text[match.index + match.match.length];
+							if ([undefined, '.', ',', '-', ')', ' '].indexOf(c) < 0) {
+								console.error('---- NO Space after end link in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error('"' + c + '"');
+								console.error(match);
+								console.error(text);
+							}
+						});
+
+						reg = /&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK?[0-9]?"\/&gt;/g;
+						matchAll(reg, text).forEach(match => {
+							let c = text[match.index - 1];
+							if ([undefined, ' ', ';', "(", '['].indexOf(c) < 0) {
+								console.error('---- NO Space before start link in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error('"' + c + '"');
+								console.error(match);
+								console.error(text);
+							}
+							c = text[match.index + match.match.length];
+							if (c === ' ') {
+								console.error('---- Space after start link in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error(match);
+								console.error(text);
+							}
+						});
+
+						reg = /&lt;x equiv-text=".*?" id="INTERPOLATION_?[0-9]?"\/&gt;/g;
+						matchAll(reg, text).forEach(match => {
+							let c = text[match.index - 1];
+							if ([undefined, ' ', ';', "(", '['].indexOf(c) < 0) {
+								console.error('---- NO Space before interpolation in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error('"' + c + '"');
+								console.error(text);
+							}
+							c = text[match.index + match.match.length];
+							if ([undefined, ' ', '&', ']', '!', '?', '.'].indexOf(c) < 0) {
+								console.error('---- NO Space after interpolation in ' + lang + ' id: ' + transNode.attributes.id);
+								console.error('"' + c + '"');
+								console.error(match);
+								console.error(text);
+							}
+						});
+
+
 					}
 					transNode.children.push(newNode);
 				}
