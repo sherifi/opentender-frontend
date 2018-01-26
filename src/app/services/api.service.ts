@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {ConfigService} from './config.service';
 import {
 	IApiResultGeoJSON, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar,
-	IApiResultDownloadTenderSearch, IApiResultNuts, IApiResultPortals,
+	IApiResultDownloadTenderSearch, IApiResultNuts,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
 	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads, IApiResultPing
@@ -147,10 +147,6 @@ export class ApiService {
 
 	getPortalsStats(): Observable<IApiResultPortalsStats> {
 		return this.http.get<IApiResultPortalsStats>(this.actionUrl + 'portals/stats' + (this.config.locale ? '?lang=' + this.config.locale : ''));
-	}
-
-	getPortals(): Observable<IApiResultPortals> {
-		return this.http.get<IApiResultPortals>(this.actionUrl + 'portals/list');
 	}
 
 	getPortalMapData(): Observable<IApiResultGeoJSON> {

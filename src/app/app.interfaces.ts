@@ -227,10 +227,6 @@ export interface IApiResultSectors {
 	};
 }
 
-export interface IApiResultPortals {
-	data: Array<Country>;
-}
-
 export interface IApiResultPortalsStats {
 	data: Array<IStatsCountry>;
 }
