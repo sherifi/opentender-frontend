@@ -1,14 +1,16 @@
-import {Injectable, Inject, TRANSLATIONS} from '@angular/core';
+import {Injectable, Inject, TRANSLATIONS, LOCALE_ID} from '@angular/core';
 import {I18NHtmlParser, HtmlParser, Xliff} from '@angular/compiler';
 import {Consts} from '../../../model/consts';
 import * as i18nlanguages from '../../../../i18n/languages.json';
 import {getCurrencySymbol} from '@angular/common';
 import {environment} from '../../../../environments/environment';
+import * as moment from 'moment';
 
 declare module '*languages.json' {
 	export var enabled: Array<{
 		id: string;
 		name: string;
+		dateformat: string;
 	}>;
 }
 
@@ -17,32 +19,6 @@ interface INumeralName {
 	four?: string;
 	other?: string;
 }
-
-// http://bmanolov.free.fr/numbers_names.php
-const LARGE_NUMBERS_EN_US = [
-	{},
-	{other: 'Thousandth'},
-	{other: 'Million'},
-	{other: 'Billion'},
-	{other: 'Trillion'},
-	{other: 'Quadrillion'},
-	{other: 'Quintillion'},
-	{other: 'Sextillion'},
-	{other: 'Septillion'},
-	{other: 'Octillion'},
-	{other: 'Nonillion'},
-	{other: 'Decillion'},
-	{other: 'Undecillion'},
-	{other: 'Duodecillion'},
-	{other: 'Tredecillion'},
-	{other: 'Quattuordecillion'},
-	{other: 'Quindecillion'},
-	{other: 'Sexdecillion'},
-	{other: 'Septdecillion'},
-	{other: 'Octodecillion'},
-	{other: 'Novemdecillion'},
-	{other: 'Vigintillion'}
-];
 
 // http://bmanolov.free.fr/numbers_names.php
 const LARGE_NUMBERS_EN_UK = [
@@ -73,10 +49,12 @@ const LARGE_NUMBERS_EN_UK = [
 @Injectable()
 export class I18NService {
 	public languages = i18nlanguages.enabled;
+	public lang = 'en';
 	private _extra;
 	private _source: string;
 	private _parser: I18NHtmlParser;
 	private _translations: { [name: string]: any };
+	public DateFormat: string = 'YYYY/MM/DD';
 	public NameNotAvailable: string;
 	public ChartsTranslations: {
 		no_data: string;
@@ -86,7 +64,8 @@ export class I18NService {
 		loading: ''
 	};
 
-	constructor(@Inject(TRANSLATIONS) source: string, @Inject('TRANSLATIONS_EXTRA') extra) {
+	constructor(@Inject(LOCALE_ID) externalLocale,
+				@Inject(TRANSLATIONS) source: string, @Inject('TRANSLATIONS_EXTRA') extra) {
 		this._extra = extra;
 		this._source = source;
 		if (this._source) {
@@ -94,6 +73,15 @@ export class I18NService {
 			this._translations = xliff.load(this._source, '').i18nNodesByMsgId;
 			this._parser = new I18NHtmlParser(new HtmlParser(), this._source);
 		}
+		if (externalLocale) {
+			this.lang = externalLocale.slice(0, 2).toLowerCase();
+			const current = this.languages.find(lang => lang.id === this.lang);
+			if (current) {
+				this.DateFormat = current.dateformat.toUpperCase();
+				console.log(this.DateFormat);
+			}
+		}
+
 		this.NameNotAvailable = this.get('[Name not available]');
 		this.ChartsTranslations.no_data = this.get('No data');
 		this.ChartsTranslations.loading = this.get('Loading…');
@@ -237,6 +225,20 @@ export class I18NService {
 			return this.get('Portals');
 		}
 		return default_name;
+	}
+
+	public formatDatetime(value: string): string {
+		if (!value || value.length === 0) {
+			return '';
+		}
+		return moment(value).format(this.DateFormat + ' HH:mm');
+	}
+
+	public formatDate(value: string) {
+		if (!value || value.length === 0) {
+			return '';
+		}
+		return moment(value).format(this.DateFormat);
 	}
 
 	// template based translation

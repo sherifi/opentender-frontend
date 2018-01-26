@@ -2,6 +2,7 @@ import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges, ViewEn
 import {ISearchFilter, ISearchResultBucket} from '../../../../app.interfaces';
 import {IMyDateModel, IMyDpOptions} from 'mydatepicker';
 import {Utils} from '../../../../model/utils';
+import {I18NService} from '../../../../modules/i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -20,14 +21,14 @@ export class SelectDateFilterComponent implements OnChanges {
 
 	@Output('onChange') onChange = new EventEmitter();
 
-	// TODO: date format & locales
 	public myDatePickerOptions: IMyDpOptions = {
-		dateFormat: 'dd.mm.yyyy'
+		dateFormat: 'yyyy/mm/dd'
 	};
 
 	public model: { date: { year: number, month: number, day: number } };
 
-	constructor() {
+	constructor(private i18n: I18NService) {
+		this.myDatePickerOptions.dateFormat = this.i18n.DateFormat.toLowerCase();
 	}
 
 	public toggleMode(): void {

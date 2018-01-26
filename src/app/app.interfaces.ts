@@ -513,6 +513,8 @@ export interface ITableLibrary {
 	indicators: Array<IIndicatorInfo>;
 	TENDER: IIndicatorInfo;
 	i18n: {
+		formatDate: (value: string) => string;
+		formatDatetime: (value: string) => string;
 		formatCurrencyValueEUR: (value: number) => string;
 		formatValue: (value: number) => string;
 		expandCountry: (key: string) => string;

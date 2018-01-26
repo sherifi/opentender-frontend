@@ -735,7 +735,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 						c.lots = c.lots.slice(0, 5);
 						c.lots.push('…');
 					}
-					result.push({content: Utils.formatDate(c.date), hint: library.i18n.get('Lot') + ' ' + c.lots.join(',')});
+					result.push({content: library.i18n.formatDate(c.date), hint: library.i18n.get('Lot') + ' ' + c.lots.join(',')});
 				}
 			);
 			return ColumnsFormatUtils.checkEntryCollapse(result, library);
@@ -749,7 +749,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'estimatedStartDate',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDate(tender.estimatedStartDate)}]
+		format: (tender, library) => [{content: library.i18n.formatDate(tender.estimatedStartDate)}]
 	},
 	{
 		name: 'Estimated Completion Date',
@@ -759,7 +759,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'estimatedCompletionDate',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDate(tender.estimatedCompletionDate)}]
+		format: (tender, library)  => [{content: library.i18n.formatDate(tender.estimatedCompletionDate)}]
 	},
 	{
 		name: 'Bid Deadline',
@@ -769,7 +769,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'bidDeadline',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDatetime(tender.bidDeadline)}]
+		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.bidDeadline)}]
 	},
 	{
 		name: 'Documents Deadline',
@@ -779,7 +779,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'documentsDeadline',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDatetime(tender.documentsDeadline)}]
+		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.documentsDeadline)}]
 	},
 
 	{
@@ -790,7 +790,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'created',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDatetime(tender.created)}]
+		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.created)}]
 	},
 	{
 		name: 'Modification Date',
@@ -800,7 +800,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'modified',
 			ascend: false
 		},
-		format: tender => [{content: Utils.formatDatetime(tender.modified)}]
+		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.modified)}]
 	},
 	{
 		name: 'Country',

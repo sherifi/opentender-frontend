@@ -144,13 +144,7 @@ export class RegionPage implements OnInit, OnDestroy {
 					field: 'buyers.address.ot.nutscode' + field,
 					type: 'term',
 					value: [this.region.id]
-				},
-				// TODO: implement OR parameter ?
-				// {
-				// 	field: 'lots.bids.bidders.address.nutscode' + field,
-				// 	type: 'term',
-				// 	value: [this.region.id]
-				// }
+				}
 			]
 		};
 	}

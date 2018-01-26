@@ -3,18 +3,6 @@ import {IChartData} from '../thirdparty/ngx-charts-universal/chart.interface';
 import {ISeriesDataTable} from '../app.interfaces';
 
 export const Utils = {
-	formatDatetime: (value: string): string => {
-		if (!value || value.length === 0) {
-			return '';
-		}
-		return moment(value).format('DD.MM.YYYY HH:mm');
-	},
-	formatDate: (value: string): string => {
-		if (!value || value.length === 0) {
-			return '';
-		}
-		return moment(value).format('DD.MM.YYYY');
-	},
 	dateToUnix: (jsdate: Date) => {
 		return moment(jsdate).utc().valueOf();
 	},

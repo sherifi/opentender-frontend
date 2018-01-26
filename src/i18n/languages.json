@@ -3,139 +3,166 @@
     {
       "id": "bg",
       "name": "български",
-      "eng": "Bulgarian"
+      "eng": "Bulgarian",
+      "dateformat": "dd.M.yyyy"
     },
     {
       "id": "de",
       "name": "Deutsch",
-      "eng": "German"
+      "eng": "German",
+      "dateformat": "dd.MM.yyyy"
     },
     {
       "id": "el",
       "name": "Ελληνικά",
-      "eng": "Greek"
+      "eng": "Greek",
+      "dateformat": "d/M/yyyy"
     },
     {
       "id": "en",
       "name": "English",
-      "eng": "English"
+      "eng": "English",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "es",
       "name": "Español",
-      "eng": "Spanish"
+      "eng": "Spanish",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "hu",
       "name": "Magyar",
-      "eng": "Hungarian"
+      "eng": "Hungarian",
+      "dateformat": "yyyy. MM. dd."
     },
     {
       "id": "ka",
       "name": "ქართული",
-      "eng": "Georgian"
+      "eng": "Georgian",
+      "dateformat": "dd.MM.yyyy"
     },
     {
       "id": "it",
       "name": "Italiano",
-      "eng": "Italian"
+      "eng": "Italian",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "lt",
       "name": "Lietuviškai",
-      "eng": "Lithuanian"
+      "eng": "Lithuanian",
+      "dateformat": "yyyy.MM.dd"
     },
     {
       "id": "pl",
       "name": "Polski",
-      "eng": "Polish"
+      "eng": "Polish",
+      "dateformat": "yyyy-MM-dd"
     },
     {
       "id": "pt",
       "name": "Português",
-      "eng": "Portuguese"
+      "eng": "Portuguese",
+      "dateformat": "dd-MM-yyyy"
     },
     {
       "id": "ro",
       "name": "Româneşte",
-      "eng": "Romanian"
+      "eng": "Romanian",
+      "dateformat": "dd.MM.yyyy"
     },
     {
       "id": "sl",
       "name": "Slovenščina",
-      "eng": "Slovenian"
+      "eng": "Slovenian",
+      "dateformat": "d.M.yyyy"
     }
   ],
   "disabled": [
     {
       "id": "fr",
       "name": "Français",
-      "eng": "French"
+      "eng": "French",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "cs",
       "name": "Čeština",
-      "eng": "Czech"
+      "eng": "Czech",
+      "dateformat": "d.M.yyyy"
     },
     {
       "id": "da",
       "name": "Dansk",
-      "eng": "Danish"
+      "eng": "Danish",
+      "dateformat": "dd-MM-yyyy"
     },
     {
       "id": "et",
       "name": "Eesti",
-      "eng": "Estonian"
+      "eng": "Estonian",
+      "dateformat": "d.MM.yyyy"
     },
     {
       "id": "fi",
       "name": "Suomi",
-      "eng": "Finnish"
+      "eng": "Finnish",
+      "dateformat": "d.M.yyyy"
     },
     {
       "id": "ga",
       "name": "Gaeilge",
-      "eng": "Irish"
+      "eng": "Irish",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "hr",
       "name": "Hrvatski",
-      "eng": "Croatian"
+      "eng": "Croatian",
+      "dateformat": "d.M.yyyy"
     },
     {
       "id": "lv",
       "name": "Latviešu",
-      "eng": "Latvian"
+      "eng": "Latvian",
+      "dateformat": "yyyy.MM.dd."
     },
     {
       "id": "mt",
       "name": "Malti",
-      "eng": "Maltese"
+      "eng": "Maltese",
+      "dateformat": "dd/MM/yyyy"
     },
     {
       "id": "nl",
       "name": "Nederlands",
-      "eng": "Dutch"
+      "eng": "Dutch",
+      "dateformat": "d-M-yyyy"
     },
     {
       "id": "sk",
       "name": "Slovenčina",
-      "eng": "Slovak"
+      "eng": "Slovak",
+      "dateformat": "d. M. yyyy"
     },
     {
       "id": "sv",
       "name": "Svenska",
-      "eng": "Swedish"
+      "eng": "Swedish",
+      "dateformat": "yyyy-MM-dds"
     },
     {
       "id": "hy",
       "name": "Հայերէն",
-      "eng": "Armenian"
+      "eng": "Armenian",
+      "dateformat": "dd.MM.yyyy"
     },
     {
       "id": "is",
       "name": "Íslenska",
-      "eng": "Icelandic"
+      "eng": "Icelandic",
+      "dateformat": "d.M.yyyy"
     }
   ]
 }
