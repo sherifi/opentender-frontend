@@ -78,7 +78,6 @@ export class I18NService {
 			const current = this.languages.find(lang => lang.id === this.lang);
 			if (current) {
 				this.DateFormat = current.dateformat.toUpperCase();
-				console.log(this.DateFormat);
 			}
 		}
 
