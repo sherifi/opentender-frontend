@@ -1,0 +1,42 @@
+@import "../../../style/globals.scss";
+
+:host {
+  .cookie-law {
+    background: #000741;
+    border: 1px solid $base-border-color;
+    color: #bbb;
+    display: block;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 999999999;
+    text-align: center;
+    padding: 10px;
+
+    a {
+      color: #bbb;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .close {
+      display: block;
+      box-sizing: border-box;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      text-decoration: none;
+      line-height: 20px;
+    }
+
+  }
+
+}

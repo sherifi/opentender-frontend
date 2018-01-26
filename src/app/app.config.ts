@@ -12,7 +12,6 @@ import {FooterComponent} from './components/footer/footer.component';
 
 import {StartPage} from './pages/start/start.component';
 import {HomePage} from './pages/home/home.component';
-import {TestPage} from './pages/test/test.component';
 
 import {PageScrollDirective} from './directives/page-scroll.directive';
 
@@ -26,15 +25,16 @@ import {Title} from '@angular/platform-browser';
 import {TitleService} from './services/title.service';
 import {GraphsBarModule} from './modules/graphs/bar/graphs-bar.module';
 import {LoadingModule} from './modules/loading/loading.module';
+import {CookielawComponent} from './components/cookielaw/cookielaw.component';
 
 const AppConfig = {
 	declarations: [
 		AppComponent,
 		FooterComponent,
 		HeaderComponent,
+		CookielawComponent,
 		HomePage,
 		StartPage,
-		TestPage,
 		PageScrollDirective
 	],
 	imports: [

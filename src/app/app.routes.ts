@@ -3,7 +3,6 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {HomePage} from './pages/home/home.component';
 import {StartPage} from './pages/start/start.component';
-import {TestPage} from './pages/test/test.component';
 
 export const routes: Routes = [
 	{path: '', component: HomePage},
@@ -18,7 +17,6 @@ export const routes: Routes = [
 	{path: 'download', loadChildren: './pages/download/download.module#DownloadModule'},
 	{path: 'about', loadChildren: './pages/about/about.module#AboutModule'},
 	{path: 'imprint', loadChildren: './pages/imprint/imprint.module#ImprintModule'},
-	{path: 'test', component: TestPage},
 	{path: '**', redirectTo: 'start'}
 ];
 

@@ -1,0 +1,5 @@
+<div class="cookie-law" *ngIf="visible">
+	<div>By continuing to browse the site, you're agreeing to our use of cookies.</div>
+	<div>Learn more in our <a [routerLink]="['/imprint']" pageScroll="#privacy">privacy policy</a>.</div>
+	<a class="close" (click)="close($event)"><i class="icon-cross"></i></a>
+</div>
