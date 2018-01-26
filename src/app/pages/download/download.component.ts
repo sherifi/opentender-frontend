@@ -51,13 +51,13 @@ export class DownloadPage implements OnInit {
 					return (download.count > 0);
 				});
 				data = data.sort((a, b) => {
-					if (a.name < b.name) {
+					if (a.country === 'all') {
 						return -1;
 					}
-					if (a.name > b.name) {
+					if (b.country === 'all') {
 						return 1;
 					}
-					return 0;
+					return a.name.localeCompare(b.name);
 				});
 				this.downloads = data;
 			},
