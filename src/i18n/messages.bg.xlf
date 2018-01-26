@@ -325,6 +325,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
@@ -735,7 +743,7 @@
           </context>
         </context-group>
         <target>
-          Каним ви да посетите &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Каним ви да посетите &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Можете да преглеждате данните на отделните национални портали, като изберете държава по-долу или да изследвате &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; всички налични данни &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; налични данни.
+          Можете да преглеждате данните на отделните национални портали, като изберете държава по-долу или да изследвате &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;всички налични данни&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; налични данни.
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -5490,7 +5498,7 @@
           </context>
         </context-group>
         <target>
-          Този проект е &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;получил финансиране от рамковата програма за научни изследвания и иновации на Европейския съюз "Хоризонт 2020" &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;под споразумение за отпускане на безвъзмездни средства &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;номер 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Този проект е &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;получил финансиране от рамковата програма за научни изследвания и иновации на Европейския съюз "Хоризонт 2020"&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; под споразумение за отпускане на безвъзмездни средства &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;номер 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5564,7 +5572,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;през време
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; през време
         </target>
       </trans-unit>
       <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
@@ -6240,7 +6248,7 @@
           </context>
         </context-group>
         <target>
-          Datlab е чешка IT компания, специализирана в извличането и обработката на данни. От 2015 г. насам, тя редовно обработва данни от 30 различни уебсайтове и системи. Компанията работи в тясно сътрудничество с неправителствения сектор и предоставя няколко големи услуги за отркити данни, като например &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;(база данни за обществени поръчки), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (мониторинг на финансирането на политически партии).
+          Datlab е чешка IT компания, специализирана в извличането и обработката на данни. От 2015 г. насам, тя редовно обработва данни от 30 различни уебсайтове и системи. Компанията работи в тясно сътрудничество с неправителствения сектор и предоставя няколко големи услуги за отркити данни, като например &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (база данни за обществени поръчки), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (мониторинг на финансирането на политически партии).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Opentender използва показатели за изпълнение на обществените поръчки, основани на широк набор от научни анализи, синтезирани и развити в наши собствени изследвания: за показатели за административен капацитет виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Методичeн доклад за показателите за административно качество &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, за показатели за честност виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Методичен доклад за показателите относно рискове от корупция &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, for integrity indicators see &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Всеобхватният резултат за добри обществени поръчки е средната стойност от трите съставни резултата. Всички тези показатели са базирани на обективни данни, са пряко подлежащи на действие от страна на публични и частни субекти, и са прозрачно и недвусмислено изчислени. Ако намерите каквито и да било грешки във &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;формулите&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, моля уведомете ни на &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender използва показатели за изпълнение на обществените поръчки, основани на широк набор от научни анализи, синтезирани и развити в наши собствени изследвания: за показатели за административен капацитет виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Методичeн доклад за показателите за административно качество&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, за показатели за честност виж &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Методичен доклад за показателите относно рискове от корупция&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, for integrity indicators see &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Methods Paper on Corruption Risk Indicators&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Всеобхватният резултат за добри обществени поръчки е средната стойност от трите съставни резултата. Всички тези показатели са базирани на обективни данни, са пряко подлежащи на действие от страна на публични и частни субекти, и са прозрачно и недвусмислено изчислени. Ако намерите каквито и да било грешки във &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;формулите&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, моля уведомете ни на &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6637,7 +6645,7 @@
           </context>
         </context-group>
         <target>
-          Opentender показва карти базирани на&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS кодове &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender показва карти базирани на &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS кодове&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
@@ -6951,7 +6959,7 @@
           </context>
         </context-group>
         <target>
-          Среден резултат от&lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
+          Среден резултат от &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
@@ -7229,7 +7237,7 @@
           </context>
         </context-group>
         <target>
-          Файловете са компресирани с &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;което трябва да бъде поддържано от вашето ZIP приложение.
+          Файловете са компресирани с &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; което трябва да бъде поддържано от вашето ZIP приложение.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7438,7 +7446,7 @@
           </context>
         </context-group>
         <target>
-          Цялото съдържание от Digiwhist на тази страница е лицензирано под &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Цялото съдържание от Digiwhist на тази страница е лицензирано под &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">

@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Esta plataforma faz parte do  projecto &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; DIGIWHIST  &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Esta plataforma faz parte do projecto &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -321,6 +321,14 @@
           </context>
           <context context-type="linenumber">
             35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -735,7 +743,7 @@
           </context>
         </context-group>
         <target>
-          Convidamo-lo/a a visitar o &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Convidamo-lo/a a visitar o &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Pode visualizar os dados em portais nacionais individuais seleccionando um país em baixo ou explore &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; todos os dados disponíveis &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; dados disponíveis.
+          Pode visualizar os dados em portais nacionais individuais seleccionando um país em baixo ou explore &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;todos os dados disponíveis&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; dados disponíveis.
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -3815,7 +3823,7 @@
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;outros setores com menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; outros setores com menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -5490,7 +5498,7 @@
           </context>
         </context-group>
         <target>
-          Este projecto recebeu financiamento do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; programa de pesquisa e inovação Horizon 2020 da União Europeia &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sob acordo de subvenção &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Nº 645852 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Este projecto recebeu financiamento do &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;programa de pesquisa e inovação Horizon 2020 da União Europeia&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sob acordo de subvenção &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nº 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -6036,7 +6044,7 @@
           </context>
         </context-group>
         <target>
-          Página &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; de &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; Entradas: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Página &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; de &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Entradas: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          O Opentender usa indicadores de desempenho de contratação pública baseados num amplo conjunto de análises científicas, sintetizadas e afinadas na nossa própria pesquisa: para indicadores de capacidade administrativa, veja&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Documento de Métodos sobre Indicadores de Qualidade Administrativa &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de transparência, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Documento de Métodos sobre a Transparência Fiscal &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de integridade, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Documento de Métodos sobre Indicadores de Risco de Corrupção &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.  O resultado abrangente da boa contratação é a média simples dos três resultados compostos. Todos estes indicadores baseiam-se em dados objetivos, são diretamente acionáveis por atores públicos e privados, e são calculados de forma transparente e inequívoca. Se encontrar algum erro nas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; fórmulas &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, por favor notifique-nos em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          O Opentender usa indicadores de desempenho de contratação pública baseados num amplo conjunto de análises científicas, sintetizadas e afinadas na nossa própria pesquisa: para indicadores de capacidade administrativa, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Documento de Métodos sobre Indicadores de Qualidade Administrativa&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de transparência, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Documento de Métodos sobre a Transparência Fiscal&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para indicadores de integridade, veja &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Documento de Métodos sobre Indicadores de Risco de Corrupção&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. O resultado abrangente da boa contratação é a média simples dos três resultados compostos. Todos estes indicadores baseiam-se em dados objetivos, são diretamente acionáveis por atores públicos e privados, e são calculados de forma transparente e inequívoca. Se encontrar algum erro nas &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;fórmulas&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, por favor notifique-nos em &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -7229,7 +7237,7 @@
           </context>
         </context-group>
         <target>
-          Os ficheiros são comprimidos com &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GZip &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, que deve ser suportado pela sua aplicação ZIP.
+          Os ficheiros são comprimidos com &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, que deve ser suportado pela sua aplicação ZIP.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7251,7 +7259,7 @@
           </context>
         </context-group>
         <target>
-          * Devido à quantidade de entradas e ao facto de muitos analisadores JSON não suportarem  o tamanho do ficheiro, os dados JSON do Concurso DIGIWHIST foram também salvos como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Devido à quantidade de entradas e ao facto de muitos analisadores JSON não suportarem  o tamanho do ficheiro, os dados JSON do Concurso DIGIWHIST foram também salvos como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7273,7 +7281,7 @@
           </context>
         </context-group>
         <target>
-          A estrutura das entradas é delineada num &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Ficheiro JSON Schema &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          A estrutura das entradas é delineada num &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Ficheiro JSON Schema&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7438,7 +7446,7 @@
           </context>
         </context-group>
         <target>
-          Todos os conteúdos da Digiwhist neste website são detentores de licença nos termos da &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Creative Commons BY-NC-SA 4.0. &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Todos os conteúdos da Digiwhist neste website são detentores de licença nos termos da &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">

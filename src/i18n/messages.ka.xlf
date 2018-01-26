@@ -39,7 +39,7 @@
           </context>
         </context-group>
         <target>
-          კეთილი იყოს თქვენი პორტალზე შემოსვლა&lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
+          კეთილი იყოს თქვენი პორტალზე შემოსვლა &lt;x equiv-text="{{countryname}}" id="INTERPOLATION"/&gt;!
         </target>
       </trans-unit>
       <trans-unit id="512bf9c0d4f7525c747098d506a7b11c2dd956b5" datatype="html">
@@ -321,6 +321,14 @@
           </context>
           <context context-type="linenumber">
             35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -711,7 +719,7 @@
           </context>
         </context-group>
         <target>
-          როგორც ჩანს, თქვენ შემოხვედით&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
+          როგორც ჩანს, თქვენ შემოხვედით &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -735,7 +743,7 @@
           </context>
         </context-group>
         <target>
-          ეწვიეთ&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender-ს&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          ეწვიეთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender-ს &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          თქვენ შეგიძლიათ გაეცნოთ მონაცემებს ინდივიდუალურად, ეროვნული პორტალზე, თქვენთვის სასურველი ქვეყნის შერჩევით ქვემოთ&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;ან ნახოთ ყველა ის მონაცემი, რაც ხელმისაწვდომია ამ საიტზე&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          თქვენ შეგიძლიათ გაეცნოთ მონაცემებს ინდივიდუალურად, ეროვნული პორტალზე, თქვენთვის სასურველი ქვეყნის შერჩევით ქვემოთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;ან ნახოთ ყველა ის მონაცემი, რაც ხელმისაწვდომია ამ საიტზე&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -3815,7 +3823,7 @@
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; სხვა სექტორები უფრო ნაკლები, ვიდრე&lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; სხვა სექტორები უფრო ნაკლები, ვიდრე &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -5398,7 +5406,7 @@
           </context>
         </context-group>
         <target>
-          მოხარული ვიქნებით მივიღოთ თქვენგან კომენტარები&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub-ზე&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          მოხარული ვიქნებით მივიღოთ თქვენგან კომენტარები &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub-ზე&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5564,7 +5572,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;დროთა განმავლობაში
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; დროთა განმავლობაში
         </target>
       </trans-unit>
       <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
@@ -5630,7 +5638,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;თითო სექტორი
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; თითო სექტორი
         </target>
       </trans-unit>
       <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
@@ -5924,7 +5932,7 @@
           </context>
         </context-group>
         <target>
-          ჩამოტვირთული მასალა&lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; შეიცავს შეკუმშულ ფაილს და მისი ზომა იქნება მიახლოებით&lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
+          ჩამოტვირთული მასალა &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; შეიცავს შეკუმშულ ფაილს და მისი ზომა იქნება მიახლოებით &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -6036,7 +6044,7 @@
           </context>
         </context-group>
         <target>
-          გვერდები: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt;-ის - პუბლიკაციები&lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          გვერდები: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; -ის &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - პუბლიკაციები: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6240,7 +6248,7 @@
           </context>
         </context-group>
         <target>
-          Datlab არის ჩეხური IT კომპანია, რომელიც სპეციალიზირდება მონაცემთა მოპოვებისა და დამუშავების მიმართულებით. 2015 წლისთვის იგი რეგულარულად ამუშავებს მონაცემებს 30 სხვადასხვა საიტიდან და სისტემიდან. კომპანია მჭიდროდ თანამშრომლობს არასამთავრობო სექტორთან და  რამდენიმე ძირითად ღია მონაცემთა ბაზას აწარმოებს, როგორიცაა &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;1vsechnyzakazky.cz2 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;(შესყიდვების მონაცემთა ბაზა), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;3politickefinance.cz4&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (პოლიტიკური პარტიების დაფინანსების მონიტორინგი).
+          Datlab არის ჩეხური IT კომპანია, რომელიც სპეციალიზირდება მონაცემთა მოპოვებისა და დამუშავების მიმართულებით. 2015 წლისთვის იგი რეგულარულად ამუშავებს მონაცემებს 30 სხვადასხვა საიტიდან და სისტემიდან. კომპანია მჭიდროდ თანამშრომლობს არასამთავრობო სექტორთან და  რამდენიმე ძირითად ღია მონაცემთა ბაზას აწარმოებს, როგორიცაა &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (შესყიდვების მონაცემთა ბაზა), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (პოლიტიკური პარტიების დაფინანსების მონიტორინგი).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Opentender  საკუთარი კვლევებისთვის იყენებს სამეცნიერო ანალიზებზე დაფუძნებულ სახელმწიფო შესყიდვების შესრულების ინდიკატორებს. ესენია:  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; მეთოდები ადმინისტრაციული ხარისხის ინდიკატორებზე &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, გამჭვირვალობის ინდიკატორებისთვის იხილეთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;მეთოდები ფისკალური გამჭვირვალობის შესახებ &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, კეთილსინდისიერების ინდიკატორები იხილეთ&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; კორუფციის რისკის ინდიკატორები იხილეთ &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;  ფართომასშტაბიანი კარგი შესყიდვების ქულა არის სამი კომპოზიციური ქულის მარტივი საშუალო. ყველა ეს ინდიკატორი ეფუძნება ობიექტური მონაცემებს,  და ისინი გამჭვირვალედ და ცალსახად გამოითვლება. თუ შეცდომას  იპოვით &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;ფორმულებში&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, გთხოვთ გაგვაგებინოთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender  საკუთარი კვლევებისთვის იყენებს სამეცნიერო ანალიზებზე დაფუძნებულ სახელმწიფო შესყიდვების შესრულების ინდიკატორებს. ესენია:  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;მეთოდები ადმინისტრაციული ხარისხის ინდიკატორებზე&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, გამჭვირვალობის ინდიკატორებისთვის იხილეთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;მეთოდები ფისკალური გამჭვირვალობის შესახებ&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, კეთილსინდისიერების ინდიკატორები იხილეთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;კორუფციის რისკის ინდიკატორები იხილეთ&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; ფართომასშტაბიანი კარგი შესყიდვების ქულა არის სამი კომპოზიციური ქულის მარტივი საშუალო. ყველა ეს ინდიკატორი ეფუძნება ობიექტური მონაცემებს,  და ისინი გამჭვირვალედ და ცალსახად გამოითვლება. თუ შეცდომას  იპოვით &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;ფორმულებში&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, გთხოვთ გაგვაგებინოთ &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6637,7 +6645,7 @@
           </context>
         </context-group>
         <target>
-          Opentender აჩვენებს &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;სტატისტიკის ტერიტორიული ერთეულების ნომენკლატურის კოდებს&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;რუკებს
+          Opentender აჩვენებს &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;სტატისტიკის ტერიტორიული ერთეულების ნომენკლატურის კოდებს&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; რუკებს
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
@@ -6951,7 +6959,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt;-ის საშუალო ქულა
+          &lt;x equiv-text="{{indicatorTitle}}" id="INTERPOLATION"/&gt; -ის საშუალო ქულა
         </target>
       </trans-unit>
       <trans-unit id="5b8a7d4c33e8eaba6724b0bceebb1e1474f02040" datatype="html">
@@ -7251,7 +7259,7 @@
           </context>
         </context-group>
         <target>
-          ბევრი პუბლიკაციების და ასევე იმის გამო, რომ JSON parser ვერ უზრუნველყოფს დიდი ფაილების შენახვას, DIGIWHIST მონაცემებს ასევე ინახავს&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON სახით&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          ბევრი პუბლიკაციების და ასევე იმის გამო, რომ JSON parser ვერ უზრუნველყოფს დიდი ფაილების შენახვას, DIGIWHIST მონაცემებს ასევე ინახავს &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON სახით&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7273,7 +7281,7 @@
           </context>
         </context-group>
         <target>
-          პუბლიკაციების სტრუქტურა ასახულია&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;JSON ფაილში&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          პუბლიკაციების სტრუქტურა ასახულია &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;JSON ფაილში&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7438,7 +7446,7 @@
           </context>
         </context-group>
         <target>
-          Digiwhist-ის მიერ ამ ვებგვერდზე განთავსებული სრული ინფორმაცია ლიცენზირებულია&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0 მიერ.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Digiwhist-ის მიერ ამ ვებგვერდზე განთავსებული სრული ინფორმაცია ლიცენზირებულია &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0 მიერ.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">

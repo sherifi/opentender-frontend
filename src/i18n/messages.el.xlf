@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Αυτή η πλατφόρμα είναι μέρος του &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;προγράμματος DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Αυτή η πλατφόρμα είναι μέρος του &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;προγράμματος DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -321,6 +321,14 @@
           </context>
           <context context-type="linenumber">
             35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Μπορείτε να δείτε τα δεδομένα σε μεμονωμένες εθνικές δικτυακές πύλες, επιλέγοντας μια χώρα από τις κάτωθι ή εξερευνώντας &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;όλα τα διαθέσιμα δεδομένα &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;διαθέσιμα δεδομένα
+          Μπορείτε να δείτε τα δεδομένα σε μεμονωμένες εθνικές δικτυακές πύλες, επιλέγοντας μια χώρα από τις κάτωθι ή εξερευνώντας &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;όλα τα διαθέσιμα δεδομένα&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; διαθέσιμα δεδομένα
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -5398,7 +5406,7 @@
           </context>
         </context-group>
         <target>
-          Παρατηρήσεις και σχόλια για το &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; είναι ευπρόσδεκτα.
+          Παρατηρήσεις και σχόλια για το &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; είναι ευπρόσδεκτα.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5490,7 +5498,7 @@
           </context>
         </context-group>
         <target>
-          Αυτό το πρόγραμμα έλαβε χρηματοδότηση από το  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;πρόγραμμα έρευνας και καινοτομίας της Ευρωπαϊκής Ένωσης Horizon 2020 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; βάσει της συμφωνίας επιχορήγησης &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; αρ. 645852 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Αυτό το πρόγραμμα έλαβε χρηματοδότηση από το  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;πρόγραμμα έρευνας και καινοτομίας της Ευρωπαϊκής Ένωσης Horizon 2020&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; βάσει της συμφωνίας επιχορήγησης &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;αρ. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -6036,7 +6044,7 @@
           </context>
         </context-group>
         <target>
-          Σελίδα: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; από &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt;- Καταχωρήσεις: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Σελίδα: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; από &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Καταχωρήσεις: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6240,7 +6248,7 @@
           </context>
         </context-group>
         <target>
-          Η Datlab είναι μια τσεχική εταιρεία πληροφορικής που ειδικεύεται στη συγκέντρωση κι επεξεργασία δεδομένων. Από το 2015 επεξεργάζεται τακτικά δεδομένα από 30 διαφορετικές ιστοσελίδες και συστήματα. Συνεργάζεται στενά με τον τομέα των ΜΚΟ και διαχειρίζεται μερικές σημαντικές υπηρεσίες opendata, όπως &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; vsechnyzakazky.cz &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (βάση δεδομένων για τις δημόσιες προμήθειες), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (παρακολούθηση χρηματοδότησης πολιτικών κομμάτων).
+          Η Datlab είναι μια τσεχική εταιρεία πληροφορικής που ειδικεύεται στη συγκέντρωση κι επεξεργασία δεδομένων. Από το 2015 επεξεργάζεται τακτικά δεδομένα από 30 διαφορετικές ιστοσελίδες και συστήματα. Συνεργάζεται στενά με τον τομέα των ΜΚΟ και διαχειρίζεται μερικές σημαντικές υπηρεσίες opendata, όπως &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (βάση δεδομένων για τις δημόσιες προμήθειες), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (παρακολούθηση χρηματοδότησης πολιτικών κομμάτων).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Το Opentender χρησιμοποιεί δείκτες επίδοσης των δημόσιων συμβάσεων βασιζόμενοι σε ευρύ φάσμα επιστημονικών αναλύσεων, οι οποίοι συνθέτονται και αναλύονται περαιτέρω στη δική μας έρευνα: για τους δείκτες διοικητικής ικανότητας βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;  το Έγγραφο Εργασίας για τους Δείκτες Διοικητικής Ποιότητας &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, για τους δείκτες διαφάνειας  βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; το Έγγραφο Εργασίας για τη Δημοσιονομική Διαφάνεια &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, για τους δείκτες ακεραιότητας βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;το Έγγραφο Εργασίας για τους Δείκτες Κινδύνου Διαφθοράς &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Η πρωταρχική βαθμολογία της καλής προμήθειας  είναι ο απλός μέσος όρος των τριών σύνθετων βαθμολογιών. Όλοι αυτοί οι δείκτες βασίζονται σε αντικειμενικά δεδομένα, μπορούν να τεθούν άμεσα σε εφαρμογή από δημόσιους και ιδιωτικούς φορείς και υπολογίζονται με διαφάνεια και σαφήνεια. Εάν διαπιστώσετε κάποιο λάθος στους  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; τύπους &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, παρακαλούμε να μας ενημερώσετε στο &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Το Opentender χρησιμοποιεί δείκτες επίδοσης των δημόσιων συμβάσεων βασιζόμενοι σε ευρύ φάσμα επιστημονικών αναλύσεων, οι οποίοι συνθέτονται και αναλύονται περαιτέρω στη δική μας έρευνα: για τους δείκτες διοικητικής ικανότητας βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;το Έγγραφο Εργασίας για τους Δείκτες Διοικητικής Ποιότητας&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, για τους δείκτες διαφάνειας  βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;το Έγγραφο Εργασίας για τη Δημοσιονομική Διαφάνεια&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, για τους δείκτες ακεραιότητας βλέπε &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;το Έγγραφο Εργασίας για τους Δείκτες Κινδύνου Διαφθοράς&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Η πρωταρχική βαθμολογία της καλής προμήθειας  είναι ο απλός μέσος όρος των τριών σύνθετων βαθμολογιών. Όλοι αυτοί οι δείκτες βασίζονται σε αντικειμενικά δεδομένα, μπορούν να τεθούν άμεσα σε εφαρμογή από δημόσιους και ιδιωτικούς φορείς και υπολογίζονται με διαφάνεια και σαφήνεια. Εάν διαπιστώσετε κάποιο λάθος στους  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;τύπους&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, παρακαλούμε να μας ενημερώσετε στο &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6637,7 +6645,7 @@
           </context>
         </context-group>
         <target>
-          Το Opentender εμφανίζει &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; κωδικούς NUTS &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; βάσει χαρτών.
+          Το Opentender εμφανίζει &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;κωδικούς NUTS&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; βάσει χαρτών.
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
@@ -7229,7 +7237,7 @@
           </context>
         </context-group>
         <target>
-          Τα αρχεία συμπιέζονται με το  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GZip &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, το οποίο πρέπει να υποστηρίζεται από την εφαρμογή ZIP.
+          Τα αρχεία συμπιέζονται με το &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, το οποίο πρέπει να υποστηρίζεται από την εφαρμογή ZIP.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7251,7 +7259,7 @@
           </context>
         </context-group>
         <target>
-          * Λόγω του αριθμού εγγραφών και του γεγονότος ότι πολλοί αποκωδικοποιητές JSON δεν υποστηρίζουν το μέγεθος αρχείου, τα δεδομένα DIGIWHIST Δημόσιος Διαγωνισμός JSON έχουν επίσης αποθηκευτεί ως &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Λόγω του αριθμού εγγραφών και του γεγονότος ότι πολλοί αποκωδικοποιητές JSON δεν υποστηρίζουν το μέγεθος αρχείου, τα δεδομένα DIGIWHIST Δημόσιος Διαγωνισμός JSON έχουν επίσης αποθηκευτεί ως &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7273,7 +7281,7 @@
           </context>
         </context-group>
         <target>
-          Η δομή των καταχωρίσεων περιγράφεται σε ένα αρχείο &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; JSON Schema 2 &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Η δομή των καταχωρίσεων περιγράφεται σε ένα αρχείο &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -7438,7 +7446,7 @@
           </context>
         </context-group>
         <target>
-          Όλο το περιεχόμενο από την Digiwhist σε αυτόν τον ιστότοπο διατίθεται βάσει της άδειας &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Creative Commons  BY-NC-SA 4.0. &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Όλο το περιεχόμενο από την Digiwhist σε αυτόν τον ιστότοπο διατίθεται βάσει της άδειας &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">

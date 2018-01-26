@@ -68,7 +68,7 @@
           </context>
         </context-group>
         <target>
-          Ta platforma jest częścią &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;projektu DIGIWHIST &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Ta platforma jest częścią &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;projektu DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
@@ -321,6 +321,14 @@
           </context>
           <context context-type="linenumber">
             35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -5924,7 +5932,7 @@
           </context>
         </context-group>
         <target>
-          Pobieranie składa się z &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; zapisów i rozmiar skompresownego pliku będzie wynosił około&lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
+          Pobieranie składa się z &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; zapisów i rozmiar skompresownego pliku będzie wynosił około &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Opentender wykorzystuje wskaźniki wykonania zamówień publicznych w oparciu o szeroki zestaw analiz naukowych, zsyntetyzowanych i wziętych pod uwagę w naszych własnych badaniach: w przypadku wskaźników zdolności administracyjnych, patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Dokument w sprawie metod dotyczących wskaźników jakości administracyjnej &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, w przypadku wskaźników przejrzystości patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Dokument w sprawie metod dotyczących przejrzystości fiskalnej&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, wskaźników uczciwości patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Dokument w sprawie metod dotyczących wskaźników ryzyka korupcji &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Na calkowity dobry wynik w zakresie zamówień składa się średnia arytmetyczna trzech wyników złożonych. Wszystkie te wskaźniki opierają się na obiektywnych danych, są bezpośrednio dostępne do zastosowania przez podmioty publiczne i prywatne, i są przejrzyste i jednoznacznie obliczane.  Jeśli znajdziesz jakiś błąd w &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formułach&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, powiadom nas o tym poprzez &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender wykorzystuje wskaźniki wykonania zamówień publicznych w oparciu o szeroki zestaw analiz naukowych, zsyntetyzowanych i wziętych pod uwagę w naszych własnych badaniach: w przypadku wskaźników zdolności administracyjnych, patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Dokument w sprawie metod dotyczących wskaźników jakości administracyjnej&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, w przypadku wskaźników przejrzystości patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Dokument w sprawie metod dotyczących przejrzystości fiskalnej&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, wskaźników uczciwości patrz: &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Dokument w sprawie metod dotyczących wskaźników ryzyka korupcji&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Na calkowity dobry wynik w zakresie zamówień składa się średnia arytmetyczna trzech wyników złożonych. Wszystkie te wskaźniki opierają się na obiektywnych danych, są bezpośrednio dostępne do zastosowania przez podmioty publiczne i prywatne, i są przejrzyste i jednoznacznie obliczane.  Jeśli znajdziesz jakiś błąd w &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formułach&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, powiadom nas o tym poprzez &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6637,7 +6645,7 @@
           </context>
         </context-group>
         <target>
-          Opentender przedstawia mapy oparte na kodach &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender przedstawia mapy oparte na kodach &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;NUTS&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">

@@ -325,6 +325,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
@@ -711,7 +719,7 @@
           </context>
         </context-group>
         <target>
-          Parece que estás navegando desde&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
+          Parece que estás navegando desde &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Puede ver los datos en portales nacionales individuales seleccionando un país a continuación o explorar &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; todos los datos disponibles &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Puede ver los datos en portales nacionales individuales seleccionando un país a continuación o explorar &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;todos los datos disponibles&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -3815,7 +3823,7 @@
           runtime
         </note>
         <target>
-          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;otros sectores con menos de&lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; otros sectores con menos de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -5398,7 +5406,7 @@
           </context>
         </context-group>
         <target>
-          Invitamos contribuciones y comentarios sobre&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GitHub &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Invitamos contribuciones y comentarios sobre &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5490,7 +5498,7 @@
           </context>
         </context-group>
         <target>
-          Este proyecto ha recibido financiación del programa de investigación e innovación &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;Horizon 2020 de la Unión Europea  por el acuerdo de subvención &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;n. ° 3 6458524&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Este proyecto ha recibido financiación del programa de investigación e innovación &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Horizon 2020 de la Unión Europea&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; por el acuerdo de subvención &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;n. ° 6458524&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5564,7 +5572,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;a través del tiempo
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; a través del tiempo
         </target>
       </trans-unit>
       <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
@@ -5630,7 +5638,7 @@
           </context>
         </context-group>
         <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt;por sector
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; por sector
         </target>
       </trans-unit>
       <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
@@ -6036,7 +6044,7 @@
           </context>
         </context-group>
         <target>
-          Página: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt;of&lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Registros: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Página: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; de &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Registros: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6240,7 +6248,7 @@
           </context>
         </context-group>
         <target>
-          Datlab es una empresa de TI checa que se especializa en trabajos de extracción y procesamiento de datos. A partir de 2015, procesa regularmente datos de 30 diversos sitios web y sistemas. Trabaja en estrecha colaboración con el sector de las ONG y gestiona algunos de los principales servicios de datos abiertos, como  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; vsechnyzakazky.cz &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (base de datos de contrataciones públicas), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;(monitor de financiamiento de partidos políticos).
+          Datlab es una empresa de TI checa que se especializa en trabajos de extracción y procesamiento de datos. A partir de 2015, procesa regularmente datos de 30 diversos sitios web y sistemas. Trabaja en estrecha colaboración con el sector de las ONG y gestiona algunos de los principales servicios de datos abiertos, como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (base de datos de contrataciones públicas), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitor de financiamiento de partidos políticos).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Opentender utiliza indicadores de desempeño de contrataciones públicas basados ​​en un amplio conjunto de análisis científicos, sintetizados y profundizados en nuestra propia investigación: para los indicadores de capacidad administrativa, ver &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Trabajo acerca de los Métodos de Indicadores de Capacidad Administrativa &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para los indicadores de transparencia ver el &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Trabajo acerca de los Médotos de Indicadores de Transparencia Fiscal &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para los indicadores de integridad veer&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Trabajo acerca de los Médotos de Indicadores de Riesgo de Corrupción &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. El buen puntaje general en contrataciones públicas es el promedio simple de los tres puntajes compuestos. Todos estos indicadores se basan en datos objetivos, son directamente accionables por actores públicos y privados, y se calculan de manera transparente e inequívoca. Si encuentra algún error en &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulas&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, notifíquenos al &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Opentender utiliza indicadores de desempeño de contrataciones públicas basados ​​en un amplio conjunto de análisis científicos, sintetizados y profundizados en nuestra propia investigación: para los indicadores de capacidad administrativa, ver &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Trabajo acerca de los Métodos de Indicadores de Capacidad Administrativa&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para los indicadores de transparencia ver el &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Trabajo acerca de los Médotos de Indicadores de Transparencia Fiscal&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, para los indicadores de integridad veer &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Trabajo acerca de los Médotos de Indicadores de Riesgo de Corrupción&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. El buen puntaje general en contrataciones públicas es el promedio simple de los tres puntajes compuestos. Todos estos indicadores se basan en datos objetivos, son directamente accionables por actores públicos y privados, y se calculan de manera transparente e inequívoca. Si encuentra algún error en &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulas&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, notifíquenos al &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -7229,7 +7237,7 @@
           </context>
         </context-group>
         <target>
-          Los archivos se comprimen con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, que debe ser compatible con su aplicación ZIP.
+          Los archivos se comprimen con &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, que debe ser compatible con su aplicación ZIP.
         </target>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
@@ -7251,7 +7259,7 @@
           </context>
         </context-group>
         <target>
-          * Debido a la cantidad de registros y el hecho que muchos de los parsers en JSON no son compatibles con el tamaño del archivo, DIGIWHIST Tender JSON data también se ha guardado como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Newline Delimited JSON &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Debido a la cantidad de registros y el hecho que muchos de los parsers en JSON no son compatibles con el tamaño del archivo, DIGIWHIST Tender JSON data también se ha guardado como &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7273,7 +7281,7 @@
           </context>
         </context-group>
         <target>
-          Se describe la estructura de los registros en un &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; JSON Schema File &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Se describe la estructura de los registros en un &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;JSON Schema&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">

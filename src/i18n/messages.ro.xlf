@@ -325,6 +325,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
@@ -711,7 +719,7 @@
           </context>
         </context-group>
         <target>
-          Se pare că navigați dinspre&lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;
+          Se pare că navigați dinspre &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -735,7 +743,7 @@
           </context>
         </context-group>
         <target>
-          Vă invităm să vizitați &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Vă invităm să vizitați &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Opentender &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="fb2c8c56528f919412910f3ad522c2b688c1c061" datatype="html">
@@ -781,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Puteți vizualiza informațiile care aparțin portalurilor naționale individuale selectând o țară de mai jos sau puteți explora &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; toate informațiile disponibile &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; informațiile disponibile
+          Puteți vizualiza informațiile care aparțin portalurilor naționale individuale selectând o țară de mai jos sau puteți explora &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;toate informațiile disponibile&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; informațiile disponibile
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -3815,7 +3823,7 @@
           runtime
         </note>
         <target>
-          [ &lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt;alte sectoare cu mai puțin de&lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt; ]
+          [&lt;x equiv-text="{{count}}" id="INTERPOLATION"/&gt; alte sectoare cu mai puțin de &lt;x equiv-text="{{value}}" id="INTERPOLATION_1"/&gt;]
         </target>
       </trans-unit>
       <trans-unit id="inScoreRange" datatype="html">
@@ -5398,7 +5406,7 @@
           </context>
         </context-group>
         <target>
-          Așteptam contribuții și comentarii la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt; GitHub &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Așteptam contribuții și comentarii la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5490,7 +5498,7 @@
           </context>
         </context-group>
         <target>
-          Acest poiect a fost finanțat de &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;programul de cercetare și inovație Orizont 2020 al Uniunii Europene &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sub acordul de finanțare &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Nr. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Acest poiect a fost finanțat de &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;programul de cercetare și inovație Orizont 2020 al Uniunii Europene&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sub acordul de finanțare &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nr. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -6599,7 +6607,7 @@
           </context>
         </context-group>
         <target>
-          Opentender folosește indicatori de performanță a achizițiilor publice ce au la bază un set extins de analize științifice care sunt sintetizate și cercetate de către echipa noastră: pentru indicatori de capacitate administrativă citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Ghid Metodic despre Indicatorii de Calitate Administrativă&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de transparență citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt; Ghid Metodic despre Transparența Fiscală&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de integritate citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt; Ghid Metodic despre Indicatorii de Risc de Corupție&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Scorul general de achiziții bune reprezintă media aritmetică a trei scoruri compozite. Toți acești indicatori se bazează pe informații obiective, pot fi aplicați în mod direct de către actori publici și privați și sunt calculați în mod transparent și fără echivoc. Dacă găsiți vreo eroare în &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt; formulele &lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, va rugăm să ne informați la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender folosește indicatori de performanță a achizițiilor publice ce au la bază un set extins de analize științifice care sunt sintetizate și cercetate de către echipa noastră: pentru indicatori de capacitate administrativă citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Ghid Metodic despre Indicatorii de Calitate Administrativă&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de transparență citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Ghid Metodic despre Transparența Fiscală&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de integritate citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Ghid Metodic despre Indicatorii de Risc de Corupție&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Scorul general de achiziții bune reprezintă media aritmetică a trei scoruri compozite. Toți acești indicatori se bazează pe informații obiective, pot fi aplicați în mod direct de către actori publici și privați și sunt calculați în mod transparent și fără echivoc. Dacă găsiți vreo eroare în &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulele&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, va rugăm să ne informați la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">

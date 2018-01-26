@@ -100,8 +100,7 @@
           </context>
         </context-group>
         <target>
-          You can select between different ways of interacting with the data using these tiles. They are interconnected so the same full data depth can be accessed in different ways.
-Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failus. Jie yra tarpusavyje susiję, todėl tie patys duomenys gali būti naudojami skirtingais būdais.
+          Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failus. Jie yra tarpusavyje susiję, todėl tie patys duomenys gali būti naudojami skirtingais būdais.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -322,6 +321,14 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
           <context context-type="linenumber">
             35
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/tables/tender/table-tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            8
           </context>
         </context-group>
         <context-group purpose="location">
@@ -6037,7 +6044,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Puslapiai: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; of &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Įvestys: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
+          Puslapiai: &lt;x equiv-text="{{pagination.page+1}}" id="INTERPOLATION"/&gt; apie &lt;x equiv-text="{{pagination.pageCount | formatNumber }}" id="INTERPOLATION_1"/&gt; - Įvestys: &lt;x equiv-text="{{pagination.total | formatNumber }}" id="INTERPOLATION_2"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="b6d72204e337f8ede324eb0791a0487d21eb58e8" datatype="html">
@@ -6241,7 +6248,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Datlab yra čekų IT įmonė, kuri specializuojasi į duomenų išėmimą ir apdirbimą. Nuo 2015  reguliariai dirba su duomenimis iš 30 skirtingų puslapių ir sistemų. Dirba kartu su NVO sektoriumi ir rūpinasi keletu pagrindinių opendata paslaugų, tokių kaip&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (viešieji pirkimai), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (politinių partijų finansavimo stebėjimas).
+          Datlab yra čekų IT įmonė, kuri specializuojasi į duomenų išėmimą ir apdirbimą. Nuo 2015  reguliariai dirba su duomenimis iš 30 skirtingų puslapių ir sistemų. Dirba kartu su NVO sektoriumi ir rūpinasi keletu pagrindinių opendata paslaugų, tokių kaip &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (viešieji pirkimai), &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (politinių partijų finansavimo stebėjimas).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6600,7 +6607,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          Opentender naudoja viešųjų pirkimų veiklos indikatorius paremtus mokslinėmis analizėmis, sintezuota ir toliau naudojama mūsų tryrimui: administracinio pajėgumo indikatoriui&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Metodinis darbas apie administravimo kokybės indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, skaidrumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Metodinis darbas apie fiskalinį skaidrumą&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, integralumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Metodinis darbas apie korupcijos indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Geras viešojo pirkimo balas yra paprasčiausiai vidurkis trijų sukomponuotų balų. Visi šie indikatoriai yra paremti objektyviais duomenimis, yra tiesiogiai veikiami viesų ir privačių veikėjų ir skaidriai ir atidžiai suskaičiuoti. Jei radote klaidą  &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulėse&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, praneškite mums&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender naudoja viešųjų pirkimų veiklos indikatorius paremtus mokslinėmis analizėmis, sintezuota ir toliau naudojama mūsų tryrimui: administracinio pajėgumo indikatoriui &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Metodinis darbas apie administravimo kokybės indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, skaidrumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Metodinis darbas apie fiskalinį skaidrumą&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, integralumo indikatoriams &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Metodinis darbas apie korupcijos indikatorius&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Geras viešojo pirkimo balas yra paprasčiausiai vidurkis trijų sukomponuotų balų. Visi šie indikatoriai yra paremti objektyviais duomenimis, yra tiesiogiai veikiami viesų ir privačių veikėjų ir skaidriai ir atidžiai suskaičiuoti. Jei radote klaidą &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulėse&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, praneškite mums &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -7252,7 +7259,7 @@ Galite pasirinkti skirtingus būdus operuojant duomenimis naudojant šiuos failu
           </context>
         </context-group>
         <target>
-          * Dėl įvesčių kiekio ir JSON parsinimo nepalaiko failo dydžio, DIGIWHIST konkurso JSON duomenys išsaugoti kaip&lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Dėl įvesčių kiekio ir JSON parsinimo nepalaiko failo dydžio, DIGIWHIST konkurso JSON duomenys išsaugoti kaip &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
