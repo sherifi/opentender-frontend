@@ -26,6 +26,16 @@
       "eng": "Spanish"
     },
     {
+      "id": "hu",
+      "name": "Magyar",
+      "eng": "Hungarian"
+    },
+    {
+      "id": "ka",
+      "name": "ქართული",
+      "eng": "Georgian"
+    },
+    {
       "id": "it",
       "name": "Italiano",
       "eng": "Italian"
@@ -44,6 +54,11 @@
       "id": "pt",
       "name": "Português",
       "eng": "Portuguese"
+    },
+    {
+      "id": "ro",
+      "name": "Româneşte",
+      "eng": "Romanian"
     },
     {
       "id": "sl",
@@ -88,11 +103,6 @@
       "eng": "Croatian"
     },
     {
-      "id": "hu",
-      "name": "Magyar",
-      "eng": "Hungarian"
-    },
-    {
       "id": "lv",
       "name": "Latviešu",
       "eng": "Latvian"
@@ -108,11 +118,6 @@
       "eng": "Dutch"
     },
     {
-      "id": "ro",
-      "name": "Româneşte",
-      "eng": "Romanian"
-    },
-    {
       "id": "sk",
       "name": "Slovenčina",
       "eng": "Slovak"
@@ -126,11 +131,6 @@
       "id": "hy",
       "name": "Հայերէն",
       "eng": "Armenian"
-    },
-    {
-      "id": "ka",
-      "name": "ქართული",
-      "eng": "Georgian"
     },
     {
       "id": "is",

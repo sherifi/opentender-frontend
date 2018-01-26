@@ -344,6 +344,7 @@ let updateLanguage = function (lang, currentNodes, cb) {
 									console.error('---- Invalid Interpolation Order, ERROR in ' + lang + ' id: ' + transNode.attributes.id);
 									console.error('expected', interpolation);
 									console.error('was', parts[index]);
+									console.error('context', JSON.stringify(transNode));
 								}
 							})
 						}
