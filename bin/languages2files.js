@@ -399,13 +399,13 @@ let updateLanguage = function (lang, currentNodes, cb) {
 						reg = /&lt;x equiv-text=".*?" id="INTERPOLATION_?[0-9]?"\/&gt;/g;
 						matchAll(reg, text).forEach(match => {
 							let c = text[match.index - 1];
-							if ([undefined, ' ', ';', "(", '['].indexOf(c) < 0) {
+							if ([undefined, ' ', ';', '/', '(', '['].indexOf(c) < 0) {
 								console.error('---- NO Space before interpolation in ' + lang + ' id: ' + transNode.attributes.id);
 								console.error('"' + c + '"');
 								console.error(text);
 							}
 							c = text[match.index + match.match.length];
-							if ([undefined, ' ', '&', ']', '!', '?', '.'].indexOf(c) < 0) {
+							if ([undefined, ' ', '&', ']', '/', '!', '?', '-', '.'].indexOf(c) < 0) {
 								console.error('---- NO Space after interpolation in ' + lang + ' id: ' + transNode.attributes.id);
 								console.error('"' + c + '"');
 								console.error(match);

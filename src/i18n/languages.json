@@ -31,6 +31,12 @@
       "dateformat": "dd/MM/yyyy"
     },
     {
+      "id": "fi",
+      "name": "Suomi",
+      "eng": "Finnish",
+      "dateformat": "d.M.yyyy"
+    },
+    {
       "id": "hu",
       "name": "Magyar",
       "eng": "Hungarian",
@@ -103,12 +109,6 @@
       "name": "Eesti",
       "eng": "Estonian",
       "dateformat": "d.MM.yyyy"
-    },
-    {
-      "id": "fi",
-      "name": "Suomi",
-      "eng": "Finnish",
-      "dateformat": "d.M.yyyy"
     },
     {
       "id": "ga",
