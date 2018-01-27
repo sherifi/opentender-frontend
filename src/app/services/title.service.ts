@@ -58,7 +58,7 @@ export class TitleService implements OnDestroy {
 		let title = (result.length > 0 ? result + ' - ' : '') + this.defaultName;
 		this.titleService.setTitle(title);
 		title = this.defaultName + (result.length > 0 ? ' - ' + result : '');
-		this.meta.updateTag({name: 'og:title', content: title});
+		this.meta.updateTag({property: 'og:title', content: title});
 	}
 
 }
