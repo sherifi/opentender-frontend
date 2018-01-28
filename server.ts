@@ -104,16 +104,19 @@ let errorResponse = (req, res) => {
 	return res.status(404).type('txt').send('Not found ' + req.url);
 };
 
-morgan.token('cached', (req) => {
-	return req.cached ? 'true' : 'false';
-});
-app.use(morgan('[:date[clf]] - cached: :cached - :method :url - :res[content-length] - :response-time ms',
-	{
-		skip: (req, res) => {
-			return (Config.client.devMode && (req.originalUrl.indexOf('/assets') === 0 || req.originalUrl.indexOf('/data') === 0));
+if (app.settings.env !== 'production') {
+
+	morgan.token('cached', (req) => {
+		return req.cached ? 'true' : 'false';
+	});
+	app.use(morgan('[:date[clf]] - cached: :cached - :method :url - :res[content-length] - :response-time ms',
+		{
+			skip: (req, res) => {
+				return (Config.client.devMode && (req.originalUrl.indexOf('/assets') === 0 || req.originalUrl.indexOf('/data') === 0));
+			}
 		}
-	}
-));
+	));
+}
 
 app.use(helmet());
 app.engine('.html', ngExpressEngine({}));
