@@ -31,6 +31,12 @@
       "dateformat": "dd/MM/yyyy"
     },
     {
+      "id": "et",
+      "name": "Eesti",
+      "eng": "Estonian",
+      "dateformat": "d.MM.yyyy"
+    },
+    {
       "id": "fi",
       "name": "Suomi",
       "eng": "Finnish",
@@ -105,12 +111,6 @@
       "dateformat": "dd-MM-yyyy"
     },
     {
-      "id": "et",
-      "name": "Eesti",
-      "eng": "Estonian",
-      "dateformat": "d.MM.yyyy"
-    },
-    {
       "id": "ga",
       "name": "Gaeilge",
       "eng": "Irish",
@@ -156,6 +156,12 @@
       "id": "hy",
       "name": "Հայերէն",
       "eng": "Armenian",
+      "dateformat": "dd.MM.yyyy"
+    },
+    {
+      "id": "no",
+      "name": "Norsk",
+      "eng": "Norwegian",
       "dateformat": "dd.MM.yyyy"
     },
     {
