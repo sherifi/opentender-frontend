@@ -20,30 +20,29 @@ interface INumeralName {
 	other?: string;
 }
 
-// http://bmanolov.free.fr/numbers_names.php
-const LARGE_NUMBERS_EN_UK = [
+const LARGE_NUMBERS_EN = [
 	{},
-	{other: 'Thousandth'},
-	{other: 'Million'},
-	{other: 'Milliard'},
-	{other: 'Billion'},
-	{other: 'Billiard'},
-	{other: 'Trillion'},
-	{other: 'Trilliard'},
-	{other: 'Quadrillion'},
-	{other: 'Quadrilliard'},
-	{other: 'Quintillion'},
-	{other: 'Quintillion'},
-	{other: 'Sextillion'},
-	{other: 'Sextilliard'},
-	{other: 'Septillion'},
-	{other: 'Septilliard'},
-	{other: 'Octillion'},
-	{other: 'Octilliard'},
-	{other: 'Nonillion'},
-	{other: 'Nonilliard'},
-	{other: 'Decillion'},
-	{other: 'Decilliard'}
+	{'other': 'Thousandth'},
+	{'other': 'Million'},
+	{'other': 'Billion'},
+	{'other': 'Trillion'},
+	{'other': 'Quadrillion'},
+	{'other': 'Quintillion'},
+	{'other': 'Sextillion'},
+	{'other': 'Septillion'},
+	{'other': 'Octillion'},
+	{'other': 'Nonillion'},
+	{'other': 'Decillion'},
+	{'other': 'Undecillion'},
+	{'other': 'Duodecillion'},
+	{'other': 'Tredecillion'},
+	{'other': 'Quattuordecillion'},
+	{'other': 'Quindecillion'},
+	{'other': 'Sexdecillion'},
+	{'other': 'Septdecillion'},
+	{'other': 'Octodecillion'},
+	{'other': 'Novemdecillion'},
+	{'other': 'Vigintillion'}
 ];
 
 @Injectable()
@@ -104,7 +103,7 @@ export class I18NService {
 		if (tier < 1) {
 			return '';
 		}
-		let names = LARGE_NUMBERS_EN_UK;
+		let names = LARGE_NUMBERS_EN;
 		if (this._extra && this._extra.numerals) {
 			names = this._extra.numerals;
 		}
