@@ -34,7 +34,9 @@ let md5hash = (value: string) => {
 };
 
 let getCacheKey = (req) => {
-	let key = JSON.stringify({u: req.originalUrl, b: req.body, p: req.params});
+	let url = req.originalUrl.split('?')[0];
+	let query = {lang: req.query.lang};
+	let key = JSON.stringify({u: url, q: query, b: req.body, p: req.params});
 	return md5hash(key);
 };
 
