@@ -125,6 +125,14 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		valueFormatter: Utils.expandUnderlined
 	},
 	{
+		id: 'lots.bidsCount',
+		name: 'Bids Count',
+		group: 'Tender',
+		field: 'lots.bidsCount',
+		type: ISearchFilterDefType.value
+	},
+
+	{
 		id: 'fundings.isEuFund',
 		name: 'EU-Fund',
 		group: 'Funding',
