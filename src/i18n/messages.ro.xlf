@@ -64,7 +64,7 @@
             src/app/components/header/header.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            61
           </context>
         </context-group>
         <target>
@@ -84,7 +84,7 @@
           </context>
         </context-group>
         <target>
-          Puteți citi mai multe despre legislația cu privire la licitațiile publice la
+          Citiți mai multe despre legislația achizițiilor publice la
         </target>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
@@ -100,7 +100,7 @@
           </context>
         </context-group>
         <target>
-          Puteți alege între diferite moduri de interacționare cu datele utilizînd aceste butoane. Informațiile sunt interconectate, prin urmare veți putea accesa același nivel de profunzime în moduri diferite.
+          Aveți la dispoziție diverse moduri de a interacționa cu datele utilizând aceste butoane. Informațiile sunt interconectate. Prin urmare veți putea accesa același nivel de profunzime în moduri diferite.
         </target>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
@@ -164,7 +164,7 @@
           </context>
         </context-group>
         <target>
-          Prezentare generală a informațiilor
+          Prezentarea generală a datelor
         </target>
       </trans-unit>
       <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
@@ -188,7 +188,7 @@
           </context>
         </context-group>
         <target>
-          Acest tablou conține o prezentare generală a piețelor de licitații publice, ajutând astfel achizitorii și licitanții să fie mai eficienți în procesul de licitație.
+          Acest panou vă oferă o prezentare generală a piețelor de licitații publice, ajutând astfel autoritățile contractante și ofertanții să fie mai eficienți în procesul de licitație.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -244,7 +244,7 @@
           </context>
         </context-group>
         <target>
-          Căutare
+          Caută
         </target>
       </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
@@ -260,7 +260,7 @@
           </context>
         </context-group>
         <target>
-          Căutare și Găsire
+          Caută și Găsește
         </target>
       </trans-unit>
       <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
@@ -340,7 +340,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare
+          Descarcă
         </target>
       </trans-unit>
       <trans-unit id="c0dff105ab650ab84a84e761ad9e3c4c2abe2c6d" datatype="html">
@@ -356,7 +356,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare informații
+          Descarcă datele
         </target>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
@@ -372,7 +372,7 @@
           </context>
         </context-group>
         <target>
-          Doriți sa lucrați cu aceste informații? Puteți descărca toate informațiile care stau la baza acestei pagini.
+          Doriți să lucrați cu aceste date? Puteți descărca toate datele care stau la baza acestei platforme.
         </target>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
@@ -476,7 +476,7 @@
           </context>
         </context-group>
         <target>
-          Acest tablou vă permite analizarea și compararea capacității administrative a achizitorilor.
+          Acest panou vă permite să analizați și să comparați capacitatea administrativă a autorităților contractante.
         </target>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -540,7 +540,7 @@
           </context>
         </context-group>
         <target>
-          Acest tablou vă permite analizarea și compararea nivelului de transparență al licitațiilor de achiziții publice.
+          Acest panou vă permite să analizați și să comparați nivelul de transparență al achizițiilor publice.
         </target>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -604,7 +604,7 @@
           </context>
         </context-group>
         <target>
-          Acest tablou vă permite analizarea și compararea riscurilor de integritate ale achizițiilor publice.
+          Acest panou vă permite să analizați și să comparați riscurile de integritate care pot apărea în cadrul procedurilor de achiziții publice.
         </target>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -620,7 +620,7 @@
           </context>
         </context-group>
         <target>
-          Nu sunteți siguri unde să mergeți? Începeți aici ...
+          Nu sunteți siguri unde să navigați? Începeți aici ...
         </target>
       </trans-unit>
       <trans-unit id="b07a7e6f8a93b42c5499b8e0bde24b7260dc8f52" datatype="html">
@@ -700,7 +700,7 @@
           </context>
         </context-group>
         <target>
-          Această platformă vă permite să căutați și să analizați informații cu privire la licitații din 35 de jurisdicții (28 de state ale UE, Norvegia, Instituțiile Europene, Islanda, Elveția, Serbia, Georgia și Armenia)
+          Această platformă vă permite să căutați și să analizați date cu privire la licitații din 35 de jurisdicții (28 de state membre UE, Norvegia, Instituțiile Europene, Islanda, Elveția, Serbia, Georgia și Armenia).
         </target>
       </trans-unit>
       <trans-unit id="6b930b94d0c22a2f8dc1a01e6a61654f63392dcb" datatype="html">
@@ -719,7 +719,7 @@
           </context>
         </context-group>
         <target>
-          Se pare că navigați dinspre &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
+          Se pare că navigați din &lt;x equiv-text="{{ip_country.name}}" id="INTERPOLATION"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="84e0c4dac633680b6d26d2898fa84918ca343e13" datatype="html">
@@ -770,7 +770,7 @@
           Schimbați limba acestei pagini
         </target>
       </trans-unit>
-      <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
+      <trans-unit id="1cc25c080f62a3847860bafdd5847022f598afbc" datatype="html">
         <source>
           You can view the data on individual national portals by selecting a country below or explore
           <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
@@ -778,7 +778,7 @@
           all available data
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
           </x>
-          available data.
+          .
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -1024,7 +1024,7 @@
           runtime
         </note>
         <target>
-          Toate Informațiile
+          Toate Datele
         </target>
       </trans-unit>
       <trans-unit id="AllDigiwhistdata" datatype="html">
@@ -1043,7 +1043,7 @@
           runtime
         </note>
         <target>
-          Toate informațiile Digiwhist
+          Toate datele Digiwhist
         </target>
       </trans-unit>
       <trans-unit id="AppealBodyName" datatype="html">
@@ -1062,7 +1062,7 @@
           runtime
         </note>
         <target>
-          Numele Corpului de Apel
+          Numele instituției de apel
         </target>
       </trans-unit>
       <trans-unit id="Authorities" datatype="html">
@@ -1119,7 +1119,7 @@
           runtime
         </note>
         <target>
-          Procentaj Mediu al Licitațiilor
+          Procentajul mediu al licitațiilor
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreoverTime" datatype="html">
@@ -1138,7 +1138,7 @@
           runtime
         </note>
         <target>
-          Scor Mediu al Achizițiilor Bune de-a lungul timpului
+          Scor mediu al achizițiilor bune de-a lungul timpului
         </target>
       </trans-unit>
       <trans-unit id="AverageGoodProcurementScoreperSector" datatype="html">
@@ -1157,7 +1157,7 @@
           runtime
         </note>
         <target>
-          Scor Mediu al Achizițiilor Bune pe Sector
+          Scor mediu al achizițiilor bune per sector
         </target>
       </trans-unit>
       <trans-unit id="AverageScore" datatype="html">
@@ -1252,7 +1252,7 @@
           runtime
         </note>
         <target>
-          Media în Grupul de Comparație
+          Media în grupul de comparație
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionDate" datatype="html">
@@ -1271,7 +1271,7 @@
           runtime
         </note>
         <target>
-          Data Deciziei cu privire la Câștigarea Licitației
+          Data la care a fost atribuit contractul
         </target>
       </trans-unit>
       <trans-unit id="AwardDecisionYear" datatype="html">
@@ -1290,7 +1290,7 @@
           runtime
         </note>
         <target>
-          Anul Deciziei cu privire la Câștigarea Licitației
+          Anul în care a fost atribuit contractul
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentAuthority" datatype="html">
@@ -1309,7 +1309,7 @@
           runtime
         </note>
         <target>
-          Comparați Autoritatea Curentă
+          Comparați această autoritate
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentCompany" datatype="html">
@@ -1328,7 +1328,7 @@
           runtime
         </note>
         <target>
-          Comparați Compania Curentă
+          Comparați această companie
         </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
@@ -1347,7 +1347,7 @@
           runtime
         </note>
         <target>
-          Comparați Licitația Curentă
+          Comparați această licitație
         </target>
       </trans-unit>
       <trans-unit id="Bid" datatype="html">
@@ -1385,7 +1385,7 @@
           runtime
         </note>
         <target>
-          Numărul de Oferte
+          Numărul de oferte
         </target>
       </trans-unit>
       <trans-unit id="BidDeadline" datatype="html">
@@ -1404,7 +1404,7 @@
           runtime
         </note>
         <target>
-          Data Limită pentru Oferte
+          Data limită pentru depunerea ofertei
         </target>
       </trans-unit>
       <trans-unit id="BidPrice" datatype="html">
@@ -1423,7 +1423,7 @@
           runtime
         </note>
         <target>
-          Prețul Ofertei
+          Prețul ofertei
         </target>
       </trans-unit>
       <trans-unit id="BidPriceEUR" datatype="html">
@@ -1442,7 +1442,7 @@
           runtime
         </note>
         <target>
-          Prețul Ofertei în EUR
+          Prețul ofertei în EUR
         </target>
       </trans-unit>
       <trans-unit id="Buyer" datatype="html">
@@ -1461,7 +1461,7 @@
           runtime
         </note>
         <target>
-          Achizitor
+          Autoritate contractantă
         </target>
       </trans-unit>
       <trans-unit id="BuyerRegion" datatype="html">
@@ -1480,7 +1480,7 @@
           runtime
         </note>
         <target>
-          Regiunea Achizitorului
+          Regiunea autorității contractante
         </target>
       </trans-unit>
       <trans-unit id="BuyerType" datatype="html">
@@ -1499,7 +1499,7 @@
           runtime
         </note>
         <target>
-          Tip de Achizitor
+          Tipul autorității contractante
         </target>
       </trans-unit>
       <trans-unit id="Buyers" datatype="html">
@@ -1518,7 +1518,7 @@
           runtime
         </note>
         <target>
-          Achizitori
+          Autorități contractante
         </target>
       </trans-unit>
       <trans-unit id="CPVCodes" datatype="html">
@@ -1613,7 +1613,7 @@
           runtime
         </note>
         <target>
-          Grup de Comparație
+          Grup de comparație
         </target>
       </trans-unit>
       <trans-unit id="ContractValues" datatype="html">
@@ -1632,7 +1632,7 @@
           runtime
         </note>
         <target>
-          Valori ale Contractului
+          Valorile contractului
         </target>
       </trans-unit>
       <trans-unit id="Country" datatype="html">
@@ -1689,7 +1689,7 @@
           runtime
         </note>
         <target>
-          Licitație Curentă
+          Licitația curentă
         </target>
       </trans-unit>
       <trans-unit id="Dashboards" datatype="html">
@@ -1708,7 +1708,7 @@
           runtime
         </note>
         <target>
-          Tablouri
+          Panouri
         </target>
       </trans-unit>
       <trans-unit id="Dates" datatype="html">
@@ -1746,7 +1746,7 @@
           runtime
         </note>
         <target>
-          Sume Depuse
+          Sume depuse
         </target>
       </trans-unit>
       <trans-unit id="Description" datatype="html">
@@ -1784,7 +1784,7 @@
           runtime
         </note>
         <target>
-          Prețul Documentului în EUR
+          Prețul documentului în EUR
         </target>
       </trans-unit>
       <trans-unit id="Documents" datatype="html">
@@ -1822,7 +1822,7 @@
           runtime
         </note>
         <target>
-          Dată Limită pentru Documente
+          Data limită pentru depunerea documentelor
         </target>
       </trans-unit>
       <trans-unit id="DocumentsPrice" datatype="html">
@@ -1841,7 +1841,7 @@
           runtime
         </note>
         <target>
-          Prețul Documentelor
+          Prețul documentelor
         </target>
       </trans-unit>
       <trans-unit id="Download" datatype="html">
@@ -1860,7 +1860,7 @@
           runtime
         </note>
         <target>
-          Descărcare
+          Descarcă
         </target>
       </trans-unit>
       <trans-unit id="EUInstitutions" datatype="html">
@@ -1879,7 +1879,7 @@
           runtime
         </note>
         <target>
-          Instituții UE
+          Instituții ale Uniunii Europene
         </target>
       </trans-unit>
       <trans-unit id="EU-Fund" datatype="html">
@@ -1898,7 +1898,7 @@
           runtime
         </note>
         <target>
-          Fond UE
+          Fond european
         </target>
       </trans-unit>
       <trans-unit id="EconomicRequirements" datatype="html">
@@ -1917,7 +1917,7 @@
           runtime
         </note>
         <target>
-          Cerințe Economice
+          Cerințe economice
         </target>
       </trans-unit>
       <trans-unit id="EligibleBidLanguages" datatype="html">
@@ -1936,7 +1936,7 @@
           runtime
         </note>
         <target>
-          Limbile Acceptate pentru Licitație
+          Limbile acceptate pentru ofertă
         </target>
       </trans-unit>
       <trans-unit id="Entries" datatype="html">
@@ -1974,7 +1974,7 @@
           runtime
         </note>
         <target>
-          Data Estimată a Finalizării
+          Data estimată a finalizării
         </target>
       </trans-unit>
       <trans-unit id="EstimatedCompletionYear" datatype="html">
@@ -1993,7 +1993,7 @@
           runtime
         </note>
         <target>
-          Anul Estimat al Finalizării
+          Anul estimat al finalizării
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPrice" datatype="html">
@@ -2012,7 +2012,7 @@
           runtime
         </note>
         <target>
-          Prețul Estimat
+          Prețul estimat
         </target>
       </trans-unit>
       <trans-unit id="EstimatedPriceEUR" datatype="html">
@@ -2031,7 +2031,7 @@
           runtime
         </note>
         <target>
-          Prețul Estimat în EUR
+          Prețul estimat în EUR
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartDate" datatype="html">
@@ -2050,7 +2050,7 @@
           runtime
         </note>
         <target>
-          Data Estimată a Începerii
+          Data estimată a demarării
         </target>
       </trans-unit>
       <trans-unit id="EstimatedStartYear" datatype="html">
@@ -2069,7 +2069,7 @@
           runtime
         </note>
         <target>
-          Anul Estimat al Începerii
+          Anul estimat al demarării
         </target>
       </trans-unit>
       <trans-unit id="FinalPrice" datatype="html">
@@ -2088,7 +2088,7 @@
           runtime
         </note>
         <target>
-          Prețul Final
+          Preț final
         </target>
       </trans-unit>
       <trans-unit id="FinalPriceEUR" datatype="html">
@@ -2107,7 +2107,7 @@
           runtime
         </note>
         <target>
-          Prețul Final în EUR
+          Preț final în EUR
         </target>
       </trans-unit>
       <trans-unit id="Funding" datatype="html">
@@ -2145,7 +2145,7 @@
           runtime
         </note>
         <target>
-          Glosar de Termeni
+          Glosar de termeni
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurement" datatype="html">
@@ -2164,7 +2164,7 @@
           runtime
         </note>
         <target>
-          Achiziții Bune
+          Achiziții bune
         </target>
       </trans-unit>
       <trans-unit id="GoodProcurementScore" datatype="html">
@@ -2183,7 +2183,7 @@
           runtime
         </note>
         <target>
-          Scor de Achiziții Bune
+          Scor achiziții bune
         </target>
       </trans-unit>
       <trans-unit id="Home" datatype="html">
@@ -2316,7 +2316,7 @@
           runtime
         </note>
         <target>
-          Indicator de Integritate
+          Indicator de integritate
         </target>
       </trans-unit>
       <trans-unit id="IntegrityIndicators" datatype="html">
@@ -2335,7 +2335,7 @@
           runtime
         </note>
         <target>
-          Indicatori de Integritate
+          Indicatori de integritate
         </target>
       </trans-unit>
       <trans-unit id="LimittosameAuthorityType" datatype="html">
@@ -2354,7 +2354,7 @@
           runtime
         </note>
         <target>
-          Limitați la același Tip de Autoritate
+          Limitați la același Tip de Autoritate Contractantă
         </target>
       </trans-unit>
       <trans-unit id="LimittosameMainActivities" datatype="html">
@@ -2487,7 +2487,7 @@
           runtime
         </note>
         <target>
-          Activități Principale
+          Activități principale
         </target>
       </trans-unit>
       <trans-unit id="MainBuyers" datatype="html">
@@ -2506,7 +2506,7 @@
           runtime
         </note>
         <target>
-          Achizitori Principali
+          Principalele autorități contractante
         </target>
       </trans-unit>
       <trans-unit id="MainBuyersinScoreRange" datatype="html">
@@ -2525,7 +2525,7 @@
           runtime
         </note>
         <target>
-          Achizitori Principali aflați în Intervalul de Scor
+          Principalele autorități contractante aflate în intervalul de scor
         </target>
       </trans-unit>
       <trans-unit id="MainCPV" datatype="html">
@@ -2544,7 +2544,7 @@
           runtime
         </note>
         <target>
-          Coduri CPV Principale
+          Principalele coduri CPV
         </target>
       </trans-unit>
       <trans-unit id="MainCPV(Categories)" datatype="html">
@@ -2639,7 +2639,7 @@
           runtime
         </note>
         <target>
-          Codu CPV Principal
+          Principalul cod CPV
         </target>
       </trans-unit>
       <trans-unit id="MainSector" datatype="html">
@@ -2658,7 +2658,7 @@
           runtime
         </note>
         <target>
-          Sector Principal
+          Sector principal
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliers" datatype="html">
@@ -2677,7 +2677,7 @@
           runtime
         </note>
         <target>
-          Furnizori Principali
+          Principalii ofertanți
         </target>
       </trans-unit>
       <trans-unit id="MainSuppliersinScoreRange" datatype="html">
@@ -2696,7 +2696,7 @@
           runtime
         </note>
         <target>
-          Furnizori Principali aflați în Intervalul de Scor
+          Principalii ofertanți aflați în intervalul de scor
         </target>
       </trans-unit>
       <trans-unit id="MarketAnalysis" datatype="html">
@@ -2715,7 +2715,7 @@
           runtime
         </note>
         <target>
-          Analiză de Piață
+          Analiză de piață
         </target>
       </trans-unit>
       <trans-unit id="MediationBodyName" datatype="html">
@@ -2734,7 +2734,7 @@
           runtime
         </note>
         <target>
-          Numele Corpului Mediator
+          Numele instituției mediatore
         </target>
       </trans-unit>
       <trans-unit id="ModificationDate" datatype="html">
@@ -2753,7 +2753,7 @@
           runtime
         </note>
         <target>
-          Data Modificării
+          Data modificării
         </target>
       </trans-unit>
       <trans-unit id="Name" datatype="html">
@@ -2810,7 +2810,7 @@
           runtime
         </note>
         <target>
-          Numărul de Licitații
+          Numărul de licitații
         </target>
       </trans-unit>
       <trans-unit id="NumberofBuyersbyRegion" datatype="html">
@@ -2829,7 +2829,7 @@
           runtime
         </note>
         <target>
-          Numărul de Achizitori pe Regiune
+          Numărul de autorități contractante per regiune
         </target>
       </trans-unit>
       <trans-unit id="NumberofSuppliersbyRegion" datatype="html">
@@ -2848,7 +2848,7 @@
           runtime
         </note>
         <target>
-          Numărul de Furnizori pe Regiune
+          Numărul de ofertanți per regiune
         </target>
       </trans-unit>
       <trans-unit id="OpentenderPortals" datatype="html">
@@ -2905,7 +2905,7 @@
           runtime
         </note>
         <target>
-          Cerințe Personale
+          Cerințe personale
         </target>
       </trans-unit>
       <trans-unit id="Portals" datatype="html">
@@ -2981,7 +2981,7 @@
           runtime
         </note>
         <target>
-          Link către Profil
+          Link către profil
         </target>
       </trans-unit>
       <trans-unit id="ProfilePage" datatype="html">
@@ -3000,7 +3000,7 @@
           runtime
         </note>
         <target>
-          Pagina de Profil
+          Pagina de profil
         </target>
       </trans-unit>
       <trans-unit id="Programme" datatype="html">
@@ -3114,7 +3114,7 @@
           runtime
         </note>
         <target>
-          Căutare
+          Caută
         </target>
       </trans-unit>
       <trans-unit id="SearchAuthority" datatype="html">
@@ -3133,7 +3133,7 @@
           runtime
         </note>
         <target>
-          Căutare Autoritate
+          Caută autoritate
         </target>
       </trans-unit>
       <trans-unit id="SearchCompany" datatype="html">
@@ -3152,7 +3152,7 @@
           runtime
         </note>
         <target>
-          Căutare Companie
+          Caută companie
         </target>
       </trans-unit>
       <trans-unit id="SearchTender" datatype="html">
@@ -3171,7 +3171,7 @@
           runtime
         </note>
         <target>
-          Căutare Licitație
+          Caută licitație
         </target>
       </trans-unit>
       <trans-unit id="Sector" datatype="html">
@@ -3247,7 +3247,7 @@
           runtime
         </note>
         <target>
-          Prezentare Generală a Sectorului
+          Prezentarea generală a sectorului
         </target>
       </trans-unit>
       <trans-unit id="Sectors" datatype="html">
@@ -3285,7 +3285,7 @@
           runtime
         </note>
         <target>
-          Selectați Coloana
+          Selectați coloana
         </target>
       </trans-unit>
       <trans-unit id="SelectVisualization" datatype="html">
@@ -3304,7 +3304,7 @@
           runtime
         </note>
         <target>
-          Selectați Vizualizarea
+          Selectați vizualizarea
         </target>
       </trans-unit>
       <trans-unit id="Showallyears" datatype="html">
@@ -3361,7 +3361,7 @@
           runtime
         </note>
         <target>
-          Regiunea Furnizorului
+          Regiunea furnizorului
         </target>
       </trans-unit>
       <trans-unit id="Suppliers" datatype="html">
@@ -3399,7 +3399,7 @@
           runtime
         </note>
         <target>
-          Tipul de Furnizare
+          Tipul de furnizare
         </target>
       </trans-unit>
       <trans-unit id="TechnicalRequirements" datatype="html">
@@ -3418,7 +3418,7 @@
           runtime
         </note>
         <target>
-          Cerințe Tehnice
+          Cerințe tehnice
         </target>
       </trans-unit>
       <trans-unit id="Tender" datatype="html">
@@ -3475,7 +3475,7 @@
           runtime
         </note>
         <target>
-          Informații cu privire la Licitație
+          Informații cu privire la licitație
         </target>
       </trans-unit>
       <trans-unit id="TenderLink" datatype="html">
@@ -3494,7 +3494,7 @@
           runtime
         </note>
         <target>
-          Link către Licitație
+          Link către licitație
         </target>
       </trans-unit>
       <trans-unit id="TenderMetaData" datatype="html">
@@ -3513,7 +3513,7 @@
           runtime
         </note>
         <target>
-          Link catre Metadate
+          Meta datele licitației
         </target>
       </trans-unit>
       <trans-unit id="TenderRequirements" datatype="html">
@@ -3532,7 +3532,7 @@
           runtime
         </note>
         <target>
-          Cerințele Licitației
+          Cerințele licitației
         </target>
       </trans-unit>
       <trans-unit id="Tenders" datatype="html">
@@ -3627,7 +3627,7 @@
           runtime
         </note>
         <target>
-          Titlu în Engleză
+          Titlu în engleză
         </target>
       </trans-unit>
       <trans-unit id="TotalVolumeofTenders(€)" datatype="html">
@@ -3646,7 +3646,7 @@
           runtime
         </note>
         <target>
-          Volumul Total al Achizițiilor (€)
+          Volumul total al achizițiilor (€)
         </target>
       </trans-unit>
       <trans-unit id="Transparency" datatype="html">
@@ -3684,7 +3684,7 @@
           runtime
         </note>
         <target>
-          Indicator de Transparență
+          Indicator de transparență
         </target>
       </trans-unit>
       <trans-unit id="TransparencyIndicators" datatype="html">
@@ -3703,7 +3703,7 @@
           runtime
         </note>
         <target>
-          Indicatori de Transparență
+          Indicatori de transparență
         </target>
       </trans-unit>
       <trans-unit id="Type" datatype="html">
@@ -3760,7 +3760,7 @@
           runtime
         </note>
         <target>
-          Volumul Licitațiilor (€)
+          Volumul licitațiilor (€)
         </target>
       </trans-unit>
       <trans-unit id="Year" datatype="html">
@@ -3779,7 +3779,7 @@
           runtime
         </note>
         <target>
-          Anul
+          An
         </target>
       </trans-unit>
       <trans-unit id="[Namenotavailable]" datatype="html">
@@ -3842,7 +3842,7 @@
           runtime
         </note>
         <target>
-          În Intervalul de Scor
+          În intervalul de scor
         </target>
       </trans-unit>
       <trans-unit id="overTime" datatype="html">
@@ -3880,7 +3880,7 @@
           runtime
         </note>
         <target>
-          Pe Sector
+          Pe sector
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE.name" datatype="html">
@@ -3956,7 +3956,7 @@
           runtime
         </note>
         <target>
-          Achiziția centralizată sugerează o capacitate administrativă bună dacă licitația este coordonată de o entitate de achiziție centrală.
+          Achiziția centralizată indică o bună capacitate administrativă dacă licitația este gestionată de către o entitate de achiziție centrală.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3994,7 +3994,7 @@
           runtime
         </note>
         <target>
-          Acordul cardu sugerează o bună capacitate administrativă dacă licitația stabilește un acord cadru.
+          Acordul cardu indică o bună capacitate administrativă dacă prin licitație se stabilește un acord cadru.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ELECTRONIC_AUCTION.name" datatype="html">
@@ -4051,7 +4051,7 @@
           runtime
         </note>
         <target>
-          Utilizarea cadrului OMC
+          Utilizarea cadrului Organizației Mondiale a Comerțului (OMC)
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_COVERED_BY_GPA.desc" datatype="html">
@@ -4070,7 +4070,7 @@
           runtime
         </note>
         <target>
-          Utilizarea cadrului OMC indică o bună capacitate administrativă dacă procesul de licitație este efectuat in concordanță cu cadrul OMC.
+          Utilizarea cadrului OMC indică o bună capacitate administrativă dacă procedura de licitație este efectuată în concordanță cu cadrul OMC.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE.name" datatype="html">
@@ -4108,7 +4108,7 @@
           runtime
         </note>
         <target>
-          Engleza ca limbă străină sugerează o bună capacitate administrativă dacă ofertele pot fi depuse in Engleză ca limbă străină.
+          Folosirea limbii engleze ca limbă străină sugerează o bună capacitate administrativă dacă ofertele pot fi depuse în limba engleză ca limbă străină.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.name" datatype="html">
@@ -4127,7 +4127,7 @@
           runtime
         </note>
         <target>
-          Indicator de Integritate
+          Indicator de integritate
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.plural" datatype="html">
@@ -4146,7 +4146,7 @@
           runtime
         </note>
         <target>
-          Indicatori de Integritate
+          Indicatori de integritate
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
@@ -4184,7 +4184,7 @@
           runtime
         </note>
         <target>
-          O singură ofertă indică un risc atunci când, în cazul unei licitații pe o piață competitivă, este depusă doar o singură ofertă.
+          O singură ofertă depusă indică un risc atunci când, în cazul unei licitații pe o piață competitivă, este depusă doar o singură ofertă.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
@@ -4203,7 +4203,7 @@
           runtime
         </note>
         <target>
-          Publicarea invitațiilor la licitație
+          Publicarea cererilor de oferte
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
@@ -4222,7 +4222,7 @@
           runtime
         </note>
         <target>
-          Nepublicarea invitațiilor la licitație indică un risc atunci când, înainte de a lua decizia de acordare a contractului, nicio invitație de a licita nu a fost publicată, minimizând astfel numărul de ofertanți.
+          Nepublicarea cererilor de oferte indică un risc atunci când, înainte de a lua decizia atribuirii contractului, nu este publicată nici o cerere de ofertă, minimizând astfel numărul de ofertanți.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
@@ -4260,7 +4260,7 @@
           runtime
         </note>
         <target>
-          Procedurile închise indică un risc de utilizare a unor tipuri de proceduri care sunt mai puțin deschise către competiție, fiind mai degrabă folosite pentru a cotracta direct companii conexe (de ex. negocieri fară publicare)
+          Procedurile închise indică riscul utilizării unor tipuri de proceduri care au un grad mai scăzut de concurență, fiind mai degrabă folosite pentru a contracta direct firme cu conexiuni (de ex. negocieri fară publicare)
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
@@ -4298,7 +4298,7 @@
           runtime
         </note>
         <target>
-          Durata perioadei de anunț dezvăluie riscul unor date limită suspicios de scurte sau a unei perioade de anunț excesiv de lungă.
+          Durata perioadei de anunț dezvăluie riscul unor date limită suspicios de scurte sau excesiv de lungi.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.name" datatype="html">
@@ -4317,7 +4317,7 @@
           runtime
         </note>
         <target>
-          Durata perioadei de decizie
+          Durata perioadei de evaluare și decizie
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DECISION_PERIOD.desc" datatype="html">
@@ -4336,7 +4336,7 @@
           runtime
         </note>
         <target>
-          Durata perioadei de decizie semnalează riscuri atunci când aceasta este suspicios de scurtă sau suspicios de lungă.
+          Durata perioadei de evaluare și decizie semnalează riscuri atunci când aceasta este suspicios de scurtă sau de lungă.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
@@ -4374,7 +4374,7 @@
           runtime
         </note>
         <target>
-          Compania nouă semnalează riscul câștigării unei licitații de către o companie foarte recent înființată (în urmă cu mai puțin de 1 an de la data câștigării licitației).
+          O companie nouă semnalează riscul atribuirii unui contract către o companie recent înființată (în urmă cu mai puțin de 1 an de la data câștigării licitației).
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
@@ -4412,7 +4412,7 @@
           runtime
         </note>
         <target>
-          Paradisul fiscal semnalează un risc atunci când furnizorul este situat într-o țară cu paradis fiscal (bazat pe indexul de discreție financiară Financial Secrecy Index)
+          Paradisul fiscal semnalează un risc atunci când ofertantul are sediul într-o țară paradis fiscal (bazat pe Indexul de Discreție Financiară)
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
@@ -4450,7 +4450,7 @@
           runtime
         </note>
         <target>
-          Lungimea descrierii produsului semnalează riscul ca, atunci când descrierea produsului este excesiv de lungă, aceasta să fie adaptată unei anumite companii.
+          Lungimea descrierii produsului semnalează riscul ca, atunci când aceasta este excesiv de lungă, să aibă drept scop favorizarea unei anumite firme.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
@@ -4469,7 +4469,7 @@
           runtime
         </note>
         <target>
-          Legături politice ale furnizorilor
+          Conexiunile politice ale ofertanților
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
@@ -4488,7 +4488,7 @@
           runtime
         </note>
         <target>
-          Legăturile politice ale unui furnizor indică riscul ca cel puțin unul dintre proprietari sau manageri să dețină o funcție politică.
+          Conexiunea politică a unui ofertant indică riscul ca cel puțin unul dintre proprietari sau manageri să dețină o funcție politică.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
@@ -4507,7 +4507,7 @@
           runtime
         </note>
         <target>
-          Partea contractului câștigat
+          Proporția de contracte câștigate
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
@@ -4526,7 +4526,7 @@
           runtime
         </note>
         <target>
-          Partea contractului câștigat este partea din valoarea contractului unui anumit achizitor câștigată de o anumită companie într-un anumit an.
+          Proporția de contracte câștigate este proporția, ca valoare, de contracte câștigate de către o anumită companie de la o anumită autoritate contractantă într-un an oarecare.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
@@ -4545,7 +4545,7 @@
           runtime
         </note>
         <target>
-          Lungimea criteriilor de eligibilitate
+          Numărul criteriilor de eligibilitate
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
@@ -4564,7 +4564,7 @@
           runtime
         </note>
         <target>
-          Lungimea criteriilor de eligibilitate semnalează riscul ca, atunci când decrierea acestor criterii este excesiv de lungă, aceasta să fie adaptată unei anumite companii.
+          Numărul criteriilor de eligibilitate semnalează riscul ca, atunci când acestea sunt excesiv de lungi, să aibă drept scop favorizarea unei anumite firme.
         </target>
       </trans-unit>
       <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.name" datatype="html">
@@ -4602,7 +4602,7 @@
           runtime
         </note>
         <target>
-          Criteriile de evaluare semnalează riscul folosirii criteriilor non-cuantitative în vederea evaluării ofertelor, criterii care sunt subiective și pot fi manipulate cu ușurință.
+          Criteriile de evaluare semnalează riscul folosirii unor criterii non-cantitative în vederea evaluării ofertelor, criterii care sunt subiective și care pot fi manipulate cu ușurință.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY.name" datatype="html">
@@ -4678,7 +4678,7 @@
           runtime
         </note>
         <target>
-          Rata publicării este raportul dintre costurile achizițiilor publice scoase la licitație prin intermediul anunțurilor publicitare și costul total al achizițiilor publice al unei autorități contractuale.
+          Rata publicării este raportul dintre costul achizițiilor publice publicate prin intermediul anunțurilor publicitare și costul total al achizițiilor publice realizate de către o autoritate contractantă.
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
@@ -4697,7 +4697,7 @@
           runtime
         </note>
         <target>
-          Discrepanțe între invitațiile la licitație și notificările privind acordarea contractelor
+          Discrepanțe între cererile de oferte și anunțurile de atribuire a contractelor
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
@@ -4716,7 +4716,7 @@
           runtime
         </note>
         <target>
-          Discrepanțele între invitațiile la licitație și notificările privind acordarea contractelor reprezintă proporția câmpurilor cu valori diferite între invitația la licitație și anunțarea deciziei de acordare a contractului în ceea ce privește o anumită licitație (bazate pe cele mai recente versiuni publicate)
+          Discrepanțe între cererile de oferte și anunțurile de atribuire a contractelor reprezintă proporția câmpurilor cu valori diferite în cererea de ofertă și anunțul de atribuire pentru o anumită licitație (bazate pe cele mai recente versiuni publicate)
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.name" datatype="html">
@@ -4735,7 +4735,7 @@
           runtime
         </note>
         <target>
-          Proporția cîmpurilor cheie completate
+          Proporția câmpurilor-cheie completate
         </target>
       </trans-unit>
       <trans-unit id="TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS.desc" datatype="html">
@@ -4754,7 +4754,7 @@
           runtime
         </note>
         <target>
-          Numărul câmpurilor cheie lipsă reprezintă raportul dintre câmpurile ale căror valori lipsesc din invitația pentru licitație și anunțul acordării contractului respectivei licitații (bazat pe versiunile cel mai recent publicate).
+          Numărul câmpurilor-cheie lipsă reprezintă raportul dintre câmpurile ale căror valori lipsesc din cererea de oferte și anunțul de atribuire a contractului pentru o anumită licitație (bazat pe versiunile cel mai recent publicate).
         </target>
       </trans-unit>
       <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
@@ -4802,7 +4802,7 @@
           </context>
         </context-group>
         <target>
-          Informații
+          Date
         </target>
       </trans-unit>
       <trans-unit id="3baa652179af58935b7b8d0fd3c3483dc6659ac4" datatype="html">
@@ -4850,7 +4850,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare informații
+          Descarcă datele
         </target>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -4866,7 +4866,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare informații în format CSV
+          Descarcă datele în format CSV
         </target>
       </trans-unit>
       <trans-unit id="63bb9f00af8a5a2cef39a6df68b9d00700c5e6f8" datatype="html">
@@ -4890,7 +4890,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare informații în format JSON
+          Descarcă datele în format JSON
         </target>
       </trans-unit>
       <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
@@ -4922,7 +4922,7 @@
           </context>
         </context-group>
         <target>
-          Achizitori
+          Autorități contractante
         </target>
       </trans-unit>
       <trans-unit id="d59bf68e8dab37e7aff7d2c005064e64279e86b5" datatype="html">
@@ -4938,7 +4938,7 @@
           </context>
         </context-group>
         <target>
-          Furnizori
+          Ofertanți
         </target>
       </trans-unit>
       <trans-unit id="aee7d0de4e30405c1289745e4264e622b613632a" datatype="html">
@@ -5090,7 +5090,7 @@
           </context>
         </context-group>
         <target>
-          Furnizori in funcție de Regiune
+          Ofertanți în funcție de Regiune
         </target>
       </trans-unit>
       <trans-unit id="a6711c5b2a6f255a9d4395211ea5954c20902374" datatype="html">
@@ -5106,7 +5106,7 @@
           </context>
         </context-group>
         <target>
-          Achizitori in funcție de Regiune
+          Autorități contractante în funcție de Regiune
         </target>
       </trans-unit>
       <trans-unit id="4b9fdfae648741b5eb89d0309ac931eb8b2e3f64" datatype="html">
@@ -5141,26 +5141,18 @@
           Meniu
         </target>
       </trans-unit>
-      <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
+      <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
         <source>
-          Making Public Tenders More Transparent
+          Portal Overview
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/header/header.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            55
           </context>
         </context-group>
-        <target>
-          Facem Licitațiile Publice Mai Transparente
-        </target>
-      </trans-unit>
-      <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
-        <source>
-          Portal Overview
-        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/footer/footer.component.ts
@@ -5170,7 +5162,23 @@
           </context>
         </context-group>
         <target>
-          Prezentare generală a Portalului
+          Prezentarea generală a portalului
+        </target>
+      </trans-unit>
+      <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
+        <source>
+          Making Public Tenders More Transparent
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            60
+          </context>
+        </context-group>
+        <target>
+          Facem Licitațiile Publice Mai Transparente
         </target>
       </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
@@ -5226,7 +5234,7 @@
           </context>
         </context-group>
         <target>
-          Tablouri
+          Panouri
         </target>
       </trans-unit>
       <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
@@ -5406,7 +5414,7 @@
           </context>
         </context-group>
         <target>
-          Așteptam contribuții și comentarii la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Contribuțiile și comentariile sunt binevenite și la așteptăm la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GitHub&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
@@ -5422,7 +5430,7 @@
           </context>
         </context-group>
         <target>
-          Puteți citi mai multe despre legislația cu privire la licitațiile publice la
+          Puteți citi mai multe despre legislația achizițiilor publice la
         </target>
       </trans-unit>
       <trans-unit id="83be59bfa61a6accd9d6e353912ab7fee53096d9" datatype="html">
@@ -5457,22 +5465,6 @@
           Twitter
         </target>
       </trans-unit>
-      <trans-unit id="838a46816b130c73fe73b96e69176da9eb3b1190" datatype="html">
-        <source>
-          Facebook
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/footer/footer.component.ts
-          </context>
-          <context context-type="linenumber">
-            83
-          </context>
-        </context-group>
-        <target>
-          Facebook
-        </target>
-      </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
         <source>
           This project has received funding from the
@@ -5498,7 +5490,7 @@
           </context>
         </context-group>
         <target>
-          Acest poiect a fost finanțat de &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;programul de cercetare și inovație Orizont 2020 al Uniunii Europene&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; sub acordul de finanțare &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nr. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Acest poiect a fost finanțat de &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Programul de Cercetare și Inovație Orizont 2020 al Uniunii Europene&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; Acordul de Finanțare &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Nr. 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
@@ -5554,7 +5546,7 @@
           </context>
         </context-group>
         <target>
-          Licitații pe an
+          Număr de licitații pe an
         </target>
       </trans-unit>
       <trans-unit id="d59c29464c0e2b8ac4a4c86a505fafcef34037e8" datatype="html">
@@ -5806,7 +5798,7 @@
           </context>
         </context-group>
         <target>
-          Grup de Indicatori
+          Grup de indicatori
         </target>
       </trans-unit>
       <trans-unit id="b3b47e8b4611a699f1ba916202b416934f7ea323" datatype="html">
@@ -5854,7 +5846,7 @@
           </context>
         </context-group>
         <target>
-          Grup de Comparație
+          Grup de comparație
         </target>
       </trans-unit>
       <trans-unit id="14c9ea2fbedf3057aac46aa68312770460312107" datatype="html">
@@ -5870,7 +5862,7 @@
           </context>
         </context-group>
         <target>
-          Interval de Date
+          Interval de date
         </target>
       </trans-unit>
       <trans-unit id="c6d56bff2f3b8ce41c532f2e014579458d2d2813" datatype="html">
@@ -5910,7 +5902,7 @@
           </context>
         </context-group>
         <target>
-          Descărcare informații în format gzipped JSON
+          Descarcă datele în format gzipped JSON
         </target>
       </trans-unit>
       <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
@@ -5932,7 +5924,7 @@
           </context>
         </context-group>
         <target>
-          Fițierul descărcat conține &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; înregistrări, iar mărimea fișierului condensat va fi mai mare decât aproximativ &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;.
+          Fișierul descărcat conține &lt;x equiv-text="{{total}}" id="INTERPOLATION"/&gt; înregistrări, iar mărimea fișierului condensat va fi mai mare de &lt;x equiv-text="{{total/1000*1200000 | formatFileSize}}" id="INTERPOLATION_1"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
@@ -5948,7 +5940,7 @@
           </context>
         </context-group>
         <target>
-          Descărcarea fișierului JSON.GZ
+          Descarcă fișierului în format JSON.GZ
         </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -6108,7 +6100,7 @@
           </context>
         </context-group>
         <target>
-          Click aici pentru a Selecta
+          Click aici pentru a selecta
         </target>
       </trans-unit>
       <trans-unit id="0ed2616d6f3149d89f34950cc4e7bf33c3e45ade" datatype="html">
@@ -6124,7 +6116,7 @@
           </context>
         </context-group>
         <target>
-          Aproximativ 15% din Produsul Intern Brut al UE este cheltuit în fiecare an în vederea procurării de produse și servicii, iar unele estimări indică faptul că corupția mărește costul contractelor guvernamentale cu 20-25%.  Și mai alarmant este faptul că corupția la nivelul achizițiilor publice compromite obiective publice larg susținute precum construirea de autostrăzi sigure, construirea de clădiri școlare de înaltă calitate sau livrarea medicamentelor în timp util.
+          Aproximativ 15% din Produsul Intern Brut al UE este cheltuit în fiecare an în vederea procurării de produse și servicii, iar unele estimări indică faptul că corupția mărește costul contractelor guvernamentale cu 20-25%.  Și mai alarmant este faptul că corupția la nivelul achizițiilor publice compromite obiective publice larg susținute, precum construirea de autostrăzi sigure, construirea de unități de învățământ de înaltă calitate sau livrarea medicamentelor în timp util.
         </target>
       </trans-unit>
       <trans-unit id="9dd624a60198301ed4ee85c40cbf879782f979dc" datatype="html">
@@ -6140,7 +6132,7 @@
           </context>
         </context-group>
         <target>
-          Furnizarea gratuită și într-un format ușor de folosit a unor informații cuprinzătoare cu privire la achizițiile publice tuturor părților interesate are ca rezultat anticipat mărirea transparenței pieții, scăredea costurilor tranzacționale și facilitarea responsabilității guvernamentale. Prin urmare, opentender.eu, o platformă de achiziții centrală, publică și deschisă, a fost înființată pentru a contribui la obținerea unui raport calitate-preț optim precum și la creșterea integrității întregului sector public.
+          Ne așteptăm ca furnizarea gratuită și într-un format ușor de folosit a unor informații cuprinzătoare cu privire la achizițiile publice tuturor părților interesate să aibă drept rezultat îmbunătățirea transparenței pieței, scăderea costurilor de tranzacție și facilitarea responsabilității guvernamentale. Prin urmare, opentender.eu, o platformă de achiziții centralizată, publică și deschisă a fost înființată cu scopul de a contribui la obținerea unui raport calitate-preț optim precum și la creșterea integrității întregului sector public.
         </target>
       </trans-unit>
       <trans-unit id="b5ff828d47f8aea76c4174fecf3c180f92366800" datatype="html">
@@ -6172,7 +6164,7 @@
           </context>
         </context-group>
         <target>
-          DIGIWHIST, un proiect finanțat de programul UE Orizont 2020, aduce împreună șase institute europene de cercetare cu scopul de a ajuta societatea să combată corupția la nivelul sectorului bpublic. Prin colectarea sistematică, structurarea, analizarea și diseminarea informațiilor cu privire la achizițiile publice și mecanismele de sporire a responsabilității oficialilor publici din toate țările UE și cîteva din vecinătate, DIGIWHIST va spori încrederea în guverne, îmbunătățind în același timp eficiența cheltuielilor publice în Europa.
+          DIGIWHIST, un proiect finanțat de programul UE Orizont 2020, reunește șase institute europene de cercetare cu scopul de a ajuta societatea să combată corupția din sectorul public. Prin colectarea sistematică, structurarea, analizarea și diseminarea informațiilor cu privire la achizițiile publice și mecanismele de sporire a responsabilității funcționarilor publici din toate țările UE și celor din vecinătate, DIGIWHIST va spori încrederea în guverne și, simultan, va îmbunătăți eficiența cheltuielilor publice în Europa.
         </target>
       </trans-unit>
       <trans-unit id="a45044ef5ef490370f5e512244aaa58c5148e8c3" datatype="html">
@@ -6188,7 +6180,7 @@
           </context>
         </context-group>
         <target>
-          Departamentul de Sociologie de la Cambridge are un profil distinctiv de centru de excelență pentru munca remarcabilă în teoria socială și cercetarea sociologică empirică. În Cambridge sociologia este de asemenea practicată și predată într-un context interdisciplinar, cu legături deosebit de puternice cu politica, psihologia, antropologia, economia și istoria.
+          Departamentul de Sociologie al Universității Cambridge are un profil distinctiv de centru de excelență pentru munca remarcabilă în teoria socială și cercetarea sociologică empirică. În cadrul acestui departament, sociologia este de asemenea practicată și predată într-un context interdisciplinar, cu legături deosebit de puternice cu discipline precum politica, psihologia, antropologia, economia și istoria.
         </target>
       </trans-unit>
       <trans-unit id="feefffc590f4a0607d1a2e97f6db8e4f72578c0e" datatype="html">
@@ -6204,7 +6196,7 @@
           </context>
         </context-group>
         <target>
-          Hertie School of Governance pregătește studenți excepționali pentru poziții de conducere în cadrul guvernelor, afacerilor și societății civile. De asemenea, le oferă celor cu experiență profesională oportunitatea de a-și aprofunda aptitudinile în domeniul de management public. Corpul educațional al școlii este renumit internațional pentru expertiza sa în materie de economie, afaceri, drept, științe politice și sociale și pentru abordarea interdisciplinară și orientată către politici a agendei curriculare și de cercetare.
+          Hertie School of Governance pregătește studenți excepționali pentru poziții de conducere în cadrul guvernelor, mediului de business și al societății civile. De asemenea, le oferă celor cu experiență profesională oportunitatea de a-și aprofunda aptitudinile în domeniul de management public. Corpul didactic al școlii este renumit internațional pentru expertiza sa în materie de economie, afaceri, drept, științe politice și sociale și pentru abordarea interdisciplinară și orientată către politici publice a agendei de învățământ și cercetare a instituției.
         </target>
       </trans-unit>
       <trans-unit id="747b114de34de8097882ea700e545e8fa21ec7a6" datatype="html">
@@ -6220,7 +6212,7 @@
           </context>
         </context-group>
         <target>
-          Înființarea în 2015 a Institutului de Transparență Guvernamentală a fost motivată de nevoia crescândă de a face cercetare independentă și promovare în domeniul transparenței, corupției și a calității guvernamentale în Europa și dincolo de granițele ei. Institutul este un "think-tank" non-partizan, independent de guverne, partide politice și alte grupuri de interese speciale. Scopul institutului este de a explora în mod sistematic cauzele, caracteristicile și consecințele unui guvern de calitate inferioară prin intermediul unei abordări interdisciplinare bazată pe știință politică, drept și date științifice. Insitutul are ca obiectiv asistarea cetățenilor în responsabilizarea guvernelor pe tot parcursul procesului de publicare a unor seturi mari de date și al efectuării unei analize robuste.
+          Înființarea în 2015 a Institutului pentru Transparență Guvernamentală a fost motivată de nevoia crescândă de a face cercetare independentă și de a promova transparența, calitatea guvernării și de a lupta împotriva corupției în Europa și dincolo de granițele ei. Institutul este un "think-tank" non-partizan, independent de guverne, partide politice și alte grupuri de interese speciale. Scopul institutului este de a explora în mod sistematic cauzele, caracteristicile și consecințele unui guvern de calitate inferioară prin intermediul unei abordări interdisciplinare bazată pe știință politică, drept și date științifice. Insitutul are ca obiectiv asistarea cetățenilor în responsabilizarea guvernelor pe tot parcursul procesului de publicare a unor seturi mari de date și al efectuării unei analize robuste.
         </target>
       </trans-unit>
       <trans-unit id="f8ecdb1e36c8b982bb54606ace91b24cbf483488" datatype="html">
@@ -6248,7 +6240,7 @@
           </context>
         </context-group>
         <target>
-          Datlab este o companie cehă de IT specializtă în extragerea de informații și procesarea lor. Începând din 2015 compania procesează în mod regulat informații din 30 de site-uri web și sisteme diferite. Lucrează îndeaproape cu sectorul ONG și sunt responsabili de servicii majore de tip open-data precum &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (bază de date de achiziții) și &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitorizator de finanțare a partidelor politice).
+          Datlab este o companie cehă de IT specializată în extragerea de informații și procesarea lor. Începând din 2015 compania procesează în mod regulat informații din 30 de site-uri web și sisteme diferite. Lucrează îndeaproape cu sectorul ONG și sunt responsabili de servicii majore de tip open-data precum &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;vsechnyzakazky.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (bază de date achiziții publice) și &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;politickefinance.cz&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; (monitorizarea finanțării partidelor politice).
         </target>
       </trans-unit>
       <trans-unit id="142acaf886952ce3cd831a2de27c9561a590272c" datatype="html">
@@ -6264,7 +6256,7 @@
           </context>
         </context-group>
         <target>
-          Transcrime este un centru comun de cercetare între Universitatea Cattolica del Sacro Cuore din Milano și Universitatea din Trento. Centrul analizează strategii pentru prevenirea și combaterea infracțiunilor, adoptând o abordare integrată (criminologie, drept, statistică, economie, contabilitate judiciară). Transcrime analizează în special fenomenele din domeniul crimei organizate, criminalității financiare, spălării banilor și corupției.
+          Transcrime este un Centru Comun de Cercetare între Universitatea Cattolica del Sacro Cuore din Milano și Universitatea din Trento. Centrul analizează strategii pentru prevenirea și combaterea infracțiunilor, adoptând o abordare integrată (criminologie, drept, statistică, economie, contabilitate judiciară). Transcrime analizează în special fenomenele din domeniul crimei organizate, criminalității financiare, spălării banilor și corupției.
         </target>
       </trans-unit>
       <trans-unit id="6c9413918f44d867ccd39ead5b0f8eb8af3431d2" datatype="html">
@@ -6328,7 +6320,7 @@
           </context>
         </context-group>
         <target>
-          Nomenclatura unităților teritoriale pentru statistici (NUTS) este un standard de geocodare care împarte teritoriul economic al Uniunii Europene în unități teritoriale în vederea producerii de statistici regionale și pentru orientarea intervențiilor politice la nivel regional. Citiți mai multe la
+          Nomenclatura unităților teritoriale pentru statistici (NUTS) este un standard de geocodare care împarte teritoriul economic al Uniunii Europene în unități teritoriale în vederea generării de statistici regionale și pentru orientarea intervențiilor politice la nivel regional. Citiți mai multe la
         </target>
       </trans-unit>
       <trans-unit id="d7a05d2dcbbc43e6d28a3b0ec0c7c4dea2479d5d" datatype="html">
@@ -6368,7 +6360,7 @@
           </context>
         </context-group>
         <target>
-          Vocabularul comun privind achizițiile publice (CPV) urmărește standardizarea, prin intermediul unui sistem unic de clasificare a achizițiilor publice, a termenilor utilizați de către autoritățile și entitățile contractuale pentru a descrie obiectul contractelor. Citiți mai multe la
+          Vocabularul comun privind achizițiile publice (CPV) urmărește standardizarea, prin intermediul unui sistem unic de clasificare a achizițiilor publice, a termenilor utilizați de către autoritățile și entitățile contractante pentru a descrie obiectul contractelor. Citiți mai multe la
         </target>
       </trans-unit>
       <trans-unit id="10498cb7788dfb689cb7ae44b02c8171cb36aaa3" datatype="html">
@@ -6416,7 +6408,7 @@
           </context>
         </context-group>
         <target>
-          Scorul de transparență reprezintă media Indicatorilor de Transparență.
+          Scorul Transparenței reprezintă media Indicatorilor de Transparență.
         </target>
       </trans-unit>
       <trans-unit id="322db1b76bdf54269462c78acbcfadf204a7fb0c" datatype="html">
@@ -6448,7 +6440,7 @@
           </context>
         </context-group>
         <target>
-          Scorul Integrității Achizițiilor este media Indicatorilor de Integritate a Achizițiilor.
+          Scorul Integrității Achiziției este media Indicatorilor de Integritate a Achiziției.
         </target>
       </trans-unit>
       <trans-unit id="d6f50cb3ff1e50fc4302cfef784a99ad9b374193" datatype="html">
@@ -6512,7 +6504,7 @@
           </context>
         </context-group>
         <target>
-          Scorul general de achiziții bune reprezintă media celor trei scoruri compozite de mai sus.
+          Scorul general pentru o achiziție bună reprezintă media celor trei scoruri compozite de mai sus.
         </target>
       </trans-unit>
       <trans-unit id="2eb6671f8d1299f1c00e65bcd5f2fe5d321b2095" datatype="html">
@@ -6560,7 +6552,7 @@
           </context>
         </context-group>
         <target>
-          Opentender are la bază un software robust de colectare și procesare a informațiilor care colectează date referitoare la achiziții din aproximativ 20 de surse diferite. În cazul în care nu exista informații libere disponibile, extragem date din mii de pagini web pentru a construi o bază de date structurată. Apoi grupăm toate publicațiile care descriu fiecare licitație și în cele din urmă creăm o imagine finală care descrie cu cea mai mare acuratețe respectiva licitație. Deoarece informațiile și sistemele sursă diferă de la țară la țară, un software personalizat este creat pentru fiecare sursă în parte.
+          Opentender are la bază un software robust de colectare și procesare a informațiilor care colectează date referitoare la achiziții din aproximativ 20 de surse diferite. În cazul în care nu există date deschise disponibile, extragem date din mii de pagini web pentru a construi o bază de date structurată. Apoi grupăm toate publicațiile care descriu fiecare licitație și în cele din urmă creăm o imagine finală care descrie cu mare acuratețe respectiva licitație. Deoarece informațiile și sistemele sursă diferă de la o țară la alta, un software personalizat este creat pentru fiecare sursă în parte.
         </target>
       </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
@@ -6607,7 +6599,7 @@
           </context>
         </context-group>
         <target>
-          Opentender folosește indicatori de performanță a achizițiilor publice ce au la bază un set extins de analize științifice care sunt sintetizate și cercetate de către echipa noastră: pentru indicatori de capacitate administrativă citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Ghid Metodic despre Indicatorii de Calitate Administrativă&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de transparență citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Ghid Metodic despre Transparența Fiscală&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de integritate citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Ghid Metodic despre Indicatorii de Risc de Corupție&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Scorul general de achiziții bune reprezintă media aritmetică a trei scoruri compozite. Toți acești indicatori se bazează pe informații obiective, pot fi aplicați în mod direct de către actori publici și privați și sunt calculați în mod transparent și fără echivoc. Dacă găsiți vreo eroare în &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulele&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, va rugăm să ne informați la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Opentender folosește indicatori de performanță a achizițiilor publice care au la bază un set extins de analize științifice care sunt sintetizate și cercetate de către echipa noastră: pentru indicatori de capacitate administrativă citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Ghid Metodologic despre Indicatorii de Calitate Administrativă&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de transparență citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;Ghid Metodologic despre Transparența Fiscală&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, pentru indicatorii de integritate citiți &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_2"/&gt;Ghid Metodologic despre Indicatorii de Risc de Corupție&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;. Scorul general pentru o achiziție bună reprezintă media aritmetică a celor trei scoruri compozite. Toți acești indicatori se bazează pe informații obiective, pot fi aplicați în mod direct de către actori publici și privați și sunt calculați în mod transparent și fără echivoc. Dacă găsiți vreo eroare în &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_3"/&gt;formulele&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, va rugăm să ne informați la &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_4"/&gt;&lt;x equiv-text="{{contactmail}}" id="INTERPOLATION"/&gt;&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
@@ -6709,7 +6701,7 @@
           </context>
         </context-group>
         <target>
-          Funcția de căutare este un instrument puternic de accesare a informațiilor și de găsire a unor anume licitații, achizitori sau furnizori care vă interesează. Puteți de ademenea să creați căutări individuale personalizate utilizând peste 30 de parametri adiționali, inclusiv indicatorii.
+          Funcția de căutare este un instrument puternic de accesare a datelor și de identificare a unor anume licitații, autorități contractante sau ofertanți de interes pentru dvs. Puteți de asemenea să creați căutări individuale și personalizate utilizând peste 30 de parametri suplimentari, incluzând indicatorii.
         </target>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
@@ -6741,7 +6733,7 @@
           </context>
         </context-group>
         <target>
-          Pentru a permite accesul complet, fiecare component (sectoare, sucursale, regiuni, companii, autorități și licitații) din baza de date Opentender are un profil individual care prezintă informații detaliate. În funcție de tipul de profil, acesta poate conține o varietate de vizualizări precum grafice, hărți și diagrame care vă oferă un nivel profund de înțelegere a bazei de date. Puteți viziona profilurile dând un simplu click pe numele lor.
+          Pentru a permite accesul complet, fiecare componentă (sectoare, sucursale, regiuni, companii, autorități și licitații) din baza de date Opentender are un profil individual care prezintă informații detaliate. În funcție de tipul de profil, acesta poate conține o varietate de vizualizări precum grafice, hărți și diagrame care vă oferă un nivel profund de înțelegere a bazei de date. Puteți viziona profilurile dând un simplu click pe numele lor.
         </target>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
@@ -6773,7 +6765,7 @@
           </context>
         </context-group>
         <target>
-          Activități Principale
+          Principalele activități
         </target>
       </trans-unit>
       <trans-unit id="8440a5b1027f0e4e4defcea4942c7bc341787acb" datatype="html">
@@ -6817,11 +6809,11 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            24
           </context>
         </context-group>
         <target>
-          Găsiți cereri privind Libertatea de Informații
+          Găsiți solicitări la informații de interes public
         </target>
       </trans-unit>
       <trans-unit id="776abf5bfa53f966f50353de6daa3b5611baf7a3" datatype="html">
@@ -6877,7 +6869,7 @@
           </context>
         </context-group>
         <target>
-          Găsiți cereri privind Libertatea de Informații în
+          Găsiți solicitări la informații de interes public în
         </target>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
@@ -6925,7 +6917,7 @@
           </context>
         </context-group>
         <target>
-          Scor Compozit
+          Scor compozit
         </target>
       </trans-unit>
       <trans-unit id="5cfdf3284836ee968418982c8112589433aee83f" datatype="html">
@@ -6941,7 +6933,7 @@
           </context>
         </context-group>
         <target>
-          Ajustați Ponderile
+          Ajustați ponderile
         </target>
       </trans-unit>
       <trans-unit id="1e28ee9dee065a056c59e12dacbd809849097d3b" datatype="html">
@@ -6975,7 +6967,7 @@
           </context>
         </context-group>
         <target>
-          Intervalul de Scor
+          Intervalul de scor
         </target>
       </trans-unit>
       <trans-unit id="ca4939f58d2dd3f3b511e5275c8d7b4dbd2fe825" datatype="html">
@@ -6991,7 +6983,7 @@
           </context>
         </context-group>
         <target>
-          Aplicați Ponderile
+          Aplicați ponderile
         </target>
       </trans-unit>
       <trans-unit id="52462307cda62511a5a743e02f4a31044678765b" datatype="html">
@@ -7007,7 +6999,7 @@
           </context>
         </context-group>
         <target>
-          Resetați Ponderile
+          Resetați ponderile
         </target>
       </trans-unit>
       <trans-unit id="1cd2d6f95e9275c688b02462c293ed944b5cad7b" datatype="html">
@@ -7023,7 +7015,7 @@
           </context>
         </context-group>
         <target>
-          Ajustați Ponderile Scorurilor Compozite
+          Ajustați ponderile scorurilor compozite
         </target>
       </trans-unit>
       <trans-unit id="fc61416d48adb7af122b8697e806077eb251fb57" datatype="html">
@@ -7063,7 +7055,7 @@
           </context>
         </context-group>
         <target>
-          Profilul Sectorului
+          Profilul sectorului
         </target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
@@ -7111,7 +7103,7 @@
           </context>
         </context-group>
         <target>
-          Pe această pagină veți găsi toate informațiile cu privire la licitații de pe acest portal.
+          Pe această pagină veți găsi toate datele referitoare la licitațiile prezente pe acest portal.
         </target>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
@@ -7143,7 +7135,7 @@
           </context>
         </context-group>
         <target>
-          Portalul Curent
+          Portalul curent
         </target>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
@@ -7259,7 +7251,7 @@
           </context>
         </context-group>
         <target>
-          * Datorită numărului de înregistrări și a faptului că JSON parser nu acceptă dimensiunea fișierului, informațiile DIGIWHIST Tender JSON au fost salvate de asemenea ca &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          * Din cauza numărului de înregistrări și a faptului că JSON parser nu acceptă dimensiunea fișierului, informațiile DIGIWHIST Tender JSON au fost salvate sub forma &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Newline Delimited JSON&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
@@ -7345,7 +7337,7 @@
           </context>
         </context-group>
         <target>
-          Registrul Numerelor de Asociație
+          Registrul Numerelor Asociațiilor
         </target>
       </trans-unit>
       <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
@@ -7393,7 +7385,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE nu este responsabilă pentru nicio informație terță la care se face referire în aceste pagini. În cazul în care apar daune ca urmare a folosirii acelor informații menționate anterior, doar autorul paginilor respective este responsabil, nu cel care a făcut referire la acele pagini.
+          OKF DE nu este responsabilă pentru nici o informație din surse terțe în care se fac referiri la aceste pagini. În cazul în care apar daune ca urmare a folosirii informațiilor prezentate de acele surse, doar autorul paginilor respective este responsabil, nu cel la care s-a făcut referire în cadrul acelor pagini.
         </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
@@ -7409,7 +7401,7 @@
           </context>
         </context-group>
         <target>
-          Disclaimer
+          Declinarea responsabilității
         </target>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
@@ -7425,7 +7417,7 @@
           </context>
         </context-group>
         <target>
-          Înformațiile și perspectivele de pe acest site web aparțin autorilor și nu reflectă o opinie colectivă a consorțiului DIGIWHIST sau opinia oficială a Comisiei Europene. Nici Comisa Europeana și nici vreo persoană care acționează în numele Comisiei Europene nu este responsabilă de modul în care informațiile publicate pe acest site ar putea fi utilizate.
+          Informațiile și opiniile prezentate pe acest website aparțin autor(ilor) și nu reflectă opinia colectivă a consorțiului DIGIWHIST sau opinia oficială a Comisiei Europene. Nici Comisa Europeană și nici vreo persoană care acționează în numele Comisiei Europene nu este responsabilă de modul în care informațiile publicate pe acest website ar putea fi utilizate.
         </target>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
@@ -7446,7 +7438,7 @@
           </context>
         </context-group>
         <target>
-          Întregul conținut al Digiwhist de pe acest site web este licențiat sub &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+          Întregul conținut al DIGIWHIST de pe acest website este licențiat sub &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
       <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
@@ -7462,7 +7454,7 @@
           </context>
         </context-group>
         <target>
-          Open Knowledge Foundation Germany este încântată de vizita dumneavoastră pe site-ul nostru și de faptul că sunteți interesat de proiectul DIGIWHIST Orizont 2020. Tratăm protecția datelor dumneavoastră personale cu multă seriozitate și aderăm în mod strict la prevederile legislative cu privire la datele cu caracter privat ( de ex. Legea Germană privind Protecția Datelor (BDSG), Legea Telemedia (TMG) și Legea privind Competiția Nedreaptă (UWG)).
+          Open Knowledge Foundation Germania este încântată de vizita dumneavoastră pe website-ul nostru și de faptul că sunteți interesat de proiectul DIGIWHIST Orizont 2020. Tratăm protecția datelor dumneavoastră personale cu multă seriozitate și aderăm la prevederile legislative cu privire la datele cu caracter privat ( de ex. Legea Germană privind Protecția Datelor (BDSG), Legea Telemedia (TMG) și Legea privind Competiția Nedreaptă (UWG)).
         </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
@@ -7510,7 +7502,7 @@
           </context>
         </context-group>
         <target>
-          În cele mai multe cazuri puteți vizita site-ul Opentender.eu fără a fi nevoie să furnizați date personale
+          În cele mai multe cazuri puteți vizita site-ul Opentender.eu fără a fi nevoie să furnizați date personale.
         </target>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
@@ -7622,7 +7614,7 @@
           </context>
         </context-group>
         <target>
-          Aceste informații sunt disponibile în vederea analizelor statistice iar datele neprelucrate sunt șterse lunar de către compania de web-hosting.
+          Aceste informații sunt disponibile în vederea analizelor statistice, iar datele neprelucrate sunt șterse lunar de către compania de web-hosting.
         </target>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
@@ -7686,7 +7678,7 @@
           </context>
         </context-group>
         <target>
-          Nicio informație nu este exportată sau procesată în afara Spațiului Economic European.
+          Nici o informație nu este exportată sau procesată în afara Spațiului Economic European.
         </target>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
@@ -7702,7 +7694,7 @@
           </context>
         </context-group>
         <target>
-          4. Cookie-urile și urmărirea site-ului web
+          4. Cookie-urile și urmărirea utilizatorului website-ului
         </target>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
@@ -7718,7 +7710,7 @@
           </context>
         </context-group>
         <target>
-          Folosim sisteme the analiză web destinate măsurării și analizării vizitelor pe site-ul nostru. Utilizăm adresa dvs. IP cu scopul de a colecta date despre, printre altele, traficul pe internet, browser-ul și computerul dvs.
+          Folosim sisteme the analiză web destinate măsurării și analizării vizitelor pe site-ul nostru. Utilizăm adresa dvs. IP cu scopul de a colecta date despre, printre altele, traficul pe Internet, browser-ul și computerul dvs.
         </target>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
@@ -7846,7 +7838,7 @@
           </context>
         </context-group>
         <target>
-          OKF DE ia măsuri tehnice și organizaționale pentru a asigura securitatea în conformitate cu stadiul actual al tehnologiei în vederea protejării datele furnizate de dvs. împotriva manipulării, pierderii, distrugerii sau accesului accidental sau deliberat de către persoane neautorizate. Ne îmbunătățim continuu măsurile de securitate pe măsură ce avansează tehnologia.
+          OKF DE ia măsuri tehnice și organizaționale pentru a asigura securitatea în conformitate cu stadiul actual al tehnologiei în vederea protejării datelor furnizate de dvs. împotriva manipulării, pierderii, distrugerii sau accesului accidental sau deliberat de către persoane neautorizate. Ne îmbunătățim continuu măsurile de securitate, pe măsură ce avansează tehnologia.
         </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
@@ -7862,7 +7854,7 @@
           </context>
         </context-group>
         <target>
-          9. Dreptul la informații, întrebări despre confidențialitatea și revocarea datelor
+          9. Dreptul la informare, întrebări despre confidențialitatea și revocarea datelor
         </target>
       </trans-unit>
       <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
@@ -7894,7 +7886,7 @@
           </context>
         </context-group>
         <target>
-          Mai mult, în orice moment aveți dreptul de a revoca acordul pe care l-ați acordat anterior, cu intrare în vigoare pe viitor.
+          Mai mult, în orice moment aveți dreptul de a revoca acordul pe care l-ați acordat anterior, cu efect pe viitor.
         </target>
       </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">
@@ -7974,7 +7966,7 @@
           </context>
         </context-group>
         <target>
-          Căutare Autoritate
+          Căutare Autoritate Contractantă
         </target>
       </trans-unit>
       <trans-unit id="5f2b4e3e104e37c6283dff48b4c08b23ca1f6707" datatype="html">
@@ -8070,7 +8062,7 @@
           </context>
         </context-group>
         <target>
-          Găsiți Informații cu privire la Licitații la
+          Găsiți Informații cu privire la licitații la
         </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
@@ -8102,7 +8094,7 @@
           </context>
         </context-group>
         <target>
-          În Numele
+          În numele
         </target>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
@@ -8118,7 +8110,7 @@
           </context>
         </context-group>
         <target>
-          Furnizor de Informații Suplimentare
+          Furnizor de informații suplimentare
         </target>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
@@ -8134,7 +8126,7 @@
           </context>
         </context-group>
         <target>
-          Furnizor de Specificații
+          Furnizor de specificații
         </target>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
@@ -8150,7 +8142,7 @@
           </context>
         </context-group>
         <target>
-          Destinatar al Ofertelor
+          Destinatar al ofertelor
         </target>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
@@ -8166,7 +8158,7 @@
           </context>
         </context-group>
         <target>
-          Numele Corpului de Apel
+          Numele instituției de apel
         </target>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
@@ -8182,7 +8174,7 @@
           </context>
         </context-group>
         <target>
-          Numele Corpului Mediator
+          Numele instituției mediatoare
         </target>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
@@ -8310,7 +8302,7 @@
           </context>
         </context-group>
         <target>
-          Data Estimată a Începerii
+          Data estimată a demarării
         </target>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
@@ -8334,7 +8326,7 @@
           </context>
         </context-group>
         <target>
-          Data Estimată a Finalizării
+          Data estimată a finalizării
         </target>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
@@ -8358,7 +8350,7 @@
           </context>
         </context-group>
         <target>
-          Data Limită pentru Oferte
+          Data limită pentru depunerea ofertelor
         </target>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
@@ -8382,7 +8374,7 @@
           </context>
         </context-group>
         <target>
-          Dată Limită pentru Documente
+          Data limită pentru depunerea documentelor
         </target>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
@@ -8398,7 +8390,7 @@
           </context>
         </context-group>
         <target>
-          Durata Estimată
+          Durata estimată
         </target>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
@@ -8510,7 +8502,7 @@
           </context>
         </context-group>
         <target>
-          Numărul Maxim de Participanți ai Acordurilor Cadru
+          Numărul maxim de participanți în Acordul Cadru
         </target>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
@@ -8526,7 +8518,7 @@
           </context>
         </context-group>
         <target>
-          Criterii de acordare a contractului
+          Criterii de atribuire a contractului
         </target>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
@@ -8566,7 +8558,7 @@
           </context>
         </context-group>
         <target>
-          Detalii alei lotului
+          Detalii lot
         </target>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
@@ -8598,7 +8590,7 @@
           </context>
         </context-group>
         <target>
-          Data Deciziei cu privire la Câștigarea Licitației
+          Data deciziei de atribuire
         </target>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
@@ -8614,7 +8606,7 @@
           </context>
         </context-group>
         <target>
-          Data Finalizării
+          Data finalizării
         </target>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
@@ -8630,7 +8622,7 @@
           </context>
         </context-group>
         <target>
-          Data Limită cu privire la Câștigarea Licitației
+          Data limită pentru anunțarea câștigătorului
         </target>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
@@ -8646,7 +8638,7 @@
           </context>
         </context-group>
         <target>
-          Data Semnării Contractului
+          Data semnării contractului
         </target>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
@@ -8662,7 +8654,7 @@
           </context>
         </context-group>
         <target>
-          Data Anulării
+          Data anulării
         </target>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
@@ -8678,7 +8670,7 @@
           </context>
         </context-group>
         <target>
-          Numărul de Oferte
+          Numărul de oferte
         </target>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
@@ -8694,7 +8686,7 @@
           </context>
         </context-group>
         <target>
-          Numărul de Oferte Electronice
+          Numărul de oferte electronice
         </target>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
@@ -8710,7 +8702,7 @@
           </context>
         </context-group>
         <target>
-          Numărul Contractului
+          Numărul contractului
         </target>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
@@ -8742,7 +8734,7 @@
           </context>
         </context-group>
         <target>
-          Numărul Lotului
+          Numărul lotului
         </target>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
@@ -8894,7 +8886,7 @@
           </context>
         </context-group>
         <target>
-          Cerințe Personale
+          Cerințe personale
         </target>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
@@ -8910,7 +8902,7 @@
           </context>
         </context-group>
         <target>
-          Cerințe Economice
+          Cerințe economice
         </target>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
@@ -8926,7 +8918,7 @@
           </context>
         </context-group>
         <target>
-          Cerințe Tehnice
+          Cerințe tehnice
         </target>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
@@ -8942,7 +8934,7 @@
           </context>
         </context-group>
         <target>
-          Sume Depuse
+          Sume depuse
         </target>
       </trans-unit>
       <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
@@ -9094,7 +9086,7 @@
           </context>
         </context-group>
         <target>
-          Id-ul sursei
+          ID-ul sursei
         </target>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">

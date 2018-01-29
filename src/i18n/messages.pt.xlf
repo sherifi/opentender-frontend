@@ -64,7 +64,7 @@
             src/app/components/header/header.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            61
           </context>
         </context-group>
         <target>
@@ -770,7 +770,7 @@
           Mudar a língua desta página
         </target>
       </trans-unit>
-      <trans-unit id="0c688909a37a64f79955dba844a8e9a6733495cf" datatype="html">
+      <trans-unit id="1cc25c080f62a3847860bafdd5847022f598afbc" datatype="html">
         <source>
           You can view the data on individual national portals by selecting a country below or explore
           <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
@@ -778,7 +778,7 @@
           all available data
           <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
           </x>
-          available data.
+          .
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -5141,26 +5141,18 @@
           Menu
         </target>
       </trans-unit>
-      <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
+      <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
         <source>
-          Making Public Tenders More Transparent
+          Portal Overview
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/header/header.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            55
           </context>
         </context-group>
-        <target>
-          Tornando os Concursos Públicos Mais Transparentes
-        </target>
-      </trans-unit>
-      <trans-unit id="499d0ae47b020be96076f69530b97d9b5534c35f" datatype="html">
-        <source>
-          Portal Overview
-        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/components/footer/footer.component.ts
@@ -5171,6 +5163,22 @@
         </context-group>
         <target>
           Visão Geral do Portal
+        </target>
+      </trans-unit>
+      <trans-unit id="6017c8856f4816fda8f2b339d398d59ac5b08c40" datatype="html">
+        <source>
+          Making Public Tenders More Transparent
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/header/header.component.ts
+          </context>
+          <context context-type="linenumber">
+            60
+          </context>
+        </context-group>
+        <target>
+          Tornando os Concursos Públicos Mais Transparentes
         </target>
       </trans-unit>
       <trans-unit id="4f73ecae893ef8adcb90e7c5aeaa905e9a6887b0" datatype="html">
@@ -5455,22 +5463,6 @@
         </context-group>
         <target>
           Twitter
-        </target>
-      </trans-unit>
-      <trans-unit id="838a46816b130c73fe73b96e69176da9eb3b1190" datatype="html">
-        <source>
-          Facebook
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/components/footer/footer.component.ts
-          </context>
-          <context context-type="linenumber">
-            83
-          </context>
-        </context-group>
-        <target>
-          Facebook
         </target>
       </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
@@ -6817,7 +6809,7 @@
             src/app/pages/authority/authority.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            24
           </context>
         </context-group>
         <target>
