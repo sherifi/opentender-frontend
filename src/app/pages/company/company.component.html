@@ -16,6 +16,7 @@
 					<ng-container i18n>Search this company at</ng-container>
 					<br>
 					<a target="_blank" rel="noopener" href="https://register.openownership.org/search?utf8=%E2%9C%93&q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> OpenOwnership.org</a><br>
+					<a target="_blank" rel="noopener" href="https://lobbyfacts.eu/search/node/{{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> LobbyFacts.eu</a>
 					<a target="_blank" rel="noopener" href="http://farmsubsidy.openspending.org/search/?q={{ company.name | encodeURIComponent }}"><i class="icon-new-tab"></i> FarmSubsidy.org</a>
 				</div>
 				<div class="info-link-box" *ngIf="country.foi">
