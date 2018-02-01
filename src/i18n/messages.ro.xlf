@@ -188,7 +188,7 @@
           </context>
         </context-group>
         <target>
-          Acest panou vă oferă o prezentare generală a piețelor de licitații publice, ajutând astfel autoritățile contractante și ofertanții să fie mai eficienți în procesul de licitație.
+          Acest panou vă oferă o prezentare generală a piețelor de achiziții, ajutând astfel autoritățile contractante și ofertanții să fie mai eficienți în procesul de licitație.
         </target>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -276,7 +276,7 @@
           </context>
         </context-group>
         <target>
-          În această secțiune puteți căuta informații în funcție de criteriile dumneavoastră de interes. Rezultatele căutarii pot fi descărcate în vederea unei examinări amănunțite.
+          În această secțiune puteți căuta date în funcție de criteriile dumneavoastră de interes. Rezultatele căutarii pot fi descărcate în vederea unei examinări amănunțite.
         </target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
@@ -789,7 +789,7 @@
           </context>
         </context-group>
         <target>
-          Puteți vizualiza informațiile care aparțin portalurilor naționale individuale selectând o țară de mai jos sau puteți explora &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;toate informațiile disponibile&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+          Puteți vizualiza datele disponibile pe fiecare portal național selectând o țară din lista de mai jos sau puteți explora &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;toate datele disponibile&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
         </target>
       </trans-unit>
       <trans-unit id="ea3d8f593f1de3906398bb50d9925a1e472be8e1" datatype="html">
@@ -1445,22 +1445,6 @@
           Prețul ofertei în EUR
         </target>
       </trans-unit>
-      <trans-unit id="BidsCount" datatype="html">
-        <source>
-          Bids Count
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/i18n/components/i18n.component.ts
-          </context>
-          <context context-type="linenumber">
-            32
-          </context>
-        </context-group>
-        <note priority="1" from="description">
-          runtime
-        </note>
-      </trans-unit>
       <trans-unit id="Buyer" datatype="html">
         <source>
           Buyer
@@ -1470,7 +1454,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            32
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1489,7 +1473,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            34
+            33
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1508,7 +1492,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            35
+            34
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1527,7 +1511,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            36
+            35
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1546,7 +1530,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            37
+            36
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1565,7 +1549,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            38
+            37
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1584,7 +1568,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            39
+            38
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1603,7 +1587,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            39
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1622,7 +1606,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            40
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1641,7 +1625,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            42
+            41
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1660,7 +1644,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            42
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1679,7 +1663,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            43
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1698,7 +1682,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            45
+            44
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1717,7 +1701,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            46
+            45
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1736,7 +1720,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            46
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1755,7 +1739,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            48
+            47
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1774,7 +1758,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            49
+            48
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1793,7 +1777,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            50
+            49
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1812,7 +1796,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            51
+            50
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1831,7 +1815,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            52
+            51
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1850,7 +1834,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            53
+            52
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1869,7 +1853,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            54
+            53
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1888,7 +1872,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            55
+            54
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1907,7 +1891,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            56
+            55
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1926,7 +1910,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            56
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1945,7 +1929,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            57
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1964,7 +1948,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            58
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -1983,7 +1967,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            60
+            59
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2002,7 +1986,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            61
+            60
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2021,7 +2005,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            61
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2040,7 +2024,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            63
+            62
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2059,7 +2043,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            64
+            63
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2078,7 +2062,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            65
+            64
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2097,7 +2081,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            66
+            65
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2116,7 +2100,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            67
+            66
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2135,7 +2119,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            67
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2154,7 +2138,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            69
+            68
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2173,7 +2157,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            70
+            69
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2192,7 +2176,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            70
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2211,7 +2195,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            72
+            71
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2230,7 +2214,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            73
+            72
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2249,7 +2233,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            74
+            73
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2268,7 +2252,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            75
+            74
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2287,7 +2271,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            76
+            75
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2306,7 +2290,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            77
+            76
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2325,7 +2309,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            78
+            77
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2344,7 +2328,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            79
+            78
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2363,7 +2347,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            80
+            79
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2382,7 +2366,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            81
+            80
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2401,7 +2385,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            82
+            81
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2420,7 +2404,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            82
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2439,7 +2423,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            84
+            83
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2458,7 +2442,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            85
+            84
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2477,7 +2461,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            86
+            85
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2496,7 +2480,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            87
+            86
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2515,7 +2499,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            88
+            87
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2534,7 +2518,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            89
+            88
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2553,7 +2537,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            90
+            89
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2572,7 +2556,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            91
+            90
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2591,7 +2575,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            92
+            91
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2610,7 +2594,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            93
+            92
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2629,7 +2613,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            94
+            93
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2648,7 +2632,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            95
+            94
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2667,7 +2651,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            96
+            95
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2686,7 +2670,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            97
+            96
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2705,7 +2689,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            98
+            97
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2724,7 +2708,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            99
+            98
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2743,7 +2727,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            100
+            99
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2762,7 +2746,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            101
+            100
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2781,7 +2765,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            102
+            101
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2800,7 +2784,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            103
+            102
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2819,7 +2803,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            104
+            103
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2838,7 +2822,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            105
+            104
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2857,7 +2841,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            106
+            105
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2876,7 +2860,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            106
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2895,7 +2879,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            108
+            107
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2914,7 +2898,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            109
+            108
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2933,7 +2917,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            110
+            109
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2952,7 +2936,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            111
+            110
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2971,7 +2955,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            112
+            111
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -2990,7 +2974,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            112
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3009,7 +2993,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            114
+            113
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3028,7 +3012,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            115
+            114
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3047,7 +3031,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            116
+            115
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3066,7 +3050,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            117
+            116
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3085,7 +3069,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            118
+            117
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3104,7 +3088,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            119
+            118
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3123,7 +3107,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            120
+            119
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3142,7 +3126,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            121
+            120
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3161,7 +3145,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            122
+            121
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3180,7 +3164,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            123
+            122
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3199,7 +3183,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            124
+            123
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3218,7 +3202,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            125
+            124
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3237,7 +3221,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            126
+            125
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3256,7 +3240,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            127
+            126
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3275,7 +3259,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            128
+            127
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3294,7 +3278,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            129
+            128
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3313,7 +3297,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            130
+            129
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3332,7 +3316,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            131
+            130
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3351,7 +3335,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            132
+            131
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3370,7 +3354,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            133
+            132
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3389,7 +3373,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            134
+            133
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3408,7 +3392,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            135
+            134
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3427,7 +3411,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            136
+            135
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3446,7 +3430,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            137
+            136
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3465,7 +3449,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            138
+            137
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3484,7 +3468,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            139
+            138
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3503,7 +3487,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            140
+            139
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3522,7 +3506,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            141
+            140
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3541,7 +3525,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            142
+            141
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3560,7 +3544,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            143
+            142
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3579,7 +3563,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            144
+            143
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3598,7 +3582,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            145
+            144
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3617,7 +3601,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            146
+            145
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3636,7 +3620,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            147
+            146
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3655,7 +3639,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            148
+            147
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3674,7 +3658,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            149
+            148
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3693,7 +3677,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            150
+            149
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3712,7 +3696,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            151
+            150
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3731,7 +3715,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            152
+            151
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3750,7 +3734,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            153
+            152
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3769,7 +3753,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            154
+            153
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3788,7 +3772,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            155
+            154
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3807,7 +3791,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            156
+            155
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3832,7 +3816,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            157
+            156
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3851,7 +3835,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            158
+            157
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3870,7 +3854,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            159
+            158
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3889,7 +3873,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            160
+            159
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3908,7 +3892,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            161
+            160
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3927,7 +3911,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            162
+            161
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3946,7 +3930,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            163
+            162
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -3965,14 +3949,14 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            164
+            163
           </context>
         </context-group>
         <note priority="1" from="description">
           runtime
         </note>
         <target>
-          Achiziția centralizată indică o bună capacitate administrativă dacă licitația este gestionată de către o entitate de achiziție centrală.
+          Achiziția centralizată indică o bună capacitate administrativă dacă licitația este gestionată de către o entitate centrală de achiziție.
         </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_FRAMEWORK_AGREEMENT.name" datatype="html">
@@ -3984,7 +3968,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            165
+            164
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4003,7 +3987,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            166
+            165
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4022,7 +4006,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            167
+            166
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4041,7 +4025,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            168
+            167
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4060,7 +4044,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            169
+            168
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4079,7 +4063,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            170
+            169
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4098,7 +4082,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            171
+            170
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4117,7 +4101,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            172
+            171
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4136,7 +4120,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            173
+            172
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4155,7 +4139,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            174
+            173
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4174,7 +4158,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            175
+            174
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4193,7 +4177,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            176
+            175
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4212,7 +4196,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            177
+            176
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4231,7 +4215,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            178
+            177
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4250,7 +4234,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            179
+            178
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4269,7 +4253,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            180
+            179
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4288,7 +4272,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            181
+            180
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4307,7 +4291,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            182
+            181
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4326,7 +4310,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            183
+            182
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4345,7 +4329,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            184
+            183
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4364,7 +4348,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            185
+            184
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4383,7 +4367,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            186
+            185
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4402,7 +4386,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            187
+            186
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4421,7 +4405,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            188
+            187
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4440,7 +4424,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            189
+            188
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4459,7 +4443,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            190
+            189
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4478,7 +4462,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            191
+            190
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4497,7 +4481,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            192
+            191
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4516,7 +4500,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            193
+            192
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4535,7 +4519,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            194
+            193
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4554,7 +4538,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            195
+            194
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4573,7 +4557,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            196
+            195
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4592,7 +4576,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            197
+            196
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4611,7 +4595,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            198
+            197
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4630,7 +4614,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            199
+            198
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4649,7 +4633,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            200
+            199
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4668,7 +4652,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            201
+            200
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4687,7 +4671,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            202
+            201
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4706,7 +4690,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            203
+            202
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4725,7 +4709,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            204
+            203
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4744,7 +4728,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            205
+            204
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -4763,7 +4747,7 @@
             src/app/modules/i18n/components/i18n.component.ts
           </context>
           <context context-type="linenumber">
-            206
+            205
           </context>
         </context-group>
         <note priority="1" from="description">
@@ -6701,7 +6685,7 @@
           </context>
         </context-group>
         <target>
-          Tablourile vă oferă vizualizări de ultimă generație ale informațiilor privind achizițiile publice în patru categorii:
+          Panourile vă oferă vizualizări de ultimă generație ale informațiilor privind achizițiile publice în patru categorii:
         </target>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
@@ -7122,6 +7106,102 @@
           Pe această pagină veți găsi toate datele referitoare la licitațiile prezente pe acest portal.
         </target>
       </trans-unit>
+      <trans-unit id="11db3f53da11cc43e48960e6cc537b79c5fd789e" datatype="html">
+        <source>
+          CSV
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            10
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            19
+          </context>
+        </context-group>
+        <target>
+          CSV
+        </target>
+      </trans-unit>
+      <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
+        <source>
+          Source
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            16
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/tender/tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            402
+          </context>
+        </context-group>
+        <target>
+          Sursă
+        </target>
+      </trans-unit>
+      <trans-unit id="51e276921090e155c5bb135b890388bcef119307" datatype="html">
+        <source>
+          Entries
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            17
+          </context>
+        </context-group>
+        <target>
+          Înscrieri
+        </target>
+      </trans-unit>
+      <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
+        <source>
+          Size
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            18
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            44
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            59
+          </context>
+        </context-group>
+        <target>
+          Mărimea
+        </target>
+      </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
         <source>
           Hierarchical JSON
@@ -7131,7 +7211,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            10
+            35
           </context>
         </context-group>
         <target>
@@ -7147,7 +7227,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            14
+            39
           </context>
         </context-group>
         <target>
@@ -7163,7 +7243,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            15
+            43
           </context>
         </context-group>
         <context-group purpose="location">
@@ -7171,7 +7251,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            26
+            58
           </context>
         </context-group>
         <target>
@@ -7187,7 +7267,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            25
+            57
           </context>
         </context-group>
         <target>
@@ -7203,7 +7283,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            60
           </context>
         </context-group>
         <target>
@@ -7219,7 +7299,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            28
+            61
           </context>
         </context-group>
         <target>
@@ -7241,7 +7321,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            75
           </context>
         </context-group>
         <target>
@@ -7263,7 +7343,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            42
+            76
           </context>
         </context-group>
         <target>
@@ -7285,7 +7365,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            77
           </context>
         </context-group>
         <target>
@@ -8886,7 +8966,7 @@
           </context>
         </context-group>
         <target>
-          Preț unitar
+          Preț per unitate
         </target>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
@@ -8951,22 +9031,6 @@
         </context-group>
         <target>
           Sume depuse
-        </target>
-      </trans-unit>
-      <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
-        <source>
-          Source
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            402
-          </context>
-        </context-group>
-        <target>
-          Sursă
         </target>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
@@ -9118,7 +9182,7 @@
           </context>
         </context-group>
         <target>
-          Id-ul atribuit achizitorului
+          ID-ul atribuit autorității contractante
         </target>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
@@ -9150,7 +9214,7 @@
           </context>
         </context-group>
         <target>
-          Informații cu privire la Licitație
+          Informații cu privire la licitație
         </target>
       </trans-unit>
       <trans-unit id="438a512770714af06882db959b1a97240d7b3f79" datatype="html">
@@ -9326,7 +9390,7 @@
           </context>
         </context-group>
         <target>
-          ID-ul atribuit achizitorului
+          ID-ul atribuit autorității contractante
         </target>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
@@ -9406,7 +9470,7 @@
           </context>
         </context-group>
         <target>
-          Click aici pentru a ascunde/arăta această secțiune
+          Click aici pentru a ascunde/vizualiza această secțiune
         </target>
       </trans-unit>
     </body>
