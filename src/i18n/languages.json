@@ -7,6 +7,18 @@
       "dateformat": "dd.M.yyyy"
     },
     {
+      "id": "cs",
+      "name": "Čeština",
+      "eng": "Czech",
+      "dateformat": "d.M.yyyy"
+    },
+    {
+      "id": "da",
+      "name": "Dansk",
+      "eng": "Danish",
+      "dateformat": "dd-MM-yyyy"
+    },
+    {
       "id": "de",
       "name": "Deutsch",
       "eng": "German",
@@ -43,6 +55,12 @@
       "dateformat": "d.M.yyyy"
     },
     {
+      "id": "hr",
+      "name": "Hrvatski",
+      "eng": "Croatian",
+      "dateformat": "d.M.yyyy"
+    },
+    {
       "id": "hu",
       "name": "Magyar",
       "eng": "Hungarian",
@@ -67,6 +85,12 @@
       "dateformat": "yyyy.MM.dd"
     },
     {
+      "id": "no",
+      "name": "Norsk",
+      "eng": "Norwegian",
+      "dateformat": "dd.MM.yyyy"
+    },
+    {
       "id": "pl",
       "name": "Polski",
       "eng": "Polish",
@@ -85,6 +109,12 @@
       "dateformat": "dd.MM.yyyy"
     },
     {
+      "id": "sk",
+      "name": "Slovenčina",
+      "eng": "Slovak",
+      "dateformat": "d. M. yyyy"
+    },
+    {
       "id": "sl",
       "name": "Slovenščina",
       "eng": "Slovenian",
@@ -99,28 +129,10 @@
       "dateformat": "dd/MM/yyyy"
     },
     {
-      "id": "cs",
-      "name": "Čeština",
-      "eng": "Czech",
-      "dateformat": "d.M.yyyy"
-    },
-    {
-      "id": "da",
-      "name": "Dansk",
-      "eng": "Danish",
-      "dateformat": "dd-MM-yyyy"
-    },
-    {
       "id": "ga",
       "name": "Gaeilge",
       "eng": "Irish",
       "dateformat": "dd/MM/yyyy"
-    },
-    {
-      "id": "hr",
-      "name": "Hrvatski",
-      "eng": "Croatian",
-      "dateformat": "d.M.yyyy"
     },
     {
       "id": "lv",
@@ -141,12 +153,6 @@
       "dateformat": "d-M-yyyy"
     },
     {
-      "id": "sk",
-      "name": "Slovenčina",
-      "eng": "Slovak",
-      "dateformat": "d. M. yyyy"
-    },
-    {
       "id": "sv",
       "name": "Svenska",
       "eng": "Swedish",
@@ -156,12 +162,6 @@
       "id": "hy",
       "name": "Հայերէն",
       "eng": "Armenian",
-      "dateformat": "dd.MM.yyyy"
-    },
-    {
-      "id": "no",
-      "name": "Norsk",
-      "eng": "Norwegian",
       "dateformat": "dd.MM.yyyy"
     },
     {
