@@ -7,8 +7,8 @@ import {
 	IApiResultGeoJSON, IApiResultAuthority, IApiResultAuthoritySimilar, IApiResultCompany, IApiResultCompanySimilar,
 	IApiResultDownloadTenderSearch, IApiResultNuts,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
-	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender, IApiResultUsage,
-	ISearchCommand, IApiResultAutoComplete, IApiResultDownloads, IApiResultPing
+	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender,
+	ISearchCommand, IApiResultAutoComplete, IApiResultPing, IDownload, IDownloadCSV
 } from '../app.interfaces';
 
 @Injectable()
@@ -99,10 +99,6 @@ export class ApiService {
 		return this.http.get<T>(this.actionCountryUrl + url + query);
 	}
 
-	getFieldsUsage(): Observable<IApiResultUsage> {
-		return this.get<IApiResultUsage>('quality/usage');
-	}
-
 	getSectors(): Observable<IApiResultSectors> {
 		return this.get<IApiResultSectors>('sector/list/main');
 	}
@@ -159,8 +155,12 @@ export class ApiService {
 		return this.http.get<IApiResultPing>(this.absUrl + '/ping' + (this.config.locale ? '?lang=' + this.config.locale : ''));
 	}
 
-	getDownloads(): Observable<IApiResultDownloads> {
-		return this.http.get<IApiResultDownloads>(this.absUrl + '/data/files/downloads.json');
+	getDownloads(): Observable<Array<IDownload>> {
+		return this.http.get<Array<IDownload>>(this.absUrl + '/data/files/downloads.json');
+	}
+
+	getCSVDownloads(): Observable<Array<IDownloadCSV>> {
+		return this.http.get<Array<IDownloadCSV>>(this.absUrl + '/data/files/downloads_csv.json');
 	}
 
 	getNutsMap(level: number): Observable<IApiResultGeoJSON> {

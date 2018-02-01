@@ -22,12 +22,6 @@ export interface IRegion {
 	value?: number;
 }
 
-export interface IUsageEntry {
-	field: string;
-	available: number;
-	missing: number;
-}
-
 export interface IAuthority {
 	body: Buyer;
 	count: number;
@@ -41,6 +35,22 @@ export interface ICompany {
 	countries: Array<string>;
 	value?: number;
 }
+
+export interface IDownload {
+	country: string;
+	count: number;
+	formats: {
+		json: { filename: string; size: number };
+		ndjson: { filename: string; size: number };
+	};
+}
+
+export interface IDownloadCSV {
+	filename: string;
+	count: number;
+	size: number;
+}
+
 
 /* stats objects from api */
 
@@ -231,10 +241,6 @@ export interface IApiResultPortalsStats {
 	data: Array<IStatsCountry>;
 }
 
-export interface IApiResultUsage {
-	data: Array<IUsageEntry>;
-}
-
 export interface IApiResultCompany {
 	data: {
 		company: ICompany;
@@ -310,17 +316,6 @@ export interface IApiResultAutoComplete {
 	data: Array<{
 		key: string;
 		value: number;
-	}>;
-}
-
-export interface IApiResultDownloads {
-	data: Array<{
-		country: string;
-		count: number;
-		formats: {
-			json: { filename: string; size: number },
-			ndjson: { filename: string; size: number }
-		}
 	}>;
 }
 

@@ -7,15 +7,47 @@
 		<p i18n>On this page you find all the tender data of this portal.</p>
 	</div>
 	<div class="container">
+		<h2 class="h3" i18n>CSV</h2>
+		<div class="container">
+			<div class="tables-container">
+				<table class="tables">
+					<thead>
+					<tr>
+						<th i18n>Source</th>
+						<th width="140" i18n>Entries</th>
+						<th width="140" i18n>Size</th>
+						<th width="60" i18n>CSV</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr *ngFor="let csv of downloads_csv">
+						<td>{{csv.name}}</td>
+						<td class="right">{{csv.count}}</td>
+						<td class="right">{{csv.size | formatFileSize}}</td>
+						<td class="center"><a href="/data/files/{{csv.filename}}" download><i class="icon-cloud-download"></i></a></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="container">
 		<h2 class="h3" i18n>Hierarchical JSON</h2>
 	</div>
 	<div class="container container-current-download" *ngIf="current">
 		<p>
 			<ng-container i18n>Current Portal</ng-container>: {{current.name}}<br/>
-			<ng-container i18n>Tenders</ng-container>: {{current.count}}<br/>
-			<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i> JSON</a> {{current.formats.json.size | formatFileSize}} -
-			<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i> NDJSON</a> {{current.formats.ndjson.size | formatFileSize}}
 		</p>
+		<div class="container">
+			<div class="container-left-6">
+				<ng-container i18n>Tenders</ng-container>: {{current.count}}<br/>
+				<ng-container i18n>Size</ng-container>: {{current.formats.ndjson.size | formatFileSize}}
+			</div>
+			<div class="container-left-6">
+				<a href="/data/files/{{current.formats.json.filename}}" download><i class="icon-cloud-download"></i> JSON</a><br/>
+				<a href="/data/files/{{current.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i> NDJSON</a>
+			</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="tables-container">
@@ -23,17 +55,19 @@
 			<thead>
 			<tr>
 				<th i18n>Country</th>
-				<th i18n>Tenders</th>
-				<th i18n>JSON</th>
-				<th i18n>NDJSON*</th>
+				<th width="140" i18n>Tenders</th>
+				<th width="140" i18n>Size</th>
+				<th width="60" i18n>JSON</th>
+				<th width="60" i18n>NDJSON*</th>
 			</tr>
 			</thead>
 			<tbody>
 			<tr *ngFor="let download of downloads">
 				<td>{{download.name}}</td>
 				<td class="right">{{download.count}}</td>
-				<td class="right"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a><br/>{{download.formats.json.size | formatFileSize}}</td>
-				<td class="right"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a><br/>{{download.formats.ndjson.size | formatFileSize}}</td>
+				<td class="right">{{download.formats.ndjson.size | formatFileSize}}</td>
+				<td class="center"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a></td>
+				<td class="center"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a></td>
 			</tr>
 			</tbody>
 		</table>

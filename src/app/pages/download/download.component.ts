@@ -2,14 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {ConfigService} from '../../services/config.service';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
-import {IBreadcrumb} from '../../app.interfaces';
+import {IBreadcrumb, IDownload, IDownloadCSV} from '../../app.interfaces';
 
-interface Download {
-	country: string;
-	filename: string;
+interface Download extends IDownload {
 	name: string;
-	count: number;
-	size: number;
+}
+
+interface CSVDownload extends IDownloadCSV {
+	name: string;
 }
 
 @Component({
@@ -20,6 +20,7 @@ interface Download {
 })
 export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];
+	downloads_csv: Array<CSVDownload> = [];
 	current: Download;
 	public crumbs: Array<IBreadcrumb> = [];
 
@@ -28,29 +29,56 @@ export class DownloadPage implements OnInit {
 	}
 
 	public ngOnInit(): void {
-		this.refresh();
+		this.refreshJSONDownloads();
+		this.refreshCSVDownloads();
 	}
 
-	refresh() {
+	refreshCSVDownloads() {
+		let sub = this.api.getCSVDownloads().subscribe(
+			(data: Array<IDownloadCSV>) => {
+				this.downloads_csv = data.map(download => {
+					let country_code = download.filename.replace('_data.csv', '');
+					return {
+						name: this.i18n.getPortalName(country_code, country_code),
+						size: download.size,
+						count: download.count,
+						filename: download.filename
+					}
+				}).sort((a, b) => {
+					return a.name.localeCompare(b.name);
+				});
+			},
+			error => console.error(error),
+			() => {
+				sub.unsubscribe();
+			});
+	}
+
+	refreshJSONDownloads() {
 		let current_id = this.config.country.id || 'all';
 		let sub = this.api.getDownloads().subscribe(
-			(data: any) => {
-				data.forEach(download => {
-					if (download.country === 'eu') {
-						download.name = this.i18n.get('EU Institutions');
-					} else if (download.country === 'all') {
-						download.name = this.i18n.get('All Data');
-					} else {
-						download.name = this.i18n.getPortalName(download.country.toUpperCase(), this.i18n.expandCountry(download.country));
-					}
-					if (download.country === current_id && download.count > 0) {
-						this.current = download;
-					}
-				});
-				data = data.filter(download => {
+			(data: Array<IDownload>) => {
+				this.downloads = data.filter(download => {
 					return (download.count > 0);
-				});
-				data = data.sort((a, b) => {
+				}).map(download => {
+					let result: Download = {
+						name: download.country,
+						country: download.country,
+						formats: download.formats,
+						count: download.count
+					};
+					if (result.country === 'eu') {
+						result.name = this.i18n.get('EU Institutions');
+					} else if (result.country === 'all') {
+						result.name = this.i18n.get('All Data');
+					} else {
+						result.name = this.i18n.getPortalName(result.country.toUpperCase(), this.i18n.expandCountry(result.country));
+					}
+					if (result.country === current_id && result.count > 0) {
+						this.current = result;
+					}
+					return result;
+				}).sort((a, b) => {
 					if (a.country === 'all') {
 						return -1;
 					}
@@ -59,7 +87,6 @@ export class DownloadPage implements OnInit {
 					}
 					return a.name.localeCompare(b.name);
 				});
-				this.downloads = data;
 			},
 			error => console.error(error),
 			() => {
