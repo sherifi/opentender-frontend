@@ -6,7 +6,7 @@
 	<div class="container">
 		<p i18n>On this page you find all the tender data of this portal.</p>
 	</div>
-	<div class="container">
+	<div class="container" *ngIf="downloads_csv | defined">
 		<h2 class="h3" i18n>CSV</h2>
 		<div class="container">
 			<div class="tables-container">
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" *ngIf="downloads | defined">
 		<h2 class="h3" i18n>Hierarchical JSON</h2>
 	</div>
 	<div class="container container-current-download" *ngIf="current">
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" *ngIf="downloads | defined">
 		<div class="tables-container">
 			<table class="tables">
 			<thead>
