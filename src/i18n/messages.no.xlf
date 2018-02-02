@@ -235,14 +235,6 @@
             54
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/search/components/select-search-button/select-search-button.component.ts
-          </context>
-          <context context-type="linenumber">
-            19
-          </context>
-        </context-group>
         <target>
           Søk
         </target>
@@ -4757,16 +4749,32 @@
           Andelen manglende felter er misforholdet mellom antallet felter i anbudsutlysningen og den kunngjorte kontrakten for en gitt leverandør (basert på nyeste publiserte versjoner).
         </target>
       </trans-unit>
+      <trans-unit id="321e4419a943044e674beb55b8039f42a9761ca5" datatype="html">
+        <source>
+          Info
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graph-footer/graph-footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            18
+          </context>
+        </context-group>
+        <target>
+          Info
+        </target>
+      </trans-unit>
       <trans-unit id="5ad4eecbd0fe09c34678fefce317a052af39dc96" datatype="html">
         <source>
           Data
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/modules/download-series/download-series.component.ts
+            src/app/modules/graph-footer/graph-footer.component.ts
           </context>
           <context context-type="linenumber">
-            5
+            21
           </context>
         </context-group>
         <context-group purpose="location">
@@ -4811,18 +4819,18 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/modules/download-series/download-series.component.ts
+            src/app/modules/graph-footer/graph-footer.component.ts
           </context>
           <context context-type="linenumber">
-            4
+            20
           </context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/modules/download-series/download-series.component.ts
+            src/app/modules/graph-footer/graph-footer.component.ts
           </context>
           <context context-type="linenumber">
-            11
+            27
           </context>
         </context-group>
         <context-group purpose="location">
@@ -4859,10 +4867,10 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/modules/download-series/download-series.component.ts
+            src/app/modules/graph-footer/graph-footer.component.ts
           </context>
           <context context-type="linenumber">
-            29
+            45
           </context>
         </context-group>
         <target>
@@ -4875,10 +4883,10 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
-            src/app/modules/download-series/download-series.component.ts
+            src/app/modules/graph-footer/graph-footer.component.ts
           </context>
           <context context-type="linenumber">
-            30
+            46
           </context>
         </context-group>
         <context-group purpose="location">
@@ -4891,22 +4899,6 @@
         </context-group>
         <target>
           Last ned data som JSON
-        </target>
-      </trans-unit>
-      <trans-unit id="dae0862f1a8ee16e264812b129b5ffda6ddd305f" datatype="html">
-        <source>
-          Sources
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/maps/nuts-map.component.ts
-          </context>
-          <context context-type="linenumber">
-            23
-          </context>
-        </context-group>
-        <target>
-          Kilder
         </target>
       </trans-unit>
       <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">
@@ -5123,6 +5115,226 @@
         </context-group>
         <target>
           Beløp (€) etter region
+        </target>
+      </trans-unit>
+      <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
+        <source>
+          Volume (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/companies.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/authorities.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/tree-map/sector-treemap.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <target>
+          Beløp (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="760a04b7973f1ba8ccd2c829871b7b351b812958" datatype="html">
+        <source>
+          Tenders per Year
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/home-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            2
+          </context>
+        </context-group>
+        <target>
+          Anbud per år
+        </target>
+      </trans-unit>
+      <trans-unit id="d59c29464c0e2b8ac4a4c86a505fafcef34037e8" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{title}}">
+          </x>
+          over Time
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            2
+          </context>
+        </context-group>
+        <target>
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; over tid
+        </target>
+      </trans-unit>
+      <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
+        <source>
+          Average
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            9
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-sectors.component.ts
+          </context>
+          <context context-type="linenumber">
+            5
+          </context>
+        </context-group>
+        <target>
+          Gjennomsnittlig
+        </target>
+      </trans-unit>
+      <trans-unit id="d1da3b1d8aa673508710ff4425ec528b9b1b56b4" datatype="html">
+        <source>
+          Absolute
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            10
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-sectors.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <target>
+          Absolutt
+        </target>
+      </trans-unit>
+      <trans-unit id="d07981f293c51226089eccef6d39124f8196d6f8" datatype="html">
+        <source>
+          <x id="INTERPOLATION" equiv-text="{{title}}">
+          </x>
+          per Sector
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/indicator-sectors.component.ts
+          </context>
+          <context context-type="linenumber">
+            2
+          </context>
+        </context-group>
+        <target>
+          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; per sektor
+        </target>
+      </trans-unit>
+      <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
+        <source>
+          Tenders over Time
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            2
+          </context>
+        </context-group>
+        <target>
+          Anbud over tid
+        </target>
+      </trans-unit>
+      <trans-unit id="8700afbd9703e190b3d675a06b96a159518fa81c" datatype="html">
+        <source>
+          Total Volume (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            6
+          </context>
+        </context-group>
+        <target>
+          Totalbeløp (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="27575017642b02439056216f88dde0263ca001cf" datatype="html">
+        <source>
+          Average Volume (€)
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/graphs/bar/histogram.component.ts
+          </context>
+          <context context-type="linenumber">
+            7
+          </context>
+        </context-group>
+        <target>
+          Gjennomsnittlig beløp (€)
+        </target>
+      </trans-unit>
+      <trans-unit id="6df3069422db26773a9ec6e7e5d80ccbd1ec1d21" datatype="html">
+        <source>
+          Loading…
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/loading/loading.component.ts
+          </context>
+          <context context-type="linenumber">
+            1
+          </context>
+        </context-group>
+        <target>
+          Laster inn …
+        </target>
+      </trans-unit>
+      <trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
+        <source>
+          Not Found
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/modules/loading/loading.component.ts
+          </context>
+          <context context-type="linenumber">
+            3
+          </context>
+        </context-group>
+        <target>
+          Ikke funnet
         </target>
       </trans-unit>
       <trans-unit id="41aac9cecddc9f345c263d3742192e68e227e413" datatype="html">
@@ -5491,226 +5703,6 @@
         </context-group>
         <target>
           Dette prosjektet er støttet med midler fra &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;EUs forsknings- og innovasjonsprogram Horizon 2020&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt; i henhold til tilskuddsavtale &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK_1"/&gt;nummer 645852&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
-        </target>
-      </trans-unit>
-      <trans-unit id="0ab9f19fd2833f56058cccaff13961ac1d35cee2" datatype="html">
-        <source>
-          Volume (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/companies.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/authorities.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/tree-map/sector-treemap.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <target>
-          Beløp (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="760a04b7973f1ba8ccd2c829871b7b351b812958" datatype="html">
-        <source>
-          Tenders per Year
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/home-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Anbud per år
-        </target>
-      </trans-unit>
-      <trans-unit id="d59c29464c0e2b8ac4a4c86a505fafcef34037e8" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-          over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; over tid
-        </target>
-      </trans-unit>
-      <trans-unit id="578f3696ab5ffb8fc85da042cb38d898c9ca894b" datatype="html">
-        <source>
-          Average
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            9
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-sectors.component.ts
-          </context>
-          <context context-type="linenumber">
-            5
-          </context>
-        </context-group>
-        <target>
-          Gjennomsnittlig
-        </target>
-      </trans-unit>
-      <trans-unit id="d1da3b1d8aa673508710ff4425ec528b9b1b56b4" datatype="html">
-        <source>
-          Absolute
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            10
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-sectors.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <target>
-          Absolutt
-        </target>
-      </trans-unit>
-      <trans-unit id="d07981f293c51226089eccef6d39124f8196d6f8" datatype="html">
-        <source>
-          <x id="INTERPOLATION" equiv-text="{{title}}">
-          </x>
-          per Sector
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/indicator-sectors.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          &lt;x equiv-text="{{title}}" id="INTERPOLATION"/&gt; per sektor
-        </target>
-      </trans-unit>
-      <trans-unit id="c0c957aa6fdd8c2d8fe114e70c8fe7fd18736a73" datatype="html">
-        <source>
-          Tenders over Time
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            2
-          </context>
-        </context-group>
-        <target>
-          Anbud over tid
-        </target>
-      </trans-unit>
-      <trans-unit id="8700afbd9703e190b3d675a06b96a159518fa81c" datatype="html">
-        <source>
-          Total Volume (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            6
-          </context>
-        </context-group>
-        <target>
-          Totalbeløp (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="27575017642b02439056216f88dde0263ca001cf" datatype="html">
-        <source>
-          Average Volume (€)
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/graphs/bar/histogram.component.ts
-          </context>
-          <context context-type="linenumber">
-            7
-          </context>
-        </context-group>
-        <target>
-          Gjennomsnittlig beløp (€)
-        </target>
-      </trans-unit>
-      <trans-unit id="6df3069422db26773a9ec6e7e5d80ccbd1ec1d21" datatype="html">
-        <source>
-          Loading…
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/loading/loading.component.ts
-          </context>
-          <context context-type="linenumber">
-            1
-          </context>
-        </context-group>
-        <target>
-          Laster inn …
-        </target>
-      </trans-unit>
-      <trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
-        <source>
-          Not Found
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/loading/loading.component.ts
-          </context>
-          <context context-type="linenumber">
-            3
-          </context>
-        </context-group>
-        <target>
-          Ikke funnet
         </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
@@ -6963,7 +6955,7 @@
             src/app/pages/dashboards/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            48
+            47
           </context>
         </context-group>
         <target>
@@ -6979,7 +6971,7 @@
             src/app/pages/dashboards/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            113
+            112
           </context>
         </context-group>
         <target>
@@ -6995,7 +6987,7 @@
             src/app/pages/dashboards/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            114
+            113
           </context>
         </context-group>
         <target>
@@ -7011,7 +7003,7 @@
             src/app/pages/dashboards/components/dashboard/indicator-dashboard.component.ts
           </context>
           <context context-type="linenumber">
-            87
+            86
           </context>
         </context-group>
         <target>
@@ -8129,6 +8121,22 @@
           samme dag
         </target>
       </trans-unit>
+      <trans-unit id="5ca707824ab93066c7d9b44e1b8bf216725c2c22" datatype="html">
+        <source>
+          Filter
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/search/components/select-search-button/select-search-button.component.ts
+          </context>
+          <context context-type="linenumber">
+            19
+          </context>
+        </context-group>
+        <target>
+          Filter
+        </target>
+      </trans-unit>
       <trans-unit id="293ab8acb61c97af9dfba991ce681bf173debabc" datatype="html">
         <source>
           Search Sector
@@ -8918,7 +8926,7 @@
           </context>
         </context-group>
         <target>
-          Får tilslag
+          Vinner
         </target>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
