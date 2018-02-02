@@ -26,22 +26,27 @@
   }
 
   .dialog-button_description {
+    //background: $dropdown-background;
+    //color: $dropdown-description-color;
+    border-bottom-left-radius: $base-border-radius;
+    border-bottom: $dropdown-border;
+    border-left: $dropdown-border;
+    border-top-left-radius: $base-border-radius;
+    border-top: $dropdown-border;
+    float: left;
+    font-size: 0.8em;
+    line-height: $dropdown-height;
+    margin: 0;
+    padding: 0 $dropdown-padding 0 $dropdown-padding;
+  }
+
+  .dialog-button_text {
     background: $dropdown-background;
     border-bottom-left-radius: $base-border-radius;
     border-bottom: $dropdown-border;
     border-left: $dropdown-border;
     border-top-left-radius: $base-border-radius;
     border-top: $dropdown-border;
-    color: $dropdown-description-color;
-    float: left;
-    font-size: 0.8em;
-    line-height: $dropdown-height;
-    margin: 0;
-    padding: 0 ($dropdown-padding / 2) 0 $dropdown-padding;
-  }
-
-  .dialog-button_text {
-    background: $dropdown-background;
     border-bottom-right-radius: $base-border-radius;
     border-top-right-radius: $base-border-radius;
     border-top: $dropdown-border;
@@ -52,7 +57,7 @@
     font-size: 0.8em;
     line-height: $dropdown-height;
     margin: 0;
-    padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+    padding: 0 ($dropdown-padding * 2.5) 0 $dropdown-padding;
     position: relative;
     @include transition (all 0.2s ease-in-out);
 
