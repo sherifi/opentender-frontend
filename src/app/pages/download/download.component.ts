@@ -39,7 +39,7 @@ export class DownloadPage implements OnInit {
 				this.downloads_csv = data.map(download => {
 					let country_code = download.filename.replace('_data.csv', '');
 					return {
-						name: this.i18n.getPortalName(country_code, country_code),
+						name: this.i18n.getPortalName(country_code, this.i18n.expandCountry(country_code)),
 						size: download.size,
 						count: download.count,
 						filename: download.filename
