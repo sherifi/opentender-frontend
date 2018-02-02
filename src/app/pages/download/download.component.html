@@ -15,6 +15,7 @@
 					<tr>
 						<th i18n>Source</th>
 						<th width="140" i18n>Entries</th>
+						<th width="140" i18n>Modified</th>
 						<th width="140" i18n>Size</th>
 						<th width="60" i18n>CSV</th>
 					</tr>
@@ -23,6 +24,7 @@
 					<tr *ngFor="let csv of downloads_csv">
 						<td>{{csv.name}}</td>
 						<td class="right">{{csv.count}}</td>
+						<td class="right">{{csv.lastUpdate | formatDate}}</td>
 						<td class="right">{{csv.size | formatFileSize}}</td>
 						<td class="center"><a href="/data/files/{{csv.filename}}" download><i class="icon-cloud-download"></i></a></td>
 					</tr>
@@ -56,6 +58,7 @@
 			<tr>
 				<th i18n>Country</th>
 				<th width="140" i18n>Tenders</th>
+				<th width="140" i18n>Modified</th>
 				<th width="140" i18n>Size</th>
 				<th width="60" i18n>JSON</th>
 				<th width="60" i18n>NDJSON*</th>
@@ -65,6 +68,7 @@
 			<tr *ngFor="let download of downloads">
 				<td>{{download.name}}</td>
 				<td class="right">{{download.count}}</td>
+				<td class="right">{{download.lastUpdate | formatDate}}</td>
 				<td class="right">{{download.formats.ndjson.size | formatFileSize}}</td>
 				<td class="center"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a></td>
 				<td class="center"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a></td>

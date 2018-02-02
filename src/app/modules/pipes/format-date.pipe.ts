@@ -1,5 +1,4 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Utils} from '../../model/utils';
 import {I18NService} from '../i18n/services/i18n.service';
 
 @Pipe({name: 'formatDate'})

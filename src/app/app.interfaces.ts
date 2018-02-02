@@ -39,6 +39,7 @@ export interface ICompany {
 export interface IDownload {
 	country: string;
 	count: number;
+	lastUpdate: number;
 	formats: {
 		json: { filename: string; size: number };
 		ndjson: { filename: string; size: number };
@@ -48,6 +49,7 @@ export interface IDownload {
 export interface IDownloadCSV {
 	filename: string;
 	count: number;
+	lastUpdate: number;
 	size: number;
 }
 

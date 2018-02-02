@@ -42,6 +42,7 @@ export class DownloadPage implements OnInit {
 						name: this.i18n.getPortalName(country_code, this.i18n.expandCountry(country_code)),
 						size: download.size,
 						count: download.count,
+						lastUpdate: download.lastUpdate,
 						filename: download.filename
 					}
 				}).sort((a, b) => {
@@ -64,6 +65,7 @@ export class DownloadPage implements OnInit {
 					let result: Download = {
 						name: download.country,
 						country: download.country,
+						lastUpdate: download.lastUpdate,
 						formats: download.formats,
 						count: download.count
 					};
