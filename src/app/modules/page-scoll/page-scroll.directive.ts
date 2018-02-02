@@ -1,6 +1,6 @@
 import {Directive, ElementRef, Input, HostListener} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import {PlatformService} from '../services/platform.service';
+import {PlatformService} from '../../services/platform.service';
 
 @Directive({selector: '[pageScroll]'})
 export class PageScrollDirective {
@@ -33,7 +33,9 @@ export class PageScrollDirective {
 			let sub = this.router.events.subscribe((e) => {
 				if (e instanceof NavigationEnd) {
 					sub.unsubscribe();
-					this.scrollView(this.href);
+					setTimeout(() => {
+						this.scrollView(this.href);
+					}, 10);
 				}
 			});
 		} else {

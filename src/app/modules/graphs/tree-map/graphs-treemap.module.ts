@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {GraphSectorTreeMap} from './sector-treemap.component';
-import {DownloadSeriesModule} from '../../download-series/download-series.module';
+import {GraphFooterModule} from '../../graph-footer/graph-footer.module';
 import {TreeMapModule} from '../../../thirdparty/ngx-charts-universal/tree-map/tree-map.module';
 import {CommonTooltipModule} from '../../../thirdparty/ngx-charts-universal/common/tooltip/common-tooltip.module';
 
@@ -9,7 +9,7 @@ import {CommonTooltipModule} from '../../../thirdparty/ngx-charts-universal/comm
 	imports: [
 		CommonModule,
 		TreeMapModule,
-		DownloadSeriesModule,
+		GraphFooterModule,
 		CommonTooltipModule
 	],
 	declarations: [

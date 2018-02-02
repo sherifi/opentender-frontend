@@ -17,7 +17,7 @@ import {I18NService} from '../../i18n/services/i18n.service';
 				[weights_data]="graph.weights_data"
 				(select)="graph.select($event)">
 		</ngx-charts-radar-pie-chart>
-		<series-download-button [sender]="this"></series-download-button>`
+		<graph-footer [sender]="this" [infoRouterLink]="['/about/glossary']" [infoPageScroll]="glossary"></graph-footer>`
 })
 export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvider {
 	@Input()
@@ -26,6 +26,8 @@ export class GraphIndicatorStructureComponent implements OnChanges, ISeriesProvi
 	weights: { [name: string]: number };
 	@Input()
 	title: string = '';
+	@Input()
+	glossary: string;
 	@Output()
 	onSelect = new EventEmitter();
 

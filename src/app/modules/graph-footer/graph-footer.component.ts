@@ -4,16 +4,22 @@ import {ISeries, ISeriesDataTable, ISeriesProvider} from '../../app.interfaces';
 
 @Component({
 	moduleId: __filename,
-	selector: 'series-download-button',
-	templateUrl: 'download-series.component.html',
-	styleUrls: ['download-series.component.scss']
+	selector: 'graph-footer',
+	templateUrl: 'graph-footer.component.html',
+	styleUrls: ['graph-footer.component.scss']
 })
-export class SelectDownloadSeriesComponent {
+export class GraphFooterComponent {
 	@Input()
 	sender: ISeriesProvider;
 	showDialog: boolean = false;
 	series: ISeries;
 	table: ISeriesDataTable;
+	@Input()
+	infoRouterLink: string | Array<string>;
+	@Input()
+	infoPageScroll: string;
+	@Input()
+	gradientLegend: { valueLow: number; valueHigh: number; colorLow: string; colorHigh: string; };
 
 	constructor() {
 	}

@@ -26,4 +26,16 @@
 		text-align: right;
 	}
 
+	.gradient_legend {
+		margin-top: 3px;
+		font-size: 10px;
+		float: left;
+		svg {
+			margin-top: 1px;
+		}
+		span {
+			vertical-align: top;
+		}
+	}
+
 }

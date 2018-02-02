@@ -21,7 +21,7 @@ import {Colors} from '../../../model/colors';
 				[chart]="graph.chart"
 				[data]="graph.data">
 		</ngx-charts-bar-vertical>
-		<series-download-button [sender]="this"></series-download-button>`
+		<graph-footer [sender]="this"></graph-footer>`
 })
 export class GraphHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()

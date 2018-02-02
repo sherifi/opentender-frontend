@@ -38,7 +38,7 @@ import {Colors} from '../../../model/colors';
 				[chart]="graph.chart"
 				[data]="graph.data"
 				[marker]="marker"></ngx-charts-heat-map-grid>
-		<series-download-button [sender]="this"></series-download-button>
+		<graph-footer [sender]="this"></graph-footer>
 	`,
 	styleUrls: ['../bar-grouped/benchmarks.component.scss']
 })

@@ -30,13 +30,12 @@
 				<graph score-grid [data]="viz.scores.score.data"></graph>
 			</div>
 			<div class="container-left-9">
-				<graph indicator-structure [data]="viz.scores.terms_indicators_score.data" [weights]="filterWeights" (onSelect)="selectIndicatorChange($event)"></graph>
+				<graph indicator-structure [data]="viz.scores.terms_indicators_score.data" [weights]="filterWeights" (onSelect)="selectIndicatorChange($event)" [glossary]="'#'+(selected?selected.id:indicator.id)"></graph>
 			</div>
-
 		</div>
 		<div class="container">
 			<div class="container-left-6">
-				<graph score-histogram [data]="viz.scores.score_in_years.data" [title]="viz.scores.score_in_years.title"></graph>
+				<graph score-histogram [data]="viz.scores.score_in_years.data" [title]="viz.scores.score_in_years.title" [glossary]="'#'+(selected?selected.id:indicator.id)"></graph>
 			</div>
 			<div class="container-left-6">
 				<graph score-sectors [data]="viz.scores.score_in_sectors.data" [title]="viz.scores.score_in_sectors.title"></graph>

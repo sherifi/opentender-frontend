@@ -21,7 +21,7 @@
 			</div>
 			<div class="container">
 				<div class="container-left-6">
-					<graph score-histogram [data]="viz.score_in_years.data" [title]="viz.score_in_years.title"></graph>
+					<graph score-histogram [data]="viz.score_in_years.data" [title]="viz.score_in_years.title" [glossary]="'#TENDER'"></graph>
 				</div>
 				<div class="container-left-6" *ngIf="viz.subsectors.data && viz.subsectors.data.length>0">
 					<graph score-sectors [data]="viz.score_in_sectors.data" [title]="viz.score_in_sectors.title"></graph>

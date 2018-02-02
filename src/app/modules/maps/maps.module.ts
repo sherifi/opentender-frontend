@@ -9,7 +9,7 @@ import {MapSuppliersComponent} from './nuts-map-supplier.component';
 import {MapBuyersComponent} from './nuts-map-buyer.component';
 import {PipesModule} from '../pipes/pipes.module';
 import {RouterModule} from '@angular/router';
-import {DownloadSeriesModule} from '../download-series/download-series.module';
+import {GraphFooterModule} from '../graph-footer/graph-footer.module';
 import {NGXLeafletModule} from '../../thirdparty/ngx-leaflet/leaflet.module';
 import {I18nModule} from '../i18n/i18n.module';
 
@@ -20,7 +20,7 @@ import {I18nModule} from '../i18n/i18n.module';
 		PipesModule,
 		RouterModule,
 		I18nModule,
-		DownloadSeriesModule,
+		GraphFooterModule,
 	],
 	declarations: [
 		MapComponent,

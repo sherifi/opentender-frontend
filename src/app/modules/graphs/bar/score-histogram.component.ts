@@ -15,13 +15,15 @@ import {Colors} from '../../../model/colors';
 				[chart]="graph.chart"
 				[data]="graph.data">
 		</ngx-charts-bar-vertical>
-		<series-download-button [sender]="this"></series-download-button>`
+		<graph-footer [sender]="this" [infoRouterLink]="['/about/glossary']" [infoPageScroll]="glossary"></graph-footer>`
 })
 export class GraphIndicatorScoreHistogramComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	data: IStatsInYears;
 	@Input()
 	title: string = '';
+	@Input()
+	glossary: string;
 
 	avg_score_in_years: IChartBar = {
 		chart: {

@@ -19,21 +19,7 @@ import {Utils} from '../../model/utils';
 				[formatTooltip]="formatTooltip"
 				[geo]="leafletGeo"
 				(regionClick)="onRegionClick($event)"></leafletmap>
-		<div class="nutsmap_legend" *ngIf="!hideLegend && data_list.length>0">
-			<span>{{valueLow | formatNumber}}</span>
-			<svg width="200" height="16">
-				<defs>
-					<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-						<stop offset="0" [attr.stop-color]="colorLow" stop-opacity="0.3"></stop>
-						<stop offset="1" [attr.stop-color]="colorHigh" stop-opacity="1"></stop>
-					</linearGradient>
-				</defs>
-				<rect fill="url(#legendGradient)" x="0" y="0" width="200" height="16"></rect>
-			</svg>
-			<span>{{valueHigh | formatNumber}}</span>
-		</div>
-		<div class="nutsmap_subtitle"><a [routerLink]="['/about/how-opentender-works']" pageScroll="#info-maps" i18n>Sources</a></div>
-		<series-download-button *ngIf="!hideLegend && data_list.length>0" [sender]="this"></series-download-button>`,
+		<graph-footer *ngIf="!hideLegend && data_list.length>0" [sender]="this" [infoRouterLink]="['/about/how-opentender-works']" [infoPageScroll]="'#info-maps'" [gradientLegend]="gradientLegend"></graph-footer>`,
 	styleUrls: ['nuts-map.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
@@ -49,10 +35,7 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 	@Input()
 	hideLegend: boolean = false;
 
-	private colorLow: string = '';
-	private valueLow: number;
-	private colorHigh: string = '';
-	private valueHigh: number;
+	public gradientLegend: { valueLow: number; valueHigh: number; colorLow: string; colorHigh: string; };
 
 	public loading: number = 0;
 
@@ -104,10 +87,8 @@ export class NUTSMapComponent implements OnChanges, ISeriesProvider {
 			max = Math.max(nut.value, max);
 		});
 		let scale = scaleLinear().domain([0, max]).range([0, 1]);
-		this.colorLow = d3chroma.interpolateBlues(scale(min));
-		this.valueLow = 0;
-		this.colorHigh = d3chroma.interpolateBlues(scale(max));
-		this.valueHigh = max;
+
+		this.gradientLegend = {valueLow: 0, valueHigh: max, colorLow: d3chroma.interpolateBlues(scale(min)), colorHigh: d3chroma.interpolateBlues(scale(max))};
 		this.data_list = list.map(nut => {
 			return {id: nut.id, name: nut.feature.properties.name, value: nut.value};
 		});

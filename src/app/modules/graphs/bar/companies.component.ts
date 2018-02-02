@@ -22,7 +22,7 @@ import {Colors} from '../../../model/colors';
 				[data]="graph.data"
 				(select)="graph.select($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<series-download-button [sender]="this"></series-download-button>
+		<graph-footer [sender]="this"></graph-footer>
 	`
 })
 export class GraphCompaniesComponent implements OnChanges, ISeriesProvider {

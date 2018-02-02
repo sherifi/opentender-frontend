@@ -17,7 +17,7 @@ import {Colors} from '../../../model/colors';
 				[data]="graph.data"
 				(select)="graph.select($event)">
 		</ngx-charts-bar-horizontal-labeled>
-		<series-download-button [sender]="this"></series-download-button>`
+		<graph-footer [sender]="this" [infoRouterLink]="['/about/glossary']" [infoPageScroll]="'#terms-cpv'"></graph-footer>`
 })
 export class GraphScoreSectorsComponent implements OnChanges, ISeriesProvider {
 	@Input()

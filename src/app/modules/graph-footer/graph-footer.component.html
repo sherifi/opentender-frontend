@@ -1,6 +1,22 @@
 <div class="graph-footer">
 	<div class="graph-toolbar-container">
+		<div class="gradient_legend" *ngIf="gradientLegend">
+			<span>{{gradientLegend.valueLow | formatNumber}}</span>
+			<svg width="200" height="16">
+				<defs>
+					<linearGradient id="legendGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+						<stop offset="0" [attr.stop-color]="gradientLegend.colorLow" stop-opacity="0.3"></stop>
+						<stop offset="1" [attr.stop-color]="gradientLegend.colorHigh" stop-opacity="1"></stop>
+					</linearGradient>
+				</defs>
+				<rect fill="url(#legendGradient)" x="0" y="0" width="200" height="16"></rect>
+			</svg>
+			<span>{{gradientLegend.valueHigh | formatNumber}}</span>
+		</div>
 		<div class="graph-toolbar">
+			<button class="tool-button" *ngIf="infoRouterLink" [routerLink]="infoRouterLink" [pageScroll]="infoPageScroll"><i class="icon-info"></i>
+				<ng-container i18n>Info</ng-container>
+			</button>
 			<button class="tool-button" (click)="this.show()" i18n-title title="Download Data"><i class="icon-cloud-download"></i>
 				<ng-container i18n>Data</ng-container>
 			</button>
