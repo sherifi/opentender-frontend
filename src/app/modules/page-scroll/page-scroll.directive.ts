@@ -26,7 +26,8 @@ export class PageScrollDirective {
 	@HostListener('click', ['$event'])
 	private handleClick(event: any): boolean { // tslint:disable-line:noUnusedParameters
 		if (this.routerLink) {
-			// We need to navigate their first.
+			this.scrollView(this.href);
+			// Maybe we need to navigate there first.
 			// Navigation is handled by the routerLink directive
 			// so we only need to listen for route change
 			// Note: the change event is also emitted when navigating to the current route again
