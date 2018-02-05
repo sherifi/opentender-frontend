@@ -75,6 +75,7 @@ const VIEWS = path.join(path.resolve(ROOT, 'src/views'));
 const VIEW = path.join(VIEWS, 'index.html');
 const VERSION = pck.version;
 const RES_VERSION = pck.version.replace(/\./g, '');
+Config.client.version = VERSION;
 
 let languages = JSON.parse(fs.readFileSync(path.resolve(I18N, 'languages.json')).toString()).enabled;
 
