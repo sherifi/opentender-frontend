@@ -7,7 +7,7 @@ import {I18nModule} from './modules/i18n/i18n.module';
 import {MapsModule} from './modules/maps/maps.module';
 import {GraphsBarModule} from './modules/graphs/bar/graphs-bar.module';
 import {LoadingModule} from './modules/loading/loading.module';
-import {PageScrollModule} from './modules/page-scoll/page-scroll.module';
+import {PageScrollModule} from './modules/page-scroll/page-scroll.module';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
