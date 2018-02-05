@@ -71,6 +71,27 @@
           Questa piattaforma è parte del &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;progetto DIGIWHIST&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
+      <trans-unit id="bebc56115dc1072f0b4bf426332e2871fe69bc59" datatype="html">
+        <source>
+          Subscribe to our
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;">
+          </x>
+          mailing list
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;">
+          </x>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            10
+          </context>
+        </context-group>
+        <target>
+          Iscriviti alla nostra &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;mailing list&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+        </target>
+      </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
         <source>
           Read more about tender legislation at
@@ -80,7 +101,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            20
+            21
           </context>
         </context-group>
         <target>
@@ -96,7 +117,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            36
+            37
           </context>
         </context-group>
         <target>
@@ -112,7 +133,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            41
           </context>
         </context-group>
         <context-group purpose="location">
@@ -120,7 +141,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            48
           </context>
         </context-group>
         <context-group purpose="location">
@@ -128,7 +149,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            48
           </context>
         </context-group>
         <context-group purpose="location">
@@ -160,7 +181,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            46
+            47
           </context>
         </context-group>
         <target>
@@ -176,7 +197,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            48
+            49
           </context>
         </context-group>
         <context-group purpose="location">
@@ -200,7 +221,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            52
+            53
           </context>
         </context-group>
         <context-group purpose="location">
@@ -208,7 +229,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            60
           </context>
         </context-group>
         <context-group purpose="location">
@@ -216,7 +237,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            60
           </context>
         </context-group>
         <context-group purpose="location">
@@ -248,7 +269,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            59
           </context>
         </context-group>
         <target>
@@ -264,7 +285,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            60
+            61
           </context>
         </context-group>
         <target>
@@ -280,7 +301,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            64
+            65
           </context>
         </context-group>
         <context-group purpose="location">
@@ -288,7 +309,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            72
           </context>
         </context-group>
         <context-group purpose="location">
@@ -296,7 +317,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            72
           </context>
         </context-group>
         <context-group purpose="location">
@@ -344,7 +365,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            70
+            71
           </context>
         </context-group>
         <target>
@@ -360,7 +381,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            72
+            73
           </context>
         </context-group>
         <target>
@@ -376,15 +397,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            76
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/home/home.component.ts
-          </context>
-          <context context-type="linenumber">
-            82
+            77
           </context>
         </context-group>
         <context-group purpose="location">
@@ -400,7 +413,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            94
+            84
           </context>
         </context-group>
         <context-group purpose="location">
@@ -408,7 +421,15 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            106
+            95
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            107
           </context>
         </context-group>
         <context-group purpose="location">
@@ -432,7 +453,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            83
+            84
           </context>
         </context-group>
         <context-group purpose="location">
@@ -456,7 +477,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            84
+            85
           </context>
         </context-group>
         <context-group purpose="location">
@@ -480,7 +501,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            88
+            89
           </context>
         </context-group>
         <context-group purpose="location">
@@ -488,7 +509,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            95
+            96
           </context>
         </context-group>
         <context-group purpose="location">
@@ -496,7 +517,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            95
+            96
           </context>
         </context-group>
         <context-group purpose="location">
@@ -520,7 +541,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            96
+            97
           </context>
         </context-group>
         <context-group purpose="location">
@@ -544,7 +565,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            100
+            101
           </context>
         </context-group>
         <context-group purpose="location">
@@ -552,7 +573,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            108
           </context>
         </context-group>
         <context-group purpose="location">
@@ -560,7 +581,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            107
+            108
           </context>
         </context-group>
         <context-group purpose="location">
@@ -584,7 +605,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            108
+            109
           </context>
         </context-group>
         <context-group purpose="location">
@@ -608,7 +629,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            116
+            117
           </context>
         </context-group>
         <target>
@@ -624,7 +645,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            118
+            119
           </context>
         </context-group>
         <target>
@@ -640,7 +661,7 @@
             src/app/pages/home/home.component.ts
           </context>
           <context context-type="linenumber">
-            117
+            118
           </context>
         </context-group>
         <context-group purpose="location">
@@ -661,6 +682,62 @@
         </context-group>
         <target>
           Informazioni su Opentender
+        </target>
+      </trans-unit>
+      <trans-unit id="56a313bd7b3836de2a1be41d9d7e5715e859802d" datatype="html">
+        <source>
+          Subscribe to our mailing list
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            128
+          </context>
+        </context-group>
+        <target>
+          Iscriviti alla nostra mailing list
+        </target>
+      </trans-unit>
+      <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
+        <source>
+          Email address
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            131
+          </context>
+        </context-group>
+        <target>
+          Indirizzo email
+        </target>
+      </trans-unit>
+      <trans-unit id="d0336848b0c375a1c25ba369b3481ee383217a4f" datatype="html">
+        <source>
+          Subscribe
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/home/home.component.ts
+          </context>
+          <context context-type="linenumber">
+            133
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            82
+          </context>
+        </context-group>
+        <target>
+          Iscriviti
         </target>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -755,7 +832,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            92
+            96
           </context>
         </context-group>
         <target>
@@ -5677,6 +5754,22 @@
           Twitter
         </target>
       </trans-unit>
+      <trans-unit id="d5418184edb10995a3fcb6ae7d40b523ac0d4c7a" datatype="html">
+        <source>
+          Mailing list
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/components/footer/footer.component.ts
+          </context>
+          <context context-type="linenumber">
+            84
+          </context>
+        </context-group>
+        <target>
+          Mailing list
+        </target>
+      </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
         <source>
           This project has received funding from the
@@ -5698,7 +5791,7 @@
             src/app/components/footer/footer.component.ts
           </context>
           <context context-type="linenumber">
-            99
+            103
           </context>
         </context-group>
         <target>
@@ -7115,7 +7208,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            19
+            20
           </context>
         </context-group>
         <target>
@@ -7162,9 +7255,9 @@
           Voci
         </target>
       </trans-unit>
-      <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
+      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
         <source>
-          Size
+          Modified
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
@@ -7179,7 +7272,31 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            61
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/tender/tender.component.ts
+          </context>
+          <context context-type="linenumber">
+            541
+          </context>
+        </context-group>
+        <target>
+          Modificato
+        </target>
+      </trans-unit>
+      <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
+        <source>
+          Size
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            19
           </context>
         </context-group>
         <context-group purpose="location">
@@ -7187,7 +7304,15 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            46
+          </context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/pages/download/download.component.ts
+          </context>
+          <context context-type="linenumber">
+            62
           </context>
         </context-group>
         <target>
@@ -7203,7 +7328,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            35
+            37
           </context>
         </context-group>
         <target>
@@ -7219,7 +7344,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            39
+            41
           </context>
         </context-group>
         <target>
@@ -7235,7 +7360,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            45
           </context>
         </context-group>
         <context-group purpose="location">
@@ -7243,7 +7368,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            60
           </context>
         </context-group>
         <target>
@@ -7259,7 +7384,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            59
           </context>
         </context-group>
         <target>
@@ -7275,7 +7400,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            60
+            63
           </context>
         </context-group>
         <target>
@@ -7291,7 +7416,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            61
+            64
           </context>
         </context-group>
         <target>
@@ -7313,7 +7438,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            75
+            79
           </context>
         </context-group>
         <target>
@@ -7335,7 +7460,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            76
+            80
           </context>
         </context-group>
         <target>
@@ -7357,7 +7482,7 @@
             src/app/pages/download/download.component.ts
           </context>
           <context context-type="linenumber">
-            77
+            81
           </context>
         </context-group>
         <target>
@@ -9447,22 +9572,6 @@
         </context-group>
         <target>
           Creato
-        </target>
-      </trans-unit>
-      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
-        <source>
-          Modified
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            541
-          </context>
-        </context-group>
-        <target>
-          Modificato
         </target>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">

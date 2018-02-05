@@ -29,33 +29,40 @@
           <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="bebc56115dc1072f0b4bf426332e2871fe69bc59" datatype="html">
+        <source>Subscribe to our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>mailing list<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2bcf9cae7d93167b968396d033745d2c5f6c8082" datatype="html">
         <source>Read more about tender legislation at</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="40e8ce05b9051ea38e17cbe43e9acfc7f7d483c3" datatype="html">
         <source>You can select between different ways of interacting with the data using these tiles. They are interconnected so the same full data depth can be accessed in different ways.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="35e2b830712ab359bc3c075495a99fcb8608e955" datatype="html">
         <source>Market Analysis</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -70,14 +77,14 @@
         <source>Data overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="011c99b4158e22ded06ac68e421e21180e474541" datatype="html">
         <source>This dashboard provides overview of public procurement markets, helping buyers and bidders to tender more effectively.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -88,15 +95,15 @@
         <source>Search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
@@ -111,29 +118,29 @@
         <source>Search and Find</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="326264d10d8b1f621028116661e35b14f5cc1ff1" datatype="html">
         <source>In this section you can search in the data by criteria of your interest. The results are downloadable for detailed examination.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
         <source>Download</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">65</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
@@ -156,25 +163,21 @@
         <source>Download data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ce37af67d1cc866817163a71d439ad8fc30c85f6" datatype="html">
         <source>Want to work with the data? You can download all the data this page is built on.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d9a489183026bb150585e08441fb1cc02762ae9b" datatype="html">
         <source>Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">76</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
@@ -182,11 +185,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">107</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -197,7 +204,7 @@
         <source>Administrative Capacity</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -208,7 +215,7 @@
         <source>This dashboard allows you to analyse and benchmark buyers&apos; administrative capacity.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -219,15 +226,15 @@
         <source>Transparency</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">89</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -238,7 +245,7 @@
         <source>This dashboard allows you to analyse and benchmark the degree of transparency in public procurement tenders.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -249,15 +256,15 @@
         <source>Integrity</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">101</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -268,7 +275,7 @@
         <source>This dashboard allows you to analyse and benchmark public procurement integrity risks.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">109</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
@@ -279,21 +286,21 @@
         <source>Not sure where to go? Start here …</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b07a7e6f8a93b42c5499b8e0bde24b7260dc8f52" datatype="html">
         <source>Learn what this is about</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dab1af6ba43c8dd113734ea6cb57300ed6b88c42" datatype="html">
         <source>About Opentender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">118</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
@@ -302,6 +309,31 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/opentender/opentender.component.ts</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56a313bd7b3836de2a1be41d9d7e5715e859802d" datatype="html">
+        <source>Subscribe to our mailing list</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
+        <source>Email address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0336848b0c375a1c25ba369b3481ee383217a4f" datatype="html">
+        <source>Subscribe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -340,7 +372,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1cc25c080f62a3847860bafdd5847022f598afbc" datatype="html">
@@ -2431,11 +2463,18 @@
           <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d5418184edb10995a3fcb6ae7d40b523ac0d4c7a" datatype="html">
+        <source>Mailing list</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
         <source>This project has received funding from the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>European Union’s Horizon 2020 research and innovation programme<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> under grant agreement <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>No 645852<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
@@ -3032,7 +3071,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
@@ -3053,86 +3092,101 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
-        <source>Size</source>
+      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
+        <source>Modified</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
+          <context context-type="linenumber">541</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
+        <source>Size</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="409b524fb18d63a3712ee2ee68b44ff672fae208" datatype="html">
         <source>Hierarchical JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ca8adb1c6e3625e9fc86466be4762b25a6a4243c" datatype="html">
         <source>Current Portal</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2104386227a6f3745b259a7cbce2254006d4da99" datatype="html">
         <source>Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">45</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
         <source>JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7c4ca89a999288712aede90091a5228ce76f489c" datatype="html">
         <source>NDJSON*</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
         <source>Files are compressed with <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>GZip<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, which should be supported by your ZIP application.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
         <source>* Due to the amount of entries and many JSON parser don&apos;t support the file size, DIGIWHIST Tender JSON data has also been saved as <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Newline Delimited JSON<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
         <source>The structure of entries is outlined in a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>JSON Schema File<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -4048,13 +4102,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
           <context context-type="linenumber">537</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
-        <source>Modified</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">541</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
