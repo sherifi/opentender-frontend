@@ -76,6 +76,20 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		},
 		size: 30
 	},
+	{
+		id: 'lots.validBidsCount',
+		name: 'Valid Bids Count',
+		group: 'Lots',
+		field: 'lots.validBidsCount',
+		type: ISearchFilterDefType.value
+	},
+	{
+		id: 'lots.electronicBidsCount',
+		name: 'Electronic Bids Count',
+		group: 'Lots',
+		field: 'lots.electronicBidsCount',
+		type: ISearchFilterDefType.value
+	},
 
 	{
 		id: 'title',
@@ -124,13 +138,16 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		type: ISearchFilterDefType.select,
 		valueFormatter: Utils.expandUnderlined
 	},
-	// {
-	// 	id: 'lots.bidsCount',
-	// 	name: 'Bids Count',
-	// 	group: 'Tender',
-	// 	field: 'lots.bidsCount',
-	// 	type: ISearchFilterDefType.value
-	// },
+
+
+	{
+		id: 'publications.source',
+		name: 'Source',
+		group: 'Tender Meta Data',
+		field: 'publications.source',
+		type: ISearchFilterDefType.select,
+		size: 30
+	},
 
 	{
 		id: 'fundings.isEuFund',

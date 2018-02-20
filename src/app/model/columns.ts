@@ -229,17 +229,17 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			});
 			let result: Array<ITableCellLine> = [];
 			Object.keys(companies).forEach(key => {
-					let c = companies[key];
-					if (tender.lots.length > 1) {
-						if (c.lots.length > 5) {
-							c.lots = c.lots.slice(0, 5);
-							c.lots.push('…');
-						}
-						result.push({prefix: library.i18n.get('Lot') + ' ' + c.lots.join(',')});
+				let c = companies[key];
+				let prefix = undefined;
+				if (tender.lots.length > 1) {
+					if (c.lots.length > 5) {
+						c.lots = c.lots.slice(0, 5);
+						c.lots.push('…');
 					}
-					result.push({icon: ICON.company, content: library.i18n.nameGuard(c.bidder.name), hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(c.bidder.name), link: c.link});
+					prefix = library.i18n.get('Lot') + ' ' + c.lots.join(',');
 				}
-			);
+				result.push({prefix: prefix, icon: ICON.company, content: library.i18n.nameGuard(c.bidder.name), hint: library.i18n.get('Profile Page') + ' ' + library.i18n.nameGuard(c.bidder.name), link: c.link});
+			});
 			return ColumnsFormatUtils.checkEntryCollapse(ColumnsFormatUtils.sortListByContent(result), library);
 		}
 	},
@@ -638,9 +638,9 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			tender.lots.forEach((lot: Lot, index_l: number) => {
 				if (lot.bids) {
 					lot.bids.forEach((bid: Bid, index_b: number) => {
-						if (bid.price && bid.price.netAmountEur) {
+						if (bid.price && Utils.isDefined(bid.price.netAmountEur)) {
 							result.push({
-								prefix: (tender.lots.length ? library.i18n.get('Lot') + ' ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' ' + library.i18n.get('Bid') + ' ' + (index_b + 1) : ''),
+								prefix: (tender.lots.length > 1 ? library.i18n.get('Lot') + ' ' + (index_l + 1) : '') + (lot.bids.length > 1 ? ' ' + library.i18n.get('Bid') + ' ' + (index_b + 1) : ''),
 								content: ColumnsFormatUtils.formatPriceEURValue(bid.price.netAmountEur, library)
 							});
 						}
@@ -759,7 +759,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'estimatedCompletionDate',
 			ascend: false
 		},
-		format: (tender, library)  => [{content: library.i18n.formatDate(tender.estimatedCompletionDate)}]
+		format: (tender, library) => [{content: library.i18n.formatDate(tender.estimatedCompletionDate)}]
 	},
 	{
 		name: 'Bid Deadline',
@@ -769,7 +769,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'bidDeadline',
 			ascend: false
 		},
-		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.bidDeadline)}]
+		format: (tender, library) => [{content: library.i18n.formatDatetime(tender.bidDeadline)}]
 	},
 	{
 		name: 'Documents Deadline',
@@ -779,7 +779,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'documentsDeadline',
 			ascend: false
 		},
-		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.documentsDeadline)}]
+		format: (tender, library) => [{content: library.i18n.formatDatetime(tender.documentsDeadline)}]
 	},
 
 	{
@@ -790,7 +790,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'created',
 			ascend: false
 		},
-		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.created)}]
+		format: (tender, library) => [{content: library.i18n.formatDatetime(tender.created)}]
 	},
 	{
 		name: 'Modification Date',
@@ -800,7 +800,7 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			id: 'modified',
 			ascend: false
 		},
-		format: (tender, library)  => [{content: library.i18n.formatDatetime(tender.modified)}]
+		format: (tender, library) => [{content: library.i18n.formatDatetime(tender.modified)}]
 	},
 	{
 		name: 'Country',
@@ -816,6 +816,101 @@ export const TenderColumns: Array<ITableColumnTender> = [
 			}
 			return [{content: library.i18n.expandCountry(tender.country)}];
 		}
-	}
+	},
+	{
+		name: 'Source',
+		id: 'publications.source',
+		group: 'Tender Meta Data',
+		sortBy: {
+			id: 'publications.source',
+			ascend: true
+		},
+		format: (tender, library) => {
+			if (!tender.publications) {
+				return [];
+			}
+			let result = [];
+			tender.publications.forEach(pub => {
+				if (pub.source && result.indexOf(pub.source) < 0) {
+					result.push(pub.source);
+				}
+			});
+			return result.map(s => {
+				return {content: s};
+			});
+		}
+	},
+	{
+		name: 'Source URL',
+		id: 'publications.source',
+		group: 'Tender Meta Data',
+		sortBy: {
+			id: 'publications.source',
+			ascend: true
+		},
+		format: (tender, library) => {
+			if (!tender.publications) {
+				return [];
+			}
+			let result = [];
+			tender.publications.forEach(pub => {
+				if (pub.humanReadableUrl && result.indexOf(pub.humanReadableUrl) < 0) {
+					result.push(pub.humanReadableUrl);
+				}
+			});
+			return result.map(s => {
+				return {content: s};
+			});
+		}
+	},
 
+
+	{
+		name: 'Valid Bids Count',
+		id: 'lots.validBidsCount',
+		group: 'Lots',
+		sortBy: {
+			id: 'lots.validBidsCount',
+			ascend: false
+		},
+		format: (tender, library) => {
+			if (!tender.lots) {
+				return [];
+			}
+			let result: Array<ITableCellLine> = [];
+			tender.lots.forEach((lot: Lot, index_l: number) => {
+				if (Utils.isDefined(lot.validBidsCount)) {
+					result.push({
+						prefix: (tender.lots.length > 1) ? library.i18n.get('Lot') + ' ' + (index_l + 1) : undefined,
+						content: lot.validBidsCount.toString()
+					});
+				}
+			});
+			return ColumnsFormatUtils.checkEntryCollapse(result, library);
+		}
+	},
+	{
+		name: 'Electronic Bids Count',
+		id: 'lots.electronicBidsCount',
+		group: 'Lots',
+		sortBy: {
+			id: 'lots.electronicBidsCount',
+			ascend: false
+		},
+		format: (tender, library) => {
+			if (!tender.lots) {
+				return [];
+			}
+			let result: Array<ITableCellLine> = [];
+			tender.lots.forEach((lot: Lot, index_l: number) => {
+				if (Utils.isDefined(lot.electronicBidsCount)) {
+					result.push({
+						prefix: (tender.lots.length > 1) ? library.i18n.get('Lot') + ' ' + (index_l + 1) : undefined,
+						content: lot.electronicBidsCount.toString()
+					});
+				}
+			});
+			return ColumnsFormatUtils.checkEntryCollapse(result, library);
+		}
+	}
 ];
