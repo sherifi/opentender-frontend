@@ -46,6 +46,12 @@ export interface IDownload {
 	};
 }
 
+export interface IDownloadOCDS {
+	filename: string;
+	lastUpdate: number;
+	size: number;
+}
+
 export interface IDownloadCSV {
 	filename: string;
 	count: number;

@@ -8,7 +8,7 @@ import {
 	IApiResultDownloadTenderSearch, IApiResultNuts,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender,
-	ISearchCommand, IApiResultAutoComplete, IApiResultPing, IDownload, IDownloadCSV
+	ISearchCommand, IApiResultAutoComplete, IApiResultPing, IDownload, IDownloadCSV, IDownloadOCDS
 } from '../app.interfaces';
 
 @Injectable()
@@ -161,6 +161,10 @@ export class ApiService {
 
 	getCSVDownloads(): Observable<Array<IDownloadCSV>> {
 		return this.http.get<Array<IDownloadCSV>>(this.absUrl + '/data/files/downloads_csv.json');
+	}
+
+	getOCDSDownloads(): Observable<Array<IDownloadOCDS>> {
+		return this.http.get<Array<IDownloadOCDS>>(this.absUrl + '/data/files/downloads_ocds.json');
 	}
 
 	getNutsMap(level: number): Observable<IApiResultGeoJSON> {

@@ -60,7 +60,8 @@ input[type='submit'] {
 }
 
 .button-secondary,
-.button-tertiary {
+.button-tertiary,
+.download-button {
   @extend %button;
 
   background-color: $secondary-button-bg-color;
@@ -86,7 +87,8 @@ input[type='submit'] {
   }
 }
 
-.button-tertiary {
+.button-tertiary,
+.download-button {
   background-color: $tertiary-button-bg-color;
 }
 
@@ -127,4 +129,10 @@ input[type='submit'] {
   border: 1px solid darken($secondary-hover-button-bg-color, 50%);
   color: $secondary-hover-button-color;
   cursor: default;
+}
+
+.download-button {
+  i {
+    color: $base-link-color;
+  }
 }
