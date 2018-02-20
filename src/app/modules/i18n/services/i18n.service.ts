@@ -241,6 +241,10 @@ export class I18NService {
 
 	// template based translation
 
+	public translateVariable(key: string): string {
+		return this.getStrict(key) || key;
+	}
+
 	public get(key: string): string {
 		return this.getStrict(key) || key;
 	}

@@ -1,7 +1,7 @@
 <app-dialog [title]="title" [(visible)]="showDialog">
 	<div class="select-filters">
 		<div *ngFor="let group of groups" class="select-filters-group">
-			<div class="select-filters-group-title">{{group.name | i18n}}</div>
+			<div class="select-filters-group-title">{{group.name}}</div>
 			<div *ngFor="let info of group.filters" class="select-filter-item">
 				<a *ngIf="info.isSearch" class="clickable" (click)="update(info.filter, true)"><i class="icon-plus-circle"></i>{{info.filter.name | i18n}}</a>
 			</div>

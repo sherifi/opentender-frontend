@@ -1,5 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges, Output, EventEmitter} from '@angular/core';
 import {ITableColumn} from '../../../../app.interfaces';
+import {I18NService} from '../../../i18n/services/i18n.service';
 
 @Component({
 	moduleId: __filename,
@@ -15,6 +16,9 @@ export class SelectColumnsComponent implements OnChanges {
 	groups: Array<{ name: string; columns: Array<{ active: boolean; column: ITableColumn; }>; }> = [];
 	@Output()
 	selectChange = new EventEmitter();
+
+	constructor(public i18n: I18NService) {
+	}
 
 	update(column, active): void {
 		if (active) {
@@ -34,7 +38,7 @@ export class SelectColumnsComponent implements OnChanges {
 		}
 		let groups = {};
 		this.columns_all.forEach(column => {
-			let groupname = column.group || '_';
+			let groupname = this.i18n.translateVariable(column.group || '_');
 			groups[groupname] = groups[groupname] || {name: groupname, columns: []};
 			groups[groupname].columns.push({
 				active: this.columns_active.indexOf(column) >= 0,

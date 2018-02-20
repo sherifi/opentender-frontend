@@ -34,7 +34,7 @@ export class SelectSearchButtonComponent implements OnChanges {
 		}
 		let groups = {};
 		this.filters_all.forEach(f => {
-			let groupname = f.group || '_';
+			let groupname = this.i18n.translateVariable(f.group || '_');
 			groups[groupname] = groups[groupname] || {name: groupname, filters: []};
 			groups[groupname].filters.push({
 				active: this.filters_active.indexOf(f) >= 0,
