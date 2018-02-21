@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {IApiResultGeoJSON, ISeriesProvider, IStatsNuts} from '../../app.interfaces';
 import {PlatformService} from '../../services/platform.service';
 import {ApiService} from '../../services/api.service';
-import * as d3chroma from 'd3-scale-chromatic/build/d3-scale-chromatic';
+import * as d3chroma from 'd3-scale-chromatic/dist/d3-scale-chromatic';
 import {scaleLinear} from 'd3-scale';
 import {NotifyService} from '../../services/notify.service';
 import {Utils} from '../../model/utils';
