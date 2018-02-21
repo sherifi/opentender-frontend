@@ -55,6 +55,12 @@
       "dateformat": "d.M.yyyy"
     },
     {
+      "id": "fr",
+      "name": "Français",
+      "eng": "French",
+      "dateformat": "dd/MM/yyyy"
+    },
+    {
       "id": "hr",
       "name": "Hrvatski",
       "eng": "Croatian",
@@ -83,6 +89,12 @@
       "name": "Lietuviškai",
       "eng": "Lithuanian",
       "dateformat": "yyyy.MM.dd"
+    },
+    {
+      "id": "lv",
+      "name": "Latviešu",
+      "eng": "Latvian",
+      "dateformat": "yyyy.MM.dd."
     },
     {
       "id": "no",
@@ -123,23 +135,12 @@
   ],
   "disabled": [
     {
-      "id": "fr",
-      "name": "Français",
-      "eng": "French",
-      "dateformat": "dd/MM/yyyy"
-    },
-    {
       "id": "ga",
       "name": "Gaeilge",
       "eng": "Irish",
       "dateformat": "dd/MM/yyyy"
     },
-    {
-      "id": "lv",
-      "name": "Latviešu",
-      "eng": "Latvian",
-      "dateformat": "yyyy.MM.dd."
-    },
+
     {
       "id": "mt",
       "name": "Malti",
@@ -152,12 +153,7 @@
       "eng": "Dutch",
       "dateformat": "d-M-yyyy"
     },
-    {
-      "id": "sv",
-      "name": "Svenska",
-      "eng": "Swedish",
-      "dateformat": "yyyy-MM-dds"
-    },
+
     {
       "id": "hy",
       "name": "Հայերէն",
@@ -169,6 +165,12 @@
       "name": "Íslenska",
       "eng": "Icelandic",
       "dateformat": "d.M.yyyy"
+    },
+    {
+      "id": "sv",
+      "name": "Svenska",
+      "eng": "Swedish",
+      "dateformat": "yyyy-MM-dds"
     }
   ]
 }
