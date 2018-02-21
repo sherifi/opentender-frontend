@@ -4814,7 +4814,7 @@
           Viešinimo lygis yra santykis reklamos išvaidų viešajam pirkimui ir visų viešojo pirkimo išlaidų kontrakto institucijai.
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices
         </source>
@@ -4833,7 +4833,7 @@
           Neatitikimai tarp paraiškos paskelbimo ir sutarties sudarimo pranešimų
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
         </source>

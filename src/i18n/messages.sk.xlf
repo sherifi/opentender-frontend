@@ -4814,7 +4814,7 @@
           Miera zverejnenia je podiel nákladov na zverejnenie verejného obstarávania a celkových nákladov na verejné obstarávanie vynaložených daným zadávateľom.
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices
         </source>
@@ -4833,7 +4833,7 @@
           Nezrovnalosti medzi výzvou na predloženie ponúk a oznámeniami o získaní zákazky
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
         </source>

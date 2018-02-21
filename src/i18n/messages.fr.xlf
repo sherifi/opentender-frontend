@@ -4814,7 +4814,7 @@
           Le taux de publication est la part de dépenses allouées à l'annonce de commandes publiques dans les dépenses totales liées aux commandes publiques pour une entité adjudicatrice donnée.
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices
         </source>
@@ -4833,7 +4833,7 @@
           Divergences entre l'appel d'offres et les avis d'attribution de marché
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
         </source>

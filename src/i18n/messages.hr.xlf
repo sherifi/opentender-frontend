@@ -4814,7 +4814,7 @@
           Stopa objavljivanja omjer je objavljenog trošenja u sklopu javne nabave u odnosu na ukupno trošenje za javnu nabavu određenog javnog naručitelja.
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.name" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices
         </source>
@@ -4833,7 +4833,7 @@
           Nepodudaranja između poziva na natječaj i obavijesti o dodjelama ugovora
         </target>
       </trans-unit>
-      <trans-unit id="TRANSPARENCY_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
+      <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
         <source>
           Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).
         </source>
