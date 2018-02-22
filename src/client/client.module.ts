@@ -26,6 +26,7 @@ import {environment} from '../environments/environment';
 	providers: [
 		...AppConfig.providers,
 		{provide: 'absurl', useValue: null},
+		{provide: 'config', useValue: null},
 		{provide: 'opentender', useValue: null},
 		{provide: 'isBrowser', useValue: true},
 		{provide: 'globals', useValue: {window: window, document: document}},

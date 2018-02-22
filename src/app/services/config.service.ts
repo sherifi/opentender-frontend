@@ -20,6 +20,7 @@ export class ConfigService {
 	public languages = [{id: 'de', name: 'Deutsch'}, {id: 'en', name: 'English'}];
 
 	constructor(@Inject('opentender') externalConfig,
+				@Inject('config') serverConfig,
 				@Inject('absurl') externalAbsUrl,
 				@Inject(LOCALE_ID) externalLocale,
 				private platform: PlatformService,
@@ -31,6 +32,9 @@ export class ConfigService {
 		let config = externalConfig;
 		if (!config && this.platform.isBrowser) {
 			config = document['opentender'];
+		}
+		if (!this.platform.isBrowser && serverConfig) {
+			config.config = serverConfig;
 		}
 		if (!platform.isBrowser) {
 			this.absUrl = externalAbsUrl;
