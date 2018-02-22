@@ -25,7 +25,7 @@ import {Colors} from '../../../model/colors';
 					{{bench.name}}
 				</label>
 			</div>
-			<div class="select-checks" *ngIf="filters && filter.length>0">
+			<div class="select-checks" *ngIf="filters && filters.length>0">
 				<div i18n>Comparison Group</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
