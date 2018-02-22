@@ -34,33 +34,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" *ngIf="downloads_csv | defined">
-		<h2 class="h3">CSV</h2>
-		<div class="container">
-			<div class="tables-container">
-				<table class="tables">
-					<thead>
-					<tr>
-						<th i18n>Source</th>
-						<th width="140" i18n>Entries</th>
-						<th width="140" i18n>Modified</th>
-						<th width="140" i18n>Size</th>
-						<th width="60" i18n>CSV</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr *ngFor="let entry of downloads_csv">
-						<td>{{entry.name}}</td>
-						<td class="right">{{entry.count}}</td>
-						<td class="right">{{entry.lastUpdate | formatDate}}</td>
-						<td class="right">{{entry.size | formatFileSize}}</td>
-						<td class="center"><a href="/data/files/{{entry.filename}}" download><i class="icon-cloud-download"></i></a></td>
-					</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
 	<div class="container" *ngIf="downloads_ocsd | defined">
 		<h2 class="h3">OCDS</h2>
 		<div class="container">
@@ -102,9 +75,11 @@
 				<th i18n>Country</th>
 				<th width="140" i18n>Tenders</th>
 				<th width="140" i18n>Modified</th>
-				<th width="140" i18n>Size</th>
-				<th width="60" i18n>JSON</th>
-				<th width="60" i18n>NDJSON</th>
+				<th width="100" i18n>Size</th>
+				<th width="60">JSON</th>
+				<th width="60">NDJSON</th>
+				<th width="100" i18n>Size</th>
+				<th width="60">CSV</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -115,6 +90,8 @@
 				<td class="right">{{download.formats.ndjson.size | formatFileSize}}</td>
 				<td class="center"><a href="/data/files/{{download.formats.json.filename}}" download><i class="icon-cloud-download"></i></a></td>
 				<td class="center"><a href="/data/files/{{download.formats.ndjson.filename}}" download><i class="icon-cloud-download"></i></a></td>
+				<td class="right">{{download.formats.csv.size | formatFileSize}}</td>
+				<td class="center"><a href="/data/files/{{download.formats.csv.filename}}" download><i class="icon-cloud-download"></i></a></td>
 			</tr>
 			</tbody>
 		</table>

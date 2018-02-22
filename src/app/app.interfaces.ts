@@ -41,6 +41,7 @@ export interface IDownload {
 	count: number;
 	lastUpdate: number;
 	formats: {
+		csv: { filename: string; size: number };
 		json: { filename: string; size: number };
 		ndjson: { filename: string; size: number };
 	};
@@ -51,14 +52,6 @@ export interface IDownloadOCDS {
 	lastUpdate: number;
 	size: number;
 }
-
-export interface IDownloadCSV {
-	filename: string;
-	count: number;
-	lastUpdate: number;
-	size: number;
-}
-
 
 /* stats objects from api */
 

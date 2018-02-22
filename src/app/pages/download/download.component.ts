@@ -2,17 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {ConfigService} from '../../services/config.service';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
-import {IBreadcrumb, IDownload, IDownloadCSV, IDownloadOCDS} from '../../app.interfaces';
+import {IBreadcrumb, IDownload, IDownloadOCDS} from '../../app.interfaces';
 
 interface Download extends IDownload {
 	name: string;
 }
 
 interface OCDSDownload extends IDownloadOCDS {
-	name: string;
-}
-
-interface CSVDownload extends IDownloadCSV {
 	name: string;
 }
 
@@ -24,7 +20,6 @@ interface CSVDownload extends IDownloadCSV {
 })
 export class DownloadPage implements OnInit {
 	downloads: Array<Download> = [];
-	downloads_csv: Array<CSVDownload> = [];
 	downloads_ocsd: Array<OCDSDownload> = [];
 	current: {
 		id: string;
@@ -59,36 +54,7 @@ export class DownloadPage implements OnInit {
 
 	public ngOnInit(): void {
 		this.refreshOCDSDownloads();
-		this.refreshCSVDownloads();
 		this.refreshJSONDownloads();
-	}
-
-	refreshCSVDownloads() {
-		let sub = this.api.getCSVDownloads().subscribe(
-			(data: Array<IDownloadCSV>) => {
-				this.downloads_csv = data.map(download => {
-					let country_code = download.filename.replace('_data.csv', '');
-					if (country_code.toUpperCase() === this.current.id) {
-						this.current.formats.csv = {
-							filename: download.filename,
-							size: download.size
-						};
-					}
-					return {
-						name: this.i18n.getPortalName(country_code, this.i18n.expandCountry(country_code)),
-						size: download.size,
-						count: download.count,
-						lastUpdate: download.lastUpdate,
-						filename: download.filename
-					};
-				}).sort((a, b) => {
-					return a.name.localeCompare(b.name);
-				});
-			},
-			error => console.error(error),
-			() => {
-				sub.unsubscribe();
-			});
 	}
 
 	refreshOCDSDownloads() {
@@ -144,6 +110,7 @@ export class DownloadPage implements OnInit {
 						this.current.count = download.count;
 						this.current.formats.json = result.formats.json;
 						this.current.formats.ndjson = result.formats.ndjson;
+						this.current.formats.csv = result.formats.csv;
 					}
 					return result;
 				}).sort((a, b) => {

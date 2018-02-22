@@ -159,10 +159,6 @@ export class ApiService {
 		return this.http.get<Array<IDownload>>(this.absUrl + '/data/files/downloads.json');
 	}
 
-	getCSVDownloads(): Observable<Array<IDownloadCSV>> {
-		return this.http.get<Array<IDownloadCSV>>(this.absUrl + '/data/files/downloads_csv.json');
-	}
-
 	getOCDSDownloads(): Observable<Array<IDownloadOCDS>> {
 		return this.http.get<Array<IDownloadOCDS>>(this.absUrl + '/data/files/downloads_ocds.json');
 	}
