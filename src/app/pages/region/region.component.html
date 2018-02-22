@@ -28,6 +28,9 @@
 					<graph authorities [data]="viz.top_authorities.data" [title]="viz.top_authorities.title"></graph>
 				</div>
 			</div>
+			<div class="container">
+				<graph benchmarks [data]="viz.benchmarks.data" [title]="viz.benchmarks.title" [entityTitle]="region.name" [filters]="viz.benchmarks.filters" (filtersChange)="benchmarkFilterChange($event)"></graph>
+			</div>
 		</div>
 		<div class="container">
 			<tender-table [search_cmd]="search_cmd" [columnIds]="columnIds" (searchChange)="searchChange($event);"></tender-table>

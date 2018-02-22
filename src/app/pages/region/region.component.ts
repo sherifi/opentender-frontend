@@ -4,7 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {StateService} from '../../services/state.service';
 import {NotifyService} from '../../services/notify.service';
 import {TitleService} from '../../services/title.service';
-import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears, IBreadcrumb} from '../../app.interfaces';
+import {IStats, IRegion, IStatsRegion, IStatsAuthorities, IStatsCompanies, ISearchCommand, IStatsNuts, IStatsInYears, IBreadcrumb, IStatsIndicators, IStatsDistributionInYears, IBenchmarkFilter} from '../../app.interfaces';
 import {I18NService} from '../../modules/i18n/services/i18n.service';
 
 @Component({
@@ -28,7 +28,9 @@ export class RegionPage implements OnInit, OnDestroy {
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		histogram: { data: IStatsInYears, title?: string };
 		child_regions: { data: IStatsNuts, title?: string };
+		benchmarks: {data: IStats, title?: string, filters?: Array<IBenchmarkFilter>};
 	} = {
+		benchmarks: {data: null},
 		top_companies: {data: null},
 		top_authorities: {data: null},
 		child_regions: {data: null},
@@ -39,6 +41,7 @@ export class RegionPage implements OnInit, OnDestroy {
 				private titleService: TitleService, private i18n: I18NService, private state: StateService) {
 		this.viz.top_companies.title = i18n.get('Main Suppliers');
 		this.viz.top_authorities.title = i18n.get('Main Buyers');
+		this.viz.benchmarks.title = this.i18n.get('Benchmark Current Region');
 		this.buildCrumbs();
 	}
 
@@ -130,6 +133,7 @@ export class RegionPage implements OnInit, OnDestroy {
 		viz.top_companies.data = {absolute: stats.top_terms_companies, volume: stats.top_sum_finalPrice_companies};
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.child_regions.data = stats.terms_subregions_nuts;
+		viz.benchmarks.data = stats;
 	}
 
 	public search(): void {

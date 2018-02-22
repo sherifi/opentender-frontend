@@ -25,7 +25,7 @@ import {Colors} from '../../../model/colors';
 					{{bench.name}}
 				</label>
 			</div>
-			<div class="select-checks">
+			<div class="select-checks" *ngIf="filters && filter.length>0">
 				<div i18n>Comparison Group</div>
 				<label class="checkbox" *ngFor="let filter of filters">
 					<input [value]="true" name="filter" type="checkbox" [(ngModel)]="filter.active" (change)="handleFilterChange()">
@@ -137,8 +137,8 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 	}
 
 	buildCompareScoreSeries(stats: IStats, id: string) {
-		let entity = stats.histogram_indicators[id];
-		let compare = stats.benchmark.histogram_indicators[id];
+		let entity = stats.histogram_indicators ? stats.histogram_indicators[id] : null;
+		let compare = stats.benchmark ? stats.benchmark.histogram_indicators[id] : null;
 		if (!entity || !compare) {
 			return [];
 		}
@@ -163,7 +163,7 @@ export class GraphBenchmarksComponent implements OnChanges, ISeriesProvider {
 
 	buildCompareValueSeries(stats: IStats, id: string) {
 		let entity = stats.histogram_finalPriceEUR;
-		let compare = stats.benchmark.histogram_finalPriceEUR;
+		let compare = stats.benchmark ? stats.benchmark.histogram_finalPriceEUR : null;
 		if (!entity || !compare) {
 			return [];
 		}
