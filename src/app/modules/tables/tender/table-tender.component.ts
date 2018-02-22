@@ -68,10 +68,10 @@ export class TenderTableComponent implements OnChanges, OnInit {
 		}
 	}
 
-	download(): void {
+	download(format: string): void {
 		this.downloadRequested = true;
 		let cmd = this.search_cmd;
-		let sub = this.api.requestDownload(cmd).subscribe(
+		let sub = this.api.requestDownload(format, cmd).subscribe(
 			(result) => {
 				this.downloadRequested = false;
 				if (this.showDownloadDialog) {

@@ -83,8 +83,8 @@ export class ApiService {
 		window.location.href = this.actionCountryUrl + 'download/id/' + params.data.id;
 	}
 
-	requestDownload(params: ISearchCommand): Observable<IApiResultDownloadTenderSearch> {
-		return this.post<IApiResultDownloadTenderSearch>('tender/download', params);
+	requestDownload(format: string, params: ISearchCommand): Observable<IApiResultDownloadTenderSearch> {
+		return this.post<IApiResultDownloadTenderSearch>('tender/download/' + format, params);
 	}
 
 	autocomplete(entity: string, field: string, search: string): Observable<IApiResultAutoComplete> {
