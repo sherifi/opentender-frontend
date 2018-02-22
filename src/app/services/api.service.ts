@@ -8,7 +8,7 @@ import {
 	IApiResultDownloadTenderSearch, IApiResultNuts,
 	IApiResultPortalsStats, IApiResultRegion, IApiResultSearchAuthority, IApiResultSearchCompany, IApiResultSearchTender,
 	IGetByIdCommand, IApiResultSector, IApiResultSectors, IApiResultStat, IApiResultStatStats, IApiResultTender,
-	ISearchCommand, IApiResultAutoComplete, IApiResultPing, IDownload, IDownloadCSV, IDownloadOCDS
+	ISearchCommand, IApiResultAutoComplete, IApiResultPing, IDownload, IDownloadOCDS
 } from '../app.interfaces';
 
 @Injectable()
