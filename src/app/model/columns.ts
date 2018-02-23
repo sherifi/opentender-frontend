@@ -866,6 +866,30 @@ export const TenderColumns: Array<ITableColumnTender> = [
 
 
 	{
+		name: 'Bids Count',
+		id: 'lots.bidsCount',
+		group: 'Lots',
+		sortBy: {
+			id: 'lots.bidsCount',
+			ascend: false
+		},
+		format: (tender, library) => {
+			if (!tender.lots) {
+				return [];
+			}
+			let result: Array<ITableCellLine> = [];
+			tender.lots.forEach((lot: Lot, index_l: number) => {
+				if (Utils.isDefined(lot.bidsCount)) {
+					result.push({
+						prefix: (tender.lots.length > 1) ? library.i18n.get('Lot') + ' ' + (index_l + 1) : undefined,
+						content: lot.bidsCount.toString()
+					});
+				}
+			});
+			return ColumnsFormatUtils.checkEntryCollapse(result, library);
+		}
+	},
+	{
 		name: 'Valid Bids Count',
 		id: 'lots.validBidsCount',
 		group: 'Lots',

@@ -77,6 +77,13 @@ export const TenderFilterDefs: Array<ISearchFilterDef> = [
 		size: 30
 	},
 	{
+		id: 'lots.bidsCount',
+		name: 'Bids Count',
+		group: 'Lots',
+		field: 'lots.bidsCount',
+		type: ISearchFilterDefType.value
+	},
+	{
 		id: 'lots.validBidsCount',
 		name: 'Valid Bids Count',
 		group: 'Lots',
