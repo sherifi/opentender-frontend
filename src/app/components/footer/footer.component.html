@@ -66,6 +66,7 @@
 				<div class="footer-bottom-left">
 					<p class="footer-para_callout" i18n>Questions?</p>
 					<p class="footer-para" i18n>Contact Opentender at <a href="mailto:{{contactmail}}" class="link-active-beta">{{contactmail}}</a>.</p>
+					<p class="footer-para" i18n>Found a data error? Please report it anonymous through the <a class="clickable" (click)="showDialog = !showDialog" class="link-active-beta">contact form</a>.</p>
 					<p class="footer-para">
 						<ng-container i18n>This site (<a class="link-active-beta" href="https://github.com/digiwhist">{{'v'+version}}</a>) is powered by open source code.</ng-container><br>
 						<ng-container i18n>We welcome contributions and comments on <a href="https://github.com/digiwhist/opentender-frontend/issues" class="link-active-beta">GitHub</a>.</ng-container>
@@ -105,3 +106,12 @@
 		</div>
 	</div>
 </div>
+
+<app-dialog [title]="'Report an error'" [(visible)]="showDialog">
+	<form method="POST" action="https://formspree.io/digiwhist@okfn.de">
+		<input hidden name="url" type="hidden" value="{{urlFull}}">
+		<textarea name="message" placeholder="Your message" required></textarea>
+		<button class="button-right" type="submit">Send</button>
+	</form>
+	<div class="dialog-footer">Service powered by <a target="_blank" rel="noopener" href="https://formspree.io">Formspree.io</a></div>
+</app-dialog>

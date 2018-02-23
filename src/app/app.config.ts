@@ -25,6 +25,7 @@ import {StateService} from './services/state.service';
 import {PlatformService} from './services/platform.service';
 import {Title} from '@angular/platform-browser';
 import {TitleService} from './services/title.service';
+import {DialogModule} from './modules/dialog/dialog.module';
 
 const AppConfig = {
 	declarations: [
@@ -43,6 +44,7 @@ const AppConfig = {
 		PipesModule,
 		LoadingModule,
 		PageScrollModule,
+		DialogModule,
 		ToastrModule.forRoot(),
 		AppRoutingModule
 	],
