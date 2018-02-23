@@ -107,11 +107,11 @@
 	</div>
 </div>
 
-<app-dialog [title]="'Report an error'" [(visible)]="showDialog">
+<app-dialog i18n-title title="Report an error" [(visible)]="showDialog">
 	<form method="POST" action="https://formspree.io/digiwhist@okfn.de">
 		<input hidden name="url" type="hidden" value="{{urlFull}}">
-		<textarea name="message" placeholder="Your message" required></textarea>
-		<button class="button-right" type="submit">Send</button>
+		<textarea name="message" i18n-placeholder placeholder="Your message" required></textarea>
+		<button class="button-right" type="submit" i18n>Send</button>
 	</form>
-	<div class="dialog-footer">Service powered by <a target="_blank" rel="noopener" href="https://formspree.io">Formspree.io</a></div>
+	<div class="dialog-footer" i18n>Service powered by <a target="_blank" rel="noopener" href="https://formspree.io">Formspree.io</a></div>
 </app-dialog>
