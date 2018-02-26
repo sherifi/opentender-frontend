@@ -7,6 +7,7 @@ import {AboutHowPage} from './how/how.component';
 import {AboutGlossaryPage} from './glossary/glossary.component';
 import {FormsModule} from '@angular/forms';
 import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
+import {AboutPartnerNetworkPage} from './partner-network/partner-network.component';
 
 @NgModule({
 	imports: [
@@ -19,6 +20,7 @@ import {BreadcrumbModule} from '../../modules/breadcrumb/breadcrumb.module';
 		AboutPage,
 		AboutOpentenderPage,
 		AboutGlossaryPage,
+		AboutPartnerNetworkPage,
 		AboutHowPage
 	]
 })

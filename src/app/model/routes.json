@@ -121,6 +121,11 @@
           "path": "glossary",
           "title": "Glossary",
           "menu": true
+        },
+        {
+          "path": "partner-network",
+          "title": "Partner Network",
+          "menu": false
         }
       ]
     },
