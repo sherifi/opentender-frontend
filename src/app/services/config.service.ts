@@ -7,7 +7,15 @@ import {I18NService} from '../modules/i18n/services/i18n.service';
 export interface Country {
 	id: string;
 	name: string;
-	foi?: any;
+	foi?: {
+		url: string;
+		name: string;
+		search: string;
+	};
+	whistle?: Array<{
+		url: string;
+		name: string;
+	}>;
 }
 
 @Injectable()
@@ -17,7 +25,8 @@ export class ConfigService {
 	public absUrl: string = '';
 	public locale: string;
 	public contactmail = 'digiwhist@okfn.de';
-	public languages = [{id: 'de', name: 'Deutsch'}, {id: 'en', name: 'English'}];
+	public validMinYear: number = 2009;
+	public validMaxYear: number = 2018;
 
 	constructor(@Inject('opentender') externalConfig,
 				@Inject('config') serverConfig,
@@ -47,7 +56,7 @@ export class ConfigService {
 			}
 		} else {
 			this.config = {backendUrl: null, version: 'unknown', devMode: true};
-			this.country = {id: null, name: 'General', foi: null};
+			this.country = {id: null, name: 'General'};
 		}
 	}
 

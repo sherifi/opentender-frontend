@@ -1,5 +1,6 @@
 import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from '@angular/core';
 import {ISearchFilter, ISearchResultBucket} from '../../../../app.interfaces';
+import {ConfigService} from '../../../../services/config.service';
 
 @Component({
 	moduleId: __filename,
@@ -17,10 +18,17 @@ export class SelectYearRangeFilterComponent implements OnChanges {
 	@Output('onRangeChange')
 	onRangeChange = new EventEmitter();
 
-	public minYear: number = 2009;
-	public maxYear: number = 2017;
-	public startYear: number = 2009;
-	public endYear: number = 2017;
+	public minYear: number;
+	public maxYear: number;
+	public startYear: number;
+	public endYear: number;
+
+	constructor(private config: ConfigService) {
+		this.minYear = config.validMinYear;
+		this.startYear = config.validMinYear;
+		this.maxYear = config.validMaxYear;
+		this.endYear = config.validMaxYear;
+	}
 
 	restoreFilter(filter: ISearchFilter) {
 		if (filter.values) {
