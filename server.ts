@@ -165,7 +165,7 @@ let render = function(req, res, language, country) {
 	if (country.id && language.lang !== 'en') {
 		name = country.names[language.lang] || country.name;
 	}
-	country = {id: country.id, name: name, foi: country.foi, ip: country.ip};
+	country = {id: country.id, name: name, foi: country.foi, whistle: country.whistle, ip: country.ip};
 	let engine = ngExpressEngine({
 		id: language.lang,
 		bootstrap: ServerAppModule,
