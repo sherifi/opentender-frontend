@@ -15,7 +15,7 @@
 					<a target="_blank" rel="noopener" href="https://tenders.exposed/"><i class="icon-new-tab"></i> tenders.exposed</a>
 				</div>
 				<div class="info-link-box" *ngIf="country.whistle | defined">
-					<ng-container i18n>Report something about this tender</ng-container>
+					<ng-container i18n>Blow the whistle on wrongdoings about this tender</ng-container>
 					<ng-container *ngFor="let whistle of country.whistle">
 						<br>
 						<a target="_blank" rel="noopener" href="{{whistle.url}}"><i class="icon-new-tab"></i> {{whistle.name}}</a>
