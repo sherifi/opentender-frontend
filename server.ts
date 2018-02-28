@@ -44,7 +44,10 @@ const cache = initCache(Config.server.cache);
 let addToCache = (req, data) => {
 	cache.upsert(getCacheKey(req), data, CacheFOREVER, err => {
 		if (err) {
-			console.log(err);
+			if (err.toString().indexOf('The length of the value is greater than') > 0) {
+				return console.error('Could not cache', req.originalUrl, ' - too large:', JSON.stringify(data).length);
+			}
+			console.error(err);
 		}
 	});
 };
