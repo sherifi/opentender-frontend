@@ -47,7 +47,7 @@ let addToCache = (req, data) => {
 			if (err.toString().indexOf('The length of the value is greater than') > 0) {
 				return console.error('Could not cache', req.originalUrl, ' - too large:', JSON.stringify(data).length);
 			}
-			console.error(err);
+			console.error(err, req.originalUrl);
 		}
 	});
 };
