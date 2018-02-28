@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {Utils} from '../../model/utils';
 import {ISeries, ISeriesDataTable, ISeriesProvider} from '../../app.interfaces';
+import {UrlId} from '../../thirdparty/ngx-charts-universal/utils/id.helper';
+import {PlatformService} from '../../services/platform.service';
 
 @Component({
 	moduleId: __filename,
@@ -20,8 +22,10 @@ export class GraphFooterComponent {
 	infoPageScroll: string;
 	@Input()
 	gradientLegend: { valueLow: number; valueHigh: number; colorLow: string; colorHigh: string; };
+	gradId = new UrlId();
 
-	constructor() {
+	constructor(private platform: PlatformService) {
+		this.gradId.generate('grad', this.platform.isBrowser);
 	}
 
 	show(): void {
