@@ -18,12 +18,8 @@
 		<ng-container i18n>Files are compressed with <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gzip">GZip</a>, which should be supported by your ZIP application.</ng-container>
 		<br/>
 		<br/>
-		<button class="button" (click)="this.download('json')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i>
-			<ng-container i18n>JSON.GZ</ng-container>
-		</button>
-		<button class="button" (click)="this.download('csv')" i18n-title title="Download data as gzipped CSV"><i class="icon-cloud-download"></i>
-			<ng-container i18n>CSV.GZ</ng-container>
-		</button>
+		<button class="button" (click)="this.download('json')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i>JSON.GZ</button>
+		<button class="button" (click)="this.download('csv')" i18n-title title="Download data as gzipped CSV"><i class="icon-cloud-download"></i>CSV.GZ</button>
 		<button class="button button-right" (click)="showDownloadDialog=false;" i18n>Cancel</button>
 	</div>
 	<div *ngIf="downloadRequested">
