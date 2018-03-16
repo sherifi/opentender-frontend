@@ -66,7 +66,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/dashboards/market-analysis/market-analysis.component.ts</context>
@@ -88,7 +88,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
@@ -111,7 +111,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5143c3f681fd52eed5aaf9e5500715e3b4a2d4bf" datatype="html">
@@ -208,7 +208,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="652eb3c3cbde2ce308c8fac3c8b135443797a490" datatype="html">
@@ -219,7 +219,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="69930c11eeeeaa4959775e9db65a532a5afa0768" datatype="html">
@@ -238,7 +238,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f72af71c82b83a43dc572dae9b4f8105f5cc4ba3" datatype="html">
@@ -249,7 +249,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="732607878131a975bacba6aaa752c43e94dde43e" datatype="html">
@@ -268,7 +268,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2a3f808c49247c455331940644b8cf2db9959b8f" datatype="html">
@@ -279,7 +279,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3ec445fe42b52112e64bfa01bca7389b82125491" datatype="html">
@@ -333,7 +333,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9ca96823a577cd754bd2e45118cd3f6f19d1e45e" datatype="html">
@@ -372,7 +372,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1cc25c080f62a3847860bafdd5847022f598afbc" datatype="html">
@@ -613,11 +613,19 @@
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
+      <trans-unit id="BenchmarkCurrentRegion" datatype="html">
+        <source>Benchmark Current Region</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
         <source>Benchmark Current Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -625,7 +633,7 @@
         <source>Bid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -633,7 +641,7 @@
         <source>Bid Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -641,7 +649,7 @@
         <source>Bid Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -649,7 +657,7 @@
         <source>Bid Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -657,7 +665,15 @@
         <source>Bid Price EUR</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="BidsCount" datatype="html">
+        <source>Bids Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -665,7 +681,7 @@
         <source>Buyer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -673,7 +689,7 @@
         <source>Buyer Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -681,7 +697,7 @@
         <source>Buyer Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -689,7 +705,7 @@
         <source>Buyers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -697,7 +713,7 @@
         <source>CPV Codes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -705,7 +721,7 @@
         <source>City</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -713,7 +729,7 @@
         <source>Companies</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -721,7 +737,7 @@
         <source>Company</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">41</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -729,7 +745,7 @@
         <source>Comparison Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -737,7 +753,7 @@
         <source>Contract Values</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -745,7 +761,7 @@
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -753,7 +769,7 @@
         <source>Creation Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">45</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -761,7 +777,7 @@
         <source>Current Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -769,7 +785,7 @@
         <source>Dashboards</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -777,7 +793,7 @@
         <source>Dates</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -785,7 +801,7 @@
         <source>Deposits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -793,7 +809,7 @@
         <source>Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">50</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -801,7 +817,7 @@
         <source>Document Price EUR</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -809,7 +825,7 @@
         <source>Documents</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -817,7 +833,7 @@
         <source>Documents Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -825,7 +841,7 @@
         <source>Documents Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -833,7 +849,7 @@
         <source>Download</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -841,7 +857,7 @@
         <source>EU Institutions</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">56</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -849,7 +865,7 @@
         <source>EU-Fund</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -857,7 +873,7 @@
         <source>Economic Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">58</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -865,7 +881,7 @@
         <source>Electronic Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">59</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -873,7 +889,7 @@
         <source>Eligible Bid Languages</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -881,7 +897,7 @@
         <source>Entries</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">61</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -889,7 +905,7 @@
         <source>Estimated Completion Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -897,7 +913,7 @@
         <source>Estimated Completion Year</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">63</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -905,7 +921,7 @@
         <source>Estimated Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">64</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -913,7 +929,7 @@
         <source>Estimated Price EUR</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">65</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -921,7 +937,7 @@
         <source>Estimated Start Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -929,7 +945,7 @@
         <source>Estimated Start Year</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">67</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -937,7 +953,7 @@
         <source>Final Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">68</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -945,7 +961,7 @@
         <source>Final Price EUR</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">69</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -953,7 +969,7 @@
         <source>Funding</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">70</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -961,7 +977,7 @@
         <source>Glossary</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">71</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -969,7 +985,7 @@
         <source>Good Procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -977,7 +993,7 @@
         <source>Good Procurement Score</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">73</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -985,7 +1001,7 @@
         <source>Home</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -993,7 +1009,7 @@
         <source>How Opentender works</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">75</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1001,7 +1017,7 @@
         <source>Imprint</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">76</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1009,7 +1025,7 @@
         <source>Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1017,7 +1033,7 @@
         <source>Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">78</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1025,7 +1041,7 @@
         <source>Integrity</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">79</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1033,7 +1049,7 @@
         <source>Integrity Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">80</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1041,7 +1057,7 @@
         <source>Integrity Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">81</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1049,7 +1065,7 @@
         <source>Limit to same Authority Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">82</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1057,7 +1073,7 @@
         <source>Limit to same Main Activities</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1065,7 +1081,7 @@
         <source>Limit to same region (NUTS2)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1073,7 +1089,7 @@
         <source>Limit to same sector</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1081,7 +1097,7 @@
         <source>Loading…</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">86</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1089,7 +1105,7 @@
         <source>Lot</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">87</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1097,7 +1113,7 @@
         <source>Lots</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">88</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1105,7 +1121,7 @@
         <source>Main Activities</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">89</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1113,7 +1129,7 @@
         <source>Main Buyers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">90</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1121,7 +1137,7 @@
         <source>Main Buyers in Score Range</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">91</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1129,7 +1145,7 @@
         <source>Main CPV</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">92</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1137,7 +1153,7 @@
         <source>Main CPV (Categories)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1145,7 +1161,7 @@
         <source>Main CPV (Divisions)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">94</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1153,7 +1169,7 @@
         <source>Main CPV (Full)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1161,7 +1177,7 @@
         <source>Main CPV (Groups)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">96</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1169,7 +1185,7 @@
         <source>Main CPV Code</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1177,7 +1193,7 @@
         <source>Main Sector</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">98</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1185,7 +1201,7 @@
         <source>Main Suppliers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">99</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1193,7 +1209,7 @@
         <source>Main Suppliers in Score Range</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">100</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1201,7 +1217,7 @@
         <source>Market Analysis</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">101</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1209,7 +1225,7 @@
         <source>Mediation Body Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">102</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1217,7 +1233,7 @@
         <source>Modification Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">103</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1225,7 +1241,7 @@
         <source>Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">104</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1233,7 +1249,7 @@
         <source>No data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1241,7 +1257,7 @@
         <source>Nr. of Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">106</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1249,7 +1265,7 @@
         <source>Number of Buyers by Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">107</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1257,7 +1273,7 @@
         <source>Number of Suppliers by Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1265,7 +1281,7 @@
         <source>Opentender Portals</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">109</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1273,7 +1289,15 @@
         <source>Overall</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="PartnerNetwork" datatype="html">
+        <source>Partner Network</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">111</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1281,7 +1305,7 @@
         <source>Personal Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">112</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1289,7 +1313,7 @@
         <source>Portals</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">113</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1297,7 +1321,7 @@
         <source>Prices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="linenumber">114</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1305,7 +1329,7 @@
         <source>Procedure Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">112</context>
+          <context context-type="linenumber">115</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1313,7 +1337,7 @@
         <source>Profile Link</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">116</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1321,7 +1345,7 @@
         <source>Profile Page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="linenumber">117</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1329,7 +1353,7 @@
         <source>Programme</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="linenumber">118</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1337,7 +1361,7 @@
         <source>Publications</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">119</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1345,7 +1369,7 @@
         <source>Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">120</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1353,7 +1377,7 @@
         <source>Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">121</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1361,7 +1385,7 @@
         <source>Score</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">119</context>
+          <context context-type="linenumber">122</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1369,7 +1393,7 @@
         <source>Search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">120</context>
+          <context context-type="linenumber">123</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1377,7 +1401,7 @@
         <source>Search Authority</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">121</context>
+          <context context-type="linenumber">124</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1385,7 +1409,7 @@
         <source>Search Company</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">125</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1393,7 +1417,7 @@
         <source>Search Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="linenumber">126</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1401,7 +1425,7 @@
         <source>Sector</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">127</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1409,7 +1433,7 @@
         <source>Sector (CPV Division)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">128</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1417,7 +1441,7 @@
         <source>Sector (CPV)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1425,7 +1449,7 @@
         <source>Sector Overview</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">127</context>
+          <context context-type="linenumber">130</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1433,7 +1457,7 @@
         <source>Sectors</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">128</context>
+          <context context-type="linenumber">131</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1441,7 +1465,7 @@
         <source>Select Column</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">132</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1449,7 +1473,7 @@
         <source>Select Visualization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">133</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1457,7 +1481,7 @@
         <source>Show all years</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">131</context>
+          <context context-type="linenumber">134</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1465,7 +1489,7 @@
         <source>Source</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">132</context>
+          <context context-type="linenumber">135</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1473,7 +1497,7 @@
         <source>Source URL</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">136</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1481,7 +1505,7 @@
         <source>Supplier</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1489,7 +1513,7 @@
         <source>Supplier Region</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">138</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1497,7 +1521,7 @@
         <source>Suppliers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">139</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1505,7 +1529,7 @@
         <source>Supply Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">140</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1513,7 +1537,7 @@
         <source>Technical Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">141</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1521,7 +1545,7 @@
         <source>Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">139</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1529,7 +1553,7 @@
         <source>Tender Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">143</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1537,7 +1561,7 @@
         <source>Tender Information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1545,7 +1569,7 @@
         <source>Tender Link</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">142</context>
+          <context context-type="linenumber">145</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1553,7 +1577,7 @@
         <source>Tender Meta Data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">146</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1561,7 +1585,7 @@
         <source>Tender Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">147</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1569,7 +1593,7 @@
         <source>Tenders</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">148</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1577,7 +1601,7 @@
         <source>Tenders over Time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">146</context>
+          <context context-type="linenumber">149</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1585,7 +1609,7 @@
         <source>Test</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">147</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1593,7 +1617,7 @@
         <source>Title</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">151</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1601,7 +1625,7 @@
         <source>Title English</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">152</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1609,7 +1633,7 @@
         <source>Total Volume of Tenders (€)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">153</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1617,7 +1641,7 @@
         <source>Transparency</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">151</context>
+          <context context-type="linenumber">154</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1625,7 +1649,7 @@
         <source>Transparency Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">155</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1633,7 +1657,7 @@
         <source>Transparency Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">156</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1641,7 +1665,7 @@
         <source>Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">154</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1649,7 +1673,7 @@
         <source>Valid Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">158</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1657,7 +1681,7 @@
         <source>Volume (€)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">159</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1665,7 +1689,7 @@
         <source>Volume of Tenders (€)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">157</context>
+          <context context-type="linenumber">160</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1673,7 +1697,7 @@
         <source>Year</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">158</context>
+          <context context-type="linenumber">161</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1681,7 +1705,7 @@
         <source>[Name not available]</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">162</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1689,7 +1713,7 @@
         <source>[<x id="INTERPOLATION" equiv-text="{{count}}"/> other sectors with less than <x id="INTERPOLATION_1" equiv-text="{{value}}"/>]</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">163</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1697,7 +1721,7 @@
         <source>in Score Range</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">164</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1705,7 +1729,7 @@
         <source>over Time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">165</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1713,7 +1737,7 @@
         <source>per Sector</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1721,7 +1745,7 @@
         <source>Administrative Capacity Indicator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">167</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1729,7 +1753,7 @@
         <source>Administrative Capacity Indicators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1737,7 +1761,7 @@
         <source>Joint or centralized procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">169</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1745,7 +1769,7 @@
         <source>Centralized procurement suggests good administrative capacity if the tender is managed by a central procuring body.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1753,7 +1777,7 @@
         <source>Use of framework agreements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1761,7 +1785,7 @@
         <source>Framework agreement suggests good administrative capacity if the tender establishes a framework agreement.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">169</context>
+          <context context-type="linenumber">172</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1769,7 +1793,7 @@
         <source>Electronic auction</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">173</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1777,7 +1801,7 @@
         <source>Electronic auction points at good administrative capacity if the tender was conducted through an electronic auction.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">174</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1785,7 +1809,7 @@
         <source>Use of WTO framework</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1793,7 +1817,7 @@
         <source>Use of the WTO framework suggests good administrative capacity if the tendering process is conducted according to the WTO framework.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">173</context>
+          <context context-type="linenumber">176</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1801,7 +1825,7 @@
         <source>English as foreign language</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">177</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -1809,247 +1833,7 @@
         <source>English as a foreign language suggests good administrative capacity if the bids can be submitted in English as a foreign language.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">175</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY.name" datatype="html">
-        <source>Integrity Indicator</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">176</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY.plural" datatype="html">
-        <source>Integrity Indicators</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">177</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
-        <source>Single bidder contract</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
           <context context-type="linenumber">178</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
-        <source>Single bid signals a risk when only one bid is submitted in a tender in a competitive market.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">179</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
-        <source>Call for tenders publication</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">180</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
-        <source>Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">181</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
-        <source>Procedure type</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">182</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_PROCEDURE_TYPE.desc" datatype="html">
-        <source>Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">183</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
-        <source>Length of advertisement period</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">184</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.desc" datatype="html">
-        <source>Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">185</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_DECISION_PERIOD.name" datatype="html">
-        <source>Length of decision period</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">186</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_DECISION_PERIOD.desc" datatype="html">
-        <source>Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">187</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
-        <source>New company</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">188</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_NEW_COMPANY.desc" datatype="html">
-        <source>New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">189</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
-        <source>Tax haven</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">190</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_TAX_HAVEN.desc" datatype="html">
-        <source>Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">191</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
-        <source>Description length</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">192</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.desc" datatype="html">
-        <source>Product description length signals the risk of product description being tailored to one company, when the description is excessively long.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">193</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
-        <source>Political connections of suppliers</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">194</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
-        <source>Political connection of the supplier captures the risk of at least one owner or manager holding a political office.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">195</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
-        <source>Winner contract share</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">196</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
-        <source>Winner contract share is the share of contract value won by a given company from a given buyer in a given year.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">197</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
-        <source>Eligibility criteria length</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">198</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
-        <source>Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">199</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.name" datatype="html">
-        <source>Evaluation criteria</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">200</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.desc" datatype="html">
-        <source>Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">201</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="TRANSPARENCY.name" datatype="html">
-        <source>Transparency Indicator</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">202</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="TRANSPARENCY.plural" datatype="html">
-        <source>Transparency Indicators</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">203</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
-        <source>Publication rate</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">204</context>
-        </context-group>
-        <note priority="1" from="description">runtime</note>
-      </trans-unit>
-      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
-        <source>Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">205</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -2057,7 +1841,7 @@
         <source>Discrepancies between call for tender and contract award notices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">206</context>
+          <context context-type="linenumber">179</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -2065,7 +1849,247 @@
         <source>Discrepancies between call for tender and contract award notices is the ratio of fields with different values in the call for tender and contract award announcements related to a given tender (based on last published versions).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY.name" datatype="html">
+        <source>Integrity Indicator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY.plural" datatype="html">
+        <source>Integrity Indicators</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_SINGLE_BID.name" datatype="html">
+        <source>Single bidder contract</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">183</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_SINGLE_BID.desc" datatype="html">
+        <source>Single bid signals a risk when only one bid is submitted in a tender in a competitive market.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.name" datatype="html">
+        <source>Call for tenders publication</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">185</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_CALL_FOR_TENDER_PUBLICATION.desc" datatype="html">
+        <source>Not publishing calls for tender signals a risk when no call for tenders is published prior to a contract award, decreasing the potential bidder pool.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_PROCEDURE_TYPE.name" datatype="html">
+        <source>Procedure type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_PROCEDURE_TYPE.desc" datatype="html">
+        <source>Non-open procedures signal a risk of using procedures types which are less open for competition and more readily used for directly contracting connected companies (e.g. negotiated without publication).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.name" datatype="html">
+        <source>Length of advertisement period</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">189</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_ADVERTISEMENT_PERIOD.desc" datatype="html">
+        <source>Advertisement period length reveals the risk of suspiciously tight bidding deadlines or when advertisement period is excessively long.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">190</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_DECISION_PERIOD.name" datatype="html">
+        <source>Length of decision period</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">191</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_DECISION_PERIOD.desc" datatype="html">
+        <source>Length of decision period signals risks when the the decision period length is either suspiciously short or suspiciously long.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_NEW_COMPANY.name" datatype="html">
+        <source>New company</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_NEW_COMPANY.desc" datatype="html">
+        <source>New company signals the risk of a very young company winning a tender (younger than 1 year at the time of winning).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_TAX_HAVEN.name" datatype="html">
+        <source>Tax haven</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">195</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_TAX_HAVEN.desc" datatype="html">
+        <source>Tax haven signals a risk when the supplier is located in a tax haven country (based on the financial secrecy index).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.name" datatype="html">
+        <source>Description length</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_DESCRIPTION_LENGTH.desc" datatype="html">
+        <source>Product description length signals the risk of product description being tailored to one company, when the description is excessively long.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">198</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.name" datatype="html">
+        <source>Political connections of suppliers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">199</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_POLITICAL_CONNECTIONS_OF_SUPPLIERS.desc" datatype="html">
+        <source>Political connection of the supplier captures the risk of at least one owner or manager holding a political office.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">200</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.name" datatype="html">
+        <source>Winner contract share</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">201</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_WINNER_CONTRACT_SHARE.desc" datatype="html">
+        <source>Winner contract share is the share of contract value won by a given company from a given buyer in a given year.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.name" datatype="html">
+        <source>Eligibility criteria length</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_ELIGIBILITY_CRITERIA_LENGTH.desc" datatype="html">
+        <source>Eligibility criteria length signals the risk of criteria being tailored to one company with the criteria description being excessively long.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">204</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.name" datatype="html">
+        <source>Evaluation criteria</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="INTEGRITY_EVALUATION_CRITERIA.desc" datatype="html">
+        <source>Evaluation criteria signal the risk of using non-quantitative criteria to assess bidders which are subjective and can easily be manipulated.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY.name" datatype="html">
+        <source>Transparency Indicator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
           <context context-type="linenumber">207</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY.plural" datatype="html">
+        <source>Transparency Indicators</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.name" datatype="html">
+        <source>Publication rate</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">209</context>
+        </context-group>
+        <note priority="1" from="description">runtime</note>
+      </trans-unit>
+      <trans-unit id="TRANSPARENCY_PUBLICATION_RATE.desc" datatype="html">
+        <source>Publication rate is the ratio of advertised public procurement spending over the total public procurement spending of a given contracting authority.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
+          <context context-type="linenumber">210</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -2073,7 +2097,7 @@
         <source>Share of non-missing key fields</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">208</context>
+          <context context-type="linenumber">211</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -2081,7 +2105,7 @@
         <source>Number of key missing fields is the ratio of fields with missing values in the call for tender and contract award announcement related to a given tender (based on the most recently published versions).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/i18n/components/i18n.component.ts</context>
-          <context context-type="linenumber">209</context>
+          <context context-type="linenumber">212</context>
         </context-group>
         <note priority="1" from="description">runtime</note>
       </trans-unit>
@@ -2112,7 +2136,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">556</context>
+          <context context-type="linenumber">563</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3baa652179af58935b7b8d0fd3c3483dc6659ac4" datatype="html">
@@ -2131,11 +2155,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">555</context>
+          <context context-type="linenumber">562</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">561</context>
+          <context context-type="linenumber">568</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9eebcb8d0c69fdb81fb377563ad7d622a4c63a25" datatype="html">
@@ -2153,7 +2177,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">567</context>
+          <context context-type="linenumber">574</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4ed0d5be4135cec4e6607f9b7aa8f39cb51ed0aa" datatype="html">
@@ -2399,7 +2423,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="88243abd8988ba30cc911172ad920d036a057993" datatype="html">
@@ -2460,53 +2484,88 @@
           <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d84f185ebdee1692b32afaec00d8ef11d5723948" datatype="html">
+        <source>Found a data error? Please report it anonymously through the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>contact form<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
         <source>This site (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="INTERPOLATION" equiv-text="{{&apos;v&apos;+version}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>) is powered by open source code.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="778f8d4e1d800b732a93d20e8f8a0858a603799b" datatype="html">
         <source>We welcome contributions and comments on <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>GitHub<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="99ea5c13bcdaf2107ffc54612039b1e78435f762" datatype="html">
         <source>Read more about tender legislation at </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="83be59bfa61a6accd9d6e353912ab7fee53096d9" datatype="html">
         <source>Follow us</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="99cb827741e93125476a0f5b676372d85d15b5fc" datatype="html">
         <source>Twitter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d5418184edb10995a3fcb6ae7d40b523ac0d4c7a" datatype="html">
         <source>Mailing list</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="042d7fa9428c3a07ecd8cfa5db87e3ae5e6ccbbd" datatype="html">
         <source>This project has received funding from the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>European Union’s Horizon 2020 research and innovation programme<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> under grant agreement <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>No 645852<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d2815c9b510b8172d8cac4008b9709df69d636df" datatype="html">
+        <source>Your message</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
+        <source>Send</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="902c551c8a5227a5e6517dcf51b3ebfa206eecbf" datatype="html">
+        <source>Service powered by <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Formspree.io<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3d236a36fabae01b9b865a4dfe3bcafbd52ada5a" datatype="html">
+        <source>Report an error</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.ts</context>
+          <context context-type="linenumber">110</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
@@ -2592,7 +2651,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="77479696af3186cd26abe2c2f95093f154057866" datatype="html">
@@ -2602,29 +2661,54 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="606c389c7063612c0be34fd4158f224ecaafb7d8" datatype="html">
-        <source>Download JSON.GZ File</source>
+      <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
+        <source>Files are compressed with <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>GZip<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, which should be supported by your ZIP application.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ced8dcfac8978da734cc1165e84d0f87c2132500" datatype="html">
+        <source>JSON.GZ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="505edb2a526b2e877ae4ddacd92504ceefb3db61" datatype="html">
+        <source>CSV.GZ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="50c45dfd9885e6fcca80759c3db48334c2630f2c" datatype="html">
+        <source>Download data as gzipped CSV</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="599e1282c032f9504328a3763c368f095e39ce78" datatype="html">
         <source>Download requested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/tables/tender/table-tender.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
@@ -2856,6 +2940,13 @@
           <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="b4ccd4accd3142c95008eeda7b95dac577f184e6" datatype="html">
+        <source>Partner Network</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/partner-network/partner-network.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
         <source>How Opentender Works</source>
         <context-group purpose="location">
@@ -2870,6 +2961,13 @@
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="70f5ca483d6ed71cb9e9a82f8890a1bab7289ec7" datatype="html">
+        <source>Read more about</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
         <source>Opentender uses public procurement performance indicators based on a broad set of scientific analyses, synthesized and taken further in our own research: for administrative capacity indicators see <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Methods Paper on Administrative Quality Indicators<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, for transparency indicators see <x id="START_LINK_1" ctype="x-a" equiv-text="&lt;a&gt;"/>Methods Paper on Fiscal Transparency<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, for integrity indicators see <x id="START_LINK_2" ctype="x-a" equiv-text="&lt;a&gt;"/>Methods Paper on Corruption Risk Indicators<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. The overarching good procurement score is the simple average of the three composite scores. All of these indicators are based on objective data, are directly actionable by public and private actors, and they are transparently and unambiguously calculated. If you find any error in the <x id="START_LINK_3" ctype="x-a" equiv-text="&lt;a&gt;"/>formulas<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, please notify us at <x id="START_LINK_4" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="INTERPOLATION" equiv-text="{{contactmail}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
@@ -2877,60 +2975,67 @@
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="c6ec60e3762bde89377d38a310d738ac0b3e2566" datatype="html">
+        <source>Any indicator based on a single tender is usually not reliable enough, hence it is recommended to look at multiple tenders and the whole market.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
         <source>Maps and NUTS Codes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="39a876f7caff60187b5482e728db9585b73de7ce" datatype="html">
         <source>Opentender displays <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>NUTS Codes<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> based maps.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="80bd056960aa732c8055674dc0e448fa1a2c203f" datatype="html">
         <source>Missing codes in addresses have been assigned with:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b66b022fc628366345ae491af4ed98f8b87b33c6" datatype="html">
         <source>Used Shapes:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4d273f9f8f9d66c78d3f7e5550612c0855415208" datatype="html">
         <source>The dashboards provide you with state-of-the-art visualisations of procurement data in four categories:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b8639e7d55a59a37c71190f12ba65d4ec3ef64ca" datatype="html">
         <source>The search function is a powerful tool to drill down into the data and find a specific tender, buyer, or supplier you are looking for. You can also create individual custom searches from more than 30 additional parameters, including the indicators.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c58e33e048cf147451754a7b6509455e3931bc91" datatype="html">
         <source>Profiles</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a33618ac50442a0a558cef69f0f4d212b4155712" datatype="html">
         <source>To enable full access, every component (sectors, branches, regions, companies, authorities, and tenders) in the Opentender database has an individual profile showing detailed information. Depending on its type, the profile shows a variety of visualisations such as graphs, maps, and charts providing you with a deep level of insight into the database. You can view the profiles by simply clicking on the respective name.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/about/how/how.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a48730fbcefe61d30886bb6004479a67a1a9c90d" datatype="html">
@@ -2990,7 +3095,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="66675a2fc743c4fba5591e37f26ea1776cd3e164" datatype="html">
@@ -3064,7 +3169,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">167</context>
         </context-group>
       </trans-unit>
       <trans-unit id="90b9f6388d52c65ddf730bb0eafa84aea2affda8" datatype="html">
@@ -3110,7 +3215,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7faaaa08f56427999f3be41df1093ce4089bbd75" datatype="html">
@@ -3133,7 +3238,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
@@ -3141,101 +3246,54 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">105</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
-        <source>Source</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">44</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">406</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="51e276921090e155c5bb135b890388bcef119307" datatype="html">
-        <source>Entries</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
-        <source>Modified</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">77</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">104</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">545</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="11db3f53da11cc43e48960e6cc537b79c5fd789e" datatype="html">
-        <source>CSV</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6986e0df8092d822ac2c076520d83994c78834fc" datatype="html">
+        <source>Modified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
+          <context context-type="linenumber">552</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7ad24bfc056ad2a41aa93fbfd75ec6765060606f" datatype="html">
         <source>JSON</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">79</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">106</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="dd832610011ecd4f410b23b89dc2edccd6090b83" datatype="html">
-        <source>NDJSON</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">107</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="9310ca7d4789a7f20450bcf20f8935fecaf3b1d3" datatype="html">
-        <source>Files are compressed with <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>GZip<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, which should be supported by your ZIP application.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a7795f254d6f9966ba4a6b6d3890d72763ff434" datatype="html">
         <source>* Due to the amount of entries and many JSON parser don&apos;t support the file size, DIGIWHIST Tender JSON data has also been saved as <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Newline Delimited JSON<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="da11e7cd3b4564bdafedd2b50d917211274495ad" datatype="html">
         <source>The structure of entries is outlined in a <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>JSON Schema File<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/download/download.component.ts</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">101</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6220816821ffe67e3add74bfa23d77a2cf8fe453" datatype="html">
@@ -3588,576 +3646,590 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2864ab8729288a2ab2d5cc23a826427c7752f4fd" datatype="html">
+        <source>Blow the whistle on wrongdoings about this tender</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
         <source>There are no Indicators for this Tender</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d2f0649984f5cfd8801ebe50b07cd685944cf84a" datatype="html">
         <source>On Behalf Of</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="986458778f7bad1a3d14463f661113d63f36cd0d" datatype="html">
         <source>Further Information Provider</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="af1011890f83ef6949e2a6b2859508d94a5a8caf" datatype="html">
         <source>Specifications Provider</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="09bf184535fa49c40c030d296896c30ec01e1793" datatype="html">
         <source>Bids Recipient</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1dae5a8b8283d37c1e1413e72e521ce3ff072037" datatype="html">
         <source>Appeal Body Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="323d3ec423cbf3a1df50ecd1ff8d843e32040ca2" datatype="html">
         <source>Mediation Body Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d43eb9b38fd5b86ef9ee267653a4e6fd7530a2c1" datatype="html">
         <source>Administrators</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="54f00deeee916877ba52c54363d3951ca3a840a7" datatype="html">
         <source>Prices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">120</context>
+          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="417c7208ab7fd97d49ad0487b095923ffb21b5b7" datatype="html">
         <source>Estimated Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">284</context>
+          <context context-type="linenumber">291</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f9f909ae231e02a769784e9ca4ea72e92ea34b83" datatype="html">
         <source>Final Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">133</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b8e154a2a372825dcb4aced784a3206b055f0e75" datatype="html">
         <source>Documents Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae78cbe2e07f699217c7488237bdb79850173273" datatype="html">
         <source>Dates</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e2617e1baa15fe59a7d3b9c1ded99c8c07f54150" datatype="html">
         <source>Estimated Start Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">252</context>
+          <context context-type="linenumber">259</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7eec668389e17eab9b1c46978bcdeccfd9ec9571" datatype="html">
         <source>Estimated Completion Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">148</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">256</context>
+          <context context-type="linenumber">263</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b7dc0c5ecd8aa00e8f2b48e9ce8e2c18b15adb87" datatype="html">
         <source>Bid Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">152</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">272</context>
+          <context context-type="linenumber">279</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f12604b9e1ec06824d5518d923c6ee0663fd46fc" datatype="html">
         <source>Documents Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">156</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">276</context>
+          <context context-type="linenumber">283</context>
         </context-group>
       </trans-unit>
       <trans-unit id="33067708ae43c4ed15b13dbe8582dcf43e82916b" datatype="html">
         <source>Estimated Duration</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">160</context>
         </context-group>
       </trans-unit>
       <trans-unit id="55f0cbb0a09d5c9e79387d31412ae18e3f49fb93" datatype="html">
         <source>Types</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">175</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea426b43d3914772b31f045023e76280e38a4cb3" datatype="html">
         <source>Supply Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">177</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f918f7ad53e11419f1bd8613763610a67c907b25" datatype="html">
         <source>Procedure Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">181</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f35e650c934ab03d87dc6c18926013257a5d82d3" datatype="html">
         <source>Selection Method</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="linenumber">185</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a9404df24a66e14717a13e54c78f443d852e8ed6" datatype="html">
         <source>Eligible Bid Languages</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">182</context>
+          <context context-type="linenumber">189</context>
         </context-group>
       </trans-unit>
       <trans-unit id="44929ed65effa672d2f881314c8160cb3d630727" datatype="html">
         <source>Max Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">186</context>
+          <context context-type="linenumber">193</context>
         </context-group>
       </trans-unit>
       <trans-unit id="94ecc5b64dfc32142cd639467a8329c1cd8b00ee" datatype="html">
         <source>Max Framework Agreement Participants</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">190</context>
+          <context context-type="linenumber">197</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f08a00c6f91d5ca2eda42c9c83d6525b30f9e866" datatype="html">
         <source>Award Criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">194</context>
+          <context context-type="linenumber">201</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4d6ee53858628de558a18623894a03c8673bce9e" datatype="html">
         <source>Price</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">229</context>
+          <context context-type="linenumber">236</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">339</context>
+          <context context-type="linenumber">346</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d68d8c2c960dc71366b178447b3a13e78ce505d4" datatype="html">
         <source>Lot Details</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">242</context>
+          <context context-type="linenumber">249</context>
         </context-group>
       </trans-unit>
       <trans-unit id="81b97b8ea996ad1e4f9fca8415021850214884b1" datatype="html">
         <source>Status</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">244</context>
+          <context context-type="linenumber">251</context>
         </context-group>
       </trans-unit>
       <trans-unit id="528a04d8d0947b73df1db3011b214d1419da122c" datatype="html">
         <source>Award Decision Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">248</context>
+          <context context-type="linenumber">255</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e84cc548c018141d04508c938bb23e29f6becb25" datatype="html">
         <source>Completion Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">260</context>
+          <context context-type="linenumber">267</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
         <source>Award Deadline</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">264</context>
+          <context context-type="linenumber">271</context>
         </context-group>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
         <source>Contract Signature Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">268</context>
+          <context context-type="linenumber">275</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4953833f8be2c0483000f83e90a57d8582fd8a94" datatype="html">
         <source>Cancellation Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">280</context>
+          <context context-type="linenumber">287</context>
         </context-group>
       </trans-unit>
       <trans-unit id="40fa1acb50d89a58bee3ac065258a7c73164d054" datatype="html">
         <source>Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">288</context>
+          <context context-type="linenumber">295</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3d281bc1087e5b9a2a3a4fc58895d06df7295d6c" datatype="html">
         <source>Valid Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">292</context>
+          <context context-type="linenumber">299</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
         <source>Electronic Bids Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">296</context>
+          <context context-type="linenumber">303</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ae45aa93f55aa10e8589831c375bd702351f1062" datatype="html">
         <source>Contract Number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">300</context>
+          <context context-type="linenumber">307</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ad75b4f55b10ef7cf27b1d7527c40de735b9288a" datatype="html">
         <source>Cpvs</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">304</context>
+          <context context-type="linenumber">311</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7b05eca339545782385023c492709e6b8903ea81" datatype="html">
         <source>Lot Number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">308</context>
+          <context context-type="linenumber">315</context>
         </context-group>
       </trans-unit>
       <trans-unit id="939f9e9c4fdcf79d2c89cfdafa9b5f7b93841bd4" datatype="html">
         <source>Position On Page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">312</context>
+          <context context-type="linenumber">319</context>
         </context-group>
       </trans-unit>
       <trans-unit id="648c25caed59b2d96be0fe5deb0fef0e9898d212" datatype="html">
         <source>Eligibility Criteria</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">316</context>
+          <context context-type="linenumber">323</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">386</context>
+          <context context-type="linenumber">393</context>
         </context-group>
       </trans-unit>
       <trans-unit id="269b2364e25770a5c993dd687e9dc795d9ed887a" datatype="html">
         <source>Bids</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">321</context>
+          <context context-type="linenumber">328</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eba03745afc51c98d70458cf75efb444ad3c0c54" datatype="html">
         <source>Subcontractors</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">331</context>
+          <context context-type="linenumber">338</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fd6d213cefb9dc64095782605684e29078591d35" datatype="html">
         <source>Is Winning</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">343</context>
+          <context context-type="linenumber">350</context>
         </context-group>
       </trans-unit>
       <trans-unit id="efcc90a1c90da338c3e1e1985a668d40fab16537" datatype="html">
         <source>Is Subcontracted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">347</context>
+          <context context-type="linenumber">354</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b9288b8987a9e5545360e59b2e9f63e0544bb2ad" datatype="html">
         <source>Subcontacted Value</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">351</context>
+          <context context-type="linenumber">358</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ec6a8d9946e545072847202bdd8216f3fe229162" datatype="html">
         <source>Unit Prices</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">355</context>
+          <context context-type="linenumber">362</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e82d75c61e291d5d89fe80d95a7cd8d9e328d81f" datatype="html">
         <source>Personal Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">374</context>
+          <context context-type="linenumber">381</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e3e53105166425a782e05acf635ab908fe1ecc2c" datatype="html">
         <source>Economic Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">378</context>
+          <context context-type="linenumber">385</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7e4dbd39202c3b69777dbcd1fbe32088a08fee9c" datatype="html">
         <source>Technical Requirements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">382</context>
+          <context context-type="linenumber">389</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ea49d0e7c0581d89ec3f8e333a58466a052baa54" datatype="html">
         <source>Deposits</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">390</context>
+          <context context-type="linenumber">397</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6834fa6b43d1ecbdf147c48dd9c4d72f1484571d" datatype="html">
+        <source>Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
+          <context context-type="linenumber">413</context>
         </context-group>
       </trans-unit>
       <trans-unit id="801b98c6f02fe3b32f6afa3ee854c99ed83474e6" datatype="html">
         <source>URL</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">410</context>
+          <context context-type="linenumber">417</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">414</context>
+          <context context-type="linenumber">421</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">466</context>
+          <context context-type="linenumber">473</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2393499fb6f7168b313e4358963cd8e0d7f73239" datatype="html">
         <source>Publication Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">418</context>
+          <context context-type="linenumber">425</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9bd1dc6d99e7401e05647a06b26bfc524a7a2dde" datatype="html">
         <source>Dispatch Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">422</context>
+          <context context-type="linenumber">429</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1d7cb8bd683036b637c74f4d4f8c239676de2540" datatype="html">
         <source>Form Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">426</context>
+          <context context-type="linenumber">433</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ad0c6b721d6d6cec75bf3a58abd1c2c7e77f80f7" datatype="html">
         <source>Source Form Type</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">430</context>
+          <context context-type="linenumber">437</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fe46ccaae902ce974e2441abe752399288298619" datatype="html">
         <source>Language</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">434</context>
+          <context context-type="linenumber">441</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">462</context>
+          <context context-type="linenumber">469</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ee19b874f6c1cde10b5abbb796b0c08988aa94b1" datatype="html">
         <source>Source Id</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">438</context>
+          <context context-type="linenumber">445</context>
         </context-group>
       </trans-unit>
       <trans-unit id="193f8e5ec4d9c4d6ba6eb8d4802ffa8123b912e4" datatype="html">
         <source>Buyer Assigned Id</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">442</context>
+          <context context-type="linenumber">449</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
         <source>Title</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">458</context>
+          <context context-type="linenumber">465</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fa5de2fc65a3a7a2c2a7d88d944bc013ab43c8cd" datatype="html">
         <source>Tender Information</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">479</context>
+          <context context-type="linenumber">486</context>
         </context-group>
       </trans-unit>
       <trans-unit id="438a512770714af06882db959b1a97240d7b3f79" datatype="html">
         <source>EInvoice Accepted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">481</context>
+          <context context-type="linenumber">488</context>
         </context-group>
       </trans-unit>
       <trans-unit id="10c13792a5eac0f405ff5fe26c89804923682ad0" datatype="html">
         <source>Central Procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">485</context>
+          <context context-type="linenumber">492</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e2dc172acb02aa39d879ea4153f54ce0aff6e2b1" datatype="html">
         <source>Covered By Gpa</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">489</context>
+          <context context-type="linenumber">496</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a56f2457e74886a8e8036f19381873752ce36e12" datatype="html">
         <source>Joint Procurement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">493</context>
+          <context context-type="linenumber">500</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1366ed313de5b7acd0c4bf8ccf919e664d84efe0" datatype="html">
         <source>Framework Agreement</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">497</context>
+          <context context-type="linenumber">504</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0ba08037e5bc2c2675c0957ae659f9154736d15d" datatype="html">
         <source>Dps</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">501</context>
+          <context context-type="linenumber">508</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7d3dabffdd8c374c3b429a5a58dfbb1e339d9c17" datatype="html">
         <source>Electronic Auction</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">505</context>
+          <context context-type="linenumber">512</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a860a554acd96bd1da91252d04f33fba9b110c58" datatype="html">
         <source>has Lots</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">509</context>
+          <context context-type="linenumber">516</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63344e1765057a4008397080a6f9e2bc60930f52" datatype="html">
         <source>has Options</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">513</context>
+          <context context-type="linenumber">520</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aaa77bdac46558e5d797b6d53b0ca285a0137dea" datatype="html">
         <source>Variants Accepted</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">517</context>
+          <context context-type="linenumber">524</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e0111239d8e59851b4c1fa1771cbb71ba0273375" datatype="html">
         <source>Buyer Assigned ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">521</context>
+          <context context-type="linenumber">528</context>
         </context-group>
       </trans-unit>
       <trans-unit id="71a0805cbb874804c2f123295876cc568c4350f9" datatype="html">
         <source>Funding</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">527</context>
+          <context context-type="linenumber">534</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5d926ca393abe804e7685919df49933d17f625e5" datatype="html">
         <source>Meta Data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">539</context>
+          <context context-type="linenumber">546</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1b051734b0ee9021991c91b3ed4e81c244322462" datatype="html">
         <source>Created</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/tender/tender.component.ts</context>
-          <context context-type="linenumber">541</context>
+          <context context-type="linenumber">548</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9df97dec9e0ccd1d87c4af838cd686e930f48281" datatype="html">
