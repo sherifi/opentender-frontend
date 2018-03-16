@@ -1545,6 +1545,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Liczba ofert
+        </target>
       </trans-unit>
       <trans-unit id="Buyer" datatype="html">
         <source>
@@ -2036,6 +2039,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Liczba ofert elektronicznych
+        </target>
       </trans-unit>
       <trans-unit id="EligibleBidLanguages" datatype="html">
         <source>
@@ -3474,6 +3480,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Źródło
+        </target>
       </trans-unit>
       <trans-unit id="SourceURL" datatype="html">
         <source>
@@ -3490,6 +3499,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          URL źródła
+        </target>
       </trans-unit>
       <trans-unit id="Supplier" datatype="html">
         <source>
@@ -4307,6 +4319,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Rozbieżność pomiędzy ogłoszeniem o przetargu a ogłoszeniem o udzieleniu zamówienia
+        </target>
       </trans-unit>
       <trans-unit id="ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES.desc" datatype="html">
         <source>
@@ -4323,6 +4338,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Rozbieżność pomiędzy ogłoszeniem o przetargu a ogłoszeniem o udzieleniu zamówienia to stosunek pól z innymi znaczeniami w ogłoszeniach o przetargu do tych w ogłoszeniu o udzieleniu zamówienia w odniesieniu do określonego przetargu (w oparciu o listę opublikowanych wersji).
+        </target>
       </trans-unit>
       <trans-unit id="INTEGRITY.name" datatype="html">
         <source>
@@ -6224,32 +6242,6 @@
           Pliki skompresowane za pomocą &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;GZip&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;, który powinien być obsługiwany przez Twoją aplikację ZIP.
         </target>
       </trans-unit>
-      <trans-unit id="ced8dcfac8978da734cc1165e84d0f87c2132500" datatype="html">
-        <source>
-          JSON.GZ
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/tables/tender/table-tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            22
-          </context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="505edb2a526b2e877ae4ddacd92504ceefb3db61" datatype="html">
-        <source>
-          CSV.GZ
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/modules/tables/tender/table-tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            25
-          </context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="50c45dfd9885e6fcca80759c3db48334c2630f2c" datatype="html">
         <source>
           Download data as gzipped CSV
@@ -6259,9 +6251,12 @@
             src/app/modules/tables/tender/table-tender.component.ts
           </context>
           <context context-type="linenumber">
-            24
+            22
           </context>
         </context-group>
+        <target>
+          Pobrać informację w postaci skompresowanej gzip CSV
+        </target>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>
@@ -6272,7 +6267,7 @@
             src/app/modules/tables/tender/table-tender.component.ts
           </context>
           <context context-type="linenumber">
-            27
+            23
           </context>
         </context-group>
         <context-group purpose="location">
@@ -6280,7 +6275,7 @@
             src/app/modules/tables/tender/table-tender.component.ts
           </context>
           <context context-type="linenumber">
-            34
+            30
           </context>
         </context-group>
         <target>
@@ -6296,7 +6291,7 @@
             src/app/modules/tables/tender/table-tender.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            27
           </context>
         </context-group>
         <target>
