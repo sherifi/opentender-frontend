@@ -15,7 +15,7 @@
 		<br/>
 		<ng-container i18n>The download contains {{total}} entries and the compressed file size will be approximately over {{total/1000*1200000 | formatFileSize}}.</ng-container>
 		<br/>
-		<ng-container i18n>Files are compressed with <a target="_blank" href="https://en.wikipedia.org/wiki/Gzip">GZip</a>, which should be supported by your ZIP application.</ng-container>
+		<ng-container i18n>Files are compressed with <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gzip">GZip</a>, which should be supported by your ZIP application.</ng-container>
 		<br/>
 		<br/>
 		<button class="button" (click)="this.download('json')" i18n-title title="Download data as gzipped JSON"><i class="icon-cloud-download"></i>
