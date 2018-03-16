@@ -97,6 +97,12 @@
       "dateformat": "yyyy.MM.dd."
     },
     {
+      "id": "nl",
+      "name": "Nederlands",
+      "eng": "Dutch",
+      "dateformat": "d-M-yyyy"
+    },
+    {
       "id": "no",
       "name": "Norsk",
       "eng": "Norwegian",
@@ -131,6 +137,12 @@
       "name": "Slovenščina",
       "eng": "Slovenian",
       "dateformat": "d.M.yyyy"
+    },
+    {
+      "id": "sv",
+      "name": "Svenska",
+      "eng": "Swedish",
+      "dateformat": "yyyy-MM-dds"
     }
   ],
   "disabled": [
@@ -140,20 +152,12 @@
       "eng": "Irish",
       "dateformat": "dd/MM/yyyy"
     },
-
     {
       "id": "mt",
       "name": "Malti",
       "eng": "Maltese",
       "dateformat": "dd/MM/yyyy"
     },
-    {
-      "id": "nl",
-      "name": "Nederlands",
-      "eng": "Dutch",
-      "dateformat": "d-M-yyyy"
-    },
-
     {
       "id": "hy",
       "name": "Հայերէն",
@@ -165,12 +169,6 @@
       "name": "Íslenska",
       "eng": "Icelandic",
       "dateformat": "d.M.yyyy"
-    },
-    {
-      "id": "sv",
-      "name": "Svenska",
-      "eng": "Swedish",
-      "dateformat": "yyyy-MM-dds"
     }
   ]
 }
