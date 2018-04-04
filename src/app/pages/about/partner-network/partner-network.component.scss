@@ -1,1 +1,25 @@
 @import "../../../../style/globals.scss";
+
+:host {
+
+  .partner-img-container {
+    text-align: center;
+  }
+
+  .partner-icon {
+    font-size: 0.8em;
+  }
+
+  .partner-img {
+    max-width: 70%;
+    max-height: 140px;
+    margin-left: 20%;
+    margin-top: $base-padding;
+  }
+
+  .current-portal-splitter {
+    border-bottom: 2px solid #ebebeb;
+    margin-bottom: 20px;
+  }
+
+}

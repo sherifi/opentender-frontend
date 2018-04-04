@@ -2,8 +2,20 @@
 	<div class="container container-padded-bottom">
 		<h1 class="container-title" i18n>Partner Network</h1>
 	</div>
-	<div class="container">
-		<div class="container-left-12">
+	<div *ngFor="let group of partnergroups">
+		{{group.name}}
+		<div class="container" *ngFor="let p of group.partner">
+			<div class="container-left-7">
+				<h2 class="h4">{{p.name}}</h2>
+				<p>
+					<span class="partner-icon icon-new-tab"></span> <a target="_blank" rel="noopener" href="{{ p.url }}">{{p.url}}</a><br>
+					<span class="partner-icon icon-mail2"></span> <a href="mailto:{{p.contact}}">{{p.contact}}</a><br>
+				</p>
+			</div>
+			<div class="container-right-4 partner-img-container">
+				<img class="partner-img" alt="{{p.name}}" src="/assets/img/partner/{{ p.img }}">
+			</div>
 		</div>
+		<div class="current-portal-splitter" *ngIf="group.isCurrent">
 	</div>
 </div>

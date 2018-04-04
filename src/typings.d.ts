@@ -39,6 +39,18 @@ declare module '*countries.json' {
 	export default value;
 }
 
+declare module '*partner.json' {
+	export var partner: Array<IPartnerInfo>;
+}
+
+interface IPartnerInfo {
+	name: string;
+	url: string;
+	img: string;
+	contact: string;
+	country: string;
+}
+
 interface IRouterInfo {
 	path: string;
 	title?: string;

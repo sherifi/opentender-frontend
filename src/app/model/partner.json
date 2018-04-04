@@ -1,0 +1,25 @@
+{
+  "partner": [
+    {
+      "name": "Forum Informationsfreiheit",
+      "img": "foinat-logo.png",
+      "url": "https://www.informationsfreiheit.at",
+      "contact": "office@informationsfreiheit.at",
+      "country": "at"
+    },
+    {
+      "name": "Transparency International Slovakia",
+      "img": "tis-logo.png",
+      "url": "http://transparency.sk/sk/",
+      "contact": "tis@transparency.sk",
+      "country": "sk"
+    },
+    {
+      "name": "X-Net",
+      "img": "xnet-logo.jpg",
+      "url": "https://xnet-x.net/en/",
+      "contact": "contact@xnet-x.net",
+      "country": "es"
+    }
+  ]
+}
