@@ -28,7 +28,7 @@ export class AuthorityPage implements OnInit, OnDestroy {
 	private include_authorities_ids: Array<string> = [];
 	public similar: Array<Body> = [];
 
-	private viz: {
+	public viz: {
 		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
 		cpvs_codes: { data: IStatsCpvs, title?: string };
 		company_nuts: { data: IStatsNuts, title?: string };

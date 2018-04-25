@@ -15,6 +15,8 @@ interface PieArc {
 	endAngle: number;
 	padAngle: number;
 	pos: Array<number>;
+	isLeft: boolean;
+	label: string;
 }
 
 @Component({

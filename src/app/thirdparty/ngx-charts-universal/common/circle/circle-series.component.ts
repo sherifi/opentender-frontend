@@ -13,7 +13,7 @@ import {IColorScaleType} from '../../chart.interface';
     <svg:g *ngFor="let circle of circles">
       <defs>
         <svg:g ngx-charts-svg-linear-gradient
-          [color]="color"
+          [color]="circle.color"
           orientation="vertical"
           [name]="circle.gradientId"
           [stops]="circle.gradientStops"

@@ -36,6 +36,7 @@ export class PieGridSeriesComponent implements OnChanges {
 	element: HTMLElement;
 	layout: any;
 	arcs: any;
+	max: any;
 
 	constructor(element: ElementRef) {
 		this.element = element.nativeElement;

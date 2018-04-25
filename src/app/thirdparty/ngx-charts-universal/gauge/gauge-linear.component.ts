@@ -71,7 +71,7 @@ export class LinearGaugeComponent extends BaseChartComponent implements AfterVie
 
 	viewDim: ViewDimensions;
 	valueDomain: Array<number>;
-	valueScale: any;
+	valueScale: (value: any) => any;
 	value = 0;
 
 	colors: ColorHelper;

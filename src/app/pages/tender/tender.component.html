@@ -247,7 +247,7 @@
 					<div class="container container-padded-top-lite">
 						<div class="container-left-4">
 							<h4 i18n>Lot Details</h4>
-							<div class="inline-info" *ngIf="lot.state | defined">
+							<div class="inline-info" *ngIf="lot.status | defined">
 								<h4 i18n>Status</h4>
 								<div>{{lot.status | expandUnderlined}}</div>
 							</div>
@@ -267,22 +267,22 @@
 								<h4 i18n>Completion Date</h4>
 								{{lot.completionDate | formatDate}}
 							</div>
-							<div class="inline-info" *ngIf="lot.awardDeadline | defined">
-								<h4 i18n>Award Deadline</h4>
-								{{lot.awardDeadline | formatDate}}
-							</div>
+							<!--<div class="inline-info" *ngIf="lot.awardDeadline | defined">-->
+								<!--<h4 i18n>Award Deadline</h4>-->
+								<!--{{lot.awardDeadline | formatDate}}-->
+							<!--</div>-->
 							<div class="inline-info" *ngIf="lot.contractSignatureDate | defined">
 								<h4 i18n>Contract Signature Date</h4>
 								{{lot.contractSignatureDate | formatDate}}
 							</div>
-							<div class="inline-info" *ngIf="lot.bidDeadline | defined">
-								<h4 i18n>Bid Deadline</h4>
-								{{lot.bidDeadline | formatDate}}
-							</div>
-							<div class="inline-info" *ngIf="lot.documentsDeadline | defined">
-								<h4 i18n>Documents Deadline</h4>
-								{{lot.documentsDeadline | formatDate}}
-							</div>
+							<!--<div class="inline-info" *ngIf="lot.bidDeadline | defined">-->
+								<!--<h4 i18n>Bid Deadline</h4>-->
+								<!--{{lot.bidDeadline | formatDate}}-->
+							<!--</div>-->
+							<!--<div class="inline-info" *ngIf="lot.documentsDeadline | defined">-->
+								<!--<h4 i18n>Documents Deadline</h4>-->
+								<!--{{lot.documentsDeadline | formatDate}}-->
+							<!--</div>-->
 							<div class="inline-info" *ngIf="lot.cancellationDate | defined">
 								<h4 i18n>Cancellation Date</h4>
 								{{lot.cancellationDate | formatDate}}

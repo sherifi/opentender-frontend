@@ -87,10 +87,10 @@ import {PlatformService} from '../../../services/platform.service';
         *ngIf="data && isTime()"
         [attr.transform]="timelineTransform"
         [results]="areaData"
-        [view]="[timelineWidth, height]"
+        [view]="[timelineWidth, dim.height]"
         [height]="timelineHeight"
-        [scheme]="scheme"
-        [legend]="legend"
+        [scheme]="chart.colorScheme"
+        [legend]="chart.legend"
         [scaleType]="scaleType"
         (onDomainChange)="updateDomain($event)">
         <svg:g *ngFor="let series of areaData; trackBy:trackBy">
@@ -100,7 +100,6 @@ import {PlatformService} from '../../../services/platform.service';
             [colors]="colors"
             [data]="series"
             [scaleType]="scaleType"
-            [gradient]="gradient"
             stacked="true"
             [curve]="curve"
           />

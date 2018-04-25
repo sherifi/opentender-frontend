@@ -18,7 +18,10 @@ export class SelectSearchButtonComponent implements OnChanges {
 	selectChange = new EventEmitter();
 	showDialog = false;
 	title: string;
-	groups: Array<{name: string; columns: Array<{active: boolean; filter: ISearchFilterDef}> }> = [];
+	groups: Array<{
+		name: string;
+		filters: Array<{ active: boolean; isSearch: boolean; isFilter: boolean, filter: ISearchFilterDef, type: ISearchFilterDefType }>;
+	}> = [];
 
 	constructor(public i18n: I18NService) {
 		this.title = i18n.get('Add Search Fields');

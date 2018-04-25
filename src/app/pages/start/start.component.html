@@ -14,7 +14,7 @@
 			<ng-container i18n>We invite you to visit <a href="{{'/'+ip_country.id | portalLink}}">Opentender {{ip_country.name}}</a>.</ng-container><br/><br/>
 			<ng-container i18n>Change the language of this page</ng-container><br/>
 			<div class="languages">
-				<span *ngFor="let lang of languages"><a href="{{url}}?lang={{lang.id}}">{{lang.name}}</a> </span>
+				<span *ngFor="let lang of languages"><a href="?lang={{lang.id}}">{{lang.name}}</a> </span>
 			</div>
 		</div>
 	</div>

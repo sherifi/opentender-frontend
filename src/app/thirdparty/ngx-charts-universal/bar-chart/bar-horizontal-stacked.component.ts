@@ -45,7 +45,6 @@ import {scaleBand, scaleLinear} from 'd3-scale';
 						   [series]="group.series"
 						   [activeEntries]="activeEntries"
 						   [dims]="viewDim"
-						   [gradient]="gradient"
 						   (select)="onClick($event, group)"
 						   (activate)="onActivate($event, group)"
 						   (deactivate)="onDeactivate($event, group)"

@@ -23,12 +23,12 @@ export class RegionPage implements OnInit, OnDestroy {
 	public columnIds = ['id', 'title', 'titleEnglish', 'buyers.name', 'lots.bids.bidders'];
 	private subscription: any;
 
-	private viz: {
+	public viz: {
 		top_companies: { data: { absolute: IStatsCompanies, volume: IStatsCompanies }, title?: string };
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		histogram: { data: IStatsInYears, title?: string };
 		child_regions: { data: IStatsNuts, title?: string };
-		benchmarks: {data: IStats, title?: string, filters?: Array<IBenchmarkFilter>};
+		benchmarks: { data: IStats, title?: string, filters?: Array<IBenchmarkFilter> };
 	} = {
 		benchmarks: {data: null},
 		top_companies: {data: null},
@@ -134,6 +134,9 @@ export class RegionPage implements OnInit, OnDestroy {
 		viz.top_authorities.data = {absolute: stats.top_terms_authorities, volume: stats.top_sum_finalPrice_authorities};
 		viz.child_regions.data = stats.terms_subregions_nuts;
 		viz.benchmarks.data = stats;
+	}
+
+	public benchmarkFilterChange(event) {
 	}
 
 	public search(): void {

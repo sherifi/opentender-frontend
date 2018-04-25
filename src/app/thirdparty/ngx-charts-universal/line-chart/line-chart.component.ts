@@ -87,7 +87,7 @@ import {curveLinear} from 'd3-shape';
 				   *ngIf="data && isTime()"
 				   [attr.transform]="timelineTransform"
 				   [results]="data"
-				   [view]="[timelineWidth, height]"
+				   [view]="[timelineWidth, dim.height]"
 				   [height]="timelineHeight"
 				   [scheme]="chart.colorScheme"
 				   [scaleType]="scaleType"

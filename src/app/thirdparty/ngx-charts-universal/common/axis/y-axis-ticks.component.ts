@@ -64,13 +64,13 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
 	y1: any;
 	y2: any;
 	adjustedScale: any;
-	transform: any;
-	tickFormat: any;
+	transform: (tick: any) => string;
+	tickFormat: (tick: any) => string;
 	ticks: any;
 	width: number = 0;
 	outerTickSize: number = 6;
 	rotateLabels: boolean = false;
-	trimLabel: any;
+	trimLabel: (s: string, length: number) => string;
 
 	@ViewChild('ticksel') ticksElement: ElementRef;
 

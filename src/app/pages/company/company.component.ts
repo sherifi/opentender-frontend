@@ -28,7 +28,7 @@ export class CompanyPage implements OnInit, OnDestroy {
 	public notFound: boolean = false;
 	private subscription: any;
 
-	private viz: {
+	public viz: {
 		authority_nuts: { data: IStatsNuts, title?: string };
 		top_authorities: { data: { absolute: IStatsAuthorities, volume: IStatsAuthorities }, title?: string };
 		cpvs_codes: { data: IStatsCpvs, title?: string };

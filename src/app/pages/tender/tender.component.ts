@@ -10,6 +10,13 @@ import {Subscription} from 'rxjs/Subscription';
 import {IBreadcrumb, ISearchCommandFilter, ISearchFilterDefType, IStats} from '../../app.interfaces';
 import {IndicatorService} from '../../services/indicator.service';
 
+interface IState {
+	open: boolean;
+	empty: boolean;
+	label?: string;
+	subempty?: { [name: string]: boolean };
+}
+
 @Component({
 	moduleId: __filename,
 	selector: 'tender',
@@ -24,7 +31,18 @@ export class TenderPage implements OnInit, OnDestroy {
 	public showDownloadDialog: boolean = false;
 	public crumbs: Array<IBreadcrumb> = [];
 	public country: Country;
-	public state: { [name: string]: { open: boolean, empty: boolean, label?: string, subempty?: { [name: string]: boolean } } } = {
+	public state: {
+		[name: string]: IState;
+		lots: IState;
+		buyer: IState;
+		indi: IState;
+		info: IState;
+		desc: IState;
+		reqs: IState;
+		additional: IState;
+		documents: IState;
+		publications: IState;
+	} = {
 		lots: {open: true, empty: true},
 		buyer: {open: true, empty: true},
 		indi: {open: true, empty: true},
@@ -44,6 +62,7 @@ export class TenderPage implements OnInit, OnDestroy {
 				values: null
 			},
 			title: '',
+			name: null,
 			filters: []
 		}
 	};

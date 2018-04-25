@@ -277,6 +277,10 @@ declare namespace Definitions {
 		 * Is main cpv code of the subject
 		 */
 		isMain?: boolean;
+		/**
+		 * Localized name of cpv
+		 */
+		name?: string;
 	}
 	/**
 	 * Date YYYY.MM.DD

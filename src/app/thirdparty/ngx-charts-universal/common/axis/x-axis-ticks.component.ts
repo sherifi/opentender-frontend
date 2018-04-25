@@ -46,11 +46,9 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 	tickValues: any;
 	textTransform: string = '';
 	ticks: any;
-	tickFormat: any;
+	tickFormat: (tick: string|Date) => string;
 	height: number = 0;
-	adjustedScale = (d) => {
-		return 0;
-	}
+	adjustedScale = (d) => { return 0; };
 
 	@ViewChild('ticksel') ticksElement: ElementRef;
 
@@ -90,7 +88,7 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
 		} else if (this.scale.tickFormat) {
 			this.tickFormat = this.scale.tickFormat.apply(this.scale, this.tickArguments);
 		} else {
-			this.tickFormat = d => isDate(d) ? d.toLocaleDateString() : d.toLocaleString();
+			this.tickFormat = d => isDate(d) ? (<Date>d).toLocaleDateString() : (<string>d).toLocaleString();
 		}
 		this.maxTicksLength = 0;
 

@@ -1,5 +1,5 @@
 import {Component, OnInit, ElementRef} from '@angular/core';
-import {NavigationCancel, NavigationEnd, NavigationStart, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RoutesRecognized} from '@angular/router';
+import {NavigationCancel, NavigationEnd, Router, RoutesRecognized} from '@angular/router';
 import {TitleService} from './services/title.service';
 import {PlatformService} from './services/platform.service';
 

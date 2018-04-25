@@ -15,8 +15,8 @@ import {I18NService} from '../../modules/i18n/services/i18n.service';
 export class StartPage {
 	public ip_country: Country;
 	public portals: Array<IStatsCountry> = [];
+	public current: Country;
 	private allportal: IStatsCountry;
-	private current: Country;
 	private loading: number = 0;
 	public languages = [];
 
