@@ -8774,14 +8774,6 @@
             152
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            279
-          </context>
-        </context-group>
         <target>
           Rok ponude
         </target>
@@ -8796,14 +8788,6 @@
           </context>
           <context context-type="linenumber">
             156
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            283
           </context>
         </context-group>
         <target>
@@ -9040,22 +9024,6 @@
         </context-group>
         <target>
           Datum dovršetka
-        </target>
-      </trans-unit>
-      <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
-        <source>
-          Award Deadline
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            271
-          </context>
-        </context-group>
-        <target>
-          Rok dodjeljivanja
         </target>
       </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">

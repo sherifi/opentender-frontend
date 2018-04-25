@@ -1415,6 +1415,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Jämförelse av aktuell region
+        </target>
       </trans-unit>
       <trans-unit id="BenchmarkCurrentTender" datatype="html">
         <source>
@@ -3027,6 +3030,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Nätverk av samarbetspartners
+        </target>
       </trans-unit>
       <trans-unit id="PersonalRequirements" datatype="html">
         <source>
@@ -3917,6 +3923,9 @@
         <note priority="1" from="description">
           runtime
         </note>
+        <target>
+          Antal giltiga bud
+        </target>
       </trans-unit>
       <trans-unit id="Volume(€)" datatype="html">
         <source>
@@ -5803,6 +5812,9 @@
             69
           </context>
         </context-group>
+        <target>
+          Hittade du ett fel i data? Rapportera det anonymt via &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;kontaktformuläret&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;.
+        </target>
       </trans-unit>
       <trans-unit id="dd9e1d6b2cc426e4cec9e21b6246ed71e3024446" datatype="html">
         <source>
@@ -5953,6 +5965,9 @@
             113
           </context>
         </context-group>
+        <target>
+          Ditt meddelande
+        </target>
       </trans-unit>
       <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
         <source>
@@ -5966,6 +5981,9 @@
             114
           </context>
         </context-group>
+        <target>
+          Skicka
+        </target>
       </trans-unit>
       <trans-unit id="902c551c8a5227a5e6517dcf51b3ebfa206eecbf" datatype="html">
         <source>
@@ -5984,6 +6002,9 @@
             116
           </context>
         </context-group>
+        <target>
+          Tjänsten använder &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Formspree.io&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
+        </target>
       </trans-unit>
       <trans-unit id="3d236a36fabae01b9b865a4dfe3bcafbd52ada5a" datatype="html">
         <source>
@@ -5997,6 +6018,9 @@
             110
           </context>
         </context-group>
+        <target>
+          Anmäl ett fel
+        </target>
       </trans-unit>
       <trans-unit id="6759c98d2126590a88f3cb59d38d266750adf5d5" datatype="html">
         <source>
@@ -6850,6 +6874,9 @@
             3
           </context>
         </context-group>
+        <target>
+          Nätverk av samarbetspartners
+        </target>
       </trans-unit>
       <trans-unit id="71e4332ffe0759a9e46a21631afda924c7dbf461" datatype="html">
         <source>
@@ -6895,6 +6922,9 @@
             11
           </context>
         </context-group>
+        <target>
+          Läs mer om
+        </target>
       </trans-unit>
       <trans-unit id="2fe279e312c76aaf2e3edd2208c4bf043109d26f" datatype="html">
         <source>
@@ -6955,6 +6985,9 @@
             20
           </context>
         </context-group>
+        <target>
+          En indikator som baseras på ett enda anbud är vanligtvis inte tillräckligt pålitligt. Därför rekommenderar vi att du granskar flera anbud och hela marknaden.
+        </target>
       </trans-unit>
       <trans-unit id="0f44883ece95594149a2e3a1e4501d094f04d9a4" datatype="html">
         <source>
@@ -8497,6 +8530,9 @@
             18
           </context>
         </context-group>
+        <target>
+          Anmäl eventuella missförhållanden i detta anbud
+        </target>
       </trans-unit>
       <trans-unit id="b302b89752f3d7bc4baef0783da0b168a53b311e" datatype="html">
         <source>
@@ -8774,14 +8810,6 @@
             152
           </context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            279
-          </context>
-        </context-group>
         <target>
           Tidsfrist för bud
         </target>
@@ -8796,14 +8824,6 @@
           </context>
           <context context-type="linenumber">
             156
-          </context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            283
           </context>
         </context-group>
         <target>
@@ -9042,22 +9062,6 @@
           Slutförandedatum
         </target>
       </trans-unit>
-      <trans-unit id="d27602d897eb2831669615afaba3d6a04e8277c9" datatype="html">
-        <source>
-          Award Deadline
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/tender/tender.component.ts
-          </context>
-          <context context-type="linenumber">
-            271
-          </context>
-        </context-group>
-        <target>
-          Tidsfrist för tilldelning
-        </target>
-      </trans-unit>
       <trans-unit id="220c2022757afe2ac85a8bdf6e24cc70b8af24a5" datatype="html">
         <source>
           Contract Signature Date
@@ -9118,6 +9122,9 @@
             299
           </context>
         </context-group>
+        <target>
+          Antal giltiga bud
+        </target>
       </trans-unit>
       <trans-unit id="6b8f3700c88cc00ae46fe254e275e00e905b1120" datatype="html">
         <source>
