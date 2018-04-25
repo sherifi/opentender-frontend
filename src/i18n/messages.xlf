@@ -2467,7 +2467,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d68ce4f097c2db0b05e823eb2c4025f66f2364ad" datatype="html">
@@ -3296,256 +3296,235 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
-        <source>Trade Register</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
-        <source>Register of Association Number</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
-        <source>VAT</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
         <source>Referrals and Links</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
-        <source>OKF DE is not responsible for any contents linked or referred to from these pages. If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages.</source>
+      <trans-unit id="917afbdc56f6bea16ac651420390d73a9476867a" datatype="html">
+        <source>GTI is not responsible for any contents linked or referred to from these pages. If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
         <source>Disclaimer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="63379f03e1f67dd64795a1e9f9e77bfb0cf5b721" datatype="html">
         <source>The information and views set out on this website are those of the author(s) only and do not reflect any collection opinion of the DIGIWHIST consortium, nor do they reflect the official opinion of the European Commission. Neither the European Commission nor any Person acting on behalf of the European Commission is responsible for the use which might be made of the Information published on this website.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d12f53d1bb137075909330fcc3bb9ec2f27c5d41" datatype="html">
         <source>All content by Digiwhist on this website is licensed under <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Creative Commons BY-NC-SA 4.0.<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
-        <source>Open Knowledge Foundation Germany is pleased that you are visiting our website and that you are interested in the Horizon 2020 DIGIWHIST project. We take the protection of your personal data very seriously and adhere strictly to the provisions of current data privacy laws (e.g. German Data Protection Act (BDSG), Telemedia Act (TMG) and Unfair Competition Act (UWG)).</source>
+      <trans-unit id="fc2fdfc36f449b13fcd026986530c9beeaf1595c" datatype="html">
+        <source>GTI is pleased that you are visiting our website and that you are interested in the Horizon 2020 DIGIWHIST project. We take the protection of your personal data very seriously and adhere strictly to the provisions of current data privacy laws.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
         <source>The following policy provides you with insight into how we guarantee this protection and which kind of data we collect for which purpose.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="49dab74a6f204996046f98e886e8160260f58628" datatype="html">
         <source>1. Anonymous data collection</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b3d03363102ae85ff71e5102a7651f0060052ae2" datatype="html">
         <source>In most cases you can visit Opentender.eu website without us requiring you to provide personal data.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="080e2af793e8ab6c7cfd1f855967156f43d23459" datatype="html">
         <source>The log files on our web server collect the following data:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e8096ea93b6627c620ffbb208d7ad49235ffc2fd" datatype="html">
         <source>IP address</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d376333bd7ba3b3b691d32aabe97366aabdcf644" datatype="html">
         <source>date, time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9671e11011b3ebb58ca11fb31c01d1ac3c8704e3" datatype="html">
         <source>page visited, referrer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="47eec9a187297bde5ebb87442b814a008c5feefe" datatype="html">
         <source>browser</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d5907df625e73d7d8c5075428fc21540304603b2" datatype="html">
         <source>operating system</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a8c6d54131c79ef785fc7c2249374a6f25f76ffd" datatype="html">
         <source>These data are available for statistical purposes analyses, the raw data is deleted by our web hosting company on a monthly basis.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5b0c598904190e499a09a3dea2f546238d4c53c6" datatype="html">
         <source>2. Collection and processing of personal data</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b56fd0fd74eaa2b386434213c4d5e8c632cbcabc" datatype="html">
         <source>Personal data are only collected based on the current applicable regulations. Beyond this, your data are only used for the purposes of advertising and market research, also to tailor our electronic services to meet current needs, if you have provided us with your prior consent. Of course, you are entitled to revoke any consent that you provide – either wholly or partially – at any time, effective for the future.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a0a8ca9b0db392405d5299ca16493cd321de4ee0" datatype="html">
         <source>3. Export and processing of the data in states outside of the European Economic Area (EEA)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a94a4cb46a4dd5450ca35df978441234f7bbfe8a" datatype="html">
         <source>No data is exported or processes outside the European Economic Area</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="84fee072f12d1e470806778d8f2b82190f8db000" datatype="html">
         <source>4. Cookies and website tracking</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8aad68ab3db85412d570bbeebc1a0de5cb53f903" datatype="html">
         <source>We use web analysis systems on this website, intended to measure and analyse visits to our website. We use your IP address with purpose of collecting data, among other things on Internet traffic, your browser and your computer.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c7152d5ed3d82cadb1de7017192e662b3dae8421" datatype="html">
         <source>We do not use the IP address or cookies to identify you personally. We use the web analysis system with the purpose of increasing efficiency on our website.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6319af8dd5a538f46e6f6c0b3aca1b3e30ae52a2" datatype="html">
         <source>Most browsers automatically accept cookies. However, you can prevent this happening manually by changing the settings in your browser to ensure that cookies are no longer accepted. Please find details in this respect in the instructions provided by the manufacturer of your browser.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="59759de86efe325de2005ea3ab4007f291c3cda0" datatype="html">
         <source>5. Permanent cookies/third-party cookies</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="21974757a955b5ae8dc8f3cad13b9aacf9e9a3f9" datatype="html">
         <source>This website uses Piwik, an open-source web analytics service. Piwik uses “cookies”, which are text files placed on your computer, to help the website analyze how users use the site. The information generated by the cookie about your use of the website (including your IP address truncated by the last octet prior to its storage using the “_anonymizeIp()” method) will be transmitted to and stored on our servers in Germany. We will use this information for the purpose of evaluating your use of the website, compiling reports on website activity for website operators and providing other services relating to website activity and internet usage.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="92e4b7e37947a8b945fc965353a1a79c88b0e93d" datatype="html">
         <source>7. External links</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
-        <source>We seek to provide you with the best possible information. This is why you will find on our website links that refer to pages owned by third parties. Unless it is perfectly obvious, we draw your attention to the fact that these are external links. OKF DE has no influence on the content or design of these pages owned by external providers and hence refers to their privacy policies. Please be aware that the assurances provided in this privacy policy quite naturally do not necessarily apply there.</source>
+      <trans-unit id="0483626efca42a9f07b62fb1c92a528d0d37f06f" datatype="html">
+        <source>We seek to provide you with the best possible information. This is why you will find on our website links that refer to pages owned by third parties. Unless it is perfectly obvious, we draw your attention to the fact that these are external links. GTI has no influence on the content or design of these pages owned by external providers and hence refers to their privacy policies. Please be aware that the assurances provided in this privacy policy quite naturally do not necessarily apply there.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
         <source>8. Security</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
-        <source>OKF DE takes technical and organisational measures to ensure security in line with the current state of technology to protect the data you provide to OKF DE against accidental or deliberate manipulation, loss, destruction or access by unauthorised persons. We continually improve our security measures as technology progresses.</source>
+      <trans-unit id="7efb139b711ebf0a1e4715d03bcc3b2413a2cde9" datatype="html">
+        <source>GTI takes technical and organisational measures to ensure security in line with the current state of technology to protect the data you provide to GTI against accidental or deliberate manipulation, loss, destruction or access by unauthorised persons. We continually improve our security measures as technology progresses.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
         <source>9. Right of information, questions on data privacy and revocation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
-        <source>We attach great importance to your trust in us. This is why we seek to be available to provide you with information and to answer your questions at any time. Please contact OKF DE if you have any questions concerning the processing of your personal data; OKF DE is also available if you are seeking information, wish to place applications or lodge complaints on the question of data privacy.</source>
+      <trans-unit id="da017bf91186b5723aea66fa1715d5016d787bff" datatype="html">
+        <source>We attach great importance to your trust in us. This is why we seek to be available to provide you with information and to answer your questions at any time. Please contact GTI if you have any questions concerning the processing of your personal data; GTI is also available if you are seeking information, wish to place applications or lodge complaints on the question of data privacy.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
         <source>Moreover, you are entitled to revoke the consent you have granted respectively at any time, effective for the future.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/imprint/imprint.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f28fdbdad73536378cf09be643e47b70d1d1c970" datatype="html">

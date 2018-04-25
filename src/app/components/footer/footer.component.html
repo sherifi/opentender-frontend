@@ -54,11 +54,11 @@
 						<a href="http://digiwhist.eu" target="_blank" rel="noopener"><img alt="DIGIWHIST Logo" src="/assets/img/digiwhist-logo.png"></a>
 					</div>
 				</li>
-				<li class="footer-list_item">
-					<div class="footer-logo">
-						<a href="https://okfn.de" target="_blank" rel="noopener"><img alt="Open Knowledge Foundation Germany Logo" src="/assets/img/okfde-logo.svg"></a>
-					</div>
-				</li>
+				<!--<li class="footer-list_item">-->
+					<!--<div class="footer-logo">-->
+						<!--<a href="https://okfn.de" target="_blank" rel="noopener"><img alt="Open Knowledge Foundation Germany Logo" src="/assets/img/okfde-logo.svg"></a>-->
+					<!--</div>-->
+				<!--</li>-->
 			</ul>
 		</div>
 		<div class="footer-col_right">
@@ -108,7 +108,7 @@
 </div>
 
 <app-dialog i18n-title title="Report an error" [(visible)]="showDialog">
-	<form method="POST" action="https://formspree.io/digiwhist@okfn.de">
+	<form method="POST" action="https://formspree.io/{{contactmail}}">
 		<input hidden name="url" type="hidden" value="{{urlFull}}">
 		<textarea name="message" i18n-placeholder placeholder="Your message" required></textarea>
 		<button class="button-right" type="submit" i18n>Send</button>

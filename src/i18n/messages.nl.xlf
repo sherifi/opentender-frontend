@@ -5739,7 +5739,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            36
+            30
           </context>
         </context-group>
         <target>
@@ -7712,54 +7712,6 @@
           Adres
         </target>
       </trans-unit>
-      <trans-unit id="a85cbe3b794e88ed2f5284b7483941a4119c6fcb" datatype="html">
-        <source>
-          Trade Register
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/imprint/imprint.component.ts
-          </context>
-          <context context-type="linenumber">
-            26
-          </context>
-        </context-group>
-        <target>
-          Handelsregister
-        </target>
-      </trans-unit>
-      <trans-unit id="14dc43f12f777a1cc7562edbca4bf6d18a5879f8" datatype="html">
-        <source>
-          Register of Association Number
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/imprint/imprint.component.ts
-          </context>
-          <context context-type="linenumber">
-            27
-          </context>
-        </context-group>
-        <target>
-          Bedrijfsnummerregister
-        </target>
-      </trans-unit>
-      <trans-unit id="3567ff7a17a6178695fef0030da488f770b9ee5d" datatype="html">
-        <source>
-          VAT
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">
-            src/app/pages/imprint/imprint.component.ts
-          </context>
-          <context context-type="linenumber">
-            28
-          </context>
-        </context-group>
-        <target>
-          BTW
-        </target>
-      </trans-unit>
       <trans-unit id="b2d5fa2effb58f1eb5e0eeb25b7f0dd8f9874473" datatype="html">
         <source>
           Referrals and Links
@@ -7769,27 +7721,27 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            29
+            23
           </context>
         </context-group>
         <target>
           Verwijzingen en links
         </target>
       </trans-unit>
-      <trans-unit id="97ff46fcf06e7a7666ceda3fea57025a5606f228" datatype="html">
+      <trans-unit id="917afbdc56f6bea16ac651420390d73a9476867a" datatype="html">
         <source>
-          OKF DE is not responsible for any contents linked or referred to from these pages. If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages.
+          GTI is not responsible for any contents linked or referred to from these pages. If any damage occurs by the use of information presented there, only the author of the respective pages might be liable, not the one who has linked to these pages.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            30
+            24
           </context>
         </context-group>
         <target>
-          OKF DE is niet verantwoordelijk voor inhoud die is gekoppeld aan of waarnaar wordt verwezen op deze pagina's. Als er schade ontstaat door het gebruik van de informatie die daar is verstrekt, is de auteur van de respectieve pagina's mogelijk aansprakelijk, en niet de persoon die een koppeling naar deze pagina's heeft gemaakt.
+          GTI is niet verantwoordelijk voor inhoud die is gekoppeld aan of waarnaar wordt verwezen op deze pagina's. Als er schade ontstaat door het gebruik van de informatie die daar is verstrekt, is de auteur van de respectieve pagina's mogelijk aansprakelijk, en niet de persoon die een koppeling naar deze pagina's heeft gemaakt.
         </target>
       </trans-unit>
       <trans-unit id="634ad9d7b66735dce881cffce67d2b5d29f88af0" datatype="html">
@@ -7801,7 +7753,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            31
+            25
           </context>
         </context-group>
         <target>
@@ -7817,7 +7769,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            32
+            26
           </context>
         </context-group>
         <target>
@@ -7838,27 +7790,27 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            33
+            27
           </context>
         </context-group>
         <target>
           Alle inhoud van Digiwhist op deze website wordt aangeboden onder een &lt;x ctype="x-a" equiv-text="&amp;lt;a&amp;gt;" id="START_LINK"/&gt;Creative Commons BY-NC-SA 4.0-licentie.&lt;x ctype="x-a" equiv-text="&amp;lt;/a&amp;gt;" id="CLOSE_LINK"/&gt;
         </target>
       </trans-unit>
-      <trans-unit id="c018f09e2f616d4bf58e28e4a1e6ccd3b098850d" datatype="html">
+      <trans-unit id="fc2fdfc36f449b13fcd026986530c9beeaf1595c" datatype="html">
         <source>
-          Open Knowledge Foundation Germany is pleased that you are visiting our website and that you are interested in the Horizon 2020 DIGIWHIST project. We take the protection of your personal data very seriously and adhere strictly to the provisions of current data privacy laws (e.g. German Data Protection Act (BDSG), Telemedia Act (TMG) and Unfair Competition Act (UWG)).
+          GTI is pleased that you are visiting our website and that you are interested in the Horizon 2020 DIGIWHIST project. We take the protection of your personal data very seriously and adhere strictly to the provisions of current data privacy laws.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            37
+            31
           </context>
         </context-group>
         <target>
-          De Open Knowledge Foundation Duitsland is blij dat u onze website bezoekt en dat u geïnteresseerd bent in het DIGIWHIST-project van het Horizon 2020-programma. We nemen de bescherming van uw persoonlijke gegevens zeer serieus en we leven bepalingen van de wetten inzake gegevensprivacy strikt na (bijv. de Duitse wet voor gegevensbescherming (BDSG), de telemediawet (TMG) en de wet inzake oneerlijke concurrentie (UWG)).
+          GTI is blij dat u onze website bezoekt en dat u geïnteresseerd bent in het DIGIWHIST-project van het Horizon 2020-programma. We nemen de bescherming van uw persoonlijke gegevens zeer serieus en we leven bepalingen van de wetten inzake gegevensprivacy strikt na.
         </target>
       </trans-unit>
       <trans-unit id="dd49fbae5ff3368fba61347ee5d92d5447fb75cd" datatype="html">
@@ -7870,7 +7822,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            38
+            32
           </context>
         </context-group>
         <target>
@@ -7886,7 +7838,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            39
+            33
           </context>
         </context-group>
         <target>
@@ -7902,7 +7854,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            40
+            34
           </context>
         </context-group>
         <target>
@@ -7918,7 +7870,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            41
+            35
           </context>
         </context-group>
         <target>
@@ -7934,7 +7886,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            43
+            37
           </context>
         </context-group>
         <target>
@@ -7950,7 +7902,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            44
+            38
           </context>
         </context-group>
         <target>
@@ -7966,7 +7918,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            45
+            39
           </context>
         </context-group>
         <target>
@@ -7982,7 +7934,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            46
+            40
           </context>
         </context-group>
         <target>
@@ -7998,7 +7950,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            47
+            41
           </context>
         </context-group>
         <target>
@@ -8014,7 +7966,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            49
+            43
           </context>
         </context-group>
         <target>
@@ -8030,7 +7982,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            51
+            45
           </context>
         </context-group>
         <target>
@@ -8046,7 +7998,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            52
+            46
           </context>
         </context-group>
         <target>
@@ -8062,7 +8014,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            54
+            48
           </context>
         </context-group>
         <target>
@@ -8078,7 +8030,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            55
+            49
           </context>
         </context-group>
         <target>
@@ -8094,7 +8046,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            57
+            51
           </context>
         </context-group>
         <target>
@@ -8110,7 +8062,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            58
+            52
           </context>
         </context-group>
         <target>
@@ -8126,7 +8078,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            59
+            53
           </context>
         </context-group>
         <target>
@@ -8142,7 +8094,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            60
+            54
           </context>
         </context-group>
         <target>
@@ -8158,7 +8110,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            62
+            56
           </context>
         </context-group>
         <target>
@@ -8174,7 +8126,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            63
+            57
           </context>
         </context-group>
         <target>
@@ -8190,27 +8142,27 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            65
+            59
           </context>
         </context-group>
         <target>
           7. Externe links
         </target>
       </trans-unit>
-      <trans-unit id="71ebb35778310125fa3032f144d0b818dbfa7f38" datatype="html">
+      <trans-unit id="0483626efca42a9f07b62fb1c92a528d0d37f06f" datatype="html">
         <source>
-          We seek to provide you with the best possible information. This is why you will find on our website links that refer to pages owned by third parties. Unless it is perfectly obvious, we draw your attention to the fact that these are external links. OKF DE has no influence on the content or design of these pages owned by external providers and hence refers to their privacy policies. Please be aware that the assurances provided in this privacy policy quite naturally do not necessarily apply there.
+          We seek to provide you with the best possible information. This is why you will find on our website links that refer to pages owned by third parties. Unless it is perfectly obvious, we draw your attention to the fact that these are external links. GTI has no influence on the content or design of these pages owned by external providers and hence refers to their privacy policies. Please be aware that the assurances provided in this privacy policy quite naturally do not necessarily apply there.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            66
+            60
           </context>
         </context-group>
         <target>
-          We willen u voorzien van de best mogelijke informatie. Daarom vindt u op onze website koppelingen die verwijzen naar pagina's van derden. Tenzij het volstrekt duidelijk is, vestigen we uw aandacht op het feit dat dit externe koppelingen zijn. OKF DE heeft geen invloed op de inhoud of het ontwerp van deze pagina's van externe dienstverleners en verwijst daarom naar hun privacybeleid. Wees u ervan bewust dat de garanties in dit privacybeleid uiteraard niet van toepassing zijn op hun privacybeleid.
+          We willen u voorzien van de best mogelijke informatie. Daarom vindt u op onze website koppelingen die verwijzen naar pagina's van derden. Tenzij het volstrekt duidelijk is, vestigen we uw aandacht op het feit dat dit externe koppelingen zijn. GTI heeft geen invloed op de inhoud of het ontwerp van deze pagina's van externe dienstverleners en verwijst daarom naar hun privacybeleid. Wees u ervan bewust dat de garanties in dit privacybeleid uiteraard niet van toepassing zijn op hun privacybeleid.
         </target>
       </trans-unit>
       <trans-unit id="18dda6fde575de71a9beb80c45d7b514f8121c01" datatype="html">
@@ -8222,27 +8174,27 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            68
+            62
           </context>
         </context-group>
         <target>
           8. Beveiliging
         </target>
       </trans-unit>
-      <trans-unit id="0440e77467e5e33a2197b79775dfc1d42b3a2521" datatype="html">
+      <trans-unit id="7efb139b711ebf0a1e4715d03bcc3b2413a2cde9" datatype="html">
         <source>
-          OKF DE takes technical and organisational measures to ensure security in line with the current state of technology to protect the data you provide to OKF DE against accidental or deliberate manipulation, loss, destruction or access by unauthorised persons. We continually improve our security measures as technology progresses.
+          GTI takes technical and organisational measures to ensure security in line with the current state of technology to protect the data you provide to GTI against accidental or deliberate manipulation, loss, destruction or access by unauthorised persons. We continually improve our security measures as technology progresses.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            69
+            63
           </context>
         </context-group>
         <target>
-          OKF DE neemt technische en organisatorische veiligheidsmaatregelen in overeenstemming met de huidige stand van de technologie om de gegevens die u aan OKF DE verstrekt te beschermen tegen onbedoelde of opzettelijke manipulatie, verlies, vernietiging of toegang door onbevoegden. We zijn voortdurend bezig met het verbeteren van onze veiligheidsmaatregelen naarmate de technologie verandert.
+          GTI neemt technische en organisatorische veiligheidsmaatregelen in overeenstemming met de huidige stand van de technologie om de gegevens die u aan GTI verstrekt te beschermen tegen onbedoelde of opzettelijke manipulatie, verlies, vernietiging of toegang door onbevoegden. We zijn voortdurend bezig met het verbeteren van onze veiligheidsmaatregelen naarmate de technologie verandert.
         </target>
       </trans-unit>
       <trans-unit id="eea4ad53ac637c457ac63d9342c7f552f6649338" datatype="html">
@@ -8254,27 +8206,27 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            71
+            65
           </context>
         </context-group>
         <target>
           9. Recht op informatie, vragen over gegevensprivacy en intrekking
         </target>
       </trans-unit>
-      <trans-unit id="dd9107f0618593c8e4ac60b9f475a39e5007deb3" datatype="html">
+      <trans-unit id="da017bf91186b5723aea66fa1715d5016d787bff" datatype="html">
         <source>
-          We attach great importance to your trust in us. This is why we seek to be available to provide you with information and to answer your questions at any time. Please contact OKF DE if you have any questions concerning the processing of your personal data; OKF DE is also available if you are seeking information, wish to place applications or lodge complaints on the question of data privacy.
+          We attach great importance to your trust in us. This is why we seek to be available to provide you with information and to answer your questions at any time. Please contact GTI if you have any questions concerning the processing of your personal data; GTI is also available if you are seeking information, wish to place applications or lodge complaints on the question of data privacy.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            72
+            66
           </context>
         </context-group>
         <target>
-          Wij hechten veel belang aan uw vertrouwen in ons. Daarom willen we op elk moment voor u klaarstaan met informatie en op elk moment uw vragen beantwoorden. Neem contact op met OKF DE als u vragen hebt over de verwerking van uw persoonlijke gegevens. OKF DE staat tevens voor u klaar als u op zoek bent naar informatie, toepassingen wilt plaatsen of klachten wilt indienen over de vraag over gegevensprivacy.
+          Wij hechten veel belang aan uw vertrouwen in ons. Daarom willen we op elk moment voor u klaarstaan met informatie en op elk moment uw vragen beantwoorden. Neem contact op met GTI als u vragen hebt over de verwerking van uw persoonlijke gegevens. GTI staat tevens voor u klaar als u op zoek bent naar informatie, toepassingen wilt plaatsen of klachten wilt indienen over de vraag over gegevensprivacy.
         </target>
       </trans-unit>
       <trans-unit id="33f7b50b59b01c3baaf8585f16f51d556dff8b33" datatype="html">
@@ -8286,7 +8238,7 @@
             src/app/pages/imprint/imprint.component.ts
           </context>
           <context context-type="linenumber">
-            73
+            67
           </context>
         </context-group>
         <target>
