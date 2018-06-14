@@ -1,5 +1,7 @@
 <div class="cookie-law" *ngIf="visible" (click)="close($event)">
 	<div>By continuing to browse the site, you're agreeing to our use of cookies.</div>
+    <div>Personal data are only collected based on the current applicable regulations.</div>
+    <div>Beyond this, your data are only used for the purposes of advertising and market research.</div>
 	<div>Learn more in our <a [routerLink]="['/imprint']" pageScroll="#privacy">privacy policy</a>.</div>
 	<a class="close"><i class="icon-cross"></i></a>
 </div>
