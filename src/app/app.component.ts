@@ -1,3 +1,5 @@
+declare let gtag: Function;
+
 import {Component, OnInit, ElementRef} from '@angular/core';
 import {NavigationCancel, NavigationEnd, Router, RoutesRecognized} from '@angular/router';
 import {TitleService} from './services/title.service';
@@ -35,6 +37,10 @@ export class AppComponent implements OnInit {
 					this.loading = false;
 					this.checkURL(e.url);
 					this.scrollToTop();
+					gtag('config', 'UA-23514826-4', {
+					  'page_title' : document.title,
+					  'page_location': window.location
+					});
 				}
 			});
 		}
