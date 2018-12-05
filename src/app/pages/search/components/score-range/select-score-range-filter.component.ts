@@ -44,7 +44,11 @@ export class SelectScoreRangeFilterComponent implements OnChanges {
 	onSliderChange(event) {
 		this.startScore = event.startValue;
 		this.endScore = event.endValue;
-		this.filter.values = [this.startScore, this.endScore];
+		if (event.startValue == this.minScore && event.endValue == this.maxScore) {
+			this.filter.values = null;
+		} else {
+			this.filter.values = [this.startScore, this.endScore];
+		}
 		this.onRangeChange.emit();
 	}
 
