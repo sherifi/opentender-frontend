@@ -130,6 +130,14 @@
       ]
     },
     {
+      "path": "donate",
+      "menu_title": "Donate",
+      "menu": true,
+      "routerLink": [
+        "/donate"
+      ]
+    },
+    {
       "path": "imprint",
       "title": "Imprint",
       "rootMenu": true,

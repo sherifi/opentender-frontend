@@ -17,6 +17,7 @@ export const routes: Routes = [
 	{path: 'download', loadChildren: './pages/download/download.module#DownloadModule'},
 	{path: 'about', loadChildren: './pages/about/about.module#AboutModule'},
 	{path: 'imprint', loadChildren: './pages/imprint/imprint.module#ImprintModule'},
+	{path: 'donate', loadChildren: './pages/donate/donate.module#DonateModule' },
 	{path: '**', redirectTo: 'start'}
 ];
 
