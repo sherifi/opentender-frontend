@@ -141,7 +141,7 @@
   "devDependencies": {
     "@angular/language-service": "=5.2.5",
     "@compodoc/compodoc": "=1.0.7",
-    "webpack-bundle-analyzer": "=2.10.0",
+    "webpack-bundle-analyzer": "=3.3.2",
     "webpack-dev-server": "=2.11.1",
     "concurrently": "=3.5.1",
     "dtsgenerator": "=0.9.9",
