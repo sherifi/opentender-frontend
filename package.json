@@ -142,7 +142,7 @@
     "@angular/language-service": "=5.2.5",
     "@compodoc/compodoc": "=1.0.7",
     "webpack-bundle-analyzer": "=2.10.0",
-    "webpack-dev-server": "=2.11.1",
+    "webpack-dev-server": "=3.1.11",
     "concurrently": "=3.5.1",
     "dtsgenerator": "=0.9.9",
     "nodemon": "=1.15.1",
